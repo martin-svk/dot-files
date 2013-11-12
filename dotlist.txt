@@ -1,0 +1,12 @@
+Vim :
+  - ~/.vimrc
+UXTerm :
+  - ~/.Xresources
+Fish shell :
+  - ~/.config/fish/config.fish
+Tmux :
+  - ~/.tmux.conf
+SSH :
+  - ~/.ssh/...
+Git :
+  - ~/.gitconfig
