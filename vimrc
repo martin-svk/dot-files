@@ -22,4 +22,4 @@ set shiftwidth=2
 set softtabstop=2
 
 " Color settings
-colorscheme slate
+colorscheme default

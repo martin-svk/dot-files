@@ -2,14 +2,14 @@
 XTerm*utf8: 1
 
 ! Font settings
-xterm*faceName: terminus
+xterm*faceName: Terminus 
 xterm*faceSize: 10
 
-! for inclusion of all necessary environment variables)
+! for inclusion of all necessary environment variables
 xterm*loginshell: true
 
-! I like a LOT of scrollback...
-xterm*savelines: 16384
+! Scrollback setting 
+xterm*savelines: 10000
 
 ! double-click to select whole URLs :D
 xterm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
@@ -21,7 +21,7 @@ xterm*ScrollBar: true
 ! stop output to terminal from jumping down to bottom of scroll again
 xterm*scrollTtyOutput: false
 
-! ======================== COLORS ===============================
+! ======================== COLORS =========================
 ! Martins colours
 !xterm*foreground: rgb:a8/a8/a8
 !xterm*background: rgb:00/00/00
