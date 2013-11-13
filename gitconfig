@@ -13,6 +13,7 @@
 [core]
     editor = vim
 [alias]
+a = add .
 co = checkout
 st = status
 ci = commit

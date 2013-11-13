@@ -1,8 +1,11 @@
-! Use a nice truetype font and size by default... 
-xterm*faceName: terminus 
+! Unicode support
+XTerm*utf8: 1
+
+! Font settings
+xterm*faceName: terminus
 xterm*faceSize: 10
 
-! Every shell is a login shell by default (for inclusion of all necessary environment variables)
+! for inclusion of all necessary environment variables)
 xterm*loginshell: true
 
 ! I like a LOT of scrollback...
@@ -11,29 +14,89 @@ xterm*savelines: 16384
 ! double-click to select whole URLs :D
 xterm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
 
-! Martins colours...
-xterm*foreground: rgb:a8/a8/a8
-xterm*background: rgb:00/00/00
-xterm*color0: rgb:00/00/00
-xterm*color1: rgb:a8/00/00
-xterm*color2: rgb:00/a8/00
-xterm*color3: rgb:a8/54/00
-xterm*color4: rgb:00/00/a8
-xterm*color5: rgb:a8/00/a8
-xterm*color6: rgb:00/a8/a8
-xterm*color7: rgb:a8/a8/a8
-xterm*color8: rgb:54/54/54
-xterm*color9: rgb:fc/54/54
-xterm*color10: rgb:54/fc/54
-xterm*color11: rgb:fc/fc/54
-xterm*color12: rgb:54/54/fc
-xterm*color13: rgb:fc/54/fc
-xterm*color14: rgb:54/fc/fc
-xterm*color15: rgb:fc/fc/fc
-
 ! right hand side scrollbar...
 xterm*rightScrollBar: true
 xterm*ScrollBar: true
 
 ! stop output to terminal from jumping down to bottom of scroll again
 xterm*scrollTtyOutput: false
+
+! ======================== COLORS ===============================
+! Martins colours
+!xterm*foreground: rgb:a8/a8/a8
+!xterm*background: rgb:00/00/00
+!xterm*color0: rgb:00/00/00
+!xterm*color1: rgb:a8/00/00
+!xterm*color2: rgb:00/a8/00
+!xterm*color3: rgb:a8/54/00
+!xterm*color4: rgb:00/00/a8
+!xterm*color5: rgb:a8/00/a8
+!xterm*color6: rgb:00/a8/a8
+!xterm*color7: rgb:a8/a8/a8
+!xterm*color8: rgb:54/54/54
+!xterm*color9: rgb:fc/54/54
+!xterm*color10: rgb:54/fc/54
+!xterm*color11: rgb:fc/fc/54
+!xterm*color12: rgb:54/54/fc
+!xterm*color13: rgb:fc/54/fc
+!xterm*color14: rgb:54/fc/fc
+!xterm*color15: rgb:fc/fc/fc
+! Dark theme 1
+!xterm*background: rgb:00/00/00
+!xterm*foreground: rgb:7f/7f/7f
+!xterm*color0:     rgb:00/00/00
+!xterm*color1:     rgb:9e/18/28
+!xterm*color2:     rgb:ae/ce/92
+!xterm*color3:     rgb:96/8a/38
+!xterm*color4:     rgb:41/41/71
+!xterm*color5:     rgb:96/3c/59
+!xterm*color6:     rgb:41/81/79
+!xterm*color7:     rgb:be/be/be
+!xterm*color8:     rgb:66/66/66
+!xterm*color9:     rgb:cf/61/71
+!xterm*color10:    rgb:c5/f7/79
+!xterm*color11:    rgb:ff/f7/96
+!xterm*color12:    rgb:41/86/be
+!xterm*color13:    rgb:cf/9e/be
+!xterm*color14:    rgb:71/be/be
+!xterm*color15:    rgb:ff/ff/ff
+! Dark theme 2
+xterm*background: rgb:00/00/00
+xterm*foreground: rgb:ff/ff/ff
+xterm*color0:     rgb:00/00/00
+xterm*color1:     rgb:d3/62/65
+xterm*color2:     rgb:ae/ce/91
+xterm*color3:     rgb:e7/e1/8c
+xterm*color4:     rgb:7a/7a/b0
+xterm*color5:     rgb:96/3c/59
+xterm*color6:     rgb:41/81/79
+xterm*color7:     rgb:be/be/be
+xterm*color8:     rgb:66/66/66
+xterm*color9:     rgb:ef/81/71
+xterm*color10:    rgb:e5/f7/79
+xterm*color11:    rgb:ff/f7/96
+xterm*color12:    rgb:41/86/be
+xterm*color13:    rgb:ef/9e/be
+xterm*color14:    rgb:71/be/be
+xterm*color15:    rgb:ff/ff/ff
+! Dark blue night theme
+!xterm*background: rgb:1d/2b/3a
+!xterm*foreground: rgb:be/be/be
+!xterm*color0:     rgb:00/00/00
+!xterm*color1:     rgb:d3/62/65
+!xterm*color2:     rgb:ae/ce/91
+!xterm*color3:     rgb:e7/e1/8c
+!xterm*color4:     rgb:7a/7a/b0
+!xterm*color5:     rgb:96/3c/59
+!xterm*color6:     rgb:41/81/79
+!xterm*color7:     rgb:be/be/be
+!xterm*color8:     rgb:66/66/66
+!xterm*color9:     rgb:ef/81/71
+!xterm*color10:    rgb:e5/f7/79
+!xterm*color11:    rgb:ff/f7/99
+!xterm*color12:    rgb:41/86/be
+!xterm*color13:    rgb:ef/9e/be
+!xterm*color14:    rgb:71/be/be
+!xterm*color15:    rgb:ff/ff/ff
+! ========================= COLORS ==============================
+!
