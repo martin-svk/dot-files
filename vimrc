@@ -2,12 +2,11 @@
 " Date created : Tue Nov 12 14:14:56 CET 2013
 " vimrc config file for RAILS development
 
-" Basic settings ==============================================================
+" Basic settings ===============================================================
 
 set shell=bash\ --norc  " Setting vim shell to bash (using fish)
 set nocompatible        " No compatible with vi mode
 set number              " Line numbers
-set ch=2                " Make command line two lines high
 set noignorecase        " Dont ignore cases
 set laststatus=2        " Always show status line
 set showmode            " Akways show mode
@@ -43,4 +42,4 @@ set softtabstop=2
 " Color settings
 colorscheme slate
 
-" Mapping settings ============================================================
+" Mapping settings =============================================================
