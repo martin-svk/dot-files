@@ -40,6 +40,10 @@ set shiftwidth=2
 set softtabstop=2
 
 " Color settings
+if $TERM == "xterm-256color"
+    set t_Co=256
+endif
+
 colorscheme slate
 
 " Mapping settings =============================================================

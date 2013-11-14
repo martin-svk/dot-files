@@ -1,3 +1,4 @@
+set -lx TERM xterm-256color
 
 function parse_git_branch
   set -l branch (git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/\1/')
