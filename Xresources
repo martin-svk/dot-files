@@ -3,7 +3,7 @@ XTerm*utf8: 1
 
 ! Font settings
 xterm*faceName: Terminus 
-xterm*faceSize: 10
+xterm*faceSize: 9 
 
 ! for inclusion of all necessary environment variables
 xterm*loginshell: true
