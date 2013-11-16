@@ -15,8 +15,7 @@ xterm*savelines: 10000
 xterm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
 
 ! right hand side scrollbar...
-xterm*rightScrollBar: true
-xterm*ScrollBar: true
+xterm*ScrollBar: false
 
 ! stop output to terminal from jumping down to bottom of scroll again
 xterm*scrollTtyOutput: false
@@ -100,3 +99,34 @@ term*color15:    rgb:ff/ff/ff
 !xterm*color15:    rgb:ff/ff/ff
 ! ========================= COLORS ==============================
 !
+!************************** RXVT *******************************
+URxvt.loginShell: true
+URxvt.geometry: 80x50
+URxvt.saveLines: 10000
+URxvt.cutchars: "`\"'&()*,:;<=>?[\\]^{|}$"
+URxvt.foreground: rgb:a8/a8/a8
+URxvt.background: rgb:00/00/00
+URxvt.color0: rgb:00/00/00
+URxvt.color1: rgb:a8/00/00
+URxvt.color2: rgb:00/a8/00
+URxvt.color3: rgb:a8/54/00
+URxvt.color4: rgb:00/00/a8
+URxvt.color5: rgb:a8/00/a8
+URxvt.color6: rgb:00/a8/a8
+URxvt.color7: rgb:a8/a8/a8
+URxvt.color8: rgb:54/54/54
+URxvt.color9: rgb:fc/54/54
+URxvt.color10: rgb:54/fc/54
+URxvt.color11: rgb:fc/fc/54
+URxvt.color12: rgb:54/54/fc
+URxvt.color13: rgb:fc/54/fc
+URxvt.color14: rgb:54/fc/fc
+URxvt.color15: rgb:fc/fc/fc
+URxvt.colorBD: rgb:fc/fc/fc
+URxvt.font: terminus-12
+URxvt.italicFont: terminus-12
+URxvt.scrollBar: false
+URxvt.visualBell: true
+! this is SO AWESOME:
+URxvt.fading: 15
+! URxvt spells "eightBitInput" as "meta8" and defaults it to false
