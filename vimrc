@@ -58,7 +58,7 @@ if $TERM == "xterm-256color"
     set t_Co=256
 endif
 
-colorscheme bubblegum
+colorscheme herald
 
 " Mapping settings =============================================================
 " Specific for each plugin
