@@ -1,9 +1,13 @@
 ! Unicode support
 XTerm*utf8: 1
 
+! Color support
+*customization: -color
+XTerm*termName: xterm-256color
+
 ! Font settings
-xterm*faceName: Terminus 
-xterm*faceSize: 9 
+xterm*faceName: Ubuntu Mono
+xterm*faceSize: 12 
 
 ! for inclusion of all necessary environment variables
 xterm*loginshell: true
@@ -20,27 +24,10 @@ xterm*ScrollBar: false
 ! stop output to terminal from jumping down to bottom of scroll again
 xterm*scrollTtyOutput: false
 
-! ======================== COLORS =========================
-! Martins colours
-!xterm*foreground: rgb:a8/a8/a8
-!xterm*background: rgb:00/00/00
-!xterm*color0: rgb:00/00/00
-!xterm*color1: rgb:a8/00/00
-!xterm*color2: rgb:00/a8/00
-!xterm*color3: rgb:a8/54/00
-!xterm*color4: rgb:00/00/a8
-!xterm*color5: rgb:a8/00/a8
-!xterm*color6: rgb:00/a8/a8
-!xterm*color7: rgb:a8/a8/a8
-!xterm*color8: rgb:54/54/54
-!xterm*color9: rgb:fc/54/54
-!xterm*color10: rgb:54/fc/54
-!xterm*color11: rgb:fc/fc/54
-!xterm*color12: rgb:54/54/fc
-!xterm*color13: rgb:fc/54/fc
-!xterm*color14: rgb:54/fc/fc
-!xterm*color15: rgb:fc/fc/fc
-! Dark theme 1
+! ============================= COLORS =================================
+
+! Dark theme 1 =========================================================
+
 !xterm*background: rgb:00/00/00
 !xterm*foreground: rgb:7f/7f/7f
 !xterm*color0:     rgb:00/00/00
@@ -59,74 +46,138 @@ xterm*scrollTtyOutput: false
 !xterm*color13:    rgb:cf/9e/be
 !xterm*color14:    rgb:71/be/be
 !xterm*color15:    rgb:ff/ff/ff
-! Dark theme 2
-term*background: rgb:00/00/00
-term*foreground: rgb:ff/ff/ff
-term*color0:     rgb:00/00/00
-term*color1:     rgb:d3/62/65
-term*color2:     rgb:ae/ce/91
-term*color3:     rgb:e7/e1/8c
-term*color4:     rgb:7a/7a/b0
-term*color5:     rgb:96/3c/59
-term*color6:     rgb:41/81/79
-term*color7:     rgb:be/be/be
-term*color8:     rgb:66/66/66
-term*color9:     rgb:ef/81/71
-term*color10:    rgb:e5/f7/79
-term*color11:    rgb:ff/f7/96
-term*color12:    rgb:41/86/be
-term*color13:    rgb:ef/9e/be
-term*color14:    rgb:71/be/be
-term*color15:    rgb:ff/ff/ff
-! Dark blue night theme
-!xterm*background: rgb:1d/2b/3a
-!xterm*foreground: rgb:be/be/be
-!xterm*color0:     rgb:00/00/00
-!xterm*color1:     rgb:d3/62/65
-!xterm*color2:     rgb:ae/ce/91
-!xterm*color3:     rgb:e7/e1/8c
-!xterm*color4:     rgb:7a/7a/b0
-!xterm*color5:     rgb:96/3c/59
-!xterm*color6:     rgb:41/81/79
-!xterm*color7:     rgb:be/be/be
-!xterm*color8:     rgb:66/66/66
-!xterm*color9:     rgb:ef/81/71
-!xterm*color10:    rgb:e5/f7/79
-!xterm*color11:    rgb:ff/f7/99
-!xterm*color12:    rgb:41/86/be
-!xterm*color13:    rgb:ef/9e/be
-!xterm*color14:    rgb:71/be/be
-!xterm*color15:    rgb:ff/ff/ff
-! ========================= COLORS ==============================
-!
-!************************** RXVT *******************************
-URxvt.loginShell: true
-URxvt.geometry: 80x50
-URxvt.saveLines: 10000
-URxvt.cutchars: "`\"'&()*,:;<=>?[\\]^{|}$"
-URxvt.foreground: rgb:a8/a8/a8
-URxvt.background: rgb:00/00/00
-URxvt.color0: rgb:00/00/00
-URxvt.color1: rgb:a8/00/00
-URxvt.color2: rgb:00/a8/00
-URxvt.color3: rgb:a8/54/00
-URxvt.color4: rgb:00/00/a8
-URxvt.color5: rgb:a8/00/a8
-URxvt.color6: rgb:00/a8/a8
-URxvt.color7: rgb:a8/a8/a8
-URxvt.color8: rgb:54/54/54
-URxvt.color9: rgb:fc/54/54
-URxvt.color10: rgb:54/fc/54
-URxvt.color11: rgb:fc/fc/54
-URxvt.color12: rgb:54/54/fc
-URxvt.color13: rgb:fc/54/fc
-URxvt.color14: rgb:54/fc/fc
-URxvt.color15: rgb:fc/fc/fc
-URxvt.colorBD: rgb:fc/fc/fc
-URxvt.font: terminus-12
-URxvt.italicFont: terminus-12
-URxvt.scrollBar: false
-URxvt.visualBell: true
-! this is SO AWESOME:
-URxvt.fading: 15
-! URxvt spells "eightBitInput" as "meta8" and defaults it to false
+
+! Dark theme 2 =========================================================
+
+!term*background: rgb:00/00/00
+!term*foreground: rgb:ff/ff/ff
+!term*color0:     rgb:00/00/00
+!term*color1:     rgb:d3/62/65
+!term*color2:     rgb:ae/ce/91
+!term*color3:     rgb:e7/e1/8c
+!term*color4:     rgb:7a/7a/b0
+!term*color5:     rgb:96/3c/59
+!term*color6:     rgb:41/81/79
+!term*color7:     rgb:be/be/be
+!term*color8:     rgb:66/66/66
+!term*color9:     rgb:ef/81/71
+!term*color10:    rgb:e5/f7/79
+!term*color11:    rgb:ff/f7/96
+!term*color12:    rgb:41/86/be
+!term*color13:    rgb:ef/9e/be
+!term*color14:    rgb:71/be/be
+!term*color15:    rgb:ff/ff/ff
+
+! Blue theme ===========================================================
+
+!xterm*background: #0d1926
+!xterm*foreground: #d9e6f2
+
+! ! black
+!xterm*color0: #000000
+! ! bright_black
+!xterm*color8: #262626
+! ! red
+!xterm*color1: #b87a7a
+! ! bright_red
+!xterm*color9: #dbbdbd
+! ! green
+!xterm*color2: #7ab87a
+! ! bright_green
+!xterm*color10: #bddbbd
+! ! yellow
+!xterm*color3: #b8b87a
+! ! bright_yellow
+!xterm*color11: #dbdbbd
+! ! blue
+!xterm*color4: #7a7ab8
+! ! bright_blue
+!xterm*color12: #bdbddb
+! ! magenta
+!xterm*color5: #b87ab8
+! ! bright_magenta
+!xterm*color13: #dbbddb
+! ! cyan
+!xterm*color6: #7ab8b8
+! ! bright_cyan
+!xterm*color14: #bddbdb
+! ! white
+!xterm*color7: #d9d9d9
+! ! bright_white
+!xterm*color15: #ffffff
+
+! Blue 2 theme =========================================================
+!xterm*background: #0d1926
+!xterm*foreground: #cffce6
+
+! black
+!xterm*color0: #000000
+! bright_black
+!xterm*color8: #1c1c1c
+! red
+!xterm*color1: #be4c34
+! bright_red
+!xterm*color9: #e9a091
+! green
+!xterm*color2: #679344
+! bright_green
+!xterm*color10: #c4bd98
+! yellow
+!xterm*color3: #ae9334
+! bright_yellow
+!xterm*color11: #e2bd91
+! blue
+!xterm*color4: #773c8b
+! bright_blue
+!xterm*color12: #cb98b6
+! magenta
+!xterm*color5: #be3c7b
+! bright_magenta
+!xterm*color13: #e998af
+! cyan
+!xterm*color6: #67838b
+! bright_cyan
+!xterm*color14: #c4b7b6
+! white
+!xterm*color7: #c7c7c7
+! bright_white
+!xterm*color15: #ffffff
+
+! Tyrkys theme =========================================================
+
+xterm*background: #001517
+xterm*foreground: #9ba0a2
+
+! black
+xterm*color0: #000000
+! bright_black
+xterm*color8: #1c1c1c
+! red
+xterm*color1: #b17851
+! bright_red
+xterm*color9: #bd8965
+! green
+xterm*color2: #839463
+! bright_green
+xterm*color10: #96a074
+! yellow
+xterm*color3: #9f9451
+! bright_yellow
+xterm*color11: #aea065
+! blue
+xterm*color4: #95667f
+! bright_blue
+xterm*color12: #a6798b
+! magenta
+xterm*color5: #b1666d
+! bright_magenta
+xterm*color13: #bd797d
+! cyan
+xterm*color6: #83827f
+! bright_cyan
+xterm*color14: #96918b
+! white
+xterm*color7: #cecece
+! bright_white
+xterm*color15: #ffffff
+

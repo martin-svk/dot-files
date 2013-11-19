@@ -9,7 +9,10 @@ call vundle#rc()
 
 " PLugins bundles
 
+" Vundle itself
 Bundle 'gmarik/vundle'
+" Nerdtree file browser
+Bundle 'scrooloose/nerdtree'
 
 
 " Basic settings ===============================================================
@@ -24,8 +27,6 @@ set wildmenu            " Better auto-complete of ex commands
 set textwidth=80        " Text with is 80 chars
 set autoread            " Automatically reload change files on disk
 set bg=dark
-set colorcolumn=101
-hi colorcolumn ctermbg=4
 
 " Filetype settings
 syntax on               " Syntax coloring
@@ -57,6 +58,10 @@ if $TERM == "xterm-256color"
     set t_Co=256
 endif
 
-colorscheme grb256
+colorscheme bubblegum
 
 " Mapping settings =============================================================
+" Specific for each plugin
+
+" Nerdtree mappings
+map <C-n> :NERDTreeToggle<CR>
