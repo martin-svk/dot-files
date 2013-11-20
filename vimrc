@@ -26,7 +26,7 @@ set showmode            " Akways show mode
 set wildmenu            " Better auto-complete of ex commands
 set textwidth=80        " Text with is 80 chars
 set autoread            " Automatically reload change files on disk
-set bg=dark             " Dark background setting (dark theme version of current color)
+set bg=light             " Dark background setting (dark theme version of current color)
 
 " Filetype settings
 syntax on               " Syntax coloring
@@ -79,4 +79,4 @@ function! ToggleBg()
 endfunc
 
 " Color scheme setting
-colorscheme jellybeans
+colorscheme herald
