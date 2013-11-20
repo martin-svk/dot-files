@@ -106,6 +106,10 @@ if has("gui_running")
 
 elseif &t_Co == 256
 
+        
+        " -> ColorColumn by martin
+        hi ColorColumn    ctermbg=237
+
 	" -> Text; Miscellaneous
 	hi Normal         ctermbg=234  ctermfg=252   cterm=none
 	hi SpecialKey     ctermbg=234  ctermfg=176   cterm=none

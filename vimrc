@@ -58,15 +58,25 @@ set softtabstop=2
 if $TERM == "xterm-256color"
     set t_Co=256
     " Set colorcolumn
-    let &colorcolumn=101
-    "join(range(101,999),",")
-    hi ColorColumn ctermbg=52
+    let &colorcolumn=121
 endif
-
-colorscheme railscasts
 
 " Mapping settings =============================================================
 " Specific for each plugin
 
 " Nerdtree mappings
 map <C-n> :NERDTreeToggle<CR>
+
+" Toogle background function
+map <F5> :call ToggleBg()<CR>
+
+function! ToggleBg()
+  if &background == 'dark'
+    set bg=light
+  else
+    set bg=dark
+  endif
+endfunc
+
+" Color scheme setting
+colorscheme jellybeans

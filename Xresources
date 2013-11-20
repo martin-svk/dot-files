@@ -6,8 +6,8 @@ XTerm*utf8: 1
 XTerm*termName: xterm-256color
 
 ! Font settings
-xterm*faceName: Ubuntu Mono
-xterm*faceSize: 12 
+xterm*faceName: Terminus
+xterm*faceSize: 10
 XTerm*allowBoldFonts: false
 
 ! for inclusion of all necessary environment variables
