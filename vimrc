@@ -26,7 +26,7 @@ set showmode            " Akways show mode
 set wildmenu            " Better auto-complete of ex commands
 set textwidth=80        " Text with is 80 chars
 set autoread            " Automatically reload change files on disk
-set bg=dark
+set bg=dark             " Dark background setting (dark theme version of current color)
 
 " Filetype settings
 syntax on               " Syntax coloring
@@ -54,8 +54,6 @@ set shiftwidth=2
 set softtabstop=2
 
 " Color settings
-
-colorscheme slate
 
 if $TERM == "xterm-256color"
     set t_Co=256
