@@ -40,10 +40,15 @@ set shiftwidth=2
 set softtabstop=2
 
 " Color settings
-if $TERM == "xterm-256color"
-    set t_Co=256
-endif
 
 colorscheme slate
+
+if $TERM == "xterm-256color"
+    set t_Co=256
+    " Set colorcolumn
+    let &colorcolumn=101
+    "join(range(101,999),",")
+    hi ColorColumn ctermbg=52
+endif
 
 " Mapping settings =============================================================
