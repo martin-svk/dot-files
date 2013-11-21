@@ -15,6 +15,8 @@ Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 " Airline (improved statusline)
 Bundle 'bling/vim-airline'
+" Commentary support
+Bundle 'tpope/vim-commentary'
 
 " Basic settings
 " ======================================================================================================================
@@ -50,6 +52,8 @@ map <up> <nop>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
+" Disabling space key
+map <Space> <nop>
 
 " Intedation settings (2 spaces tabs)
 set autoindent
@@ -86,4 +90,4 @@ let mapleader=" "             " map leader to space
 map <C-n> :NERDTreeToggle<CR>
 
 " Color scheme setting (must be last)
-colorscheme herald
+colorscheme wombat256mod
