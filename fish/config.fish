@@ -1,10 +1,16 @@
+# Global vars
+# =====================================================================================================================
 set -lx TERM xterm-256color
 
+# Git integration
+# =====================================================================================================================
 function parse_git_branch
   set -l branch (git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/\1/')
   echo $branch
 end
 
+# Custom prompt
+# =====================================================================================================================
 function fish_prompt
    set_color yellow
    printf '%s' (whoami)
@@ -32,9 +38,7 @@ function fish_prompt
    echo -n (date +%X)
    echo -n ]
 
-   echo
    set_color $fish_color_cwd
-   printf 'cmd '
    set_color normal
-   printf '-> '
+   printf ' -> '
 end
