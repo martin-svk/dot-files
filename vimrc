@@ -15,10 +15,9 @@ Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 " Airline (improved statusline)
 Bundle 'bling/vim-airline'
-" Vim and tmux integration
-Bundle 'christoomey/vim-tmux-navigator'
 
-" Basic settings ===============================================================
+" Basic settings
+" ======================================================================================================================
 
 set shell=bash\ --norc  " Setting vim shell to bash (using fish)
 set nocompatible        " No compatible with vi mode
@@ -29,7 +28,9 @@ set showmode            " Akways show mode
 set wildmenu            " Better auto-complete of ex commands
 set textwidth=80        " Text with is 80 chars
 set autoread            " Automatically reload change files on disk
-set bg=light             " Dark background setting (dark theme version of current color)
+set bg=dark             " Dark background setting (dark theme version of current color)
+set cursorline          " Set default cursor line (highlighting is done by color scheme)
+set cmdheight=2         " Command line height
 
 " Filetype settings
 syntax on               " Syntax coloring
@@ -67,28 +68,22 @@ endif
 
 " Tmux/screen 256 colors support
 if $TERM == "screen-256color"
-    set t_Co=256
+set t_Co=256
     " Set colorcolumn
     let &colorcolumn=121
 endif
 
 
-" Mapping settings =============================================================
+" Mapping settings
+" ======================================================================================================================
+
+" Let commands (setting keys)
+let mapleader=" "             " map leader to space
+
 " Specific for each plugin
 
 " Nerdtree mappings
 map <C-n> :NERDTreeToggle<CR>
 
-" Toogle background function
-map <F5> :call ToggleBg()<CR>
-
-function! ToggleBg()
-  if &background == 'dark'
-    set bg=light
-  else
-    set bg=dark
-  endif
-endfunc
-
-" Color scheme setting
+" Color scheme setting (must be last)
 colorscheme herald
