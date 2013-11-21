@@ -42,7 +42,7 @@ set hlsearch            " Highlight search
 set incsearch           " Incremental search
 
 " Buffer settings
-set autowrite           " Automatic saving
+set hidden              " Enables to switch between unsaved buffers and keep undo history
 
 " Disabling arrow keys
 map <up> <nop>
@@ -58,11 +58,20 @@ set softtabstop=2
 
 " Color settings
 
+" Xterm 256 colors
 if $TERM == "xterm-256color"
     set t_Co=256
     " Set colorcolumn
     let &colorcolumn=121
 endif
+
+" Tmux/screen 256 colors support
+if $TERM == "screen-256color"
+    set t_Co=256
+    " Set colorcolumn
+    let &colorcolumn=121
+endif
+
 
 " Mapping settings =============================================================
 " Specific for each plugin
