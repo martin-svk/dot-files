@@ -13,7 +13,10 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 " Nerdtree file browser
 Bundle 'scrooloose/nerdtree'
-
+" Airline (improved statusline)
+Bundle 'bling/vim-airline'
+" Vim and tmux integration
+Bundle 'christoomey/vim-tmux-navigator'
 
 " Basic settings ===============================================================
 

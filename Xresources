@@ -6,9 +6,9 @@ XTerm*utf8: 1
 XTerm*termName: xterm-256color
 
 ! Font settings
-xterm*faceName: Terminus
-xterm*faceSize: 10
-XTerm*allowBoldFonts: false
+xterm*faceName: Ubuntu Mono
+xterm*faceSize: 12
+XTerm*allowBoldFonts: true
 
 ! for inclusion of all necessary environment variables
 xterm*loginshell: true
@@ -27,7 +27,7 @@ xterm*scrollTtyOutput: false
 
 ! ============================= COLORS =================================
 
-! Black theme 2 =========================================================
+! Black theme 1 ========================================================
 
 !xterm*background: rgb:00/00/00
 !xterm*foreground: rgb:ff/ff/ff
@@ -48,24 +48,45 @@ xterm*scrollTtyOutput: false
 !xterm*color14:    rgb:71/be/be
 !xterm*color15:    rgb:ff/ff/ff
 
-! Blue 2 theme =========================================================
-xterm*background: #0d1926
-xterm*foreground: #cffce6
+! Blue 1 theme =========================================================
+!xterm*background: #0d1926
+!xterm*foreground: #cffce6
+!xterm*color0: #000000
+!xterm*color8: #1c1c1c
+!xterm*color1: #be4c34
+!xterm*color9: #e9a091
+!xterm*color2: #679344
+!xterm*color10: #c4bd98
+!xterm*color3: #ae9334
+!xterm*color11: #e2bd91
+!xterm*color4: #773c8b
+!xterm*color12: #cb98b6
+!xterm*color5: #be3c7b
+!xterm*color13: #e998af
+!xterm*color6: #67838b
+!xterm*color14: #c4b7b6
+!xterm*color7: #c7c7c7
+!xterm*color15: #ffffff
+
+! Blue 2 theme (day) ===================================================
+
+xterm*background: #001b39
+xterm*foreground: #e5e5e5
 xterm*color0: #000000
-xterm*color8: #1c1c1c
-xterm*color1: #be4c34
-xterm*color9: #e9a091
-xterm*color2: #679344
-xterm*color10: #c4bd98
-xterm*color3: #ae9334
-xterm*color11: #e2bd91
-xterm*color4: #773c8b
-xterm*color12: #cb98b6
-xterm*color5: #be3c7b
-xterm*color13: #e998af
-xterm*color6: #67838b
-xterm*color14: #c4b7b6
-xterm*color7: #c7c7c7
+xterm*color8: #575757
+xterm*color1: #cfa15b
+xterm*color9: #e7c993
+xterm*color2: #8ec17b
+xterm*color10: #c6d9a3
+xterm*color3: #aec15b
+xterm*color11: #d6d993
+xterm*color4: #ae819c
+xterm*color12: #d6b9b4
+xterm*color5: #cf817b
+xterm*color13: #e7b9a3
+xterm*color6: #8ea19c
+xterm*color14: #c6c9b4
+xterm*color7: #e5e5e5
 xterm*color15: #ffffff
 
 ! Tyrkys theme =========================================================
