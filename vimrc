@@ -13,6 +13,8 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 " Nerdtree file browser
 Bundle 'scrooloose/nerdtree'
+" Airline (improved status line)
+Bundle 'bling/vim-airline'
 
 
 " Basic settings ===============================================================
