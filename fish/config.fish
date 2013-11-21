@@ -38,9 +38,7 @@ function fish_prompt
    echo -n (date +%X)
    echo -n ]
 
-   echo
    set_color $fish_color_cwd
-   printf 'cmd '
    set_color normal
-   printf '-> '
+   printf ' -> '
 end
