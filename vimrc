@@ -17,6 +17,12 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'bling/vim-airline'
 " Commentary support
 Bundle 'tpope/vim-commentary'
+" Fuzzy file, buffer, MRU finder (CTRL-P)
+Bundle 'kien/ctrlp.vim'
+" Syntax checking plugin (syntastic)
+Bundle 'scrooloose/syntastic'
+" Easily move around file (easy motion)
+Bundle 'Lokaltog/vim-easymotion'
 
 " Basic settings
 " ======================================================================================================================
@@ -77,17 +83,34 @@ set t_Co=256
     let &colorcolumn=121
 endif
 
+" Plugin settings
+" ======================================================================================================================
+
+" Airline settings
+let g:airline#extensions#tabline#enabled=1              " enabled nice tabs support
+let g:airline#extensions#tabline#left_sep = ' '         " separators setting
+let g:airline#extensions#tabline#left_alt_sep = '|'     " alternative separator
+
+" CTRL-P settings
+let g:ctrlp_match_window = 'top,order:ttb,min:1,max:10,results:10'
 
 " Mapping settings
 " ======================================================================================================================
 
 " Let commands (setting keys)
-let mapleader=" "       " map leader to space
+let mapleader=" "                                       " map leader to space
 
 " Specific for each plugin
 
 " Nerdtree mappings
-map <Leader>n :NERDTreeToggle<CR>
+map <Leader>f :NERDTreeToggle<CR>                       " Leader - [f]ile
+
+" CTRL-P mapping
+let g:ctrlp_map = '<c-p>'                               " Control and P like in sublime
+let g:ctrlp_cmd = 'CtrlP'
+
+" Easy motion mapping
+let g:EasyMotion_leader_key = '<Leader>'                " Trigger easy motions by leader,leader,motion
 
 " Color scheme setting (must be last)
 colorscheme wombat256mod
