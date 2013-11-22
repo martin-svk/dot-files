@@ -87,7 +87,7 @@ let mapleader=" "       " map leader to space
 " Specific for each plugin
 
 " Nerdtree mappings
-map <C-n> :NERDTreeToggle<CR>
+map <Leader>n :NERDTreeToggle<CR>
 
 " Color scheme setting (must be last)
 colorscheme wombat256mod

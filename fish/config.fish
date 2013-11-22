@@ -31,14 +31,7 @@ function fish_prompt
      set_color yellow
      printf '%s' (parse_git_branch)
    end
-   set_color normal
 
-   echo -n ' '
-   echo -n [
-   echo -n (date +%X)
-   echo -n ]
-
-   set_color $fish_color_cwd
    set_color normal
    printf ' -> '
 end
