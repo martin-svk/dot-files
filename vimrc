@@ -38,7 +38,7 @@ set textwidth=80        " Text with is 80 chars
 set autoread            " Automatically reload change files on disk
 set bg=dark             " Dark background setting (dark theme version of current color)
 set cursorline          " Set default cursor line (highlighting is done by color scheme)
-set cmdheight=2         " Command line height
+set cmdheight=1         " Command line height
 
 " Filetype settings
 syntax on               " Syntax coloring
@@ -110,7 +110,7 @@ let g:ctrlp_map = '<c-p>'                               " Control and P like in 
 let g:ctrlp_cmd = 'CtrlP'
 
 " Easy motion mapping
-let g:EasyMotion_leader_key = '<Leader>'                " Trigger easy motions by leader,leader,motion
+let g:EasyMotion_leader_key = 'm'                       " Trigger easy motions by [m]otion
 
 " Color scheme setting (must be last)
 colorscheme wombat256mod
