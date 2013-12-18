@@ -23,6 +23,8 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/syntastic'
 " Easily move around file (easy motion)
 Bundle 'Lokaltog/vim-easymotion'
+" Rails vim plugin
+Bundle 'tpope/vim-rails'
 
 " Basic settings
 " ======================================================================================================================
