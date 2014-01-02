@@ -35,6 +35,14 @@ else
 	ln -s $current_path/vimrc ~/.vimrc
 fi
 
+if [ -d ~/.vim ]; then
+	ln -s $current_path/vim/colors ~/.vim/colors
+else  
+	mkdir ~/.vim
+	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+	ln -s $current_path/vim/colors ~/.vim/colors
+fi
+
 
 # Installing tmux
 echo -n "[ tmux.conf ]"

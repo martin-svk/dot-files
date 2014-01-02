@@ -35,3 +35,7 @@ function fish_prompt
    set_color normal
    printf ' -> '
 end
+
+function fish_greeting
+   screenfetch
+end

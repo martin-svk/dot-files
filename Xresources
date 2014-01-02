@@ -6,9 +6,9 @@ XTerm*utf8: 1
 XTerm*termName: xterm-256color
 
 ! Font settings
-xterm*faceName: Terminus
-xterm*faceSize: 10
-XTerm*allowBoldFonts: false
+xterm*faceName: Ubuntu Mono
+xterm*faceSize: 11
+XTerm*allowBoldFonts: true
 
 ! for inclusion of all necessary environment variables
 xterm*loginshell: true
@@ -27,7 +27,7 @@ xterm*scrollTtyOutput: false
 
 ! ============================= COLORS =================================
 
-! Black theme 1 ========================================================
+! Black theme ==========================================================
 
 !xterm*background: rgb:00/00/00
 !xterm*foreground: rgb:ff/ff/ff
@@ -48,64 +48,45 @@ xterm*scrollTtyOutput: false
 !xterm*color14:    rgb:71/be/be
 !xterm*color15:    rgb:ff/ff/ff
 
-! Blue 1 theme =========================================================
-!xterm*background: #0d1926
-!xterm*foreground: #cffce6
-!xterm*color0: #000000
-!xterm*color8: #1c1c1c
-!xterm*color1: #be4c34
-!xterm*color9: #e9a091
-!xterm*color2: #679344
-!xterm*color10: #c4bd98
-!xterm*color3: #ae9334
-!xterm*color11: #e2bd91
-!xterm*color4: #773c8b
-!xterm*color12: #cb98b6
-!xterm*color5: #be3c7b
-!xterm*color13: #e998af
-!xterm*color6: #67838b
-!xterm*color14: #c4b7b6
-!xterm*color7: #c7c7c7
-!xterm*color15: #ffffff
+! Red theme ============================================================
 
-! Blue 2 theme (day) ===================================================
+!xterm*background: #000000
+!xterm*foreground: #ff5b5b
+!xterm*color0: #181221
+!xterm*color8: #625b6b
+!xterm*color1: #833e6d
+!xterm*color9: #cda7c6
+!xterm*color2: #647d4d
+!xterm*color10: #bdc7b6
+!xterm*color3: #835e4d
+!xterm*color11: #cdb7b6
+!xterm*color4: #445e8c
+!xterm*color12: #adb7d6
+!xterm*color5: #643e8c
+!xterm*color13: #bda7d6
+!xterm*color6: #447d6d
+!xterm*color14: #adc7c6
+!xterm*color7: #9892a1
+!xterm*color15: #e4deed
 
-xterm*background: #001b39
-xterm*foreground: #e5e5e5
+! Red theme best =======================================================
+
+xterm*background: #000000
+xterm*foreground: #e9493e
 xterm*color0: #000000
-xterm*color8: #575757
-xterm*color1: #cfa15b
-xterm*color9: #e7c993
-xterm*color2: #8ec17b
-xterm*color10: #c6d9a3
-xterm*color3: #aec15b
-xterm*color11: #d6d993
-xterm*color4: #ae819c
-xterm*color12: #d6b9b4
-xterm*color5: #cf817b
-xterm*color13: #e7b9a3
-xterm*color6: #8ea19c
-xterm*color14: #c6c9b4
-xterm*color7: #e5e5e5
+xterm*color8: #444444
+xterm*color1: #c13c3a
+xterm*color9: #e8b2b1
+xterm*color2: #3ac13c
+xterm*color10: #b1e8b2
+xterm*color3: #bfc13a
+xterm*color11: #e7e8b1
+xterm*color4: #3c3ac1
+xterm*color12: #b2b1e8
+xterm*color5: #c13abf
+xterm*color13: #e8b1e7
+xterm*color6: #3abfc1
+xterm*color14: #b1e7e8
+xterm*color7: #cacaca
 xterm*color15: #ffffff
 
-! Tyrkys theme =========================================================
-
-!xterm*background: #001517
-!xterm*foreground: #9ba0a2
-!xterm*color0: #000000
-!xterm*color8: #1c1c1c
-!xterm*color1: #b17851
-!xterm*color9: #bd8965
-!xterm*color2: #839463
-!xterm*color10: #96a074
-!xterm*color3: #9f9451
-!xterm*color11: #aea065
-!xterm*color4: #95667f
-!xterm*color12: #a6798b
-!xterm*color5: #b1666d
-!xterm*color13: #bd797d
-!xterm*color6: #83827f
-!xterm*color14: #96918b
-!xterm*color7: #cecece
-!xterm*color15: #ffffff
