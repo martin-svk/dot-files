@@ -6,9 +6,9 @@ XTerm*utf8: 1
 XTerm*termName: xterm-256color
 
 ! Font settings
-xterm*faceName: Ubuntu Mono
-xterm*faceSize: 11
-XTerm*allowBoldFonts: true
+xterm*faceName: Ubuntu Mono:style=bold
+xterm*faceSize: 10
+XTerm*allowBoldFonts: false
 
 ! for inclusion of all necessary environment variables
 xterm*loginshell: true

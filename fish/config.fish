@@ -37,5 +37,7 @@ function fish_prompt
 end
 
 function fish_greeting
+   echo ""
    screenfetch
+   echo ""
 end

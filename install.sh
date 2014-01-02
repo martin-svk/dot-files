@@ -18,9 +18,9 @@ if [ ! -f ~/.gitconfig ]; then
     echo "    Creating!"
     ln -s $current_path/gitconfig ~/.gitconfig
 else
-	echo "    Deleting old one!"
-	rm ~/.gitconfig
-	ln -s $current_path/gitconfig ~/.gitconfig
+  echo "    Deleting old one!"
+  rm ~/.gitconfig
+  ln -s $current_path/gitconfig ~/.gitconfig
 fi
 
 # Installing vim
@@ -30,17 +30,17 @@ if [ ! -f ~/.vimrc ]; then
     echo "        Creating!"
     ln -s $current_path/vimrc ~/.vimrc
 else
-	echo "        Deleting old one!"
-	rm ~/.vimrc
-	ln -s $current_path/vimrc ~/.vimrc
+  echo "        Deleting old one!"
+  rm ~/.vimrc
+  ln -s $current_path/vimrc ~/.vimrc
 fi
 
 if [ -d ~/.vim ]; then
-	ln -s $current_path/vim/colors ~/.vim/colors
-else  
-	mkdir ~/.vim
-	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-	ln -s $current_path/vim/colors ~/.vim/colors
+  ln -s $current_path/vim/colors ~/.vim/colors
+else
+  mkdir ~/.vim
+  git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+  ln -s $current_path/vim/colors ~/.vim/colors
 fi
 
 
@@ -51,9 +51,9 @@ if [ ! -f ~/.tmux.conf ]; then
     echo "    Creating!"
     ln -s $current_path/tmux.conf ~/.tmux.conf
 else
-	echo "    Deleting old one!"
-	rm ~/.tmux.conf
-	ln -s $current_path/tmux.conf ~/.tmux.conf
+  echo "    Deleting old one!"
+  rm ~/.tmux.conf
+  ln -s $current_path/tmux.conf ~/.tmux.conf
 fi
 
 
@@ -64,8 +64,7 @@ if [ ! -f ~/.Xresources ]; then
     echo "   Creating!"
     ln -s $current_path/Xresources ~/.Xresources
 else
-	echo "   Deleting old one!"
-	rm ~/.Xresources
-	ln -s $current_path/Xresources ~/.Xresources
+  echo "   Deleting old one!"
+  rm ~/.Xresources
+  ln -s $current_path/Xresources ~/.Xresources
 fi
-
