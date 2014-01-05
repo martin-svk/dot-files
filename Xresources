@@ -13,7 +13,7 @@ XTerm*allowBoldFonts: false
 ! for inclusion of all necessary environment variables
 xterm*loginshell: true
 
-! Scrollback setting 
+! Scrollback setting
 xterm*savelines: 10000
 
 ! double-click to select whole URLs :D
@@ -27,52 +27,8 @@ xterm*scrollTtyOutput: false
 
 ! ============================= COLORS =================================
 
-! Black theme ==========================================================
-
-!xterm*background: rgb:00/00/00
-!xterm*foreground: rgb:ff/ff/ff
-!xterm*color0:     rgb:00/00/00
-!xterm*color1:     rgb:d3/62/65
-!xterm*color2:     rgb:ae/ce/91
-!xterm*color3:     rgb:e7/e1/8c
-!xterm*color4:     rgb:7a/7a/b0
-!xterm*color5:     rgb:96/3c/59
-!xterm*color6:     rgb:41/81/79
-!xterm*color7:     rgb:be/be/be
-!xterm*color8:     rgb:66/66/66
-!xterm*color9:     rgb:ef/81/71
-!xterm*color10:    rgb:e5/f7/79
-!xterm*color11:    rgb:ff/f7/96
-!xterm*color12:    rgb:41/86/be
-!xterm*color13:    rgb:ef/9e/be
-!xterm*color14:    rgb:71/be/be
-!xterm*color15:    rgb:ff/ff/ff
-
-! Red theme ============================================================
-
-!xterm*background: #000000
-!xterm*foreground: #ff5b5b
-!xterm*color0: #181221
-!xterm*color8: #625b6b
-!xterm*color1: #833e6d
-!xterm*color9: #cda7c6
-!xterm*color2: #647d4d
-!xterm*color10: #bdc7b6
-!xterm*color3: #835e4d
-!xterm*color11: #cdb7b6
-!xterm*color4: #445e8c
-!xterm*color12: #adb7d6
-!xterm*color5: #643e8c
-!xterm*color13: #bda7d6
-!xterm*color6: #447d6d
-!xterm*color14: #adc7c6
-!xterm*color7: #9892a1
-!xterm*color15: #e4deed
-
-! Red theme best =======================================================
-
 xterm*background: #000000
-xterm*foreground: #e9493e
+xterm*foreground: #67AA63
 xterm*color0: #000000
 xterm*color8: #444444
 xterm*color1: #c13c3a
