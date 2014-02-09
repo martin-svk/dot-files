@@ -105,7 +105,7 @@ let mapleader=" "                                       " map leader to space
 " Specific for each plugin
 
 " Nerdtree mappings
-map <Leader>f :NERDTreeToggle<CR>                       " Leader - [f]ile
+map <Leader>f :NERDTreeToggle<CR>                       " Leader - [f]iles
 
 " CTRL-P mapping
 let g:ctrlp_map = '<c-p>'                               " Control and P like in sublime
@@ -115,4 +115,4 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:EasyMotion_leader_key = 'm'                       " Trigger easy motions by [m]otion
 
 " Color scheme setting (must be last)
-colorscheme wombat256mod
+colorscheme jellybeans
