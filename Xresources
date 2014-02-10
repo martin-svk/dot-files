@@ -27,8 +27,8 @@ xterm*scrollTtyOutput: false
 
 ! ============================= COLORS =================================
 
-xterm*background: #000000
-xterm*foreground: #67AA63
+xterm*background: #202020
+xterm*foreground: #949494
 xterm*color0: #000000
 xterm*color8: #444444
 xterm*color1: #c13c3a
@@ -45,4 +45,3 @@ xterm*color6: #3abfc1
 xterm*color14: #b1e7e8
 xterm*color7: #cacaca
 xterm*color15: #ffffff
-
