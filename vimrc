@@ -115,4 +115,4 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:EasyMotion_leader_key = 'm'                       " Trigger easy motions by [m]otion
 
 " Color scheme setting (must be last)
-colorscheme jellybeans
+colorscheme molokai
