@@ -121,3 +121,11 @@ export PS1="\[\e[32m\]\u\[\e[m\] on \[\e[33m\]\h\[\e[m\] in \[\e[36m\]\w\[\e[m\]
 echo ""
 screenfetch
 echo ""
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# RVM Init
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# RVM bash completion
+[[ -r /usr/local/rvm/scripts/completion ]] && . /usr/local/rvm/scripts/completion
