@@ -31,7 +31,9 @@ alias np='nano PKGBUILD'
 
 # Martin's aliases
 alias cdd='cd -'
-alias startmysql='sudo systemctl start mysqld'
+alias ss='sudo systemctl start'
+alias ssdb='sudo systemctl start mysqld'
+alias R="R --quiet"
 
 # ex - archive extractor
 # usage: ex <file>
