@@ -33,7 +33,10 @@ alias np='nano PKGBUILD'
 alias cdd='cd -'
 alias ss='sudo systemctl start'
 alias ssdb='sudo systemctl start mysqld'
-alias R="R --quiet"
+alias R="R --quiet
+alias winew="wine /home/martin/.wine/drive_c/Program\ Files/Microsoft\ Office/Office12/WINWORD.EXE"
+alias winee="wine /home/martin/.wine/drive_c/Program\ Files/Microsoft\ Office/Office12/EXCEL.EXE"
+alias winep="wine /home/martin/.wine/drive_c/Program\ Files/Microsoft\ Office/Office12/POWERPNT.EXE"
 
 # ex - archive extractor
 # usage: ex <file>
@@ -131,3 +134,7 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # RVM bash completion
 [[ -r /usr/local/rvm/scripts/completion ]] && . /usr/local/rvm/scripts/completion
+
+# Wine setting for Office
+export WINEPREFIX=/home/martin/.wine # any path to a writable folder on your home directory will do
+export WINEARCH="win32"
