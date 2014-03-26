@@ -24,6 +24,7 @@ ls = log --stat
 graph1 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%cr)%C(reset) %C(white)%s%C(reset) %C(bold white)— %cn%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
 graph2 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%cD%C(reset) %C(bold green)(%cr)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(bold white)— %cn%C(reset)' --abbrev-commit
 graph = !"git graph1"
-lol = log --oneline --graph --all --decorate
-	unstage = reset HEAD --
-	last = log -1 HEAD
+lol = log --oneline --graph --all --decorate 
+unstage = reset HEAD --
+last = log -1 HEAD
+wc = whatchanged -p --abbrev-commit --pretty=medium

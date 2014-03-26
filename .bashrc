@@ -32,7 +32,8 @@ alias np='nano PKGBUILD'
 # Martin's aliases
 alias cdd='cd -'
 alias ss='sudo systemctl start'
-alias ssdb='sudo systemctl start mysqld'
+alias ssmysql='sudo systemctl start mysqld'
+alias sspgsql='sudo systemctl start postgresql'
 alias R="R --quiet"
 alias winew="wine /home/martin/.wine/drive_c/Program\ Files/Microsoft\ Office/Office12/WINWORD.EXE"
 alias winee="wine /home/martin/.wine/drive_c/Program\ Files/Microsoft\ Office/Office12/EXCEL.EXE"
