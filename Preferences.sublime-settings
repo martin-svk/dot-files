@@ -1,0 +1,26 @@
+{
+	"atomic_save": false,
+	"caret_style": "solid",
+	"color_scheme": "Packages/Theme - itg.flat/itg.dark.tmTheme",
+	"drag_text": false,
+	"font_face": "Ubuntu Mono",
+	"font_options":
+	[
+		"bold"
+	],
+	"font_size": 13,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"itg_sidebar_tree_medium": true,
+	"itg_xsmall_tabs": true,
+	"rulers":
+	[
+		120
+	],
+	"tab_size": 2,
+	"theme": "itg.flat.dark.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"update_check": false
+}
