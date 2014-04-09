@@ -13,18 +13,20 @@
 [core]
     editor = vim
 [alias]
-a = add .
+a = add --all
 co = checkout
+ll = pull
+sh = push
 st = status
 ci = commit
 br = branch
-l = log --oneline
-lg = log --pretty=format:'%h | %cd | %an | %s'
-ls = log --stat
-graph1 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%cr)%C(reset) %C(white)%s%C(reset) %C(bold white)— %cn%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
-graph2 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%cD%C(reset) %C(bold green)(%cr)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(bold white)— %cn%C(reset)' --abbrev-commit
-graph = !"git graph1"
-lol = log --oneline --graph --all --decorate 
+lo = log --oneline -n 15
+lg = log --pretty=format:'%h | %cd | %an | %s' -n 15
+ls = log --stat -n 15
+g1 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%cr)%C(reset) %C(white)%s%C(reset) %C(bold white)— %cn%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+g2 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%cD%C(reset) %C(bold green)(%cr)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(bold white)— %cn%C(reset)' --abbrev-commit
+
+lol = log --oneline --graph --all --decorate
 unstage = reset HEAD --
 last = log -1 HEAD
 wc = whatchanged -p --abbrev-commit --pretty=medium
