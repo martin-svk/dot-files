@@ -15,8 +15,8 @@
 [alias]
 a = add --all
 co = checkout
-ll = pull
-sh = push
+pl = pull
+ps = push
 st = status
 ci = commit
 br = branch
