@@ -34,10 +34,8 @@ alias cdd='cd -'
 alias ss='sudo systemctl start'
 alias ssmysql='sudo systemctl start mysqld'
 alias sspgsql='sudo systemctl start postgresql'
-alias R="R --quiet"
-alias winew="wine /home/martin/.wine/drive_c/Program\ Files/Microsoft\ Office/Office12/WINWORD.EXE"
-alias winee="wine /home/martin/.wine/drive_c/Program\ Files/Microsoft\ Office/Office12/EXCEL.EXE"
-alias winep="wine /home/martin/.wine/drive_c/Program\ Files/Microsoft\ Office/Office12/POWERPNT.EXE"
+alias R='R --quiet'
+alias g='git'
 
 # ex - archive extractor
 # usage: ex <file>
