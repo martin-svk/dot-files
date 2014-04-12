@@ -36,6 +36,8 @@ alias ssmysql='sudo systemctl start mysqld'
 alias sspgsql='sudo systemctl start postgresql'
 alias R='R --quiet'
 alias g='git'
+alias be='bundle exec'
+alias r='rails'
 
 # ex - archive extractor
 # usage: ex <file>
