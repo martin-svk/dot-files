@@ -7,7 +7,7 @@
 
 # ======= Necessary variables ======
 
-current_path=`pwd`       # config files path
+current_path=`pwd`  # config files path
 
 # ======= Installing all dotfiles ======
 
