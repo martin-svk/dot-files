@@ -124,9 +124,9 @@ function parse_git_dirty {
 export PS1="\[\e[32m\]\u\[\e[m\] on \[\e[33m\]\h\[\e[m\] in \[\e[36m\]\w\[\e[m\] at \[\e[35m\]\`parse_git_branch\`\[\e[m\] \\$ "
 
 # run screenfetch on startup
-echo ""
-screenfetch
-echo ""
+# echo ""
+# screenfetch
+# echo ""
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
