@@ -121,7 +121,11 @@ function parse_git_dirty {
 	fi
 }
 
-export PS1="\[\e[32m\]\u\[\e[m\] on \[\e[33m\]\h\[\e[m\] in \[\e[36m\]\w\[\e[m\] at \[\e[35m\]\`parse_git_branch\`\[\e[m\] \\$ "
+function get_ruby_version {
+  echo $(ruby -e 'print "ruby-" + RUBY_VERSION')
+}
+
+export PS1="\[\e[32m\]\u\[\e[m\] on \[\e[33m\]\h\[\e[m\] in \[\e[36m\]\w\[\e[m\] at \[\e[35m\]\`parse_git_branch\`\[\e[m\] with \[\e[31m\][\$(get_ruby_version)]\[\e[m\] \\$ "
 
 # run screenfetch on startup
 # echo ""
@@ -131,11 +135,8 @@ export PS1="\[\e[32m\]\u\[\e[m\] on \[\e[33m\]\h\[\e[m\] in \[\e[36m\]\w\[\e[m\]
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # RVM Init
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # RVM bash completion
 [[ -r /usr/local/rvm/scripts/completion ]] && . /usr/local/rvm/scripts/completion
 
-# Wine setting for Office
-export WINEPREFIX=/home/martin/.wine # any path to a writable folder on your home directory will do
-export WINEARCH="win32"
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
