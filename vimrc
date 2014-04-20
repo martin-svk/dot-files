@@ -7,7 +7,7 @@
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-" PLugins bundles
+" Plugins bundles
 
 " Vundle itself
 Bundle 'gmarik/vundle'
@@ -25,6 +25,16 @@ Bundle 'scrooloose/syntastic'
 Bundle 'Lokaltog/vim-easymotion'
 " Rails vim plugin
 Bundle 'tpope/vim-rails'
+" Slim templating syntax highliting
+Bundle 'slim-template/vim-slim.git'
+" Buffer explorer and easier navigation
+Bundle 'jlanzarotta/bufexplorer'
+" Basic ruby related features
+Bundle 'vim-ruby/vim-ruby'
+" The ulti snips engine.
+Bundle 'SirVer/ultisnips'
+" Snippets for python, js, html, ruby... 
+Bundle 'honza/vim-snippets'
 
 " Basic settings
 " ======================================================================================================================
@@ -112,7 +122,15 @@ let g:ctrlp_map = '<c-p>'                               " Control and P like in 
 let g:ctrlp_cmd = 'CtrlP'
 
 " Easy motion mapping
-let g:EasyMotion_leader_key = 'm'                       " Trigger easy motions by [m]otion
+let g:EasyMotion_leader_key = 'g'                       " Trigger easy motions by [g]oto
+
+" Rails vim plugin mapping
+map <Leader>c :Rcontroller<CR>
+map <Leader>v :Rview<CR>
+map <Leader>m :Rmodel<CR>
+
+" Ultisnips settings
+let g:UltiSnipsExpandTrigger="<tab>"
 
 " Color scheme setting (must be last)
 colorscheme tomorrow-night
