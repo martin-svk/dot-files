@@ -106,13 +106,32 @@ let g:airline#extensions#tabline#left_alt_sep = '|'     " alternative separator
 " CTRL-P settings
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:10,results:10'
 
+" Ultisnips settings
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" Setting ruby autocomple
+let g:rubycomplete_buffer_loading=1
+let g:rubycomplete_classes_in_global=1
+let g:rubycomplete_rails = 1
+let g:rubycomplete_load_gemfile = 1
+
 " Mapping settings
 " ======================================================================================================================
 
 " Let commands (setting keys)
 let mapleader=" "                                       " map leader to space
 
+" Mappings for default vim commands to keys
+map <Leader>s :nohl<CR>                                 " map space+s to switch off search results
+
+" Swapping colon for semicolon to faster access to cmd line
+nnoremap : ;
+nnoremap ; :
+
 " Specific for each plugin
+" ======================================================================================================================
 
 " Nerdtree mappings
 map <Leader>f :NERDTreeToggle<CR>                       " Leader - [f]iles
@@ -122,15 +141,16 @@ let g:ctrlp_map = '<c-p>'                               " Control and P like in 
 let g:ctrlp_cmd = 'CtrlP'
 
 " Easy motion mapping
-let g:EasyMotion_leader_key = 'g'                       " Trigger easy motions by [g]oto
+let g:EasyMotion_leader_key = 'm'                       " Trigger easy [m]otions by
+
+" Buffer switching mapping
+map <Leader>j :bp<CR>
+map <Leader>k :bn<CR> 
 
 " Rails vim plugin mapping
 map <Leader>c :Rcontroller<CR>
 map <Leader>v :Rview<CR>
 map <Leader>m :Rmodel<CR>
-
-" Ultisnips settings
-let g:UltiSnipsExpandTrigger="<tab>"
 
 " Color scheme setting (must be last)
 colorscheme tomorrow-night

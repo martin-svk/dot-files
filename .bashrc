@@ -31,13 +31,14 @@ alias np='nano PKGBUILD'
 
 # Martin's aliases
 alias cdd='cd -'
-alias ss='sudo systemctl start'
-alias ssmysql='sudo systemctl start mysqld'
-alias sspgsql='sudo systemctl start postgresql'
+alias ss='sudo service start'
+alias ssmysql='sudo service mysql start'
+alias sspgsql='sudo service postgresql start'
 alias R='R --quiet'
 alias g='git'
 alias be='bundle exec'
 alias r='rails'
+alias v='vim'
 
 # ex - archive extractor
 # usage: ex <file>
