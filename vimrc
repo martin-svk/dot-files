@@ -126,10 +126,6 @@ let mapleader=" "                                       " map leader to space
 " Mappings for default vim commands to keys
 map <Leader>s :nohl<CR>                                 " map space+s to switch off search results
 
-" Swapping colon for semicolon to faster access to cmd line
-nnoremap : ;
-nnoremap ; :
-
 " Specific for each plugin
 " ======================================================================================================================
 
