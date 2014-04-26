@@ -11,7 +11,7 @@ xterm*faceSize: 12
 XTerm*allowBoldFonts: false
 
 ! for inclusion of all necessary environment variables
-xterm*loginshell: true
+xterm*loginShell: false
 
 ! Scrollback setting
 xterm*savelines: 10000

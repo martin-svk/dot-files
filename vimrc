@@ -13,10 +13,12 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 " Nerdtree file browser
 Bundle 'scrooloose/nerdtree'
+" Make nerdtree as stable left tab
+Bundle 'jistr/vim-nerdtree-tabs'
 " Airline (improved statusline)
 Bundle 'bling/vim-airline'
 " Commentary support
-Bundle 'tpope/vim-commentary'
+Bundle 'scrooloose/nerdcommenter'
 " Fuzzy file, buffer, MRU finder (CTRL-P)
 Bundle 'kien/ctrlp.vim'
 " Syntax checking plugin (syntastic)
@@ -33,10 +35,21 @@ Bundle 'jlanzarotta/bufexplorer'
 Bundle 'vim-ruby/vim-ruby'
 " The ulti snips engine.
 Bundle 'SirVer/ultisnips'
-" Snippets for python, js, html, ruby... 
+" Snippets for python, js, html, ruby...
 Bundle 'honza/vim-snippets'
-" Solarized themes
-Bundle 'altercation/vim-colors-solarized'
+" Tagbar for displaying exuberant ctags
+Bundle 'majutsushi/tagbar'
+" Relative line numbers
+Bundle 'myusuf3/numbers.vim'
+" Change surroundings
+Bundle 'tpope/vim-surround'
+" Multiple cursors vim support
+Bundle 'terryma/vim-multiple-cursors'
+" Trailing spaces deleter and highlighter
+Bundle 'bronson/vim-trailing-whitespace'
+" Supertab for tab triggering completion
+Bundle 'ervandew/supertab'
+
 
 " Basic settings
 " ======================================================================================================================
@@ -44,15 +57,16 @@ Bundle 'altercation/vim-colors-solarized'
 set shell=bash\ --norc  " Setting vim shell to bash (using fish)
 set nocompatible        " No compatible with vi mode
 set number              " Line numbers
-set noignorecase        " Dont ignore cases
+set noignorecase        " Don't ignore cases
 set laststatus=2        " Always show status line
-set showmode            " Akways show mode
+set showmode            " Always show mode
 set wildmenu            " Better auto-complete of ex commands
 set textwidth=80        " Text with is 80 chars
 set autoread            " Automatically reload change files on disk
 set bg=dark             " Dark background setting (dark theme version of current color)
 set cursorline          " Set default cursor line (highlighting is done by color scheme)
 set cmdheight=1         " Command line height
+set previewheight=10    " Completion window max size
 
 " Filetype settings
 syntax on               " Syntax coloring
@@ -114,29 +128,38 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " Setting ruby autocomple
-let g:rubycomplete_buffer_loading=1
-let g:rubycomplete_classes_in_global=1
-let g:rubycomplete_rails = 1
-let g:rubycomplete_load_gemfile = 1
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading=1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd FileType ruby,eruby let g:rubycomplete_load_gemfile = 1
+
+" Supertab settings
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " Mapping settings
 " ======================================================================================================================
 
-" Let commands (setting keys)
-let mapleader=" "                                       " map leader to space
+" Setting leader
+let mapleader="\<space>"                                " map leader to space
 
 " Mappings for default vim commands to keys
-map <Leader>s :nohl<CR>                                 " map space+s to switch off search results
+map <Leader>h :nohl<CR>                                 " map space+h to switch off search results [h]ighlight
 
 " Window resizing keys
 map <Leader>= :vertical resize +5<CR>
 map <Leader>- :vertical resize -5<CR>
 
+" Spellcheck toggle mapping
+nmap <silent> <Leader>s :set spell!<CR>
+
 " Specific for each plugin
 " ======================================================================================================================
 
 " Nerdtree mappings
-map <Leader>f :NERDTreeToggle<CR>                       " Leader - [f]iles
+map <Leader>f :NERDTreeTabsToggle<CR>                   " Show the [f]iles window
+
+" Tagbar mapping
+map <Leader>t :TagbarToggle<CR>                         " Show the [t]agbar window
 
 " CTRL-P mapping
 let g:ctrlp_map = '<c-p>'                               " Control and P like in sublime
@@ -147,7 +170,7 @@ let g:EasyMotion_leader_key = 'm'                       " Trigger easy [m]otions
 
 " Buffer switching mapping
 map <Leader>j :bp<CR>
-map <Leader>k :bn<CR> 
+map <Leader>k :bn<CR>
 
 " Rails vim plugin mapping
 map <Leader>c :Rcontroller<CR>
