@@ -1,13 +1,17 @@
+" ======================================================================================================================
 " Author : Martin Toma
 " Date created : Tue Nov 12 14:14:56 CET 2013
 " vimrc config file for RAILS development
+" ======================================================================================================================
 
 " Bundler setting
+" ======================================================================================================================
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " Plugins bundles
+" ======================================================================================================================
 
 " Vundle itself
 Bundle 'gmarik/vundle'
@@ -51,6 +55,8 @@ Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'ervandew/supertab'
 " Solarized color scheme
 Bundle 'altercation/vim-colors-solarized'
+" Git changes displayer
+Bundle 'airblade/vim-gitgutter'
 
 " Basic settings
 " ======================================================================================================================
@@ -97,6 +103,7 @@ set shiftwidth=2
 set softtabstop=2
 
 " Color settings
+" ======================================================================================================================
 
 " Xterm 256 colors
 if $TERM == "xterm-256color"
@@ -112,13 +119,17 @@ set t_Co=256
     let &colorcolumn=121
 endif
 
+" scheme
+colorscheme Tomorrow-Night-Eighties
+
 " Plugin settings
 " ======================================================================================================================
 
 " Airline settings
 let g:airline#extensions#tabline#enabled=1              " enabled nice tabs support
 let g:airline#extensions#tabline#left_sep = ' '         " separators setting
-let g:airline#extensions#tabline#left_alt_sep = '|'     " alternative separator
+let g:airline#extensions#tabline#left_alt_sep = '>'     " alternative separator
+let g:airline_powerline_fonts = 1                       " powerline font symbols
 
 " CTRL-P settings
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:10,results:10'
@@ -139,6 +150,9 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " Solarized cscheme 256 settings
 let g:solarized_termcolors=256
+
+" Git gutter settings (signcolumn color)
+highlight clear SignColumn
 
 " Mapping settings
 " ======================================================================================================================
@@ -180,6 +194,3 @@ map <Leader>k :bn<CR>
 map <Leader>c :Rcontroller<CR>
 map <Leader>v :Rview<CR>
 map <Leader>m :Rmodel<CR>
-
-" Color scheme setting (must be last)
-colorscheme Tomorrow-Night-Eighties

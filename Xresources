@@ -6,7 +6,7 @@ XTerm*utf8: 1
 XTerm*termName: xterm-256color
 
 ! Font settings
-xterm*faceName: Ubuntu Mono:style=bold
+xterm*faceName: Ubuntu Mono derivative Powerline:style=bold
 xterm*faceSize: 12
 XTerm*allowBoldFonts: false
 
