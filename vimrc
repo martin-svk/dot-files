@@ -35,6 +35,8 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'SirVer/ultisnips'
 " Snippets for python, js, html, ruby... 
 Bundle 'honza/vim-snippets'
+" Solarized themes
+Bundle 'altercation/vim-colors-solarized'
 
 " Basic settings
 " ======================================================================================================================
@@ -125,6 +127,10 @@ let mapleader=" "                                       " map leader to space
 
 " Mappings for default vim commands to keys
 map <Leader>s :nohl<CR>                                 " map space+s to switch off search results
+
+" Window resizing keys
+map <Leader>= :vertical resize +5<CR>
+map <Leader>- :vertical resize -5<CR>
 
 " Specific for each plugin
 " ======================================================================================================================
