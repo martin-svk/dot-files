@@ -39,6 +39,8 @@ alias g='git'
 alias be='bundle exec'
 alias r='rails'
 alias v='vim'
+alias update='sudo apt-get update'
+alias upgrade='sudo apt-get upgrade'
 
 # ex - archive extractor
 # usage: ex <file>
