@@ -49,7 +49,8 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'bronson/vim-trailing-whitespace'
 " Supertab for tab triggering completion
 Bundle 'ervandew/supertab'
-
+" Solarized color scheme
+Bundle 'altercation/vim-colors-solarized'
 
 " Basic settings
 " ======================================================================================================================
@@ -136,6 +137,9 @@ autocmd FileType ruby,eruby let g:rubycomplete_load_gemfile = 1
 " Supertab settings
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
+" Solarized cscheme 256 settings
+let g:solarized_termcolors=256
+
 " Mapping settings
 " ======================================================================================================================
 
@@ -178,4 +182,4 @@ map <Leader>v :Rview<CR>
 map <Leader>m :Rmodel<CR>
 
 " Color scheme setting (must be last)
-colorscheme tomorrow-night
+colorscheme Tomorrow-Night-Eighties
