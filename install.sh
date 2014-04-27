@@ -11,7 +11,7 @@ current_path=`pwd`  # config files path
 
 # ======= Installing all dotfiles ======
 
-# Installing git
+# Installing GIT
 echo -n "[ gitconfig ]"
 
 if [ ! -f ~/.gitconfig ]; then
