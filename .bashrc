@@ -31,7 +31,7 @@ alias np='nano PKGBUILD'
 
 # Martin's aliases
 alias cdd='cd -'
-alias ss='sudo service start'
+alias ss='sudo service'
 alias ssmysql='sudo service mysql start'
 alias sspgsql='sudo service postgresql start'
 alias R='R --quiet'
@@ -41,8 +41,11 @@ alias r='rails'
 alias v='vim'
 alias update='sudo apt-get update'
 alias upgrade='sudo apt-get upgrade'
+alias dist-upgrade='sudo apt-get dist-upgrade'
 alias install='sudo apt-get install'
 alias remove='sudo apt-get remove'
+alias purge='sudo apt-get purge'
+alias autoremove='sudo apt-get autoremove'
 
 # ex - archive extractor
 # usage: ex <file>
@@ -126,24 +129,20 @@ function parse_git_dirty {
 	fi
 }
 
+# get ruby version
 function get_ruby_version {
   echo $(ruby -e 'print "ruby-" + RUBY_VERSION')
 }
 
+# Create custom prompt line
 export PS1="\[\e[32m\]\u\[\e[m\] on \[\e[33m\]\h\[\e[m\] in \[\e[36m\]\w\[\e[m\] at \[\e[35m\]\`parse_git_branch\`\[\e[m\] with \[\e[31m\][\$(get_ruby_version)]\[\e[m\] \\$ "
 
-# run screenfetch on startup
-# echo ""
-# screenfetch
-# echo ""
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin
 
 # RVM Init
-
 # RVM bash completion
 [[ -r /usr/local/rvm/scripts/completion ]] && . /usr/local/rvm/scripts/completion
-
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # Merge Xresource
