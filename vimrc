@@ -33,8 +33,6 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-rails'
 " Slim templating syntax highliting
 Bundle 'slim-template/vim-slim.git'
-" Buffer explorer and easier navigation
-Bundle 'jlanzarotta/bufexplorer'
 " Basic ruby related features
 Bundle 'vim-ruby/vim-ruby'
 " The ulti snips engine.
@@ -57,6 +55,14 @@ Bundle 'ervandew/supertab'
 Bundle 'altercation/vim-colors-solarized'
 " Git changes displayer
 Bundle 'airblade/vim-gitgutter'
+" Better JSON syntax
+Bundle 'elzr/vim-json'
+" Autoclosing brackets and quotes
+Bundle 'Townk/vim-autoclose'
+" YANK history management
+Bundle 'maxbrunsfeld/vim-yankstack'
+" Special start screen
+Bundle 'mhinz/vim-startify'
 
 " Basic settings
 " ======================================================================================================================
@@ -102,6 +108,28 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 
+" Don't redraw while executing macros (good performance config)
+set lazyredraw
+
+" For regular expressions turn magic on
+set magic
+"
+" Show matching brackets when text indicator is over them
+set showmatch
+" How many tenths of a second to blink when matching brackets
+set mat=2
+
+" Add a bit extra margin to the left
+set foldcolumn=1
+
+" Set utf8 as standard encoding and en_US as the standard language
+set encoding=utf8
+
+" Turn backup off, since most stuff is in SVN, git et.c anyway...
+set nobackup
+set nowb
+set noswapfile
+
 " Color settings
 " ======================================================================================================================
 
@@ -132,7 +160,7 @@ let g:airline#extensions#tabline#left_alt_sep = '>'     " alternative separator
 let g:airline_powerline_fonts = 1                       " powerline font symbols
 
 " CTRL-P settings
-let g:ctrlp_match_window = 'top,order:ttb,min:1,max:10,results:10'
+let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:10,results:10'
 
 " Ultisnips settings
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -154,6 +182,7 @@ let g:solarized_termcolors=256
 " Git gutter settings (signcolumn color)
 highlight clear SignColumn
 
+" ======================================================================================================================
 " Mapping settings
 " ======================================================================================================================
 
@@ -194,3 +223,11 @@ map <Leader>k :bn<CR>
 map <Leader>c :Rcontroller<CR>
 map <Leader>v :Rview<CR>
 map <Leader>m :Rmodel<CR>
+
+" CtrlP mapping
+map <c-m> :CtrlPMRUFiles<CR>
+map <c-l> :CtrlPBuffer<CR>
+
+" YANK register mapping
+nmap <leader>p <Plug>yankstack_substitute_older_paste
+nmap <leader>P <Plug>yankstack_substitute_newer_paste
