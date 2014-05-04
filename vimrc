@@ -82,6 +82,7 @@ set bg=dark             " Dark background setting (dark theme version of current
 set cursorline          " Set default cursor line (highlighting is done by color scheme)
 set cmdheight=1         " Command line height
 set previewheight=10    " Completion window max size
+set iskeyword-=_        " Set underscore is a word separator
 
 " Filetype settings
 syntax on               " Syntax coloring
