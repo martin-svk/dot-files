@@ -138,7 +138,8 @@ function get_ruby_version {
 }
 
 # Create custom prompt line
-export PS1="\[\e[33m\]\u\[\e[m\] at \[\e[36m\]\`parse_git_branch\`\[\e[m\] with \[\e[31m\][\$(get_ruby_version)]\[\e[m\] => "
+export PS1="\[\e[33m\]\u\[\e[m\] at \[\e[36m\]\`parse_git_branch\`\[\e[m\] with \[\e[31m\][\$(get_ruby_version)]\[\e[m\] \$ "
+#export PS1=" \$ "
 
 # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/.rvm/bin
