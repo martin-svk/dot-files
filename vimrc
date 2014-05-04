@@ -17,7 +17,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 " Nerdtree file browser
 Bundle 'scrooloose/nerdtree'
-" Make nerdtree as stable left tab
+" Treat Nerdtree as solid tab
 Bundle 'jistr/vim-nerdtree-tabs'
 " Airline (improved statusline)
 Bundle 'bling/vim-airline'
@@ -61,8 +61,10 @@ Bundle 'elzr/vim-json'
 Bundle 'Townk/vim-autoclose'
 " YANK history management
 Bundle 'maxbrunsfeld/vim-yankstack'
-" Special start screen
-Bundle 'mhinz/vim-startify'
+" AG search from vim
+Bundle 'ervandew/ag'
+" Graphical undo tree
+Bundle 'sjl/gundo.vim'
 
 " Basic settings
 " ======================================================================================================================
@@ -199,6 +201,10 @@ map <Leader>- :vertical resize -5<CR>
 " Spellcheck toggle mapping
 nmap <silent> <Leader>s :set spell!<CR>
 
+" Map save to ctrl-s
+nmap <c-s> :w<CR>
+imap <c-s> <Esc>:w<CR>a
+
 " Specific for each plugin
 " ======================================================================================================================
 
@@ -231,3 +237,6 @@ map <c-l> :CtrlPBuffer<CR>
 " YANK register mapping
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
+
+" Gundo tree mapping
+nnoremap <Leader>u :GundoToggle<CR>

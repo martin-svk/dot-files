@@ -47,6 +47,9 @@ alias remove='sudo apt-get remove'
 alias purge='sudo apt-get purge'
 alias autoremove='sudo apt-get autoremove'
 
+# ssh servers
+alias s-pinta='ssh team11@calculon.fiit.stuba.sk -p 30022'
+
 # ex - archive extractor
 # usage: ex <file>
 ex ()
@@ -135,7 +138,7 @@ function get_ruby_version {
 }
 
 # Create custom prompt line
-export PS1="\[\e[32m\]\u\[\e[m\] on \[\e[33m\]\h\[\e[m\] in \[\e[36m\]\w\[\e[m\] at \[\e[35m\]\`parse_git_branch\`\[\e[m\] with \[\e[31m\][\$(get_ruby_version)]\[\e[m\] \\$ "
+export PS1="\[\e[33m\]\u\[\e[m\] at \[\e[36m\]\`parse_git_branch\`\[\e[m\] with \[\e[31m\][\$(get_ruby_version)]\[\e[m\] => "
 
 # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/.rvm/bin
@@ -144,6 +147,10 @@ PATH=$PATH:$HOME/.rvm/bin
 # RVM bash completion
 [[ -r /usr/local/rvm/scripts/completion ]] && . /usr/local/rvm/scripts/completion
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# Disable CTRL-S / CTRL-Q
+stty ixany
+stty ixoff -ixon
 
 # Merge Xresource
 xrdb -merge ~/.Xresources
