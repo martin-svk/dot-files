@@ -83,27 +83,11 @@ set cursorline          " Set default cursor line (highlighting is done by color
 set cmdheight=1         " Command line height
 set previewheight=10    " Completion window max size
 set iskeyword-=_        " Set underscore is a word separator
-
-" Filetype settings
-syntax on               " Syntax coloring
-filetype off            " Required by Bundler
-filetype plugin on      " Specific plugins by filetype
-filetype indent on      " Specific intendation
-
-" Search settings
+set timeoutlen=200      " Setting timeout to just half a second
 set hlsearch            " Highlight search
 set incsearch           " Incremental search
-
-" Buffer settings
 set hidden              " Enables to switch between unsaved buffers and keep undo history
-
-" Disabling arrow keys
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-" Disabling space key
-map <Space> <nop>
+set foldenable          " Enable code folding
 
 " Intedation settings (2 spaces tabs)
 set autoindent
@@ -116,22 +100,35 @@ set lazyredraw
 
 " For regular expressions turn magic on
 set magic
-"
+
 " Show matching brackets when text indicator is over them
 set showmatch
+
 " How many tenths of a second to blink when matching brackets
 set mat=2
-
-" Add a bit extra margin to the left
-set foldcolumn=1
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
 
-" Turn backup off, since most stuff is in SVN, git et.c anyway...
+" Turn backup off, since most stuff is in git
 set nobackup
 set nowb
 set noswapfile
+
+" Filetype settings
+syntax on               " Syntax coloring
+filetype off            " Required by Bundler
+filetype plugin on      " Specific plugins by filetype
+filetype indent on      " Specific intendation
+
+" Disabling arrow keys
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+" Disabling space key
+map <Space> <nop>
 
 " Color settings
 " ======================================================================================================================
@@ -199,12 +196,20 @@ map <Leader>h :nohl<CR>                                 " map space+h to switch 
 map <Leader>= :vertical resize +5<CR>
 map <Leader>- :vertical resize -5<CR>
 
-" Spellcheck toggle mapping
-nmap <silent> <Leader>s :set spell!<CR>
+" Spellcheck toggle mapping, leader s using as split window
+" nmap <silent> <Leader>s :set spell!<CR>
 
 " Map save to ctrl-s
 nmap <c-s> :w<CR>
 imap <c-s> <Esc>:w<CR>a
+
+" Split window shortcuts
+map <Leader>s :split<CR>
+map <Leader>v :vsplit<CR>
+
+" Creating bubbling like feature
+nmap <C-k> ddkP
+nmap <C-j> ddp
 
 " Specific for each plugin
 " ======================================================================================================================
@@ -227,9 +232,9 @@ map <Leader>j :bp<CR>
 map <Leader>k :bn<CR>
 
 " Rails vim plugin mapping
-map <Leader>c :Rcontroller<CR>
-map <Leader>v :Rview<CR>
-map <Leader>m :Rmodel<CR>
+map gc :Rcontroller<CR>                                 " [g]o [c]ontroller, etc
+map gv :Rview<CR>
+map gm :Rmodel<CR>
 
 " CtrlP mapping
 map <c-m> :CtrlPMRUFiles<CR>
