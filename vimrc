@@ -148,7 +148,7 @@ set t_Co=256
 endif
 
 " scheme
-colorscheme Tomorrow-Night-Eighties
+colorscheme solarized
 
 " Plugin settings
 " ======================================================================================================================

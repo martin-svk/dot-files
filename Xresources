@@ -6,7 +6,7 @@ XTerm*utf8: 1
 XTerm*termName: xterm-256color
 
 ! Font settings
-xterm*faceName: Ubuntu Mono derivative Powerline:style=bold
+xterm*faceName: Ubuntu Mono:Bold
 xterm*faceSize: 12
 XTerm*allowBoldFonts: false
 
@@ -25,153 +25,132 @@ xterm*ScrollBar: false
 ! stop output to terminal from jumping down to bottom of scroll again
 xterm*scrollTtyOutput: false
 
-! ============================= COLORS =================================
-
-!xterm*background: #2D2D2D
-!xterm*foreground: #B5B5B5
-!xterm*color0: #000000
-!xterm*color8: #444444
-!xterm*color1: #c13c3a
-!xterm*color9: #e8b2b1
-!xterm*color2: #3ac13c
-!xterm*color10: #b1e8b2
-!xterm*color3: #bfc13a
-!xterm*color11: #e7e8b1
-!xterm*color4: #3c3ac1
-!xterm*color12: #b2b1e8
-!xterm*color5: #c13abf
-!xterm*color13: #e8b1e7
-!xterm*color6: #3abfc1
-!xterm*color14: #b1e7e8
-!xterm*color7: #cacaca
-!xterm*color15: #ffffff
-
 ! ============================= SOLARIZED =================================
-!! drop in Solarized colorscheme for Xresources/Xdefaults
+! drop in Solarized colorscheme for Xresources/Xdefaults
 
-!!SOLARIZED HEX     16/8 TERMCOL  XTERM/HEX   L*A*B      RGB         HSB
-!!--------- ------- ---- -------  ----------- ---------- ----------- -----------
-!!base03    #002b36  8/4 brblack  234 #1c1c1c 15 -12 -12   0  43  54 193 100  21
-!!base02    #073642  0/4 black    235 #262626 20 -12 -12   7  54  66 192  90  26
-!!base01    #586e75 10/7 brgreen  240 #585858 45 -07 -07  88 110 117 194  25  46
-!!base00    #657b83 11/7 bryellow 241 #626262 50 -07 -07 101 123 131 195  23  51
-!!base0     #839496 12/6 brblue   244 #808080 60 -06 -03 131 148 150 186  13  59
-!!base1     #93a1a1 14/4 brcyan   245 #8a8a8a 65 -05 -02 147 161 161 180   9  63
-!!base2     #eee8d5  7/7 white    254 #e4e4e4 92 -00  10 238 232 213  44  11  93
-!!base3     #fdf6e3 15/7 brwhite  230 #ffffd7 97  00  10 253 246 227  44  10  99
-!!yellow    #b58900  3/3 yellow   136 #af8700 60  10  65 181 137   0  45 100  71
-!!orange    #cb4b16  9/3 brred    166 #d75f00 50  50  55 203  75  22  18  89  80
-!!red       #dc322f  1/1 red      160 #d70000 50  65  45 220  50  47   1  79  86
-!!magenta   #d33682  5/5 magenta  125 #af005f 50  65 -05 211  54 130 331  74  83
-!!violet    #6c71c4 13/5 brmagenta 61 #5f5faf 50  15 -45 108 113 196 237  45  77
-!!blue      #268bd2  4/4 blue      33 #0087ff 55 -10 -45  38 139 210 205  82  82
-!!cyan      #2aa198  6/6 cyan      37 #00afaf 60 -35 -05  42 161 152 175  74  63
-!!green     #859900  2/2 green     64 #5f8700 60 -20  65 133 153   0  68 100  60
+!SOLARIZED HEX     16/8 TERMCOL  XTERM/HEX   L*A*B      RGB         HSB
+!--------- ------- ---- -------  ----------- ---------- ----------- -----------
+!base03    #002b36  8/4 brblack  234 #1c1c1c 15 -12 -12   0  43  54 193 100  21
+!base02    #073642  0/4 black    235 #262626 20 -12 -12   7  54  66 192  90  26
+!base01    #586e75 10/7 brgreen  240 #585858 45 -07 -07  88 110 117 194  25  46
+!base00    #657b83 11/7 bryellow 241 #626262 50 -07 -07 101 123 131 195  23  51
+!base0     #839496 12/6 brblue   244 #808080 60 -06 -03 131 148 150 186  13  59
+!base1     #93a1a1 14/4 brcyan   245 #8a8a8a 65 -05 -02 147 161 161 180   9  63
+!base2     #eee8d5  7/7 white    254 #e4e4e4 92 -00  10 238 232 213  44  11  93
+!base3     #fdf6e3 15/7 brwhite  230 #ffffd7 97  00  10 253 246 227  44  10  99
+!yellow    #b58900  3/3 yellow   136 #af8700 60  10  65 181 137   0  45 100  71
+!orange    #cb4b16  9/3 brred    166 #d75f00 50  50  55 203  75  22  18  89  80
+!red       #dc322f  1/1 red      160 #d70000 50  65  45 220  50  47   1  79  86
+!magenta   #d33682  5/5 magenta  125 #af005f 50  65 -05 211  54 130 331  74  83
+!violet    #6c71c4 13/5 brmagenta 61 #5f5faf 50  15 -45 108 113 196 237  45  77
+!blue      #268bd2  4/4 blue      33 #0087ff 55 -10 -45  38 139 210 205  82  82
+!cyan      #2aa198  6/6 cyan      37 #00afaf 60 -35 -05  42 161 152 175  74  63
+!green     #859900  2/2 green     64 #5f8700 60 -20  65 133 153   0  68 100  60
 
-!#define S_base03        #002b36
-!#define S_base02        #073642
-!#define S_base01        #586e75
-!#define S_base00        #657b83
-!#define S_base0         #839496
-!#define S_base1         #93a1a1
-!#define S_base2         #eee8d5
-!#define S_base3         #fdf6e3
-!#define S_yellow        #b58900
-!#define S_orange        #cb4b16
-!#define S_red           #dc322f
-!#define S_magenta       #d33682
-!#define S_violet        #6c71c4
-!#define S_blue          #268bd2
-!#define S_cyan          #2aa198
-!#define S_green         #859900
+#define S_base03        #002b36
+#define S_base02        #073642
+#define S_base01        #586e75
+#define S_base00        #657b83
+#define S_base0         #839496
+#define S_base1         #93a1a1
+#define S_base2         #eee8d5
+#define S_base3         #fdf6e3
+#define S_yellow        #b58900
+#define S_orange        #cb4b16
+#define S_red           #dc322f
+#define S_magenta       #d33682
+#define S_violet        #6c71c4
+#define S_blue          #268bd2
+#define S_cyan          #2aa198
+#define S_green         #859900
 
-!xterm*background:            S_base03
-!xterm*foreground:            S_base00
-!xterm*fading:                40
-!xterm*fadeColor:             S_base03
-!xterm*cursorColor:           S_base1
-!xterm*pointerColorBackground:S_base01
-!xterm*pointerColorForeground:S_base1
+xterm*background:            S_base03
+xterm*foreground:            S_base00
+xterm*fading:                40
+xterm*fadeColor:             S_base03
+xterm*cursorColor:           S_base1
+xterm*pointerColorBackground:S_base01
+xterm*pointerColorForeground:S_base1
 
-!!! black dark/light
-!xterm*color0:                S_base02
-!xterm*color8:                S_base03
+!! black dark/light
+xterm*color0:                S_base02
+xterm*color8:                S_base03
 
-!!! red dark/light
-!xterm*color1:                S_red
-!xterm*color9:                S_orange
+!! red dark/light
+xterm*color1:                S_red
+xterm*color9:                S_orange
 
-!!! green dark/light
-!xterm*color2:                S_green
-!xterm*color10:               S_base01
+!! green dark/light
+xterm*color2:                S_green
+xterm*color10:               S_base01
 
-!!! yellow dark/light
-!xterm*color3:                S_yellow
-!xterm*color11:               S_base00
+!! yellow dark/light
+xterm*color3:                S_yellow
+xterm*color11:               S_base00
 
-!!! blue dark/light
-!xterm*color4:                S_blue
-!xterm*color12:               S_base0
+!! blue dark/light
+xterm*color4:                S_blue
+xterm*color12:               S_base0
 
-!!! magenta dark/light
-!xterm*color5:                S_magenta
-!xterm*color13:               S_violet
+!! magenta dark/light
+xterm*color5:                S_magenta
+xterm*color13:               S_violet
 
-!!! cyan dark/light
-!xterm*color6:                S_cyan
-!xterm*color14:               S_base1
+!! cyan dark/light
+xterm*color6:                S_cyan
+xterm*color14:               S_base1
 
-!!! white dark/light
-!xterm*color7:                S_base2
-!xterm*color15:               S_base3
+!! white dark/light
+xterm*color7:                S_base2
+xterm*color15:               S_base3
 
 ! ============================= TomorrowNightEighties =================================
-#define t_background        #2d2d2d
-#define t_current_line      #393939
-#define t_selection      	#515151
-#define t_foreground      	#cccccc
-#define t_comment	     	#999999
-#define t_red		     	#f2777a
-#define t_orange	     	#f99157
-#define t_yellow        	#ffcc66
-#define t_green	        	#99cc99
-#define t_aqua	        	#66cccc
-#define t_blue	        	#6699cc
-#define t_purple        	#cc99cc
+!#define t_background        #2d2d2d
+!#define t_current_line      #393939
+!#define t_selection      	#515151
+!#define t_foreground      	#cccccc
+!#define t_comment	     	#999999
+!#define t_red		     	#f2777a
+!#define t_orange	     	#f99157
+!#define t_yellow        	#ffcc66
+!#define t_green	        	#99cc99
+!#define t_aqua	        	#66cccc
+!#define t_blue	        	#6699cc
+!#define t_purple        	#cc99cc
 
 
-xterm*foreground:   t_foreground
-xterm*background:   t_background
-xterm*cursorColor:  #aeafad
+!xterm*foreground:   t_foreground
+!xterm*background:   t_background
+!xterm*cursorColor:  #aeafad
 
 ! Black / Grey
-xterm*color0:       #000000
-xterm*color8:       #666666
+!xterm*color0:       #000000
+!xterm*color8:       #666666
 
 ! Red / Bright Red
-xterm*color1:       t_red
-xterm*color9:       #FF3334
+!xterm*color1:       t_red
+!xterm*color9:       #FF3334
 
 ! Green + Bright Green
-xterm*color2:       t_green
-xterm*color10:      #9ec400
+!xterm*color2:       t_green
+!xterm*color10:      #9ec400
 
 ! Yellow (Orange) + Bright Yellow (Yellow)
-xterm*color3:       t_orange
-xterm*color11:      t_yellow
+!xterm*color3:       t_orange
+!xterm*color11:      t_yellow
 
 ! Blue + Bright Blue
-xterm*color4:       t_blue
-xterm*color12:      t_blue
+!xterm*color4:       t_blue
+!xterm*color12:      t_blue
 
 ! Magenta (Purple) + Bright Magenta
-xterm*color5:       t_purple
-xterm*color13:      #b777e0
+!xterm*color5:       t_purple
+!xterm*color13:      #b777e0
 
 ! Cyan (Aqua) + Bright Cyan
-xterm*color6:       t_aqua
-xterm*color14:      #54ced6
+!xterm*color6:       t_aqua
+!xterm*color14:      #54ced6
 
 ! Light Grey (Selection) + White (Current Line)
-xterm*color7:       t_selection
-xterm*color15:      t_current_line
+!xterm*color7:       t_selection
+!xterm*color15:      t_current_line
