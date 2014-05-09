@@ -164,7 +164,7 @@ let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:10,results:10'
 
 " Ultisnips settings
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpForwardTrigger="<c-n>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " Setting ruby autocomple
