@@ -27,7 +27,6 @@ alias grep='grep --color=tty -d skip'
 alias cp="cp -i"                          # confirm before overwriting something
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
-alias np='nano PKGBUILD'
 
 # Martin's aliases
 alias cdd='cd -'
@@ -90,45 +89,9 @@ function parse_git_branch() {
 	BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
 	if [ ! "${BRANCH}" == "" ]
 	then
-		STAT=`parse_git_dirty`
-		echo "[${BRANCH}${STAT}]"
+		echo "[${BRANCH}]"
 	else
 		echo "[no branch]"
-	fi
-}
-
-# get current status of git repo
-function parse_git_dirty {
-	status=`git status 2>&1 | tee`
-	dirty=`echo -n "${status}" 2> /dev/null | grep "modified:" &> /dev/null; echo "$?"`
-	untracked=`echo -n "${status}" 2> /dev/null | grep "Untracked files" &> /dev/null; echo "$?"`
-	ahead=`echo -n "${status}" 2> /dev/null | grep "Your branch is ahead of" &> /dev/null; echo "$?"`
-	newfile=`echo -n "${status}" 2> /dev/null | grep "new file:" &> /dev/null; echo "$?"`
-	renamed=`echo -n "${status}" 2> /dev/null | grep "renamed:" &> /dev/null; echo "$?"`
-	deleted=`echo -n "${status}" 2> /dev/null | grep "deleted:" &> /dev/null; echo "$?"`
-	bits=''
-	if [ "${renamed}" == "0" ]; then
-		bits=">${bits}"
-	fi
-	if [ "${ahead}" == "0" ]; then
-		bits="*${bits}"
-	fi
-	if [ "${newfile}" == "0" ]; then
-		bits="+${bits}"
-	fi
-	if [ "${untracked}" == "0" ]; then
-		bits="?${bits}"
-	fi
-	if [ "${deleted}" == "0" ]; then
-		bits="x${bits}"
-	fi
-	if [ "${dirty}" == "0" ]; then
-		bits="!${bits}"
-	fi
-	if [ ! "${bits}" == "" ]; then
-		echo " ${bits}"
-	else
-		echo ""
 	fi
 }
 
@@ -139,7 +102,6 @@ function get_ruby_version {
 
 # Create custom prompt line
 export PS1="\[\e[33m\]\u\[\e[m\] at \[\e[36m\]\`parse_git_branch\`\[\e[m\] with \[\e[31m\][\$(get_ruby_version)]\[\e[m\] \$ "
-#export PS1=" \$ "
 
 # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/.rvm/bin
@@ -152,6 +114,3 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # Disable CTRL-S / CTRL-Q
 stty ixany
 stty ixoff -ixon
-
-# Merge Xresource
-xrdb -merge ~/.Xresources
