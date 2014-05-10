@@ -41,8 +41,6 @@ Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
 " Tagbar for displaying exuberant ctags
 Bundle 'majutsushi/tagbar'
-" Relative line numbers
-Bundle 'myusuf3/numbers.vim'
 " Change surroundings
 Bundle 'tpope/vim-surround'
 " Multiple cursors vim support
@@ -65,6 +63,8 @@ Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'ervandew/ag'
 " Graphical undo tree
 Bundle 'sjl/gundo.vim'
+" Window handler and autoresizer
+Bundle 'zhaocai/GoldenView.Vim'
 
 " Basic settings
 " ======================================================================================================================
@@ -88,6 +88,7 @@ set hlsearch            " Highlight search
 set incsearch           " Incremental search
 set hidden              " Enables to switch between unsaved buffers and keep undo history
 set foldenable          " Enable code folding
+set relativenumber      " Relative numbering
 
 " Intedation settings (2 spaces tabs)
 set autoindent
@@ -148,7 +149,7 @@ set t_Co=256
 endif
 
 " scheme
-colorscheme jellybeans
+colorscheme solarized
 
 " Plugin settings
 " ======================================================================================================================
@@ -157,7 +158,8 @@ colorscheme jellybeans
 let g:airline#extensions#tabline#enabled=1              " enabled nice tabs support
 let g:airline#extensions#tabline#left_sep = ' '         " separators setting
 let g:airline#extensions#tabline#left_alt_sep = '>'     " alternative separator
-let g:airline_powerline_fonts = 1                       " powerline font symbols
+let g:airline_powerline_fonts = 0                       " powerline font symbols
+let g:airline_theme = 'tomorrow'
 
 " CTRL-P settings
 let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:10,results:10'
@@ -182,6 +184,9 @@ let g:solarized_termcolors=256
 " Git gutter settings (signcolumn color)
 highlight clear SignColumn
 
+" Goldenview setting
+let g:goldenview__enable_default_mapping = 0
+
 " ======================================================================================================================
 " Mapping settings
 " ======================================================================================================================
@@ -193,8 +198,10 @@ let mapleader="\<space>"                                " map leader to space
 map <Leader>h :nohl<CR>                                 " map space+h to switch off search results [h]ighlight
 
 " Window resizing keys
-map <Leader>= :vertical resize +5<CR>
-map <Leader>- :vertical resize -5<CR>
+nnoremap <silent> = :vertical resize +5<CR>
+nnoremap <silent> + :resize +5<CR>
+nnoremap <silent> - :vertical resize -5<CR>
+nnoremap <silent> _ :resize -5<CR>
 
 " Spellcheck toggle mapping, leader s using as split window
 " nmap <silent> <Leader>s :set spell!<CR>
@@ -202,10 +209,6 @@ map <Leader>- :vertical resize -5<CR>
 " Map save to ctrl-s
 nmap <c-s> :w<CR>
 imap <c-s> <Esc>:w<CR>a
-
-" Split window shortcuts
-map <Leader>s :split<CR>
-map <Leader>v :vsplit<CR>
 
 " Creating bubbling like feature
 nmap <C-k> ddkP
@@ -228,21 +231,24 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:EasyMotion_leader_key = 'm'                       " Trigger easy [m]otions by
 
 " Buffer switching mapping
-map <Leader>j :bp<CR>
-map <Leader>k :bn<CR>
+map gj :bp<CR>                                          " [g]o j or k in open tabs
+map gk :bn<CR>
 
 " Rails vim plugin mapping
 map gc :Rcontroller<CR>                                 " [g]o [c]ontroller, etc
 map gv :Rview<CR>
 map gm :Rmodel<CR>
 
-" CtrlP mapping
-map <c-m> :CtrlPMRUFiles<CR>
+" CtrlP mapping (revision)
 map <c-l> :CtrlPBuffer<CR>
 
-" YANK register mapping
+" YANK register mapping - needs revision
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
 
 " Gundo tree mapping
 nnoremap <Leader>u :GundoToggle<CR>
+
+" Goldenview mappings
+nmap <silent> <Leader>s <Plug>GoldenViewSplit
+nmap <silent> <Leader>m <Plug>GoldenViewSwitchMain
