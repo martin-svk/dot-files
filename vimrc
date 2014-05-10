@@ -81,7 +81,7 @@ set autoread            " Automatically reload change files on disk
 set bg=dark             " Dark background setting (dark theme version of current color)
 set cursorline          " Set default cursor line (highlighting is done by color scheme)
 set cmdheight=1         " Command line height
-set previewheight=10    " Completion window max size
+set pumheight=10        " Completion window max size
 set iskeyword-=_        " Set underscore is a word separator
 set timeoutlen=200      " Setting timeout to just half a second
 set hlsearch            " Highlight search
