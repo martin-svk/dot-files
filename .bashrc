@@ -38,6 +38,8 @@ alias g='git'
 alias be='bundle exec'
 alias r='rails'
 alias v='vim'
+alias p='pwd'
+alias rv='ruby -v'
 alias update='sudo apt-get update'
 alias upgrade='sudo apt-get upgrade'
 alias dist-upgrade='sudo apt-get dist-upgrade'
@@ -97,13 +99,16 @@ function parse_git_branch() {
 
 # get ruby version
 function get_ror_version {
+  echo -n $(ruby -v | cut -d ' ' -f 2)
+  echo -n " => "
   echo -n $(rails -v | cut -d ' ' -f 2)
-  #echo -n " => "
-  #echo -n $(ruby -v | cut -d ' ' -f 2)
 }
 
-# Create custom prompt line
-export PS1="\[\e[33m\]\u\[\e[m\] in \[\e[35m\]\w\[\e[m\] at \[\e[36m\]\`parse_git_branch\`\[\e[m\] riding \[\e[31m\][\$(get_ror_version)]\[\e[m\] \$ "
+# Create custom prompt lines
+#export PS1="\[\e[36m\]\u\[\e[m\] in \[\e[36m\]\w\[\e[m\] on \[\e[36m\]\`parse_git_branch\`\[\e[m\] riding \[\e[36m\][\$(get_ror_version)]\[\e[m\] \$ "
+#export PS1="\[\e[36m\]\u\[\e[m\] in \[\e[36m\]\w\[\e[m\] on \[\e[36m\]\`parse_git_branch\`\[\e[m\] \$ "
+#export PS1="\[\e[36m\]\u\[\e[m\] in \[\e[36m\]\w\[\e[m\] \$ "
+export PS1="\$ "
 
 # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/.rvm/bin
