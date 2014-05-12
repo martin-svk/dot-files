@@ -6,8 +6,8 @@ XTerm*utf8: 1
 XTerm*termName: xterm-256color
 
 ! Font settings
-xterm*faceName: Dejavu Sans Mono:Bold
-xterm*faceSize: 10
+xterm*faceName: Inconsolata:Bold
+xterm*faceSize: 12
 XTerm*allowBoldFonts: false
 
 ! for inclusion of all necessary environment variables
