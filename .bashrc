@@ -20,6 +20,7 @@ export HISTSIZE=10000
 export HISTFILESIZE=${HISTSIZE}
 export HISTCONTROL=ignoreboth
 
+alias l='ls'
 alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
 alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
 alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
@@ -91,9 +92,9 @@ function parse_git_branch() {
 	BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
 	if [ ! "${BRANCH}" == "" ]
 	then
-		echo "[${BRANCH}]"
+		echo " [${BRANCH}]"
 	else
-		echo "[no branch]"
+		echo ""
 	fi
 }
 
@@ -108,7 +109,8 @@ function get_ror_version {
 #export PS1="\[\e[36m\]\u\[\e[m\] in \[\e[36m\]\w\[\e[m\] on \[\e[36m\]\`parse_git_branch\`\[\e[m\] riding \[\e[36m\][\$(get_ror_version)]\[\e[m\] \$ "
 #export PS1="\[\e[36m\]\u\[\e[m\] in \[\e[36m\]\w\[\e[m\] on \[\e[36m\]\`parse_git_branch\`\[\e[m\] \$ "
 #export PS1="\[\e[36m\]\u\[\e[m\] in \[\e[36m\]\w\[\e[m\] \$ "
-export PS1="\$ "
+export PS1="\[\e[36m\]\w\[\e[m\]\[\e[33m\]\`parse_git_branch\`\[\e[m\] \$ "
+#export PS1="\$ "
 
 # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/.rvm/bin
