@@ -149,7 +149,7 @@ set t_Co=256
 endif
 
 " scheme
-colorscheme solarized
+colorscheme jellybeans
 
 " Plugin settings
 " ======================================================================================================================
@@ -159,7 +159,6 @@ let g:airline#extensions#tabline#enabled=1              " enabled nice tabs supp
 let g:airline#extensions#tabline#left_sep = ' '         " separators setting
 let g:airline#extensions#tabline#left_alt_sep = '>'     " alternative separator
 let g:airline_powerline_fonts = 0                       " powerline font symbols
-let g:airline_theme = 'tomorrow'
 
 " CTRL-P settings
 let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:10,results:10'
