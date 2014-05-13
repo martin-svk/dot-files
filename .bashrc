@@ -123,3 +123,8 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # Disable CTRL-S / CTRL-Q
 stty ixany
 stty ixoff -ixon
+
+# Tmuxinator autocompletion
+if [ -f ~/bin/tmuxinator.bash ]; then
+  source ~/.bin/tmuxinator.bash
+fi
