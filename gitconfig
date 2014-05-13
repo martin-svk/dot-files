@@ -12,7 +12,6 @@
 	ui = true
 [core]
     editor = vim
-	autocrlf = input
 [alias]
 a = add --all
 di = diff --staged

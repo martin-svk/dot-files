@@ -126,5 +126,5 @@ stty ixoff -ixon
 
 # Tmuxinator autocompletion
 if [ -f ~/bin/tmuxinator.bash ]; then
-  source ~/.bin/tmuxinator.bash
+  source ~/bin/tmuxinator.bash
 fi
