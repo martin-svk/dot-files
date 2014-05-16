@@ -17,8 +17,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 " Nerdtree file browser
 Bundle 'scrooloose/nerdtree'
-" Treat Nerdtree as solid tab
-Bundle 'jistr/vim-nerdtree-tabs'
 " Airline (improved statusline)
 Bundle 'bling/vim-airline'
 " Commentary support
@@ -117,10 +115,10 @@ set nowb
 set noswapfile
 
 " Filetype settings
-syntax on               " Syntax coloring
-filetype off            " Required by Bundler
-filetype plugin on      " Specific plugins by filetype
-filetype indent on      " Specific intendation
+syntax on
+filetype off
+filetype plugin on
+filetype indent on
 
 " Disabling arrow keys
 map <up> <nop>
@@ -155,10 +153,10 @@ colorscheme jellybeans
 " ======================================================================================================================
 
 " Airline settings
-let g:airline#extensions#tabline#enabled=1              " enabled nice tabs support
-let g:airline#extensions#tabline#left_sep = ' '         " separators setting
-let g:airline#extensions#tabline#left_alt_sep = '>'     " alternative separator
-let g:airline_powerline_fonts = 0                       " powerline font symbols
+let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '>'
+let g:airline_powerline_fonts = 0
 
 " CTRL-P settings
 let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:10,results:10'
@@ -191,10 +189,10 @@ let g:goldenview__enable_default_mapping = 0
 " ======================================================================================================================
 
 " Setting leader
-let mapleader="\<space>"                                " map leader to space
+let mapleader="\<space>"
 
 " Mappings for default vim commands to keys
-map <Leader>h :nohl<CR>                                 " map space+h to switch off search results [h]ighlight
+map <Leader>h :nohl<CR>
 
 " Window resizing keys
 nnoremap <silent> = :vertical resize +5<CR>
@@ -217,24 +215,24 @@ nmap <C-j> ddp
 " ======================================================================================================================
 
 " Nerdtree mappings
-map <Leader>f :NERDTreeTabsToggle<CR>                   " Show the [f]iles window
+map <Leader>f :NERDTreeToggle<CR>
 
 " Tagbar mapping
-map <Leader>t :TagbarToggle<CR>                         " Show the [t]agbar window
+map <Leader>t :TagbarToggle<CR>
 
 " CTRL-P mapping
-let g:ctrlp_map = '<c-p>'                               " Control and P like in sublime
+let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
 " Easy motion mapping
-let g:EasyMotion_leader_key = 'm'                       " Trigger easy [m]otions by
+let g:EasyMotion_leader_key = 'm'
 
 " Buffer switching mapping
-map gj :bp<CR>                                          " [g]o j or k in open tabs
+map gj :bp<CR>
 map gk :bn<CR>
 
 " Rails vim plugin mapping
-map gc :Rcontroller<CR>                                 " [g]o [c]ontroller, etc
+map gc :Rcontroller<CR>
 map gv :Rview<CR>
 map gm :Rmodel<CR>
 

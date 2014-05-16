@@ -39,7 +39,6 @@ alias g='git'
 alias be='bundle exec'
 alias r='rails'
 alias v='vim'
-alias p='pwd'
 alias rv='ruby -v'
 alias update='sudo apt-get update'
 alias upgrade='sudo apt-get upgrade'
@@ -51,6 +50,7 @@ alias autoremove='sudo apt-get autoremove'
 
 # ssh servers
 alias s-pinta='ssh team11@calculon.fiit.stuba.sk -p 30022'
+alias s-nitrous='ssh action@euw1-2.nitrousbox.com -p 21326'
 
 # ex - archive extractor
 # usage: ex <file>
@@ -125,6 +125,14 @@ stty ixany
 stty ixoff -ixon
 
 # Tmuxinator autocompletion
-if [ -f ~/bin/tmuxinator.bash ]; then
-  source ~/bin/tmuxinator.bash
+if [ -f ~/bin/completion/tmuxinator.bash ]; then
+  source ~/bin/completion/tmuxinator.bash
 fi
+
+# Rails autocomplete
+if [ -f ~/bin/completion/rails.bash ]; then
+  source ~/bin/completion/rails.bash
+fi
+
+# exporting
+export PATH
