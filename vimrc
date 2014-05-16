@@ -222,7 +222,8 @@ map <Leader>t :TagbarToggle<CR>
 
 " CTRL-P mapping
 let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_cmd = 'CtrlPMixed'
+map <c-l> :CtrlPBufTagAll<CR>
 
 " Easy motion mapping
 let g:EasyMotion_leader_key = 'm'
@@ -235,9 +236,6 @@ map gk :bn<CR>
 map gc :Rcontroller<CR>
 map gv :Rview<CR>
 map gm :Rmodel<CR>
-
-" CtrlP mapping (revision)
-map <c-l> :CtrlPBuffer<CR>
 
 " YANK register mapping - needs revision
 nmap <leader>p <Plug>yankstack_substitute_older_paste
