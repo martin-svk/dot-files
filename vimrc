@@ -67,7 +67,7 @@ Bundle 'zhaocai/GoldenView.Vim'
 " Basic settings
 " ======================================================================================================================
 
-set shell=bash\ --norc  " Setting vim shell to bash (using fish)
+set shell=bash\ --norc  " Setting vim shell to bash
 set nocompatible        " No compatible with vi mode
 set number              " Line numbers
 set noignorecase        " Don't ignore cases
@@ -81,12 +81,14 @@ set cursorline          " Set default cursor line (highlighting is done by color
 set cmdheight=1         " Command line height
 set pumheight=10        " Completion window max size
 set iskeyword-=_        " Set underscore is a word separator
-set timeoutlen=200      " Setting timeout to just half a second
+set timeoutlen=200      " Setting ESC timeout
 set hlsearch            " Highlight search
 set incsearch           " Incremental search
 set hidden              " Enables to switch between unsaved buffers and keep undo history
 set foldenable          " Enable code folding
 set relativenumber      " Relative numbering
+set clipboard+=unnamed  " Use system clipboard
+set history=256         " Number of things to remember in history
 
 " Intedation settings (2 spaces tabs)
 set autoindent
@@ -185,7 +187,7 @@ let g:goldenview__enable_default_mapping = 0
 " ======================================================================================================================
 if strftime("%H") < 16
   set background=light
-  colorscheme solarized
+  colorscheme github
 else
   set background=dark
   colorscheme jellybeans
