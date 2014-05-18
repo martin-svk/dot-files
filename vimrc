@@ -187,7 +187,7 @@ let g:goldenview__enable_default_mapping = 0
 " ======================================================================================================================
 if strftime("%H") < 16
   set background=light
-  colorscheme github
+  colorscheme tomorrow
 else
   set background=dark
   colorscheme jellybeans
