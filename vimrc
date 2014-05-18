@@ -141,13 +141,10 @@ endif
 
 " Tmux/screen 256 colors support
 if $TERM == "screen-256color"
-set t_Co=256
+    set t_Co=256
     " Set colorcolumn
     let &colorcolumn=121
 endif
-
-" scheme
-colorscheme jellybeans
 
 " Plugin settings
 " ======================================================================================================================
@@ -183,6 +180,17 @@ highlight clear SignColumn
 
 " Goldenview setting
 let g:goldenview__enable_default_mapping = 0
+
+" Color scheme settings
+" ======================================================================================================================
+if strftime("%H") < 16
+  set background=light
+  colorscheme solarized
+else
+  set background=dark
+  colorscheme jellybeans
+endif
+
 
 " ======================================================================================================================
 " Mapping settings
