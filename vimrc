@@ -37,8 +37,6 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'SirVer/ultisnips'
 " Snippets for python, js, html, ruby...
 Bundle 'honza/vim-snippets'
-" Tagbar for displaying exuberant ctags
-Bundle 'majutsushi/tagbar'
 " Change surroundings
 Bundle 'tpope/vim-surround'
 " Multiple cursors vim support
@@ -61,8 +59,14 @@ Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'ervandew/ag'
 " Graphical undo tree
 Bundle 'sjl/gundo.vim'
-" Window handler and autoresizer
-Bundle 'zhaocai/GoldenView.Vim'
+" Seek, easy motion for long lines
+Bundle 'goldfeld/vim-seek'
+" Automatically inserts end wisely
+Bundle 'tpope/vim-endwise'
+" HAML support for vim
+Bundle 'tpope/vim-haml'
+" Coffescript support for vim
+Bundle 'kchmck/vim-coffee-script'
 
 " Basic settings
 " ======================================================================================================================
@@ -183,11 +187,14 @@ highlight clear SignColumn
 " Goldenview setting
 let g:goldenview__enable_default_mapping = 0
 
-" Color scheme settings
+" Color scheme time based settings
 " ======================================================================================================================
-if strftime("%H") < 16
+if strftime("%H") < 14
   set background=light
   colorscheme tomorrow
+elseif strftime("%H") < 18
+  set background=dark
+  colorscheme molokai
 else
   set background=dark
   colorscheme jellybeans
@@ -227,12 +234,10 @@ nmap <C-j> ddp
 " Nerdtree mappings
 map <Leader>f :NERDTreeToggle<CR>
 
-" Tagbar mapping
-map <Leader>t :TagbarToggle<CR>
-
 " CTRL-P mapping
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMixed'
+" No need for tagbar now
 map <c-l> :CtrlPBufTagAll<CR>
 
 " Easy motion mapping
@@ -245,7 +250,9 @@ map gk :bn<CR>
 " Rails vim plugin mapping
 map gc :Rcontroller<CR>
 map gv :Rview<CR>
-map gm :Rmodel<CR>
+" for goto model use gf (go file)
+map ga :A<CR>
+map gr :R<CR>
 
 " YANK register mapping - needs revision
 nmap <leader>p <Plug>yankstack_substitute_older_paste
@@ -254,6 +261,8 @@ nmap <leader>P <Plug>yankstack_substitute_newer_paste
 " Gundo tree mapping
 nnoremap <Leader>u :GundoToggle<CR>
 
-" Goldenview mappings
-nmap <silent> <Leader>s <Plug>GoldenViewSplit
-nmap <silent> <Leader>m <Plug>GoldenViewSwitchMain
+" Multiple cursors mapping (c-p and c-x is for visual mode)
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
