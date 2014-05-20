@@ -90,9 +90,9 @@ set hlsearch            " Highlight search
 set incsearch           " Incremental search
 set hidden              " Enables to switch between unsaved buffers and keep undo history
 set foldenable          " Enable code folding
-set relativenumber      " Relative numbering
 set clipboard+=unnamed  " Use system clipboard
 set history=256         " Number of things to remember in history
+"set relativenumber      " Relative numbering
 
 " Intedation settings (2 spaces tabs)
 set autoindent
@@ -189,7 +189,7 @@ let g:goldenview__enable_default_mapping = 0
 
 " Color scheme time based settings
 " ======================================================================================================================
-if strftime("%H") < 14
+if strftime("%H") < 13
   set background=light
   colorscheme tomorrow
 elseif strftime("%H") < 18
