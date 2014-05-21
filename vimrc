@@ -197,7 +197,7 @@ elseif strftime("%H") < 18
   colorscheme molokai
 else
   set background=dark
-  colorscheme jellybeans
+  colorscheme hybrid
 endif
 
 
