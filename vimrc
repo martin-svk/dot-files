@@ -189,14 +189,11 @@ let g:goldenview__enable_default_mapping = 0
 
 " Color scheme time based settings
 " ======================================================================================================================
-if strftime("%H") < 13
-  set background=light
-  colorscheme tomorrow
-elseif strftime("%H") < 18
-  set background=dark
-  colorscheme molokai
+set background=dark
+
+if strftime("%H") < 16
+  colorscheme tomorrow-night
 else
-  set background=dark
   colorscheme hybrid
 endif
 
