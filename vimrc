@@ -191,7 +191,7 @@ let g:goldenview__enable_default_mapping = 0
 " ======================================================================================================================
 set background=dark
 
-if strftime("%H") < 16
+if strftime("%H") < 15
   colorscheme tomorrow-night
 else
   colorscheme hybrid

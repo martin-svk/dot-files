@@ -4,7 +4,7 @@
 [credential]
 	helper = cache --timeout=3600
 [core]
-	excludesfile = /home/martin/.gitignore_global
+	excludesfile = ~/.gitignore
 [push]
 	default = simple
 [color]

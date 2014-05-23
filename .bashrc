@@ -60,6 +60,7 @@ alias sspgsql='sudo service postgresql start'
 alias R='R --quiet'
 alias g='git'
 alias v='vim'
+alias msql='mysql -uroot -p'
 
 # Rails
 alias r='rails'
@@ -155,46 +156,25 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-# SSH autocompletion
-if [ -f ~/bin/completion/ssh.comletion.bash ]; then
-  source ~/bin/completion/ssh.comletion.bash
-fi
-
-# Gem autocompletion
-if [ -f ~/bin/completion/gem.completion.bash ]; then
-  source ~/bin/completion/gem.completion.bash
-fi
-
-# Rake autocompletion
-if [ -f ~/bin/completion/rake.completion.bash ]; then
-  source ~/bin/completion/rake.completion.bash
-fi
-
-# Tmux autocompletion
-if [ -f ~/bin/completion/tmux.completion.bash ]; then
-  source ~/bin/completion/tmux.completion.bash
-fi
-
 # Tmuxinator autocompletion
 if [ -f ~/bin/completion/tmuxinator.bash ]; then
   source ~/bin/completion/tmuxinator.bash
 fi
 
-# RVM Init, RVM bash completion
-[[ -r /usr/local/rvm/scripts/completion ]] && . /usr/local/rvm/scripts/completion
-
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# RVM Init, RVM bash completion
+[[ -r /usr/local/rvm/scripts/completion ]] && . /usr/local/rvm/scripts/completion
 
 # =====================================================================================================================
 # Path setting and export
 # =====================================================================================================================
 
 # Add RVM to PATH for scripting
-PATH=$PATH:$HOME/.rvm/bin
 PATH=$PATH:/home/martin/.gem/ruby/2.0.0/bin
-
-# Export path
+export PATH
+PATH=$PATH:$HOME/.rvm/bin
 export PATH
 
 # =====================================================================================================================
