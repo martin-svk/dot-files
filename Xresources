@@ -13,7 +13,7 @@ xterm*termName: xterm-256color
 xterm*faceName: Dejavu Sans Mono:Bold
 !xterm*faceName: Inconsolata:Bold
 !xterm*faceName: Ubuntu Mono:Bold
-xterm*faceSize: 9
+xterm*faceSize: 10
 xterm*allowBoldFonts: false
 
 ! for inclusion of all necessary environment variables

@@ -92,7 +92,7 @@ set hidden              " Enables to switch between unsaved buffers and keep und
 set foldenable          " Enable code folding
 set clipboard+=unnamed  " Use system clipboard
 set history=256         " Number of things to remember in history
-"set relativenumber      " Relative numbering
+set relativenumber      " Relative numbering
 
 " Intedation settings (2 spaces tabs)
 set autoindent
@@ -183,9 +183,6 @@ let g:solarized_termcolors=256
 
 " Git gutter settings (signcolumn color)
 highlight clear SignColumn
-
-" Goldenview setting
-let g:goldenview__enable_default_mapping = 0
 
 " Color scheme time based settings
 " ======================================================================================================================
