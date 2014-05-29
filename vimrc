@@ -45,8 +45,6 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'bronson/vim-trailing-whitespace'
 " Supertab for tab triggering completion
 Bundle 'ervandew/supertab'
-" Solarized color scheme
-Bundle 'altercation/vim-colors-solarized'
 " Git changes displayer
 Bundle 'airblade/vim-gitgutter'
 " Better JSON syntax
@@ -67,6 +65,13 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-haml'
 " Coffescript support for vim
 Bundle 'kchmck/vim-coffee-script'
+" Color schemes
+" Molokai color scheme
+Bundle 'tomasr/molokai'
+" Hybrid color scheme
+Bundle 'w0ng/vim-hybrid'
+" Jellybeans color scheme
+Bundle 'nanotech/jellybeans.vim'
 
 " Basic settings
 " ======================================================================================================================
@@ -156,8 +161,8 @@ endif
 " ======================================================================================================================
 
 " Airline settings
-let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#left_alt_sep = '>'
 let g:airline_powerline_fonts = 0
 
@@ -178,9 +183,6 @@ autocmd FileType ruby,eruby let g:rubycomplete_load_gemfile = 1
 " Supertab settings
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
-" Solarized cscheme 256 settings
-let g:solarized_termcolors=256
-
 " Git gutter settings (signcolumn color)
 highlight clear SignColumn
 
@@ -189,7 +191,9 @@ highlight clear SignColumn
 set background=dark
 
 if strftime("%H") < 15
-  colorscheme tomorrow-night
+  let g:airline_theme='zenburn'
+  let g:molokai_original = 1
+  colorscheme molokai
 else
   colorscheme hybrid
 endif
