@@ -57,21 +57,15 @@ alias ssmysql='sudo service mysql start'
 alias sspgsql='sudo service postgresql start'
 
 # Applications
-alias R='R --quiet'
 alias g='git'
 alias v='vim'
 alias msql='mysql -uroot -p'
 
+# Ruby
+alias rv='ruby -v'
+
 # Rails
 alias r='rails'
-alias rg='rails g'
-alias rs='rails s'
-alias rc='rails c'
-alias rn='rails new'
-alias rd='rails dbconsole'
-alias rp='rails plugin'
-alias ra='rails application'
-alias rd='rails destroy'
 
 # Rake
 alias dbc='rake db:create'
@@ -127,7 +121,7 @@ function parse_git_branch() {
 	BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
 	if [ ! "${BRANCH}" == "" ]
 	then
-		echo " [${BRANCH}]"
+		echo " [${BRANCH}] [`get_ror_version`]"
 	else
 		echo ""
 	fi

@@ -10,7 +10,6 @@ xterm*customization: -color
 xterm*termName: xterm-256color
 
 ! Font settings
-!xterm*faceName: Dejavu Sans Mono:Bold
 !xterm*faceName: Inconsolata:Bold
 xterm*faceName: Ubuntu Mono:Bold
 xterm*faceSize: 11

@@ -97,7 +97,7 @@ set hidden              " Enables to switch between unsaved buffers and keep und
 set foldenable          " Enable code folding
 set clipboard+=unnamed  " Use system clipboard
 set history=256         " Number of things to remember in history
-set relativenumber      " Relative numbering
+"set relativenumber      " Relative numbering
 
 " Intedation settings (2 spaces tabs)
 set autoindent
