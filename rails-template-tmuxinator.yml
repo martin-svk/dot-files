@@ -1,0 +1,20 @@
+# ~/.tmuxinator/blog.yml
+
+name: blog
+root: ~/dev/learning/rails/blog
+
+# Runs before everything. Use it to start daemons etc.
+pre: sspsql
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+pre_window: rvm use 2.0.0 && clear
+
+windows:
+  - editor:
+      layout: 3b3a,273x66,0,0[273x53,0,0,0,273x12,0,54{166x12,0,54,1,106x12,167,54,2}]
+      panes:
+        - vim Gemfile
+        - rails c
+        - guard
+  - logs: tail -f log/development.log
+  - server: bundle exec rails s

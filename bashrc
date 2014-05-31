@@ -121,25 +121,22 @@ function parse_git_branch() {
 	BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
 	if [ ! "${BRANCH}" == "" ]
 	then
-		echo " [${BRANCH}] [`get_ror_version`]"
+		echo " [${BRANCH}]"
 	else
 		echo ""
 	fi
 }
 
 # get ruby version
-function get_ror_version {
+function get_ruby_version {
   echo -n $(ruby -v | cut -d ' ' -f 2)
-  echo -n " => "
-  echo -n $(rails -v | cut -d ' ' -f 2)
 }
 
 # =====================================================================================================================
 # Prompt line
 # =====================================================================================================================
 
-#export PS1="\[\e[36m\]\u\[\e[m\] in \[\e[36m\]\w\[\e[m\] on \[\e[36m\]\`parse_git_branch\`\[\e[m\] riding \[\e[36m\][\$(get_ror_version)]\[\e[m\] \$ "
-export PS1="\[\e[36m\]\w\[\e[m\]\[\e[33m\]\`parse_git_branch\`\[\e[m\] \$ "
+export PS1="\[\e[36m\]\w\[\e[m\]\[\e[33m\]\`parse_git_branch\` \[\e[m\]\[\e[31m\][\$(get_ruby_version)]\[\e[m\] \$ "
 
 # =====================================================================================================================
 # Completions

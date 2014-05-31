@@ -3,6 +3,9 @@
 " Date created : Tue Nov 12 14:14:56 CET 2013
 " vimrc config file for RAILS development
 " ======================================================================================================================
+" TODO:
+" - Vim commentary shotcuts interrupt with my go to controller
+" ======================================================================================================================
 
 " Bundler setting
 " ======================================================================================================================
@@ -11,16 +14,18 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " Plugins bundles
-" ======================================================================================================================
 
 " Vundle itself
+" ======================================================================================================================
 Bundle 'gmarik/vundle'
 " Nerdtree file browser
 Bundle 'scrooloose/nerdtree'
 " Airline (improved statusline)
 Bundle 'bling/vim-airline'
+" Git wrapper
+Bundle 'tpope/vim-fugitive'
 " Commentary support
-Bundle 'scrooloose/nerdcommenter'
+Bundle 'tpope/vim-commentary'
 " Fuzzy file, buffer, MRU finder (CTRL-P)
 Bundle 'kien/ctrlp.vim'
 " Syntax checking plugin (syntastic)
@@ -55,8 +60,6 @@ Bundle 'Townk/vim-autoclose'
 Bundle 'maxbrunsfeld/vim-yankstack'
 " AG search from vim
 Bundle 'ervandew/ag'
-" Graphical undo tree
-Bundle 'sjl/gundo.vim'
 " Seek, easy motion for long lines
 Bundle 'goldfeld/vim-seek'
 " Automatically inserts end wisely
@@ -166,6 +169,9 @@ let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#left_alt_sep = '>'
 let g:airline_powerline_fonts = 0
 
+" NERDTree settings
+autocmd VimEnter * NERDTree
+
 " CTRL-P settings
 let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:10,results:10'
 
@@ -255,9 +261,6 @@ map gr :R<CR>
 " YANK register mapping - needs revision
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
-
-" Gundo tree mapping
-nnoremap <Leader>u :GundoToggle<CR>
 
 " Multiple cursors mapping (c-p and c-x is for visual mode)
 let g:multi_cursor_next_key='<C-n>'
