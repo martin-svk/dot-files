@@ -1,10 +1,10 @@
-" ======================================================================================================================
 " Author : Martin Toma
+" ======================================================================================================================
 " Date created : Tue Nov 12 14:14:56 CET 2013
 " vimrc config file for RAILS development
 " ======================================================================================================================
 " TODO:
-" - Vim commentary shotcuts interrupt with my go to controller
+" Make cheatshet from my current setting and learn it
 " ======================================================================================================================
 
 " Bundler setting
@@ -252,7 +252,7 @@ map gj :bp<CR>
 map gk :bn<CR>
 
 " Rails vim plugin mapping
-map gc :Rcontroller<CR>
+map gk :Rcontroller<CR>
 map gv :Rview<CR>
 " for goto model use gf (go file)
 map ga :A<CR>
