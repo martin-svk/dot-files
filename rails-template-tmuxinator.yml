@@ -1,12 +1,14 @@
-# ~/.tmuxinator/blog.yml
+# ==========================================
+# Tmuxinator file for learning rails project
+# ==========================================
 
-name: blog
-root: ~/dev/learning/rails/blog
+name: sample_rails_project
+root: ~/dev/learning/rails
 
-# Runs before everything. Use it to start daemons etc.
-pre: sspsql
+# Runs before everything. Use it to start database deamons etc.
+# pre: sudo service postgresql start
 
-# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# Useful for setting up interpreter versions, rvm setting
 pre_window: rvm use 2.0.0 && clear
 
 windows:
@@ -14,7 +16,18 @@ windows:
       layout: 3b3a,273x66,0,0[273x53,0,0,0,273x12,0,54{166x12,0,54,1,106x12,167,54,2}]
       panes:
         - vim Gemfile
-        - rails c
-        - guard
-  - logs: tail -f log/development.log
+        - bundle exec rails c
+        - bundle exec guard
+  - cmd:
+      layout: tiled
+      panes:
+        - git status
+        - # just bash
+        - git log -n 3
+        - htop
+  - logs:
+      layout: even-horizontal
+      panes:
+        - tail -f log/development.log
+        - tail -f log/test.log
   - server: bundle exec rails s
