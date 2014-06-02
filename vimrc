@@ -279,9 +279,10 @@ map <c-l> :CtrlPBufTagAll<CR>
 " Easy motion mapping
 let g:EasyMotion_leader_key = 'm'
 
-" Buffer switching mapping g[b]ack, g[n]ext
+" Buffer switching mapping g[q]uit, g[b]ack, g[n]ext
 map gb :bp<CR>
 map gn :bn<CR>
+map gq :bd<CR>
 
 " Rails vim plugin mapping
 map gk :Rcontroller<CR>
