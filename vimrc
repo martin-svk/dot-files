@@ -114,7 +114,7 @@ set noignorecase        " Don't ignore cases
 set laststatus=2        " Always show status line
 set showmode            " Always show mode
 set wildmenu            " Better auto-complete of ex commands
-set textwidth=80        " Text with is 80 chars
+set textwidth=120        " Text with is 80 chars
 set autoread            " Automatically reload change files on disk
 set bg=dark             " Dark background setting (dark theme version of current color)
 set cursorline          " Set default cursor line (highlighting is done by color scheme)
