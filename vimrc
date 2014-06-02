@@ -96,7 +96,6 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-haml'
 " Coffescript support for vim
 Bundle 'kchmck/vim-coffee-script'
-" Color schemes
 " Molokai color scheme
 Bundle 'tomasr/molokai'
 " Hybrid color scheme
@@ -258,7 +257,7 @@ nnoremap <silent> _ :resize -5<CR>
 
 " Map save to ctrl-s
 nmap <c-s> :w<CR>
-imap <c-s> <Esc>:w<CR>a
+imap <c-s> <Esc>:w<CR>
 
 " Creating bubbling like feature
 nmap <C-k> ddkP
@@ -280,9 +279,9 @@ map <c-l> :CtrlPBufTagAll<CR>
 " Easy motion mapping
 let g:EasyMotion_leader_key = 'm'
 
-" Buffer switching mapping
-map gj :bp<CR>
-map gk :bn<CR>
+" Buffer switching mapping g[b]ack, g[n]ext
+map gb :bp<CR>
+map gn :bn<CR>
 
 " Rails vim plugin mapping
 map gk :Rcontroller<CR>
