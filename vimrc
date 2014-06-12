@@ -52,8 +52,6 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'bling/vim-airline'
 " Git wrapper
 Bundle 'tpope/vim-fugitive'
-" Commentary support
-Bundle 'tpope/vim-commentary'
 " Fuzzy file, buffer, MRU finder (CTRL-P)
 Bundle 'kien/ctrlp.vim'
 " Syntax checking plugin (syntastic)
@@ -102,6 +100,8 @@ Bundle 'tomasr/molokai'
 Bundle 'w0ng/vim-hybrid'
 " Jellybeans color scheme
 Bundle 'nanotech/jellybeans.vim'
+" Tomorrow night themes
+Bundle 'ChrisKempson/Vim-Tomorrow-Theme'
 
 " ======================================================================================================================
 " Basic settings
@@ -135,6 +135,10 @@ set autoindent
 set expandtab
 set shiftwidth=2
 set softtabstop=2
+
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
 
 " Don't redraw while executing macros (good performance config)
 set lazyredraw
@@ -171,6 +175,9 @@ map <right> <nop>
 " Disabling space key
 map <Space> <nop>
 
+" Disabling Q to access ex mode
+nnoremap Q <nop>
+
 " ---------------------------------------------------------------------------------------------------------------------
 " Color settings
 " ---------------------------------------------------------------------------------------------------------------------
@@ -195,10 +202,8 @@ endif
 
 set background=dark
 
-if strftime("%H") < 15
-  let g:airline_theme='zenburn'
-  let g:molokai_original = 1
-  colorscheme molokai
+if strftime("%H") < 18
+  colorscheme Tomorrow-Night-Eighties
 else
   colorscheme hybrid
 endif
@@ -285,7 +290,7 @@ map gn :bn<CR>
 map gq :bd<CR>
 
 " Rails vim plugin mapping
-map gk :Rcontroller<CR>
+map gc :Rcontroller<CR>
 map gv :Rview<CR>
 " for goto model use gf (go file)
 map ga :A<CR>
