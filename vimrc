@@ -221,9 +221,6 @@ let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#left_alt_sep = '>'
 let g:airline_powerline_fonts = 0
 
-" NERDTree settings
-autocmd VimEnter * NERDTree
-
 " CTRL-P settings
 let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:10,results:10'
 
