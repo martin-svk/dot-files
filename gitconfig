@@ -31,3 +31,5 @@ lol = log --oneline --graph --all --decorate
 unstage = reset HEAD --
 last = log -1 HEAD
 wc = whatchanged -p --abbrev-commit --pretty=medium
+[github]
+	user = martin-svk

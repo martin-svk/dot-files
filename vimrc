@@ -94,6 +94,9 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-haml'
 " Coffescript support for vim
 Bundle 'kchmck/vim-coffee-script'
+" Github gist plugin
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/gist-vim'
 " Molokai color scheme
 Bundle 'tomasr/molokai'
 " Hybrid color scheme
