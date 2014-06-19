@@ -246,7 +246,7 @@ highlight clear SignColumn
 " ======================================================================================================================
 
 " Setting leader
-let mapleader='\<space>'
+let mapleader="\<space>"
 
 " Mappings for default vim commands to keys
 map <Leader>h :nohl<CR>
