@@ -186,14 +186,14 @@ nnoremap Q <nop>
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Xterm 256 colors
-if $TERM == "xterm-256color"
+if $TERM == 'xterm-256color'
     set t_Co=256
     " Set colorcolumn
     let &colorcolumn=121
 endif
 
 " Tmux/screen 256 colors support
-if $TERM == "screen-256color"
+if $TERM == 'screen-256color'
     set t_Co=256
     " Set colorcolumn
     let &colorcolumn=121
@@ -205,7 +205,7 @@ endif
 
 set background=dark
 
-if strftime("%H") < 18
+if strftime('%H') < 18
   colorscheme Tomorrow-Night-Eighties
 else
   colorscheme hybrid
@@ -225,9 +225,9 @@ let g:airline_powerline_fonts = 0
 let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:10,results:10'
 
 " Ultisnips settings
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-n>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsExpandTrigger='<tab>'
+let g:UltiSnipsJumpForwardTrigger='<c-n>'
+let g:UltiSnipsJumpBackwardTrigger='<c-z>'
 
 " Setting ruby autocomple
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading=1
@@ -236,7 +236,7 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_load_gemfile = 1
 
 " Supertab settings
-let g:SuperTabDefaultCompletionType = "<c-n>"
+let g:SuperTabDefaultCompletionType = '<c-n>'
 
 " Git gutter settings (signcolumn color)
 highlight clear SignColumn
@@ -246,7 +246,7 @@ highlight clear SignColumn
 " ======================================================================================================================
 
 " Setting leader
-let mapleader="\<space>"
+let mapleader='\<space>'
 
 " Mappings for default vim commands to keys
 map <Leader>h :nohl<CR>
@@ -305,6 +305,9 @@ let g:multi_cursor_next_key='<C-n>'
 let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
+
+" Surround mapping
+nmap cq cs"'
 
 " ======================================================================================================================
 " END OF VIMRC
