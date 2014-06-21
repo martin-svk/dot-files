@@ -16,8 +16,7 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}]"
 ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[cyan]%}+"
 
 # Prompt
-PROMPT="%{$fg[cyan]%}%n \
-%{$terminfo[bold]$fg[yellow]%}${current_dir}%{$reset_color%}\
+PROMPT="%{$terminfo[bold]$fg[yellow]%}${current_dir}%{$reset_color%}\
 ${ruby_info}\
 ${git_info} \
 %{-> %{$reset_color%}"
