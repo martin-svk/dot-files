@@ -3,8 +3,9 @@ Configuration dotfiles
 
 ### My personal dotfiles settings for :
 
-* bash
-* tmux
+* zsh (bash also supported)
 * vim
 * git
 * xterm
+* tmux
+* tmuxinator
