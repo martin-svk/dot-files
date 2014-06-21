@@ -1,11 +1,11 @@
-Configuration dotfiles
+Martin-svk dotfiles
 =========
 
-### My personal dotfiles settings for :
+### This is collection of my personal ruby on rails centric dotfiles settings for :
 
-* zsh (bash also supported)
-* vim
 * git
-* xterm
 * tmux
 * tmuxinator
+* vim
+* xterm
+* zsh (bash also supported)
