@@ -8,28 +8,27 @@
 [push]
 	default = simple
 [color]
-    status = always
+        status = always
 	ui = true
 [core]
-    editor = vim
+        editor = vim
 [alias]
-a = add --all
-di = diff --staged
-co = checkout
-pl = pull
-ps = push
-st = status -sb
-ci = commit
-br = branch
-lo = log --oneline -n 15
-lg = log --pretty=format:'%h | %cd | %an | %s' -n 15
-ls = log --stat -n 5
-g1 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%cr)%C(reset) %C(white)%s%C(reset) %C(bold white)— %cn%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
-g2 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%cD%C(reset) %C(bold green)(%cr)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(bold white)— %cn%C(reset)' --abbrev-commit
-
-lol = log --oneline --graph --all --decorate
-unstage = reset HEAD --
-last = log -1 HEAD
-wc = whatchanged -p --abbrev-commit --pretty=medium
+        a = add --all
+        di = diff --staged
+        co = checkout
+        pl = pull
+        ps = push
+        st = status -sb
+        ci = commit
+        br = branch
+        lo = log --oneline -n 15
+        lg = log --pretty=format:'%h | %cd | %an | %s' -n 15
+        ls = log --stat -n 5
+        g1 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%cr)%C(reset) %C(white)%s%C(reset) %C(bold white)— %cn%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+        g2 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%cD%C(reset) %C(bold green)(%cr)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(bold white)— %cn%C(reset)' --abbrev-commit
+        lol = log --oneline --graph --all --decorate
+        unstage = reset HEAD --
+        last = log -1 HEAD
+        wc = whatchanged -p --abbrev-commit --pretty=medium
 [github]
 	user = martin-svk
