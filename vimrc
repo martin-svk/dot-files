@@ -110,7 +110,7 @@ Bundle 'ChrisKempson/Vim-Tomorrow-Theme'
 " Basic settings
 " ======================================================================================================================
 
-set shell=bash\ --norc  " Setting vim shell to bash
+set shell=/bin/bash     " Setting vim shell to bash
 set nocompatible        " No compatible with vi mode
 set number              " Line numbers
 set noignorecase        " Don't ignore cases

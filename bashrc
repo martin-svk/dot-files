@@ -61,9 +61,6 @@ alias g='git'
 alias v='vim'
 alias msql='mysql -uroot -p'
 
-# Ruby
-alias rv='ruby -v'
-
 # Rails
 alias r='rails'
 
