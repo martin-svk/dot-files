@@ -1,74 +1,84 @@
+# =====================================================================================================================
+# General zsh settings
+# =====================================================================================================================
+stty stop '' -ixoff -ixon
+
+# =====================================================================================================================
+# Oh my zsh settings
+# =====================================================================================================================
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
 ZSH_THEME="martinus"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# Disable auto title setting
+DISABLE_AUTO_TITLE="true"
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+# =====================================================================================================================
+# Aliases
+# =====================================================================================================================
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+# Navigation
+alias ..='cd ..'                          # Go up one directory
+alias ...='cd ../..'                      # Go up two directories
+alias ....='cd ../../..'                  # Go up three directories
+alias cdd='cd -'                          # Go back where you were
 
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+# Files and directories
+alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+alias grep='grep --color=tty -d skip'
+alias cp="cp -i"                          # confirm before overwriting something
+alias df='df -h'                          # human-readable sizes
+alias free='free -m'                      # show sizes in MB
+alias md='mkdir -p'
+alias rd='rmdir'
 
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
+# APT-GET
+alias update='sudo apt-get update'
+alias upgrade='sudo apt-get upgrade'
+alias dist-upgrade='sudo apt-get dist-upgrade'
+alias install='sudo apt-get install'
+alias remove='sudo apt-get remove'
+alias purge='sudo apt-get purge'
+alias autoremove='sudo apt-get autoremove'
 
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+# Services
+alias ss='sudo service'
+alias ssmysql='sudo service mysql start'
+alias sspgsql='sudo service postgresql start'
 
-# Uncomment the following line to disable command auto-correction.
-# DISABLE_CORRECTION="true"
+# Applications
+alias g='git'
+alias v='vim'
+alias msql='mysql -uroot -p'
 
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+# SSH servers
+alias s-pinta='ssh team11@calculon.fiit.stuba.sk -p 30022'
+alias s-nitrous='ssh action@euw1-2.nitrousbox.com -p 21326'
 
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+# Other
+alias _="sudo"
+alias q='exit'
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+# =====================================================================================================================
+# Plugin settings
+# =====================================================================================================================
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(bundler gitfast gem rails ruby rvm sudo tmux tmuxinator vi-mode)
 
+# =====================================================================================================================
+# Sourcing
+# =====================================================================================================================
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
+# =====================================================================================================================
+# Other exports
+# =====================================================================================================================
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+export EDITOR='vim'
