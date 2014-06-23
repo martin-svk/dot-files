@@ -205,7 +205,12 @@ endif
 
 set background=dark
 
-if strftime('%H') < 18
+if strftime('%H') < 13
+  let g:airline_theme='wombat'
+  let g:rehash256 = 1
+  let g:molokai_original = 1
+  colorscheme molokai
+elseif strftime('%H') < 18
   colorscheme Tomorrow-Night-Eighties
 else
   colorscheme hybrid
