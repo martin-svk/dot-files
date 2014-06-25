@@ -174,6 +174,10 @@ map <up> <nop>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
 
 " Disabling space key
 map <Space> <nop>
@@ -205,12 +209,12 @@ endif
 
 set background=dark
 
-if strftime('%H') < 13
+if strftime('%H') < 16
   let g:airline_theme='wombat'
   let g:rehash256 = 1
   let g:molokai_original = 1
   colorscheme molokai
-elseif strftime('%H') < 18
+elseif strftime('%H') < 21
   colorscheme Tomorrow-Night-Eighties
 else
   colorscheme hybrid
