@@ -131,7 +131,7 @@ set hidden              " Enables to switch between unsaved buffers and keep und
 set foldenable          " Enable code folding
 set clipboard+=unnamed  " Use system clipboard
 set history=256         " Number of things to remember in history
-"set relativenumber      " Relative numbering
+set nohlsearch          " Don't highlight after search
 
 " Intedation settings (2 spaces tabs)
 set autoindent
@@ -256,9 +256,6 @@ highlight clear SignColumn
 
 " Setting leader
 let mapleader="\<space>"
-
-" Mappings for default vim commands to keys
-map <Leader>h :nohl<CR>
 
 " Window resizing keys
 nnoremap <silent> = :vertical resize +5<CR>
