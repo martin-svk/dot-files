@@ -82,7 +82,7 @@ Plugin 'airblade/vim-gitgutter'
 " Better JSON syntax
 Plugin 'elzr/vim-json'
 " Autoclosing brackets and quotes
-Plugin 'Townk/vim-autoclose'
+Plugin 'Raimondi/delimitMate'
 " YANK history management
 Plugin 'maxbrunsfeld/vim-yankstack'
 " AG search from vim
