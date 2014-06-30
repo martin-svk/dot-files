@@ -38,73 +38,76 @@
 " Bundler setting
 " ======================================================================================================================
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " ---------------------------------------------------------------------------------------------------------------------
-" Vundle itself
+" Plugin list
 " ---------------------------------------------------------------------------------------------------------------------
 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 " Nerdtree file browser
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 " Airline (improved statusline)
-Bundle 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 " Git wrapper
-Bundle 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 " Fuzzy file, buffer, MRU finder (CTRL-P)
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 " Syntax checking plugin (syntastic)
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 " Easily move around file (easy motion)
-Bundle 'Lokaltog/vim-easymotion'
+Plugin 'Lokaltog/vim-easymotion'
 " Rails vim plugin
-Bundle 'tpope/vim-rails'
+Plugin 'tpope/vim-rails'
 " Slim templating syntax highliting
-Bundle 'slim-template/vim-slim.git'
+Plugin 'slim-template/vim-slim.git'
 " Basic ruby related features
-Bundle 'vim-ruby/vim-ruby'
+Plugin 'vim-ruby/vim-ruby'
 " The ulti snips engine.
-Bundle 'SirVer/ultisnips'
+Plugin 'SirVer/ultisnips'
 " Snippets for python, js, html, ruby...
-Bundle 'honza/vim-snippets'
+Plugin 'honza/vim-snippets'
 " Change surroundings
-Bundle 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'
 " Multiple cursors vim support
-Bundle 'terryma/vim-multiple-cursors'
+Plugin 'terryma/vim-multiple-cursors'
 " Trailing spaces deleter and highlighter
-Bundle 'bronson/vim-trailing-whitespace'
+Plugin 'bronson/vim-trailing-whitespace'
 " Supertab for tab triggering completion
-Bundle 'ervandew/supertab'
+Plugin 'ervandew/supertab'
 " Git changes displayer
-Bundle 'airblade/vim-gitgutter'
+Plugin 'airblade/vim-gitgutter'
 " Better JSON syntax
-Bundle 'elzr/vim-json'
+Plugin 'elzr/vim-json'
 " Autoclosing brackets and quotes
-Bundle 'Townk/vim-autoclose'
+Plugin 'Townk/vim-autoclose'
 " YANK history management
-Bundle 'maxbrunsfeld/vim-yankstack'
+Plugin 'maxbrunsfeld/vim-yankstack'
 " AG search from vim
-Bundle 'ervandew/ag'
+Plugin 'ervandew/ag'
 " Seek, easy motion for long lines
-Bundle 'goldfeld/vim-seek'
+Plugin 'goldfeld/vim-seek'
 " Automatically inserts end wisely
-Bundle 'tpope/vim-endwise'
+Plugin 'tpope/vim-endwise'
 " HAML support for vim
-Bundle 'tpope/vim-haml'
+Plugin 'tpope/vim-haml'
 " Coffescript support for vim
-Bundle 'kchmck/vim-coffee-script'
+Plugin 'kchmck/vim-coffee-script'
 " Github gist plugin
-Bundle 'mattn/webapi-vim'
-Bundle 'mattn/gist-vim'
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
 " Molokai color scheme
-Bundle 'tomasr/molokai'
+Plugin 'tomasr/molokai'
 " Hybrid color scheme
-Bundle 'w0ng/vim-hybrid'
+Plugin 'w0ng/vim-hybrid'
 " Jellybeans color scheme
-Bundle 'nanotech/jellybeans.vim'
+Plugin 'nanotech/jellybeans.vim'
 " Tomorrow night themes
-Bundle 'ChrisKempson/Vim-Tomorrow-Theme'
+Plugin 'ChrisKempson/Vim-Tomorrow-Theme'
+
+" End vundle
+call vundle#end()
 
 " ======================================================================================================================
 " Basic settings

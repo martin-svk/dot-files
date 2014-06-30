@@ -39,7 +39,7 @@ if [ -d ~/.vim ]; then
   ln -s $current_path/vim/colors ~/.vim/colors
 else
   mkdir ~/.vim
-  git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+  git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
   ln -s $current_path/vim/colors ~/.vim/colors
 fi
 
