@@ -45,59 +45,103 @@ call vundle#begin()
 " Plugin list
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Let Vundle manage Vundle, required
+" Let Vundle manage Vundle, REQUIRED!
 Plugin 'gmarik/Vundle.vim'
+
+
+" ---------------------------------------------------------------------------------------------------------------------
+" Language/Framework support improving plugins
+" ---------------------------------------------------------------------------------------------------------------------
+
+" Rails vim plugin
+Plugin 'tpope/vim-rails'
+" Basic ruby related features
+Plugin 'vim-ruby/vim-ruby'
+" Slim templating syntax highliting
+Plugin 'slim-template/vim-slim.git'
+" Better JSON syntax
+Plugin 'elzr/vim-json'
+" Automatically inserts 'end' wisely
+Plugin 'tpope/vim-endwise'
+" HAML support for vim
+Plugin 'tpope/vim-haml'
+" Coffescript support for vim
+Plugin 'kchmck/vim-coffee-script'
+" Better javascript support
+Plugin 'jelera/vim-javascript-syntax'
+" CSS color highlighter
+Plugin 'ap/vim-css-color'
+
+" Needs linters to be install to work properly (see https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers)
+" Syntax checking plugin
+Plugin 'scrooloose/syntastic'
+
+" The ulti snips engine. Makes possible to define custom snippets.
+Plugin 'SirVer/ultisnips'
+" Snippets for python, js, html, ruby...
+Plugin 'honza/vim-snippets'
+
+" ---------------------------------------------------------------------------------------------------------------------
+" Vim motion/navigation improving plugins
+" ---------------------------------------------------------------------------------------------------------------------
+
+" Fuzzy file, buffer, MRU finder (CTRL-P)
+Plugin 'kien/ctrlp.vim'
+" Easily move around file (easy motion)
+Plugin 'Lokaltog/vim-easymotion'
+" Multiple cursors vim support
+Plugin 'terryma/vim-multiple-cursors'
+" Seek, easy motion for long lines
+Plugin 'goldfeld/vim-seek'
+
+" ---------------------------------------------------------------------------------------------------------------------
+" Vim interface improving plugins
+" ---------------------------------------------------------------------------------------------------------------------
+
 " Nerdtree file browser
 Plugin 'scrooloose/nerdtree'
 " Airline (improved statusline)
 Plugin 'bling/vim-airline'
+
+" ---------------------------------------------------------------------------------------------------------------------
+" Git/Github support plugins
+" ---------------------------------------------------------------------------------------------------------------------
+
 " Git wrapper
 Plugin 'tpope/vim-fugitive'
-" Fuzzy file, buffer, MRU finder (CTRL-P)
-Plugin 'kien/ctrlp.vim'
-" Syntax checking plugin (syntastic)
-Plugin 'scrooloose/syntastic'
-" Easily move around file (easy motion)
-Plugin 'Lokaltog/vim-easymotion'
-" Rails vim plugin
-Plugin 'tpope/vim-rails'
-" Slim templating syntax highliting
-Plugin 'slim-template/vim-slim.git'
-" Basic ruby related features
-Plugin 'vim-ruby/vim-ruby'
-" The ulti snips engine.
-Plugin 'SirVer/ultisnips'
-" Snippets for python, js, html, ruby...
-Plugin 'honza/vim-snippets'
-" Change surroundings
-Plugin 'tpope/vim-surround'
-" Multiple cursors vim support
-Plugin 'terryma/vim-multiple-cursors'
-" Trailing spaces deleter and highlighter
-Plugin 'bronson/vim-trailing-whitespace'
-" Supertab for tab triggering completion
-Plugin 'ervandew/supertab'
 " Git changes displayer
 Plugin 'airblade/vim-gitgutter'
-" Better JSON syntax
-Plugin 'elzr/vim-json'
+" Github gist plugin
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
+
+" ---------------------------------------------------------------------------------------------------------------------
+" Other plugins
+" ---------------------------------------------------------------------------------------------------------------------
+
+" Change surroundings characters
+Plugin 'tpope/vim-surround'
+" Trailing spaces deleter (:FixWhitespaces)
+Plugin 'bronson/vim-trailing-whitespace'
+" Supertab for tab triggering completion (integrates with snippets, etc.)
+Plugin 'ervandew/supertab'
 " Autoclosing brackets and quotes
 Plugin 'Raimondi/delimitMate'
 " YANK history management
 Plugin 'maxbrunsfeld/vim-yankstack'
 " AG search from vim
 Plugin 'ervandew/ag'
-" Seek, easy motion for long lines
-Plugin 'goldfeld/vim-seek'
-" Automatically inserts end wisely
-Plugin 'tpope/vim-endwise'
-" HAML support for vim
-Plugin 'tpope/vim-haml'
-" Coffescript support for vim
-Plugin 'kchmck/vim-coffee-script'
-" Github gist plugin
-Plugin 'mattn/webapi-vim'
-Plugin 'mattn/gist-vim'
+" Matchit better textobj support
+Plugin 'tmhedberg/matchit'
+" Unix utilities helper (SudoWrite)
+Plugin 'tpope/vim-eunuch'
+" Alignment on specific regex (:Tabularize \=)
+Plugin 'godlygeek/tabular'
+
+" ---------------------------------------------------------------------------------------------------------------------
+" Colorscheme plugins
+" ---------------------------------------------------------------------------------------------------------------------
+
 " Molokai color scheme
 Plugin 'tomasr/molokai'
 " Hybrid color scheme
@@ -107,7 +151,9 @@ Plugin 'nanotech/jellybeans.vim'
 " Tomorrow night themes
 Plugin 'ChrisKempson/Vim-Tomorrow-Theme'
 
-" End vundle
+" ---------------------------------------------------------------------------------------------------------------------
+" End of plugin declaration
+" ---------------------------------------------------------------------------------------------------------------------
 call vundle#end()
 
 " ======================================================================================================================
@@ -213,12 +259,12 @@ endif
 
 set background=dark
 
-if strftime('%H') < 16
+if strftime('%H') < 13
   let g:airline_theme='wombat'
   let g:rehash256 = 1
   let g:molokai_original = 1
   colorscheme molokai
-elseif strftime('%H') < 21
+elseif strftime('%H') < 18
   colorscheme Tomorrow-Night-Eighties
 else
   colorscheme hybrid
