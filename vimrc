@@ -45,7 +45,8 @@ call vundle#begin()
 " Plugin list
 " ---------------------------------------------------------------------------------------------------------------------
 
-Plugin 'gmarik/vundle'
+" Let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
 " Nerdtree file browser
 Plugin 'scrooloose/nerdtree'
 " Airline (improved statusline)
