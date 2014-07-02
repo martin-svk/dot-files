@@ -48,7 +48,6 @@ call vundle#begin()
 " Let Vundle manage Vundle, REQUIRED!
 Plugin 'gmarik/Vundle.vim'
 
-
 " ---------------------------------------------------------------------------------------------------------------------
 " Language/Framework support improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
@@ -80,6 +79,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'SirVer/ultisnips'
 " Snippets for python, js, html, ruby...
 Plugin 'honza/vim-snippets'
+" Emmet for fast html prototyping
+Plugin 'mattn/emmet-vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Vim motion/navigation improving plugins
@@ -121,8 +122,8 @@ Plugin 'mattn/gist-vim'
 
 " Change surroundings characters
 Plugin 'tpope/vim-surround'
-" Trailing spaces deleter (:FixWhitespaces)
 Plugin 'bronson/vim-trailing-whitespace'
+" Trailing spaces deleter (:FixWhitespaces)
 " Supertab for tab triggering completion (integrates with snippets, etc.)
 Plugin 'ervandew/supertab'
 " Autoclosing brackets and quotes
@@ -130,9 +131,13 @@ Plugin 'Raimondi/delimitMate'
 " YANK history management
 Plugin 'maxbrunsfeld/vim-yankstack'
 " AG search from vim
-Plugin 'ervandew/ag'
 " Matchit better textobj support
+Plugin 'ervandew/ag'
 Plugin 'tmhedberg/matchit'
+" Custom textobj creation support
+Plugin 'kana/vim-textobj-user'
+" Ruby block text object
+Plugin 'nelstrom/vim-textobj-rubyblock'
 " Unix utilities helper (SudoWrite)
 Plugin 'tpope/vim-eunuch'
 " Alignment on specific regex (:Tabularize \=)
@@ -142,14 +147,14 @@ Plugin 'godlygeek/tabular'
 " Colorscheme plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Molokai color scheme
-Plugin 'tomasr/molokai'
-" Hybrid color scheme
+" Hybrid light and dark color schemes
 Plugin 'w0ng/vim-hybrid'
-" Jellybeans color scheme
+" Tommorow color schemes
+Plugin 'chriskempson/vim-tomorrow-theme'
+" Molokai theme
+Plugin 'tomasr/molokai'
+" Jellybeans theme
 Plugin 'nanotech/jellybeans.vim'
-" Tomorrow night themes
-Plugin 'ChrisKempson/Vim-Tomorrow-Theme'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " End of plugin declaration
@@ -257,18 +262,17 @@ endif
 " Color scheme time based settings
 " ---------------------------------------------------------------------------------------------------------------------
 
-set background=dark
-
-if strftime('%H') < 13
-  let g:airline_theme='wombat'
-  let g:rehash256 = 1
+" Before 16 hour
+if strftime('%H') < 16
   let g:molokai_original = 1
+  let g:rehash256 = 1
   colorscheme molokai
-elseif strftime('%H') < 18
-  colorscheme Tomorrow-Night-Eighties
 else
   colorscheme hybrid
 endif
+
+let g:airline_theme='powerlineish'
+set bg=dark
 
 " ======================================================================================================================
 " Plugin settings
@@ -277,7 +281,7 @@ endif
 " Airline settings
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#enabled=1
-let g:airline#extensions#tabline#left_alt_sep = '>'
+let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts = 0
 
 " CTRL-P settings
@@ -288,8 +292,8 @@ let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<c-n>'
 let g:UltiSnipsJumpBackwardTrigger='<c-z>'
 
-" Setting ruby autocomple
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading=1
+" Setting ruby autocomple
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_load_gemfile = 1
@@ -316,9 +320,6 @@ nnoremap <silent> + :resize +5<CR>
 nnoremap <silent> - :vertical resize -5<CR>
 nnoremap <silent> _ :resize -5<CR>
 
-" Spellcheck toggle mapping, leader s using as split window
-" nmap <silent> <Leader>s :set spell!<CR>
-
 " Map save to ctrl-s
 nmap <c-s> :w<CR>
 imap <c-s> <Esc>:w<CR>
@@ -338,7 +339,7 @@ map <Leader>f :NERDTreeToggle<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMixed'
 " No need for tagbar now
-map <c-l> :CtrlPBufTagAll<CR>
+map <c-t> :CtrlPBufTagAll<CR>
 
 " Easy motion mapping
 let g:EasyMotion_leader_key = 'm'
@@ -355,9 +356,12 @@ map gv :Rview<CR>
 map ga :A<CR>
 map gr :R<CR>
 
-" YANK register mapping - needs revision
-nmap <leader>p <Plug>yankstack_substitute_older_paste
-nmap <leader>P <Plug>yankstack_substitute_newer_paste
+" Yankstack mapping
+" To avoid loading default map keys
+let g:yankstack_map_keys = 0
+" YANK register mapping go [p]aste
+nmap gp <Plug>yankstack_substitute_older_paste
+nmap gP <Plug>yankstack_substitute_newer_paste
 
 " Multiple cursors mapping (c-p and c-x is for visual mode)
 let g:multi_cursor_next_key='<C-n>'
@@ -365,8 +369,9 @@ let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
-" Surround mapping
+" Surround vim shortcut for quotes toggle
 nmap cq cs"'
+nmap cQ cs'"
 
 " ======================================================================================================================
 " END OF VIMRC
