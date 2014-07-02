@@ -262,6 +262,9 @@ endif
 " Color scheme time based settings
 " ---------------------------------------------------------------------------------------------------------------------
 
+set bg=dark
+let g:airline_theme='powerlineish'
+
 " Before 16 hour
 if strftime('%H') < 16
   let g:molokai_original = 1
@@ -270,9 +273,6 @@ if strftime('%H') < 16
 else
   colorscheme hybrid
 endif
-
-let g:airline_theme='powerlineish'
-set bg=dark
 
 " ======================================================================================================================
 " Plugin settings
