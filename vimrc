@@ -4,8 +4,8 @@
 " Date created : Tue Nov 12 14:14:56 CET 2013
 " VIMRC Config focused on RAILS development
 " ======================================================================================================================
+"
 " ======================================================================================================================
-
 " :help this_vimrc.txt
 " ======================================================================================================================
 "
@@ -92,8 +92,8 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'Lokaltog/vim-easymotion'
 " Multiple cursors vim support
 Plugin 'terryma/vim-multiple-cursors'
-" Seek, easy motion for long lines
-Plugin 'goldfeld/vim-seek'
+" Sneak, easy motion for long lines
+Plugin 'justinmk/vim-sneak'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Vim interface improving plugins
@@ -122,17 +122,17 @@ Plugin 'mattn/gist-vim'
 
 " Change surroundings characters
 Plugin 'tpope/vim-surround'
-Plugin 'bronson/vim-trailing-whitespace'
 " Trailing spaces deleter (:FixWhitespaces)
+Plugin 'bronson/vim-trailing-whitespace'
 " Supertab for tab triggering completion (integrates with snippets, etc.)
 Plugin 'ervandew/supertab'
 " Autoclosing brackets and quotes
 Plugin 'Raimondi/delimitMate'
 " YANK history management
-Plugin 'maxbrunsfeld/vim-yankstack'
+Plugin 'YankRing.vim'
 " AG search from vim
-" Matchit better textobj support
 Plugin 'ervandew/ag'
+" Matchit better textobj support
 Plugin 'tmhedberg/matchit'
 " Custom textobj creation support
 Plugin 'kana/vim-textobj-user'
@@ -165,28 +165,33 @@ call vundle#end()
 " Basic settings
 " ======================================================================================================================
 
-set shell=/bin/bash     " Setting vim shell to bash
-set nocompatible        " No compatible with vi mode
-set number              " Line numbers
-set noignorecase        " Don't ignore cases
-set laststatus=2        " Always show status line
-set showmode            " Always show mode
-set wildmenu            " Better auto-complete of ex commands
-set textwidth=120        " Text with is 80 chars
-set autoread            " Automatically reload change files on disk
-set bg=dark             " Dark background setting (dark theme version of current color)
-set cursorline          " Set default cursor line (highlighting is done by color scheme)
-set cmdheight=1         " Command line height
-set pumheight=10        " Completion window max size
-set iskeyword-=_        " Set underscore is a word separator
-set timeoutlen=200      " Setting ESC timeout
-set hlsearch            " Highlight search
-set incsearch           " Incremental search
-set hidden              " Enables to switch between unsaved buffers and keep undo history
-set foldenable          " Enable code folding
-set clipboard+=unnamed  " Use system clipboard
-set history=256         " Number of things to remember in history
-set nohlsearch          " Don't highlight after search
+set shell=/bin/bash         " Setting vim shell to bash
+set nocompatible            " No compatible with vi mode
+set number                  " Line numbers
+set noignorecase            " Don't ignore cases
+set laststatus=2            " Always show status line
+set showmode                " Always show mode
+set wildmenu                " Better auto-complete of ex commands
+set textwidth=120           " Text widht is 120 chars
+set autoread                " Automatically reload change files on disk
+set bg=dark                 " Dark background setting (dark theme version of current color)
+set cursorline              " Set default cursor line (highlighting is done by color scheme)
+set cmdheight=1             " Command line height
+set pumheight=10            " Completion window max size
+set iskeyword-=_            " Set underscore is a word separator
+set timeoutlen=200          " Setting ESC timeout
+set hlsearch                " Highlight search
+set incsearch               " Incremental search
+set hidden                  " Enables to switch between unsaved buffers and keep undo history
+set foldenable              " Enable code folding
+set clipboard+=unnamed      " Use system clipboard
+set history=256             " Number of things to remember in history
+set nohlsearch              " Don't highlight after search
+set mat=2                   " How many tenths of a second to blink when matching brackets
+set lazyredraw              " Don't redraw while executing macros (good performance config)
+set magic                   " For regular expressions turn magic on
+set showmatch               " Show matching brackets when text indicator is over them
+set encoding=utf8           " Set utf8 as standard encoding and en_US as the standard language
 
 " Intedation settings (2 spaces tabs)
 set autoindent
@@ -197,21 +202,6 @@ set softtabstop=2
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
-
-" Don't redraw while executing macros (good performance config)
-set lazyredraw
-
-" For regular expressions turn magic on
-set magic
-
-" Show matching brackets when text indicator is over them
-set showmatch
-
-" How many tenths of a second to blink when matching brackets
-set mat=2
-
-" Set utf8 as standard encoding and en_US as the standard language
-set encoding=utf8
 
 " Turn backup off, since most stuff is in git
 set nobackup
@@ -245,14 +235,7 @@ nnoremap Q <nop>
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Xterm 256 colors
-if $TERM == 'xterm-256color'
-    set t_Co=256
-    " Set colorcolumn
-    let &colorcolumn=121
-endif
-
-" Tmux/screen 256 colors support
-if $TERM == 'screen-256color'
+if $TERM == 'xterm-256color' || 'screen-256color'
     set t_Co=256
     " Set colorcolumn
     let &colorcolumn=121
@@ -292,8 +275,8 @@ let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<c-n>'
 let g:UltiSnipsJumpBackwardTrigger='<c-z>'
 
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading=1
 " Setting ruby autocomple
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading=1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_load_gemfile = 1
@@ -345,9 +328,9 @@ map <c-t> :CtrlPBufTagAll<CR>
 let g:EasyMotion_leader_key = 'm'
 
 " Buffer switching mapping g[q]uit, g[b]ack, g[n]ext
+map gq :bd<CR>
 map gb :bp<CR>
 map gn :bn<CR>
-map gq :bd<CR>
 
 " Rails vim plugin mapping
 map gc :Rcontroller<CR>
@@ -356,12 +339,8 @@ map gv :Rview<CR>
 map ga :A<CR>
 map gr :R<CR>
 
-" Yankstack mapping
-" To avoid loading default map keys
-let g:yankstack_map_keys = 0
-" YANK register mapping go [p]aste
-nmap gp <Plug>yankstack_substitute_older_paste
-nmap gP <Plug>yankstack_substitute_newer_paste
+" Yankring mapping
+map <C-y> :YRShow<CR>
 
 " Multiple cursors mapping (c-p and c-x is for visual mode)
 let g:multi_cursor_next_key='<C-n>'
