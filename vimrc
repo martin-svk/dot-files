@@ -158,12 +158,10 @@ Plugin 'godlygeek/tabular'
 
 " Hybrid light and dark color schemes
 Plugin 'w0ng/vim-hybrid'
-" Tommorow color schemes
-Plugin 'chriskempson/vim-tomorrow-theme'
-" Molokai theme
-Plugin 'tomasr/molokai'
 " Jellybeans theme
 Plugin 'nanotech/jellybeans.vim'
+" Gruvbox light and dark themes
+Plugin 'morhetz/gruvbox'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " End of plugin declaration
@@ -255,13 +253,11 @@ endif
 " ---------------------------------------------------------------------------------------------------------------------
 
 set bg=dark
-let g:airline_theme='powerlineish'
 
 " Before 16 hour
 if strftime('%H') < 16
-  let g:molokai_original = 1
-  let g:rehash256 = 1
-  colorscheme molokai
+  let g:gruvbox_italic=0
+  colorscheme gruvbox
 else
   colorscheme hybrid
 endif
