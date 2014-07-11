@@ -35,33 +35,99 @@ xterm*scrollTtyOutput: false
 ! ============================= COLOR SCHEMES =================================
 ! =============================================================================
 
+! =============================================================================
 ! Hybrid Terminal Colours. Uses the palette from Tomorrow-Night:
-! https://github.com/chriskempson/tomorrow-theme/blob/master/vim/colors/Tomorrow-Night.vim
-! vim: ft=xdefaults
+! =============================================================================
 
-xterm*background: #1D1F21
-xterm*foreground: #C5C8C6
-! black
-xterm*color0: #282A2E
-xterm*color8: #373B41
-! red
-xterm*color1: #CC6666
-xterm*color9: #CC6666
-! green
-xterm*color2: #B5BD68
-xterm*color10: #B5BD68
-! yellow
-xterm*color3: #DE935F
-xterm*color11: #F0C674
-! blue
-xterm*color4: #5F819D
-xterm*color12: #81A2BE
-! magenta
-xterm*color5: #85678F
-xterm*color13: #B294BB
-! cyan
-xterm*color6: #5E8D87
-xterm*color14: #8ABEB7
-! white
-xterm*color7: #707880
-xterm*color15: #C5C8C6
+!xterm*background: #1D1F21
+!xterm*foreground: #C5C8C6
+!! black
+!xterm*color0: #282A2E
+!xterm*color8: #373B41
+!! red
+!xterm*color1: #CC6666
+!xterm*color9: #CC6666
+!! green
+!xterm*color2: #B5BD68
+!xterm*color10: #B5BD68
+!! yellow
+!xterm*color3: #DE935F
+!xterm*color11: #F0C674
+!! blue
+!xterm*color4: #5F819D
+!xterm*color12: #81A2BE
+!! magenta
+!xterm*color5: #85678F
+!xterm*color13: #B294BB
+!! cyan
+!xterm*color6: #5E8D87
+!xterm*color14: #8ABEB7
+!! white
+!xterm*color7: #707880
+!xterm*color15: #C5C8C6
+
+! =============================================================================
+! Solarized color scheme for the X Window System
+! =============================================================================
+
+! Common
+! =============================================================================
+
+#define S_yellow        #b58900
+#define S_orange        #cb4b16
+#define S_red           #dc322f
+#define S_magenta       #d33682
+#define S_violet        #6c71c4
+#define S_blue          #268bd2
+#define S_cyan          #2aa198
+#define S_green         #859900
+
+! Dark
+! =============================================================================
+
+#define S_base03        #002b36
+#define S_base02        #073642
+#define S_base01        #586e75
+#define S_base00        #657b83
+#define S_base0         #839496
+#define S_base1         #93a1a1
+#define S_base2         #eee8d5
+#define S_base3         #fdf6e3
+
+
+! Light
+! =============================================================================
+
+! #define S_base03        #fdf6e3
+! #define S_base02        #eee8d5
+! #define S_base01        #93a1a1
+! #define S_base00        #839496
+! #define S_base0         #657b83
+! #define S_base1         #586e75
+! #define S_base2         #073642
+! #define S_base3         #002b36
+
+xterm*background:              S_base03
+xterm*foreground:              S_base0
+xterm*fading:                  40
+xterm*fadeColor:               S_base03
+xterm*cursorColor:             S_base1
+xterm*pointerColorBackground:  S_base01
+xterm*pointerColorForeground:  S_base1
+
+xterm*color0:                  S_base02
+xterm*color1:                  S_red
+xterm*color2:                  S_green
+xterm*color3:                  S_yellow
+xterm*color4:                  S_blue
+xterm*color5:                  S_magenta
+xterm*color6:                  S_cyan
+xterm*color7:                  S_base2
+xterm*color8:                  S_base03
+xterm*color9:                  S_orange
+xterm*color10:                 S_base01
+xterm*color11:                 S_base00
+xterm*color12:                 S_base0
+xterm*color13:                 S_violet
+xterm*color14:                 S_base1
+xterm*color15:                 S_base3

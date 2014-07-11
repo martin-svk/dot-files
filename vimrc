@@ -158,6 +158,8 @@ Plugin 'godlygeek/tabular'
 
 " Hybrid light and dark color schemes
 Plugin 'w0ng/vim-hybrid'
+" Solarized color scheme
+Plugin 'altercation/vim-colors-solarized'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " End of plugin declaration
@@ -248,8 +250,17 @@ endif
 " Color scheme settings
 " ---------------------------------------------------------------------------------------------------------------------
 
-set bg=dark
-colorscheme hybrid
+" Before 12 hour
+if strftime('%H') < 12
+  set bg=light
+  colorscheme solarized
+else
+  set bg=dark
+  colorscheme solarized
+endif
+
+" Toggle between dark and white version
+call togglebg#map("<F5>")
 
 " ======================================================================================================================
 " Plugin settings
