@@ -286,7 +286,7 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_load_gemfile = 1
 
-" Supertab settings
+" Supertab settings TODO: Think about c-p
 let g:SuperTabDefaultCompletionType = '<c-n>'
 
 " Git gutter settings (signcolumn color)
@@ -323,10 +323,10 @@ nmap <C-j> ddp
 " Nerdtree mappings
 map <Leader>f :NERDTreeToggle<CR>
 
-" CTRL-P mapping, first unmap yankrings c-p mapping
-let g:ctrlp_map = '<c-f>'
+" CTRL-P mapping
+let g:ctrlp_map = '<Leader>p'
 let g:ctrlp_cmd = 'CtrlPMixed'
-map <c-t> :CtrlPBufTagAll<CR>
+map <Leader>t :CtrlPBufTagAll<CR>
 
 " Easy motion mapping
 let g:EasyMotion_leader_key = 'm'
@@ -344,7 +344,7 @@ map ga :A<CR>
 map gr :R<CR>
 
 " Yankring mapping
-map <C-y> :YRShow<CR>
+map <Leader>y :YRShow<CR>
 
 " Multiple cursors mapping (c-p and c-x is for visual mode)
 let g:multi_cursor_next_key='<C-n>'
