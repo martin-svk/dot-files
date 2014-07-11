@@ -254,8 +254,8 @@ endif
 
 set bg=dark
 
-" Before 16 hour
-if strftime('%H') < 16
+" Before 14 hour
+if strftime('%H') < 14
   let g:gruvbox_italic=0
   colorscheme gruvbox
 else

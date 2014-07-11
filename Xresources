@@ -49,7 +49,6 @@ xterm*foreground: #ebdbb2
 xterm*color0:  #282828
 xterm*color8:  #7c6f64
 ! DarkRed + Red
-!xterm*color1:  #cc241d
 xterm*color1:  #fb4934
 xterm*color9:  #ff6957
 ! DarkGreen + Green
