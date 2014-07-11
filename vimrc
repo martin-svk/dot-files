@@ -158,10 +158,6 @@ Plugin 'godlygeek/tabular'
 
 " Hybrid light and dark color schemes
 Plugin 'w0ng/vim-hybrid'
-" Jellybeans theme
-Plugin 'nanotech/jellybeans.vim'
-" Gruvbox light and dark themes
-Plugin 'morhetz/gruvbox'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " End of plugin declaration
@@ -249,18 +245,11 @@ if $TERM == 'xterm-256color' || 'screen-256color'
 endif
 
 " ---------------------------------------------------------------------------------------------------------------------
-" Color scheme time based settings
+" Color scheme settings
 " ---------------------------------------------------------------------------------------------------------------------
 
 set bg=dark
-
-" Before 14 hour
-if strftime('%H') < 14
-  let g:gruvbox_italic=0
-  colorscheme gruvbox
-else
-  colorscheme hybrid
-endif
+colorscheme hybrid
 
 " ======================================================================================================================
 " Plugin settings

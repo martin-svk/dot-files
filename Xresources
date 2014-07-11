@@ -35,72 +35,33 @@ xterm*scrollTtyOutput: false
 ! ============================= COLOR SCHEMES =================================
 ! =============================================================================
 
-! -----------------------------------------------------------------------------
-! File: gruvbox-dark.xresources
-! Description: Retro groove colorscheme generalized
-! Author: morhetz <morhetz@gmail.com>
-! Source: https://github.com/morhetz/gruvbox-generalized
-! Last Modified: 11 Dec 2013
-! -----------------------------------------------------------------------------
+! Hybrid Terminal Colours. Uses the palette from Tomorrow-Night:
+! https://github.com/chriskempson/tomorrow-theme/blob/master/vim/colors/Tomorrow-Night.vim
+! vim: ft=xdefaults
 
-xterm*background: #282828
-xterm*foreground: #ebdbb2
-! Black + DarkGrey
-xterm*color0:  #282828
-xterm*color8:  #7c6f64
-! DarkRed + Red
-xterm*color1:  #fb4934
-xterm*color9:  #ff6957
-! DarkGreen + Green
-xterm*color2:  #98971a
-xterm*color10: #b8bb26
-! DarkYellow + Yellow
-xterm*color3:  #d79921
-xterm*color11: #fabd2f
-! DarkBlue + Blue
-xterm*color4:  #458588
-xterm*color12: #83a598
-! DarkMagenta + Magenta
-xterm*color5:  #b16286
-xterm*color13: #d3869b
-! DarkCyan + Cyan
-xterm*color6:  #689d6a
-xterm*color14: #8ec07c
-! LightGrey + White
-xterm*color7:  #bdae93
-xterm*color15: #ebdbb2
-
-! -----------------------------------------------------------------------------
-! File: gruvbox-light.xresources
-! Description: Retro groove colorscheme generalized
-! Author: morhetz <morhetz@gmail.com>
-! Source: https://github.com/morhetz/gruvbox-generalized
-! Last Modified: 11 Dec 2013
-! -----------------------------------------------------------------------------
-
-!xterm*background: #fdf4c1
-!xterm*foreground: #3c3836
-!! Black + DarkGrey
-!xterm*color0:  #fdf4c1
-!xterm*color8:  #a89984
-!! DarkRed + Red
-!xterm*color1:  #cc241d
-!xterm*color9:  #9d0006
-!! DarkGreen + Green
-!xterm*color2:  #98971a
-!xterm*color10: #79740e
-!! DarkYellow + Yellow
-!xterm*color3:  #d79921
-!xterm*color11: #b57614
-!! DarkBlue + Blue
-!xterm*color4:  #458588
-!xterm*color12: #076678
-!! DarkMagenta + Magenta
-!xterm*color5:  #b16286
-!xterm*color13: #8f3f71
-!! DarkCyan + Cyan
-!xterm*color6:  #689d6a
-!xterm*color14: #427b58
-!! LightGrey + White
-!xterm*color7:  #665c54
-!xterm*color15: #3c3836
+xterm*background: #1D1F21
+xterm*foreground: #C5C8C6
+! black
+xterm*color0: #282A2E
+xterm*color8: #373B41
+! red
+xterm*color1: #CC6666
+xterm*color9: #CC6666
+! green
+xterm*color2: #B5BD68
+xterm*color10: #B5BD68
+! yellow
+xterm*color3: #DE935F
+xterm*color11: #F0C674
+! blue
+xterm*color4: #5F819D
+xterm*color12: #81A2BE
+! magenta
+xterm*color5: #85678F
+xterm*color13: #B294BB
+! cyan
+xterm*color6: #5E8D87
+xterm*color14: #8ABEB7
+! white
+xterm*color7: #707880
+xterm*color15: #C5C8C6
