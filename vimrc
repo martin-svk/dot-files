@@ -38,8 +38,7 @@
 " TODO SECTION
 " ======================================================================================================================
 "
-" 1. Yankring investigation and disabling what I dont need.
-" 2. Start writing this vimrc help file.
+" 1. Start writing this vimrc help file.
 "
 " ======================================================================================================================
 
@@ -250,14 +249,11 @@ endif
 " Color scheme settings
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Before 12 hour
-if strftime('%H') < 12
-  set bg=light
-  colorscheme solarized
-else
-  set bg=dark
-  colorscheme solarized
-endif
+" Solarized color scheme
+set bg=dark
+colorscheme solarized
+" Special airline theme
+let g:airline_theme='tomorrow'
 
 " Toggle between dark and white version
 call togglebg#map("<F5>")
