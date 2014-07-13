@@ -1,5 +1,5 @@
 ! =============================================================================
-! ============================== BASIC CONFIG =================================
+! ============================== XTERM CONFIG =================================
 ! =============================================================================
 
 ! Unicode support
@@ -10,9 +10,7 @@ xterm*customization: -color
 xterm*termName: xterm-256color
 
 ! Font settings
-!xterm*faceName: Inconsolata:Bold
 xterm*faceName: Ubuntu Mono:Bold
-!xterm*faceName: Dejavu Sans Mono:Bold
 xterm*faceSize: 11
 xterm*allowBoldFonts: false
 
@@ -32,46 +30,10 @@ xterm*ScrollBar: false
 xterm*scrollTtyOutput: false
 
 ! =============================================================================
-! ============================= COLOR SCHEMES =================================
-! =============================================================================
-
-! =============================================================================
-! Hybrid Terminal Colours. Uses the palette from Tomorrow-Night:
-! =============================================================================
-
-!xterm*background: #1D1F21
-!xterm*foreground: #C5C8C6
-!! black
-!xterm*color0: #282A2E
-!xterm*color8: #373B41
-!! red
-!xterm*color1: #CC6666
-!xterm*color9: #CC6666
-!! green
-!xterm*color2: #B5BD68
-!xterm*color10: #B5BD68
-!! yellow
-!xterm*color3: #DE935F
-!xterm*color11: #F0C674
-!! blue
-!xterm*color4: #5F819D
-!xterm*color12: #81A2BE
-!! magenta
-!xterm*color5: #85678F
-!xterm*color13: #B294BB
-!! cyan
-!xterm*color6: #5E8D87
-!xterm*color14: #8ABEB7
-!! white
-!xterm*color7: #707880
-!xterm*color15: #C5C8C6
-
-! =============================================================================
 ! Solarized color scheme for the X Window System
 ! =============================================================================
 
 ! Common
-! =============================================================================
 
 #define S_yellow        #b58900
 #define S_orange        #cb4b16
@@ -83,7 +45,6 @@ xterm*scrollTtyOutput: false
 #define S_green         #859900
 
 ! Dark
-! =============================================================================
 
 #define S_base03        #002b36
 #define S_base02        #073642
@@ -94,18 +55,16 @@ xterm*scrollTtyOutput: false
 #define S_base2         #eee8d5
 #define S_base3         #fdf6e3
 
-
 ! Light
-! =============================================================================
 
-! #define S_base03        #fdf6e3
-! #define S_base02        #eee8d5
-! #define S_base01        #93a1a1
-! #define S_base00        #839496
-! #define S_base0         #657b83
-! #define S_base1         #586e75
-! #define S_base2         #073642
-! #define S_base3         #002b36
+!#define S_base03        #fdf6e3
+!#define S_base02        #eee8d5
+!#define S_base01        #93a1a1
+!#define S_base00        #839496
+!#define S_base0         #657b83
+!#define S_base1         #586e75
+!#define S_base2         #073642
+!#define S_base3         #002b36
 
 xterm*background:              S_base03
 xterm*foreground:              S_base0
