@@ -102,6 +102,8 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'terryma/vim-multiple-cursors'
 " Sneak, easy motion for long lines
 Plugin 'justinmk/vim-sneak'
+" Improved f and t moves
+Plugin 'saihoooooooo/glowshi-ft.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Vim interface improving plugins
@@ -159,6 +161,8 @@ Plugin 'godlygeek/tabular'
 Plugin 'w0ng/vim-hybrid'
 " Solarized color scheme
 Plugin 'altercation/vim-colors-solarized'
+" Indent lines displaying
+Plugin 'Yggdroot/indentLine'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " End of plugin declaration
@@ -290,6 +294,9 @@ highlight clear SignColumn
 
 " Syntastic settings
 let g:syntastic_ruby_checkers = ['mri']
+
+" Indent guides settings
+let g:indentLine_color_term = 23
 
 " ======================================================================================================================
 " Mapping settings
