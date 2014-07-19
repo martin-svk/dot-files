@@ -6,8 +6,8 @@
 # Directory info.
 local current_dir='${PWD/#$HOME/~}'
 
-# RVM info
-local ruby_info=' rvm:(%{$fg[red]%}$(rvm-prompt i v g)%{$reset_color%})'
+# rbenv info
+local ruby_info=' rbenv:(%{$fg[red]%}$(rbenv_prompt_info)%{$reset_color%})'
 
 # Git info
 local git_info='$(git_prompt_info)'

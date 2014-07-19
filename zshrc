@@ -23,7 +23,7 @@ DISABLE_AUTO_TITLE="true"
 # =====================================================================================================================
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(bundler colored-man gitfast gem rake-fast rails ruby rvm sudo tmux tmuxinator zsh-syntax-highlighting)
+plugins=(bundler colored-man gitfast gem rake-fast rails ruby rbenv sudo tmux tmuxinator zsh-syntax-highlighting)
 
 # =====================================================================================================================
 # Sourcing
