@@ -7,7 +7,7 @@
 local current_dir='${PWD/#$HOME/~}'
 
 # rbenv info
-local ruby_info=' rbenv:(%{$fg[red]%}$(rbenv_prompt_info)%{$reset_color%})'
+local ruby_info=' ruby:(%{$fg[red]%}$(rbenv_prompt_info)%{$reset_color%})'
 
 # Git info
 local git_info='$(git_prompt_info)'
