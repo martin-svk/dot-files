@@ -38,7 +38,8 @@
 " TODO SECTION
 " ======================================================================================================================
 "
-" 1. Start writing this vimrc help file.
+" 1. Refactor all panel(window) opening shortcuts, possible to use F keys
+" 2. Start writing this vimrc help file.
 "
 " ======================================================================================================================
 
@@ -188,7 +189,6 @@ set hlsearch                " Highlight search
 set incsearch               " Incremental search
 set hidden                  " Enables to switch between unsaved buffers and keep undo history
 set undolevels=100          " How many undo commands to remember
-set foldenable              " Enable code folding
 set clipboard+=unnamed      " Use system clipboard
 set history=256             " Number of things to remember in history
 set nohlsearch              " Don't highlight after search
@@ -197,7 +197,7 @@ set lazyredraw              " Don't redraw while executing macros (good performa
 set magic                   " For regular expressions turn magic on
 set showmatch               " Show matching brackets when text indicator is over them
 set encoding=utf8           " Set utf8 as standard encoding and en_US as the standard language
-set pastetoggle=<F2>        " Toggle between paste and nopaste
+set pastetoggle=<F3>        " Toggle between paste and nopaste
 set list                    " To display chars listed in listchars below
 set spelllang=en_us         " Set language to us english
 
@@ -225,6 +225,12 @@ filetype off
 filetype plugin on
 filetype indent on
 
+" Folding settings, by default is disabled, use zi
+set foldmethod=syntax
+set foldlevelstart=2
+set fillchars="fold: "
+set nofoldenable
+
 " ======================================================================================================================
 " Mapping settings
 " ======================================================================================================================
@@ -243,14 +249,12 @@ imap <right> <nop>
 map <Space> <nop>
 nnoremap Q <nop>
 
-" Open my vimrc in new tab
-nmap <silent> <F1> :tabedit $MYVIMRC<CR>
 " Toggle spellign on and off
-nmap <silent> <F3> :set spell!<CR>
-" Toggle between dark and white version
-call togglebg#map("<F4>")
+nmap <silent> <F4> :set spell!<CR>
 " Source vimrc, so new setting will be applied
 nmap <silent> <F5> :source $MYVIMRC<CR>
+" Open my vimrc in new tab
+nmap <silent> <F6> :tabedit $MYVIMRC<CR>
 
 " When jump to next match also center screen
 noremap n nzz
@@ -275,7 +279,7 @@ vmap <C-j> xp`[V`]
 vmap <C-k> xkP`[V`]
 
 " ======================================================================================================================
-" Color settings
+" Color and highligting settings
 " ======================================================================================================================
 
 " Xterm 256 colors
@@ -290,6 +294,11 @@ set bg=dark
 colorscheme solarized
 " Special airline theme
 let g:airline_theme='tomorrow'
+
+" Git gutter settings (signcolumn color)
+highlight clear SignColumn
+" Remove underline in folded lines
+hi Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE
 
 " ======================================================================================================================
 " Plugin settings
@@ -318,21 +327,22 @@ autocmd FileType ruby,eruby let g:rubycomplete_load_gemfile = 1
 " Supertab settings TODO: Think about c-p
 let g:SuperTabDefaultCompletionType = '<c-n>'
 
-" Git gutter settings (signcolumn color)
-highlight clear SignColumn
-
 " Syntastic settings
 let g:syntastic_ruby_checkers = ['mri']
+
+" Gundo settings
+let g:gundo_right = 1
+let g:gundo_preview_height = 30
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Plugin mapping and other settings
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Nerdtree mappings
-map <Leader>f :NERDTreeToggle<CR>
+" Show nerdtree panel
+nnoremap <silent> <F1> :NERDTreeToggle<CR>
 
 " Show gundo panel
-nnoremap <silent> <F6> :GundoToggle<CR>
+nnoremap <silent> <F2> :GundoToggle<CR>
 
 " CTRL-P mapping
 let g:ctrlp_map = '<Leader>p'
