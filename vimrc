@@ -102,6 +102,8 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'terryma/vim-multiple-cursors'
 " Sneak, easy motion for long lines
 Plugin 'justinmk/vim-sneak'
+" Collection of usefull mappings using square brackets
+Plugin 'tpope/vim-unimpaired'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Vim interface improving plugins
@@ -196,6 +198,8 @@ set magic                   " For regular expressions turn magic on
 set showmatch               " Show matching brackets when text indicator is over them
 set encoding=utf8           " Set utf8 as standard encoding and en_US as the standard language
 set pastetoggle=<F2>        " Toggle between paste and nopaste
+set list                    " To display chars listed in listchars below
+set spelllang=en_us         " Set language to us english
 
 " Intedation settings (2 spaces tabs)
 set autoindent
@@ -213,13 +217,7 @@ set nowb
 set noswapfile
 
 " Highlight whitespaces
-set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
-
-" Spellcheck settings
-set spelllang=en_us
-nmap <silent> <F3> :set spell!<CR>
-
 
 " Filetype settings
 syntax on
@@ -227,7 +225,14 @@ filetype off
 filetype plugin on
 filetype indent on
 
-" Disabling arrow keys
+" ======================================================================================================================
+" Mapping settings
+" ======================================================================================================================
+
+" Setting leader
+let mapleader="\<space>"
+
+" Disabling arrow keys, space key, exmode enter with Q key
 map <up> <nop>
 map <left> <nop>
 map <right> <nop>
@@ -235,16 +240,46 @@ imap <up> <nop>
 imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
-
-" Disabling space key
 map <Space> <nop>
-
-" Disabling Q to access ex mode
 nnoremap Q <nop>
 
-" ---------------------------------------------------------------------------------------------------------------------
+" Open my vimrc in new tab
+nmap <silent> <F1> :tabedit $MYVIMRC<CR>
+" Toggle spellign on and off
+nmap <silent> <F3> :set spell!<CR>
+" Toggle between dark and white version
+call togglebg#map("<F4>")
+" Source vimrc, so new setting will be applied
+nmap <silent> <F5> :source $MYVIMRC<CR>
+
+" When jump to next match also center screen
+noremap n nzz
+" Replace : for ;
+nnoremap ; :
+" Write read only files with w!!
+cmap w!! w !sudo tee % >/dev/null
+
+" Window resizing keys
+nnoremap <silent> = :vertical resize +5<CR>
+nnoremap <silent> + :resize +5<CR>
+nnoremap <silent> - :vertical resize -5<CR>
+nnoremap <silent> _ :resize -5<CR>
+
+" Map save to ctrl-s
+nmap <silent> <c-s> :w<CR>
+imap <silent> <c-s> <Esc>:w<CR>
+
+" Bubbling like effect, using unimpaired mappings to better handle egde cases
+" Bubble single lines
+nmap <C-k> [e
+nmap <C-j> ]e
+" Bubble multiple lines
+vmap <C-k> [egv
+vmap <C-j> ]egv
+
+" ======================================================================================================================
 " Color settings
-" ---------------------------------------------------------------------------------------------------------------------
+" ======================================================================================================================
 
 " Xterm 256 colors
 if $TERM == 'xterm-256color' || 'screen-256color'
@@ -253,18 +288,11 @@ if $TERM == 'xterm-256color' || 'screen-256color'
     let &colorcolumn=121
 endif
 
-" ---------------------------------------------------------------------------------------------------------------------
-" Color scheme settings
-" ---------------------------------------------------------------------------------------------------------------------
-
 " Solarized color scheme
 set bg=dark
 colorscheme solarized
 " Special airline theme
 let g:airline_theme='tomorrow'
-
-" Toggle between dark and white version
-call togglebg#map("<F5>")
 
 " ======================================================================================================================
 " Plugin settings
@@ -299,37 +327,8 @@ highlight clear SignColumn
 " Syntastic settings
 let g:syntastic_ruby_checkers = ['mri']
 
-" ======================================================================================================================
-" Mapping settings
-" ======================================================================================================================
-
-" Setting leader
-let mapleader="\<space>"
-
-" When jump to next match also center screen
-noremap n nzz
-" Replace : for ;
-nnoremap ; :
-" Write read only files with w!!
-cmap w!! w !sudo tee % >/dev/null
-
-" Window resizing keys
-nnoremap <silent> = :vertical resize +5<CR>
-nnoremap <silent> + :resize +5<CR>
-nnoremap <silent> - :vertical resize -5<CR>
-nnoremap <silent> _ :resize -5<CR>
-
-" Map save to ctrl-s
-nmap <c-s> :w<CR>
-imap <c-s> <Esc>:w<CR>
-
-" Creating bubbling like feature
-nmap <C-k> ddkP
-nmap <C-j> ddp
-
-
 " ---------------------------------------------------------------------------------------------------------------------
-" Specific for each plugin
+" Plugin mapping and other settings
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Nerdtree mappings
@@ -347,13 +346,6 @@ let g:EasyMotion_leader_key = 'm'
 map gq :bd<CR>
 map gb :bp<CR>
 map gn :bn<CR>
-
-" Rails vim plugin mapping
-map gc :Rcontroller<CR>
-map gv :Rview<CR>
-" for goto model use gf (go file)
-map ga :A<CR>
-map gr :R<CR>
 
 " Yankring mapping
 map <Leader>y :YRShow<CR>
