@@ -1,11 +1,17 @@
-Martin-svk dotfiles
+My presonal configuration files
 =========
 
-### This is collection of my personal ruby on rails centric dotfiles settings for :
+### In this repository are icluded configuration files for:
 
+* vim
+* zsh
+* bash
 * git
+* xterm
 * tmux
 * tmuxinator
-* vim
-* xterm
-* zsh (bash also supported)
+* ruby utilies (pry, gem, irb)
+
+### TODO:
+
+* Document vimrc
