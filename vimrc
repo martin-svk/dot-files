@@ -102,8 +102,6 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'terryma/vim-multiple-cursors'
 " Sneak, easy motion for long lines
 Plugin 'justinmk/vim-sneak'
-" Collection of usefull mappings using square brackets
-Plugin 'tpope/vim-unimpaired'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Vim interface improving plugins
@@ -269,13 +267,12 @@ nnoremap <silent> _ :resize -5<CR>
 nmap <silent> <c-s> :w<CR>
 imap <silent> <c-s> <Esc>:w<CR>
 
-" Bubbling like effect, using unimpaired mappings to better handle egde cases
 " Bubble single lines
-nmap <C-k> [e
-nmap <C-j> ]e
+nmap <C-k> ddkP
+nmap <C-j> ddp
 " Bubble multiple lines
-vmap <C-k> [egv
-vmap <C-j> ]egv
+vmap <C-j> xp`[V`]
+vmap <C-k> xkP`[V`]
 
 " ======================================================================================================================
 " Color settings
