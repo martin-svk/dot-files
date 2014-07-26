@@ -111,6 +111,8 @@ Plugin 'justinmk/vim-sneak'
 Plugin 'scrooloose/nerdtree'
 " Airline (improved statusline)
 Plugin 'bling/vim-airline'
+" History tree visualizer
+Plugin 'sjl/gundo.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Git/Github support plugins
@@ -252,8 +254,6 @@ nmap <silent> <F5> :source $MYVIMRC<CR>
 
 " When jump to next match also center screen
 noremap n nzz
-" Replace : for ;
-nnoremap ; :
 " Write read only files with w!!
 cmap w!! w !sudo tee % >/dev/null
 
@@ -330,6 +330,9 @@ let g:syntastic_ruby_checkers = ['mri']
 
 " Nerdtree mappings
 map <Leader>f :NERDTreeToggle<CR>
+
+" Show gundo panel
+nnoremap <silent> <F6> :GundoToggle<CR>
 
 " CTRL-P mapping
 let g:ctrlp_map = '<Leader>p'
