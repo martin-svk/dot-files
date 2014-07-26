@@ -200,6 +200,7 @@ set encoding=utf8           " Set utf8 as standard encoding and en_US as the sta
 set pastetoggle=<F3>        " Toggle between paste and nopaste
 set list                    " To display chars listed in listchars below
 set spelllang=en_us         " Set language to us english
+set spellfile=~/.vim/dictionary.utf-8.add
 
 " Intedation settings (2 spaces tabs)
 set autoindent
@@ -369,6 +370,12 @@ let g:multi_cursor_quit_key='<Esc>'
 " Surround vim shortcut for quotes toggle
 nmap cq cs"'
 nmap cQ cs'"
+
+" ======================================================================================================================
+" Setting abbrevations to automatically repair mistakes
+" ======================================================================================================================
+
+ab teh the
 
 " ======================================================================================================================
 " END OF VIMRC
