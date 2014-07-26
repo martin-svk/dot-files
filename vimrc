@@ -102,8 +102,6 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'terryma/vim-multiple-cursors'
 " Sneak, easy motion for long lines
 Plugin 'justinmk/vim-sneak'
-" Improved f and t moves
-Plugin 'saihoooooooo/glowshi-ft.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Vim interface improving plugins
@@ -148,8 +146,6 @@ Plugin 'tmhedberg/matchit'
 Plugin 'kana/vim-textobj-user'
 " Ruby block text object
 Plugin 'nelstrom/vim-textobj-rubyblock'
-" Unix utilities helper (SudoWrite)
-Plugin 'tpope/vim-eunuch'
 " Alignment on specific regex (:Tabularize \=)
 Plugin 'godlygeek/tabular'
 
@@ -189,6 +185,7 @@ set timeoutlen=200          " Setting ESC timeout
 set hlsearch                " Highlight search
 set incsearch               " Incremental search
 set hidden                  " Enables to switch between unsaved buffers and keep undo history
+set undolevels=100          " How many undo commands to remember
 set foldenable              " Enable code folding
 set clipboard+=unnamed      " Use system clipboard
 set history=256             " Number of things to remember in history
@@ -198,6 +195,7 @@ set lazyredraw              " Don't redraw while executing macros (good performa
 set magic                   " For regular expressions turn magic on
 set showmatch               " Show matching brackets when text indicator is over them
 set encoding=utf8           " Set utf8 as standard encoding and en_US as the standard language
+set pastetoggle=<F2>        " Toggle between paste and nopaste
 
 " Intedation settings (2 spaces tabs)
 set autoindent
@@ -214,6 +212,15 @@ set nobackup
 set nowb
 set noswapfile
 
+" Highlight whitespaces
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
+
+" Spellcheck settings
+set spelllang=en_us
+nmap <silent> <F3> :set spell!<CR>
+
+
 " Filetype settings
 syntax on
 filetype off
@@ -222,7 +229,6 @@ filetype indent on
 
 " Disabling arrow keys
 map <up> <nop>
-map <down> <nop>
 map <left> <nop>
 map <right> <nop>
 imap <up> <nop>
@@ -300,6 +306,13 @@ let g:syntastic_ruby_checkers = ['mri']
 " Setting leader
 let mapleader="\<space>"
 
+" When jump to next match also center screen
+noremap n nzz
+" Replace : for ;
+nnoremap ; :
+" Write read only files with w!!
+cmap w!! w !sudo tee % >/dev/null
+
 " Window resizing keys
 nnoremap <silent> = :vertical resize +5<CR>
 nnoremap <silent> + :resize +5<CR>
@@ -313,6 +326,7 @@ imap <c-s> <Esc>:w<CR>
 " Creating bubbling like feature
 nmap <C-k> ddkP
 nmap <C-j> ddp
+
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Specific for each plugin
