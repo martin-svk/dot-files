@@ -99,8 +99,6 @@ Plugin 'mattn/emmet-vim'
 Plugin 'kien/ctrlp.vim'
 " Easily move around file (easy motion)
 Plugin 'Lokaltog/vim-easymotion'
-" Multiple cursors vim support
-Plugin 'terryma/vim-multiple-cursors'
 " Sneak, easy motion for long lines
 Plugin 'justinmk/vim-sneak'
 
@@ -360,12 +358,6 @@ map gn :bn<CR>
 
 " Yankring mapping
 map <Leader>y :YRShow<CR>
-
-" Multiple cursors mapping (c-p and c-x is for visual mode)
-let g:multi_cursor_next_key='<C-n>'
-let g:multi_cursor_prev_key='<C-p>'
-let g:multi_cursor_skip_key='<C-x>'
-let g:multi_cursor_quit_key='<Esc>'
 
 " Surround vim shortcut for quotes toggle
 nmap cq cs"'
