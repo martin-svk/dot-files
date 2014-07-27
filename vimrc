@@ -257,6 +257,8 @@ nmap <silent> <F6> :tabedit $MYVIMRC<CR>
 
 " When jump to next match also center screen
 noremap n nzz
+" Save shift use when entering commands
+noremap ; :
 " Write read only files with w!!
 cmap w!! w !sudo tee % >/dev/null
 
@@ -351,10 +353,10 @@ map <Leader>t :CtrlPBufTagAll<CR>
 " Easy motion mapping
 let g:EasyMotion_leader_key = 'm'
 
-" Buffer switching mapping g[q]uit, g[b]ack, g[n]ext
-map gq :bd<CR>
-map gb :bp<CR>
-map gn :bn<CR>
+" Tabs switching and closing mapping
+nnoremap td :tabclose<CR>
+nnoremap tn :tabnext<CR>
+nnoremap tb :tabprevious<CR>
 
 " Yankring mapping
 map <Leader>y :YRShow<CR>
