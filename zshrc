@@ -92,9 +92,11 @@ alias q='exit'
 # =====================================================================================================================
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export EDITOR='vim'
-export PATH="$HOME/.dynamic-colors/bin:$PATH"
 
 # =====================================================================================================================
-# Other completions
+# Integrating dynamic colors tool
 # =====================================================================================================================
-source $HOME/.dynamic-colors/completions/dynamic-colors.zsh
+if [ -d "$HOME/.dynamic-colors" ]; then
+  export PATH="$HOME/.dynamic-colors/bin:$PATH"
+  source $HOME/.dynamic-colors/completions/dynamic-colors.zsh
+fi
