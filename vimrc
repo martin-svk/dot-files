@@ -40,6 +40,7 @@
 "
 " 1. Refactor all panel(window) opening shortcuts, possible to use F keys
 " 2. Start writing this vimrc help file.
+" 3. Refactor vimrc into more specifi files (https://github.com/thoughtbot/dotfiles/blob/master/vimrc)
 "
 " ======================================================================================================================
 
@@ -200,35 +201,88 @@ set list                    " To display chars listed in listchars below
 set spelllang=en_us         " Set language to us english
 set spellfile=~/.vim/dictionary.utf-8.add
 
+" -----------------------------------------------------
 " Intedation settings (2 spaces tabs)
+" -----------------------------------------------------
 set autoindent
 set expandtab
 set shiftwidth=2
 set softtabstop=2
 
-" Open new split panes to right and bottom, which feels more natural
+" -----------------------------------------------------
+" Split settings.
+" -----------------------------------------------------
 set splitbelow
 set splitright
 
+" -----------------------------------------------------
 " Turn backup off, since most stuff is in git
+" -----------------------------------------------------
 set nobackup
 set nowb
 set noswapfile
 
+" -----------------------------------------------------
 " Highlight whitespaces
+" -----------------------------------------------------
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
+" -----------------------------------------------------
 " Filetype settings
+" -----------------------------------------------------
 syntax on
 filetype off
 filetype plugin on
 filetype indent on
 
+" -----------------------------------------------------
 " Folding settings, by default is disabled, use zi
+" -----------------------------------------------------
 set foldmethod=syntax
 set foldlevelstart=2
 set fillchars="fold: "
 set nofoldenable
+
+" -----------------------------------------------------
+" Enable omni completion. (Ctrl-X Ctrl-O)
+" -----------------------------------------------------
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType c set omnifunc=ccomplete#Complete
+autocmd FileType java set omnifunc=javacomplete#Complete
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading=1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd FileType ruby,eruby let g:rubycomplete_load_gemfile = 1
+
+" make CSS omnicompletion work for SASS and SCSS
+autocmd BufNewFile,BufRead *.scss             set ft=scss.css
+autocmd BufNewFile,BufRead *.sass             set ft=sass.css
+
+" use syntax complete if nothing else available
+if has("autocmd") && exists("+omnifunc")
+  autocmd Filetype *
+              \ if &omnifunc == "" |
+              \         setlocal omnifunc=syntaxcomplete#Complete |
+              \ endif
+endif
+
+" -----------------------------------------------------
+" Completion ignore list
+" -----------------------------------------------------
+set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+set wildignore+=*vim/backups*
+set wildignore+=*sass-cache*
+set wildignore+=*DS_Store*
+set wildignore+=vendor/rails/**
+set wildignore+=vendor/cache/**
+set wildignore+=*.gem
+set wildignore+=log/**
+set wildignore+=tmp/**
+set wildignore+=*.png,*.jpg,*.gif
 
 " ======================================================================================================================
 " Mapping settings
@@ -236,6 +290,7 @@ set nofoldenable
 
 " Setting leader
 let mapleader="\<space>"
+let g:mapleader="\<space>"
 
 " Disabling arrow keys, space key, exmode enter with Q key
 map <up> <nop>
@@ -257,10 +312,13 @@ nmap <silent> <F6> :tabedit $MYVIMRC<CR>
 
 " When jump to next match also center screen
 noremap n nzz
-" Save shift use when entering commands
-noremap ; :
 " Write read only files with w!!
 cmap w!! w !sudo tee % >/dev/null
+" Easily switch between the last two files
+nnoremap <leader><leader> <c-^>
+" Remap VIM 0 to first non-blank character
+nnoremap 0 ^
+nnoremap ^ 0
 
 " Window resizing keys
 nnoremap <silent> = :vertical resize +5<CR>
@@ -304,35 +362,84 @@ hi Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE
 " Plugin settings
 " ======================================================================================================================
 
+" -----------------------------------------------------
 " Airline settings
+" -----------------------------------------------------
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts = 0
 
-" CTRL-P settings
-let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:10,results:10'
+" -----------------------------------------------------
+" Nerdtree setting
+" -----------------------------------------------------
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+let g:NERDTreeWinSize = 30
 
+" -----------------------------------------------------
+" CTRL-P settings
+" -----------------------------------------------------
+let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:10,results:10'
+let g:ctrlp_cmd = 'CtrlPMixed'
+
+if exists("g:ctrlp_user_command")
+  unlet g:ctrlp_user_command
+endif
+
+if executable('ag')
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command =
+    \ 'ag %s --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+else
+  " Fall back to using git ls-files if Ag is not available
+  let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
+endif
+
+" Default to filename searches - so that appctrl will find application controller
+let g:ctrlp_by_filename = 1
+
+" -----------------------------------------------------
 " Ultisnips settings
+" -----------------------------------------------------
 let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<c-n>'
 let g:UltiSnipsJumpBackwardTrigger='<c-z>'
 
-" Setting ruby autocomple
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading=1
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-autocmd FileType ruby,eruby let g:rubycomplete_load_gemfile = 1
-
+" -----------------------------------------------------
 " Supertab settings TODO: Think about c-p
+" -----------------------------------------------------
 let g:SuperTabDefaultCompletionType = '<c-n>'
 
+" -----------------------------------------------------
 " Syntastic settings
+" -----------------------------------------------------
 let g:syntastic_ruby_checkers = ['mri']
+" mark syntax errors with :signs
+let g:syntastic_enable_signs=1
+" automatically jump to the error when saving the file
+let g:syntastic_auto_jump=0
+" show the error list automatically
+let g:syntastic_auto_loc_list=1
+" don't care about warnings
+let g:syntastic_quiet_messages = {'level': 'warnings'}
+" check on open as well as save
+let g:syntastic_check_on_open=1
 
+" -----------------------------------------------------
 " Gundo settings
+" -----------------------------------------------------
 let g:gundo_right = 1
 let g:gundo_preview_height = 30
+
+" -----------------------------------------------------
+" Easy motion settings
+" -----------------------------------------------------
+let g:EasyMotion_keys='asdfjkoweriop'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Plugin mapping and other settings
@@ -346,8 +453,8 @@ nnoremap <silent> <F2> :GundoToggle<CR>
 
 " CTRL-P mapping
 let g:ctrlp_map = '<Leader>p'
-let g:ctrlp_cmd = 'CtrlPMixed'
-map <Leader>t :CtrlPBufTagAll<CR>
+nnoremap <silent> <Leader>t :CtrlPBufTagAll<CR>
+nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
 
 " Easy motion mapping
 let g:EasyMotion_leader_key = 'm'
