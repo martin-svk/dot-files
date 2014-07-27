@@ -156,8 +156,8 @@ Plugin 'godlygeek/tabular'
 
 " Hybrid light and dark color schemes
 Plugin 'w0ng/vim-hybrid'
-" Solarized color scheme
-Plugin 'altercation/vim-colors-solarized'
+" Tomorrow theme
+Plugin 'chriskempson/vim-tomorrow-theme'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " End of plugin declaration
@@ -290,10 +290,9 @@ if $TERM == 'xterm-256color' || 'screen-256color'
     let &colorcolumn=121
 endif
 
-" Solarized color scheme
-set bg=dark
-colorscheme solarized
-" Special airline theme
+" Color scheme
+colorscheme Tomorrow-Night-Eighties
+" Airline theme
 let g:airline_theme='tomorrow'
 
 " Git gutter settings (signcolumn color)
