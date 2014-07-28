@@ -2,7 +2,7 @@
 " Author : Martin Toma
 " ======================================================================================================================
 " Date created : Tue Nov 12 14:14:56 CET 2013
-" VIMRC Config focused on RAILS development
+" VIMRC Configuration focused on RAILS development
 " ======================================================================================================================
 
 " ======================================================================================================================
@@ -40,7 +40,7 @@
 "
 " 1. Refactor all panel(window) opening shortcuts, possible to use F keys
 " 2. Start writing this vimrc help file.
-" 3. Refactor vimrc into more specifi files (https://github.com/thoughtbot/dotfiles/blob/master/vimrc)
+" 3. Refactor vimrc into more specific files (https://github.com/thoughtbot/dotfiles/blob/master/vimrc)
 "
 " ======================================================================================================================
 
@@ -66,7 +66,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-rails'
 " Basic ruby related features
 Plugin 'vim-ruby/vim-ruby'
-" Slim templating syntax highliting
+" Slim templating syntax highlighting
 Plugin 'slim-template/vim-slim.git'
 " Better JSON syntax
 Plugin 'elzr/vim-json'
@@ -74,7 +74,7 @@ Plugin 'elzr/vim-json'
 Plugin 'tpope/vim-endwise'
 " HAML support for vim
 Plugin 'tpope/vim-haml'
-" Coffescript support for vim
+" Coffeescript support for vim
 Plugin 'kchmck/vim-coffee-script'
 " Better javascript support
 Plugin 'jelera/vim-javascript-syntax'
@@ -109,7 +109,7 @@ Plugin 'justinmk/vim-sneak'
 
 " Nerdtree file browser
 Plugin 'scrooloose/nerdtree'
-" Airline (improved statusline)
+" Airline (improved status line)
 Plugin 'bling/vim-airline'
 " History tree visualizer
 Plugin 'sjl/gundo.vim'
@@ -136,7 +136,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'bronson/vim-trailing-whitespace'
 " Supertab for tab triggering completion (integrates with snippets, etc.)
 Plugin 'ervandew/supertab'
-" Autoclosing brackets and quotes
+" Auto-closing brackets and quotes
 Plugin 'Raimondi/delimitMate'
 " YANK history management
 Plugin 'YankRing.vim'
@@ -152,7 +152,7 @@ Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'godlygeek/tabular'
 
 " ---------------------------------------------------------------------------------------------------------------------
-" Colorscheme plugins
+" Color-scheme plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Hybrid light and dark color schemes
@@ -176,7 +176,7 @@ set noignorecase            " Don't ignore cases
 set laststatus=2            " Always show status line
 set showmode                " Always show mode
 set wildmenu                " Better auto-complete of ex commands
-set textwidth=120           " Text widht is 120 chars
+set textwidth=120           " Text width is 120 chars
 set autoread                " Automatically reload change files on disk
 set bg=dark                 " Dark background setting (dark theme version of current color)
 set cursorline              " Set default cursor line (highlighting is done by color scheme)
@@ -192,17 +192,17 @@ set clipboard+=unnamed      " Use system clipboard
 set history=256             " Number of things to remember in history
 set nohlsearch              " Don't highlight after search
 set mat=2                   " How many tenths of a second to blink when matching brackets
-set lazyredraw              " Don't redraw while executing macros (good performance config)
+set lazyredraw              " Don't redraw while executing macros (better performance)
 set magic                   " For regular expressions turn magic on
 set showmatch               " Show matching brackets when text indicator is over them
 set encoding=utf8           " Set utf8 as standard encoding and en_US as the standard language
 set pastetoggle=<F3>        " Toggle between paste and nopaste
 set list                    " To display chars listed in listchars below
-set spelllang=en_us         " Set language to us english
+set spelllang=en_us         " Set language to us English
 set spellfile=~/.vim/dictionary.utf-8.add
 
 " -----------------------------------------------------
-" Intedation settings (2 spaces tabs)
+" Intendation settings (2 spaces tabs)
 " -----------------------------------------------------
 set autoindent
 set expandtab
@@ -236,7 +236,7 @@ filetype plugin on
 filetype indent on
 
 " -----------------------------------------------------
-" Folding settings, by default is disabled, use zi
+" Folding settings, by default is disabled, use 'zi'
 " -----------------------------------------------------
 set foldmethod=syntax
 set foldlevelstart=2
@@ -258,7 +258,7 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_load_gemfile = 1
 
-" make CSS omnicompletion work for SASS and SCSS
+" make CSS omni-completion work for SASS and SCSS
 autocmd BufNewFile,BufRead *.scss             set ft=scss.css
 autocmd BufNewFile,BufRead *.sass             set ft=sass.css
 
@@ -303,7 +303,7 @@ imap <right> <nop>
 map <Space> <nop>
 nnoremap Q <nop>
 
-" Toggle spellign on and off
+" Toggle spelling on and off
 nmap <silent> <F4> :set spell!<CR>
 " Source vimrc, so new setting will be applied
 nmap <silent> <F5> :source $MYVIMRC<CR>
@@ -338,7 +338,7 @@ vmap <C-j> xp`[V`]
 vmap <C-k> xkP`[V`]
 
 " ======================================================================================================================
-" Color and highligting settings
+" Color and highlighting settings
 " ======================================================================================================================
 
 " Xterm 256 colors
@@ -459,10 +459,13 @@ nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
 " Easy motion mapping
 let g:EasyMotion_leader_key = 'm'
 
-" Tabs switching and closing mapping
+" Tabs and buffs switching and closing mapping
 nnoremap td :tabclose<CR>
 nnoremap tn :tabnext<CR>
 nnoremap tb :tabprevious<CR>
+nnoremap ,d :bd<CR>
+nnoremap ,n :bn<CR>
+nnoremap ,b :bp<CR>
 
 " Yankring mapping
 map <Leader>y :YRShow<CR>
@@ -472,7 +475,7 @@ nmap cq cs"'
 nmap cQ cs'"
 
 " ======================================================================================================================
-" Setting abbrevations to automatically repair mistakes
+" Setting abbreviations to automatically repair mistakes
 " ======================================================================================================================
 
 ab teh the
