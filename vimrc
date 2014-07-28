@@ -155,8 +155,6 @@ Plugin 'godlygeek/tabular'
 " Color-scheme plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Hybrid light and dark color schemes
-Plugin 'w0ng/vim-hybrid'
 " Tomorrow theme
 Plugin 'chriskempson/vim-tomorrow-theme'
 
@@ -348,7 +346,7 @@ if $TERM == 'xterm-256color' || 'screen-256color'
     let &colorcolumn=121
 endif
 
-" Color scheme
+" Color scheme settings
 colorscheme Tomorrow-Night
 " Airline theme
 let g:airline_theme='tomorrow'
