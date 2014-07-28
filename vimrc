@@ -349,7 +349,7 @@ if $TERM == 'xterm-256color' || 'screen-256color'
 endif
 
 " Color scheme
-colorscheme Tomorrow-Night-Eighties
+colorscheme Tomorrow-Night
 " Airline theme
 let g:airline_theme='tomorrow'
 
@@ -413,7 +413,7 @@ let g:UltiSnipsJumpBackwardTrigger='<c-z>'
 " -----------------------------------------------------
 " Supertab settings TODO: Think about c-p
 " -----------------------------------------------------
-let g:SuperTabDefaultCompletionType = '<c-n>'
+let g:SuperTabDefaultCompletionType = '<c-p>'
 
 " -----------------------------------------------------
 " Syntastic settings
