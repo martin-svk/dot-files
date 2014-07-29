@@ -99,6 +99,8 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 " Emmet for fast html prototyping
 Plugin 'mattn/emmet-vim'
+" Splitting and joining multiple lines constructs
+Plugin 'AndrewRadev/splitjoin.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Vim motion/navigation improving plugins
@@ -123,6 +125,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 " History tree visualizer
 Plugin 'sjl/gundo.vim'
+" Preview before substitution (only in command line mode (c-f))
+Plugin 'osyo-manga/vim-over'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Git/Github support plugins
@@ -478,6 +482,14 @@ map <Leader>y :YRShow<CR>
 " Surround vim shortcut for quotes toggle
 nmap cq cs"'
 nmap cQ cs'"
+
+
+" ======================================================================================================================
+" Autocommands and other tweaks
+" ======================================================================================================================
+
+" Close vim if the last open window is nerdtree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " ======================================================================================================================
 " Setting abbreviations to automatically repair mistakes
