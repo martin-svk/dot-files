@@ -19,6 +19,14 @@
 "
 " # Section 3. - Navigation in code
 "
+" 3.3 Multiple cursors:
+"
+" Using default keybindings:
+"   let g:multi_cursor_next_key='<C-n>'
+"   let g:multi_cursor_prev_key='<C-p>'
+"   let g:multi_cursor_skip_key='<C-x>'
+"   let g:multi_cursor_quit_key='<Esc>'
+"
 "
 "
 " # Section 4. - Code manipulation
@@ -102,6 +110,8 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'Lokaltog/vim-easymotion'
 " Sneak, easy motion for long lines
 Plugin 'justinmk/vim-sneak'
+" Multiple cursors feature
+Plugin 'terryma/vim-multiple-cursors'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Vim interface improving plugins
@@ -397,9 +407,6 @@ else
   let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
   let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
 endif
-
-" Default to filename searches - so that appctrl will find application controller
-let g:ctrlp_by_filename = 1
 
 " -----------------------------------------------------
 " Ultisnips settings
