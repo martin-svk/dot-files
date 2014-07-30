@@ -488,6 +488,8 @@ nmap cQ cs'"
 " Autocommands and other tweaks
 " ======================================================================================================================
 
+" Open nerdtree automatically
+autocmd vimenter * NERDTree
 " Close vim if the last open window is nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
