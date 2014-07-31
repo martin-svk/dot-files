@@ -27,8 +27,6 @@
 "   let g:multi_cursor_skip_key='<C-x>'
 "   let g:multi_cursor_quit_key='<Esc>'
 "
-"
-"
 " # Section 4. - Code manipulation
 "
 "
@@ -324,6 +322,7 @@ nmap <silent> <F6> :tabedit $MYVIMRC<CR>
 
 " When jump to next match also center screen
 noremap n nzz
+noremap N Nzz
 " Write read only files with w!!
 cmap w!! w !sudo tee % >/dev/null
 " Easily switch between the last two files
