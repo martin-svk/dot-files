@@ -298,11 +298,15 @@ set wildignore+=*.png,*.jpg,*.gif
 " Mapping settings
 " ======================================================================================================================
 
+" -----------------------------------------------------
 " Setting leader
+" -----------------------------------------------------
 let mapleader="\<space>"
 let g:mapleader="\<space>"
 
+" -----------------------------------------------------
 " Disabling arrow keys, space key, exmode enter with Q key
+" -----------------------------------------------------
 map <up> <nop>
 map <left> <nop>
 map <right> <nop>
@@ -313,29 +317,23 @@ imap <right> <nop>
 map <Space> <nop>
 nnoremap Q <nop>
 
-" Toggle spelling on and off
-nmap <silent> <F4> :set spell!<CR>
-" Source vimrc, so new setting will be applied
-nmap <silent> <F5> :source $MYVIMRC<CR>
-" Open my vimrc in new tab
-nmap <silent> <F6> :tabedit $MYVIMRC<CR>
+" -----------------------------------------------------
+" Vim defaults tweaking and overriding
+" -----------------------------------------------------
 
 " When jump to next match also center screen
 noremap n nzz
 noremap N Nzz
+
 " Write read only files with w!!
 cmap w!! w !sudo tee % >/dev/null
+
 " Easily switch between the last two files
 nnoremap <leader><leader> <c-^>
+
 " Remap VIM 0 to first non-blank character
 nnoremap 0 ^
 nnoremap ^ 0
-
-" Window resizing keys
-nnoremap <silent> = :vertical resize +5<CR>
-nnoremap <silent> + :resize +5<CR>
-nnoremap <silent> - :vertical resize -5<CR>
-nnoremap <silent> _ :resize -5<CR>
 
 " Map save to ctrl-s
 nmap <silent> <c-s> :w<CR>
@@ -348,26 +346,23 @@ nmap <C-j> ddp
 vmap <C-j> xp`[V`]
 vmap <C-k> xkP`[V`]
 
-" ======================================================================================================================
-" Color and highlighting settings
-" ======================================================================================================================
+" -----------------------------------------------------
+" Toggles
+" -----------------------------------------------------
+" Toggle spelling on and off
+nmap <silent> <F4> :set spell!<CR>
+" Source vimrc, so new setting will be applied
+nmap <silent> <F5> :source $MYVIMRC<CR>
+" Open my vimrc in new tab
+nmap <silent> <F6> :tabedit $MYVIMRC<CR>
 
-" Xterm 256 colors
-if $TERM == 'xterm-256color' || 'screen-256color'
-    set t_Co=256
-    " Set colorcolumn
-    let &colorcolumn=121
-endif
-
-" Color scheme settings
-colorscheme Tomorrow-Night
-" Airline theme
-let g:airline_theme='tomorrow'
-
-" Git gutter settings (signcolumn color)
-highlight clear SignColumn
-" Remove underline in folded lines
-hi Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE
+" -----------------------------------------------------
+" Window management mappings
+" -----------------------------------------------------
+nnoremap <silent> = :vertical resize +5<CR>
+nnoremap <silent> + :resize +5<CR>
+nnoremap <silent> - :vertical resize -5<CR>
+nnoremap <silent> _ :resize -5<CR>
 
 " ======================================================================================================================
 " Plugin settings
@@ -437,6 +432,8 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_quiet_messages = {'level': 'warnings'}
 " check on open as well as save
 let g:syntastic_check_on_open=1
+" Disable csslint scss and sass is not behaving correctly
+let g:loaded_syntastic_css_csslint_checker = 0
 
 " -----------------------------------------------------
 " Gundo settings
@@ -449,14 +446,14 @@ let g:gundo_preview_height = 30
 " -----------------------------------------------------
 let g:EasyMotion_keys='asdfjkoweriop'
 
-" ---------------------------------------------------------------------------------------------------------------------
+" ======================================================================================================================
 " Plugin mapping and other settings
-" ---------------------------------------------------------------------------------------------------------------------
+" ======================================================================================================================
 
-" Show nerdtree panel
+" Toggle nerdtree panel
 nnoremap <silent> <F1> :NERDTreeToggle<CR>
 
-" Show gundo panel
+" Toggle gundo panel
 nnoremap <silent> <F2> :GundoToggle<CR>
 
 " CTRL-P mapping
@@ -482,6 +479,26 @@ map <Leader>y :YRShow<CR>
 nmap cq cs"'
 nmap cQ cs'"
 
+" ======================================================================================================================
+" Color and highlighting settings
+" ======================================================================================================================
+
+" Xterm 256 colors
+if $TERM == 'xterm-256color' || 'screen-256color'
+    set t_Co=256
+    " Set colorcolumn
+    let &colorcolumn=121
+endif
+
+" Color scheme settings
+colorscheme Tomorrow-Night
+" Airline theme
+let g:airline_theme='tomorrow'
+
+" Git gutter settings (signcolumn color)
+highlight clear SignColumn
+" Remove underline in folded lines
+hi Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE
 
 " ======================================================================================================================
 " Autocommands and other tweaks
