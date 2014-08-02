@@ -86,6 +86,8 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'jelera/vim-javascript-syntax'
 " CSS color highlighter
 Plugin 'ap/vim-css-color'
+" Android development plugin
+Plugin 'hsanson/vim-android'
 
 " Needs linters to be install to work properly (see https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers)
 " Syntax checking plugin
