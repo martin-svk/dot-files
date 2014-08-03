@@ -171,6 +171,8 @@ Plugin 'godlygeek/tabular'
 
 " Tomorrow theme
 Plugin 'chriskempson/vim-tomorrow-theme'
+" Rainbow parenthesis
+Plugin 'kien/rainbow_parentheses.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " End of plugin declaration
@@ -183,7 +185,7 @@ call vundle#end()
 
 set shell=/bin/bash         " Setting vim shell to bash
 set nocompatible            " No compatible with vi mode
-set number                  " Line numbers
+set relativenumber          " Use relative line numbering
 set noignorecase            " Don't ignore cases
 set laststatus=2            " Always show status line
 set showmode                " Always show mode
@@ -308,15 +310,17 @@ let g:mapleader="\<space>"
 
 " -----------------------------------------------------
 " Disabling arrow keys, space key, exmode enter with Q key
+" Also disable ESC to learn jj
 " -----------------------------------------------------
-map <up> <nop>
-map <left> <nop>
-map <right> <nop>
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
-map <Space> <nop>
+nnoremap <up> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+inoremap <Esc> <nop>
+nnoremap <Space> <nop>
 nnoremap Q <nop>
 
 " -----------------------------------------------------
@@ -326,12 +330,17 @@ nnoremap Q <nop>
 " When jump to next match also center screen
 noremap n nzz
 noremap N Nzz
+noremap <c-d> <c-d>zz
+noremap <c-u> <c-u>zz
 
 " Write read only files with w!!
 cmap w!! w !sudo tee % >/dev/null
 
 " Easily switch between the last two files
 nnoremap <leader><leader> <c-^>
+
+" Easily cancel insert mode with jj
+inoremap jj <Esc>
 
 " Remap VIM 0 to first non-blank character
 nnoremap 0 ^
@@ -357,6 +366,8 @@ nmap <silent> <F4> :set spell!<CR>
 nmap <silent> <F5> :source $MYVIMRC<CR>
 " Open my vimrc in new tab
 nmap <silent> <F6> :tabedit $MYVIMRC<CR>
+" Toggle rainbow paranthesis
+nmap <silent> <F12> :RainbowParenthesesToggle<CR>
 
 " -----------------------------------------------------
 " Window management mappings
