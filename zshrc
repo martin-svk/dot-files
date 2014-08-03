@@ -91,4 +91,14 @@ alias q='exit'
 # Other exports
 # =====================================================================================================================
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Add android sdk to path if it exists
+if [ -d $HOME/lib/android-sdk-linux ]; then
+  export PATH=$HOME/lib/android-sdk-linux/tools:$PATH
+  export ANDROID_HOME='~/lib/android-sdk-linux'
+  if [ -d $HOME/lib/android-sdk-linux/platform-tools ]; then
+    export PATH=$HOME/lib/android-sdk-linux/platform-tools:$PATH
+  fi
+fi
+
 export EDITOR='vim'
