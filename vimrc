@@ -11,6 +11,20 @@
 "
 " # Section 1. - The basics
 "
+" ## Section x.y - Toggles (on/off)
+"
+" F1 - Nerdtree (file browser)
+" F2 - Gundo (undo tree)
+" F3 - Paste mode
+" F4 - Spell checking
+" F5 - Reload vimrc
+" F6 - Open vimrc in new tab
+" F7 -
+" F8 -
+" F9 - Syntax checking
+" F10 -
+" F11 -
+" F12 - Rainbow paranthesis
 "
 "
 " # Section 2. - File navigation
@@ -185,7 +199,7 @@ call vundle#end()
 
 set shell=/bin/bash         " Setting vim shell to bash
 set nocompatible            " No compatible with vi mode
-set relativenumber          " Use relative line numbering
+set number                  " Just line numbers
 set noignorecase            " Don't ignore cases
 set laststatus=2            " Always show status line
 set showmode                " Always show mode
@@ -441,11 +455,14 @@ let g:syntastic_enable_signs=1
 let g:syntastic_auto_jump=0
 " show the error list automatically
 let g:syntastic_auto_loc_list=1
-" don't care about warnings
-let g:syntastic_quiet_messages = {'level': 'warnings'}
 " check on open as well as save
 let g:syntastic_check_on_open=1
-" Disable csslint scss and sass is not behaving correctly
+" don't care about warnings
+let g:syntastic_quiet_messages = {'level': 'warnings'}
+" Passive mode is default
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+
+" Disable csslint, scss and sass is not behaving correctly
 let g:loaded_syntastic_css_csslint_checker = 0
 
 " -----------------------------------------------------
@@ -468,6 +485,9 @@ nnoremap <silent> <F1> :NERDTreeToggle<CR>
 
 " Toggle gundo panel
 nnoremap <silent> <F2> :GundoToggle<CR>
+
+" Toggle syntax checking
+nnoremap <F9> :SyntasticToggleMode<CR>
 
 " CTRL-P mapping
 let g:ctrlp_map = '<Leader>p'
