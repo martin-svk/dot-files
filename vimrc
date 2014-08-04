@@ -324,7 +324,6 @@ let g:mapleader="\<space>"
 
 " -----------------------------------------------------
 " Disabling arrow keys, space key, exmode enter with Q key
-" Also disable ESC to learn jj
 " -----------------------------------------------------
 nnoremap <up> <nop>
 nnoremap <left> <nop>
@@ -333,7 +332,6 @@ inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
-inoremap <Esc> <nop>
 nnoremap <Space> <nop>
 nnoremap Q <nop>
 
@@ -352,9 +350,6 @@ cmap w!! w !sudo tee % >/dev/null
 
 " Easily switch between the last two files
 nnoremap <leader><leader> <c-^>
-
-" Easily cancel insert mode with jj
-inoremap jj <Esc>
 
 " Remap VIM 0 to first non-blank character
 nnoremap 0 ^
