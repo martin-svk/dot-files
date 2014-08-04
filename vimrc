@@ -1,71 +1,12 @@
-" ======================================================================================================================
-" Author : Martin Toma
-" ======================================================================================================================
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" Author : Martin Toma <martin.toma.svk@gmail.com>
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Date created : Tue Nov 12 14:14:56 CET 2013
 " VIMRC Configuration focused on RAILS development
-" ======================================================================================================================
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 " ======================================================================================================================
-" :help this_vimrc.txt
-" ======================================================================================================================
-"
-" # Section 1. - The basics
-"
-" ## Section x.y - Toggles (on/off)
-"
-" F1 - Nerdtree (file browser)
-" F2 - Gundo (undo tree)
-" F3 - Paste mode
-" F4 - Spell checking
-" F5 - Reload vimrc
-" F6 - Open vimrc in new tab
-" F7 -
-" F8 -
-" F9 - Syntax checking
-" F10 -
-" F11 -
-" F12 - Rainbow paranthesis
-"
-"
-" # Section 2. - File navigation
-"
-"
-"
-" # Section 3. - Navigation in code
-"
-" 3.3 Multiple cursors:
-"
-" Using default keybindings:
-"   let g:multi_cursor_next_key='<C-n>'
-"   let g:multi_cursor_prev_key='<C-p>'
-"   let g:multi_cursor_skip_key='<C-x>'
-"   let g:multi_cursor_quit_key='<Esc>'
-"
-" # Section 4. - Code manipulation
-"
-"
-"
-" # Section 5. - Look and feel
-"
-"
-"
-" # Section 6. - Other tweaks
-"
-"
-" ======================================================================================================================
-
-" ======================================================================================================================
-" TODO SECTION
-" ======================================================================================================================
-"
-" 1. Refactor all panel(window) opening shortcuts, possible to use F keys
-" 2. Start writing this vimrc help file.
-" 3. Refactor vimrc into more specific files (https://github.com/thoughtbot/dotfiles/blob/master/vimrc)
-"
-" ======================================================================================================================
-
-" ======================================================================================================================
-" Bundler setting
+" Bundler (Vundle) settings
 " ======================================================================================================================
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -79,7 +20,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
-" Language/Framework support improving plugins
+" Language/Framework support plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Rails vim plugin
@@ -238,7 +179,7 @@ set shiftwidth=2
 set softtabstop=2
 
 " -----------------------------------------------------
-" Split settings.
+" Split settings (more natural).
 " -----------------------------------------------------
 set splitbelow
 set splitright
@@ -532,8 +473,6 @@ hi Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE
 " Autocommands and other tweaks
 " ======================================================================================================================
 
-" Open nerdtree automatically
-autocmd vimenter * NERDTree
 " Close vim if the last open window is nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
@@ -545,4 +484,70 @@ ab teh the
 
 " ======================================================================================================================
 " END OF VIMRC
+" ======================================================================================================================
+
+" ======================================================================================================================
+" :HELP .VIMRC
+" ======================================================================================================================
+"
+" Section 1. - The basics
+" =======================
+"
+" Section 1.y - Toggles (on/off)
+" ------------------------------
+"
+" F1 - Nerdtree (file browser)
+" F2 - Gundo (undo tree)
+" F3 - Paste mode
+" F4 - Spell checking
+" F5 - Reload vimrc
+" F6 - Open vimrc in new tab
+" F7 -
+" F8 -
+" F9 - Syntax checking
+" F10 -
+" F11 -
+" F12 - Rainbow paranthesis
+"
+" # Section 2. - File navigation
+" ==============================
+"
+"
+" # Section 3. - Navigation in code
+" =================================
+"
+"
+" # Section 4. - Code manipulation
+" ================================
+"
+" 3.3 Multiple cursors:
+"
+" Using default keybindings:
+"   let g:multi_cursor_next_key='<C-n>'
+"   let g:multi_cursor_prev_key='<C-p>'
+"   let g:multi_cursor_skip_key='<C-x>'
+"   let g:multi_cursor_quit_key='<Esc>'
+"
+" # Section 5. - Look and feel
+" ============================
+"
+"
+" # Section 6. - Other tweaks
+" ===========================
+"
+"
+" ======================================================================================================================
+" END OF :HELP .VIMRC
+" ======================================================================================================================
+
+" ======================================================================================================================
+" TODO: SECTION
+" ======================================================================================================================
+"
+" 1. Really start writing this vimrc help file.
+" 2. Start using this week focused on block to learn advanced things step by step.
+" 3. Fill abbreviations list and dictionary items.
+" 4. Set up manual folds in here.
+" 5. Create my own colorscheme based on itf.flat from sublime text.
+"
 " ======================================================================================================================
