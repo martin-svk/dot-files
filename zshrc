@@ -80,6 +80,9 @@ alias g='git'
 alias v='vim'
 alias msql='mysql -uroot -p'
 
+# Android development
+alias acp='android create project -n ExampleApp -t 1 -p . -k com.example -a MainActivity'
+
 # SSH servers
 alias s-pinta='ssh team11@calculon.fiit.stuba.sk -p 30022'
 alias s-nitrous='ssh action@euw1-2.nitrousbox.com -p 21326'

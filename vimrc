@@ -43,6 +43,8 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'ap/vim-css-color'
 " Android development plugin
 Plugin 'hsanson/vim-android'
+" Markdown support
+Plugin 'plasticboy/vim-markdown'
 
 " Needs linters to be install to work properly (see https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers)
 " Syntax checking plugin
@@ -126,6 +128,8 @@ Plugin 'godlygeek/tabular'
 
 " Tomorrow theme
 Plugin 'chriskempson/vim-tomorrow-theme'
+" Molokai theme
+Plugin 'tomasr/molokai'
 " Rainbow parenthesis
 Plugin 'kien/rainbow_parentheses.vim'
 
@@ -234,9 +238,9 @@ autocmd BufNewFile,BufRead *.sass             set ft=sass.css
 " use syntax complete if nothing else available
 if has("autocmd") && exists("+omnifunc")
   autocmd Filetype *
-              \ if &omnifunc == "" |
-              \         setlocal omnifunc=syntaxcomplete#Complete |
-              \ endif
+    \ if &omnifunc == "" |
+    \         setlocal omnifunc=syntaxcomplete#Complete |
+    \ endif
 endif
 
 " -----------------------------------------------------
@@ -412,6 +416,12 @@ let g:gundo_preview_height = 30
 " -----------------------------------------------------
 let g:EasyMotion_keys='asdfjkoweriop'
 
+" -----------------------------------------------------
+" Vim markdown settings
+" -----------------------------------------------------
+let g:vim_markdown_no_default_key_mappings=1
+let g:vim_markdown_folding_disabled=1
+
 " ======================================================================================================================
 " Plugin mapping and other settings
 " ======================================================================================================================
@@ -463,11 +473,20 @@ endif
 colorscheme Tomorrow-Night
 " Airline theme
 let g:airline_theme='tomorrow'
+" Molokai settings (used in android devel)
+let g:molokai_original = 1
 
 " Git gutter settings (signcolumn color)
 highlight clear SignColumn
 " Remove underline in folded lines
 hi Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE
+
+" ======================================================================================================================
+" Filetype specific settings
+" ======================================================================================================================
+
+" If java(android) set appropriate indentation and color scheme
+autocmd FileType java set shiftwidth=4| set softtabstop=4
 
 " ======================================================================================================================
 " Autocommands and other tweaks
