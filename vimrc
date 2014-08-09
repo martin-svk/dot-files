@@ -23,28 +23,18 @@ Plugin 'gmarik/Vundle.vim'
 " Language/Framework support plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
+" Most common languages support (ruby, js, etc.)
+Plugin 'sheerun/vim-polyglot'
 " Rails vim plugin
 Plugin 'tpope/vim-rails'
-" Basic ruby related features
-Plugin 'vim-ruby/vim-ruby'
-" Slim templating syntax highlighting
-Plugin 'slim-template/vim-slim.git'
-" Better JSON syntax
-Plugin 'elzr/vim-json'
 " Automatically inserts 'end' wisely
 Plugin 'tpope/vim-endwise'
-" HAML support for vim
-Plugin 'tpope/vim-haml'
-" Coffeescript support for vim
-Plugin 'kchmck/vim-coffee-script'
-" Better javascript support
-Plugin 'jelera/vim-javascript-syntax'
 " CSS color highlighter
 Plugin 'ap/vim-css-color'
 " Android development plugin
 Plugin 'hsanson/vim-android'
-" Markdown support
-Plugin 'plasticboy/vim-markdown'
+" HTML autoclose tags
+Plugin 'amirh/HTML-AutoCloseTag'
 
 " Needs linters to be install to work properly (see https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers)
 " Syntax checking plugin
@@ -84,6 +74,8 @@ Plugin 'bling/vim-airline'
 Plugin 'sjl/gundo.vim'
 " Preview before substitution (only in command line mode (c-f))
 Plugin 'osyo-manga/vim-over'
+" Tags (methods, classes) display window
+Plugin 'majutsushi/tagbar'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Git/Github support plugins
@@ -132,6 +124,8 @@ Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'tomasr/molokai'
 " Rainbow parenthesis
 Plugin 'kien/rainbow_parentheses.vim'
+" Approximation to make gvim schemes work in terminal
+Plugin 'vim-scripts/CSApprox'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " End of plugin declaration
@@ -229,7 +223,6 @@ autocmd FileType java set omnifunc=javacomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading=1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-autocmd FileType ruby,eruby let g:rubycomplete_load_gemfile = 1
 
 " make CSS omni-completion work for SASS and SCSS
 autocmd BufNewFile,BufRead *.scss             set ft=scss.css
@@ -322,6 +315,8 @@ nmap <silent> <F5> :source $MYVIMRC<CR>
 nmap <silent> <F6> :tabedit $MYVIMRC<CR>
 " Toggle rainbow paranthesis
 nmap <silent> <F12> :RainbowParenthesesToggle<CR>
+" Toggle tagbar window
+nmap <silent> <F2> :TagbarToggle<CR>
 
 " -----------------------------------------------------
 " Window management mappings
@@ -417,10 +412,18 @@ let g:gundo_preview_height = 30
 let g:EasyMotion_keys='asdfjkoweriop'
 
 " -----------------------------------------------------
-" Vim markdown settings
+" Tagbar settings
 " -----------------------------------------------------
-let g:vim_markdown_no_default_key_mappings=1
-let g:vim_markdown_folding_disabled=1
+let g:tagbar_type_ruby = {
+    \ 'kinds' : [
+        \ 'm:modules',
+        \ 'c:classes',
+        \ 'd:describes',
+        \ 'C:contexts',
+        \ 'f:methods',
+        \ 'F:singleton methods'
+    \ ]
+\ }
 
 " ======================================================================================================================
 " Plugin mapping and other settings
@@ -430,10 +433,10 @@ let g:vim_markdown_folding_disabled=1
 nnoremap <silent> <F1> :NERDTreeToggle<CR>
 
 " Toggle gundo panel
-nnoremap <silent> <F2> :GundoToggle<CR>
+nnoremap <silent> <F7> :GundoToggle<CR>
 
 " Toggle syntax checking
-nnoremap <F9> :SyntasticToggleMode<CR>
+nnoremap <F8> :SyntasticToggleMode<CR>
 
 " CTRL-P mapping
 let g:ctrlp_map = '<Leader>p'
@@ -495,10 +498,27 @@ autocmd FileType java set shiftwidth=4| set softtabstop=4
 " Close vim if the last open window is nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+" The PC is fast enough, do syntax highlight syncing from start
+autocmd BufEnter * :syntax sync fromstart
+
+" Remember cursor position
+autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
 " ======================================================================================================================
 " Setting abbreviations to automatically repair mistakes
 " ======================================================================================================================
 
+" Command abbreviations to accept case errors
+cab W! w!
+cab Q! q!
+cab Wq wq
+cab Wa wa
+cab wQ wq
+cab WQ wq
+cab W w
+cab Q q
+
+" Text abbreviations
 ab teh the
 
 " ======================================================================================================================
@@ -516,14 +536,14 @@ ab teh the
 " ------------------------------
 "
 " F1 - Nerdtree (file browser)
-" F2 - Gundo (undo tree)
+" F2 - Tagbar (tag browser)
 " F3 - Paste mode
 " F4 - Spell checking
 " F5 - Reload vimrc
 " F6 - Open vimrc in new tab
-" F7 -
-" F8 -
-" F9 - Syntax checking
+" F7 - Gundo (undo tree)
+" F8 - Syntax checking
+" F9 -
 " F10 -
 " F11 -
 " F12 - Rainbow paranthesis
