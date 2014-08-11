@@ -205,7 +205,7 @@ filetype indent on
 " -----------------------------------------------------
 " Folding settings, by default is disabled, use 'zi'
 " -----------------------------------------------------
-set foldmethod=syntax
+set foldmethod=manual
 set foldlevelstart=2
 set fillchars="fold: "
 set nofoldenable
@@ -223,6 +223,7 @@ autocmd FileType java set omnifunc=javacomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading=1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd FileType ruby,eruby let g:rubycomplete_load_gemfile = 1
 
 " make CSS omni-completion work for SASS and SCSS
 autocmd BufNewFile,BufRead *.scss             set ft=scss.css
@@ -500,9 +501,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 " The PC is fast enough, do syntax highlight syncing from start
 autocmd BufEnter * :syntax sync fromstart
-
-" Remember cursor position
-autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
 " ======================================================================================================================
 " Setting abbreviations to automatically repair mistakes

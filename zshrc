@@ -23,7 +23,7 @@ DISABLE_AUTO_TITLE="true"
 # =====================================================================================================================
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(bundler colored-man gitfast gem rake-fast rails ruby rbenv sudo tmux tmuxinator zsh-syntax-highlighting)
+plugins=(bundler colored-man gitfast gem npm rake-fast rails ruby rbenv sudo tmux tmuxinator zsh-syntax-highlighting)
 
 # =====================================================================================================================
 # Sourcing
@@ -74,6 +74,7 @@ alias autoremove='sudo apt-get autoremove'
 alias ss='sudo service'
 alias ssmysql='sudo service mysql start'
 alias sspgsql='sudo service postgresql start'
+alias ssredis='sudo service redis-server start'
 
 # Applications
 alias g='git'
