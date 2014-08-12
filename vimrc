@@ -32,6 +32,8 @@ Plugin 'sheerun/vim-polyglot'
 Plugin 'scrooloose/syntastic'
 " The ulti snips engine. Makes possible to define custom snippets.
 Plugin 'SirVer/ultisnips'
+" ulti snips snippets for python, js, html, ruby...
+Plugin 'honza/vim-snippets'
 
 " -----------------------------------------------------
 " Ruby/Rails
@@ -40,8 +42,6 @@ Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-rails'
 " Automatically inserts 'end' wisely
 Plugin 'tpope/vim-endwise'
-" Snippets for python, js, html, ruby...
-Plugin 'honza/vim-snippets'
 " Splitting and joining multiple lines ruby constructs
 Plugin 'AndrewRadev/splitjoin.vim'
 
