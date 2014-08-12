@@ -23,31 +23,43 @@ Plugin 'gmarik/Vundle.vim'
 " Language/Framework support plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
+" -----------------------------------------------------
+" Universal
+" -----------------------------------------------------
 " Most common languages support (ruby, js, etc.)
 Plugin 'sheerun/vim-polyglot'
-" Rails vim plugin
+" Needs linters to be install to work properly (see https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers)
+Plugin 'scrooloose/syntastic'
+" The ulti snips engine. Makes possible to define custom snippets.
+Plugin 'SirVer/ultisnips'
+
+" -----------------------------------------------------
+" Ruby/Rails
+" -----------------------------------------------------
+" Rails must have plugin
 Plugin 'tpope/vim-rails'
 " Automatically inserts 'end' wisely
 Plugin 'tpope/vim-endwise'
-" CSS color highlighter
-Plugin 'ap/vim-css-color'
-" Android development plugin
-Plugin 'hsanson/vim-android'
-" HTML autoclose tags
-Plugin 'amirh/HTML-AutoCloseTag'
-
-" Needs linters to be install to work properly (see https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers)
-" Syntax checking plugin
-Plugin 'scrooloose/syntastic'
-
-" The ulti snips engine. Makes possible to define custom snippets.
-Plugin 'SirVer/ultisnips'
 " Snippets for python, js, html, ruby...
 Plugin 'honza/vim-snippets'
+" Splitting and joining multiple lines ruby constructs
+Plugin 'AndrewRadev/splitjoin.vim'
+
+" -----------------------------------------------------
+" HTML/CSS/JS
+" -----------------------------------------------------
+" HTML autoclose tags
+Plugin 'amirh/HTML-AutoCloseTag'
+" CSS color highlighter
+Plugin 'ap/vim-css-color'
 " Emmet for fast html prototyping
 Plugin 'mattn/emmet-vim'
-" Splitting and joining multiple lines constructs
-Plugin 'AndrewRadev/splitjoin.vim'
+
+" -----------------------------------------------------
+" Android
+" -----------------------------------------------------
+" Android build and deploy helpers
+Plugin 'hsanson/vim-android'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Vim motion/navigation improving plugins
@@ -72,8 +84,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 " History tree visualizer
 Plugin 'sjl/gundo.vim'
-" Preview before substitution (only in command line mode (c-f))
-Plugin 'osyo-manga/vim-over'
+  " Preview before substitution (only in command line mode (c-f))
+  Plugin 'osyo-manga/vim-over'
 " Tags (methods, classes) display window
 Plugin 'majutsushi/tagbar'
 
@@ -85,32 +97,40 @@ Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-fugitive'
 " Git changes displayer
 Plugin 'airblade/vim-gitgutter'
-" Github gist plugin
+" Web api support (needed for gist-vim)
 Plugin 'mattn/webapi-vim'
+" Github gist plugin
 Plugin 'mattn/gist-vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Other plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Change surroundings characters
-Plugin 'tpope/vim-surround'
-" Trailing spaces deleter (:FixWhitespaces)
-Plugin 'bronson/vim-trailing-whitespace'
-" Supertab for tab triggering completion (integrates with snippets, etc.)
-Plugin 'ervandew/supertab'
-" Auto-closing brackets and quotes
-Plugin 'Raimondi/delimitMate'
-" YANK history management
-Plugin 'YankRing.vim'
-" AG search from vim
-Plugin 'ervandew/ag'
+" -----------------------------------------------------
+" Text objects
+" -----------------------------------------------------
 " Matchit better textobj support
 Plugin 'tmhedberg/matchit'
 " Custom textobj creation support
 Plugin 'kana/vim-textobj-user'
 " Ruby block text object
 Plugin 'nelstrom/vim-textobj-rubyblock'
+
+" -----------------------------------------------------
+" Other
+" -----------------------------------------------------
+" Supertab for tab triggering completion (integrates with snippets, etc.)
+Plugin 'ervandew/supertab'
+" Change surroundings characters
+Plugin 'tpope/vim-surround'
+" Auto-closing brackets and quotes
+Plugin 'Raimondi/delimitMate'
+" YANK history management
+Plugin 'YankRing.vim'
+" AG search from vim
+Plugin 'ervandew/ag'
+" Trailing spaces deleter (:FixWhitespaces)
+Plugin 'bronson/vim-trailing-whitespace'
 " Alignment on specific regex (:Tabularize \=)
 Plugin 'godlygeek/tabular'
 
