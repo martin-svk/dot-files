@@ -115,6 +115,8 @@ Plugin 'tmhedberg/matchit'
 Plugin 'kana/vim-textobj-user'
 " Ruby block text object
 Plugin 'nelstrom/vim-textobj-rubyblock'
+" Expanding region selection
+Plugin 'terryma/vim-expand-region'
 
 " -----------------------------------------------------
 " Other
@@ -133,6 +135,8 @@ Plugin 'ervandew/ag'
 Plugin 'bronson/vim-trailing-whitespace'
 " Alignment on specific regex (:Tabularize \=)
 Plugin 'godlygeek/tabular'
+" Varius construct alternatives switch
+Plugin 'AndrewRadev/switch.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Color-scheme plugins
@@ -325,6 +329,17 @@ nmap <C-j> ddp
 vmap <C-j> xp`[V`]
 vmap <C-k> xkP`[V`]
 
+" Easily copy and past to system clipboard
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
+" Switch plugin mapping
+nmap <Leader>s :Switch<CR>
+
 " -----------------------------------------------------
 " Toggles
 " -----------------------------------------------------
@@ -481,6 +496,14 @@ map <Leader>y :YRShow<CR>
 " Surround vim shortcut for quotes toggle
 nmap cq cs"'
 nmap cQ cs'"
+
+" Expand region mappings
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
+" Split/Join plugin mappings
+nmap sk :SplitjoinJoin<CR>
+nmap sj :SplitjoinSplit<CR>
 
 " ======================================================================================================================
 " Color and highlighting settings
