@@ -502,8 +502,8 @@ vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
 " Split/Join plugin mappings
-nmap sk :SplitjoinJoin<CR>
-nmap sj :SplitjoinSplit<CR>
+nmap sj :SplitjoinJoin<CR>
+nmap sk :SplitjoinSplit<CR>
 
 " ======================================================================================================================
 " Color and highlighting settings
