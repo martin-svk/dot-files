@@ -20,6 +20,7 @@ shopt -s autocd
 # Disable CTRL-S / CTRL-Q
 stty ixany
 stty ixoff -ixon
+set -o vi
 
 # =====================================================================================================================
 # Aliases
