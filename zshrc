@@ -23,7 +23,7 @@ DISABLE_AUTO_TITLE="true"
 # =====================================================================================================================
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(bundler colored-man gitfast gem npm rake-fast rails ruby rbenv sudo tmux tmuxinator zsh-syntax-highlighting)
+plugins=(bundler colored-man gitfast gem npm rake-fast rails ruby rbenv tmux tmuxinator zsh-syntax-highlighting)
 
 # =====================================================================================================================
 # Sourcing
@@ -39,6 +39,13 @@ source $ZSH/plugins/history-substring-search/history-substring-search.zsh
 # bind UP and DOWN arrow keys
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+
+# Usign vi as input manager
+bindkey -v
+# ctrl-w removed word backwards
+bindkey '^w' backward-kill-word
+# ctrl-r starts searching history backward
+bindkey '^r' history-incremental-search-backward
 
 # =====================================================================================================================
 # Aliases
@@ -105,4 +112,5 @@ if [ -d $HOME/lib/android-sdk-linux ]; then
   fi
 fi
 
+export KEYTIMEOUT=1
 export EDITOR='vim'
