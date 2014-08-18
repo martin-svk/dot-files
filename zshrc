@@ -35,17 +35,16 @@ source $ZSH/plugins/history-substring-search/history-substring-search.zsh
 # Plugin bindings
 # =====================================================================================================================
 
-# History substring search plugin binding
-# bind UP and DOWN arrow keys
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
-
 # Usign vi as input manager
 bindkey -v
 # ctrl-w removed word backwards
 bindkey '^w' backward-kill-word
 # ctrl-r starts searching history backward
 bindkey '^r' history-incremental-search-backward
+
+# History substring search plugin binding
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
 
 # =====================================================================================================================
 # Aliases
