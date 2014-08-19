@@ -35,16 +35,9 @@ source $ZSH/plugins/history-substring-search/history-substring-search.zsh
 # Plugin bindings
 # =====================================================================================================================
 
-# Usign vi as input manager
-bindkey -v
-# ctrl-w removed word backwards
-bindkey '^w' backward-kill-word
-# ctrl-r starts searching history backward
-bindkey '^r' history-incremental-search-backward
-
 # History substring search plugin binding
-bindkey -M vicmd 'k' history-substring-search-up
-bindkey -M vicmd 'j' history-substring-search-down
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 # =====================================================================================================================
 # Aliases
@@ -111,5 +104,4 @@ if [ -d $HOME/lib/android-sdk-linux ]; then
   fi
 fi
 
-export KEYTIMEOUT=1
 export EDITOR='vim'
