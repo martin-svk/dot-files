@@ -44,6 +44,8 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-endwise'
 " Splitting and joining multiple lines ruby constructs
 Plugin 'AndrewRadev/splitjoin.vim'
+" Ruby eval plugin
+Plugin 'kmdsbng/vim-ruby-eval'
 
 " -----------------------------------------------------
 " HTML/CSS/JS
@@ -84,8 +86,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 " History tree visualizer
 Plugin 'sjl/gundo.vim'
-  " Preview before substitution (only in command line mode (c-f))
-  Plugin 'osyo-manga/vim-over'
+" Preview before substitution (only in command line mode (c-f))
+Plugin 'osyo-manga/vim-over'
 " Tags (methods, classes) display window
 Plugin 'majutsushi/tagbar'
 
@@ -117,6 +119,8 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 " Expanding region selection
 Plugin 'terryma/vim-expand-region'
+" Intendation based text objects
+Plugin 'caigithub/a_indent'
 
 " -----------------------------------------------------
 " Other
@@ -504,6 +508,9 @@ vmap <C-v> <Plug>(expand_region_shrink)
 " Split/Join plugin mappings
 nmap sj :SplitjoinJoin<CR>
 nmap sk :SplitjoinSplit<CR>
+
+" Ruby eval mapping
+nnoremap <silent> <Leader>e :RubyEval<CR>
 
 " ======================================================================================================================
 " Color and highlighting settings
