@@ -119,8 +119,6 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 " Expanding region selection
 Plugin 'terryma/vim-expand-region'
-" Intendation based text objects
-Plugin 'caigithub/a_indent'
 
 " -----------------------------------------------------
 " Other
