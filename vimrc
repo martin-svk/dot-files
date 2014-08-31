@@ -521,12 +521,13 @@ if $TERM == 'xterm-256color' || 'screen-256color'
     let &colorcolumn=121
 endif
 
-" Color scheme settings
-colorscheme Tomorrow-Night
-" Airline theme
-let g:airline_theme='tomorrow'
 " Molokai settings (used in android devel)
 let g:molokai_original = 1
+let g:rehash256 = 1
+" Color scheme settings
+colorscheme molokai
+" Airline theme
+let g:airline_theme='dark'
 
 " Git gutter settings (signcolumn color)
 highlight clear SignColumn
