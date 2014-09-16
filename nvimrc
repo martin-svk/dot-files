@@ -6,19 +6,18 @@
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 " ======================================================================================================================
-" Bundler (Vundle) settings
+" Bundler (NeoBundle) settings
 " ======================================================================================================================
 
-set runtimepath=~/.neovim/
-set rtp+=~/.neovim/bundle/vundle/
-call vundle#rc('~/.neovim/bundle')
+set runtimepath+=~/.nvim/bundle/neobundle.vim/
+call neobundle#begin(expand('~/.nvim/bundle/'))
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Plugin list
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Let Vundle manage Vundle, REQUIRED!
-Plugin 'gmarik/Vundle.vim'
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Language/Framework support plugins
@@ -28,82 +27,82 @@ Plugin 'gmarik/Vundle.vim'
 " Universal
 " -----------------------------------------------------
 " Most common languages support (ruby, js, etc.)
-Plugin 'sheerun/vim-polyglot'
+NeoBundle 'sheerun/vim-polyglot'
 " Needs linters to be install to work properly (see https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers)
-Plugin 'scrooloose/syntastic'
+NeoBundle 'scrooloose/syntastic'
 " The ulti snips engine. Makes possible to define custom snippets.
-Plugin 'SirVer/ultisnips'
+NeoBundle 'SirVer/ultisnips'
 " ulti snips snippets for python, js, html, ruby...
-Plugin 'honza/vim-snippets'
+NeoBundle 'honza/vim-snippets'
 
 " -----------------------------------------------------
 " Ruby/Rails
 " -----------------------------------------------------
 " Rails must have plugin
-Plugin 'tpope/vim-rails'
+NeoBundle 'tpope/vim-rails'
 " Automatically inserts 'end' wisely
-Plugin 'tpope/vim-endwise'
+NeoBundle 'tpope/vim-endwise'
 " Splitting and joining multiple lines ruby constructs
-Plugin 'AndrewRadev/splitjoin.vim'
+NeoBundle 'AndrewRadev/splitjoin.vim'
 " Ruby eval plugin
-Plugin 'kmdsbng/vim-ruby-eval'
+NeoBundle 'kmdsbng/vim-ruby-eval'
 
 " -----------------------------------------------------
 " HTML/CSS/JS
 " -----------------------------------------------------
 " HTML autoclose tags
-Plugin 'amirh/HTML-AutoCloseTag'
+NeoBundle 'amirh/HTML-AutoCloseTag'
 " CSS color highlighter
-Plugin 'ap/vim-css-color'
+NeoBundle 'ap/vim-css-color'
 " Emmet for fast html prototyping
-Plugin 'mattn/emmet-vim'
+NeoBundle 'mattn/emmet-vim'
 
 " -----------------------------------------------------
 " Android
 " -----------------------------------------------------
 " Android build and deploy helpers
-Plugin 'hsanson/vim-android'
+NeoBundle 'hsanson/vim-android'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Vim motion/navigation improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Fuzzy file, buffer, MRU finder (CTRL-P)
-Plugin 'kien/ctrlp.vim'
+NeoBundle 'kien/ctrlp.vim'
 " Easily move around file (easy motion)
-Plugin 'Lokaltog/vim-easymotion'
+NeoBundle 'Lokaltog/vim-easymotion'
 " Sneak, easy motion for long lines
-Plugin 'justinmk/vim-sneak'
+NeoBundle 'justinmk/vim-sneak'
 " Multiple cursors feature
-Plugin 'terryma/vim-multiple-cursors'
+NeoBundle 'terryma/vim-multiple-cursors'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Vim interface improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Nerdtree file browser
-Plugin 'scrooloose/nerdtree'
+NeoBundle 'scrooloose/nerdtree'
 " Airline (improved status line)
-Plugin 'bling/vim-airline'
+NeoBundle 'bling/vim-airline'
 " History tree visualizer
-Plugin 'sjl/gundo.vim'
+NeoBundle 'sjl/gundo.vim'
 " Preview before substitution (only in command line mode (c-f))
-Plugin 'osyo-manga/vim-over'
+NeoBundle 'osyo-manga/vim-over'
 " Tags (methods, classes) display window
-Plugin 'majutsushi/tagbar'
+NeoBundle 'majutsushi/tagbar'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Git/Github support plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Git wrapper
-Plugin 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-fugitive'
 " Git changes displayer
-Plugin 'airblade/vim-gitgutter'
+NeoBundle 'airblade/vim-gitgutter'
 " Web api support (needed for gist-vim)
-Plugin 'mattn/webapi-vim'
+NeoBundle 'mattn/webapi-vim'
 " Github gist plugin
-Plugin 'mattn/gist-vim'
+NeoBundle 'mattn/gist-vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Other plugins
@@ -113,51 +112,52 @@ Plugin 'mattn/gist-vim'
 " Text objects
 " -----------------------------------------------------
 " Matchit better textobj support
-Plugin 'tmhedberg/matchit'
+NeoBundle 'tmhedberg/matchit'
 " Custom textobj creation support
-Plugin 'kana/vim-textobj-user'
+NeoBundle 'kana/vim-textobj-user'
 " Ruby block text object
-Plugin 'nelstrom/vim-textobj-rubyblock'
+NeoBundle 'nelstrom/vim-textobj-rubyblock'
 " Expanding region selection
-Plugin 'terryma/vim-expand-region'
+NeoBundle 'terryma/vim-expand-region'
 
 " -----------------------------------------------------
 " Other
 " -----------------------------------------------------
 " Supertab for tab triggering completion (integrates with snippets, etc.)
-Plugin 'ervandew/supertab'
+NeoBundle 'ervandew/supertab'
 " Change surroundings characters
-Plugin 'tpope/vim-surround'
+NeoBundle 'tpope/vim-surround'
 " Auto-closing brackets and quotes
-Plugin 'Raimondi/delimitMate'
+NeoBundle 'Raimondi/delimitMate'
 " YANK history management
-Plugin 'YankRing.vim'
+NeoBundle 'YankRing.vim'
 " AG search from vim
-Plugin 'ervandew/ag'
+NeoBundle 'ervandew/ag'
 " Trailing spaces deleter (:FixWhitespaces)
-Plugin 'bronson/vim-trailing-whitespace'
+NeoBundle 'bronson/vim-trailing-whitespace'
 " Alignment on specific regex (:Tabularize \=)
-Plugin 'godlygeek/tabular'
+NeoBundle 'godlygeek/tabular'
 " Varius construct alternatives switch
-Plugin 'AndrewRadev/switch.vim'
+NeoBundle 'AndrewRadev/switch.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Color-scheme plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Tomorrow theme
-Plugin 'chriskempson/vim-tomorrow-theme'
+NeoBundle 'chriskempson/vim-tomorrow-theme'
 " Molokai theme
-Plugin 'tomasr/molokai'
+NeoBundle 'tomasr/molokai'
 " Rainbow parenthesis
-Plugin 'kien/rainbow_parentheses.vim'
+NeoBundle 'kien/rainbow_parentheses.vim'
 " Approximation to make gvim schemes work in terminal
-Plugin 'vim-scripts/CSApprox'
+NeoBundle 'vim-scripts/CSApprox'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " End of plugin declaration
 " ---------------------------------------------------------------------------------------------------------------------
-call vundle#end()
+call neobundle#end()
+NeoBundleCheck
 
 " ======================================================================================================================
 " Basic settings
@@ -366,7 +366,7 @@ nnoremap <silent> - :vertical resize -5<CR>
 nnoremap <silent> _ :resize -5<CR>
 
 " ======================================================================================================================
-" Plugin settings
+" NeoBundle settings
 " ======================================================================================================================
 
 " -----------------------------------------------------

@@ -10,8 +10,8 @@ xterm*customization: -color
 xterm*termName: xterm-256color
 
 ! Font settings
-xterm*faceName: Inconsolata:Bold
-xterm*faceSize: 11
+xterm*faceName: Ubuntu Mono:Bold
+xterm*faceSize: 12
 xterm*allowBoldFonts: false
 
 ! For inclusion of all necessary environment variables
