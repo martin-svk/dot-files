@@ -30,9 +30,11 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'sheerun/vim-polyglot'
 " Needs linters to be install to work properly (see https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers)
 NeoBundle 'scrooloose/syntastic'
-" The ulti snips engine. Makes possible to define custom snippets.
-NeoBundle 'SirVer/ultisnips'
-" ulti snips snippets for python, js, html, ruby...
+" Snippets support
+NeoBundle "MarcWeber/vim-addon-mw-utils"
+NeoBundle "tomtom/tlib_vim"
+NeoBundle "garbas/vim-snipmate"
+" Snippets for python, js, html, ruby...
 NeoBundle 'honza/vim-snippets'
 
 " -----------------------------------------------------
