@@ -73,8 +73,8 @@ NeoBundle 'hsanson/vim-android'
 NeoBundle 'kien/ctrlp.vim'
 " Easily move around file (easy motion)
 NeoBundle 'Lokaltog/vim-easymotion'
-" Sneak, easy motion for long lines
-NeoBundle 'justinmk/vim-sneak'
+" Seek, easy motion for long lines
+NeoBundle 'goldfeld/vim-seek'
 " Multiple cursors feature
 NeoBundle 'terryma/vim-multiple-cursors'
 

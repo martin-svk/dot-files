@@ -71,8 +71,8 @@ Plugin 'hsanson/vim-android'
 Plugin 'kien/ctrlp.vim'
 " Easily move around file (easy motion)
 Plugin 'Lokaltog/vim-easymotion'
-" Sneak, easy motion for long lines
-Plugin 'justinmk/vim-sneak'
+" Seek, easy motion for long lines
+Plugin 'goldfeld/vim-seek'
 " Multiple cursors feature
 Plugin 'terryma/vim-multiple-cursors'
 
