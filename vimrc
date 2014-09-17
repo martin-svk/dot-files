@@ -314,7 +314,7 @@ noremap <c-u> <c-u>zz
 cmap w!! w !sudo tee % >/dev/null
 
 " Easily switch between the last two files
-nnoremap <leader><leader> <c-^>
+nnoremap ,, <c-^>
 
 " Remap VIM 0 to first non-blank character
 nnoremap 0 ^
