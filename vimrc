@@ -131,8 +131,8 @@ Plugin 'terryma/vim-expand-region'
 " -----------------------------------------------------
 " Other
 " -----------------------------------------------------
-" Supertab for tab triggering completion (integrates with snippets, etc.)
-Plugin 'ervandew/supertab'
+" Tab triggering completion (integrates with snippets, etc.)
+Plugin 'Valloric/YouCompleteMe'
 " Change surroundings characters
 Plugin 'tpope/vim-surround'
 " Auto-closing brackets and quotes
@@ -439,11 +439,6 @@ let g:UltiSnipsJumpForwardTrigger='<c-n>'
 let g:UltiSnipsJumpBackwardTrigger='<c-z>'
 
 " -----------------------------------------------------
-" Supertab settings TODO: Think about c-p
-" -----------------------------------------------------
-let g:SuperTabDefaultCompletionType = '<c-p>'
-
-" -----------------------------------------------------
 " Syntastic settings
 " -----------------------------------------------------
 let g:syntastic_ruby_checkers = ['mri']
@@ -519,7 +514,7 @@ nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
 nnoremap <silent> <Leader>c :CtrlPCmdPalette<CR>
 
 " Easy motion mapping
-let g:EasyMotion_leader_key = 'm'
+let g:EasyMotion_leader_key = ','
 
 " Tabs and buffs switching and closing mapping
 nnoremap td :tabclose<CR>
