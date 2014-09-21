@@ -1,8 +1,8 @@
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Author : Martin Toma <martin.toma.svk@gmail.com>
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-" Date created : Tue Nov 12 14:14:56 CET 2013
 " VIMRC Configuration focused on RAILS development
+" Date created : Tue Nov 12 14:14:56 CET 2013
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 " ======================================================================================================================
@@ -26,19 +26,19 @@ Plugin 'gmarik/Vundle.vim'
 " -----------------------------------------------------
 " Universal
 " -----------------------------------------------------
-" Most common languages support (ruby, js, etc.)
+" Most common languages support (syntax, indenting, etc. ) for ruby, js, etc.
 Plugin 'sheerun/vim-polyglot'
-" Needs linters to be install to work properly (see https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers)
+" Needs linters to be installed to work properly (see https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers)
 Plugin 'scrooloose/syntastic'
-" The ulti snips engine. Makes possible to define custom snippets.
+" Snippets engine
 Plugin 'SirVer/ultisnips'
-" ulti snips snippets for python, js, html, ruby...
+" Snippets for python, js, html, ruby...
 Plugin 'honza/vim-snippets'
 
 " -----------------------------------------------------
 " Ruby/Rails
 " -----------------------------------------------------
-" Rails must have plugin
+" Rails, must have plugin
 Plugin 'tpope/vim-rails'
 " Automatically inserts 'end' wisely
 Plugin 'tpope/vim-endwise'
@@ -46,6 +46,8 @@ Plugin 'tpope/vim-endwise'
 Plugin 'AndrewRadev/splitjoin.vim'
 " Ruby eval plugin
 Plugin 'kmdsbng/vim-ruby-eval'
+" Change hash ruby 1.9 syntax
+Plugin 'ck3g/vim-change-hash-syntax'
 
 " -----------------------------------------------------
 " HTML/CSS/JS
@@ -56,6 +58,8 @@ Plugin 'amirh/HTML-AutoCloseTag'
 Plugin 'ap/vim-css-color'
 " Emmet for fast html prototyping
 Plugin 'mattn/emmet-vim'
+" JS Libs syntax, ember, angular, etc.
+Plugin 'othree/javascript-libraries-syntax.vim'
 
 " -----------------------------------------------------
 " Android
@@ -67,9 +71,11 @@ Plugin 'hsanson/vim-android'
 " Vim motion/navigation improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Fuzzy file, buffer, MRU finder (CTRL-P)
+" Fuzzy file, buffer, MRU finder
 Plugin 'kien/ctrlp.vim'
-" Easily move around file (easy motion)
+" CtrlP extension to search in commands
+Plugin 'fisadev/vim-ctrlp-cmdpalette'
+" Easily move around file
 Plugin 'Lokaltog/vim-easymotion'
 " Seek, easy motion for long lines
 Plugin 'goldfeld/vim-seek'
@@ -80,6 +86,8 @@ Plugin 'terryma/vim-multiple-cursors'
 " Vim interface improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
+" Tabs, buffers, sessions management plugin
+Plugin 'szw/vim-ctrlspace'
 " Nerdtree file browser
 Plugin 'scrooloose/nerdtree'
 " Airline (improved status line)
@@ -103,6 +111,8 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'mattn/webapi-vim'
 " Github gist plugin
 Plugin 'mattn/gist-vim'
+" Gitk for vim
+Plugin 'gregsexton/gitv'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Other plugins
@@ -115,8 +125,6 @@ Plugin 'mattn/gist-vim'
 Plugin 'tmhedberg/matchit'
 " Custom textobj creation support
 Plugin 'kana/vim-textobj-user'
-" Ruby block text object
-Plugin 'nelstrom/vim-textobj-rubyblock'
 " Expanding region selection
 Plugin 'terryma/vim-expand-region'
 
@@ -131,7 +139,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'Raimondi/delimitMate'
 " YANK history management
 Plugin 'YankRing.vim'
-" AG search from vim
+" AG search for vim (used in ctrl-p)
 Plugin 'ervandew/ag'
 " Trailing spaces deleter (:FixWhitespaces)
 Plugin 'bronson/vim-trailing-whitespace'
@@ -139,6 +147,18 @@ Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'godlygeek/tabular'
 " Varius construct alternatives switch
 Plugin 'AndrewRadev/switch.vim'
+" Support for HTML entities, hex codes, emoji, etc. (ga)
+Plugin 'tpope/vim-characterize'
+" Tmux basics (Twrite, ..)
+Plugin 'tpope/vim-tbone'
+" Automatically toggle between relative and normal numbers
+Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+" Advanced search integrated to vim (using ag)
+Plugin 'dyng/ctrlsf.vim'
+" Improved documentation lookup (gK)
+Plugin 'Keithbsmiley/investigate.vim'
+" List of common mistakes to be corrected automagically
+Plugin 'panozzaj/vim-autocorrect'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Color-scheme plugins
@@ -148,10 +168,14 @@ Plugin 'AndrewRadev/switch.vim'
 Plugin 'chriskempson/vim-tomorrow-theme'
 " Molokai theme
 Plugin 'tomasr/molokai'
+" Hybrid dark color theme
+Plugin 'w0ng/vim-hybrid'
 " Rainbow parenthesis
 Plugin 'kien/rainbow_parentheses.vim'
 " Approximation to make gvim schemes work in terminal
 Plugin 'vim-scripts/CSApprox'
+" Benchmark vimrc
+Plugin 'mattn/benchvimrc-vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " End of plugin declaration
@@ -352,7 +376,7 @@ nmap <silent> <F5> :source $MYVIMRC<CR>
 " Open my vimrc in new tab
 nmap <silent> <F6> :tabedit $MYVIMRC<CR>
 " Toggle rainbow paranthesis
-nmap <silent> <F12> :RainbowParenthesesToggle<CR>
+nmap <silent> <F12> ::RainbowParenthesesToggle<CR>
 " Toggle tagbar window
 nmap <silent> <F2> :TagbarToggle<CR>
 
@@ -371,6 +395,7 @@ nnoremap <silent> _ :resize -5<CR>
 " -----------------------------------------------------
 " Airline settings
 " -----------------------------------------------------
+let g:airline_exclude_preview = 1                       " Because of ctrl-space
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#left_alt_sep = '|'
@@ -463,6 +488,17 @@ let g:tagbar_type_ruby = {
     \ ]
 \ }
 
+" -----------------------------------------------------
+" Ctrl-space settings
+" -----------------------------------------------------
+let g:ctrlspace_default_mapping_key = "<Leader><Leader>"
+" Use ag
+if executable("ag")
+  let g:ctrlspace_glob_command = 'ag -l --nocolor -g ""'
+endif
+" Dont use unicode chars
+let g:ctrlspace_unicode_font = 0
+
 " ======================================================================================================================
 " Plugin mapping and other settings
 " ======================================================================================================================
@@ -476,10 +512,11 @@ nnoremap <silent> <F7> :GundoToggle<CR>
 " Toggle syntax checking
 nnoremap <F8> :SyntasticToggleMode<CR>
 
-" CTRL-P mapping
+" CTRL-P and its extensions mapping
 let g:ctrlp_map = '<Leader>p'
 nnoremap <silent> <Leader>t :CtrlPBufTagAll<CR>
 nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
+nnoremap <silent> <Leader>c :CtrlPCmdPalette<CR>
 
 " Easy motion mapping
 let g:EasyMotion_leader_key = 'm'
@@ -521,11 +558,15 @@ if $TERM == 'xterm-256color' || 'screen-256color'
     let &colorcolumn=121
 endif
 
-" Molokai settings (used in android devel)
-let g:molokai_original = 1
-let g:rehash256 = 1
 " Color scheme settings
-colorscheme molokai
+if strftime("%H") < 15
+  let g:molokai_original = 1
+  let g:rehash256 = 1
+  colorscheme molokai
+else
+  colorscheme hybrid
+endif
+
 " Airline theme
 let g:airline_theme='dark'
 
