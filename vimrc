@@ -356,12 +356,12 @@ vmap <C-j> xp`[V`]
 vmap <C-k> xkP`[V`]
 
 " Easily copy and past to system clipboard
-vmap <Leader>y "+y
-vmap <Leader>d "+d
-nmap <Leader>p "+p
-nmap <Leader>P "+P
-vmap <Leader>p "+p
-vmap <Leader>P "+P
+vmap ,y "+y
+nmap ,y "+y
+nmap ,p "+p
+nmap ,P "+P
+vmap ,p "+p
+vmap ,P "+P
 
 " Switch plugin mapping
 nmap <Leader>s :Switch<CR>
