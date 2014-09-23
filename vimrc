@@ -132,7 +132,7 @@ Plugin 'terryma/vim-expand-region'
 " Other
 " -----------------------------------------------------
 " Tab triggering completion (integrates with snippets, etc.)
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'ervandew/supertab'
 " Change surroundings characters
 Plugin 'tpope/vim-surround'
 " Auto-closing brackets and quotes
@@ -467,7 +467,7 @@ let g:gundo_preview_height = 30
 " -----------------------------------------------------
 " Easy motion settings
 " -----------------------------------------------------
-let g:EasyMotion_keys='asdfjkoweriop'
+let g:EasyMotion_keys='qwertyuiopasdfghjklzxcvbnm'
 
 " -----------------------------------------------------
 " Tagbar settings
