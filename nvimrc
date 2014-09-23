@@ -1,8 +1,8 @@
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Author : Martin Toma <martin.toma.svk@gmail.com>
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-" Date created : Tue Sep 16 15:41:28 CEST 2014
-" NVIMRC Configuration focused on RAILS development
+" VIMRC Configuration focused on RAILS development
+" Date created : Tue Nov 12 14:14:56 CET 2013
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 " ======================================================================================================================
@@ -26,21 +26,19 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " -----------------------------------------------------
 " Universal
 " -----------------------------------------------------
-" Most common languages support (ruby, js, etc.)
+" Most common languages support (syntax, indenting, etc. ) for ruby, js, etc.
 NeoBundle 'sheerun/vim-polyglot'
-" Needs linters to be install to work properly (see https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers)
+" Needs linters to be installed to work properly (see https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers)
 NeoBundle 'scrooloose/syntastic'
-" Snippets support
-NeoBundle "MarcWeber/vim-addon-mw-utils"
-NeoBundle "tomtom/tlib_vim"
-NeoBundle "garbas/vim-snipmate"
+" Snippets engine
+NeoBundle 'SirVer/ultisnips'
 " Snippets for python, js, html, ruby...
 NeoBundle 'honza/vim-snippets'
 
 " -----------------------------------------------------
 " Ruby/Rails
 " -----------------------------------------------------
-" Rails must have plugin
+" Rails, must have plugin
 NeoBundle 'tpope/vim-rails'
 " Automatically inserts 'end' wisely
 NeoBundle 'tpope/vim-endwise'
@@ -48,6 +46,8 @@ NeoBundle 'tpope/vim-endwise'
 NeoBundle 'AndrewRadev/splitjoin.vim'
 " Ruby eval plugin
 NeoBundle 'kmdsbng/vim-ruby-eval'
+" Change hash ruby 1.9 syntax
+NeoBundle 'ck3g/vim-change-hash-syntax'
 
 " -----------------------------------------------------
 " HTML/CSS/JS
@@ -58,6 +58,8 @@ NeoBundle 'amirh/HTML-AutoCloseTag'
 NeoBundle 'ap/vim-css-color'
 " Emmet for fast html prototyping
 NeoBundle 'mattn/emmet-vim'
+" JS Libs syntax, ember, angular, etc.
+NeoBundle 'othree/javascript-libraries-syntax.vim'
 
 " -----------------------------------------------------
 " Android
@@ -69,9 +71,11 @@ NeoBundle 'hsanson/vim-android'
 " Vim motion/navigation improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Fuzzy file, buffer, MRU finder (CTRL-P)
+" Fuzzy file, buffer, MRU finder
 NeoBundle 'kien/ctrlp.vim'
-" Easily move around file (easy motion)
+" CtrlP extension to search in commands
+NeoBundle 'fisadev/vim-ctrlp-cmdpalette'
+" Easily move around file
 NeoBundle 'Lokaltog/vim-easymotion'
 " Seek, easy motion for long lines
 NeoBundle 'goldfeld/vim-seek'
@@ -82,6 +86,8 @@ NeoBundle 'terryma/vim-multiple-cursors'
 " Vim interface improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
+" Tabs, buffers, sessions management plugin
+NeoBundle 'szw/vim-ctrlspace'
 " Nerdtree file browser
 NeoBundle 'scrooloose/nerdtree'
 " Airline (improved status line)
@@ -105,6 +111,8 @@ NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'mattn/webapi-vim'
 " Github gist plugin
 NeoBundle 'mattn/gist-vim'
+" Gitk for vim
+NeoBundle 'gregsexton/gitv'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Other plugins
@@ -117,15 +125,13 @@ NeoBundle 'mattn/gist-vim'
 NeoBundle 'tmhedberg/matchit'
 " Custom textobj creation support
 NeoBundle 'kana/vim-textobj-user'
-" Ruby block text object
-NeoBundle 'nelstrom/vim-textobj-rubyblock'
 " Expanding region selection
 NeoBundle 'terryma/vim-expand-region'
 
 " -----------------------------------------------------
 " Other
 " -----------------------------------------------------
-" Supertab for tab triggering completion (integrates with snippets, etc.)
+" Tab triggering completion (integrates with snippets, etc.)
 NeoBundle 'ervandew/supertab'
 " Change surroundings characters
 NeoBundle 'tpope/vim-surround'
@@ -133,7 +139,7 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'Raimondi/delimitMate'
 " YANK history management
 NeoBundle 'YankRing.vim'
-" AG search from vim
+" AG search for vim (used in ctrl-p)
 NeoBundle 'ervandew/ag'
 " Trailing spaces deleter (:FixWhitespaces)
 NeoBundle 'bronson/vim-trailing-whitespace'
@@ -141,6 +147,18 @@ NeoBundle 'bronson/vim-trailing-whitespace'
 NeoBundle 'godlygeek/tabular'
 " Varius construct alternatives switch
 NeoBundle 'AndrewRadev/switch.vim'
+" Support for HTML entities, hex codes, emoji, etc. (ga)
+NeoBundle 'tpope/vim-characterize'
+" Tmux basics (Twrite, ..)
+NeoBundle 'tpope/vim-tbone'
+" Automatically toggle between relative and normal numbers
+NeoBundle 'jeffkreeftmeijer/vim-numbertoggle'
+" Advanced search integrated to vim (using ag)
+NeoBundle 'dyng/ctrlsf.vim'
+" Improved documentation lookup (gK)
+NeoBundle 'Keithbsmiley/investigate.vim'
+" List of common mistakes to be corrected automagically
+NeoBundle 'panozzaj/vim-autocorrect'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Color-scheme plugins
@@ -150,10 +168,14 @@ NeoBundle 'AndrewRadev/switch.vim'
 NeoBundle 'chriskempson/vim-tomorrow-theme'
 " Molokai theme
 NeoBundle 'tomasr/molokai'
+" Hybrid dark color theme
+NeoBundle 'w0ng/vim-hybrid'
 " Rainbow parenthesis
 NeoBundle 'kien/rainbow_parentheses.vim'
 " Approximation to make gvim schemes work in terminal
 NeoBundle 'vim-scripts/CSApprox'
+" Benchmark vimrc
+NeoBundle 'mattn/benchvimrc-vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " End of plugin declaration
@@ -335,12 +357,12 @@ vmap <C-j> xp`[V`]
 vmap <C-k> xkP`[V`]
 
 " Easily copy and past to system clipboard
-vmap <Leader>y "+y
-vmap <Leader>d "+d
-nmap <Leader>p "+p
-nmap <Leader>P "+P
-vmap <Leader>p "+p
-vmap <Leader>P "+P
+vmap ,y "+y
+nmap ,y "+y
+nmap ,p "+p
+nmap ,P "+P
+vmap ,p "+p
+vmap ,P "+P
 
 " Switch plugin mapping
 nmap <Leader>s :Switch<CR>
@@ -355,7 +377,7 @@ nmap <silent> <F5> :source $MYVIMRC<CR>
 " Open my vimrc in new tab
 nmap <silent> <F6> :tabedit $MYVIMRC<CR>
 " Toggle rainbow paranthesis
-nmap <silent> <F12> :RainbowParenthesesToggle<CR>
+nmap <silent> <F12> ::RainbowParenthesesToggle<CR>
 " Toggle tagbar window
 nmap <silent> <F2> :TagbarToggle<CR>
 
@@ -374,6 +396,7 @@ nnoremap <silent> _ :resize -5<CR>
 " -----------------------------------------------------
 " Airline settings
 " -----------------------------------------------------
+let g:airline_exclude_preview = 1                       " Because of ctrl-space
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#left_alt_sep = '|'
@@ -417,11 +440,6 @@ let g:UltiSnipsJumpForwardTrigger='<c-n>'
 let g:UltiSnipsJumpBackwardTrigger='<c-z>'
 
 " -----------------------------------------------------
-" Supertab settings TODO: Think about c-p
-" -----------------------------------------------------
-let g:SuperTabDefaultCompletionType = '<c-p>'
-
-" -----------------------------------------------------
 " Syntastic settings
 " -----------------------------------------------------
 let g:syntastic_ruby_checkers = ['mri']
@@ -450,7 +468,7 @@ let g:gundo_preview_height = 30
 " -----------------------------------------------------
 " Easy motion settings
 " -----------------------------------------------------
-let g:EasyMotion_keys='asdfjkoweriop'
+let g:EasyMotion_keys='qwertyuiopasdfghjklzxcvbnm'
 
 " -----------------------------------------------------
 " Tagbar settings
@@ -466,6 +484,17 @@ let g:tagbar_type_ruby = {
     \ ]
 \ }
 
+" -----------------------------------------------------
+" Ctrl-space settings
+" -----------------------------------------------------
+let g:ctrlspace_default_mapping_key = "<Leader><Leader>"
+" Use ag
+if executable("ag")
+  let g:ctrlspace_glob_command = 'ag -l --nocolor -g ""'
+endif
+" Dont use unicode chars
+let g:ctrlspace_unicode_font = 0
+
 " ======================================================================================================================
 " Plugin mapping and other settings
 " ======================================================================================================================
@@ -479,13 +508,14 @@ nnoremap <silent> <F7> :GundoToggle<CR>
 " Toggle syntax checking
 nnoremap <F8> :SyntasticToggleMode<CR>
 
-" CTRL-P mapping
+" CTRL-P and its extensions mapping
 let g:ctrlp_map = '<Leader>p'
 nnoremap <silent> <Leader>t :CtrlPBufTagAll<CR>
 nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
+nnoremap <silent> <Leader>c :CtrlPCmdPalette<CR>
 
 " Easy motion mapping
-let g:EasyMotion_leader_key = 'm'
+let g:EasyMotion_leader_key = ','
 
 " Tabs and buffs switching and closing mapping
 nnoremap td :tabclose<CR>
@@ -524,11 +554,15 @@ if $TERM == 'xterm-256color' || 'screen-256color'
     let &colorcolumn=121
 endif
 
-" Molokai settings (used in android devel)
-let g:molokai_original = 1
-let g:rehash256 = 1
 " Color scheme settings
-colorscheme molokai
+if strftime("%H") < 15
+  let g:molokai_original = 1
+  let g:rehash256 = 1
+  colorscheme molokai
+else
+  colorscheme hybrid
+endif
+
 " Airline theme
 let g:airline_theme='dark'
 
