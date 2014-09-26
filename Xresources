@@ -10,7 +10,7 @@ xterm*customization: -color
 xterm*termName: xterm-256color
 
 ! Font settings
-xterm*faceName: Ubuntu Mono:Bold
+xterm*faceName: Ubuntu Mono derivative Powerline:Bold
 xterm*faceSize: 12
 xterm*allowBoldFonts: false
 

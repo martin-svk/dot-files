@@ -8,9 +8,8 @@
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " THIS WEEK FOCUSED ON:
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-"   -
-"   -
-"   -
+"   - Using <Leader><Leader> for command invocation and removal some shortcuts
+"   - Study using C-space for window management
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " FROM: Fri Sep 26 23:11:32 CEST 2014
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -53,7 +52,6 @@ Plugin 'tpope/vim-rails'
 " Automatically inserts 'end' wisely
 Plugin 'tpope/vim-endwise'
 " Splitting and joining multiple lines ruby constructs
-" like if statements, etc. (:SplitjoinSplit...)
 Plugin 'AndrewRadev/splitjoin.vim'
 " Ruby eval plugin
 Plugin 'kmdsbng/vim-ruby-eval'
