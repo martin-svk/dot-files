@@ -1,8 +1,18 @@
+" ######################################################################################################################
+" ### Author : Martin Toma <martin.toma.svk@gmail.com>                                                               ###
+" ######################################################################################################################
+" ### VIMRC Configuration focused on RAILS development                                                               ###
+" ### Date created : Tue Nov 12 14:14:56 CET 2013                                                                    ###
+" ######################################################################################################################
+
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-" Author : Martin Toma <martin.toma.svk@gmail.com>
+" THIS WEEK FOCUSED ON:
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-" VIMRC Configuration focused on RAILS development
-" Date created : Tue Nov 12 14:14:56 CET 2013
+"   -
+"   -
+"   -
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" FROM: Fri Sep 26 23:11:32 CEST 2014
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 " ======================================================================================================================
@@ -12,15 +22,15 @@
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" ---------------------------------------------------------------------------------------------------------------------
+" *********************************************************************************************************************
 " Plugin list
-" ---------------------------------------------------------------------------------------------------------------------
+" *********************************************************************************************************************
 
 " Let Vundle manage Vundle, REQUIRED!
 Plugin 'gmarik/Vundle.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
-" Language/Framework support plugins
+" Language or framework supporting plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
 " -----------------------------------------------------
@@ -38,15 +48,16 @@ Plugin 'honza/vim-snippets'
 " -----------------------------------------------------
 " Ruby/Rails
 " -----------------------------------------------------
-" Rails, must have plugin
+" Rails navigation, etc. plugin (f.e. :Rmigration)
 Plugin 'tpope/vim-rails'
 " Automatically inserts 'end' wisely
 Plugin 'tpope/vim-endwise'
 " Splitting and joining multiple lines ruby constructs
+" like if statements, etc. (:SplitjoinSplit...)
 Plugin 'AndrewRadev/splitjoin.vim'
 " Ruby eval plugin
 Plugin 'kmdsbng/vim-ruby-eval'
-" Change hash ruby 1.9 syntax
+" Change between ruby 1.9 and 1.8 hash syntax
 Plugin 'ck3g/vim-change-hash-syntax'
 
 " -----------------------------------------------------
@@ -58,7 +69,7 @@ Plugin 'amirh/HTML-AutoCloseTag'
 Plugin 'ap/vim-css-color'
 " Emmet for fast html prototyping
 Plugin 'mattn/emmet-vim'
-" JS Libs syntax, ember, angular, etc.
+" JS libs syntax files, ember, angular, etc.
 Plugin 'othree/javascript-libraries-syntax.vim'
 
 " -----------------------------------------------------
@@ -68,24 +79,37 @@ Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'hsanson/vim-android'
 
 " ---------------------------------------------------------------------------------------------------------------------
-" Vim motion/navigation improving plugins
+" Motion/code navigation improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Fuzzy file, buffer, MRU finder
-Plugin 'kien/ctrlp.vim'
-" CtrlP extension to search in commands
-Plugin 'fisadev/vim-ctrlp-cmdpalette'
-" Easily move around file
-Plugin 'Lokaltog/vim-easymotion'
 " Seek, easy motion for long lines
 Plugin 'goldfeld/vim-seek'
 " Multiple cursors feature
 Plugin 'terryma/vim-multiple-cursors'
 
 " ---------------------------------------------------------------------------------------------------------------------
-" Vim interface improving plugins
+" Editing improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
+" Auto-closing brackets and quotes
+Plugin 'Raimondi/delimitMate'
+" Change surroundings characters
+Plugin 'tpope/vim-surround'
+" Trailing spaces deleter (:FixWhitespaces)
+Plugin 'bronson/vim-trailing-whitespace'
+" Alignment on specific regex (:Tabularize \=)
+Plugin 'godlygeek/tabular'
+" Support for HTML entities, hex codes, emoji, etc. (ga)
+Plugin 'tpope/vim-characterize'
+
+" ---------------------------------------------------------------------------------------------------------------------
+" Interface improving plugins
+" ---------------------------------------------------------------------------------------------------------------------
+
+" Fuzzy file, buffer, MRU finder
+Plugin 'kien/ctrlp.vim'
+" CtrlP extension to search in commands
+Plugin 'fisadev/vim-ctrlp-cmdpalette'
 " Tabs, buffers, sessions management plugin
 Plugin 'szw/vim-ctrlspace'
 " Nerdtree file browser
@@ -94,10 +118,23 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 " History tree visualizer
 Plugin 'sjl/gundo.vim'
-" Preview before substitution (only in command line mode (c-f))
-Plugin 'osyo-manga/vim-over'
 " Tags (methods, classes) display window
 Plugin 'majutsushi/tagbar'
+
+" ---------------------------------------------------------------------------------------------------------------------
+" Internals improving plugins
+" ---------------------------------------------------------------------------------------------------------------------
+
+" YANK history management
+Plugin 'YankRing.vim'
+" Tab triggering completion (integrates with snippets, etc.)
+Plugin 'ervandew/supertab'
+" Automatically toggle between relative and normal numbers
+Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+" Preview before substitution (only in command line mode (c-f))
+Plugin 'osyo-manga/vim-over'
+" Improved documentation lookup (gK)
+Plugin 'Keithbsmiley/investigate.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Git/Github support plugins
@@ -115,50 +152,26 @@ Plugin 'mattn/gist-vim'
 Plugin 'gregsexton/gitv'
 
 " ---------------------------------------------------------------------------------------------------------------------
-" Other plugins
+" External tools integration plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
-" -----------------------------------------------------
-" Text objects
-" -----------------------------------------------------
+" AG search for vim (used in ctrl-p) (ag alias silversearcher must be installed)
+Plugin 'ervandew/ag'
+" Tmux basics tools (Twrite, ..)
+Plugin 'tpope/vim-tbone'
+" Advanced search integrated to vim (using ag)
+Plugin 'dyng/ctrlsf.vim'
+
+" ---------------------------------------------------------------------------------------------------------------------
+" Text objects improving plugins
+" ---------------------------------------------------------------------------------------------------------------------
+"
 " Matchit better textobj support
 Plugin 'tmhedberg/matchit'
 " Custom textobj creation support
 Plugin 'kana/vim-textobj-user'
 " Expanding region selection
 Plugin 'terryma/vim-expand-region'
-
-" -----------------------------------------------------
-" Other
-" -----------------------------------------------------
-" Tab triggering completion (integrates with snippets, etc.)
-Plugin 'ervandew/supertab'
-" Change surroundings characters
-Plugin 'tpope/vim-surround'
-" Auto-closing brackets and quotes
-Plugin 'Raimondi/delimitMate'
-" YANK history management
-Plugin 'YankRing.vim'
-" AG search for vim (used in ctrl-p)
-Plugin 'ervandew/ag'
-" Trailing spaces deleter (:FixWhitespaces)
-Plugin 'bronson/vim-trailing-whitespace'
-" Alignment on specific regex (:Tabularize \=)
-Plugin 'godlygeek/tabular'
-" Varius construct alternatives switch
-Plugin 'AndrewRadev/switch.vim'
-" Support for HTML entities, hex codes, emoji, etc. (ga)
-Plugin 'tpope/vim-characterize'
-" Tmux basics (Twrite, ..)
-Plugin 'tpope/vim-tbone'
-" Automatically toggle between relative and normal numbers
-Plugin 'jeffkreeftmeijer/vim-numbertoggle'
-" Advanced search integrated to vim (using ag)
-Plugin 'dyng/ctrlsf.vim'
-" Improved documentation lookup (gK)
-Plugin 'Keithbsmiley/investigate.vim'
-" List of common mistakes to be corrected automagically
-Plugin 'panozzaj/vim-autocorrect'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Color-scheme plugins
@@ -174,12 +187,19 @@ Plugin 'w0ng/vim-hybrid'
 Plugin 'kien/rainbow_parentheses.vim'
 " Approximation to make gvim schemes work in terminal
 Plugin 'vim-scripts/CSApprox'
+
+" ---------------------------------------------------------------------------------------------------------------------
+" Other plugins
+" ---------------------------------------------------------------------------------------------------------------------
+
+" List of common mistakes to be corrected automagically
+Plugin 'panozzaj/vim-autocorrect'
 " Benchmark vimrc
 Plugin 'mattn/benchvimrc-vim'
 
-" ---------------------------------------------------------------------------------------------------------------------
+" *********************************************************************************************************************
 " End of plugin declaration
-" ---------------------------------------------------------------------------------------------------------------------
+" *********************************************************************************************************************
 call vundle#end()
 
 " ======================================================================================================================
@@ -199,14 +219,14 @@ set bg=dark                 " Dark background setting (dark theme version of cur
 set cursorline              " Set default cursor line (highlighting is done by color scheme)
 set cmdheight=1             " Command line height
 set pumheight=10            " Completion window max size
-set iskeyword-=_            " Set underscore is a word separator
+set iskeyword-=_            " Set underscore as a word separator
 set timeoutlen=200          " Setting ESC timeout
 set hlsearch                " Highlight search
 set incsearch               " Incremental search
 set hidden                  " Enables to switch between unsaved buffers and keep undo history
 set undolevels=100          " How many undo commands to remember
 set clipboard+=unnamed      " Use system clipboard
-set history=256             " Number of things to remember in history
+set history=1024            " Number of things to remember in history
 set nohlsearch              " Don't highlight after search
 set mat=2                   " How many tenths of a second to blink when matching brackets
 set lazyredraw              " Don't redraw while executing macros (better performance)
@@ -325,26 +345,24 @@ nnoremap <Space> <nop>
 nnoremap Q <nop>
 
 " -----------------------------------------------------
-" Vim defaults tweaking and overriding
+" Vim default mappings tweaking and overriding
 " -----------------------------------------------------
 
 " When jump to next match also center screen
 noremap n nzz
 noremap N Nzz
+" Same when moving up and down
 noremap <c-d> <c-d>zz
 noremap <c-u> <c-u>zz
 
-" Write read only files with w!!
-cmap w!! w !sudo tee % >/dev/null
-
-" Easily switch between the last two files
-nnoremap ,, <c-^>
+" Easily switch between the last two files (memo like subleader s(witch))
+nnoremap ,s <c-^>
 
 " Remap VIM 0 to first non-blank character
 nnoremap 0 ^
 nnoremap ^ 0
 
-" Map save to ctrl-s
+" Map save to Ctrl-s
 nmap <silent> <c-s> :w<CR>
 imap <silent> <c-s> <Esc>:w<CR>
 
@@ -363,30 +381,46 @@ nmap ,P "+P
 vmap ,p "+p
 vmap ,P "+P
 
-" Switch plugin mapping
-nmap <Leader>s :Switch<CR>
+" -----------------------------------------------------
+" Toggles setup
+" -----------------------------------------------------
 
-" -----------------------------------------------------
-" Toggles
-" -----------------------------------------------------
-" Toggle spelling on and off
-nmap <silent> <F4> :set spell!<CR>
-" Source vimrc, so new setting will be applied
-nmap <silent> <F5> :source $MYVIMRC<CR>
-" Open my vimrc in new tab
-nmap <silent> <F6> :tabedit $MYVIMRC<CR>
-" Toggle rainbow paranthesis
-nmap <silent> <F12> ::RainbowParenthesesToggle<CR>
+" Toggle nerdtree panel
+nnoremap <silent> <F1> :NERDTreeToggle<CR>
 " Toggle tagbar window
-nmap <silent> <F2> :TagbarToggle<CR>
+nnoremap <silent> <F2> :TagbarToggle<CR>
+" Toggle spelling on and off
+nnoremap <silent> <F4> :set spell!<CR>
+" Source vimrc, so new setting will be applied
+nnoremap <silent> <F5> :source $MYVIMRC<CR>
+" Open my vimrc in new tab
+nnoremap <silent> <F6> :tabedit $MYVIMRC<CR>
+" Toggle gundo panel
+nnoremap <silent> <F7> :GundoToggle<CR>
+" Toggle syntax checking
+nnoremap <silent> <F8> :SyntasticToggleMode<CR>
+" Toggle rainbow paranthesis
+nnoremap <silent> <F12> :RainbowParenthesesToggle<CR>
 
 " -----------------------------------------------------
 " Window management mappings
 " -----------------------------------------------------
+
+" Resizing using + -
 nnoremap <silent> = :vertical resize +5<CR>
 nnoremap <silent> + :resize +5<CR>
 nnoremap <silent> - :vertical resize -5<CR>
 nnoremap <silent> _ :resize -5<CR>
+
+" -----------------------------------------------------
+" Tabs and buffers mappings (consider using ctrl-space)
+" -----------------------------------------------------
+nnoremap ,td :tabclose<CR>
+nnoremap ,tn :tabnext<CR>
+nnoremap ,tb :tabprevious<CR>
+nnoremap ,d :bd<CR>
+nnoremap ,n :bn<CR>
+nnoremap ,b :bp<CR>
 
 " ======================================================================================================================
 " Plugin settings
@@ -395,11 +429,13 @@ nnoremap <silent> _ :resize -5<CR>
 " -----------------------------------------------------
 " Airline settings
 " -----------------------------------------------------
-let g:airline_exclude_preview = 1                       " Because of ctrl-space
+
+" Because of ctrl-space
+let g:airline_exclude_preview = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline_powerline_fonts = 0
+let g:airline_powerline_fonts = 1
 
 " -----------------------------------------------------
 " Nerdtree setting
@@ -465,11 +501,6 @@ let g:gundo_right = 1
 let g:gundo_preview_height = 30
 
 " -----------------------------------------------------
-" Easy motion settings
-" -----------------------------------------------------
-let g:EasyMotion_keys='qwertyuiopasdfghjklzxcvbnm'
-
-" -----------------------------------------------------
 " Tagbar settings
 " -----------------------------------------------------
 let g:tagbar_type_ruby = {
@@ -486,7 +517,6 @@ let g:tagbar_type_ruby = {
 " -----------------------------------------------------
 " Ctrl-space settings
 " -----------------------------------------------------
-let g:ctrlspace_default_mapping_key = "<Leader><Leader>"
 " Use ag
 if executable("ag")
   let g:ctrlspace_glob_command = 'ag -l --nocolor -g ""'
@@ -498,31 +528,11 @@ let g:ctrlspace_unicode_font = 0
 " Plugin mapping and other settings
 " ======================================================================================================================
 
-" Toggle nerdtree panel
-nnoremap <silent> <F1> :NERDTreeToggle<CR>
-
-" Toggle gundo panel
-nnoremap <silent> <F7> :GundoToggle<CR>
-
-" Toggle syntax checking
-nnoremap <F8> :SyntasticToggleMode<CR>
-
 " CTRL-P and its extensions mapping
 let g:ctrlp_map = '<Leader>p'
 nnoremap <silent> <Leader>t :CtrlPBufTagAll<CR>
 nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
-nnoremap <silent> <Leader>c :CtrlPCmdPalette<CR>
-
-" Easy motion mapping
-let g:EasyMotion_leader_key = ','
-
-" Tabs and buffs switching and closing mapping
-nnoremap td :tabclose<CR>
-nnoremap tn :tabnext<CR>
-nnoremap tb :tabprevious<CR>
-nnoremap ,d :bd<CR>
-nnoremap ,n :bn<CR>
-nnoremap ,b :bp<CR>
+nnoremap <silent> <Leader><Leader> :CtrlPCmdPalette<CR>
 
 " Yankring mapping
 map <Leader>y :YRShow<CR>
@@ -535,12 +545,8 @@ nmap cQ cs'"
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
-" Split/Join plugin mappings
-nmap sj :SplitjoinJoin<CR>
-nmap sk :SplitjoinSplit<CR>
-
 " Ruby eval mapping
-nnoremap <silent> <Leader>e :RubyEval<CR>
+nnoremap ,e :RubyEval<CR>
 
 " ======================================================================================================================
 " Color and highlighting settings
@@ -549,11 +555,10 @@ nnoremap <silent> <Leader>e :RubyEval<CR>
 " Xterm 256 colors
 if $TERM == 'xterm-256color' || 'screen-256color'
     set t_Co=256
-    " Set colorcolumn
     let &colorcolumn=121
 endif
 
-" Color scheme settings
+" Color scheme changing based on time
 if strftime("%H") < 15
   let g:molokai_original = 1
   let g:rehash256 = 1
@@ -562,11 +567,12 @@ else
   colorscheme hybrid
 endif
 
-" Airline theme
+" Nice airline theme
 let g:airline_theme='dark'
 
 " Git gutter settings (signcolumn color)
 highlight clear SignColumn
+
 " Remove underline in folded lines
 hi Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE
 
@@ -600,9 +606,6 @@ cab wQ wq
 cab WQ wq
 cab W w
 cab Q q
-
-" Text abbreviations
-ab teh the
 
 " ======================================================================================================================
 " END OF VIMRC
@@ -667,9 +670,7 @@ ab teh the
 " ======================================================================================================================
 "
 " 1. Really start writing this vimrc help file.
-" 2. Start using this week focused on block to learn advanced things step by step.
-" 3. Fill abbreviations list and dictionary items.
-" 4. Set up manual folds in here.
-" 5. Create my own colorscheme based on itf.flat from sublime text.
+" 2. Set up manual folds in here.
+" 3. Create my own colorscheme based on itg.flat from sublime text.
 "
 " ======================================================================================================================
