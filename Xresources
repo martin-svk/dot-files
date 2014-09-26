@@ -11,7 +11,7 @@ xterm*termName: xterm-256color
 
 ! Font settings
 xterm*faceName: Ubuntu Mono derivative Powerline:Bold
-xterm*faceSize: 12
+xterm*faceSize: 11
 xterm*allowBoldFonts: false
 
 ! For inclusion of all necessary environment variables
