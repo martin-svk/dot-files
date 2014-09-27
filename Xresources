@@ -11,6 +11,7 @@ xterm*termName: xterm-256color
 
 ! Font settings
 xterm*faceName: Ubuntu Mono derivative Powerline:Bold
+! xterm*faceName: Meslo LG S DZ for Powerline:Bold
 xterm*faceSize: 11
 xterm*allowBoldFonts: false
 
@@ -31,81 +32,128 @@ xterm*eightBitInput: false
 xterm*eightBitOutput: true
 
 ! =============================================================================
-! TomorrowNightEighties
+! ============================== COLOR CONFIG =================================
 ! =============================================================================
 
-! #define t_background        #2d2d2d
-! #define t_current_line      #393939
-! #define t_selection             #515151
-! #define t_foreground            #cccccc
-! #define t_comment               #999999
-! #define t_red                   #f2777a
-! #define t_orange                #f99157
-! #define t_yellow                #ffcc66
-! #define t_green                 #99cc99
-! #define t_aqua                  #66cccc
-! #define t_blue                  #6699cc
-! #define t_purple                #cc99cc
-
-! xterm*foreground:   t_foreground
-! xterm*background:   t_background
-! xterm*cursorColor:  #aeafad
-! xterm*color0:       #000000
-! xterm*color8:       #666666
-! xterm*color1:       t_red
-! xterm*color9:       #FF3334
-! xterm*color2:       t_green
-! xterm*color10:      #9ec400
-! xterm*color3:       t_orange
-! xterm*color11:      t_yellow
-! xterm*color4:       t_blue
-! xterm*color12:      t_blue
-! xterm*color5:       t_purple
-! xterm*color13:      #b777e0
-! xterm*color6:       t_aqua
-! xterm*color14:      #54ced6
-! xterm*color7:       t_selection
-! xterm*color15:      t_current_line
-
-! =============================================================================
+! -----------------------------------------------------------------------------
 ! Monokai
-! =============================================================================
+! -----------------------------------------------------------------------------
 
-#define base00 #272822
-#define base01 #383830
-#define base02 #49483e
-#define base03 #75715e
-#define base04 #a59f85
-#define base05 #f8f8f2
-#define base06 #f5f4f1
-#define base07 #f9f8f5
-#define base08 #f92672
-#define base09 #fd971f
-#define base0A #f4bf75
-#define base0B #a6e22e
-#define base0C #a1efe4
-#define base0D #66d9ef
-#define base0E #ae81ff
-#define base0F #cc6633
+! #define base00 #272822
+! #define base01 #383830
+! #define base02 #49483e
+! #define base03 #75715e
+! #define base04 #a59f85
+! #define base05 #f8f8f2
+! #define base06 #f5f4f1
+! #define base07 #f9f8f5
+! #define base08 #f92672
+! #define base09 #fd971f
+! #define base0A #f4bf75
+! #define base0B #a6e22e
+! #define base0C #a1efe4
+! #define base0D #66d9ef
+! #define base0E #ae81ff
+! #define base0F #cc6633
 
-xterm*foreground:   base05
-xterm*background:   base00
-xterm*cursorColor:  base05
+! xterm*foreground:   base05
+! xterm*background:   base00
+! xterm*cursorColor:  base05
 
-xterm*color0:       base00
-xterm*color1:       base08
-xterm*color2:       base0B
-xterm*color3:       base0A
-xterm*color4:       base0D
-xterm*color5:       base0E
-xterm*color6:       base0C
-xterm*color7:       base05
+! xterm*color0:       base00
+! xterm*color1:       base08
+! xterm*color2:       base0B
+! xterm*color3:       base0A
+! xterm*color4:       base0D
+! xterm*color5:       base0E
+! xterm*color6:       base0C
+! xterm*color7:       base05
 
-xterm*color8:       base03
-xterm*color9:       base08
-xterm*color10:      base0B
-xterm*color11:      base0A
-xterm*color12:      base0D
-xterm*color13:      base0E
-xterm*color14:      base0C
-xterm*color15:      base07
+! xterm*color8:       base03
+! xterm*color9:       base08
+! xterm*color10:      base0B
+! xterm*color11:      base0A
+! xterm*color12:      base0D
+! xterm*color13:      base0E
+! xterm*color14:      base0C
+! xterm*color15:      base07
+
+! -----------------------------------------------------------------------------
+! Jellybeans
+! -----------------------------------------------------------------------------
+
+! xterm*color0:  #1a1a1a
+! xterm*color8:  #404040
+! xterm*color1:  #d75f5f
+! xterm*color9:  #EA8484
+! xterm*color2:  #87af5f
+! xterm*color10: #C7F09F
+! xterm*color3:  #ffaf5f
+! xterm*color11: #FFCC9A
+! xterm*color4:  #87afd7
+! xterm*color12: #a5caef
+! xterm*color5:  #8787af
+! xterm*color13: #A6A6DE
+! xterm*color6:  #5f8787
+! xterm*color14: #69b2b2
+! xterm*color7:  #808080
+! xterm*color15: #d7d7d7
+
+! -----------------------------------------------------------------------------
+! Solarized
+! -----------------------------------------------------------------------------
+
+
+! Common
+#define S_yellow        #b58900
+#define S_orange        #cb4b16
+#define S_red           #dc322f
+#define S_magenta       #d33682
+#define S_violet        #6c71c4
+#define S_blue          #268bd2
+#define S_cyan          #2aa198
+#define S_green         #859900
+
+! Dark
+#define S_base03        #002b36
+#define S_base02        #073642
+#define S_base01        #586e75
+#define S_base00        #657b83
+#define S_base0         #839496
+#define S_base1         #93a1a1
+#define S_base2         #eee8d5
+#define S_base3         #fdf6e3
+
+! Light
+! #define S_base03        #fdf6e3
+! #define S_base02        #eee8d5
+! #define S_base01        #93a1a1
+! #define S_base00        #839496
+! #define S_base0         #657b83
+! #define S_base1         #586e75
+! #define S_base2         #073642
+! #define S_base3         #002b36
+
+xterm*background:              S_base03
+xterm*foreground:              S_base0
+xterm*fading:                  40
+xterm*fadeColor:               S_base03
+xterm*cursorColor:             S_base1
+xterm*pointerColorBackground:  S_base01
+xterm*pointerColorForeground:  S_base1
+xterm*color0:                  S_base02
+xterm*color1:                  S_red
+xterm*color2:                  S_green
+xterm*color3:                  S_yellow
+xterm*color4:                  S_blue
+xterm*color5:                  S_magenta
+xterm*color6:                  S_cyan
+xterm*color7:                  S_base2
+xterm*color8:                  S_base03
+xterm*color9:                  S_orange
+xterm*color10:                 S_base01
+xterm*color11:                 S_base00
+xterm*color12:                 S_base0
+xterm*color13:                 S_violet
+xterm*color14:                 S_base1
+xterm*color15:                 S_base3
