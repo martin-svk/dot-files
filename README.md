@@ -1,17 +1,16 @@
-My presonal configuration files
+My personal configuration files
 =========
 
-### In this repository are icluded configuration files for:
+### In this repository are included configuration files for:
 
 * vim
+* nvim
+* emacs
 * zsh
 * bash
 * git
 * xterm
 * tmux
 * tmuxinator
-* ruby utilies (pry, gem, irb)
-
-### TODO:
-
-* Document vimrc
+* ruby utilities (pry, gem, irb)
+* ag searcher
