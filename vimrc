@@ -5,35 +5,35 @@
 " ### Date created : Tue Nov 12 14:14:56 CET 2013                                                                    ###
 " ######################################################################################################################
 
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" ======================================================================================================================
 " THIS WEEK FOCUSED ON:
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" ======================================================================================================================
 "   - Using <Leader><Leader> for command invocation and removal some shortcuts
 "   - Study using C-space for window management
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" ======================================================================================================================
 " FROM: Fri Sep 26 23:11:32 CEST 2014
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" ======================================================================================================================
 
 " ======================================================================================================================
-" Bundler (Vundle) settings
+" 1.0 Bundler (Vundle) settings
 " ======================================================================================================================
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" *********************************************************************************************************************
-" Plugin list
-" *********************************************************************************************************************
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" 1.1 Plugin list
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 " Let Vundle manage Vundle, REQUIRED!
 Plugin 'gmarik/Vundle.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
-" Language or framework supporting plugins
+" 1.1.1 Language or framework supporting plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
 " -----------------------------------------------------
-" Universal
+" 1.1.1.1 Universal
 " -----------------------------------------------------
 " Most common languages support (syntax, indenting, etc. ) for ruby, js, etc.
 Plugin 'sheerun/vim-polyglot'
@@ -45,7 +45,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
 " -----------------------------------------------------
-" Ruby/Rails
+" 1.1.1.2 Ruby/Rails
 " -----------------------------------------------------
 " Rails navigation, etc. plugin (f.e. :Rmigration)
 Plugin 'tpope/vim-rails'
@@ -59,7 +59,7 @@ Plugin 'kmdsbng/vim-ruby-eval'
 Plugin 'ck3g/vim-change-hash-syntax'
 
 " -----------------------------------------------------
-" HTML/CSS/JS
+" 1.1.1.3 HTML/CSS/JS
 " -----------------------------------------------------
 " HTML autoclose tags
 Plugin 'amirh/HTML-AutoCloseTag'
@@ -71,13 +71,13 @@ Plugin 'mattn/emmet-vim'
 Plugin 'othree/javascript-libraries-syntax.vim'
 
 " -----------------------------------------------------
-" Android
+" 1.1.1.4 Android
 " -----------------------------------------------------
 " Android build and deploy helpers
 Plugin 'hsanson/vim-android'
 
 " ---------------------------------------------------------------------------------------------------------------------
-" Motion/code navigation improving plugins
+" 1.1.2 Motion/code navigation improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Seek, easy motion for long lines
@@ -86,7 +86,7 @@ Plugin 'goldfeld/vim-seek'
 Plugin 'terryma/vim-multiple-cursors'
 
 " ---------------------------------------------------------------------------------------------------------------------
-" Editing improving plugins
+" 1.1.3 Editing improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Auto-closing brackets and quotes
@@ -101,7 +101,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-characterize'
 
 " ---------------------------------------------------------------------------------------------------------------------
-" Interface improving plugins
+" 1.1.4 Interface improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Fuzzy file, buffer, MRU finder
@@ -120,7 +120,7 @@ Plugin 'sjl/gundo.vim'
 Plugin 'majutsushi/tagbar'
 
 " ---------------------------------------------------------------------------------------------------------------------
-" Internals improving plugins
+" 1.1.5 Internals improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
 " YANK history management
@@ -135,7 +135,7 @@ Plugin 'osyo-manga/vim-over'
 Plugin 'Keithbsmiley/investigate.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
-" Git/Github support plugins
+" 1.1.6 Git/Github support plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Git wrapper
@@ -150,7 +150,7 @@ Plugin 'mattn/gist-vim'
 Plugin 'gregsexton/gitv'
 
 " ---------------------------------------------------------------------------------------------------------------------
-" External tools integration plugins
+" 1.1.7 External tools integration plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
 " AG search for vim (used in ctrl-p) (ag alias silversearcher must be installed)
@@ -161,7 +161,7 @@ Plugin 'tpope/vim-tbone'
 Plugin 'dyng/ctrlsf.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
-" Text objects improving plugins
+" 1.1.8 Text objects improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 "
 " Matchit better textobj support
@@ -172,7 +172,7 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'terryma/vim-expand-region'
 
 " ---------------------------------------------------------------------------------------------------------------------
-" Color-scheme plugins
+" 1.1.9 Color-scheme plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Tomorrow theme
@@ -187,7 +187,7 @@ Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'vim-scripts/CSApprox'
 
 " ---------------------------------------------------------------------------------------------------------------------
-" Other plugins
+" 1.1.10 Other plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
 " List of common mistakes to be corrected automagically
@@ -195,13 +195,13 @@ Plugin 'panozzaj/vim-autocorrect'
 " Benchmark vimrc
 Plugin 'mattn/benchvimrc-vim'
 
-" *********************************************************************************************************************
-" End of plugin declaration
-" *********************************************************************************************************************
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" 1.2 End of plugin declaration
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 call vundle#end()
 
 " ======================================================================================================================
-" Basic settings
+" 2.0 Basic settings
 " ======================================================================================================================
 
 set shell=/bin/bash         " Setting vim shell to bash
@@ -237,7 +237,7 @@ set spelllang=en_us         " Set language to us English
 set spellfile=~/.vim/dictionary.utf-8.add
 
 " -----------------------------------------------------
-" Intendation settings (2 spaces tabs)
+" 2.1 Intendation settings (2 spaces tabs)
 " -----------------------------------------------------
 set autoindent
 set expandtab
@@ -245,25 +245,25 @@ set shiftwidth=2
 set softtabstop=2
 
 " -----------------------------------------------------
-" Split settings (more natural).
+" 2.2 Split settings (more natural).
 " -----------------------------------------------------
 set splitbelow
 set splitright
 
 " -----------------------------------------------------
-" Turn backup off, since most stuff is in git
+" 2.3 Turn backup off, since most stuff is in git
 " -----------------------------------------------------
 set nobackup
 set nowb
 set noswapfile
 
 " -----------------------------------------------------
-" Highlight whitespaces
+" 2.4 Highlight whitespaces
 " -----------------------------------------------------
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 " -----------------------------------------------------
-" Filetype settings
+" 2.5 Filetype settings
 " -----------------------------------------------------
 syntax on
 filetype off
@@ -271,7 +271,7 @@ filetype plugin on
 filetype indent on
 
 " -----------------------------------------------------
-" Folding settings, by default is disabled, use 'zi'
+" 2.6 Folding settings, by default is disabled, use 'zi'
 " -----------------------------------------------------
 set foldmethod=manual
 set foldlevelstart=2
@@ -279,7 +279,7 @@ set fillchars="fold: "
 set nofoldenable
 
 " -----------------------------------------------------
-" Enable omni completion. (Ctrl-X Ctrl-O)
+" 2.7 Enable omni completion. (Ctrl-X Ctrl-O)
 " -----------------------------------------------------
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
@@ -306,7 +306,7 @@ if has("autocmd") && exists("+omnifunc")
 endif
 
 " -----------------------------------------------------
-" Completion ignore list
+" 2.8 Completion ignore list
 " -----------------------------------------------------
 set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
 set wildignore+=*vim/backups*
@@ -320,21 +320,24 @@ set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
 
 " ======================================================================================================================
-" Mapping settings
+" 3.0 Mapping settings
 " ======================================================================================================================
 
 " -----------------------------------------------------
-" Setting leader
+" 3.1 Setting leader
 " -----------------------------------------------------
 let mapleader="\<space>"
 let g:mapleader="\<space>"
 
 " -----------------------------------------------------
-" Disabling arrow keys, space key, exmode enter with Q key
+" 3.2 Disabling arrow keys, space key, exmode enter with Q key
 " -----------------------------------------------------
 nnoremap <up> <nop>
+nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
+nnoremap <bs> <nop>
+nnoremap <delete> <nop>
 inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
@@ -343,12 +346,13 @@ nnoremap <Space> <nop>
 nnoremap Q <nop>
 
 " -----------------------------------------------------
-" Vim default mappings tweaking and overriding
+" 3.3 Vim default mappings tweaking and overriding
 " -----------------------------------------------------
 
 " When jump to next match also center screen
 noremap n nzz
 noremap N Nzz
+
 " Same when moving up and down
 noremap <c-d> <c-d>zz
 noremap <c-u> <c-u>zz
@@ -367,6 +371,7 @@ imap <silent> <c-s> <Esc>:w<CR>
 " Bubble single lines
 nmap <C-k> ddkP
 nmap <C-j> ddp
+
 " Bubble multiple lines
 vmap <C-j> xp`[V`]
 vmap <C-k> xkP`[V`]
@@ -380,20 +385,20 @@ vmap ,p "+p
 vmap ,P "+P
 
 " -----------------------------------------------------
-" Toggles setup
+" 3.4 Toggles setup
 " -----------------------------------------------------
 
-" Toggle nerdtree panel
+" Toggle nerdtree (file browser) panel
 nnoremap <silent> <F1> :NERDTreeToggle<CR>
-" Toggle tagbar window
+" Toggle tagbar (methods, classes, etc.) window
 nnoremap <silent> <F2> :TagbarToggle<CR>
 " Toggle spelling on and off
 nnoremap <silent> <F4> :set spell!<CR>
-" Source vimrc, so new setting will be applied
+" Source (reload) vimrc, so new setting will be applied
 nnoremap <silent> <F5> :source $MYVIMRC<CR>
 " Open my vimrc in new tab
 nnoremap <silent> <F6> :tabedit $MYVIMRC<CR>
-" Toggle gundo panel
+" Toggle gundo (undo tree) panel
 nnoremap <silent> <F7> :GundoToggle<CR>
 " Toggle syntax checking
 nnoremap <silent> <F8> :SyntasticToggleMode<CR>
@@ -401,7 +406,7 @@ nnoremap <silent> <F8> :SyntasticToggleMode<CR>
 nnoremap <silent> <F12> :RainbowParenthesesToggle<CR>
 
 " -----------------------------------------------------
-" Window management mappings
+" 3.5 Window management mappings
 " -----------------------------------------------------
 
 " Resizing using + -
@@ -410,8 +415,10 @@ nnoremap <silent> + :resize +5<CR>
 nnoremap <silent> - :vertical resize -5<CR>
 nnoremap <silent> _ :resize -5<CR>
 
+" TODO: same tmux and vim window navigation
+
 " -----------------------------------------------------
-" Tabs and buffers mappings (consider using ctrl-space)
+" 3.6 Tabs and buffers mappings (consider using ctrl-space)
 " -----------------------------------------------------
 nnoremap ,td :tabclose<CR>
 nnoremap ,tn :tabnext<CR>
@@ -421,29 +428,27 @@ nnoremap ,n :bn<CR>
 nnoremap ,b :bp<CR>
 
 " ======================================================================================================================
-" Plugin settings
+" 4.0 Plugin settings
 " ======================================================================================================================
 
 " -----------------------------------------------------
-" Airline settings
+" 4.1 Airline (status line) settings
 " -----------------------------------------------------
-
-" Because of ctrl-space
-let g:airline_exclude_preview = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts = 1
+let g:airline_exclude_preview = 1
 
 " -----------------------------------------------------
-" Nerdtree setting
+" 4.2 Nerdtree (file browser) setting
 " -----------------------------------------------------
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let g:NERDTreeWinSize = 30
 
 " -----------------------------------------------------
-" CTRL-P settings
+" 4.3 CTRL-P (fuzzy searcher) settings
 " -----------------------------------------------------
 let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:10,results:10'
 let g:ctrlp_cmd = 'CtrlPMixed'
@@ -466,14 +471,14 @@ else
 endif
 
 " -----------------------------------------------------
-" Ultisnips settings
+" 4.4 Ultisnips (snippets manager) settings
 " -----------------------------------------------------
 let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<c-n>'
 let g:UltiSnipsJumpBackwardTrigger='<c-z>'
 
 " -----------------------------------------------------
-" Syntastic settings
+" 4.5 Syntastic (syntax checker) settings
 " -----------------------------------------------------
 let g:syntastic_ruby_checkers = ['mri']
 " mark syntax errors with :signs
@@ -488,18 +493,17 @@ let g:syntastic_check_on_open=1
 let g:syntastic_quiet_messages = {'level': 'warnings'}
 " Passive mode is default
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
-
-" Disable csslint, scss and sass is not behaving correctly
+" Disable csslint, scss and sass syntax checking is not behaving correctly
 let g:loaded_syntastic_css_csslint_checker = 0
 
 " -----------------------------------------------------
-" Gundo settings
+" 4.6 Gundo (undo tree) settings
 " -----------------------------------------------------
 let g:gundo_right = 1
 let g:gundo_preview_height = 30
 
 " -----------------------------------------------------
-" Tagbar settings
+" 4.7 Tagbar (methods, classes, etc. browser) settings
 " -----------------------------------------------------
 let g:tagbar_type_ruby = {
     \ 'kinds' : [
@@ -513,7 +517,7 @@ let g:tagbar_type_ruby = {
 \ }
 
 " -----------------------------------------------------
-" Ctrl-space settings
+" 4.8 Ctrl-space settings
 " -----------------------------------------------------
 " Use ag
 if executable("ag")
@@ -523,7 +527,7 @@ endif
 let g:ctrlspace_unicode_font = 0
 
 " ======================================================================================================================
-" Plugin mapping and other settings
+" 5.0 Plugin mappings and other settings
 " ======================================================================================================================
 
 " CTRL-P and its extensions mapping
@@ -533,11 +537,11 @@ nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
 nnoremap <silent> <Leader><Leader> :CtrlPCmdPalette<CR>
 
 " Yankring mapping
-map <Leader>y :YRShow<CR>
+nnoremap <Leader>y :YRShow<CR>
 
 " Surround vim shortcut for quotes toggle
-nmap cq cs"'
-nmap cQ cs'"
+nnoremap cq cs"'
+nnoremap cQ cs'"
 
 " Expand region mappings
 vmap v <Plug>(expand_region_expand)
@@ -547,10 +551,10 @@ vmap <C-v> <Plug>(expand_region_shrink)
 nnoremap ,e :RubyEval<CR>
 
 " ======================================================================================================================
-" Color and highlighting settings
+" 6.0 Color and highlighting settings
 " ======================================================================================================================
 
-" Xterm 256 colors
+" XTerm 256 colors
 if $TERM == 'xterm-256color' || 'screen-256color'
     set t_Co=256
     let &colorcolumn=121
@@ -573,14 +577,14 @@ highlight clear SignColumn
 hi Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE
 
 " ======================================================================================================================
-" Filetype specific settings
+" 7.0 Filetype specific settings
 " ======================================================================================================================
 
 " If java(android) set appropriate indentation and color scheme
 autocmd FileType java set shiftwidth=4| set softtabstop=4
 
 " ======================================================================================================================
-" Autocommands and other tweaks
+" 8.0 Autocommands and other tweaks
 " ======================================================================================================================
 
 " Close vim if the last open window is nerdtree
@@ -589,11 +593,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " The PC is fast enough, do syntax highlight syncing from start
 autocmd BufEnter * :syntax sync fromstart
 
-" ======================================================================================================================
-" Setting abbreviations to automatically repair mistakes
-" ======================================================================================================================
-
-" Command abbreviations to accept case errors
+" ----------------------------------------------------------
+" 8.1 Command abbreviations to accept case errors
+" ----------------------------------------------------------
 cab W! w!
 cab Q! q!
 cab Wq wq
@@ -603,45 +605,50 @@ cab WQ wq
 cab W w
 cab Q q
 
-" ======================================================================================================================
-" END OF VIMRC
-" ======================================================================================================================
+" ######################################################################################################################
+" ### END OF VIMRC                                                                                                   ###
+" ######################################################################################################################
 
-" ======================================================================================================================
-" :HELP .VIMRC
-" ======================================================================================================================
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" HELP SECTION:
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 "
-" Section 1. - The basics
-" =======================
+" ---------------------------------------------------
+" Section 1.0 The Basics
+" ---------------------------------------------------
+"
+" This vimrc is intended and best suited for ruby/rails development.
+" Because of that, settings like 2 space intendation are used.
 "
 " Section 1.y - Toggles (on/off)
 " ------------------------------
 "
 " F1 - Nerdtree (file browser)
 " F2 - Tagbar (tag browser)
-" F3 - Paste mode
+" F3 - Paste mode (useful when copying large code blocks)
 " F4 - Spell checking
-" F5 - Reload vimrc
-" F6 - Open vimrc in new tab
+" F5 - Reload vimrc (source $MYVIMRC)
+" F6 - Open my vimrc in new tab (edit $MYVIMRC)
 " F7 - Gundo (undo tree)
-" F8 - Syntax checking
-" F9 -
-" F10 -
-" F11 -
+" F8 - Syntax checking (using syntastic plugin)
 " F12 - Rainbow paranthesis
 "
-" # Section 2. - File navigation
-" ==============================
+" ---------------------------------------------------
+" # Section 2. - Files navigation
+" ---------------------------------------------------
 "
 "
-" # Section 3. - Navigation in code
-" =================================
+" ---------------------------------------------------
+" # Section 3. - Code navigation
+" ---------------------------------------------------
 "
 "
+" ---------------------------------------------------
 " # Section 4. - Code manipulation
-" ================================
+" ---------------------------------------------------
 "
-" 3.3 Multiple cursors:
+" Section 4.1 Multiple cursors:
+" ------------------------------
 "
 " Using default keybindings:
 "   let g:multi_cursor_next_key='<C-n>'
@@ -649,24 +656,30 @@ cab Q q
 "   let g:multi_cursor_skip_key='<C-x>'
 "   let g:multi_cursor_quit_key='<Esc>'
 "
+"
+" ---------------------------------------------------
 " # Section 5. - Look and feel
-" ============================
+" ---------------------------------------------------
 "
+" This vimrc is using Tomorrow-Night theme before 15 pm and hybrid theme after then.
 "
+" ---------------------------------------------------
 " # Section 6. - Other tweaks
-" ===========================
+" ---------------------------------------------------
 "
 "
-" ======================================================================================================================
-" END OF :HELP .VIMRC
-" ======================================================================================================================
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" END OF HELP:
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 " ======================================================================================================================
-" TODO: SECTION
+" TODO SECTION:
 " ======================================================================================================================
 "
 " 1. Really start writing this vimrc help file.
-" 2. Set up manual folds in here.
+" 2. Convert this vimrc help to markdow syntax. So it could be used in github repo.
 " 3. Create my own colorscheme based on itg.flat from sublime text.
 "
+" ======================================================================================================================
+" END OF TODO:
 " ======================================================================================================================
