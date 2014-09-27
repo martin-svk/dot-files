@@ -558,9 +558,7 @@ endif
 
 " Color scheme changing based on time
 if strftime("%H") < 15
-  let g:molokai_original = 1
-  let g:rehash256 = 1
-  colorscheme molokai
+  colorscheme Tomorrow-Night
 else
   colorscheme hybrid
 endif
