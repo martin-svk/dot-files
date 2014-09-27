@@ -10,9 +10,9 @@ xterm*customization: -color
 xterm*termName: xterm-256color
 
 ! Font settings
-xterm*faceName: Ubuntu Mono derivative Powerline:Bold
-! xterm*faceName: Meslo LG S DZ for Powerline:Bold
-xterm*faceSize: 11
+!xterm*faceName: Ubuntu Mono derivative Powerline:Bold
+xterm*faceName: Meslo LG S DZ for Powerline:Bold
+xterm*faceSize: 10
 xterm*allowBoldFonts: false
 
 ! For inclusion of all necessary environment variables
