@@ -365,24 +365,24 @@ nnoremap 0 ^
 nnoremap ^ 0
 
 " Map save to Ctrl-s
-nmap <silent> <c-s> :w<CR>
-imap <silent> <c-s> <Esc>:w<CR>
+nnoremap <silent> <c-s> :w<CR>
+inoremap <silent> <c-s> <Esc>:w<CR>
 
 " Bubble single lines
-nmap <C-k> ddkP
-nmap <C-j> ddp
+nnoremap <C-k> ddkP
+nnoremap <C-j> ddp
 
 " Bubble multiple lines
-vmap <C-j> xp`[V`]
-vmap <C-k> xkP`[V`]
+vnoremap <C-j> xp`[V`]
+vnoremap <C-k> xkP`[V`]
 
 " Easily copy and past to system clipboard
-vmap ,y "+y
-nmap ,y "+y
-nmap ,p "+p
-nmap ,P "+P
-vmap ,p "+p
-vmap ,P "+P
+vnoremap ,y "+y
+nnoremap ,y "+y
+nnoremap ,p "+p
+nnoremap ,P "+P
+vnoremap ,p "+p
+vnoremap ,P "+P
 
 " -----------------------------------------------------
 " 3.4 Toggles setup
@@ -544,8 +544,8 @@ nnoremap cq cs"'
 nnoremap cQ cs'"
 
 " Expand region mappings
-vmap v <Plug>(expand_region_expand)
-vmap <C-v> <Plug>(expand_region_shrink)
+vnoremap v <Plug>(expand_region_expand)
+vnoremap <C-v> <Plug>(expand_region_shrink)
 
 " Ruby eval mapping
 nnoremap ,e :RubyEval<CR>
