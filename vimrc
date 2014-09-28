@@ -561,14 +561,16 @@ if $TERM == 'xterm-256color' || 'screen-256color'
 endif
 
 " Color scheme changing based on time
-if strftime("%H") < 15
+if strftime("%H") < 14
+  colorscheme Tomorrow-Night-Eighties
+elseif strftime("%H") < 18
   colorscheme Tomorrow-Night
 else
   colorscheme hybrid
 endif
 
 " Nice airline theme
-let g:airline_theme='dark'
+let g:airline_theme='bubblegum'
 
 " Git gutter settings (signcolumn color)
 highlight clear SignColumn
