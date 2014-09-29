@@ -8,7 +8,7 @@
 " ======================================================================================================================
 " THIS WEEK FOCUSED ON:
 " ======================================================================================================================
-"   - Using <Leader><Leader> for command invocation and removal some shortcuts
+"   - Using <Leader><Leader> for command invocation and removal of some shortcuts
 "   - Study using C-space for window management
 " ======================================================================================================================
 " FROM: Fri Sep 26 23:11:32 CEST 2014
