@@ -540,8 +540,8 @@ nnoremap <silent> <Leader><Leader> :CtrlPCmdPalette<CR>
 nnoremap <Leader>y :YRShow<CR>
 
 " Surround vim shortcut for quotes toggle
-nnoremap cq cs"'
-nnoremap cQ cs'"
+nmap cq cs"'
+nmap cQ cs'"
 
 " Expand region mappings
 vnoremap v <Plug>(expand_region_expand)
