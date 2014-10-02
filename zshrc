@@ -93,6 +93,7 @@ alias s-nitrous='ssh action@euw1-2.nitrousbox.com -p 21326'
 # Other
 alias q='exit'
 alias capless='xmodmap /home/martin/config/dot-files/Xmodmap'
+alias topdu='du -a | sort -nr | head -50'
 
 # =====================================================================================================================
 # Other exports
