@@ -23,7 +23,15 @@ DISABLE_AUTO_TITLE="true"
 # =====================================================================================================================
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(bundler colored-man gitfast gem npm rake-fast rails ruby rbenv tmux tmuxinator zsh-syntax-highlighting)
+plugins=(bundler coffee colorize colored-man common-aliases debian extract gitfast
+  git-extras gem npm rake-fast rails ruby rbenv systemd tmux tmuxinator zsh-syntax-highlighting)
+
+# =====================================================================================================================
+# Plugins settings
+# =====================================================================================================================
+export ZSH_TMUX_AUTOSTART=true
+export ZSH_TMUX_AUTOCONNECT=false
+export ZSH_TMUX_AUTOQUIT=false
 
 # =====================================================================================================================
 # Sourcing
@@ -43,31 +51,13 @@ bindkey '^[[B' history-substring-search-down
 # Aliases
 # =====================================================================================================================
 
-# Navigation
-alias ..='cd ..'                          # Go up one directory
-alias ...='cd ../..'                      # Go up two directories
-alias ....='cd ../../..'                  # Go up three directories
-alias cdd='cd -'                          # Go back where you were
-
-# Files and directories
-alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
-alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
-alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
-alias grep='grep --color=tty -d skip'
-alias cp="cp -i"                          # confirm before overwriting something
-alias df='df -h'                          # human-readable sizes
-alias free='free -m'                      # show sizes in MB
-alias md='mkdir -p'
-alias rd='rmdir'
+# Navigation, file and directories...
+# From common-aliases
+# TODO: Add them as docu here
 
 # APT-GET
-alias update='sudo apt-get update'
-alias upgrade='sudo apt-get upgrade'
-alias dist-upgrade='sudo apt-get dist-upgrade'
-alias install='sudo apt-get install'
-alias remove='sudo apt-get remove'
-alias purge='sudo apt-get purge'
-alias autoremove='sudo apt-get autoremove'
+# From debian plugin
+# TODO: Add them as docu here
 
 # Services
 alias ss='sudo service'
