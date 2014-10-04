@@ -410,10 +410,10 @@ nnoremap <silent> <F12> :RainbowParenthesesToggle<CR>
 " -----------------------------------------------------
 
 " Resizing using + -
-nnoremap <silent> = :vertical resize +5<CR>
-nnoremap <silent> + :resize +5<CR>
-nnoremap <silent> - :vertical resize -5<CR>
-nnoremap <silent> _ :resize -5<CR>
+nnoremap <silent> <Right> :vertical resize -1<CR>
+nnoremap <silent> <Left> :vertical resize +1<CR>
+nnoremap <silent> <Up> :resize +1<CR>
+nnoremap <silent> <Down> :resize -1<CR>
 
 " TODO: same tmux and vim window navigation
 
@@ -525,6 +525,11 @@ if executable("ag")
 endif
 " Dont use unicode chars
 let g:ctrlspace_unicode_font = 0
+
+" -----------------------------------------------------
+" 4.9 Yankring settings
+" -----------------------------------------------------
+let g:yankring_history_dir = '/tmp/'
 
 " ======================================================================================================================
 " 5.0 Plugin mappings and other settings
