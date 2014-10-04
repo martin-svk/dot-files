@@ -23,7 +23,7 @@ DISABLE_AUTO_TITLE="true"
 # =====================================================================================================================
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(bundler coffee colorize colored-man common-aliases debian extract gitfast
+plugins=(bower bundler coffee colorize colored-man common-aliases debian extract gitfast
   git-extras gem npm rake-fast rails ruby rbenv systemd tmux tmuxinator zsh-syntax-highlighting)
 
 # =====================================================================================================================
