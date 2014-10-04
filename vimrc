@@ -588,7 +588,7 @@ hi Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE
 " ======================================================================================================================
 
 " If java(android) set appropriate indentation and color scheme
-autocmd FileType java set shiftwidth=4| set softtabstop=4
+autocmd FileType java,html set shiftwidth=4| set softtabstop=4
 
 " ======================================================================================================================
 " 8.0 Autocommands and other tweaks
