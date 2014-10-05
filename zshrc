@@ -23,8 +23,8 @@ DISABLE_AUTO_TITLE="true"
 # =====================================================================================================================
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(bower bundler coffee colorize colored-man common-aliases debian extract gitfast
-  git-extras gem npm rake-fast rails ruby rbenv systemd tmux tmuxinator zsh-syntax-highlighting)
+plugins=(coffee colored-man common-aliases extract gitfast
+  git-extras gem rake-fast rbenv tmux tmuxinator zsh-syntax-highlighting)
 
 # =====================================================================================================================
 # Plugins settings
@@ -51,36 +51,101 @@ bindkey '^[[B' history-substring-search-down
 # Aliases
 # =====================================================================================================================
 
-# Navigation, file and directories...
-# From common-aliases
-# TODO: Add them as docu here
+# ------------------------------------------
+# Navigation, file and directories
+# ------------------------------------------
 
-# APT-GET
-# From debian plugin
-# TODO: Add them as docu here
+# alias l='ls -lFh'     #size,show type,human readable
+# alias la='ls -lAFh'   #long list,show almost all,show type,human readable
+# alias lr='ls -tRFh'   #sorted by date,recursive,show type,human readable
+# alias lt='ls -ltFh'   #long list,sorted by date,show type,human readable
+# alias ll='ls -l'      #long list
+# alias ldot='ls -ld .*'
+# alias lS='ls -1FSsh'
+# alias lart='ls -1Fcart'
+# alias lrt='ls -1Fcrt'
 
+# alias zshrc='vim ~/.zshrc' # Quick access to the ~/.zshrc file
+# alias grep='grep --color'
+# alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
+# alias t='tail -f'
+# alias ..='cd ../'
+# alias ...='cd ../../'
+# alias ....='cd ../../../'
+# alias .....='cd ../../../../'
+
+# ------------------------------------------
+# Command line head / tail shortcuts
+# ------------------------------------------
+
+# alias -g H='| head'
+# alias -g T='| tail'
+# alias -g G='| grep'
+# alias -g L="| less"
+# alias -g M="| most"
+# alias -g LL="2>&1 | less"
+# alias -g CA="2>&1 | cat -A"
+# alias -g NE="2> /dev/null"
+# alias -g NUL="> /dev/null 2>&1"
+# alias -g P="2>&1| pygmentize -l pytb"
+
+# ------------------------------------------
+# Other unix utilities
+# ------------------------------------------
+
+# alias dud='du -d 1 -h'
+# alias duf='du -sh *'
+# alias fd='find . -type d -name'
+# alias ff='find . -type f -name'
+# alias h='history'
+# alias hgrep="fc -El 0 | grep"
+# alias help='man'
+# alias j='jobs'
+# alias p='ps -f'
+# alias sortnr='sort -n -r'
+# alias unexport='unset'
+# alias whereami=display_info
+# alias rm='rm -i'
+# alias cp='cp -i'
+# alias mv='mv -i'
+
+# ------------------------------------------
+#  APT-GET
+# ------------------------------------------
+alias install='sudo apt-get install'
+alias update='sudo apt-get update'
+alias upgrade='sudo apt-get upgrade'
+alias autoremove='sudo apt-get autoremove'
+alias purge='sudo apt-get purge'
+alias dist-upgrade='sudo apt-get dist-upgrade'
+
+# ------------------------------------------
 # Services
+# ------------------------------------------
 alias ss='sudo service'
 alias ssmysql='sudo service mysql start'
 alias sspgsql='sudo service postgresql start'
 alias ssredis='sudo service redis-server start'
 
+# ------------------------------------------
 # Applications
+# ------------------------------------------
 alias g='git'
 alias v='vim'
 alias n='nvim'
-alias e='emacs -nw'
 alias rb='ruby'
 alias msql='mysql -uroot -p'
-
-# Android development
 alias acp='android create project -n ExampleApp -t 1 -p . -k com.example -a MainActivity'
 
+# ------------------------------------------
 # SSH servers
+# ------------------------------------------
 alias s-pinta='ssh team11@calculon.fiit.stuba.sk -p 30022'
 alias s-nitrous='ssh action@euw1-2.nitrousbox.com -p 21326'
 
+# ------------------------------------------
 # Other
+# ------------------------------------------
 alias q='exit'
 alias capless='xmodmap /home/martin/config/dot-files/Xmodmap'
 alias topdu='du -a | sort -nr | head -50'
