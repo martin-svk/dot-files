@@ -142,6 +142,7 @@ alias acp='android create project -n ExampleApp -t 1 -p . -k com.example -a Main
 # ------------------------------------------
 alias s-pinta='ssh team11@calculon.fiit.stuba.sk -p 30022'
 alias s-nitrous='ssh action@euw1-2.nitrousbox.com -p 21326'
+alias s-tabber='ssh toma@tabber.fiit.stuba.sk'
 
 # ------------------------------------------
 # Other
