@@ -41,7 +41,7 @@ Plugin 'sheerun/vim-polyglot'
 Plugin 'scrooloose/syntastic'
 " Snippets engine
 Plugin 'SirVer/ultisnips'
-" Snippets for python, js, html, ruby...
+" Ultisnips snippets for ruby, python, js, html...
 Plugin 'honza/vim-snippets'
 
 " -----------------------------------------------------
@@ -61,7 +61,7 @@ Plugin 'ck3g/vim-change-hash-syntax'
 " -----------------------------------------------------
 " 1.1.1.3 HTML/CSS/JS
 " -----------------------------------------------------
-" HTML autoclose tags
+" HTML autoclose tags (after typing closing > bracket)
 Plugin 'amirh/HTML-AutoCloseTag'
 " CSS color highlighter
 Plugin 'ap/vim-css-color'
@@ -359,9 +359,6 @@ noremap N Nzz
 noremap <c-d> <c-d>zz
 noremap <c-u> <c-u>zz
 
-" Easily switch between the last two files (memo like subleader s(witch))
-nnoremap ,s <c-^>
-
 " Remap VIM 0 to first non-blank character
 nnoremap 0 ^
 nnoremap ^ 0
@@ -411,20 +408,15 @@ nnoremap <silent> <F12> :RainbowParenthesesToggle<CR>
 " 3.5 Window management mappings
 " -----------------------------------------------------
 
-" Resizing using + -
+" Resizing using arrow keys
 nnoremap <silent> <Right> :vertical resize -1<CR>
 nnoremap <silent> <Left> :vertical resize +1<CR>
 nnoremap <silent> <Up> :resize +1<CR>
 nnoremap <silent> <Down> :resize -1<CR>
 
-" TODO: same tmux and vim window navigation
-
 " -----------------------------------------------------
 " 3.6 Tabs and buffers mappings (consider using ctrl-space)
 " -----------------------------------------------------
-nnoremap ,td :tabclose<CR>
-nnoremap ,tn :tabnext<CR>
-nnoremap ,tb :tabprevious<CR>
 nnoremap ,d :bd<CR>
 nnoremap ,n :bn<CR>
 nnoremap ,b :bp<CR>
@@ -447,7 +439,7 @@ let g:airline_exclude_preview = 1
 " -----------------------------------------------------
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
-let g:NERDTreeWinSize = 30
+let g:NERDTreeWinSize = 40
 
 " -----------------------------------------------------
 " 4.3 CTRL-P (fuzzy searcher) settings
@@ -512,7 +504,7 @@ let g:tagbar_type_ruby = {
 \ }
 
 " -----------------------------------------------------
-" 4.7 Ctrl-space settings
+" 4.7 Ctrl-Space settings
 " -----------------------------------------------------
 " Use ag
 if executable("ag")
@@ -554,7 +546,7 @@ nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
 nnoremap <silent> <Leader><Leader> :CtrlPCmdPalette<CR>
 
 " Yankring mapping
-nnoremap <Leader>y :YRShow<CR>
+nnoremap <silent> <Leader>y :YRShow<CR>
 
 " Surround vim shortcut for quotes toggle
 nmap cq cs"'
@@ -574,7 +566,6 @@ nnoremap ,e :RubyEval<CR>
 " XTerm 256 colors
 if $TERM == 'xterm-256color' || 'screen-256color'
     set t_Co=256
-    let &colorcolumn=121
 endif
 
 " Color scheme changing based on time
@@ -585,6 +576,9 @@ elseif strftime("%H") < 18
 else
   colorscheme hybrid
 endif
+
+" Color column
+let &colorcolumn=121
 
 " Nice airline theme
 let g:airline_theme='bubblegum'
@@ -680,7 +674,6 @@ cab Q q
 " # Section 5. - Look and feel
 " ---------------------------------------------------
 "
-" This vimrc is using Tomorrow-Night theme before 15 pm and hybrid theme after then.
 "
 " ---------------------------------------------------
 " # Section 6. - Other tweaks
