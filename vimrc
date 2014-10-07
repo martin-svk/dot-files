@@ -123,10 +123,12 @@ Plugin 'majutsushi/tagbar'
 " 1.1.5 Internals improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
+" Full-featured autocomplete plugin
+Plugin 'Valloric/YouCompleteMe'
+" Supertab plugin
+Plugin 'ervandew/supertab'
 " YANK history management
 Plugin 'YankRing.vim'
-" Tab triggering completion (integrates with snippets, etc.)
-Plugin 'ervandew/supertab'
 " Automatically toggle between relative and normal numbers
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 " Preview before substitution (only in command line mode (c-f))
@@ -471,14 +473,7 @@ else
 endif
 
 " -----------------------------------------------------
-" 4.4 Ultisnips (snippets manager) settings
-" -----------------------------------------------------
-let g:UltiSnipsExpandTrigger='<tab>'
-let g:UltiSnipsJumpForwardTrigger='<c-n>'
-let g:UltiSnipsJumpBackwardTrigger='<c-z>'
-
-" -----------------------------------------------------
-" 4.5 Syntastic (syntax checker) settings
+" 4.4 Syntastic (syntax checker) settings
 " -----------------------------------------------------
 let g:syntastic_ruby_checkers = ['mri']
 " mark syntax errors with :signs
@@ -497,13 +492,13 @@ let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_
 let g:loaded_syntastic_css_csslint_checker = 0
 
 " -----------------------------------------------------
-" 4.6 Gundo (undo tree) settings
+" 4.5 Gundo (undo tree) settings
 " -----------------------------------------------------
 let g:gundo_right = 1
 let g:gundo_preview_height = 30
 
 " -----------------------------------------------------
-" 4.7 Tagbar (methods, classes, etc. browser) settings
+" 4.6 Tagbar (methods, classes, etc. browser) settings
 " -----------------------------------------------------
 let g:tagbar_type_ruby = {
     \ 'kinds' : [
@@ -517,19 +512,35 @@ let g:tagbar_type_ruby = {
 \ }
 
 " -----------------------------------------------------
-" 4.8 Ctrl-space settings
+" 4.7 Ctrl-space settings
 " -----------------------------------------------------
 " Use ag
 if executable("ag")
   let g:ctrlspace_glob_command = 'ag -l --nocolor -g ""'
 endif
-" Dont use unicode chars
+" Dont use unicode font
 let g:ctrlspace_unicode_font = 0
 
 " -----------------------------------------------------
-" 4.9 Yankring settings
+" 4.8 Yankring settings
 " -----------------------------------------------------
 let g:yankring_history_dir = '/tmp/'
+
+" -----------------------------------------------------
+" 4.9 Autocomplete setting
+" -----------------------------------------------------
+
+" 4.9.1 Ultisnips
+let g:UltiSnipsExpandTrigger='<tab>'
+let g:UltiSnipsJumpForwardTrigger='<tab>'
+let g:UltiSnipsJumpBackwardTrigger='<c-z>'
+
+" 4.9.2 YouCompleteMe settings
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+
+" 4.9.3 Supertab settings
+let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " ======================================================================================================================
 " 5.0 Plugin mappings and other settings
