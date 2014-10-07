@@ -538,6 +538,7 @@ let g:UltiSnipsJumpBackwardTrigger='<c-z>'
 " 4.9.2 YouCompleteMe settings
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:ycm_complete_in_strings = 0
 
 " 4.9.3 Supertab settings
 let g:SuperTabDefaultCompletionType = '<C-n>'
