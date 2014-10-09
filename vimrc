@@ -542,7 +542,7 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 " CTRL-P and its extensions mapping
 let g:ctrlp_map = '<Leader>p'
 nnoremap <silent> <Leader>t :CtrlPBufTagAll<CR>
-nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
+nnoremap <silent> ,, :CtrlPBuffer<CR>
 nnoremap <silent> <Leader><Leader> :CtrlPCmdPalette<CR>
 
 " Yankring mapping
