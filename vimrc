@@ -15,18 +15,14 @@
 " ======================================================================================================================
 
 " ======================================================================================================================
-" 1.0 Bundler (Vundle) settings
+" 1.0 Plugin manager (Plug) settings
 " ======================================================================================================================
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " 1.1 Plugin list
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-" Let Vundle manage Vundle, REQUIRED!
-Plugin 'gmarik/Vundle.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.1 Language or framework supporting plugins
@@ -36,171 +32,171 @@ Plugin 'gmarik/Vundle.vim'
 " 1.1.1.1 Universal
 " -----------------------------------------------------
 " Most common languages support (syntax, indenting, etc. ) for ruby, js, etc.
-Plugin 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 " Needs linters to be installed to work properly (see https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers)
-Plugin 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 " Snippets engine
-Plugin 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
 " Ultisnips snippets for ruby, python, js, html...
-Plugin 'honza/vim-snippets'
+Plug 'honza/vim-snippets'
 
 " -----------------------------------------------------
 " 1.1.1.2 Ruby/Rails
 " -----------------------------------------------------
 " Rails navigation, etc. plugin (f.e. :Rmigration)
-Plugin 'tpope/vim-rails'
+Plug 'tpope/vim-rails'
 " Automatically inserts 'end' wisely
-Plugin 'tpope/vim-endwise'
+Plug 'tpope/vim-endwise'
 " Splitting and joining multiple lines ruby constructs
-Plugin 'AndrewRadev/splitjoin.vim'
+Plug 'AndrewRadev/splitjoin.vim'
 " Ruby eval plugin
-Plugin 'kmdsbng/vim-ruby-eval'
+Plug 'kmdsbng/vim-ruby-eval'
 " Change between ruby 1.9 and 1.8 hash syntax
-Plugin 'ck3g/vim-change-hash-syntax'
+Plug 'ck3g/vim-change-hash-syntax'
 
 " -----------------------------------------------------
 " 1.1.1.3 HTML/CSS/JS
 " -----------------------------------------------------
 " HTML autoclose tags (after typing closing > bracket)
-Plugin 'amirh/HTML-AutoCloseTag'
+Plug 'amirh/HTML-AutoCloseTag'
 " CSS color highlighter
-Plugin 'ap/vim-css-color'
+Plug 'ap/vim-css-color'
 " Emmet for fast html prototyping
-Plugin 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim'
 " JS libs syntax files, ember, angular, etc.
-Plugin 'othree/javascript-libraries-syntax.vim'
+Plug 'othree/javascript-libraries-syntax.vim'
 
 " -----------------------------------------------------
 " 1.1.1.4 Android
 " -----------------------------------------------------
 " Android build and deploy helpers
-Plugin 'hsanson/vim-android'
+Plug 'hsanson/vim-android'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.2 Motion/code navigation improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Seek, easy motion for long lines
-Plugin 'goldfeld/vim-seek'
+Plug 'goldfeld/vim-seek'
 " Multiple cursors feature
-Plugin 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-multiple-cursors'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.3 Editing improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Auto-closing brackets and quotes
-Plugin 'Raimondi/delimitMate'
+Plug 'Raimondi/delimitMate'
 " Change surroundings characters
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 " Trailing spaces deleter (:FixWhitespaces)
-Plugin 'bronson/vim-trailing-whitespace'
+Plug 'bronson/vim-trailing-whitespace'
 " Alignment on specific regex (:Tabularize \=)
-Plugin 'godlygeek/tabular'
+Plug 'godlygeek/tabular'
 " Support for HTML entities, hex codes, emoji, etc. (ga)
-Plugin 'tpope/vim-characterize'
+Plug 'tpope/vim-characterize'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.4 Interface improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Fuzzy file, buffer, MRU finder
-Plugin 'kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim'
 " CtrlP extension to search in commands
-Plugin 'fisadev/vim-ctrlp-cmdpalette'
+Plug 'fisadev/vim-ctrlp-cmdpalette'
 " Tabs, buffers, sessions management plugin
-Plugin 'szw/vim-ctrlspace'
+Plug 'szw/vim-ctrlspace'
 " Nerdtree file browser
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 " Airline (improved status line)
-Plugin 'bling/vim-airline'
+Plug 'bling/vim-airline'
 " History tree visualizer
-Plugin 'sjl/gundo.vim'
+Plug 'sjl/gundo.vim'
 " Tags (methods, classes) display window
-Plugin 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.5 Internals improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Full-featured autocomplete plugin
-Plugin 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe'
 " Supertab plugin
-Plugin 'ervandew/supertab'
+Plug 'ervandew/supertab'
 " YANK history management
-Plugin 'YankRing.vim'
+Plug 'YankRing.vim'
 " Automatically toggle between relative and normal numbers
-Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 " Preview before substitution (only in command line mode (c-f))
-Plugin 'osyo-manga/vim-over'
+Plug 'osyo-manga/vim-over'
 " Improved documentation lookup (gK)
-Plugin 'Keithbsmiley/investigate.vim'
+Plug 'Keithbsmiley/investigate.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.6 Git/Github support plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Git wrapper
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 " Git changes displayer
-Plugin 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 " Web api support (needed for gist-vim)
-Plugin 'mattn/webapi-vim'
+Plug 'mattn/webapi-vim'
 " Github gist plugin
-Plugin 'mattn/gist-vim'
+Plug 'mattn/gist-vim'
 " Gitk for vim
-Plugin 'gregsexton/gitv'
+Plug 'gregsexton/gitv'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.7 External tools integration plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
 " AG search for vim (used in ctrl-p) (ag alias silversearcher must be installed)
-Plugin 'ervandew/ag'
+Plug 'ervandew/ag'
 " Tmux basics tools (Twrite, ..)
-Plugin 'tpope/vim-tbone'
+Plug 'tpope/vim-tbone'
 " Advanced search integrated to vim (using ag)
-Plugin 'dyng/ctrlsf.vim'
+Plug 'dyng/ctrlsf.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.8 Text objects improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 "
 " Matchit better textobj support
-Plugin 'tmhedberg/matchit'
+Plug 'tmhedberg/matchit'
 " Custom textobj creation support
-Plugin 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-user'
 " Expanding region selection
-Plugin 'terryma/vim-expand-region'
+Plug 'terryma/vim-expand-region'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.9 Color-scheme plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Tomorrow theme
-Plugin 'chriskempson/vim-tomorrow-theme'
+Plug 'chriskempson/vim-tomorrow-theme'
 " Molokai theme
-Plugin 'tomasr/molokai'
+Plug 'tomasr/molokai'
 " Hybrid dark color theme
-Plugin 'w0ng/vim-hybrid'
+Plug 'w0ng/vim-hybrid'
 " Rainbow parenthesis
-Plugin 'kien/rainbow_parentheses.vim'
+Plug 'kien/rainbow_parentheses.vim'
 " Approximation to make gvim schemes work in terminal
-Plugin 'vim-scripts/CSApprox'
+Plug 'vim-scripts/CSApprox'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.10 Other plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
 " List of common mistakes to be corrected automagically
-Plugin 'panozzaj/vim-autocorrect'
+Plug 'panozzaj/vim-autocorrect'
 " Benchmark vimrc
-Plugin 'mattn/benchvimrc-vim'
+Plug 'mattn/benchvimrc-vim'
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " 1.2 End of plugin declaration
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-call vundle#end()
+call plug#end()
 
 " ======================================================================================================================
 " 2.0 Basic settings
@@ -422,7 +418,7 @@ nnoremap ,n :bn<CR>
 nnoremap ,b :bp<CR>
 
 " ======================================================================================================================
-" 4.0 Plugin settings
+" 4.0 Plug settings
 " ======================================================================================================================
 
 " -----------------------------------------------------
