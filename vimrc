@@ -34,7 +34,7 @@ call plug#begin('~/.vim/plugged')
 " Most common languages support (syntax, indenting, etc. ) for ruby, js, etc.
 Plug 'sheerun/vim-polyglot'
 " Needs linters to be installed to work properly (see https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers)
-Plug 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic', { 'for': ['java', 'ruby', 'eruby', 'coffee', 'javascript', 'html'] }
 " Snippets engine
 Plug 'SirVer/ultisnips'
 " Ultisnips snippets for ruby, python, js, html...
@@ -44,33 +44,33 @@ Plug 'honza/vim-snippets'
 " 1.1.1.2 Ruby/Rails
 " -----------------------------------------------------
 " Rails navigation, etc. plugin (f.e. :Rmigration)
-Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby'] }
 " Automatically inserts 'end' wisely
-Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-endwise', { 'for': ['ruby', 'eruby'] }
 " Splitting and joining multiple lines ruby constructs
-Plug 'AndrewRadev/splitjoin.vim'
+Plug 'AndrewRadev/splitjoin.vim', { 'for': ['ruby', 'eruby'] }
 " Ruby eval plugin
-Plug 'kmdsbng/vim-ruby-eval'
+Plug 'kmdsbng/vim-ruby-eval', { 'for': ['ruby', 'eruby'] }
 " Change between ruby 1.9 and 1.8 hash syntax
-Plug 'ck3g/vim-change-hash-syntax'
+Plug 'ck3g/vim-change-hash-syntax', { 'for': ['ruby', 'eruby'] }
 
 " -----------------------------------------------------
 " 1.1.1.3 HTML/CSS/JS
 " -----------------------------------------------------
 " HTML autoclose tags (after typing closing > bracket)
-Plug 'amirh/HTML-AutoCloseTag'
+Plug 'amirh/HTML-AutoCloseTag', { 'for': ['html', 'xhtml'] }
 " CSS color highlighter
-Plug 'ap/vim-css-color'
+Plug 'ap/vim-css-color', { 'for': ['css', 'sass', 'less'] }
 " Emmet for fast html prototyping
-Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim', { 'for': ['html', 'xhtml'] }
 " JS libs syntax files, ember, angular, etc.
-Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffee'] }
 
 " -----------------------------------------------------
 " 1.1.1.4 Android
 " -----------------------------------------------------
 " Android build and deploy helpers
-Plug 'hsanson/vim-android'
+Plug 'hsanson/vim-android', { 'for': 'java' }
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.2 Motion/code navigation improving plugins
@@ -107,11 +107,11 @@ Plug 'fisadev/vim-ctrlp-cmdpalette'
 " Tabs, buffers, sessions management plugin
 Plug 'szw/vim-ctrlspace'
 " Nerdtree file browser
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 " Airline (improved status line)
 Plug 'bling/vim-airline'
 " History tree visualizer
-Plug 'sjl/gundo.vim'
+Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 " Tags (methods, classes) display window
 Plug 'majutsushi/tagbar'
 
@@ -120,17 +120,11 @@ Plug 'majutsushi/tagbar'
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Full-featured autocomplete plugin
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 " Supertab plugin
 Plug 'ervandew/supertab'
 " YANK history management
 Plug 'YankRing.vim'
-" Automatically toggle between relative and normal numbers
-Plug 'jeffkreeftmeijer/vim-numbertoggle'
-" Preview before substitution (only in command line mode (c-f))
-Plug 'osyo-manga/vim-over'
-" Improved documentation lookup (gK)
-Plug 'Keithbsmiley/investigate.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.6 Git/Github support plugins
@@ -156,7 +150,7 @@ Plug 'ervandew/ag'
 " Tmux basics tools (Twrite, ..)
 Plug 'tpope/vim-tbone'
 " Advanced search integrated to vim (using ag)
-Plug 'dyng/ctrlsf.vim'
+Plug 'dyng/ctrlsf.vim', { 'on': 'CtrlSF' }
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.8 Text objects improving plugins
@@ -191,7 +185,7 @@ Plug 'vim-scripts/CSApprox'
 " List of common mistakes to be corrected automagically
 Plug 'panozzaj/vim-autocorrect'
 " Benchmark vimrc
-Plug 'mattn/benchvimrc-vim'
+Plug 'mattn/benchvimrc-vim', { 'on': 'BenchVimrc' }
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " 1.2 End of plugin declaration
