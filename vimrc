@@ -58,11 +58,11 @@ Plug 'ck3g/vim-change-hash-syntax', { 'for': ['ruby', 'eruby'] }
 " 1.1.1.3 HTML/CSS/JS
 " -----------------------------------------------------
 " HTML autoclose tags (after typing closing > bracket)
-Plug 'amirh/HTML-AutoCloseTag', { 'for': ['html', 'xhtml'] }
+Plug 'amirh/HTML-AutoCloseTag', { 'for': ['html', 'xhtml', 'eruby', 'haml', 'slim'] }
 " CSS color highlighter
 Plug 'ap/vim-css-color', { 'for': ['css', 'sass', 'less'] }
 " Emmet for fast html prototyping
-Plug 'mattn/emmet-vim', { 'for': ['html', 'xhtml'] }
+Plug 'mattn/emmet-vim', { 'for': ['html', 'xhtml', 'eruby', 'haml', 'slim'] }
 " JS libs syntax files, ember, angular, etc.
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffee'] }
 
@@ -91,10 +91,6 @@ Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
 " Trailing spaces deleter (:FixWhitespaces)
 Plug 'bronson/vim-trailing-whitespace'
-" Alignment on specific regex (:Tabularize \=)
-Plug 'godlygeek/tabular'
-" Support for HTML entities, hex codes, emoji, etc. (ga)
-Plug 'tpope/vim-characterize'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.4 Interface improving plugins
@@ -134,10 +130,6 @@ Plug 'YankRing.vim'
 Plug 'tpope/vim-fugitive'
 " Git changes displayer
 Plug 'airblade/vim-gitgutter'
-" Web api support (needed for gist-vim)
-Plug 'mattn/webapi-vim'
-" Github gist plugin
-Plug 'mattn/gist-vim'
 " Gitk for vim
 Plug 'gregsexton/gitv'
 
@@ -150,7 +142,7 @@ Plug 'ervandew/ag'
 " Tmux basics tools (Twrite, ..)
 Plug 'tpope/vim-tbone'
 " Advanced search integrated to vim (using ag)
-Plug 'dyng/ctrlsf.vim', { 'on': 'CtrlSF' }
+Plug 'dyng/ctrlsf.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.8 Text objects improving plugins
@@ -158,8 +150,6 @@ Plug 'dyng/ctrlsf.vim', { 'on': 'CtrlSF' }
 "
 " Matchit better textobj support
 Plug 'tmhedberg/matchit'
-" Custom textobj creation support
-Plug 'kana/vim-textobj-user'
 " Expanding region selection
 Plug 'terryma/vim-expand-region'
 
@@ -173,8 +163,6 @@ Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'tomasr/molokai'
 " Hybrid dark color theme
 Plug 'w0ng/vim-hybrid'
-" Rainbow parenthesis
-Plug 'kien/rainbow_parentheses.vim'
 " Approximation to make gvim schemes work in terminal
 Plug 'vim-scripts/CSApprox'
 
@@ -182,6 +170,8 @@ Plug 'vim-scripts/CSApprox'
 " 1.1.10 Other plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
+" Rainbow parenthesis
+Plug 'kien/rainbow_parentheses.vim'
 " List of common mistakes to be corrected automagically
 Plug 'panozzaj/vim-autocorrect'
 " Benchmark vimrc
