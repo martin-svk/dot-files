@@ -543,8 +543,8 @@ nmap cq cs"'
 nmap cQ cs'"
 
 " Expand region mappings
-vnoremap v <Plug>(expand_region_expand)
-vnoremap <C-v> <Plug>(expand_region_shrink)
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
 
 " Ruby eval mapping
 nnoremap ,e :RubyEval<CR>
