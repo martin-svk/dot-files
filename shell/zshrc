@@ -13,7 +13,7 @@ stty stop '' -ixoff -ixon
 export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
-ZSH_THEME="macovsky"
+ZSH_THEME="martinus"
 
 # Disable auto title setting
 DISABLE_AUTO_TITLE="true"
