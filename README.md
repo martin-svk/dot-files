@@ -1,7 +1,6 @@
-This repo contains personal, opiniated rc files from Ruby developer who loves raw Linux/Unix tools.
-===
+### This repo contains personal, opiniated rc files from Ruby developer who loves raw Linux/Unix tools.
 
-## You can find here the rc files for following tools:
+#### You can find here the rc files for following tools:
 
 * Vim (Neovim)
 * Ruby CLI utilities (pry, gem, irb)
@@ -10,22 +9,22 @@ This repo contains personal, opiniated rc files from Ruby developer who loves ra
 * Git
 * XTerm
 
-## .vimrc
+#### .vimrc
 
 Vim config overview here!
 
-## .zshrc
+#### .zshrc
 
 ZSH config overview here!
 
-## .tmux.conf
+#### .tmux.conf
 
 Tmux config overview here!
 
-## .Xresources
+#### .Xresources
 
 Xterm overview here!
 
-## Ruby tools (pry, gem, irb)
+#### Ruby tools (pry, gem, irb)
 
 Ruby CLI tools configs overview here!
