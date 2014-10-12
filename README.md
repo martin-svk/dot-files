@@ -1,6 +1,6 @@
 ### This repo contains personal, opiniated rc files from Ruby developer who loves raw Linux/Unix tools.
 
-#### You can find here the rc files for following tools:
+#### Included rc files for:
 
 * Vim (Neovim)
 * Ruby CLI utilities (pry, gem, irb)
