@@ -10,7 +10,6 @@ xterm*customization: -color
 xterm*termName: xterm-256color
 
 ! Font settings
-!xterm*faceName: Ubuntu Mono derivative Powerline:Bold
 xterm*faceName: Meslo LG S DZ for Powerline:Bold
 xterm*faceSize: 10
 xterm*allowBoldFonts: false
@@ -36,73 +35,8 @@ xterm*eightBitOutput: true
 ! =============================================================================
 
 ! -----------------------------------------------------------------------------
-! Monokai
-! -----------------------------------------------------------------------------
-
-! #define base00 #272822
-! #define base01 #383830
-! #define base02 #49483e
-! #define base03 #75715e
-! #define base04 #a59f85
-! #define base05 #f8f8f2
-! #define base06 #f5f4f1
-! #define base07 #f9f8f5
-! #define base08 #f92672
-! #define base09 #fd971f
-! #define base0A #f4bf75
-! #define base0B #a6e22e
-! #define base0C #a1efe4
-! #define base0D #66d9ef
-! #define base0E #ae81ff
-! #define base0F #cc6633
-
-! xterm*foreground:   base05
-! xterm*background:   base00
-! xterm*cursorColor:  base05
-
-! xterm*color0:       base00
-! xterm*color1:       base08
-! xterm*color2:       base0B
-! xterm*color3:       base0A
-! xterm*color4:       base0D
-! xterm*color5:       base0E
-! xterm*color6:       base0C
-! xterm*color7:       base05
-
-! xterm*color8:       base03
-! xterm*color9:       base08
-! xterm*color10:      base0B
-! xterm*color11:      base0A
-! xterm*color12:      base0D
-! xterm*color13:      base0E
-! xterm*color14:      base0C
-! xterm*color15:      base07
-
-! -----------------------------------------------------------------------------
-! Jellybeans
-! -----------------------------------------------------------------------------
-
-! xterm*color0:  #1a1a1a
-! xterm*color8:  #404040
-! xterm*color1:  #d75f5f
-! xterm*color9:  #EA8484
-! xterm*color2:  #87af5f
-! xterm*color10: #C7F09F
-! xterm*color3:  #ffaf5f
-! xterm*color11: #FFCC9A
-! xterm*color4:  #87afd7
-! xterm*color12: #a5caef
-! xterm*color5:  #8787af
-! xterm*color13: #A6A6DE
-! xterm*color6:  #5f8787
-! xterm*color14: #69b2b2
-! xterm*color7:  #808080
-! xterm*color15: #d7d7d7
-
-! -----------------------------------------------------------------------------
 ! Solarized
 ! -----------------------------------------------------------------------------
-
 
 ! Common
 ! #define S_yellow        #b58900
