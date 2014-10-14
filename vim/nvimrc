@@ -1,24 +1,15 @@
 " ######################################################################################################################
 " ### Author : Martin Toma <martin.toma.svk@gmail.com>                                                               ###
 " ######################################################################################################################
-" ### VIMRC Configuration focused on RAILS development                                                               ###
-" ### Date created : Tue Nov 12 14:14:56 CET 2013                                                                    ###
+" ### NVIMRC Configuration focused on RAILS development                                                              ###
+" ### Date created : Tue Oct 14 19:58:11 CEST 2014                                                                   ###
 " ######################################################################################################################
-
-" ======================================================================================================================
-" THIS WEEK FOCUSED ON:
-" ======================================================================================================================
-"   - Using <Leader><Leader> for command invocation and removal of some shortcuts
-"   - Study using C-space for window management
-" ======================================================================================================================
-" FROM: Fri Sep 26 23:11:32 CEST 2014
-" ======================================================================================================================
 
 " ======================================================================================================================
 " 1.0 Plugin manager (Plug) settings
 " ======================================================================================================================
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.nvim/plugged')
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " 1.1 Plugin list
@@ -35,9 +26,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'sheerun/vim-polyglot'
 " Needs linters to be installed to work properly (see https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers)
 Plug 'scrooloose/syntastic', { 'for': ['java', 'ruby', 'eruby', 'coffee', 'javascript', 'html'] }
-" Snippets engine
-Plug 'SirVer/ultisnips'
-" Ultisnips snippets for ruby, python, js, html...
+" Snipmate stype snippets support
+Plug 'garbas/vim-snipmate'
+" Snippets library
 Plug 'honza/vim-snippets'
 
 " -----------------------------------------------------
@@ -119,8 +110,6 @@ Plug 'majutsushi/tagbar'
 " 1.1.5 Internals improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Full-featured autocomplete plugin
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 " Supertab plugin
 Plug 'ervandew/supertab'
 " YANK history management
@@ -180,6 +169,10 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'panozzaj/vim-autocorrect'
 " Benchmark vimrc
 Plug 'mattn/benchvimrc-vim', { 'on': 'BenchVimrc' }
+" Dependency for vim-snipmate
+Plug 'marcweber/vim-addon-mw-utils'
+" Dependency for vim-snipmate
+Plug 'tomtom/tlib_vim'
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " 1.2 End of plugin declaration
@@ -601,81 +594,3 @@ cab wQ wq
 cab WQ wq
 cab W w
 cab Q q
-
-" ######################################################################################################################
-" ### END OF VIMRC                                                                                                   ###
-" ######################################################################################################################
-
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-" HELP SECTION:
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-"
-" ---------------------------------------------------
-" Section 1.0 The Basics
-" ---------------------------------------------------
-"
-" This vimrc is intended and best suited for ruby/rails development.
-" Because of that, settings like 2 space intendation are used.
-"
-" Section 1.y - Toggles (on/off)
-" ------------------------------
-"
-" F1 - Nerdtree (file browser)
-" F2 - Tagbar (tag browser)
-" F3 - Paste mode (useful when copying large code blocks)
-" F4 - Spell checking
-" F5 - Reload vimrc (source $MYVIMRC)
-" F6 - Open my vimrc in new tab (edit $MYVIMRC)
-" F7 - Gundo (undo tree)
-" F8 - Syntax checking (using syntastic plugin)
-" F12 - Rainbow paranthesis
-"
-" ---------------------------------------------------
-" # Section 2. - Files navigation
-" ---------------------------------------------------
-"
-"
-" ---------------------------------------------------
-" # Section 3. - Code navigation
-" ---------------------------------------------------
-"
-"
-" ---------------------------------------------------
-" # Section 4. - Code manipulation
-" ---------------------------------------------------
-"
-" Section 4.1 Multiple cursors:
-" ------------------------------
-"
-" Using default keybindings:
-"   let g:multi_cursor_next_key='<C-n>'
-"   let g:multi_cursor_prev_key='<C-p>'
-"   let g:multi_cursor_skip_key='<C-x>'
-"   let g:multi_cursor_quit_key='<Esc>'
-"
-"
-" ---------------------------------------------------
-" # Section 5. - Look and feel
-" ---------------------------------------------------
-"
-"
-" ---------------------------------------------------
-" # Section 6. - Other tweaks
-" ---------------------------------------------------
-"
-"
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-" END OF HELP:
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-" ======================================================================================================================
-" TODO SECTION:
-" ======================================================================================================================
-"
-" 1. Really start writing this vimrc help file.
-" 2. Convert this vimrc help to markdow syntax. So it could be used in github repo.
-" 3. Create my own colorscheme based on itg.flat from sublime text.
-"
-" ======================================================================================================================
-" END OF TODO:
-" ======================================================================================================================
