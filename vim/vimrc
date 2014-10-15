@@ -119,8 +119,6 @@ Plug 'majutsushi/tagbar'
 " 1.1.5 Internals improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Full-featured autocomplete plugin
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 " Supertab plugin
 Plug 'ervandew/supertab'
 " YANK history management
@@ -510,11 +508,6 @@ let g:yankring_history_dir = '/tmp/'
 let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<c-z>'
-
-" 4.9.2 YouCompleteMe settings
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:ycm_complete_in_strings = 0
 
 " 4.9.3 Supertab settings
 let g:SuperTabDefaultCompletionType = '<C-n>'
