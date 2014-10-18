@@ -166,4 +166,10 @@ if [ -d $HOME/lib/android-sdk-linux ]; then
   fi
 fi
 
-export EDITOR='vim'
+# Add dynamic colors to path if they exists
+if [ -d $HOME/.dynamic-colors ]; then
+  export PATH="$HOME/.dynamic-colors/bin:$PATH"
+fi
+
+# Setting default editor
+export EDITOR='nvim'
