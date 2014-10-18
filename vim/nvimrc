@@ -57,7 +57,7 @@ Plug 'amirh/HTML-AutoCloseTag', { 'for': ['html', 'xhtml', 'eruby', 'haml', 'sli
 " CSS color highlighter
 Plug 'ap/vim-css-color', { 'for': ['css', 'sass', 'less'] }
 " Emmet for fast html prototyping
-Plug 'mattn/emmet-vim', { 'for': ['html', 'xhtml', 'eruby', 'haml', 'slim'] }
+Plug 'mattn/emmet-vim', { 'for': ['html', 'xhtml', 'eruby', 'haml', 'slim', 'css', 'sass', 'less'] }
 " JS libs syntax files, ember, angular, etc.
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffee'] }
 
@@ -361,6 +361,9 @@ nnoremap ,P "+P
 vnoremap ,p "+p
 vnoremap ,P "+P
 
+" Reformat whole file easily
+nnoremap <silent> ,f ggvG=
+
 " -----------------------------------------------------
 " 3.4 Toggles setup
 " -----------------------------------------------------
@@ -569,6 +572,7 @@ hi Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE
 
 " If java(android) set appropriate indentation and color scheme
 autocmd FileType java,html set shiftwidth=4| set softtabstop=4
+autocmd FileType sass,coffee set shiftwidth=2| set softtabstop=2
 
 " ======================================================================================================================
 " 8.0 Autocommands and other tweaks
