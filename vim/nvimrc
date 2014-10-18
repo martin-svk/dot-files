@@ -375,9 +375,9 @@ nnoremap <silent> <F2> :TagbarToggle<CR>
 " Toggle spelling on and off
 nnoremap <silent> <F4> :set spell!<CR>
 " Source (reload) vimrc, so new setting will be applied
-nnoremap <silent> <F5> :source $MYVIMRC<CR>
+nnoremap <silent> <F5> :source $MYNVIMRC<CR>
 " Open my vimrc in new tab
-nnoremap <silent> <F6> :tabedit $MYVIMRC<CR>
+nnoremap <silent> <F6> :tabedit $MYNVIMRC<CR>
 " Toggle gundo (undo tree) panel
 nnoremap <silent> <F7> :GundoToggle<CR>
 " Toggle syntax checking
