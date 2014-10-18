@@ -8,6 +8,8 @@ xterm*utf8: 1
 ! Color support
 xterm*customization: -color
 xterm*termName: xterm-256color
+! To be able switch colors on the fly
+xterm*dynamicColors: true
 
 ! Font settings
 xterm*faceName: Meslo LG S DZ for Powerline:Bold
