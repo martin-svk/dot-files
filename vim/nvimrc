@@ -545,7 +545,7 @@ endif
 let g:airline_theme='bubblegum'
 
 " Color scheme changing based on time
-if strftime("%H") < 14
+if strftime("%H") < 13
   colorscheme Tomorrow
   let g:airline_theme='tomorrow'
 elseif strftime("%H") < 18
