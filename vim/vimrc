@@ -188,37 +188,38 @@ call plug#end()
 " 2.0 Basic settings
 " ======================================================================================================================
 
-set shell=/bin/bash         " Setting vim shell to bash
-set nocompatible            " No compatible with vi mode
-set number                  " Just line numbers
-set noignorecase            " Don't ignore cases
-set laststatus=2            " Always show status line
-set showmode                " Always show mode
-set wildmenu                " Better auto-complete of ex commands
-set textwidth=120           " Text width is 120 chars
-set autoread                " Automatically reload change files on disk
-set bg=dark                 " Dark background setting (dark theme version of current color)
-set cursorline              " Set default cursor line (highlighting is done by color scheme)
-set cmdheight=1             " Command line height
-set pumheight=10            " Completion window max size
-set iskeyword-=_            " Set underscore as a word separator
-set timeoutlen=200          " Setting ESC timeout
-set hlsearch                " Highlight search
-set incsearch               " Incremental search
-set hidden                  " Enables to switch between unsaved buffers and keep undo history
-set undolevels=100          " How many undo commands to remember
-set clipboard+=unnamed      " Use system clipboard
-set history=1024            " Number of things to remember in history
-set nohlsearch              " Don't highlight after search
-set mat=2                   " How many tenths of a second to blink when matching brackets
-set lazyredraw              " Don't redraw while executing macros (better performance)
-set magic                   " For regular expressions turn magic on
-set showmatch               " Show matching brackets when text indicator is over them
-set encoding=utf8           " Set utf8 as standard encoding and en_US as the standard language
-set pastetoggle=<F3>        " Toggle between paste and nopaste
-set list                    " To display chars listed in listchars below
-set spelllang=en_us         " Set language to us English
-set spellfile=~/.vim/dictionary.utf-8.add
+set shell=/bin/bash                         " Setting vim shell to bash
+set nocompatible                            " No compatible with vi mode
+set number                                  " Just line numbers
+set noignorecase                            " Don't ignore cases
+set laststatus=2                            " Always show status line
+set showmode                                " Always show mode
+set wildmenu                                " Better auto-complete of ex commands
+set textwidth=120                           " Text width is 120 chars
+set autoread                                " Automatically reload change files on disk
+set bg=dark                                 " Dark background setting (dark theme version of current color)
+set cursorline                              " Set default cursor line (highlighting is done by color scheme)
+set cmdheight=1                             " Command line height
+set pumheight=10                            " Completion window max size
+set iskeyword-=_                            " Set underscore as a word separator
+set timeoutlen=200                          " Setting ESC timeout
+set hlsearch                                " Highlight search
+set incsearch                               " Incremental search
+set hidden                                  " Enables to switch between unsaved buffers and keep undo history
+set undolevels=100                          " How many undo commands to remember
+set clipboard+=unnamed                      " Use system clipboard
+set history=1024                            " Number of things to remember in history
+set nohlsearch                              " Don't highlight after search
+set mat=2                                   " How many tenths of a second to blink when matching brackets
+set lazyredraw                              " Don't redraw while executing macros (better performance)
+set magic                                   " For regular expressions turn magic on
+set showmatch                               " Show matching brackets when text indicator is over them
+set encoding=utf8                           " Set utf8 as standard encoding and en_US as the standard language
+set pastetoggle=<F3>                        " Toggle between paste and nopaste
+set list                                    " To display chars listed in listchars below
+set spelllang=en_us                         " Set language to us English
+set backspace=indent,eol,start              " Set default behaviour of backspace
+set spellfile=~/.vim/dictionary.utf-8.add   " Use this file for spell checking
 
 " -----------------------------------------------------
 " 2.1 Intendation settings (2 spaces tabs)
