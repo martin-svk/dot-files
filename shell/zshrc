@@ -173,14 +173,17 @@ if [ -d $HOME/.dynamic-colors ]; then
   export PATH="$HOME/.dynamic-colors/bin:$PATH"
   # Autocompletion
   source $HOME/.dynamic-colors/completions/dynamic-colors.zsh
+  hour=$(date +%H)
+  # Initialize
+  if [ $hour -lt 13 ]; then
+    dynamic-colors switch solarized-light
+  elif [ $hour -lt 18 ]; then
+    dynamic-colors switch solarized-dark
+  else
+    dynamic-colors switch solarized-dark-desaturated
+  fi
 fi
 
 # Setting default editor
 export EDITOR='nvim'
 export MYNVIMRC='~/.nvimrc'
-
-# =====================================================================================================================
-# Inits
-# =====================================================================================================================
-
-dynamic-colors init
