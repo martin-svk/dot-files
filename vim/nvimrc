@@ -197,6 +197,7 @@ set cursorline                              " Set default cursor line (highlight
 set cmdheight=1                             " Command line height
 set pumheight=10                            " Completion window max size
 set iskeyword-=_                            " Set underscore as a word separator
+set iskeyword-=-                            " Set dash as a word separator
 set timeoutlen=200                          " Setting ESC timeout
 set hlsearch                                " Highlight search
 set incsearch                               " Incremental search
