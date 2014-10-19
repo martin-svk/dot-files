@@ -30,6 +30,8 @@ Plug 'scrooloose/syntastic', { 'for': ['java', 'ruby', 'eruby', 'coffee', 'javas
 Plug 'garbas/vim-snipmate'
 " Snippets library
 Plug 'honza/vim-snippets'
+" Camel case motion
+Plug 'bkad/CamelCaseMotion'
 
 " -----------------------------------------------------
 " 1.1.1.2 Ruby/Rails
@@ -56,8 +58,8 @@ Plug 'ngmy/vim-rubocop'
 Plug 'ap/vim-css-color', { 'for': ['css', 'sass', 'less'] }
 " JS libs syntax files, ember, angular, etc.
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffee'] }
-" Camel case motion
-Plug 'bkad/CamelCaseMotion'
+" Sparkup, emmet alternative (<C-e> to expand expression)
+Plug 'rstacruz/sparkup', { 'for': ['html', 'xhtml']}
 
 " -----------------------------------------------------
 " 1.1.1.4 Android
@@ -91,16 +93,12 @@ Plug 'bronson/vim-trailing-whitespace'
 
 " Fuzzy file, buffer, MRU finder
 Plug 'kien/ctrlp.vim'
-" CtrlP extension to search in commands
-Plug 'fisadev/vim-ctrlp-cmdpalette'
 " Tabs, buffers, sessions management plugin
 Plug 'szw/vim-ctrlspace'
 " Nerdtree file browser
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 " Airline (improved status line)
 Plug 'bling/vim-airline'
-" History tree visualizer
-Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 " Tags (methods, classes) display window
 Plug 'majutsushi/tagbar'
 
@@ -551,17 +549,16 @@ if $TERM == 'xterm-256color' || 'screen-256color'
     set t_Co=256
 endif
 
-" Nice airline theme
-let g:airline_theme='bubblegum'
-
 " Color scheme changing based on time
 if strftime("%H") < 13
   colorscheme Tomorrow
   let g:airline_theme='tomorrow'
 elseif strftime("%H") < 18
   colorscheme Tomorrow-Night-Eighties
+  let g:airline_theme='bubblegum'
 else
   colorscheme hybrid
+  let g:airline_theme='bubblegum'
 endif
 
 " Color column
