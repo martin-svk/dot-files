@@ -52,14 +52,12 @@ Plug 'ngmy/vim-rubocop'
 " -----------------------------------------------------
 " 1.1.1.3 HTML/CSS/JS
 " -----------------------------------------------------
-" HTML autoclose tags (after typing closing > bracket)
-Plug 'amirh/HTML-AutoCloseTag', { 'for': ['html', 'xhtml', 'eruby', 'haml', 'slim'] }
 " CSS color highlighter
 Plug 'ap/vim-css-color', { 'for': ['css', 'sass', 'less'] }
-" Emmet for fast html prototyping
-Plug 'mattn/emmet-vim', { 'for': ['html', 'xhtml', 'eruby', 'haml', 'slim', 'css', 'sass', 'less'] }
 " JS libs syntax files, ember, angular, etc.
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffee'] }
+" Camel case motion
+Plug 'bkad/CamelCaseMotion'
 
 " -----------------------------------------------------
 " 1.1.1.4 Android
@@ -535,6 +533,14 @@ vmap <C-v> <Plug>(expand_region_shrink)
 
 " Ruby eval mapping
 nnoremap ,e :RubyEval<CR>
+
+" Camel case motion mapping (replace default w b e)
+map <silent> w <Plug>CamelCaseMotion_w
+map <silent> b <Plug>CamelCaseMotion_b
+map <silent> e <Plug>CamelCaseMotion_e
+sunmap w
+sunmap b
+sunmap e
 
 " ======================================================================================================================
 " 6.0 Color and highlighting settings
