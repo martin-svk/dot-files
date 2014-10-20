@@ -185,5 +185,5 @@ if [ -d $HOME/.dynamic-colors ]; then
 fi
 
 # Setting default editor
-export EDITOR='nvim'
+export EDITOR='vim'
 export MYNVIMRC='~/.nvimrc'
