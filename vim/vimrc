@@ -39,6 +39,8 @@ Plug 'scrooloose/syntastic', { 'for': ['java', 'ruby', 'eruby', 'coffee', 'javas
 Plug 'SirVer/ultisnips'
 " Ultisnips snippets for ruby, python, js, html...
 Plug 'honza/vim-snippets'
+" Camel case motion
+Plug 'bkad/CamelCaseMotion'
 
 " -----------------------------------------------------
 " 1.1.1.2 Ruby/Rails
@@ -61,14 +63,12 @@ Plug 'ngmy/vim-rubocop'
 " -----------------------------------------------------
 " 1.1.1.3 HTML/CSS/JS
 " -----------------------------------------------------
-" HTML autoclose tags (after typing closing > bracket)
-Plug 'amirh/HTML-AutoCloseTag', { 'for': ['html', 'xhtml', 'eruby', 'haml', 'slim'] }
 " CSS color highlighter
 Plug 'ap/vim-css-color', { 'for': ['css', 'sass', 'less'] }
-" Emmet for fast html prototyping
-Plug 'mattn/emmet-vim', { 'for': ['html', 'xhtml', 'eruby', 'haml', 'slim'] }
 " JS libs syntax files, ember, angular, etc.
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffee'] }
+" Sparkup, emmet alternative (<C-e> to expand expression)
+Plug 'rstacruz/sparkup', { 'for': ['html', 'xhtml']}
 
 " -----------------------------------------------------
 " 1.1.1.4 Android
@@ -367,6 +367,9 @@ nnoremap ,P "+P
 vnoremap ,p "+p
 vnoremap ,P "+P
 
+" Reformat whole file easily
+nnoremap <silent> ,f ggvG=
+
 " -----------------------------------------------------
 " 3.4 Toggles setup
 " -----------------------------------------------------
@@ -538,6 +541,14 @@ vmap <C-v> <Plug>(expand_region_shrink)
 " Ruby eval mapping
 nnoremap ,e :RubyEval<CR>
 
+" Camel case motion mapping (replace default w b e)
+map <silent> w <Plug>CamelCaseMotion_w
+map <silent> b <Plug>CamelCaseMotion_b
+map <silent> e <Plug>CamelCaseMotion_e
+sunmap w
+sunmap b
+sunmap e
+
 " ======================================================================================================================
 " 6.0 Color and highlighting settings
 " ======================================================================================================================
@@ -548,19 +559,19 @@ if $TERM == 'xterm-256color' || 'screen-256color'
 endif
 
 " Color scheme changing based on time
-if strftime("%H") < 14
-  colorscheme Tomorrow-Night-Eighties
+if strftime("%H") < 13
+  colorscheme Tomorrow
+  let g:airline_theme='tomorrow'
 elseif strftime("%H") < 18
-  colorscheme Tomorrow-Night
+  colorscheme Tomorrow-Night-Eighties
+  let g:airline_theme='bubblegum'
 else
   colorscheme hybrid
+  let g:airline_theme='bubblegum'
 endif
 
 " Color column
 let &colorcolumn=121
-
-" Nice airline theme
-let g:airline_theme='bubblegum'
 
 " Git gutter settings (signcolumn color)
 highlight clear SignColumn
@@ -574,6 +585,7 @@ hi Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE
 
 " If java(android) set appropriate indentation and color scheme
 autocmd FileType java,html set shiftwidth=4| set softtabstop=4
+autocmd FileType sass,coffee set shiftwidth=2| set softtabstop=2
 
 " ======================================================================================================================
 " 8.0 Autocommands and other tweaks
