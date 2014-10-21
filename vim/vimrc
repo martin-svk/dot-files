@@ -84,6 +84,8 @@ Plug 'hsanson/vim-android', { 'for': 'java' }
 Plug 'goldfeld/vim-seek'
 " Multiple cursors feature
 Plug 'terryma/vim-multiple-cursors'
+" Improved incremental search
+Plug 'haya14busa/incsearch.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.3 Editing improving plugins
@@ -548,6 +550,11 @@ map <silent> e <Plug>CamelCaseMotion_e
 sunmap w
 sunmap b
 sunmap e
+
+" Improved incremental search mappings
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
 
 " ======================================================================================================================
 " 6.0 Color and highlighting settings
