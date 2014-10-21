@@ -8,8 +8,6 @@ xterm*utf8: 1
 ! Color support
 xterm*customization: -color
 xterm*termName: xterm-256color
-! To be able switch colors on the fly
-xterm*dynamicColors: true
 
 ! Font settings
 xterm*faceName: Meslo LG S DZ for Powerline:Bold
@@ -37,10 +35,8 @@ xterm*eightBitOutput: true
 ! =============================================================================
 
 ! -----------------------------------------------------------------------------
-! Solarized
+! Solarized Dark
 ! -----------------------------------------------------------------------------
-
-! Dark
 
 #define S_yellow        #b58900
 #define S_orange        #cb4b16
@@ -83,39 +79,3 @@ xterm*color12:                 S_base0
 xterm*color13:                 S_violet
 xterm*color14:                 S_base1
 xterm*color15:                 S_base3
-
-! -----------------------------------------------------------------------------
-! Tommorow Night
-! -----------------------------------------------------------------------------
-
-!#define t_background        #1d1f21
-!#define t_current_line      #282a2e
-!#define t_selection             #373b41
-!#define t_foreground            #c5c8c6
-!#define t_comment               #969896
-!#define t_red                   #cc6666
-!#define t_orange                #de935f
-!#define t_yellow                #f0c674
-!#define t_green                 #b5bd68
-!#define t_aqua                  #8abeb7
-!#define t_blue                  #81a2be
-!#define t_purple                #b294bb
-!xterm*foreground:   t_foreground
-!xterm*background:   t_background
-!xterm*cursorColor:  #aeafad
-!xterm*color0:       #000000
-!xterm*color8:       #666666
-!xterm*color1:       t_red
-!xterm*color9:       #FF3334
-!xterm*color2:       t_green
-!xterm*color10:      #9ec400
-!xterm*color3:       t_orange
-!xterm*color11:      t_yellow
-!xterm*color4:       t_blue
-!xterm*color12:      t_blue
-!xterm*color5:       t_purple
-!xterm*color13:      #b777e0
-!xterm*color6:       t_aqua
-!xterm*color14:      #54ced6
-!xterm*color7:       t_selection
-!xterm*color15:      t_current_line
