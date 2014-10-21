@@ -168,16 +168,6 @@ if [ -d $HOME/lib/android-sdk-linux ]; then
   fi
 fi
 
-# Add dynamic colors to path if they exists
-if [ -d $HOME/.dynamic-colors ]; then
-  export PATH="$HOME/.dynamic-colors/bin:$PATH"
-  # Autocompletion
-  source $HOME/.dynamic-colors/completions/dynamic-colors.zsh
-  hour=$(date +%H)
-  # Initialize
-  dynamic-colors init
-fi
-
 # Setting default editor
 export EDITOR='vim'
 export MYNVIMRC='~/.nvimrc'
