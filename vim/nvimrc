@@ -75,6 +75,8 @@ Plug 'hsanson/vim-android', { 'for': 'java' }
 Plug 'goldfeld/vim-seek'
 " Multiple cursors feature
 Plug 'terryma/vim-multiple-cursors'
+" Improved incremental search
+Plug 'haya14busa/incsearch.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.3 Editing improving plugins
@@ -540,6 +542,11 @@ sunmap w
 sunmap b
 sunmap e
 
+" Improved incremental search mappings
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
 " ======================================================================================================================
 " 6.0 Color and highlighting settings
 " ======================================================================================================================
@@ -599,3 +606,81 @@ cab wQ wq
 cab WQ wq
 cab W w
 cab Q q
+
+" ######################################################################################################################
+" ### END OF VIMRC                                                                                                   ###
+" ######################################################################################################################
+
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" HELP SECTION:
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"
+" ---------------------------------------------------
+" Section 1.0 The Basics
+" ---------------------------------------------------
+"
+" This vimrc is intended and best suited for ruby/rails development.
+" Because of that, settings like 2 space intendation are used.
+"
+" Section 1.y - Toggles (on/off)
+" ------------------------------
+"
+" F1 - Nerdtree (file browser)
+" F2 - Tagbar (tag browser)
+" F3 - Paste mode (useful when copying large code blocks)
+" F4 - Spell checking
+" F5 - Reload vimrc (source $MYVIMRC)
+" F6 - Open my vimrc in new tab (edit $MYVIMRC)
+" F7 - Gundo (undo tree)
+" F8 - Syntax checking (using syntastic plugin)
+" F12 - Rainbow paranthesis
+"
+" ---------------------------------------------------
+" # Section 2. - Files navigation
+" ---------------------------------------------------
+"
+"
+" ---------------------------------------------------
+" # Section 3. - Code navigation
+" ---------------------------------------------------
+"
+"
+" ---------------------------------------------------
+" # Section 4. - Code manipulation
+" ---------------------------------------------------
+"
+" Section 4.1 Multiple cursors:
+" ------------------------------
+"
+" Using default keybindings:
+"   let g:multi_cursor_next_key='<C-n>'
+"   let g:multi_cursor_prev_key='<C-p>'
+"   let g:multi_cursor_skip_key='<C-x>'
+"   let g:multi_cursor_quit_key='<Esc>'
+"
+"
+" ---------------------------------------------------
+" # Section 5. - Look and feel
+" ---------------------------------------------------
+"
+"
+" ---------------------------------------------------
+" # Section 6. - Other tweaks
+" ---------------------------------------------------
+"
+"
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" END OF HELP:
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+" ======================================================================================================================
+" TODO SECTION:
+" ======================================================================================================================
+"
+" 1. Really start writing this vimrc help file.
+" 2. Convert this vimrc help to markdow syntax. So it could be used in github repo.
+" 3. Create my own colorscheme based on itg.flat from sublime text.
+"
+" ======================================================================================================================
+" END OF TODO:
+" ======================================================================================================================
