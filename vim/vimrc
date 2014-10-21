@@ -508,7 +508,7 @@ let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<c-z>'
 
 " 4.9.3 Supertab settings
-let g:SuperTabDefaultCompletionType = '<C-n>'
+let g:SuperTabDefaultCompletionType = '<C-p>'
 
 " ======================================================================================================================
 " 5.0 Plugin mappings and other settings
@@ -581,9 +581,20 @@ hi Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE
 " 7.0 Filetype specific settings
 " ======================================================================================================================
 
+" -----------------------------------------------------
 " If java(android) set appropriate indentation and color scheme
-autocmd FileType java,html set shiftwidth=4| set softtabstop=4
+" -----------------------------------------------------
+autocmd FileType java,html set shiftwidth=4| set softtabstop=4| colorscheme molokai
+
+" -----------------------------------------------------
+" Coffescript, sass indentation
+" -----------------------------------------------------
 autocmd FileType sass,coffee set shiftwidth=2| set softtabstop=2
+
+" -----------------------------------------------------
+" Ruby, rails specific settings
+" -----------------------------------------------------
+autocmd FileType ruby,eruby let g:SuperTabDefaultCompletionType = '<C-x><C-o>'
 
 " ======================================================================================================================
 " 8.0 Autocommands and other tweaks
