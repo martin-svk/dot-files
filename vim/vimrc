@@ -558,7 +558,9 @@ endif
 
 " Color scheme changing based on time
 if strftime("%H") < 13
-  colorscheme Tomorrow
+  let g:molokai_original = 1
+  let g:rehash256 = 1
+  colorscheme molokai
   let g:airline_theme='tomorrow'
 elseif strftime("%H") < 18
   colorscheme Tomorrow-Night-Eighties
