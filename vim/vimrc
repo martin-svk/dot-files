@@ -593,11 +593,6 @@ autocmd FileType java,html set shiftwidth=4| set softtabstop=4| colorscheme molo
 " -----------------------------------------------------
 autocmd FileType sass,coffee set shiftwidth=2| set softtabstop=2
 
-" -----------------------------------------------------
-" Ruby, rails specific settings
-" -----------------------------------------------------
-autocmd FileType ruby,eruby let g:SuperTabDefaultCompletionType = '<C-x><C-o>'
-
 " ======================================================================================================================
 " 8.0 Autocommands and other tweaks
 " ======================================================================================================================
