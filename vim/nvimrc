@@ -49,7 +49,7 @@ Plug 'ck3g/vim-change-hash-syntax', { 'for': ['ruby', 'eruby'] }
 " Refactoring tools
 Plug 'ecomba/vim-ruby-refactoring', { 'for': ['ruby', 'eruby'] }
 " Ruby best practices checker
-Plug 'ngmy/vim-rubocop'
+Plug 'ngmy/vim-rubocop', { 'for': ['ruby', 'eruby'] }
 
 " -----------------------------------------------------
 " 1.1.1.3 HTML/CSS/JS
@@ -95,8 +95,6 @@ Plug 'bronson/vim-trailing-whitespace'
 
 " Fuzzy file, buffer, MRU finder
 Plug 'kien/ctrlp.vim'
-" Tabs, buffers, sessions management plugin
-Plug 'szw/vim-ctrlspace'
 " Nerdtree file browser
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 " Airline (improved status line)
@@ -163,8 +161,6 @@ Plug 'vim-scripts/CSApprox'
 
 " Rainbow parenthesis
 Plug 'kien/rainbow_parentheses.vim'
-" List of common mistakes to be corrected automagically
-Plug 'panozzaj/vim-autocorrect'
 " Benchmark vimrc
 Plug 'mattn/benchvimrc-vim', { 'on': 'BenchVimrc' }
 " Dependency for vim-snipmate
@@ -197,7 +193,6 @@ set pumheight=10                            " Completion window max size
 set iskeyword-=_                            " Set underscore as a word separator
 set iskeyword-=-                            " Set dash as a word separator
 set timeoutlen=200                          " Setting ESC timeout
-set hlsearch                                " Highlight search
 set incsearch                               " Incremental search
 set hidden                                  " Enables to switch between unsaved buffers and keep undo history
 set undolevels=100                          " How many undo commands to remember
@@ -287,7 +282,7 @@ endif
 " -----------------------------------------------------
 " 2.8 Completion ignore list
 " -----------------------------------------------------
-set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+set wildignore=*.o,*.obj,*~
 set wildignore+=*vim/backups*
 set wildignore+=*sass-cache*
 set wildignore+=*DS_Store*
@@ -363,6 +358,20 @@ vnoremap ,P "+P
 " Reformat whole file easily
 nnoremap <silent> ,f ggvG=
 
+" Shortcuts for quiting and saving
+cmap ww wqall
+cmap qq qall
+
+" Command abbreviations to accept case errors
+cab W! w!
+cab Q! q!
+cab Wq wq
+cab Wa wa
+cab wQ wq
+cab WQ wq
+cab W w
+cab Q q
+
 " -----------------------------------------------------
 " 3.4 Toggles setup
 " -----------------------------------------------------
@@ -402,7 +411,7 @@ nnoremap ,n :bn<CR>
 nnoremap ,b :bp<CR>
 
 " ======================================================================================================================
-" 4.0 Plug settings
+" 4.0 Plugins settings
 " ======================================================================================================================
 
 " -----------------------------------------------------
@@ -484,16 +493,6 @@ let g:tagbar_type_ruby = {
 \ }
 
 " -----------------------------------------------------
-" 4.7 Ctrl-Space settings
-" -----------------------------------------------------
-" Use ag
-if executable("ag")
-  let g:ctrlspace_glob_command = 'ag -l --nocolor -g ""'
-endif
-" Dont use unicode font
-let g:ctrlspace_unicode_font = 0
-
-" -----------------------------------------------------
 " 4.8 Yankring settings
 " -----------------------------------------------------
 let g:yankring_history_dir = '/tmp/'
@@ -538,6 +537,7 @@ nnoremap ,e :RubyEval<CR>
 map <silent> w <Plug>CamelCaseMotion_w
 map <silent> b <Plug>CamelCaseMotion_b
 map <silent> e <Plug>CamelCaseMotion_e
+" Unmap to not conflict
 sunmap w
 sunmap b
 sunmap e
@@ -590,28 +590,6 @@ autocmd FileType coffee,javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
 autocmd FileType html,htmldjango,xhtml,haml setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
 autocmd FileType sass,scss,css setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
-
-" ======================================================================================================================
-" 8.0 Autocommands and other tweaks
-" ======================================================================================================================
-
-" Close vim if the last open window is nerdtree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-" The PC is fast enough, do syntax highlight syncing from start
-autocmd BufEnter * :syntax sync fromstart
-
-" ----------------------------------------------------------
-" 8.1 Command abbreviations to accept case errors
-" ----------------------------------------------------------
-cab W! w!
-cab Q! q!
-cab Wq wq
-cab Wa wa
-cab wQ wq
-cab WQ wq
-cab W w
-cab Q q
 
 " ######################################################################################################################
 " ### END OF VIMRC                                                                                                   ###
@@ -684,8 +662,6 @@ cab Q q
 " ======================================================================================================================
 "
 " 1. Really start writing this vimrc help file.
-" 2. Convert this vimrc help to markdow syntax. So it could be used in github repo.
-" 3. Create my own colorscheme based on itg.flat from sublime text.
 "
 " ======================================================================================================================
 " END OF TODO:
