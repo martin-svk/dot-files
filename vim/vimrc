@@ -193,6 +193,7 @@ set pumheight=10                            " Completion window max size
 set iskeyword-=_                            " Set underscore as a word separator
 set iskeyword-=-                            " Set dash as a word separator
 set timeoutlen=200                          " Setting ESC timeout
+set hlsearch                                " Highlight search
 set incsearch                               " Incremental search
 set hidden                                  " Enables to switch between unsaved buffers and keep undo history
 set undolevels=100                          " How many undo commands to remember
@@ -209,6 +210,7 @@ set list                                    " To display chars listed in listcha
 set spelllang=en_us                         " Set language to us English
 set backspace=indent,eol,start              " Set default behaviour of backspace
 set spellfile=~/.vim/dictionary.utf-8.add   " Use this file for spell checking
+set nostartofline                           " Prevent cursor from moving to beginning of line when switching buffers
 
 " -----------------------------------------------------
 " 2.1 Intendation settings (2 spaces tabs)
@@ -505,6 +507,7 @@ let g:yankring_history_dir = '/tmp/'
 let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<c-z>'
+let g:UltiSnipsEditSplit='vertical'
 
 " 4.9.3 Supertab settings
 let g:SuperTabDefaultCompletionType = '<C-p>'
