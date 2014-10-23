@@ -11,7 +11,7 @@
 
 #### .vimrc
 
-Vim config overview here!
+![alt text](./images/vim.png "My vim setup.")
 
 #### .zshrc
 
