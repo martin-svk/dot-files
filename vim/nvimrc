@@ -435,7 +435,7 @@ let g:NERDTreeWinSize = 40
 " 4.3 CTRL-P (fuzzy searcher) settings
 " -----------------------------------------------------
 let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:10,results:10'
-let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_cmd = 'CtrlP'
 
 if exists("g:ctrlp_user_command")
   unlet g:ctrlp_user_command
