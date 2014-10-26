@@ -358,7 +358,7 @@ vnoremap ,p "+p
 vnoremap ,P "+P
 
 " Reformat whole file easily
-nnoremap <silent> ,f ggvG=
+nnoremap <silent> ,f mzgg=G`z
 
 " Shortcuts for quiting and saving
 cmap ww wqall
