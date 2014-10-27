@@ -357,7 +357,7 @@ vnoremap ,p "+p
 vnoremap ,P "+P
 
 " Reformat whole file easily
-nnoremap <silent> ,f ggvG=
+nnoremap <silent> ,f mzgg=G`z
 
 " Shortcuts for quiting and saving
 cmap ww wqall
@@ -591,6 +591,17 @@ autocmd FileType coffee,javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
 autocmd FileType html,htmldjango,xhtml,haml setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
 autocmd FileType sass,scss,css setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
+
+" ======================================================================================================================
+" 8.0 Autocommands
+" ======================================================================================================================
+
+" Close vim if the last open window is nerdtree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" Hide cursorlines when focus lost
+autocmd BufEnter * set cursorline
+autocmd BufLeave * set nocursorline
 
 " ######################################################################################################################
 " ### END OF VIMRC                                                                                                   ###
