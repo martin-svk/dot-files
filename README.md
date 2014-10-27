@@ -1,6 +1,6 @@
-### This repo contains personal, opiniated rc files from Ruby developer who loves raw Linux/Unix tools.
+### This repo contains personal, opiniated Ruby/Rails centric dotfiles.
 
-#### Included rc files for:
+#### What's included:
 
 * Vim (Neovim)
 * Ruby CLI utilities (pry, gem, irb)
