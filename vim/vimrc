@@ -150,8 +150,6 @@ Plug 'terryma/vim-expand-region'
 " 1.1.9 Color-scheme plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Tomorrow theme
-Plug 'chriskempson/vim-tomorrow-theme'
 " Molokai theme
 Plug 'tomasr/molokai'
 " Hybrid dark color theme
@@ -211,6 +209,10 @@ set spelllang=en_us                         " Set language to us English
 set backspace=indent,eol,start              " Set default behaviour of backspace
 set spellfile=~/.vim/dictionary.utf-8.add   " Use this file for spell checking
 set nostartofline                           " Prevent cursor from moving to beginning of line when switching buffers
+set virtualedit=block                       " To be able to select past EOL in visual block mode
+set nojoinspaces                            " No extra space when joining a line which ends with . ? !
+set startofline                             " When doing thing like gg or G, will move cursor to start of line
+set wrapscan                                " Search again from top when reached the bottom
 
 " -----------------------------------------------------
 " 2.1 Intendation settings (2 spaces tabs)
@@ -567,9 +569,6 @@ if strftime("%H") < 13
   let g:rehash256 = 1
   colorscheme molokai
   let g:airline_theme='tomorrow'
-elseif strftime("%H") < 18
-  colorscheme Tomorrow-Night-Eighties
-  let g:airline_theme='bubblegum'
 else
   colorscheme hybrid
   let g:airline_theme='bubblegum'
