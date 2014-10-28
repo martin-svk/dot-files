@@ -332,9 +332,9 @@ noremap N Nzz
 noremap <c-d> <c-d>zz
 noremap <c-u> <c-u>zz
 
-" Remap VIM 0 to first non-blank character
-nnoremap 0 ^
-nnoremap ^ 0
+" Remap VIM H and L (top, bottom of screen to left and right end of line)
+nnoremap H ^
+nnoremap L $
 
 " Map save to Ctrl-s
 nnoremap <silent> <c-s> :w<CR>
