@@ -336,6 +336,8 @@ noremap <c-u> <c-u>zz
 " Remap VIM H and L (top, bottom of screen to left and right end of line)
 nnoremap H ^
 nnoremap L $
+vnoremap H ^
+vnoremap L $
 
 " Map save to Ctrl-s
 nnoremap <silent> <c-s> :w<CR>
