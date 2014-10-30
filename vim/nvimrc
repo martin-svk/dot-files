@@ -363,6 +363,15 @@ vnoremap ,P "+P
 " Reformat whole file easily
 nnoremap <silent> ,f mzgg=G`z
 
+" More logical Y (defaul was alias for yy)
+nnoremap Y y$
+
+" Insert line break (opposite of J-join lines)
+nnoremap ,j i<CR><ESC>
+
+" Quick replay q macro
+nnoremap Q @q
+
 " Shortcuts for quiting and saving
 cmap ww wqall
 cmap qq qall
@@ -409,11 +418,10 @@ nnoremap <silent> <Up> :resize +1<CR>
 nnoremap <silent> <Down> :resize -1<CR>
 
 " -----------------------------------------------------
-" 3.6 Tabs and buffers mappings (consider using ctrl-space)
+" 3.6 Tabs and buffers mappings
 " -----------------------------------------------------
-nnoremap ,d :bd<CR>
-nnoremap ,n :bn<CR>
-nnoremap ,b :bp<CR>
+nnoremap + :bn<CR>
+nnoremap _ :bp<CR>
 
 " ======================================================================================================================
 " 4.0 Plugins settings
@@ -510,6 +518,7 @@ let g:yankring_history_dir = '/tmp/'
 let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<c-z>'
+let g:UltiSnipsEditSplit='vertical'
 
 " 4.9.3 Supertab settings
 let g:SuperTabDefaultCompletionType = '<C-p>'
@@ -592,6 +601,7 @@ autocmd FileType coffee,javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
 autocmd FileType html,htmldjango,xhtml,haml setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
 autocmd FileType sass,scss,css setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
+autocmd FileType vim setlocal keywordprg=:help
 
 " ======================================================================================================================
 " 8.0 Autocommands
