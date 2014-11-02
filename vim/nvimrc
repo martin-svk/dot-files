@@ -28,8 +28,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/syntastic', { 'for': ['java', 'ruby', 'eruby', 'coffee', 'javascript', 'html'] }
 " Snipmate stype snippets support
 Plug 'garbas/vim-snipmate'
-" Snippets library
-Plug 'honza/vim-snippets'
 " Camel case motion
 Plug 'bkad/CamelCaseMotion'
 

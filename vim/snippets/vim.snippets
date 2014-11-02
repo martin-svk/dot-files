@@ -1,0 +1,20 @@
+snippet pl vim-plug plugin definition
+	" ${1:Plugin description}
+	Plug '${0}'
+snippet nn normal mode map coomand
+	nnoremap ${1:new} ${0:old}
+snippet in insert mode map coomand
+	inoremap ${1:new} ${0:old}
+snippet vn visual mode map coomand
+	vnoremap ${1:new} ${0:old}
+snippet if if statement
+	if ${1}
+		${0}
+	endif
+snippet ife if ... else statement
+	if ${1}
+		${2}
+	else
+		${0}
+snippet === commented separator
+	" ======================================================================================================================
