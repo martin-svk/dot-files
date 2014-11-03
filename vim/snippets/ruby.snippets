@@ -1,0 +1,45 @@
+# ===============================================
+# Ruby
+# ===============================================
+# --------------------------------
+# Methods, modules, declarations
+# --------------------------------
+snippet def method definition
+	def ${1}
+		${0}
+	end
+snippet cla class definition
+	class ${1}
+		${0}
+	end
+snippet dcl derived class definition
+	class ${1} < ${2}
+		${0}
+	end
+snippet mod module definition
+	module ${1}
+		${0}
+	end
+# --------------------------------
+# Blocks
+# --------------------------------
+snippet do do block
+	do |${1}|
+		${0}
+	end
+snippet each each block
+	each do |${1}|
+		${0}
+	end
+snippet map map block
+	map(&:${1})${0}
+# ===============================================
+# Rails
+# ===============================================
+# --------------------------------
+# Relations
+# --------------------------------
+snippet bt belongs_to relation
+	belongs_to :${0}
+snippet hm has_many relation
+	has_many :${0}
