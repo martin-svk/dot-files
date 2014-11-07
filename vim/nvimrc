@@ -527,13 +527,7 @@ let g:yankring_history_dir = '/tmp/'
 " 4.9 Autocomplete setting
 " -----------------------------------------------------
 
-" 4.9.1 Ultisnips
-let g:UltiSnipsExpandTrigger='<tab>'
-let g:UltiSnipsJumpForwardTrigger='<tab>'
-let g:UltiSnipsJumpBackwardTrigger='<c-z>'
-let g:UltiSnipsEditSplit='vertical'
-
-" 4.9.3 Supertab settings
+" 4.9.1 Supertab settings
 let g:SuperTabDefaultCompletionType = '<C-p>'
 
 " -----------------------------------------------------
