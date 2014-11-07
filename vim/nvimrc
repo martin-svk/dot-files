@@ -350,7 +350,7 @@ nnoremap L $
 vnoremap H ^
 vnoremap L $
 
-" Map save to Ctrl-s
+" Quick save and quit / buffer delete
 nnoremap ,w :w<CR>
 nnoremap ,q :q<CR>
 nnoremap ,d :bd<CR>
