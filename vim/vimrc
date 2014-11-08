@@ -106,8 +106,6 @@ Plug 'fisadev/vim-ctrlp-cmdpalette'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 " Airline (improved status line)
 Plug 'bling/vim-airline'
-" History tree visualizer
-Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 " Tags (methods, classes) display window
 Plug 'majutsushi/tagbar'
 
@@ -251,7 +249,7 @@ set noswapfile
 " -----------------------------------------------------
 " 2.4 Highlight whitespaces
 " -----------------------------------------------------
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
+set listchars=tab:▸\ ,trail:.,extends:#,nbsp:.,eol:¬
 
 " -----------------------------------------------------
 " 2.5 Filetype settings
@@ -416,8 +414,8 @@ nnoremap <silent> <F4> :set spell!<CR>
 nnoremap <silent> <F5> :source $MYVIMRC<CR>
 " Open my vimrc in new tab
 nnoremap <silent> <F6> :tabedit $MYVIMRC<CR>
-" Toggle gundo (undo tree) panel
-nnoremap <silent> <F7> :GundoToggle<CR>
+" Toggle white characters visibility
+nnoremap <silent> <F7> :set list!<CR>
 " Toggle syntax checking
 nnoremap <silent> <F8> :SyntasticToggleMode<CR>
 " Toggle rainbow paranthesis

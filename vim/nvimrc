@@ -213,7 +213,7 @@ set magic                                   " For regular expressions turn magic
 set showmatch                               " Show matching brackets when text indicator is over them
 set encoding=utf8                           " Set utf8 as standard encoding and en_US as the standard language
 set pastetoggle=<F3>                        " Toggle between paste and nopaste
-set list                                    " To display chars listed in listchars below (2.4)
+set list                                    " To display chars listed in listchars below
 set spelllang=en_us                         " Set language to us English
 set backspace=indent,eol,start              " Set default behaviour of backspace
 set nostartofline                           " Prevent cursor from moving to beginning of line when switching buffers
@@ -244,7 +244,7 @@ set nowb
 set noswapfile
 
 " -----------------------------------------------------
-" 2.4 Highlight white characters
+" 2.4 Highlight whitespaces
 " -----------------------------------------------------
 set listchars=tab:▸\ ,trail:.,extends:#,nbsp:.,eol:¬
 
@@ -405,7 +405,6 @@ cab Q q
 nnoremap <silent> <F1> :NERDTreeToggle<CR>
 " Toggle tagbar (methods, classes, etc.) window
 nnoremap <silent> <F2> :TagbarToggle<CR>
-" Paste mode toggle is mapped to F3
 " Toggle spelling on and off
 nnoremap <silent> <F4> :set spell!<CR>
 " Source (reload) vimrc, so new setting will be applied
