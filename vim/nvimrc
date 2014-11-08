@@ -69,8 +69,10 @@ Plug 'rstacruz/sparkup', { 'for': ['html', 'xhtml']}
 " -----------------------------------------------------
 " 1.1.1.4 Android
 " -----------------------------------------------------
+"{{{
 " Android build and deploy helpers
 Plug 'hsanson/vim-android', { 'for': 'java' }
+"}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.2 Motion/code navigation improving plugins
@@ -257,7 +259,7 @@ filetype plugin on
 filetype indent on
 
 " -----------------------------------------------------
-" 2.6 Folding settings, by default is disabled, use 'zi'
+" 2.6 Folding settings, by default is disabled, use 'za'
 " -----------------------------------------------------
 set foldmethod=marker
 set foldlevelstart=2
@@ -352,8 +354,8 @@ vnoremap L $
 
 " Quick save and quit / buffer delete
 nnoremap ,w :w<CR>
-nnoremap ,q :q<CR>
-nnoremap ,d :bd<CR>
+nnoremap <silent> ,q :q<CR>
+nnoremap <silent> ,d :bd<CR>
 
 " Bubble single lines
 nnoremap <C-k> ddkP
@@ -365,7 +367,7 @@ vnoremap <C-k> xkP`[V`]
 
 " Easily copy and past to system clipboard
 vnoremap ,y "+y
-nnoremap ,y "+y
+nnoremap ,y "+yy
 nnoremap ,p "+p
 nnoremap ,P "+P
 vnoremap ,p "+p
@@ -544,8 +546,7 @@ let g:scratch_top = 0
 " CTRL-P and its extensions mapping
 let g:ctrlp_map = '<Leader>p'
 nnoremap <silent> <Leader>t :CtrlPBufTagAll<CR>
-nnoremap <silent> ,, :CtrlPBuffer<CR>
-nnoremap <silent> <Leader><Leader> :CtrlPCmdPalette<CR>
+nnoremap <silent> <Leader><Leader> :CtrlPBuffer<CR>
 
 " Yankring mapping
 nnoremap <silent> <Leader>y :YRShow<CR>
@@ -576,8 +577,8 @@ map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
 " Vim scratch mappings
-nnoremap ,s :Scratch<CR>
-nnoremap ,S :Scratch!<CR>
+nnoremap <leader>s :Scratch<CR>
+nnoremap <leader>S :Scratch!<CR>
 "}}}
 
 " ======================================================================================================================
@@ -632,11 +633,14 @@ autocmd FileType vim setlocal keywordprg=:help
 "{{{
 
 " Close vim if the last open window is nerdtree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Hide cursorlines when focus lost
 autocmd BufEnter * set cursorline
 autocmd BufLeave * set nocursorline
+
+" Fix whitespaces automatically before save
+autocmd BufWritePre * :FixWhitespace
 
 " Echo out toggles legend on <F12>
 nnoremap <F12> :call ShowToggles()<CR>
