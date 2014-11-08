@@ -627,7 +627,7 @@ autocmd FileType vim setlocal keywordprg=:help
 "}}}
 
 " ======================================================================================================================
-" 8.0 Autocommands
+" 8.0 Custom functions and autocommands
 " ======================================================================================================================
 "{{{
 
@@ -637,6 +637,12 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " Hide cursorlines when focus lost
 autocmd BufEnter * set cursorline
 autocmd BufLeave * set nocursorline
+
+" Echo out toggles legend
+function ShowToggles ()
+  echom "| <F1> NerdTree | <F2> Tagbar | <F3> Paste mode | <F4> Spellcheck | <F5> Source .rc | <F6> Edit .rc |" .
+        \"<F7> Whitechars | <F8> Syntastic | <F12> Rainbow() |"
+endfunction
 "}}}
 
 " ######################################################################################################################
