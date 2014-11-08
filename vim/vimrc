@@ -260,7 +260,7 @@ filetype plugin on
 filetype indent on
 
 " -----------------------------------------------------
-" 2.6 Folding settings, by default is disabled, use 'zi'
+" 2.6 Folding settings, by default is disabled, use 'za'
 " -----------------------------------------------------
 set foldmethod=marker
 set foldlevelstart=2
@@ -355,8 +355,8 @@ vnoremap L $
 
 " Quick save and quit / buffer delete
 nnoremap ,w :w<CR>
-nnoremap ,q :q<CR>
-nnoremap ,d :bd<CR>
+nnoremap <silent> ,q :q<CR>
+nnoremap <silent> ,d :bd<CR>
 
 " Bubble single lines
 nnoremap <C-k> ddkP
@@ -420,6 +420,8 @@ nnoremap <silent> <F7> :set list!<CR>
 nnoremap <silent> <F8> :SyntasticToggleMode<CR>
 " Toggle rainbow paranthesis
 nnoremap <silent> <F9> :RainbowParenthesesToggle<CR>
+" Echo out toggles legend on <F12>
+nnoremap <F12> :call ShowToggles()<CR>
 
 " -----------------------------------------------------
 " 3.5 Window management mappings
@@ -530,13 +532,7 @@ let g:yankring_history_dir = '/tmp/'
 " 4.9 Autocomplete setting
 " -----------------------------------------------------
 
-" 4.9.1 Ultisnips
-let g:UltiSnipsExpandTrigger='<tab>'
-let g:UltiSnipsJumpForwardTrigger='<tab>'
-let g:UltiSnipsJumpBackwardTrigger='<c-z>'
-let g:UltiSnipsEditSplit='vertical'
-
-" 4.9.3 Supertab settings
+" 4.9.1 Supertab settings
 let g:SuperTabDefaultCompletionType = '<C-p>'
 
 " -----------------------------------------------------
@@ -546,15 +542,15 @@ let g:scratch_top = 0
 "}}}
 
 " ======================================================================================================================
-" 5.0 Plugin mappings and other settings
+" 5.0 Plugin mappings
 " ======================================================================================================================
 "{{{
 
 " CTRL-P and its extensions mapping
 let g:ctrlp_map = '<Leader>p'
 nnoremap <silent> <Leader>t :CtrlPBufTagAll<CR>
-nnoremap <silent> ,, :CtrlPBuffer<CR>
-nnoremap <silent> <Leader><Leader> :CtrlPCmdPalette<CR>
+nnoremap <silent> <Leader><Leader> :CtrlPBuffer<CR>
+nnoremap <silent> <Leader>c :CtrlPCmdPalette<CR>
 
 " Yankring mapping
 nnoremap <silent> <Leader>y :YRShow<CR>
@@ -585,8 +581,8 @@ map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
 " Vim scratch mappings
-nnoremap ,s :Scratch<CR>
-nnoremap ,S :Scratch!<CR>
+nnoremap <leader>s :Scratch<CR>
+nnoremap <leader>S :Scratch!<CR>
 "}}}
 
 " ======================================================================================================================
@@ -641,16 +637,16 @@ autocmd FileType vim setlocal keywordprg=:help
 "{{{
 
 " Close vim if the last open window is nerdtree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Hide cursorlines when focus lost
 autocmd BufEnter * set cursorline
 autocmd BufLeave * set nocursorline
 
-" Echo out toggles legend on <F12>
-nnoremap <F12> :call ShowToggles()<CR>
+" Fix whitespaces automatically before save
+autocmd BufWritePre * :FixWhitespace
 
-function ShowToggles ()
+function! ShowToggles()
   echom "| <F1> NerdTree | <F2> Tagbar | <F3> Paste mode | <F4> Spellcheck | <F5> Source .rc | <F6> Edit .rc |" .
         \"<F7> Whitechars | <F8> Syntastic | <F9> Rainbow() | <F12> This message |"
 endfunction

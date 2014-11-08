@@ -69,10 +69,8 @@ Plug 'rstacruz/sparkup', { 'for': ['html', 'xhtml']}
 " -----------------------------------------------------
 " 1.1.1.4 Android
 " -----------------------------------------------------
-"{{{
 " Android build and deploy helpers
 Plug 'hsanson/vim-android', { 'for': 'java' }
-"}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.2 Motion/code navigation improving plugins
