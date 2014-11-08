@@ -368,7 +368,7 @@ vnoremap <C-k> xkP`[V`]
 
 " Easily copy and past to system clipboard
 vnoremap ,y "+y
-nnoremap ,y "+y
+nnoremap ,y "+yy
 nnoremap ,p "+p
 nnoremap ,P "+P
 vnoremap ,p "+p
@@ -564,7 +564,7 @@ vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
 " Ruby eval mapping
-nnoremap ,e :RubyEval<CR>
+nnoremap <silent> ,e :RubyEval<CR>
 
 " Camel case motion mapping (replace default w b e)
 map <silent> w <Plug>CamelCaseMotion_w
