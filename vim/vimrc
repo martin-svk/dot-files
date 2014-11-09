@@ -601,12 +601,13 @@ if $TERM == 'xterm-256color' || 'screen-256color'
 endif
 
 " Color scheme changing based on time
-if strftime("%H") < 13
+if strftime("%H") < 15
   let g:molokai_original=1
   let g:rehash256=1
   colorscheme molokai
   let g:airline_theme='tomorrow'
 else
+  let g:hybrid_use_Xresources=1
   colorscheme hybrid
   let g:airline_theme='bubblegum'
 endif
