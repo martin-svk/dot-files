@@ -557,7 +557,7 @@ vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
 " Ruby eval mapping
-nnoremap ,e :RubyEval<CR>
+nnoremap <silent> ,e :RubyEval<CR>
 
 " Camel case motion mapping (replace default w b e)
 map <silent> w <Plug>CamelCaseMotion_w

@@ -174,6 +174,8 @@ Plug 'marcweber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 " Scratch buffer to prototype
 Plug 'mtth/scratch.vim'
+" Distraction free editing
+Plug 'junegunn/goyo.vim'
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " 1.2 End of plugin declaration
@@ -278,8 +280,8 @@ autocmd FileType c set omnifunc=ccomplete#Complete
 autocmd FileType java set omnifunc=javacomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading=1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-autocmd FileType ruby,eruby let g:rubycomplete_load_gemfile = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails=1
+autocmd FileType ruby,eruby let g:rubycomplete_load_gemfile=1
 
 " make CSS omni-completion work for SASS and SCSS
 autocmd BufNewFile,BufRead *.scss             set ft=scss.css
@@ -288,9 +290,9 @@ autocmd BufNewFile,BufRead *.sass             set ft=sass.css
 " use syntax complete if nothing else available
 if has("autocmd") && exists("+omnifunc")
   autocmd Filetype *
-    \ if &omnifunc == "" |
-    \         setlocal omnifunc=syntaxcomplete#Complete |
-    \ endif
+        \ if &omnifunc == "" |
+        \         setlocal omnifunc=syntaxcomplete#Complete |
+        \ endif
 endif
 
 " -----------------------------------------------------
@@ -420,6 +422,8 @@ nnoremap <silent> <F7> :set list!<CR>
 nnoremap <silent> <F8> :SyntasticToggleMode<CR>
 " Toggle rainbow paranthesis
 nnoremap <silent> <F9> :RainbowParenthesesToggle<CR>
+" Toggle Goyo mode
+nnoremap <silent> <F10> :Goyo<CR>
 " Echo out toggles legend on <F12>
 nnoremap <F12> :call ShowToggles()<CR>
 
@@ -448,24 +452,24 @@ nnoremap _ :bp<CR>
 " -----------------------------------------------------
 " 4.1 Airline (status line) settings
 " -----------------------------------------------------
-let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_sep=' '
 let g:airline#extensions#tabline#enabled=1
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline_powerline_fonts = 1
-let g:airline_exclude_preview = 1
+let g:airline#extensions#tabline#left_alt_sep='|'
+let g:airline_powerline_fonts=1
+let g:airline_exclude_preview=1
 
 " -----------------------------------------------------
 " 4.2 Nerdtree (file browser) setting
 " -----------------------------------------------------
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
-let g:NERDTreeWinSize = 40
+let NERDTreeMinimalUI=1
+let NERDTreeDirArrows=1
+let g:NERDTreeWinSize=40
 
 " -----------------------------------------------------
 " 4.3 CTRL-P (fuzzy searcher) settings
 " -----------------------------------------------------
-let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:10,results:10'
-let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_match_window='bottom,order:ttb,min:1,max:10,results:10'
+let g:ctrlp_cmd='CtrlP'
 
 if exists("g:ctrlp_user_command")
   unlet g:ctrlp_user_command
@@ -474,20 +478,20 @@ endif
 if executable('ag')
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command =
-    \ 'ag %s --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"'
+        \ 'ag %s --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"'
 
   " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
+  let g:ctrlp_use_caching=0
 else
   " Fall back to using git ls-files if Ag is not available
-  let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
-  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
+  let g:ctrlp_custom_ignore='\.git$\|\.hg$\|\.svn$'
+  let g:ctrlp_user_command=['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
 endif
 
 " -----------------------------------------------------
 " 4.4 Syntastic (syntax checker) settings
 " -----------------------------------------------------
-let g:syntastic_ruby_checkers = ['mri']
+let g:syntastic_ruby_checkers=['mri']
 " mark syntax errors with :signs
 let g:syntastic_enable_signs=1
 " automatically jump to the error when saving the file
@@ -497,48 +501,49 @@ let g:syntastic_auto_loc_list=1
 " check on open as well as save
 let g:syntastic_check_on_open=1
 " don't care about warnings
-let g:syntastic_quiet_messages = {'level': 'warnings'}
+let g:syntastic_quiet_messages={'level': 'warnings'}
 " Passive mode is default
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+let g:syntastic_mode_map={ 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 " Disable csslint, scss and sass syntax checking is not behaving correctly
-let g:loaded_syntastic_css_csslint_checker = 0
+let g:loaded_syntastic_css_csslint_checker=0
 
 " -----------------------------------------------------
-" 4.5 Gundo (undo tree) settings
+" 4.5 Tagbar (methods, classes, etc. browser) settings
 " -----------------------------------------------------
-let g:gundo_right = 1
-let g:gundo_preview_height = 30
+let g:tagbar_type_ruby={
+      \ 'kinds' : [
+      \ 'm:modules',
+      \ 'c:classes',
+      \ 'd:describes',
+      \ 'C:contexts',
+      \ 'f:methods',
+      \ 'F:singleton methods'
+      \ ]
+      \ }
 
 " -----------------------------------------------------
-" 4.6 Tagbar (methods, classes, etc. browser) settings
+" 4.6 Yankring settings
 " -----------------------------------------------------
-let g:tagbar_type_ruby = {
-    \ 'kinds' : [
-        \ 'm:modules',
-        \ 'c:classes',
-        \ 'd:describes',
-        \ 'C:contexts',
-        \ 'f:methods',
-        \ 'F:singleton methods'
-    \ ]
-\ }
+let g:yankring_history_dir='/tmp/'
 
 " -----------------------------------------------------
-" 4.8 Yankring settings
-" -----------------------------------------------------
-let g:yankring_history_dir = '/tmp/'
-
-" -----------------------------------------------------
-" 4.9 Autocomplete setting
+" 4.7 Autocomplete setting
 " -----------------------------------------------------
 
-" 4.9.1 Supertab settings
-let g:SuperTabDefaultCompletionType = '<C-p>'
+" 4.7.1 Supertab settings
+let g:SuperTabDefaultCompletionType='<C-p>'
 
 " -----------------------------------------------------
-" 4.10 Scratch settings
+" 4.8 Scratch settings
 " -----------------------------------------------------
-let g:scratch_top = 0
+let g:scratch_top=0
+
+" -----------------------------------------------------
+" 4.9 Goyo settings
+" -----------------------------------------------------
+let g:goyo_width=120
+let g:goyo_margin_top=2
+let g:goyo_margin_bottom=2
 "}}}
 
 " ======================================================================================================================
@@ -547,7 +552,7 @@ let g:scratch_top = 0
 "{{{
 
 " CTRL-P and its extensions mapping
-let g:ctrlp_map = '<Leader>p'
+let g:ctrlp_map='<Leader>p'
 nnoremap <silent> <Leader>t :CtrlPBufTagAll<CR>
 nnoremap <silent> <Leader><Leader> :CtrlPBuffer<CR>
 nnoremap <silent> <Leader>c :CtrlPCmdPalette<CR>
@@ -592,13 +597,13 @@ nnoremap <leader>S :Scratch!<CR>
 
 " XTerm 256 colors
 if $TERM == 'xterm-256color' || 'screen-256color'
-    set t_Co=256
+  set t_Co=256
 endif
 
 " Color scheme changing based on time
 if strftime("%H") < 13
-  let g:molokai_original = 1
-  let g:rehash256 = 1
+  let g:molokai_original=1
+  let g:rehash256=1
   colorscheme molokai
   let g:airline_theme='tomorrow'
 else
@@ -648,7 +653,7 @@ autocmd BufWritePre * :FixWhitespace
 
 function! ShowToggles()
   echom "| <F1> NerdTree | <F2> Tagbar | <F3> Paste mode | <F4> Spellcheck | <F5> Source .rc | <F6> Edit .rc |" .
-        \"<F7> Whitechars | <F8> Syntastic | <F9> Rainbow() | <F12> This message |"
+        \"<F7> Whitechars | <F8> Syntastic | <F9> Rainbow() | <F10> Goyo mode | <F12> This message |"
 endfunction
 "}}}
 
