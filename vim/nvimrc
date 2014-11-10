@@ -195,7 +195,6 @@ set showmode                                " Always show mode
 set wildmenu                                " Better auto-complete of ex commands
 set textwidth=120                           " Text width is 120 chars
 set autoread                                " Automatically reload change files on disk
-set bg=dark                                 " Dark background setting (dark theme version of current color)
 set cursorline                              " Set default cursor line (highlighting is done by color scheme)
 set cmdheight=1                             " Command line height
 set pumheight=10                            " Completion window max size
@@ -215,7 +214,7 @@ set magic                                   " For regular expressions turn magic
 set showmatch                               " Show matching brackets when text indicator is over them
 set encoding=utf8                           " Set utf8 as standard encoding and en_US as the standard language
 set pastetoggle=<F3>                        " Toggle between paste and nopaste
-set list                                    " To display chars listed in listchars below
+set nolist                                  " Dont display whitechars by default (use F7)
 set spelllang=en_us                         " Set language to us English
 set backspace=indent,eol,start              " Set default behaviour of backspace
 set nostartofline                           " Prevent cursor from moving to beginning of line when switching buffers
@@ -588,14 +587,19 @@ if $TERM == 'xterm-256color' || 'screen-256color'
   set t_Co=256
 endif
 
+" Dark background as default
+set bg=dark
+
 " Color scheme changing based on time
-if strftime("%H") < 15
+if strftime("%H") < 12
+  colorscheme hybrid-light
+  let g:airline_theme='tomorrow'
+elseif strftime("%H") < 17
   let g:molokai_original=1
   let g:rehash256=1
   colorscheme molokai
   let g:airline_theme='tomorrow'
 else
-  let g:hybrid_use_Xresources=1
   colorscheme hybrid
   let g:airline_theme='bubblegum'
 endif

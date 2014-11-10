@@ -2,9 +2,18 @@
 # Rails
 # ===============================================
 # --------------------------------
-# Relations
+# Relations suffix - r
 # --------------------------------
-snippet bt belongs_to relation
+snippet btr belongs_to relation
 	belongs_to :${0}
-snippet hm has_many relation
+snippet hmr has_many relation
 	has_many :${0}
+# --------------------------------
+# Migrations suffix - m
+# --------------------------------
+snippet rcm remove_column migration
+	remove_column :${1:table_name}, :${0:column_name}
+snippet acm remove_column migration
+	add_column :${1:table_name}, :${2:column_name}, :${0:type}
+snippet ccm remove_column migration
+	change_column :${1:table_name}, :${2:new_column_name}, :${0:new_type}
