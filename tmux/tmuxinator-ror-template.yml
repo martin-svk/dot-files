@@ -15,7 +15,7 @@ windows:
   - editor:
       layout: 3b3a,273x66,0,0[273x53,0,0,0,273x12,0,54{166x12,0,54,1,106x12,167,54,2}]
       panes:
-        - vim Gemfile
+        - nvim Gemfile
         - bundle exec rails c
         - bundle exec guard
   - cmd:

@@ -170,5 +170,5 @@ if [ -d $HOME/lib/android-sdk-linux ]; then
 fi
 
 # Setting default editor
-export EDITOR='vim'
+export EDITOR='nvim'
 export MYNVIMRC='~/.nvimrc'
