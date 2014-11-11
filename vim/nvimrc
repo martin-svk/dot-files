@@ -591,10 +591,7 @@ endif
 set bg=dark
 
 " Color scheme changing based on time
-if strftime("%H") < 12
-  colorscheme hybrid-light
-  let g:airline_theme='tomorrow'
-elseif strftime("%H") < 17
+if strftime("%H") < 16
   let g:molokai_original=1
   let g:rehash256=1
   colorscheme molokai
