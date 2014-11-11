@@ -190,6 +190,7 @@ set shell=/bin/bash                         " Setting vim shell to bash
 set nocompatible                            " No compatible with vi mode
 set number                                  " Just line numbers
 set ignorecase                              " Don't ignore cases
+set smartcase                               " Make search case sensitive only if it contains uppercase letters
 set laststatus=2                            " Always show status line
 set showmode                                " Always show mode
 set wildmenu                                " Better auto-complete of ex commands
@@ -222,6 +223,7 @@ set virtualedit=block                       " To be able to select past EOL in v
 set nojoinspaces                            " No extra space when joining a line which ends with . ? !
 set startofline                             " When doing thing like gg or G, will move cursor to start of line
 set wrapscan                                " Search again from top when reached the bottom
+set showcmd                                 " Show incomplete commands
 
 " -----------------------------------------------------
 " 2.1 Intendation settings (2 spaces tabs)
