@@ -8,6 +8,10 @@ snippet def method definition
 	def ${1}
 		${0}
 	end
+snippet defi intialize definition
+	def initialize(${1})
+		${0}
+	end
 snippet cla class definition
 	class ${1}
 		${0}
@@ -54,3 +58,14 @@ snippet ifel if else construct
 	else
 		${0}
 	end
+# --------------------------------
+# Other
+# --------------------------------
+snippet req require
+	require '${0}'
+snippet reqr require relative
+	require_relative '${0}'
+snippet # hash rocket marker
+	# =>
+snippet ## hash rocket marker
+	# --------------------------------

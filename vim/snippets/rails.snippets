@@ -2,20 +2,20 @@
 # Rails
 # ===============================================
 # --------------------------------
-# Relations suffix - r
+# Relations suffix
 # --------------------------------
-snippet btr belongs_to relation
+snippet bt belongs_to relation
 	belongs_to :${0}
-snippet hmr has_many relation
+snippet hm has_many relation
 	has_many :${0}
 # --------------------------------
 # Migrations suffix - m
 # --------------------------------
-snippet rcm remove_column migration
+snippet rc remove_column migration
 	remove_column :${1:table_name}, :${0:column_name}
-snippet acm remove_column migration
+snippet ac remove_column migration
 	add_column :${1:table_name}, :${2:column_name}, :${0:type}
-snippet ccm remove_column migration
+snippet cc remove_column migration
 	change_column :${1:table_name}, :${2:new_column_name}, :${0:new_type}
-snippet aim add_index migration
+snippet ai add_index migration
 	add_index :${1:table_name}, :${0:column_name}
