@@ -126,18 +126,18 @@ Plug 'YankRing.vim'
 Plug 'tpope/vim-fugitive'
 " Git changes displayer
 Plug 'airblade/vim-gitgutter'
-" Gitk for vim
+" Gitk
 Plug 'gregsexton/gitv'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.7 External tools integration plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
-" AG search for vim (used in ctrl-p) (ag alias silversearcher must be installed)
+" AG search (used in ctrl-p) (ag alias silversearcher must be installed)
 Plug 'ervandew/ag'
 " Tmux basics tools (Twrite, ..)
 Plug 'tpope/vim-tbone'
-" Advanced search integrated to vim (using ag)
+" Advanced search
 Plug 'dyng/ctrlsf.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
@@ -188,7 +188,7 @@ call plug#end()
 " ======================================================================================================================
 "{{{
 
-set shell=/bin/bash                         " Setting vim shell to bash
+set shell=/bin/bash                         " Setting shell to bash
 set nocompatible                            " No compatible with vi mode
 set number                                  " Just line numbers
 set ignorecase                              " Don't ignore cases
@@ -339,7 +339,7 @@ nnoremap <Space> <nop>
 nnoremap Q <nop>
 
 " -----------------------------------------------------
-" 3.3 Vim default mappings tweaking and overriding
+" 3.3 Defaults overriding
 " -----------------------------------------------------
 
 " When jump to next match also center screen
@@ -350,11 +350,24 @@ noremap N Nzz
 noremap <c-d> <c-d>zz
 noremap <c-u> <c-u>zz
 
-" Remap VIM H and L (top, bottom of screen to left and right end of line)
+" Remap H and L (top, bottom of screen to left and right end of line)
 nnoremap H ^
 nnoremap L $
 vnoremap H ^
 vnoremap L $
+
+" More logical Y (defaul was alias for yy)
+nnoremap Y y$
+
+" Quick replay q macro
+nnoremap Q @q
+
+" -----------------------------------------------------
+" 3.4 Common task mappings
+" -----------------------------------------------------
+
+" Insert line break (opposite of J-join lines)
+nnoremap ,j i<CR><ESC>
 
 " Quick save and quit / buffer delete
 nnoremap ,w :w<CR>
@@ -369,25 +382,8 @@ nnoremap <C-j> ddp
 vnoremap <C-j> xp`[V`]
 vnoremap <C-k> xkP`[V`]
 
-" Easily copy and past to system clipboard
-vnoremap ,y "+y
-nnoremap ,y "+yy
-nnoremap ,p "+p
-nnoremap ,P "+P
-vnoremap ,p "+p
-vnoremap ,P "+P
-
 " Reformat whole file easily
 nnoremap <silent> ,f mzgg=G`z
-
-" More logical Y (defaul was alias for yy)
-nnoremap Y y$
-
-" Insert line break (opposite of J-join lines)
-nnoremap ,j i<CR><ESC>
-
-" Quick replay q macro
-nnoremap Q @q
 
 " Shortcuts for quiting and saving
 cmap ww wqall
@@ -404,7 +400,7 @@ cab W w
 cab Q q
 
 " -----------------------------------------------------
-" 3.4 Toggles setup
+" 3.5 Toggles setup
 " -----------------------------------------------------
 
 " Toggle nerdtree (file browser) panel
@@ -429,7 +425,7 @@ nnoremap <silent> <F10> :Goyo<CR>
 nnoremap <F12> :call ShowToggles()<CR>
 
 " -----------------------------------------------------
-" 3.5 Window management mappings
+" 3.6 Window management mappings
 " -----------------------------------------------------
 
 " Resizing using arrow keys
@@ -439,7 +435,7 @@ nnoremap <silent> <Up> :resize +1<CR>
 nnoremap <silent> <Down> :resize -1<CR>
 
 " -----------------------------------------------------
-" 3.6 Tabs and buffers mappings
+" 3.7 Tabs and buffers mappings
 " -----------------------------------------------------
 nnoremap + :bn<CR>
 nnoremap _ :bp<CR>
@@ -561,7 +557,7 @@ nnoremap <silent> <Leader>c :CtrlPCmdPalette<CR>
 " Yankring mapping
 nnoremap <silent> <Leader>y :YRShow<CR>
 
-" Surround vim shortcut for quotes toggle
+" Surround plugin shortcut for quotes toggle
 nmap cq cs"'
 nmap cQ cs'"
 
@@ -586,7 +582,7 @@ map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
-" Vim scratch mappings
+" Scratch mappings
 nnoremap <leader>s :Scratch<CR>
 nnoremap <leader>S :Scratch!<CR>
 "}}}
