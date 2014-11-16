@@ -373,6 +373,8 @@ nnoremap ,j i<CR><ESC>
 nnoremap ,w :w<CR>
 nnoremap <silent> ,q :q<CR>
 nnoremap <silent> ,d :bd<CR>
+nnoremap <silent> + :bn<CR>
+nnoremap <silent> _ :bp<CR>
 
 " Bubble single lines
 nnoremap <C-k> ddkP
@@ -433,12 +435,6 @@ nnoremap <silent> <Left> :vertical resize -1<CR>
 nnoremap <silent> <Right> :vertical resize +1<CR>
 nnoremap <silent> <Up> :resize +1<CR>
 nnoremap <silent> <Down> :resize -1<CR>
-
-" -----------------------------------------------------
-" 3.7 Tabs and buffers mappings
-" -----------------------------------------------------
-nnoremap + :bn<CR>
-nnoremap _ :bp<CR>
 "}}}
 
 " ======================================================================================================================
