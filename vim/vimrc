@@ -103,7 +103,7 @@ Plug 'kien/ctrlp.vim'
 " CtrlP extension to search in commands
 Plug 'fisadev/vim-ctrlp-cmdpalette'
 " Nerdtree file browser
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree'
 " Airline (improved status line)
 Plug 'bling/vim-airline'
 " Tags (methods, classes) display window
@@ -124,7 +124,7 @@ Plug 'YankRing.vim'
 
 " Git wrapper
 Plug 'tpope/vim-fugitive'
-" Git changes displayer
+" Git changes visualizer
 Plug 'airblade/vim-gitgutter'
 " Gitk
 Plug 'gregsexton/gitv'
@@ -133,12 +133,12 @@ Plug 'gregsexton/gitv'
 " 1.1.7 External tools integration plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
+" Advanced search
+Plug 'dyng/ctrlsf.vim'
 " AG search (used in ctrl-p) (ag alias silversearcher must be installed)
 Plug 'ervandew/ag'
 " Tmux basics tools (Twrite, ..)
 Plug 'tpope/vim-tbone'
-" Advanced search
-Plug 'dyng/ctrlsf.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.8 Text objects improving plugins
@@ -190,7 +190,7 @@ call plug#end()
 
 set shell=/bin/bash                         " Setting shell to bash
 set nocompatible                            " No compatible with vi mode
-set number                                  " Just line numbers
+set relativenumber                                  " Just line numbers
 set ignorecase                              " Don't ignore cases
 set smartcase                               " Make search case sensitive only if it contains uppercase letters
 set laststatus=2                            " Always show status line
@@ -385,7 +385,7 @@ vnoremap <C-j> xp`[V`]
 vnoremap <C-k> xkP`[V`]
 
 " Reformat whole file easily
-nnoremap <silent> ,f mzgg=G`z
+nnoremap <silent> ,r mzgg=G`z
 
 " Shortcuts for quiting and saving
 cmap ww wqall
@@ -408,7 +408,7 @@ cab Q q
 " Toggle nerdtree (file browser) panel
 nnoremap <silent> <F1> :NERDTreeToggle<CR>
 " Toggle tagbar (methods, classes, etc.) window
-nnoremap <silent> <F2> :TagbarToggle<CR>
+nnoremap <silent> <F2> :NERDTreeFind<CR>
 " Toggle spelling on and off
 nnoremap <silent> <F4> :set spell!<CR>
 " Source (reload) vimrc, so new setting will be applied
@@ -423,6 +423,8 @@ nnoremap <silent> <F8> :SyntasticToggleMode<CR>
 nnoremap <silent> <F9> :RainbowParenthesesToggle<CR>
 " Toggle Goyo mode
 nnoremap <silent> <F10> :Goyo<CR>
+" Toggle tagbar (methods, classes, etc.) window
+nnoremap <silent> <F11> :TagbarToggle<CR>
 " Echo out toggles legend on <F12>
 nnoremap <F12> :call ShowToggles()<CR>
 
@@ -544,7 +546,7 @@ let g:goyo_margin_bottom=2
 " ======================================================================================================================
 "{{{
 
-" CTRL-P and its extensions mapping
+" Ctrl-P and its extensions mapping
 let g:ctrlp_map='<Leader>p'
 nnoremap <silent> <Leader>t :CtrlPBufTagAll<CR>
 nnoremap <silent> <Leader><Leader> :CtrlPBuffer<CR>
@@ -581,6 +583,9 @@ map g/ <Plug>(incsearch-stay)
 " Scratch mappings
 nnoremap <leader>s :Scratch<CR>
 nnoremap <leader>S :Scratch!<CR>
+
+" CtrlSF search plugin mappings
+nnoremap ,s :CtrlSF
 "}}}
 
 " ======================================================================================================================
@@ -648,8 +653,8 @@ autocmd BufLeave * set nocursorline
 autocmd BufWritePre * :FixWhitespace
 
 function! ShowToggles()
-  echom "| <F1> NerdTree | <F2> Tagbar | <F3> Paste mode | <F4> Spellcheck | <F5> Source .rc | <F6> Edit .rc |" .
-        \"<F7> Whitechars | <F8> Syntastic | <F9> Rainbow() | <F10> Goyo mode | <F12> This message |"
+  echom "| <F1> NerdTree | <F2> NerdTreeFind | <F3> Paste mode | <F4> Spellcheck | <F5> Source .rc | <F6> Edit .rc |" .
+        \"<F7> Whitechars | <F8> Syntastic | <F9> Rainbow() | <F10> Goyo mode | <F11> Tagbar | <F12> This message |"
 endfunction
 "}}}
 
