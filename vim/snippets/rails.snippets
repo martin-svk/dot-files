@@ -4,18 +4,27 @@
 # --------------------------------
 # Relations suffix
 # --------------------------------
-snippet bt belongs_to relation
+snippet bt 'belongs_to relation'
 	belongs_to :${0}
-snippet hm has_many relation
+snippet hm 'has_many relation'
 	has_many :${0}
 # --------------------------------
-# Migrations suffix - m
+# Migrations suffix
 # --------------------------------
-snippet rc remove_column migration
+snippet rc 'remove_column migration'
 	remove_column :${1:table_name}, :${0:column_name}
-snippet ac remove_column migration
+snippet ac 'remove_column migration'
 	add_column :${1:table_name}, :${2:column_name}, :${0:type}
-snippet cc remove_column migration
+snippet cc 'remove_column migration'
 	change_column :${1:table_name}, :${2:new_column_name}, :${0:new_type}
-snippet ai add_index migration
+snippet ai 'add_index migration'
 	add_index :${1:table_name}, :${0:column_name}
+# --------------------------------
+# Tests
+# --------------------------------
+snippet ase 'assert_equal'
+	assert_equal ${1:expected}, ${0:actual}
+snippet test 'test block'
+	test '${1:test description}' do
+		${0}
+	end

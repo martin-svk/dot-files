@@ -363,8 +363,14 @@ nnoremap Q @q
 " 3.4 Common task mappings
 " -----------------------------------------------------
 
-" Insert line break (opposite of J-join lines)
-nnoremap ,j i<CR><ESC>
+" Omni-complete with IDE like ctrl space shortcut
+" Using C-@ because terminal interprets C-Space like that
+" http://stackoverflow.com/a/12344382
+inoremap <C-@> <C-x><C-o>
+
+" Quoting visually selected area with "
+" TODO: wrap to function and support multiline selections
+vnoremap " c''<ESC>hp
 
 " Quick save and quit / buffer delete
 nnoremap ,w :w<CR>
@@ -383,6 +389,9 @@ vnoremap <C-k> xkP`[V`]
 
 " Reformat whole file easily
 nnoremap <silent> ,r mzgg=G`z
+
+" Insert line break (opposite of J-join lines)
+nnoremap ,j i<CR><ESC>
 
 " Shortcuts for quiting and saving
 cmap ww wqall
