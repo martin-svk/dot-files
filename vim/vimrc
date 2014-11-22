@@ -227,6 +227,7 @@ set nojoinspaces                            " No extra space when joining a line
 set startofline                             " When doing thing like gg or G, will move cursor to start of line
 set wrapscan                                " Search again from top when reached the bottom
 set showcmd                                 " Show incomplete commands
+set scrolloff=5                             " Scroll when closing to top or bottom of the sceeen
 
 " -----------------------------------------------------
 " 2.1 Intendation settings (2 spaces tabs)
@@ -323,7 +324,8 @@ let mapleader="\<space>"
 let g:mapleader="\<space>"
 
 " -----------------------------------------------------
-" 3.2 Disabling arrow keys, space key, exmode enter with Q key
+" 3.2 Disabling arrow keys, space key, exmode enter
+" with Q key, help with F1
 " -----------------------------------------------------
 nnoremap <up> <nop>
 nnoremap <down> <nop>
@@ -336,6 +338,7 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 nnoremap <Space> <nop>
+nnoremap <F1> <nop>
 nnoremap Q <nop>
 
 " -----------------------------------------------------
@@ -366,8 +369,14 @@ nnoremap Q @q
 " 3.4 Common task mappings
 " -----------------------------------------------------
 
-" Insert line break (opposite of J-join lines)
-nnoremap ,j i<CR><ESC>
+" Omni-complete with IDE like ctrl space shortcut
+" Using C-@ because terminal interprets C-Space like that
+" http://stackoverflow.com/a/12344382
+inoremap <C-@> <C-x><C-o>
+
+" Quoting visually selected area with "
+" TODO: wrap to function and support multiline selections
+vnoremap " c''<ESC>hp
 
 " Quick save and quit / buffer delete
 nnoremap ,w :w<CR>
@@ -386,6 +395,9 @@ vnoremap <C-k> xkP`[V`]
 
 " Reformat whole file easily
 nnoremap <silent> ,r mzgg=G`z
+
+" Insert line break (opposite of J-join lines)
+nnoremap ,j i<CR><ESC>
 
 " Shortcuts for quiting and saving
 cmap ww wqall
@@ -519,7 +531,7 @@ let g:tagbar_type_ruby={
 " -----------------------------------------------------
 " 4.6 Yankring settings
 " -----------------------------------------------------
-let g:yankring_history_dir='/tmp/'
+let g:yankring_history_dir='/tmp'
 
 " -----------------------------------------------------
 " 4.7 Autocomplete setting
