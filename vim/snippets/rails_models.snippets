@@ -1,0 +1,22 @@
+# ===============================================
+# Active record models snippets
+# ===============================================
+# --------------------------------
+# Relations
+# --------------------------------
+snippet bt 'belongs_to relation'
+	belongs_to :${0}
+snippet hm 'has_many relation'
+	has_many :${0}
+# --------------------------------
+# Validations
+# --------------------------------
+snippet va 'validates'
+	validates :${0}
+snippet vap 'validates presence'
+	validates :${1}, presence: true
+# --------------------------------
+# Scopes
+# --------------------------------
+snippet scope 'scope with arguments'
+	scope :${1:name}, ->${2:(args)} { where(${3})}

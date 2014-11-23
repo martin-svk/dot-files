@@ -1,0 +1,12 @@
+# --------------------------------
+# Basics
+# --------------------------------
+snippet test 'test block'
+	test '${1:test description}' do
+		${0}
+	end
+# --------------------------------
+# Asserts
+# --------------------------------
+snippet ase 'assert_equal'
+	assert_equal ${1:expected}, ${0:actual}

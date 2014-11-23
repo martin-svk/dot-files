@@ -1,0 +1,11 @@
+# --------------------------------
+# Basics
+# --------------------------------
+snippet rc 'remove_column migration'
+	remove_column :${1:table_name}, :${0:column_name}
+snippet ac 'remove_column migration'
+	add_column :${1:table_name}, :${2:column_name}, :${0:type}
+snippet cc 'remove_column migration'
+	change_column :${1:table_name}, :${2:new_column_name}, :${0:new_type}
+snippet ai 'add_index migration'
+	add_index :${1:table_name}, :${0:column_name}

@@ -371,9 +371,9 @@ nnoremap Q @q
 " http://stackoverflow.com/a/12344382
 inoremap <C-@> <C-x><C-o>
 
-" Quoting visually selected area with "
+" Quoting visually selected area with '
 " TODO: wrap to function and support multiline selections
-vnoremap " c''<ESC>hp
+vnoremap ' c''<ESC>hp
 
 " Quick save and quit / buffer delete
 nnoremap ,w :w<CR>
@@ -531,19 +531,22 @@ let g:tagbar_type_ruby={
 let g:yankring_history_dir='/tmp'
 
 " -----------------------------------------------------
-" 4.7 Autocomplete setting
+" 4.7 Supertab
 " -----------------------------------------------------
-
-" 4.7.1 Supertab
 let g:SuperTabDefaultCompletionType='<C-p>'
 
 " -----------------------------------------------------
-" 4.8 Scratch
+" 4.7 Snipmate
+" -----------------------------------------------------
+imap <C-J> <Plug>snipMateTrigger
+
+" -----------------------------------------------------
+" 4.9 Scratch
 " -----------------------------------------------------
 let g:scratch_top=0
 
 " -----------------------------------------------------
-" 4.9 Goyo
+" 4.10 Goyo
 " -----------------------------------------------------
 let g:goyo_width=120
 let g:goyo_margin_top=2
@@ -594,6 +597,9 @@ nnoremap <leader>S :Scratch!<CR>
 
 " CtrlSF search plugin
 nnoremap ,s :CtrlSF
+
+" Change hash syntax (overriding default vim behaviour)
+nnoremap ch :ChangeHashSyntax<CR>
 "}}}
 
 " ======================================================================================================================
