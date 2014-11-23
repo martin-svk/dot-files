@@ -457,7 +457,7 @@ nnoremap <silent> <Down> :resize -1<CR>
 "{{{
 
 " -----------------------------------------------------
-" 4.1 Airline (status line) settings
+" 4.1 Airline (status line)
 " -----------------------------------------------------
 let g:airline#extensions#tabline#left_sep=' '
 let g:airline#extensions#tabline#enabled=1
@@ -473,7 +473,7 @@ let NERDTreeDirArrows=1
 let g:NERDTreeWinSize=40
 
 " -----------------------------------------------------
-" 4.3 CTRL-P (fuzzy searcher) settings
+" 4.3 CTRL-P (fuzzy searcher)
 " -----------------------------------------------------
 let g:ctrlp_match_window='bottom,order:ttb,min:1,max:10,results:10'
 let g:ctrlp_cmd='CtrlP'
@@ -496,7 +496,7 @@ else
 endif
 
 " -----------------------------------------------------
-" 4.4 Syntastic (syntax checker) settings
+" 4.4 Syntastic (syntax checker)
 " -----------------------------------------------------
 let g:syntastic_ruby_checkers=['mri']
 " mark syntax errors with :signs
@@ -515,7 +515,7 @@ let g:syntastic_mode_map={ 'mode': 'passive', 'active_filetypes': [],'passive_fi
 let g:loaded_syntastic_css_csslint_checker=0
 
 " -----------------------------------------------------
-" 4.5 Tagbar (methods, classes, etc. browser) settings
+" 4.5 Tagbar (methods, classes, etc. browser)
 " -----------------------------------------------------
 let g:tagbar_type_ruby={
       \ 'kinds' : [
@@ -529,7 +529,7 @@ let g:tagbar_type_ruby={
       \ }
 
 " -----------------------------------------------------
-" 4.6 Yankring settings
+" 4.6 Yankring
 " -----------------------------------------------------
 let g:yankring_history_dir='/tmp'
 
@@ -537,16 +537,16 @@ let g:yankring_history_dir='/tmp'
 " 4.7 Autocomplete setting
 " -----------------------------------------------------
 
-" 4.7.1 Supertab settings
+" 4.7.1 Supertab
 let g:SuperTabDefaultCompletionType='<C-p>'
 
 " -----------------------------------------------------
-" 4.8 Scratch settings
+" 4.8 Scratch
 " -----------------------------------------------------
 let g:scratch_top=0
 
 " -----------------------------------------------------
-" 4.9 Goyo settings
+" 4.9 Goyo
 " -----------------------------------------------------
 let g:goyo_width=120
 let g:goyo_margin_top=2
@@ -571,12 +571,12 @@ nnoremap <silent> <Leader>y :YRShow<CR>
 nmap cq cs"'
 nmap cQ cs'"
 
-" Expand region mappings
+" Expand region
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
 " Ruby eval mapping
-nnoremap <silent> ,e :RubyEval<CR>
+nnoremap <silent> ,r :RubyEval<CR>
 
 " Camel case motion mapping (replace default w b e)
 map <silent> w <Plug>CamelCaseMotion_w
@@ -587,16 +587,16 @@ sunmap w
 sunmap b
 sunmap e
 
-" Improved incremental search mappings
+" Improved incremental search
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
-" Scratch mappings
+" Scratch
 nnoremap <leader>s :Scratch<CR>
 nnoremap <leader>S :Scratch!<CR>
 
-" CtrlSF search plugin mappings
+" CtrlSF search plugin
 nnoremap ,s :CtrlSF
 "}}}
 
@@ -627,7 +627,7 @@ endif
 " Color column
 let &colorcolumn=121
 
-" Git gutter settings (signcolumn color)
+" Git gutter (signcolumn color)
 highlight clear SignColumn
 
 " Remove underline in folded lines
