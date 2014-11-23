@@ -131,7 +131,8 @@ alias ssredis='sudo service redis-server start'
 # Applications
 # ------------------------------------------
 alias g='git'
-alias v='vim -X'
+alias v='vim'
+alias vx='vim -X'
 alias n='nvim'
 alias rb='ruby'
 alias be='bundle exec'
