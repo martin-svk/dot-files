@@ -2,14 +2,19 @@
 # Rails
 # ===============================================
 # --------------------------------
-# Relations suffix
+# Relations
 # --------------------------------
 snippet bt 'belongs_to relation'
 	belongs_to :${0}
 snippet hm 'has_many relation'
 	has_many :${0}
 # --------------------------------
-# Migrations suffix
+# Validations
+# --------------------------------
+snippet vap 'validates presence'
+	validates :${1}, presence: true${0}
+# --------------------------------
+# Migrations
 # --------------------------------
 snippet rc 'remove_column migration'
 	remove_column :${1:table_name}, :${0:column_name}
