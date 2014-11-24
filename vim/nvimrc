@@ -23,21 +23,14 @@ call plug#begin('~/.nvim/plugged')
 " -----------------------------------------------------
 " 1.1.1.1 Universal
 " -----------------------------------------------------
-"{{{
 " Most common languages support (syntax, indenting, etc. ) for ruby, js, etc.
 Plug 'sheerun/vim-polyglot'
 " Needs linters to be installed to work properly (see https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers)
 Plug 'scrooloose/syntastic', { 'for': ['java', 'ruby', 'eruby', 'coffee', 'javascript', 'html'] }
-" Snipmate stype snippets support
-Plug 'garbas/vim-snipmate'
-" Camel case motion
-Plug 'bkad/CamelCaseMotion'
-"}}}
 
 " -----------------------------------------------------
 " 1.1.1.2 Ruby/Rails
 " -----------------------------------------------------
-"{{{
 " Rails navigation, etc. plugin (f.e. :Rmigration)
 Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby'] }
 " Automatically inserts 'end' wisely
@@ -52,19 +45,16 @@ Plug 'ck3g/vim-change-hash-syntax', { 'for': ['ruby', 'eruby'] }
 Plug 'ecomba/vim-ruby-refactoring', { 'for': ['ruby', 'eruby'] }
 " Ruby best practices checker
 Plug 'ngmy/vim-rubocop', { 'for': ['ruby', 'eruby'] }
-"}}}
 
 " -----------------------------------------------------
 " 1.1.1.3 HTML/CSS/JS
 " -----------------------------------------------------
-"{{{
 " CSS color highlighter
 Plug 'ap/vim-css-color', { 'for': ['css', 'sass', 'less'] }
 " JS libs syntax files, ember, angular, etc.
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffee'] }
 " Sparkup, emmet alternative (<C-e> to expand expression)
 Plug 'rstacruz/sparkup', { 'for': ['html', 'xhtml']}
-"}}}
 
 " -----------------------------------------------------
 " 1.1.1.4 Android
@@ -76,79 +66,65 @@ Plug 'hsanson/vim-android', { 'for': 'java' }
 " 1.1.2 Motion/code navigation improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
+" Camel case motion
+Plug 'bkad/CamelCaseMotion'
 " Seek, easy motion for long lines
 Plug 'goldfeld/vim-seek'
-" Multiple cursors feature
-Plug 'terryma/vim-multiple-cursors'
 " Improved incremental search
 Plug 'haya14busa/incsearch.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 1.1.3 Editing improving plugins
+" 1.1.3 Text insertion improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
+" Snipmate stype snippets support
+Plug 'garbas/vim-snipmate'
+" Multiple cursors feature
+Plug 'terryma/vim-multiple-cursors'
+" Supertab (autocomplete) plugin
+Plug 'ervandew/supertab'
 " Auto-closing brackets and quotes
 Plug 'Raimondi/delimitMate'
-" Change surroundings characters
-Plug 'tpope/vim-surround'
-" Trailing spaces deleter (:FixWhitespaces)
-Plug 'bronson/vim-trailing-whitespace'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.4 Interface improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Fuzzy file, buffer, MRU finder
-Plug 'kien/ctrlp.vim'
+" Unite (Files, Buffers, Commands, etc. fuzzy searcher)
+Plug 'Shougo/unite.vim'
 " Nerdtree file browser
 Plug 'scrooloose/nerdtree'
 " Airline (improved status line)
 Plug 'bling/vim-airline'
 " Tags (methods, classes) display window
 Plug 'majutsushi/tagbar'
+" Distraction free editing
+Plug 'junegunn/goyo.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 1.1.5 Internals improving plugins
-" ---------------------------------------------------------------------------------------------------------------------
-
-" Supertab plugin
-Plug 'ervandew/supertab'
-" YANK history management
-Plug 'YankRing.vim'
-
-" ---------------------------------------------------------------------------------------------------------------------
-" 1.1.6 Git/Github support plugins
+" 1.1.5 Git/Github support plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Git wrapper
 Plug 'tpope/vim-fugitive'
 " Git changes visualizer
 Plug 'airblade/vim-gitgutter'
-" Gitk
+" Gitk for vim
 Plug 'gregsexton/gitv'
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 1.1.7 External tools integration plugins
-" ---------------------------------------------------------------------------------------------------------------------
-
-" Advanced search
-Plug 'dyng/ctrlsf.vim'
-" AG search (used in ctrl-p) (ag alias silversearcher must be installed)
-Plug 'ervandew/ag'
-" Tmux basics tools (Twrite, ..)
-Plug 'tpope/vim-tbone'
-
-" ---------------------------------------------------------------------------------------------------------------------
-" 1.1.8 Text objects improving plugins
+" 1.1.6 Text objects improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 "
 " Matchit better textobj support
 Plug 'tmhedberg/matchit'
+" Change surroundings characters
+Plug 'tpope/vim-surround'
 " Expanding region selection
 Plug 'terryma/vim-expand-region'
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 1.1.9 Color-scheme plugins
+" 1.1.7 Color-scheme plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Molokai theme
@@ -159,21 +135,15 @@ Plug 'w0ng/vim-hybrid'
 Plug 'vim-scripts/CSApprox'
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 1.1.10 Other plugins
+" 1.1.8 Dependencies
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Rainbow parenthesis
-Plug 'kien/rainbow_parentheses.vim'
-" Benchmark vimrc
-Plug 'mattn/benchvimrc-vim', { 'on': 'BenchVimrc' }
+" Async processing (for Unite) (make after checkout)
+Plug 'Shougo/vimproc.vim'
 " Dependency for vim-snipmate
 Plug 'marcweber/vim-addon-mw-utils'
 " Dependency for vim-snipmate
 Plug 'tomtom/tlib_vim'
-" Scratch buffer to prototype
-Plug 'mtth/scratch.vim'
-" Distraction free editing
-Plug 'junegunn/goyo.vim'
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " 1.2 End of plugin declaration
@@ -188,7 +158,7 @@ call plug#end()
 
 set shell=/bin/bash                         " Setting shell to bash
 set nocompatible                            " No compatible with vi mode
-set relativenumber                                  " Just line numbers
+set relativenumber                          " Relativeline numbers
 set ignorecase                              " Don't ignore cases
 set smartcase                               " Make search case sensitive only if it contains uppercase letters
 set laststatus=2                            " Always show status line
@@ -218,6 +188,7 @@ set pastetoggle=<F3>                        " Toggle between paste and nopaste
 set nolist                                  " Dont display whitechars by default (use F7)
 set spelllang=en_us                         " Set language to us English
 set backspace=indent,eol,start              " Set default behaviour of backspace
+set spellfile=~/.vim/dictionary.utf-8.add   " Use this file for spell checking
 set nostartofline                           " Prevent cursor from moving to beginning of line when switching buffers
 set virtualedit=block                       " To be able to select past EOL in visual block mode
 set nojoinspaces                            " No extra space when joining a line which ends with . ? !
@@ -366,15 +337,6 @@ nnoremap Q @q
 " 3.4 Common task mappings
 " -----------------------------------------------------
 
-" Omni-complete with IDE like ctrl space shortcut
-" Using C-@ because terminal interprets C-Space like that
-" http://stackoverflow.com/a/12344382
-inoremap <C-@> <C-x><C-o>
-
-" Quoting visually selected area with '
-" TODO: wrap to function and support multiline selections
-vnoremap ' c''<ESC>hp
-
 " Quick save and quit / buffer delete
 nnoremap ,w :w<CR>
 nnoremap <silent> ,q :q<CR>
@@ -395,6 +357,10 @@ nnoremap <silent> ,r mzgg=G`z
 
 " Insert line break (opposite of J-join lines)
 nnoremap ,j i<CR><ESC>
+
+" Quoting visually selected area with "
+" TODO: wrap to function and support multiline selections
+vnoremap " c''<ESC>hp
 
 " Shortcuts for quiting and saving
 cmap ww wqall
@@ -470,27 +436,34 @@ let NERDTreeDirArrows=1
 let g:NERDTreeWinSize=40
 
 " -----------------------------------------------------
-" 4.3 CTRL-P (fuzzy searcher)
+" 4.3 Unite
 " -----------------------------------------------------
-let g:ctrlp_match_window='bottom,order:ttb,min:1,max:10,results:10'
-let g:ctrlp_cmd='CtrlP'
 
-if exists("g:ctrlp_user_command")
-  unlet g:ctrlp_user_command
-endif
+" Matcher settings
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#filters#sorter_default#use(['sorter_rank'])
+call unite#custom#source('file_rec/async','sorters','sorter_rank')
 
+" Track yank history
+let g:unite_source_history_yank_enable=1
+
+" Use ag if available
 if executable('ag')
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command =
-        \ 'ag %s --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching=0
-else
-  " Fall back to using git ls-files if Ag is not available
-  let g:ctrlp_custom_ignore='\.git$\|\.hg$\|\.svn$'
-  let g:ctrlp_user_command=['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
+  let g:unite_source_grep_command='ag'
+  let g:unite_source_grep_default_opts='--nocolor --line-numbers --nogroup -S -C4'
+  let g:unite_source_grep_recursive_opt=''
+  " Ignore vcs files
+  let g:unite_source_rec_async_command='ag --nocolor --nogroup --ignore ".hg" --ignore ".svn" --ignore ".git" --ignore ".bzr" --hidden -g ""'
 endif
+
+" Ignore wildignore files
+call unite#custom#source('file_rec', 'ignore_globs', split(&wildignore, ','))
+
+" Custom profile
+call unite#custom#profile('default', 'context', {
+\   'prompt': '» ',
+\   'winheight': 15,
+\ })
 
 " -----------------------------------------------------
 " 4.4 Syntastic (syntax checker)
@@ -526,27 +499,12 @@ let g:tagbar_type_ruby={
       \ }
 
 " -----------------------------------------------------
-" 4.6 Yankring
-" -----------------------------------------------------
-let g:yankring_history_dir='/tmp'
-
-" -----------------------------------------------------
 " 4.7 Supertab
 " -----------------------------------------------------
 let g:SuperTabDefaultCompletionType='<C-p>'
 
 " -----------------------------------------------------
-" 4.7 Snipmate
-" -----------------------------------------------------
-imap <C-J> <Plug>snipMateTrigger
-
-" -----------------------------------------------------
-" 4.9 Scratch
-" -----------------------------------------------------
-let g:scratch_top=0
-
-" -----------------------------------------------------
-" 4.10 Goyo
+" 4.8 Goyo
 " -----------------------------------------------------
 let g:goyo_width=120
 let g:goyo_margin_top=2
@@ -557,56 +515,78 @@ let g:goyo_margin_bottom=2
 " 5.0 Plugin mappings
 " ======================================================================================================================
 "{{{
+" -----------------------------------------------------
+" 5.1 Unite and extensions
+" -----------------------------------------------------
 
-" Ctrl-P and its extensions mapping
-let g:ctrlp_map='<Leader>p'
-nnoremap <silent> <Leader>t :CtrlPBufTagAll<CR>
-nnoremap <silent> <Leader><Leader> :CtrlPBuffer<CR>
+" Custom mappings for the unite buffer
+autocmd FileType unite call s:unite_settings()
+function! s:unite_settings()
+  " Play nice with supertab
+  let b:SuperTabDisabled=1
+  " Enable navigation with control-j and control-k in insert mode
+  imap <silent> <buffer> <C-j> <Plug>(unite_select_next_line)
+  imap <silent> <buffer> <C-k> <Plug>(unite_select_previous_line)
+  " Runs 'splits' action by <C-s> and <C-v>
+  imap <silent> <buffer> <expr> <C-s> unite#do_action('split')
+  imap <silent> <buffer> <expr> <C-v> unite#do_action('vsplit')
+  " Exit with escape
+  nmap <buffer> <ESC> <Plug>(unite_exit)
+endfunction
 
-" Yankring mapping
-nnoremap <silent> <Leader>y :YRShow<CR>
+" Search in buffer
+nnoremap <silent> <leader><leader> :<C-u>Unite -no-split -buffer-name=buffers buffer<CR>
+" Search in cwd files recursively
+nnoremap <silent> <leader>o :<C-u>UniteWithCurrentDir -no-split -buffer-name=files -start-insert file_rec/async:!<CR>
+" Search for term in cwd file
+nnoremap <silent> <leader>/ :<C-u>Unite grep:.<CR>
+" Search in commands
+nnoremap <silent> <leader>c :<C-u>Unite -start-insert command<CR>
+" Search in defined mappings
+nnoremap <silent> <leader>m :<C-u>Unite -start-insert mapping<CR>
+" Search in yank history
+nnoremap <silent> <leader>y :<C-u>Unite -no-split -buffer-name=yank-history history/yank<CR>
 
-" Surround plugin shortcut for quotes toggle
+" -----------------------------------------------------
+" 5.2 Surround shortcut for quotes changing
+" -----------------------------------------------------
 nmap cq cs"'
 nmap cQ cs'"
 
-" Expand region
+" -----------------------------------------------------
+" 5.3 Expand region
+" -----------------------------------------------------
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
-" Ruby eval mapping (dont work in neovim)
-"nnoremap <silent> ,r :RubyEval<CR>
+" -----------------------------------------------------
+" 5.4 Ruby eval
+" -----------------------------------------------------
+nnoremap <silent> ,r :RubyEval<CR>
 
-" Camel case motion mapping (replace default w b e)
+" -----------------------------------------------------
+" 5.5 Camel case motion mapping (replace default w b e)
+" -----------------------------------------------------
 map <silent> w <Plug>CamelCaseMotion_w
 map <silent> b <Plug>CamelCaseMotion_b
 map <silent> e <Plug>CamelCaseMotion_e
-" Unmap to not conflict
+" Unmap old to not conflict
 sunmap w
 sunmap b
 sunmap e
 
-" Improved incremental search
+" -----------------------------------------------------
+" 5.6 Improved incremental search
+" -----------------------------------------------------
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
-
-" Scratch
-nnoremap <leader>s :Scratch<CR>
-nnoremap <leader>S :Scratch!<CR>
-
-" CtrlSF search plugin
-nnoremap ,s :CtrlSF
-
-" Change hash syntax (overriding default vim behaviour)
-nnoremap ch :ChangeHashSyntax<CR>
 "}}}
 
 " ======================================================================================================================
 " 6.0 Color and highlighting settings
 " ======================================================================================================================
 "{{{
-
 " XTerm 256 colors
 if $TERM == 'xterm-256color' || 'screen-256color'
   set t_Co=256
@@ -640,7 +620,6 @@ hi Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE
 " 7.0 Filetype specific settings
 " ======================================================================================================================
 "{{{
-
 autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType php setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
@@ -655,7 +634,6 @@ autocmd FileType vim setlocal keywordprg=:help
 " 8.0 Custom functions and autocommands
 " ======================================================================================================================
 "{{{
-
 " Close vim if the last open window is nerdtree
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
@@ -663,88 +641,19 @@ autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 autocmd BufEnter * set cursorline
 autocmd BufLeave * set nocursorline
 
-" Fix whitespaces automatically before save
-autocmd BufWritePre * :FixWhitespace
+" Remove trailing whitespaces automatically before save
+autocmd BufWritePre * :%s/\s\+$//e
 
 function! ShowToggles()
   echom "| <F1> NerdTree | <F2> NerdTreeFind | <F3> Paste mode | <F4> Spellcheck | <F5> Source .rc | <F6> Edit .rc |" .
         \"<F7> Whitechars | <F8> Syntastic | <F9> Rainbow() | <F10> Goyo mode | <F11> Tagbar | <F12> This message |"
 endfunction
 "}}}
-
-" ######################################################################################################################
-" ### END OF VIMRC                                                                                                   ###
-" ######################################################################################################################
+" ======================================================================================================================
+" TODO LIST:
+" ======================================================================================================================
 "{{{
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-" HELP SECTION:
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 "
-" ---------------------------------------------------
-" Section 1.0 The Basics
-" ---------------------------------------------------
+" 1. Really start writing this vimrc help file on github.
 "
-" This vimrc is intended and best suited for ruby/rails development.
-" Because of that, settings like 2 space intendation are used.
-"
-" Section 1.y - Toggles (on/off)
-" ------------------------------
-"
-" F1 - Nerdtree (file browser)
-" F2 - Tagbar (tag browser)
-" F3 - Paste mode (useful when copying large code blocks)
-" F4 - Spell checking
-" F5 - Reload vimrc (source $MYVIMRC)
-" F6 - Open my vimrc in new tab (edit $MYVIMRC)
-" F7 - Gundo (undo tree)
-" F8 - Syntax checking (using syntastic plugin)
-" F12 - Rainbow paranthesis
-"
-" ---------------------------------------------------
-" # Section 2. - Files navigation
-" ---------------------------------------------------
-"
-"
-" ---------------------------------------------------
-" # Section 3. - Code navigation
-" ---------------------------------------------------
-"
-"
-" ---------------------------------------------------
-" # Section 4. - Code manipulation
-" ---------------------------------------------------
-"
-" Section 4.1 Multiple cursors:
-" ------------------------------
-"
-" Using default keybindings:
-"   let g:multi_cursor_next_key='<C-n>'
-"   let g:multi_cursor_prev_key='<C-p>'
-"   let g:multi_cursor_skip_key='<C-x>'
-"   let g:multi_cursor_quit_key='<Esc>'
-"
-"
-" ---------------------------------------------------
-" # Section 5. - Look and feel
-" ---------------------------------------------------
-"
-"
-" ---------------------------------------------------
-" # Section 6. - Other tweaks
-" ---------------------------------------------------
-"
-"
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-" END OF HELP:
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-" ======================================================================================================================
-" TODO SECTION:
-" ======================================================================================================================
-"
-" 1. Really start writing this vimrc help file.
-"
-" ======================================================================================================================
-" END OF TODO:
-" ======================================================================================================================
 "}}}
