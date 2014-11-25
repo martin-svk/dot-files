@@ -37,8 +37,8 @@ Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby'] }
 Plug 'tpope/vim-endwise', { 'for': ['ruby', 'eruby'] }
 " Splitting and joining multiple lines ruby constructs
 Plug 'AndrewRadev/splitjoin.vim', { 'for': ['ruby', 'eruby'] }
-" Ruby eval plugin (need gem rcodetools)
-Plug 't9md/vim-ruby-xmpfilter', { 'for': ['ruby', 'eruby'] }
+" Ruby eval plugin
+Plug 'kmdsbng/vim-ruby-eval', { 'for': ['ruby', 'eruby'] }
 " Change between ruby 1.9 and 1.8 hash syntax
 Plug 'ck3g/vim-change-hash-syntax', { 'for': ['ruby', 'eruby'] }
 " Refactoring tools
@@ -565,7 +565,7 @@ vmap <C-v> <Plug>(expand_region_shrink)
 " -----------------------------------------------------
 " 5.4 Ruby eval
 " -----------------------------------------------------
-nmap <silent> ,r <Plug>(xmpfilter-run)
+nmap <silent> ,r :<C-u>RubyEval<CR>
 
 " -----------------------------------------------------
 " 5.5 Camel case motion mapping (replace default w b e)
