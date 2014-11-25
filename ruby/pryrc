@@ -1,5 +1,5 @@
 # === EDITOR ===
-Pry.config.editor = 'nvim'
+Pry.config.editor = 'vim -X'
 
 # == Pry-Nav - Using pry as a debugger ==
 Pry.commands.alias_command 'c', 'continue' rescue nil

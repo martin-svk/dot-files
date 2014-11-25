@@ -131,8 +131,7 @@ alias ssredis='sudo service redis-server start'
 # Applications
 # ------------------------------------------
 alias g='git'
-alias v='vim'
-alias vx='vim -X'
+alias v='vim -X'
 alias n='nvim'
 alias rb='ruby'
 alias be='bundle exec'
@@ -178,5 +177,5 @@ if [ -d $HOME/.linuxbrew ]; then
 fi
 
 # Setting default editor
-export EDITOR='nvim'
+export EDITOR='vim -X'
 export MYNVIMRC='~/.nvimrc'
