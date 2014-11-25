@@ -170,6 +170,13 @@ if [ -d $HOME/lib/android-sdk-linux ]; then
   fi
 fi
 
+# Add linuxbrew to path if exists
+if [ -d $HOME/.linuxbrew ]; then
+  export PATH="$HOME/.linuxbrew/bin:$PATH"
+  export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+  export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+fi
+
 # Setting default editor
 export EDITOR='nvim'
 export MYNVIMRC='~/.nvimrc'
