@@ -538,11 +538,9 @@ function! s:unite_settings()
 endfunction
 
 " Search in buffer
-nnoremap <silent> <leader><leader> :<C-u>Unite -no-split -buffer-name=buffers -quick-match buffer<CR>
+nnoremap <silent> <leader><leader> :<C-u>Unite -no-split -buffer-name=buffers -start-insert buffer<CR>
 " Search in cwd files recursively
 nnoremap <silent> <leader>o :<C-u>UniteWithProjectDir -no-split -buffer-name=project-files -start-insert file_rec/async:!<CR>
-" Search in all files recursively (in separate window)
-nnoremap <silent> <leader>f :<C-u>Unite -buffer-name=files -start-insert file_rec/async:!<CR>
 " Search for term in cwd file
 nnoremap <silent> <leader>/ :<C-u>Unite grep:.<CR>
 " Search in commands
@@ -550,7 +548,7 @@ nnoremap <silent> <leader>c :<C-u>Unite -start-insert command<CR>
 " Search in defined mappings
 nnoremap <silent> <leader>m :<C-u>Unite -start-insert mapping<CR>
 " Search in yank history
-nnoremap <silent> <leader>y :<C-u>Unite -no-split -buffer-name=yank-history -quick-match history/yank<CR>
+nnoremap <silent> <leader>y :<C-u>Unite -buffer-name=yank-history -quick-match history/yank<CR>
 
 " -----------------------------------------------------
 " 5.2 Surround shortcut for quotes changing
