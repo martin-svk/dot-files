@@ -27,6 +27,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'sheerun/vim-polyglot'
 " Needs linters to be installed to work properly (see https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers)
 Plug 'scrooloose/syntastic', { 'for': ['java', 'ruby', 'eruby', 'coffee', 'javascript', 'html'] }
+" Snipmate snippets support
+Plug 'garbas/vim-snipmate'
 
 " -----------------------------------------------------
 " 1.1.1.2 Ruby/Rails
@@ -77,8 +79,6 @@ Plug 'haya14busa/incsearch.vim'
 " 1.1.3 Text insertion improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Snipmate stype snippets support
-Plug 'garbas/vim-snipmate'
 " Multiple cursors feature
 Plug 'terryma/vim-multiple-cursors'
 " Supertab (autocomplete) plugin
@@ -535,10 +535,13 @@ function! s:unite_settings()
   imap <silent> <buffer> <expr> <C-v> unite#do_action('vsplit')
   " Exit with escape
   nmap <buffer> <ESC> <Plug>(unite_exit)
+  " Mark candidates
+  vmap <buffer> m <Plug>(unite_toggle_mark_selected_candidates)
+  nmap <buffer> m <Plug>(unite_toggle_mark_current_candidate)
 endfunction
 
 " Search in buffer
-nnoremap <silent> <leader><leader> :<C-u>Unite -no-split -buffer-name=buffers -start-insert buffer<CR>
+nnoremap <silent> <leader><leader> :<C-u>Unite -no-split -buffer-name=buffers buffer<CR>
 " Search in cwd files recursively
 nnoremap <silent> <leader>o :<C-u>UniteWithProjectDir -no-split -buffer-name=project-files -start-insert file_rec/async:!<CR>
 " Search for term in cwd file
