@@ -1,70 +1,10 @@
-# ===============================================
-# Ruby
-# ===============================================
-# --------------------------------
-# Methods, modules, declarations
-# --------------------------------
-snippet def method definition
-	def ${1}
-		${0}
-	end
-snippet defi intialize definition
-	def initialize(${1})
-		${0}
-	end
-snippet cla class definition
-	class ${1}
-		${0}
-	end
-snippet dcl derived class definition
-	class ${1} < ${2}
-		${0}
-	end
-snippet mod module definition
-	module ${1}
-		${0}
-	end
-# --------------------------------
-# Blocks
-# --------------------------------
-snippet do do block
-	do |${1}|
-		${0}
-	end
-snippet each each block
-	each do |${1}|
-		${0}
-	end
-snippet map map block
-	map(&:${1})${0}
-# --------------------------------
-# If, while, unless
-# --------------------------------
-snippet if if construct
-	if ${1}
-		${0}
-	end
-snippet ife if else construct
-	if ${1}
-		${2}
-	else
-		${0}
-	end
-snippet ifel if else construct
-	if ${1}
-		${2}
-	elsif ${3}
-		${4}
-	else
-		${0}
-	end
 # --------------------------------
 # Other
 # --------------------------------
 snippet req require
 	require '${0}'
-snippet reqr require relative
-	require_relative '${0}'
+snippet LP Load path
+	$LOAD_PATH.unshift(File.expand_path("${1:..}", __FILE__))
 snippet # hash rocket marker
 	# =>
 snippet ## comment line separator
