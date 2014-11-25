@@ -185,7 +185,7 @@ set magic                                   " For regular expressions turn magic
 set showmatch                               " Show matching brackets when text indicator is over them
 set encoding=utf8                           " Set utf8 as standard encoding and en_US as the standard language
 set pastetoggle=<F3>                        " Toggle between paste and nopaste
-set nolist                                  " Dont display whitechars by default (use F7)
+set list                                    " Display whitechars by default (use F7)
 set spelllang=en_us                         " Set language to us English
 set backspace=indent,eol,start              " Set default behaviour of backspace
 set spellfile=~/.vim/dictionary.utf-8.add   " Use this file for spell checking
@@ -353,7 +353,7 @@ vnoremap <C-j> xp`[V`]
 vnoremap <C-k> xkP`[V`]
 
 " Reformat whole file easily
-nnoremap <silent> ,r mzgg=G`z
+nnoremap <silent> ,f mzgg=G`z
 
 " Insert line break (opposite of J-join lines)
 nnoremap ,j i<CR><ESC>
@@ -434,6 +434,9 @@ let g:airline_exclude_preview=1
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
 let g:NERDTreeWinSize=40
+
+" 4.2.1 NerdTree buffer settings
+autocmd FileType nerdtree set nolist
 
 " -----------------------------------------------------
 " 4.3 Unite
@@ -535,9 +538,11 @@ function! s:unite_settings()
 endfunction
 
 " Search in buffer
-nnoremap <silent> <leader><leader> :<C-u>Unite -no-split -buffer-name=buffers buffer<CR>
+nnoremap <silent> <leader><leader> :<C-u>Unite -no-split -buffer-name=buffers -quick-match buffer<CR>
 " Search in cwd files recursively
-nnoremap <silent> <leader>o :<C-u>UniteWithCurrentDir -no-split -buffer-name=files -start-insert file_rec/async:!<CR>
+nnoremap <silent> <leader>o :<C-u>UniteWithProjectDir -no-split -buffer-name=project-files -start-insert file_rec/async:!<CR>
+" Search in all files recursively (in separate window)
+nnoremap <silent> <leader>f :<C-u>Unite -buffer-name=files -start-insert file_rec/async:!<CR>
 " Search for term in cwd file
 nnoremap <silent> <leader>/ :<C-u>Unite grep:.<CR>
 " Search in commands
@@ -545,7 +550,7 @@ nnoremap <silent> <leader>c :<C-u>Unite -start-insert command<CR>
 " Search in defined mappings
 nnoremap <silent> <leader>m :<C-u>Unite -start-insert mapping<CR>
 " Search in yank history
-nnoremap <silent> <leader>y :<C-u>Unite -no-split -buffer-name=yank-history history/yank<CR>
+nnoremap <silent> <leader>y :<C-u>Unite -no-split -buffer-name=yank-history -quick-match history/yank<CR>
 
 " -----------------------------------------------------
 " 5.2 Surround shortcut for quotes changing
