@@ -29,7 +29,7 @@
         lol = log --oneline --graph --all --decorate
         unstage = reset HEAD --
         last = log -1 HEAD
-        rb = rebase -i HEAD~
+        rb = rebase -i HEAD~10
         wc = whatchanged -p --abbrev-commit --pretty=medium
 [github]
 	user = martin-svk
