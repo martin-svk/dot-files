@@ -111,6 +111,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 " Gitk for vim
 Plug 'gregsexton/gitv'
+" Commit encouraging
+Plug 'esneider/YUNOcommit.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.6 Text objects improving plugins
@@ -306,6 +308,7 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 nnoremap <Space> <nop>
+inoremap <F1> <nop>
 nnoremap <F1> <nop>
 nnoremap Q <nop>
 
@@ -512,6 +515,11 @@ let g:SuperTabDefaultCompletionType='<C-p>'
 let g:goyo_width=120
 let g:goyo_margin_top=2
 let g:goyo_margin_bottom=2
+
+" -----------------------------------------------------
+" 4.8 YUNo commit
+" -----------------------------------------------------
+let g:YUNOcommit_after=20
 "}}}
 
 " ======================================================================================================================
