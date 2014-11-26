@@ -68,8 +68,6 @@ Plug 'hsanson/vim-android', { 'for': 'java' }
 " 1.1.2 Motion/code navigation improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Camel case motion
-Plug 'bkad/CamelCaseMotion'
 " Seek, easy motion for long lines
 Plug 'goldfeld/vim-seek'
 " Improved incremental search
@@ -579,18 +577,7 @@ vmap <C-v> <Plug>(expand_region_shrink)
 nmap <silent> ,r :<C-u>RubyEval<CR>
 
 " -----------------------------------------------------
-" 5.5 Camel case motion mapping (replace default w b e)
-" -----------------------------------------------------
-map <silent> w <Plug>CamelCaseMotion_w
-map <silent> b <Plug>CamelCaseMotion_b
-map <silent> e <Plug>CamelCaseMotion_e
-" Unmap old to not conflict
-sunmap w
-sunmap b
-sunmap e
-
-" -----------------------------------------------------
-" 5.6 Improved incremental search
+" 5.5 Improved incremental search
 " -----------------------------------------------------
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
