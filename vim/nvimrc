@@ -158,7 +158,8 @@ call plug#end()
 
 set shell=/bin/bash                         " Setting shell to bash
 set nocompatible                            " No compatible with vi mode
-set relativenumber                          " Relativeline numbers
+set relativenumber                          " Relative line numbers
+set number                                  " But use real number of current line instead of 0
 set ignorecase                              " Don't ignore cases
 set smartcase                               " Make search case sensitive only if it contains uppercase letters
 set laststatus=2                            " Always show status line
@@ -458,6 +459,7 @@ if executable('ag')
   let g:unite_source_grep_recursive_opt=''
   " Ignore vcs files
   let g:unite_source_rec_async_command='ag --nocolor --nogroup --ignore ".hg" --ignore ".svn" --ignore ".git" --ignore ".bzr" --hidden -g ""'
+  let g:unite_source_file_async_command='ag --nocolor --nogroup --ignore ".hg" --ignore ".svn" --ignore ".git" --ignore ".bzr" --hidden -g ""'
 endif
 
 " Ignore wildignore files
@@ -468,6 +470,9 @@ call unite#custom#profile('default', 'context', {
 \   'prompt': '» ',
 \   'winheight': 15,
 \ })
+
+" Add syntax highlighting
+let g:unite_source_line_enable_highlight=1
 
 " -----------------------------------------------------
 " 4.4 Syntastic (syntax checker)
@@ -546,18 +551,22 @@ function! s:unite_settings()
   nmap <buffer> m <Plug>(unite_toggle_mark_current_candidate)
 endfunction
 
-" Search in buffer
-nnoremap <silent> <leader><leader> :<C-u>Unite -no-split -buffer-name=buffers buffer<CR>
-" Search in cwd files recursively
-nnoremap <silent> <leader>o :<C-u>UniteWithProjectDir -no-split -buffer-name=project-files -start-insert file_rec/async:!<CR>
-" Search for term in cwd file
-nnoremap <silent> <leader>/ :<C-u>Unite grep:.<CR>
-" Search in commands
-nnoremap <silent> <leader>c :<C-u>Unite -start-insert command<CR>
-" Search in defined mappings
-nnoremap <silent> <leader>m :<C-u>Unite -start-insert mapping<CR>
-" Search in yank history
-nnoremap <silent> <leader>y :<C-u>Unite -buffer-name=yank-history -quick-match history/yank<CR>
+" Search in cwd [f]iles recursively
+nnoremap <silent> <leader>f :<C-u>Unite -no-split -buffer-name=project-files -start-insert file_rec/async:!<CR>
+" Search in [b]uffer
+nnoremap <silent> <leader>b :<C-u>Unite -no-split -buffer-name=buffers buffer<CR>
+" Search for term in cwd file ([g]rep)
+nnoremap <silent> <leader>g :<C-u>Unite -silent -auto-resize grep:.<CR>
+" Search in edit [h]istory
+nnoremap <silent> <leader>h :<C-u>Unite -buffer-name=edit-history -auto-resize change<CR>
+" Search in [c]ommands
+nnoremap <silent> <leader>c :<C-u>Unite -start-insert -auto-resize command<CR>
+" Search in defined [m]appings
+nnoremap <silent> <leader>m :<C-u>Unite -start-insert -auto-resize mapping<CR>
+" Search in [l]ines on current buffer
+nnoremap <silent> <leader>l :<C-u>Unite -start-insert -auto-resize line<CR>
+" Search in [y]ank history
+nnoremap <silent> <leader>y :<C-u>Unite -buffer-name=yank-history -auto-resize -quick-match history/yank<CR>
 
 " -----------------------------------------------------
 " 5.2 Surround shortcut for quotes changing
