@@ -545,14 +545,14 @@ function! s:unite_settings()
   imap <silent> <buffer> <expr> <C-s> unite#do_action('split')
   imap <silent> <buffer> <expr> <C-v> unite#do_action('vsplit')
   " Exit with escape
-  nmap <buffer> <ESC> <Plug>(unite_exit)
+  nmap <silent> <buffer> <ESC> <Plug>(unite_exit)
   " Mark candidates
-  vmap <buffer> m <Plug>(unite_toggle_mark_selected_candidates)
-  nmap <buffer> m <Plug>(unite_toggle_mark_current_candidate)
+  vmap <silent> <buffer> m <Plug>(unite_toggle_mark_selected_candidates)
+  nmap <silent> <buffer> m <Plug>(unite_toggle_mark_current_candidate)
 endfunction
 
-" Search in cwd [f]iles recursively
-nnoremap <silent> <leader>f :<C-u>Unite -no-split -buffer-name=project-files -start-insert file_rec/async:!<CR>
+" Search in cwd files recursively ([o]pen)
+nnoremap <silent> <leader>o :<C-u>Unite -no-split -buffer-name=project-files -start-insert file_rec/async:!<CR>
 " Search in [b]uffer
 nnoremap <silent> <leader>b :<C-u>Unite -no-split -buffer-name=buffers buffer<CR>
 " Search for term in cwd file ([g]rep)
