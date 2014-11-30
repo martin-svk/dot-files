@@ -197,6 +197,7 @@ set startofline                             " When doing thing like gg or G, wil
 set wrapscan                                " Search again from top when reached the bottom
 set showcmd                                 " Show incomplete commands
 set scrolloff=5                             " Scroll when closing to top or bottom of the sceeen
+set updatetime=1000                         " Updatetime used to create swapfile or i.e. to refresh tagbar
 
 " -----------------------------------------------------
 " 2.1 Intendation settings (2 spaces tabs)
@@ -222,7 +223,7 @@ set noswapfile
 " -----------------------------------------------------
 " 2.4 Highlight whitespaces
 " -----------------------------------------------------
-set listchars=tab:▸\ ,trail:.,extends:#,nbsp:.,eol:¬
+set listchars=tab:▸\ ,trail:·,extends:#,nbsp:·,eol:¬
 
 " -----------------------------------------------------
 " 2.5 Filetype settings
