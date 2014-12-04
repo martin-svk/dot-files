@@ -554,8 +554,8 @@ endfunction
 
 " Search in cwd files recursively ([o]pen)
 nnoremap <silent> <leader>o :<C-u>Unite -no-split -buffer-name=project-files -start-insert file_rec/async:!<CR>
-" Search in [b]uffer
-nnoremap <silent> <leader>b :<C-u>Unite -no-split -buffer-name=buffers buffer<CR>
+" [s]witch between open files (buffer)
+nnoremap <silent> <leader>s :<C-u>Unite -no-split -buffer-name=buffers buffer<CR>
 " Search for term in cwd file ([g]rep)
 nnoremap <silent> <leader>g :<C-u>Unite -silent -auto-resize grep:.<CR>
 " Search in edit [h]istory
