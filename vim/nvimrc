@@ -129,6 +129,8 @@ Plug 'terryma/vim-expand-region'
 Plug 'tomasr/molokai'
 " Hybrid dark color theme
 Plug 'w0ng/vim-hybrid'
+" Jellbeans theme
+Plug 'nanotech/jellybeans.vim'
 " Approximation to make gvim schemes work in terminal
 Plug 'vim-scripts/CSApprox'
 
@@ -156,8 +158,7 @@ call plug#end()
 
 set shell=/bin/bash                         " Setting shell to bash
 set nocompatible                            " No compatible with vi mode
-set relativenumber                          " Relative line numbers
-set number                                  " But use real number of current line instead of 0
+set number                                  " Line numbers
 set ignorecase                              " Don't ignore cases
 set smartcase                               " Make search case sensitive only if it contains uppercase letters
 set laststatus=2                            " Always show status line
@@ -605,11 +606,14 @@ endif
 set bg=dark
 
 " Color scheme changing based on time
-if strftime("%H") < 16
+if strftime("%H") < 14
   let g:molokai_original=1
   let g:rehash256=1
   colorscheme molokai
   let g:airline_theme='tomorrow'
+elseif strftime("%H") < 19
+  colorscheme jellybeans
+  let g:airline_theme='jellybeans'
 else
   colorscheme hybrid
   let g:airline_theme='bubblegum'
