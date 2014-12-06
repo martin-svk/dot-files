@@ -96,6 +96,8 @@ Plug 'bling/vim-airline'
 Plug 'majutsushi/tagbar'
 " Distraction free editing
 Plug 'junegunn/goyo.vim'
+" Automatic cursor shape change
+Plug 'jszakmeister/vim-togglecursor'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.5 Git/Github support plugins
