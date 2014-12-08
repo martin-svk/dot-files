@@ -178,5 +178,5 @@ if [ -d $HOME/.linuxbrew ]; then
 fi
 
 # Setting default editor
-export EDITOR='vim -X'
+export EDITOR='nvim'
 export MYNVIMRC='~/.nvimrc'
