@@ -66,10 +66,8 @@ Plug 'hsanson/vim-android', { 'for': 'java' }
 " 1.1.2 Motion/code navigation improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Seek, easy motion for long lines
-Plug 'goldfeld/vim-seek'
-" Improved incremental search
-Plug 'haya14busa/incsearch.vim'
+" Easy motion
+Plug 'Lokaltog/vim-easymotion'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.3 Text insertion improving plugins
@@ -348,23 +346,8 @@ nnoremap <silent> ,d :bd<CR>
 nnoremap <silent> + :bn<CR>
 nnoremap <silent> _ :bp<CR>
 
-" Bubble single lines
-nnoremap <C-k> ddkP
-nnoremap <C-j> ddp
-
-" Bubble multiple lines
-vnoremap <C-j> xp`[V`]
-vnoremap <C-k> xkP`[V`]
-
 " Reformat whole file easily
 nnoremap <silent> ,f mzgg=G`z
-
-" Insert line break (opposite of J-join lines)
-nnoremap ,j i<CR><ESC>
-
-" Quoting visually selected area with "
-" TODO: wrap to function and support multiline selections
-vnoremap " c''<ESC>hp
 
 " Shortcuts for quiting and saving
 cmap ww wqall
@@ -525,6 +508,14 @@ let g:goyo_margin_bottom=2
 " 4.8 YUNo commit
 " -----------------------------------------------------
 let g:YUNOcommit_after=20
+
+" -----------------------------------------------------
+" 4.8 EasyMotion
+" -----------------------------------------------------
+" Disable default mappings
+let g:EasyMotion_do_mapping = 0
+" Turn on case sensitive feature
+let g:EasyMotion_smartcase = 1
 "}}}
 
 " ======================================================================================================================
@@ -588,11 +579,20 @@ vmap <C-v> <Plug>(expand_region_shrink)
 nmap <silent> ,r <Plug>(xmpfilter-run)
 
 " -----------------------------------------------------
-" 5.5 Improved incremental search
+" 5.5 EasyMotion
 " -----------------------------------------------------
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
+" TODO: make it silent
+" Improved f motion and new seek motion
+nmap f <Plug>(easymotion-sl)
+nmap s <Plug>(easymotion-sl2)
+
+" Improved search
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+
+" Improved j/k motions
+map j <Plug>(easymotion-j)
+map k <Plug>(easymotion-k)
 "}}}
 
 " ======================================================================================================================
