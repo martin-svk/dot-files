@@ -135,8 +135,8 @@ Plug 'tomasr/molokai'
 Plug 'w0ng/vim-hybrid'
 " Jellbeans theme
 Plug 'nanotech/jellybeans.vim'
-" Schemes magapack
-Plug 'flazz/vim-colorschemes'
+" Tomorrow themes
+Plug 'chriskempson/vim-tomorrow-theme'
 " Approximation to make gvim schemes work in terminal
 Plug 'vim-scripts/CSApprox'
 
@@ -621,14 +621,14 @@ set bg=dark
 if strftime("%H") < 14
   let g:molokai_original=1
   let g:rehash256=1
-  colorscheme molokai
   let g:airline_theme='tomorrow'
+  colorscheme molokai
 elseif strftime("%H") < 19
-  colorscheme jellybeans
   let g:airline_theme='jellybeans'
+  colorscheme jellybeans
 else
-  colorscheme hybrid
-  let g:airline_theme='bubblegum'
+  colorscheme Tomorrow-Night
+  let g:airline_theme='tomorrow'
 endif
 
 " Color column
