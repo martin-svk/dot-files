@@ -47,7 +47,7 @@ Plug 'ecomba/vim-ruby-refactoring', { 'for': ['ruby', 'eruby'] }
 Plug 'ngmy/vim-rubocop', { 'for': ['ruby', 'eruby'] }
 
 " -----------------------------------------------------
-" 1.1.1.3 HTML/CSS/JS
+" HTML/CSS/JS
 " -----------------------------------------------------
 " CSS color highlighter
 Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'sass', 'less'] }
@@ -57,22 +57,30 @@ Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffee']
 Plug 'rstacruz/sparkup', { 'for': ['html', 'xhtml']}
 
 " -----------------------------------------------------
-" 1.1.1.4 Android
+" Android
 " -----------------------------------------------------
-" Android build and deploy helpers
 Plug 'hsanson/vim-android', { 'for': 'java' }
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 1.1.2 Motion/code navigation improving plugins
+" 1.1.2 Motion/text navigation improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Seek, easy motion for long lines
-Plug 'goldfeld/vim-seek'
-" Improved incremental search
-Plug 'haya14busa/incsearch.vim'
+" Easy motion
+Plug 'Lokaltog/vim-easymotion'
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 1.1.3 Text insertion improving plugins
+" 1.1.3 Files/code navigation improving plugins
+" ---------------------------------------------------------------------------------------------------------------------
+
+" Unite (Files, Buffers, Commands, etc. fuzzy searcher)
+Plug 'Shougo/unite.vim'
+" Nerdtree file browser
+Plug 'scrooloose/nerdtree'
+" Tags (methods, classes) display window
+Plug 'majutsushi/tagbar'
+
+" ---------------------------------------------------------------------------------------------------------------------
+" 1.1.4 Text insertion improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Multiple cursors feature
@@ -83,24 +91,18 @@ Plug 'ervandew/supertab'
 Plug 'Raimondi/delimitMate'
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 1.1.4 Interface improving plugins
+" 1.1.5 Interface improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Unite (Files, Buffers, Commands, etc. fuzzy searcher)
-Plug 'Shougo/unite.vim'
-" Nerdtree file browser
-Plug 'scrooloose/nerdtree'
 " Airline (improved status line)
 Plug 'bling/vim-airline'
-" Tags (methods, classes) display window
-Plug 'majutsushi/tagbar'
 " Distraction free editing
 Plug 'junegunn/goyo.vim'
 " Automatic cursor shape change
 Plug 'jszakmeister/vim-togglecursor'
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 1.1.5 Git/Github support plugins
+" 1.1.6 Git/Github support plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Git wrapper
@@ -113,7 +115,7 @@ Plug 'gregsexton/gitv'
 Plug 'esneider/YUNOcommit.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 1.1.6 Text objects improving plugins
+" 1.1.7 Text objects improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 "
 " Matchit better textobj support
@@ -124,7 +126,7 @@ Plug 'tpope/vim-surround'
 Plug 'terryma/vim-expand-region'
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 1.1.7 Color-scheme plugins
+" 1.1.8 Color-scheme plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Molokai theme
@@ -133,11 +135,13 @@ Plug 'tomasr/molokai'
 Plug 'w0ng/vim-hybrid'
 " Jellbeans theme
 Plug 'nanotech/jellybeans.vim'
+" Schemes magapack
+Plug 'flazz/vim-colorschemes'
 " Approximation to make gvim schemes work in terminal
 Plug 'vim-scripts/CSApprox'
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 1.1.8 Dependencies
+" 1.1.9 Dependencies
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Async processing (for Unite) (make after checkout)
@@ -229,7 +233,6 @@ set listchars=tab:▸\ ,trail:·,extends:#,nbsp:·,eol:¬
 " -----------------------------------------------------
 " 2.5 Filetype settings
 " -----------------------------------------------------
-syntax on
 filetype off
 filetype plugin on
 filetype indent on
@@ -317,6 +320,10 @@ nnoremap Q <nop>
 " 3.3 Defaults overriding
 " -----------------------------------------------------
 
+" Visual linewise up and down by default
+noremap j gj
+noremap k gk
+
 " When jump to next match also center screen
 noremap n nzz
 noremap N Nzz
@@ -337,6 +344,9 @@ nnoremap Y y$
 " Quick replay q macro
 nnoremap Q @q
 
+" Mark with big M (default to middle of the screen overriden)
+nnoremap M m
+
 " -----------------------------------------------------
 " 3.4 Common task mappings
 " -----------------------------------------------------
@@ -348,23 +358,8 @@ nnoremap <silent> ,d :bd<CR>
 nnoremap <silent> + :bn<CR>
 nnoremap <silent> _ :bp<CR>
 
-" Bubble single lines
-nnoremap <C-k> ddkP
-nnoremap <C-j> ddp
-
-" Bubble multiple lines
-vnoremap <C-j> xp`[V`]
-vnoremap <C-k> xkP`[V`]
-
 " Reformat whole file easily
 nnoremap <silent> ,f mzgg=G`z
-
-" Insert line break (opposite of J-join lines)
-nnoremap ,j i<CR><ESC>
-
-" Quoting visually selected area with "
-" TODO: wrap to function and support multiline selections
-vnoremap " c''<ESC>hp
 
 " Shortcuts for quiting and saving
 cmap ww wqall
@@ -391,9 +386,9 @@ nnoremap <silent> <F2> :NERDTreeFind<CR>
 " Toggle spelling on and off
 nnoremap <silent> <F4> :set spell!<CR>
 " Source (reload) vimrc, so new setting will be applied
-nnoremap <silent> <F5> :source $MYVIMRC<CR>
-" Open my vimrc in new tab
-nnoremap <silent> <F6> :tabedit $MYVIMRC<CR>
+nnoremap <silent> <F5> :source $MYNVIMRC<CR>
+" Toggle search highlight
+nnoremap <silent> <F6> :set nohlsearch!<CR>
 " Toggle white characters visibility
 nnoremap <silent> <F7> :set list!<CR>
 " Toggle syntax checking
@@ -457,7 +452,7 @@ let g:unite_source_history_yank_enable=1
 " Use ag if available
 if executable('ag')
   let g:unite_source_grep_command='ag'
-  let g:unite_source_grep_default_opts='--nocolor --line-numbers --nogroup -S -C4'
+  let g:unite_source_grep_default_opts='--nocolor --line-numbers --nogroup -S -C0'
   let g:unite_source_grep_recursive_opt=''
   " Ignore vcs files
   let g:unite_source_rec_async_command='ag --nocolor --nogroup --ignore ".hg" --ignore ".svn" --ignore ".git" --ignore ".bzr" --hidden -g ""'
@@ -525,6 +520,12 @@ let g:goyo_margin_bottom=2
 " 4.8 YUNo commit
 " -----------------------------------------------------
 let g:YUNOcommit_after=20
+
+" -----------------------------------------------------
+" 4.8 EasyMotion
+" -----------------------------------------------------
+" Turn on case sensitive feature
+let g:EasyMotion_smartcase = 1
 "}}}
 
 " ======================================================================================================================
@@ -588,17 +589,26 @@ vmap <C-v> <Plug>(expand_region_shrink)
 nmap <silent> ,r :<C-u>RubyEval<CR>
 
 " -----------------------------------------------------
-" 5.5 Improved incremental search
+" 5.5 EasyMotion
 " -----------------------------------------------------
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
+" [m]otion prefix
+nmap m <Plug>(easymotion-prefix)
+
+" Seek 2 character motion
+nmap s <Plug>(easymotion-sl2)
+
+" Improved search
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
 "}}}
 
 " ======================================================================================================================
 " 6.0 Color and highlighting settings
 " ======================================================================================================================
 "{{{
+" Syntax highlighting
+syntax on
+
 " XTerm 256 colors
 if $TERM == 'xterm-256color' || 'screen-256color'
   set t_Co=256
@@ -607,7 +617,7 @@ endif
 " Dark background as default
 set bg=dark
 
-" Color scheme changing based on time
+" Color scheme based on time
 if strftime("%H") < 14
   let g:molokai_original=1
   let g:rehash256=1
@@ -660,7 +670,7 @@ autocmd BufLeave * set nocursorline
 autocmd BufWritePre * :%s/\s\+$//e
 
 function! ShowToggles()
-  echom "| <F1> NerdTree | <F2> NerdTreeFind | <F3> Paste mode | <F4> Spellcheck | <F5> Source .rc | <F6> Edit .rc |" .
+  echom "| <F1> NerdTree | <F2> NerdTreeFind | <F3> Paste mode | <F4> Spellcheck | <F5> Source .rc | <F6> Search Highlight |" .
         \"<F7> Whitechars | <F8> Syntastic | <F9> Rainbow() | <F10> Goyo mode | <F11> Tagbar | <F12> This message |"
 endfunction
 "}}}
