@@ -38,43 +38,43 @@ xterm*eightBitOutput: true
 ! Solarized Dark / Desaturated Dark
 ! -----------------------------------------------------------------------------
 
-!#define S_yellow        #b58900
-!#define S_orange        #cb4b16
-!#define S_red           #dc322f
-!#define S_magenta       #d33682
-!#define S_violet        #6c71c4
-!#define S_blue          #268bd2
-!#define S_cyan          #2aa198
-!#define S_green         #859900
-!
-!#define S_base03        #002b36
-!#define S_base02        #073642
-!#define S_base01        #586e75
-!#define S_base00        #657b83
-!#define S_base0         #839496
-!#define S_base1         #93a1a1
-!#define S_base2         #eee8d5
-!#define S_base3         #fdf6e3
+#define S_yellow        #b58900
+#define S_orange        #cb4b16
+#define S_red           #dc322f
+#define S_magenta       #d33682
+#define S_violet        #6c71c4
+#define S_blue          #268bd2
+#define S_cyan          #2aa198
+#define S_green         #859900
+
+#define S_base03        #002b36
+#define S_base02        #073642
+#define S_base01        #586e75
+#define S_base00        #657b83
+#define S_base0         #839496
+#define S_base1         #93a1a1
+#define S_base2         #eee8d5
+#define S_base3         #fdf6e3
 
 ! Desaturated
 
-#define S_base03     #262626
-#define S_base02     #303030
-#define S_base01     #6a6a6a
-#define S_base00     #777777
-#define S_base0      #919191
-#define S_base1      #9e9e9e
-#define S_base2      #e8e8e8
-#define S_base3      #f6f6f6
-
-#define S_yellow     #b58900
-#define S_orange     #cb4b16
-#define S_red        #dc322f
-#define S_magenta    #d33682
-#define S_violet     #6c71c4
-#define S_blue       #268bd2
-#define S_cyan       #2aa198
-#define S_green      #859900
+!#define S_base03     #262626
+!#define S_base02     #303030
+!#define S_base01     #6a6a6a
+!#define S_base00     #777777
+!#define S_base0      #919191
+!#define S_base1      #9e9e9e
+!#define S_base2      #e8e8e8
+!#define S_base3      #f6f6f6
+!
+!#define S_yellow     #b58900
+!#define S_orange     #cb4b16
+!#define S_red        #dc322f
+!#define S_magenta    #d33682
+!#define S_violet     #6c71c4
+!#define S_blue       #268bd2
+!#define S_cyan       #2aa198
+!#define S_green      #859900
 
 xterm*background:              S_base03
 xterm*foreground:              S_base0
@@ -99,26 +99,3 @@ xterm*color12:                 S_base0
 xterm*color13:                 S_violet
 xterm*color14:                 S_base1
 xterm*color15:                 S_base3
-
-! -----------------------------------------------------------------------------
-! Vim Hybrid
-! -----------------------------------------------------------------------------
-
-! xterm*background: #1D1F21
-! xterm*foreground: #C5C8C6
-! xterm*color0: #282A2E
-! xterm*color8: #373B41
-! xterm*color1: #A54242
-! xterm*color9: #CC6666
-! xterm*color2: #8C9440
-! xterm*color10: #B5BD68
-! xterm*color3: #DE935F
-! xterm*color11: #F0C674
-! xterm*color4: #5F819D
-! xterm*color12: #81A2BE
-! xterm*color5: #85678F
-! xterm*color13: #B294BB
-! xterm*color6: #5E8D87
-! xterm*color14: #8ABEB7
-! xterm*color7: #707880
-! xterm*color15: #C5C8C6
