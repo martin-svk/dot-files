@@ -1,12 +1,12 @@
 " Misc settings
 " ------------------------------------------------------------
-set guifont=Ubuntu_Mono:h11:b
+set guifont=Ubuntu\ Mono\ Bold\ 12
 set fuoptions=maxvert,maxhorz
 
 " Colorscheme
 " ------------------------------------------------------------
 set background=dark
-colorscheme molokai
+colorscheme jellybeans
 
 " GUI options
 " ------------------------------------------------------------
