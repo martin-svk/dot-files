@@ -1,0 +1,17 @@
+" Misc settings
+" ------------------------------------------------------------
+set guifont=Ubuntu_Mono:h11:b
+set fuoptions=maxvert,maxhorz
+
+" Colorscheme
+" ------------------------------------------------------------
+set background=dark
+colorscheme molokai
+
+" GUI options
+" ------------------------------------------------------------
+set guioptions-=L
+set guioptions-=l
+set guioptions-=R
+set guioptions-=r
+set guioptions-=T
