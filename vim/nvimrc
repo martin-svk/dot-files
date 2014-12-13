@@ -625,12 +625,9 @@ if strftime("%H") < 14
   let g:rehash256=1
   let g:airline_theme='tomorrow'
   colorscheme molokai
-elseif strftime("%H") < 19
+else
   let g:airline_theme='jellybeans'
   colorscheme jellybeans
-else
-  colorscheme hybrid
-  let g:airline_theme='tomorrow'
 endif
 
 " Color column
