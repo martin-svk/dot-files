@@ -8,5 +8,9 @@ snippet test 'test block'
 # --------------------------------
 # Asserts
 # --------------------------------
+snippet ass 'assert'
+	assert ${1:expected}, message: '${0:message}'
+snippet ref 'refute'
+	refute ${1:expected}, message: '${0:message}'
 snippet ase 'assert_equal'
 	assert_equal ${1:expected}, ${0:actual}
