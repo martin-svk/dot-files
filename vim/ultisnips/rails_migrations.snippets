@@ -1,13 +1,22 @@
 # --------------------------------
 # Basics
 # --------------------------------
-snippet rmc 'remove_column migration'
-	remove_column :${1:table_name}, :${0:column_name}
-snippet ac 'add_column migration'
-	add_column :${1:table_name}, :${2:column_name}, :${0:type}
-snippet cc 'change_column migration'
-	change_column :${1:table_name}, :${2:column_name}, :${0:new_new_type}
-snippet rnc 'rename_column migration'
-	rename_column :${1:table_name}, :${2:old_column_name}, :${0:new_column_name}
-snippet ai 'add_index migration'
-	add_index :${1:table_name}, :${0:column_name}
+snippet rmc "remove_column migration"
+remove_column :${1:table_name}, :${2:column_name}
+endsnippet
+
+snippet ac "add_column migration"
+add_column :${1:table_name}, :${2:column_name}, :${3:type}
+endsnippet
+
+snippet cc "change_column migration"
+change_column :${1:table_name}, :${2:column_name}, :${3:new_new_type}
+endsnippet
+
+snippet rnc "rename_column migration"
+rename_column :${1:table_name}, :${2:old_column_name}, :${3:new_column_name}
+endsnippet
+
+snippet ai "add_index migration"
+add_index :${1:table_name}, :${2:column_name}
+endsnippet

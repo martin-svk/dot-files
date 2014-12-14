@@ -1,20 +1,33 @@
-snippet pl vim-plug plugin definition
-	" ${1:Plugin description}
-	Plug '${0}'
-snippet nn normal mode map coomand
-	nnoremap ${1:key} ${0:command}
-snippet in insert mode map coomand
-	inoremap ${1:key} ${0:command}
-snippet vn visual mode map coomand
-	vnoremap ${1:key} ${0:command}
-snippet if if statement
-	if ${1}
-		${0}
-	endif
-snippet ife if ... else statement
-	if ${1}
-		${2}
-	else
-		${0}
-snippet === commented separator
-	" ======================================================================================================================
+snippet pl "vim-plug plugin definition"
+" ${1:Plugin description}
+Plug '$2'
+endsnippet
+
+snippet nn "normal mode map coomand"
+nnoremap ${1:key} ${2:command}
+endsnippet
+
+snippet in "insert mode map coomand"
+inoremap ${1:key} ${2:command}
+endsnippet
+
+snippet vn "visual mode map coomand"
+vnoremap ${1:key} ${2:command}
+endsnippet
+
+snippet if "if statement"
+if $1
+	$2
+endif
+endsnippet
+
+snippet ife "if ... else statement"
+if $1
+	$2
+else
+	$3
+endsnippet
+
+snippet === "commented separator"
+" ======================================================================================================================
+endsnippet

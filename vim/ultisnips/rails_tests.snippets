@@ -1,16 +1,23 @@
 # --------------------------------
 # Basics
 # --------------------------------
-snippet test 'test block'
-	test '${1:test description}' do
-		${0}
-	end
+snippet test "test block"
+test '${1:test description}' do
+	$2
+end
+endsnippet
+
 # --------------------------------
 # Asserts
 # --------------------------------
-snippet ass 'assert'
-	assert ${1:expected}, message: '${0:message}'
-snippet ref 'refute'
-	refute ${1:expected}, message: '${0:message}'
-snippet ase 'assert_equal'
-	assert_equal ${1:expected}, ${0:actual}
+snippet ass "assert"
+assert ${1:expected}, message: '${2:message}'
+endsnippet
+
+snippet ref "refute"
+refute ${1:expected}, message: '${2:message}'
+endsnippet
+
+snippet ase "assert_equal"
+assert_equal ${1:expected}, ${2:actual}
+endsnippet

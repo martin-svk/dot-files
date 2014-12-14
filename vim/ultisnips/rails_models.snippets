@@ -1,22 +1,32 @@
 # ===============================================
 # Active record models snippets
 # ===============================================
+
 # --------------------------------
 # Relations
 # --------------------------------
-snippet bt 'belongs_to relation'
-	belongs_to :${0}
-snippet hm 'has_many relation'
-	has_many :${0}
+snippet bt "belongs_to relation"
+belongs_to :$0
+endsnippet
+
+snippet hm "has_many relation"
+has_many :$0
+endsnippet
+
 # --------------------------------
 # Validations
 # --------------------------------
-snippet va 'validates'
-	validates :${0}
-snippet vap 'validates presence'
-	validates :${1}, presence: true
+snippet va "validates"
+validates :$0
+endsnippet
+
+snippet vap "validates presence"
+validates :$1, presence: true$2
+endsnippet
+
 # --------------------------------
 # Scopes
 # --------------------------------
-snippet scope 'scope with arguments'
-	scope :${1:name}, ->${2:(args)} { where(${3})}
+snippet scope "scope with arguments"
+scope :${1:name}, ->${2:(args)} { where($3)}
+endsnippet
