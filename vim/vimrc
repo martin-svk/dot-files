@@ -83,8 +83,8 @@ Plug 'majutsushi/tagbar'
 " 1.1.4 Text insertion improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Automatic completion window popoup
-Plug 'othree/vim-autocomplpop'
+" Completion with tab
+Plug 'ervandew/supertab'
 " Multiple cursors feature
 Plug 'terryma/vim-multiple-cursors'
 " Auto-closing brackets and quotes
@@ -148,8 +148,6 @@ Plug 'Shougo/vimproc.vim'
 Plug 'marcweber/vim-addon-mw-utils'
 " Dependency for vim-snipmate
 Plug 'tomtom/tlib_vim'
-" Dependecy for autocomplpop
-Plug 'vim-scripts/L9'
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " 1.2 End of plugin declaration
@@ -510,11 +508,13 @@ let g:tagbar_type_ruby={
       \ }
 
 " -----------------------------------------------------
-" 4.6 Autocomplpop
+" 4.6 Superatab
 " -----------------------------------------------------
-let g:acp_behaviorSnipmateLength=1
-let g:acp_completeoptPreview=1
-let g:acp_behaviorKeywordLength=2
+let g:SuperTabDefaultCompletionType='context'
+autocmd FileType *
+  \ if &omnifunc != '' |
+  \   call SuperTabChain(&omnifunc, "<c-p>") |
+  \ endif
 
 " -----------------------------------------------------
 " 4.7 Goyo
