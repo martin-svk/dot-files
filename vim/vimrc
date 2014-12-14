@@ -27,8 +27,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'sheerun/vim-polyglot'
 " Needs linters to be installed to work properly (see https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers)
 Plug 'scrooloose/syntastic', { 'for': ['java', 'ruby', 'eruby', 'coffee', 'javascript', 'html'] }
-" Snipmate snippets support
-Plug 'garbas/vim-snipmate'
+" Snippets support
+Plug 'SirVer/ultisnips'
 
 " -----------------------------------------------------
 " Ruby/Rails
@@ -144,10 +144,6 @@ Plug 'vim-scripts/CSApprox'
 
 " Async processing (for Unite) (make after checkout)
 Plug 'Shougo/vimproc.vim'
-" Dependency for vim-snipmate
-Plug 'marcweber/vim-addon-mw-utils'
-" Dependency for vim-snipmate
-Plug 'tomtom/tlib_vim'
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " 1.2 End of plugin declaration
