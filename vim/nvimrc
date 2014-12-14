@@ -83,6 +83,8 @@ Plug 'majutsushi/tagbar'
 " 1.1.4 Text insertion improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
+" Automatic completion window popoup
+Plug 'othree/vim-autocomplpop'
 " Multiple cursors feature
 Plug 'terryma/vim-multiple-cursors'
 " Auto-closing brackets and quotes
@@ -146,6 +148,8 @@ Plug 'Shougo/vimproc.vim'
 Plug 'marcweber/vim-addon-mw-utils'
 " Dependency for vim-snipmate
 Plug 'tomtom/tlib_vim'
+" Dependecy for autocomplpop
+Plug 'vim-scripts/L9'
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " 1.2 End of plugin declaration
@@ -250,6 +254,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType c set omnifunc=ccomplete#Complete
 autocmd FileType java set omnifunc=javacomplete#Complete
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading=1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
 autocmd FileType ruby,eruby let g:rubycomplete_rails=1
@@ -507,6 +512,12 @@ let g:tagbar_type_ruby={
 " -----------------------------------------------------
 " 4.6 Autocomplpop
 " -----------------------------------------------------
+let g:acp_behaviorSnipmateLength=1
+let g:acp_completeoptPreview=1
+let g:acp_behaviorKeywordLength=2
+" Dont use omni coplete in ruby
+let g:acp_behaviorRubyOmniMethodLength=-1
+let g:acp_behaviorRubyOmniSymbolLength=-1
 
 " -----------------------------------------------------
 " 4.7 Goyo
