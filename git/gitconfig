@@ -11,7 +11,7 @@
         status = always
 	ui = true
 [core]
-        editor = nvim
+        editor = vim -X
 [alias]
         a = add --all
         di = diff --staged
