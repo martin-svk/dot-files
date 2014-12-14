@@ -1,11 +1,18 @@
 # --------------------------------
-# Other
+# Other ruby snippets
 # --------------------------------
-snippet req require
-	require '${0}'
-snippet LP Load path
-	$LOAD_PATH.unshift(File.expand_path("${1:..}", __FILE__))
-snippet # hash rocket marker
-	# =>
-snippet ## comment line separator
-	# --------------------------------
+snippet req "require"
+require '${0}'
+endsnippet
+
+snippet LP "Load path"
+$LOAD_PATH.unshift(File.expand_path("${1:..}", __FILE__))
+endsnippet
+
+snippet # "hash rocket marker"
+# =>
+endsnippet
+
+snippet ## "comment line separator"
+# --------------------------------
+endsnippet
