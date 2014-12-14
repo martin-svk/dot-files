@@ -510,12 +510,7 @@ let g:tagbar_type_ruby={
 " -----------------------------------------------------
 " 4.6 Superatab
 " -----------------------------------------------------
-let g:acp_behaviorSnipmateLength=1
-let g:acp_completeoptPreview=1
-let g:acp_behaviorKeywordLength=2
-" Dont use omni coplete in ruby
-let g:acp_behaviorRubyOmniMethodLength=-1
-let g:acp_behaviorRubyOmniSymbolLength=-1
+let g:SuperTabDefaultCompletionType='<C-p>'
 
 " -----------------------------------------------------
 " 4.7 Goyo
