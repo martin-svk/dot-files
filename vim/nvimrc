@@ -509,11 +509,7 @@ let g:tagbar_type_ruby={
 " -----------------------------------------------------
 " 4.7 Supertab
 " -----------------------------------------------------
-let g:SuperTabDefaultCompletionType = 'context'
-autocmd FileType *
-  \ if &omnifunc != '' |
-  \   call SuperTabChain(&omnifunc, "<c-p>") |
-  \ endif
+let g:SuperTabDefaultCompletionType='<C-p>'
 
 " -----------------------------------------------------
 " 4.8 Goyo
