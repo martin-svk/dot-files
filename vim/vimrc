@@ -21,7 +21,7 @@ call plug#begin('~/.vim/plugged')
 " ---------------------------------------------------------------------------------------------------------------------
 
 " -----------------------------------------------------
-" 1.1.1.1 Universal
+" Universal
 " -----------------------------------------------------
 " Most common languages support (syntax, indenting, etc. ) for ruby, js, etc.
 Plug 'sheerun/vim-polyglot'
@@ -31,9 +31,9 @@ Plug 'scrooloose/syntastic', { 'for': ['java', 'ruby', 'eruby', 'coffee', 'javas
 Plug 'garbas/vim-snipmate'
 
 " -----------------------------------------------------
-" 1.1.1.2 Ruby/Rails
+" Ruby/Rails
 " -----------------------------------------------------
-" Rails navigation, etc. plugin (f.e. :Rmigration)
+" Rails navigation, etc. plugin (i.e. :Rmigration)
 Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby'] }
 " Automatically inserts 'end' wisely
 Plug 'tpope/vim-endwise', { 'for': ['ruby', 'eruby'] }
