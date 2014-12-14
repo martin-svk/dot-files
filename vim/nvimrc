@@ -85,8 +85,6 @@ Plug 'majutsushi/tagbar'
 
 " Multiple cursors feature
 Plug 'terryma/vim-multiple-cursors'
-" Supertab (autocomplete) plugin
-Plug 'ervandew/supertab'
 " Auto-closing brackets and quotes
 Plug 'Raimondi/delimitMate'
 
@@ -507,12 +505,11 @@ let g:tagbar_type_ruby={
       \ }
 
 " -----------------------------------------------------
-" 4.7 Supertab
+" 4.6 Autocomplpop
 " -----------------------------------------------------
-let g:SuperTabDefaultCompletionType='<C-p>'
 
 " -----------------------------------------------------
-" 4.8 Goyo
+" 4.7 Goyo
 " -----------------------------------------------------
 let g:goyo_width=120
 let g:goyo_margin_top=2
@@ -524,7 +521,7 @@ let g:goyo_margin_bottom=2
 let g:YUNOcommit_after=20
 
 " -----------------------------------------------------
-" 4.8 EasyMotion
+" 4.9 EasyMotion
 " -----------------------------------------------------
 " Turn on case sensitive feature
 let g:EasyMotion_smartcase = 1
