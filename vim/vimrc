@@ -609,8 +609,8 @@ omap / <Plug>(easymotion-tn)
 " -----------------------------------------------------
 " Disable built-in cx-ck to be able to go backward in US
 inoremap <c-x><c-k> <nop>
-let g:UltiSnipsExpandTrigger='<tab>'
-let g:UltiSnipsListSnippets='<c-tab>'
+let g:UltiSnipsExpandTrigger='<c-j>'
+let g:UltiSnipsListSnippets='<c-l>'
 let g:UltiSnipsJumpForwardTrigger='<c-j>'
 let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 "}}}
