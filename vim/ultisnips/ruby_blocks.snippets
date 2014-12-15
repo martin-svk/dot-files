@@ -8,11 +8,15 @@ end
 endsnippet
 
 snippet each "each block"
-	each do |$1|
-		$2
-	end
+each do |$1|
+	$2
+end
 endsnippet
 
-snippet map "map block"
-	map(&:$1)$2
+snippet "(\S+)\.map" "map inline block" r
+`!p snip.rv=match.group(1)`.map(&:${1::method})$0
+endsnippet
+
+snippet "(\S+)\.red" "reduce inline block" r
+`!p snip.rv=match.group(1)`.reduce(&:${1:+})$0
 endsnippet
