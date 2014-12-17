@@ -74,6 +74,8 @@ Plug 'Lokaltog/vim-easymotion'
 
 " Unite (Files, Buffers, Commands, etc. fuzzy searcher)
 Plug 'Shougo/unite.vim'
+" Unite outline plugin
+Plug 'Shougo/unite-outline'
 " Nerdtree file browser
 Plug 'scrooloose/nerdtree'
 " Tags (methods, classes) display window
@@ -133,7 +135,7 @@ Plug 'terryma/vim-expand-region'
 Plug 'tomasr/molokai'
 " Hybrid dark color theme
 Plug 'w0ng/vim-hybrid'
-" Jellbeans theme
+" Jellybeans theme
 Plug 'nanotech/jellybeans.vim'
 " Approximation to make gvim schemes work in terminal
 Plug 'vim-scripts/CSApprox'
@@ -561,6 +563,8 @@ endfunction
 nnoremap <silent> <leader>o :<C-u>Unite -no-split -buffer-name=project-files -start-insert file_rec/async:!<CR>
 " [s]witch between open files (buffer)
 nnoremap <silent> <leader>s :<C-u>Unite -no-split -buffer-name=buffers buffer<CR>
+" Search in current file tags
+nnoremap <silent> <leader>t :<C-u>Unite -no-split -buffer-name=tags -start-insert outline<CR>
 " Search for term in cwd file ([g]rep)
 nnoremap <silent> <leader>g :<C-u>Unite -silent -auto-resize grep:.<CR>
 " Search in edit [h]istory
@@ -639,6 +643,7 @@ if strftime("%H") < 14
 else
   let g:airline_theme='jellybeans'
   colorscheme jellybeans
+  highlight ColorColumn ctermbg=235
 endif
 
 " Color column
