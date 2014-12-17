@@ -255,15 +255,15 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails=1
 autocmd FileType ruby,eruby let g:rubycomplete_load_gemfile=1
 
 " make CSS omni-completion work for SASS and SCSS
-autocmd BufNewFile,BufRead *.scss             set ft=scss.css
-autocmd BufNewFile,BufRead *.sass             set ft=sass.css
+autocmd BufNewFile,BufRead *.scss set ft=scss.css
+autocmd BufNewFile,BufRead *.sass set ft=sass.css
 
 " use syntax complete if nothing else available
 if has("autocmd") && exists("+omnifunc")
   autocmd Filetype *
-        \ if &omnifunc == "" |
-        \         setlocal omnifunc=syntaxcomplete#Complete |
-        \ endif
+    \ if &omnifunc == "" |
+    \   setlocal omnifunc=syntaxcomplete#Complete |
+    \ endif
 endif
 
 " -----------------------------------------------------
@@ -381,7 +381,7 @@ nnoremap <silent> <F2> :NERDTreeFind<CR>
 " Toggle spelling on and off
 nnoremap <silent> <F4> :set spell!<CR>
 " Source (reload) vimrc, so new setting will be applied
-nnoremap <silent> <F5> :source $MYNVIMRC<CR>
+nnoremap <silent> <F5> :source $MYVIMRC<CR>
 " Toggle search highlight
 nnoremap <silent> <F6> :set nohlsearch!<CR>
 " Toggle white characters visibility
@@ -418,13 +418,13 @@ nnoremap <silent> <Down> :resize -1<CR>
 " -----------------------------------------------------
 let g:airline_powerline_fonts=1
 let g:airline_exclude_preview=1
-let g:airline#extensions#branch#empty_message  =  "No VCS"
-let g:airline#extensions#whitespace#enabled    =  0
-let g:airline#extensions#syntastic#enabled     =  1
-let g:airline#extensions#tabline#enabled       =  1
-let g:airline#extensions#tabline#tab_nr_type   =  1
-let g:airline#extensions#tabline#fnamecollapse =  1
-let g:airline#extensions#hunks#non_zero_only   =  1
+let g:airline#extensions#branch#empty_message="No VCS"
+let g:airline#extensions#whitespace#enabled=0
+let g:airline#extensions#syntastic#enabled=1
+let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#tab_nr_type=1
+let g:airline#extensions#tabline#fnamecollapse=1
+let g:airline#extensions#hunks#non_zero_only=1
 
 " -----------------------------------------------------
 " 4.2 Nerdtree (file browser) setting

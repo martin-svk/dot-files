@@ -30,3 +30,10 @@ endsnippet
 snippet scope "scope with arguments"
 scope :${1:name}, ->${2:(args)} { where($3)}
 endsnippet
+
+# --------------------------------
+# Filters
+# --------------------------------
+snippet bs "before save"
+before_save :${1:method_name}
+endsnippet
