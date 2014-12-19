@@ -574,9 +574,9 @@ nnoremap <silent> <leader>c :<C-u>Unite -start-insert -auto-resize command<CR>
 " Search in defined [m]appings
 nnoremap <silent> <leader>m :<C-u>Unite -start-insert -auto-resize mapping<CR>
 " Search in [l]ines on current buffer
-nnoremap <silent> <leader>l :<C-u>Unite -start-insert -auto-resize line<CR>
+nnoremap <silent> <leader>l :<C-u>Unite -no-split -buffer-name=line-search -start-insert line<CR>
 " Search in [y]ank history
-nnoremap <silent> <leader>y :<C-u>Unite -buffer-name=yank-history -auto-resize -quick-match history/yank<CR>
+nnoremap <silent> <leader>y :<C-u>Unite -buffer-name=yank-history -auto-resize history/yank<CR>
 
 " -----------------------------------------------------
 " 5.2 Surround shortcut for quotes changing
