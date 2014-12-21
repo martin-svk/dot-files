@@ -24,7 +24,7 @@ DISABLE_AUTO_TITLE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 plugins=(coffee colored-man common-aliases extract gitfast
-  git-extras gem rake-fast rails rbenv tmux tmuxinator zsh-syntax-highlighting)
+  git-extras gem meteor rake-fast rails rbenv tmux tmuxinator zsh-syntax-highlighting)
 
 # =====================================================================================================================
 # Plugins settings
