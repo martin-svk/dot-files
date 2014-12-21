@@ -47,14 +47,22 @@ Plug 'ecomba/vim-ruby-refactoring', { 'for': ['ruby', 'eruby'] }
 Plug 'ngmy/vim-rubocop', { 'for': ['ruby', 'eruby'] }
 
 " -----------------------------------------------------
-" HTML/CSS/JS
+" HTML/CSS
 " -----------------------------------------------------
 " CSS color highlighter
-Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'sass', 'less'] }
-" JS libs syntax files, ember, angular, etc.
-Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffee'] }
+Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'sass', 'scss', 'less'] }
 " Sparkup, emmet alternative (<C-e> to expand expression)
 Plug 'rstacruz/sparkup', { 'for': ['html', 'xhtml']}
+
+" -----------------------------------------------------
+" JavaScript / CoffeeScript
+" -----------------------------------------------------
+" Tern auto-completion engine (run 'npm install tern-coffee' after update)
+Plug 'marijnh/tern_for_vim', { 'for': ['javascript', 'coffee'] }
+" Tern for CoffeeScript
+Plug 'othree/tern_for_vim_coffee', { 'for': ['javascript', 'coffee'] }
+" JS libs syntax files, ember, angular, etc.
+Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffee'] }
 
 " -----------------------------------------------------
 " Android
@@ -241,7 +249,7 @@ set foldlevelstart=2
 set fillchars="fold: "
 
 " -----------------------------------------------------
-" 2.7 Enable omni completion. (Ctrl-X Ctrl-O)
+" 2.7 Omni completion settings
 " -----------------------------------------------------
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
@@ -267,6 +275,9 @@ if has("autocmd") && exists("+omnifunc")
     \   setlocal omnifunc=syntaxcomplete#Complete |
     \ endif
 endif
+
+" Dont show preview scratch buffers
+set completeopt-=preview
 
 " -----------------------------------------------------
 " 2.8 Completion ignore list
