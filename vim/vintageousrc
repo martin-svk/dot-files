@@ -1,5 +1,5 @@
-:map <space>p <C-p>
-:map <space><space> <C-P>
+:map <space>o <C-p>
+:map <space>c <C-P>
 :map <space>t <C-f12>
 :map n nzz
 :map N Nzz
