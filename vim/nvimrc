@@ -287,14 +287,14 @@ set wildignore+=*.png,*.jpg,*.gif
 "{{{
 
 " -----------------------------------------------------
-" 3.1 Setting leader
+" 3.1 Setting leaders
 " -----------------------------------------------------
 let mapleader="\<space>"
 let g:mapleader="\<space>"
 
 " -----------------------------------------------------
 " 3.2 Disabling arrow keys, space key, exmode enter
-" with Q key, help with F1
+" with Q key, help with F1, etc.
 " -----------------------------------------------------
 nnoremap <up> <nop>
 nnoremap <down> <nop>
@@ -312,7 +312,7 @@ nnoremap <F1> <nop>
 nnoremap Q <nop>
 
 " -----------------------------------------------------
-" 3.3 Defaults overriding
+" 3.3 Vim defaults overriding
 " -----------------------------------------------------
 
 " Visual linewise up and down by default
@@ -340,38 +340,22 @@ nnoremap Y y$
 nnoremap Q @q
 
 " Mark with big M (default to middle of the screen overriden)
+" m is used as EasyMotion leader
 nnoremap M m
 
 " -----------------------------------------------------
-" 3.4 Common task mappings
+" 3.4 Common tasks
 " -----------------------------------------------------
 
-" Quick save and quit / buffer delete
+" Save and quit
 nnoremap ,w :w<CR>
 nnoremap <silent> ,q :q<CR>
-nnoremap <silent> ,d :bd<CR>
-nnoremap <silent> + :bn<CR>
-nnoremap <silent> _ :bp<CR>
 
-" Reformat whole file easily
+" Reformat whole file
 nnoremap <silent> ,f mzgg=G`z
 
-" Shortcuts for quiting and saving
-cmap ww wqall
-cmap qq qall
-
-" Command abbreviations to accept case errors
-cab W! w!
-cab Q! q!
-cab Wq wq
-cab Wa wa
-cab wQ wq
-cab WQ wq
-cab W w
-cab Q q
-
 " -----------------------------------------------------
-" 3.5 Toggles setup
+" 3.5 Toggles
 " -----------------------------------------------------
 
 " Toggle nerdtree (file browser) panel
@@ -398,14 +382,37 @@ nnoremap <silent> <F11> :TagbarToggle<CR>
 nnoremap <F12> :call ShowToggles()<CR>
 
 " -----------------------------------------------------
-" 3.6 Window management mappings
+" 3.6 Window / Buffer management
 " -----------------------------------------------------
 
-" Resizing using arrow keys
+" Windows resizing using arrow keys
 nnoremap <silent> <Left> :vertical resize -1<CR>
 nnoremap <silent> <Right> :vertical resize +1<CR>
 nnoremap <silent> <Up> :resize +1<CR>
 nnoremap <silent> <Down> :resize -1<CR>
+
+" Buffers navigation and management
+nnoremap <silent> + :bn<CR>
+nnoremap <silent> _ :bp<CR>
+nnoremap <silent> ,d :bd<CR>
+
+" -----------------------------------------------------
+" 3.7 Command abbrevations and mappings
+" -----------------------------------------------------
+
+" Quiting and saving all
+cmap ww wqall
+cmap qq qall
+
+" Accepting case errors
+cab W! w!
+cab Q! q!
+cab Wq wq
+cab Wa wa
+cab wQ wq
+cab WQ wq
+cab W w
+cab Q q
 "}}}
 
 " ======================================================================================================================
@@ -463,9 +470,9 @@ call unite#custom#source('file_rec', 'ignore_globs', split(&wildignore, ','))
 
 " Custom profile
 call unite#custom#profile('default', 'context', {
-\   'prompt': '» ',
-\   'winheight': 15,
-\ })
+      \   'prompt': '» ',
+      \   'winheight': 15,
+      \ })
 
 " Add syntax highlighting
 let g:unite_source_line_enable_highlight=1
@@ -680,12 +687,4 @@ function! ShowToggles()
   echom "| <F1> NerdTree | <F2> NerdTreeFind | <F3> Paste mode | <F4> Spellcheck | <F5> Source .rc | <F6> Search Highlight |" .
         \"<F7> Whitechars | <F8> Syntastic | <F9> Rainbow() | <F10> Goyo mode | <F11> Tagbar | <F12> This message |"
 endfunction
-"}}}
-" ======================================================================================================================
-" TODO LIST:
-" ======================================================================================================================
-"{{{
-"
-" 1. Really start writing this vimrc help file on github.
-"
 "}}}
