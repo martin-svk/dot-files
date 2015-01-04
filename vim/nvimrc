@@ -47,14 +47,22 @@ Plug 'ecomba/vim-ruby-refactoring', { 'for': ['ruby', 'eruby'] }
 Plug 'ngmy/vim-rubocop', { 'for': ['ruby', 'eruby'] }
 
 " -----------------------------------------------------
-" HTML/CSS/JS
+" HTML/CSS
 " -----------------------------------------------------
 " CSS color highlighter
-Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'sass', 'less'] }
-" JS libs syntax files, ember, angular, etc.
-Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffee'] }
+Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'sass', 'scss', 'less'] }
 " Sparkup, emmet alternative (<C-e> to expand expression)
 Plug 'rstacruz/sparkup', { 'for': ['html', 'xhtml']}
+
+" -----------------------------------------------------
+" JavaScript / CoffeeScript
+" -----------------------------------------------------
+" Tern auto-completion engine (run 'npm install tern-coffee' after update)
+Plug 'marijnh/tern_for_vim', { 'for': ['javascript', 'coffee'] }
+" Tern for CoffeeScript
+Plug 'othree/tern_for_vim_coffee', { 'for': ['javascript', 'coffee'] }
+" JS libs syntax files, ember, angular, etc.
+Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffee'] }
 
 " -----------------------------------------------------
 " Android
@@ -74,6 +82,8 @@ Plug 'Lokaltog/vim-easymotion'
 
 " Unite (Files, Buffers, Commands, etc. fuzzy searcher)
 Plug 'Shougo/unite.vim'
+" Unite outline plugin
+Plug 'Shougo/unite-outline'
 " Nerdtree file browser
 Plug 'scrooloose/nerdtree'
 " Tags (methods, classes) display window
@@ -133,7 +143,7 @@ Plug 'terryma/vim-expand-region'
 Plug 'tomasr/molokai'
 " Hybrid dark color theme
 Plug 'w0ng/vim-hybrid'
-" Jellbeans theme
+" Jellybeans theme
 Plug 'nanotech/jellybeans.vim'
 " Approximation to make gvim schemes work in terminal
 Plug 'vim-scripts/CSApprox'
@@ -239,7 +249,7 @@ set foldlevelstart=2
 set fillchars="fold: "
 
 " -----------------------------------------------------
-" 2.7 Enable omni completion. (Ctrl-X Ctrl-O)
+" 2.7 Omni completion settings
 " -----------------------------------------------------
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
@@ -255,16 +265,19 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails=1
 autocmd FileType ruby,eruby let g:rubycomplete_load_gemfile=1
 
 " make CSS omni-completion work for SASS and SCSS
-autocmd BufNewFile,BufRead *.scss             set ft=scss.css
-autocmd BufNewFile,BufRead *.sass             set ft=sass.css
+autocmd BufNewFile,BufRead *.scss set ft=scss.css
+autocmd BufNewFile,BufRead *.sass set ft=sass.css
 
 " use syntax complete if nothing else available
 if has("autocmd") && exists("+omnifunc")
   autocmd Filetype *
-        \ if &omnifunc == "" |
-        \         setlocal omnifunc=syntaxcomplete#Complete |
-        \ endif
+    \ if &omnifunc == "" |
+    \   setlocal omnifunc=syntaxcomplete#Complete |
+    \ endif
 endif
+
+" Dont show preview scratch buffers
+set completeopt-=preview
 
 " -----------------------------------------------------
 " 2.8 Completion ignore list
@@ -289,8 +302,8 @@ set wildignore+=*.png,*.jpg,*.gif
 " -----------------------------------------------------
 " 3.1 Setting leaders
 " -----------------------------------------------------
-let mapleader="\<space>"
 let g:mapleader="\<space>"
+let g:maplocalleader=","
 
 " -----------------------------------------------------
 " 3.2 Disabling arrow keys, space key, exmode enter
@@ -347,12 +360,12 @@ nnoremap M m
 " 3.4 Common tasks
 " -----------------------------------------------------
 
-" Save and quit
-nnoremap ,w :w<CR>
-nnoremap <silent> ,q :q<CR>
+" Quick save and quit / buffer delete
+nnoremap <localleader>w :w<CR>
+nnoremap <silent> <localleader>q :q<CR>
 
 " Reformat whole file
-nnoremap <silent> ,f mzgg=G`z
+nnoremap <silent> <localleader>f mzgg=G`z
 
 " -----------------------------------------------------
 " 3.5 Toggles
@@ -425,13 +438,13 @@ cab Q q
 " -----------------------------------------------------
 let g:airline_powerline_fonts=1
 let g:airline_exclude_preview=1
-let g:airline#extensions#branch#empty_message  =  "No VCS"
-let g:airline#extensions#whitespace#enabled    =  0
-let g:airline#extensions#syntastic#enabled     =  1
-let g:airline#extensions#tabline#enabled       =  1
-let g:airline#extensions#tabline#tab_nr_type   =  1
-let g:airline#extensions#tabline#fnamecollapse =  1
-let g:airline#extensions#hunks#non_zero_only   =  1
+let g:airline#extensions#branch#empty_message="No VCS"
+let g:airline#extensions#whitespace#enabled=0
+let g:airline#extensions#syntastic#enabled=1
+let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#tab_nr_type=1
+let g:airline#extensions#tabline#fnamecollapse=1
+let g:airline#extensions#hunks#non_zero_only=1
 
 " -----------------------------------------------------
 " 4.2 Nerdtree (file browser) setting
@@ -461,8 +474,8 @@ if executable('ag')
   let g:unite_source_grep_default_opts='--nocolor --line-numbers --nogroup -S -C0'
   let g:unite_source_grep_recursive_opt=''
   " Ignore vcs files
-  let g:unite_source_rec_async_command='ag --nocolor --nogroup --ignore ".hg" --ignore ".svn" --ignore ".git" --ignore ".bzr" --hidden -g ""'
-  let g:unite_source_file_async_command='ag --nocolor --nogroup --ignore ".hg" --ignore ".svn" --ignore ".git" --ignore ".bzr" --hidden -g ""'
+  let g:unite_source_rec_async_command='ag --nocolor --nogroup --ignore ".hg" --ignore ".svn" --ignore ".git" --ignore ".bzr" --ignore ".meteor"--hidden -g ""'
+  let g:unite_source_file_async_command='ag --nocolor --nogroup --ignore ".hg" --ignore ".svn" --ignore ".git" --ignore ".bzr" --ignore ".meteor" --hidden -g ""'
 endif
 
 " Ignore wildignore files
@@ -470,9 +483,9 @@ call unite#custom#source('file_rec', 'ignore_globs', split(&wildignore, ','))
 
 " Custom profile
 call unite#custom#profile('default', 'context', {
-      \   'prompt': '» ',
-      \   'winheight': 15,
-      \ })
+\   'prompt': '» ',
+\   'winheight': 15,
+\ })
 
 " Add syntax highlighting
 let g:unite_source_line_enable_highlight=1
@@ -513,7 +526,11 @@ let g:tagbar_type_ruby={
 " -----------------------------------------------------
 " 4.6 Superatab
 " -----------------------------------------------------
-let g:SuperTabDefaultCompletionType='<C-p>'
+let g:SuperTabDefaultCompletionType='context'
+autocmd FileType *
+  \ if &omnifunc != '' |
+  \   call SuperTabChain(&omnifunc, "<c-p>") |
+  \ endif
 
 " -----------------------------------------------------
 " 4.7 Goyo
@@ -564,6 +581,8 @@ endfunction
 nnoremap <silent> <leader>o :<C-u>Unite -no-split -buffer-name=project-files -start-insert file_rec/async:!<CR>
 " [s]witch between open files (buffer)
 nnoremap <silent> <leader>s :<C-u>Unite -no-split -buffer-name=buffers buffer<CR>
+" Search in current file tags
+nnoremap <silent> <leader>t :<C-u>Unite -no-split -buffer-name=tags -start-insert outline<CR>
 " Search for term in cwd file ([g]rep)
 nnoremap <silent> <leader>g :<C-u>Unite -silent -auto-resize grep:.<CR>
 " Search in edit [h]istory
@@ -573,9 +592,9 @@ nnoremap <silent> <leader>c :<C-u>Unite -start-insert -auto-resize command<CR>
 " Search in defined [m]appings
 nnoremap <silent> <leader>m :<C-u>Unite -start-insert -auto-resize mapping<CR>
 " Search in [l]ines on current buffer
-nnoremap <silent> <leader>l :<C-u>Unite -start-insert -auto-resize line<CR>
+nnoremap <silent> <leader>l :<C-u>Unite -no-split -buffer-name=line-search -start-insert line<CR>
 " Search in [y]ank history
-nnoremap <silent> <leader>y :<C-u>Unite -buffer-name=yank-history -auto-resize -quick-match history/yank<CR>
+nnoremap <silent> <leader>y :<C-u>Unite -buffer-name=yank-history -auto-resize history/yank<CR>
 
 " -----------------------------------------------------
 " 5.2 Surround shortcut for quotes changing
@@ -612,8 +631,8 @@ omap / <Plug>(easymotion-tn)
 " -----------------------------------------------------
 " Disable built-in cx-ck to be able to go backward in US
 inoremap <c-x><c-k> <nop>
-let g:UltiSnipsExpandTrigger='<tab>'
-let g:UltiSnipsListSnippets='<c-tab>'
+let g:UltiSnipsExpandTrigger='<c-j>'
+let g:UltiSnipsListSnippets='<c-l>'
 let g:UltiSnipsJumpForwardTrigger='<c-j>'
 let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 "}}}
@@ -642,6 +661,7 @@ if strftime("%H") < 14
 else
   let g:airline_theme='jellybeans'
   colorscheme jellybeans
+  highlight ColorColumn ctermbg=235
 endif
 
 " Color column
@@ -660,13 +680,12 @@ hi Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE
 "{{{
 autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
-autocmd FileType php setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
 autocmd FileType coffee,javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
 autocmd FileType html,htmldjango,xhtml,haml setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
 autocmd FileType sass,scss,css setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
-autocmd FileType snippets setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
-autocmd FileType vim setlocal keywordprg=:help
+autocmd FileType snippets setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
+autocmd FileType vim setlocal keywordprg=:help tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 "}}}
 
 " ======================================================================================================================

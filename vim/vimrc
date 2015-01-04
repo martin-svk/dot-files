@@ -363,11 +363,8 @@ nnoremap M m
 " Quick save and quit / buffer delete
 nnoremap <localleader>w :w<CR>
 nnoremap <silent> <localleader>q :q<CR>
-nnoremap <silent> <localleader>d :bd<CR>
-nnoremap <silent> + :bn<CR>
-nnoremap <silent> _ :bp<CR>
 
-" Reformat whole file easily
+" Reformat whole file
 nnoremap <silent> <localleader>f mzgg=G`z
 
 " -----------------------------------------------------
@@ -413,14 +410,14 @@ nnoremap <silent> _ :bp<CR>
 nnoremap <silent> ,d :bd<CR>
 
 " -----------------------------------------------------
-" 3.7 Command abbreviations and mappings
+" 3.7 Command abbrevations and mappings
 " -----------------------------------------------------
 
-" Shortcuts for quiting and saving
+" Quiting and saving all
 cmap ww wqall
 cmap qq qall
 
-" Command abbreviations to accept case errors
+" Accepting case errors
 cab W! w!
 cab Q! q!
 cab Wq wq
@@ -709,12 +706,4 @@ function! ShowToggles()
   echom "| <F1> NerdTree | <F2> NerdTreeFind | <F3> Paste mode | <F4> Spellcheck | <F5> Source .rc | <F6> Search Highlight |" .
         \"<F7> Whitechars | <F8> Syntastic | <F9> Rainbow() | <F10> Goyo mode | <F11> Tagbar | <F12> This message |"
 endfunction
-"}}}
-" ======================================================================================================================
-" TODO LIST:
-" ======================================================================================================================
-"{{{
-"
-" 1. Really start writing this vimrc help file on github.
-"
 "}}}
