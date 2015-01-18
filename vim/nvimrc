@@ -704,6 +704,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 function! ShowToggles()
   echom "| <F1> NerdTree | <F2> NerdTreeFind | <F3> Paste mode | <F4> Spellcheck | <F5> Source .rc | <F6> Search Highlight |" .
-        \"<F7> Whitechars | <F8> Syntastic | <F9> Rainbow() | <F10> Goyo mode | <F11> Tagbar | <F12> This message |"
+        \" <F7> Whitechars | <F8> Syntastic | <F9> Rainbow() | <F10> Goyo mode | <F11> Tagbar | <F12> This message |"
 endfunction
 "}}}
