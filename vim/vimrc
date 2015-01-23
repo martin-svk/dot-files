@@ -29,6 +29,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/syntastic', { 'for': ['java', 'ruby', 'eruby', 'coffee', 'javascript', 'html'] }
 " Snippets support
 Plug 'SirVer/ultisnips'
+" Commenting support
+Plug 'joshhartigan/SimpleCommenter'
 
 " -----------------------------------------------------
 " Ruby/Rails
@@ -635,6 +637,14 @@ let g:UltiSnipsExpandTrigger='<c-j>'
 let g:UltiSnipsListSnippets='<c-l>'
 let g:UltiSnipsJumpForwardTrigger='<c-j>'
 let g:UltiSnipsJumpBackwardTrigger='<c-k>'
+
+" -----------------------------------------------------
+" 5.7 Simple commenter
+" -----------------------------------------------------
+" comment line
+nmap <localleader>cc :SimpleComment<CR>
+" uncomment line
+nmap <localleader>cu :SimpleUncomment<CR>
 "}}}
 
 " ======================================================================================================================
@@ -704,6 +714,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 function! ShowToggles()
   echom "| <F1> NerdTree | <F2> NerdTreeFind | <F3> Paste mode | <F4> Spellcheck | <F5> Source .rc | <F6> Search Highlight |" .
-        \"<F7> Whitechars | <F8> Syntastic | <F9> Rainbow() | <F10> Goyo mode | <F11> Tagbar | <F12> This message |"
+        \" <F7> Whitechars | <F8> Syntastic | <F9> Rainbow() | <F10> Goyo mode | <F11> Tagbar | <F12> This message |"
 endfunction
 "}}}
