@@ -119,6 +119,8 @@ Plug 'jszakmeister/vim-togglecursor'
 
 " Git wrapper
 Plug 'tpope/vim-fugitive'
+" Fugitive extension for branch management
+Plug 'idanarye/vim-merginal'
 " Git changes visualizer
 Plug 'airblade/vim-gitgutter'
 " Gitk for vim
