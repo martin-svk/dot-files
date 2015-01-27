@@ -142,6 +142,8 @@ alias cfc='coffee -c'
 alias s-pinta='ssh team11@calculon.fiit.stuba.sk -p 30022'
 alias s-nitrous='ssh action@euw1-2.nitrousbox.com -p 21326'
 alias s-tabber='ssh toma@tabber.fiit.stuba.sk'
+alias s-deploy='ssh deploy@178.62.244.81'
+alias s-martin='ssh martin@178.62.244.81'
 
 # ------------------------------------------
 # Other
