@@ -136,8 +136,8 @@ Plug 'esneider/YUNOcommit.vim'
 Plug 'tmhedberg/matchit'
 " Change surroundings characters
 Plug 'tpope/vim-surround'
-" Expanding region selection
-Plug 'terryma/vim-expand-region'
+" Next text-object selection
+Plug 'gcmt/wildfire.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.8 Color-scheme plugins
