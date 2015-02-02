@@ -88,6 +88,8 @@ Plug 'Shougo/unite.vim'
 Plug 'Shougo/unite-outline'
 " Nerdtree file browser
 Plug 'scrooloose/nerdtree'
+" File browser
+Plug 'Shougo/vimfiler.vim'
 " Tags (methods, classes) display window
 Plug 'majutsushi/tagbar'
 
