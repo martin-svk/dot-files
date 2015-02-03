@@ -587,6 +587,8 @@ nnoremap <silent> <leader>o :<C-u>Unite -no-split -buffer-name=project-files -st
 nnoremap <silent> <leader>s :<C-u>Unite -no-split -buffer-name=buffers buffer<CR>
 " Search in current file tags
 nnoremap <silent> <leader>t :<C-u>Unite -no-split -buffer-name=tags -start-insert outline<CR>
+" Search in current file tags
+nnoremap <silent> <leader>f :<C-u>Unite -no-split -buffer-name=files file<CR>
 " Search for term in cwd file ([g]rep)
 nnoremap <silent> <leader>g :<C-u>Unite -silent -auto-resize grep:.<CR>
 " Search in edit [h]istory
