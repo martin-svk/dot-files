@@ -25,8 +25,6 @@ Language/syntax files: [vim-polyglot](https://github.com/sheerun/vim-polyglot)
 
 #### Autocomplete [(Supertab)](https://github.com/ervandew/supertab)
 
-My settings:
-
 ```VimL
 let g:SuperTabDefaultCompletionType='context'
 autocmd FileType *
@@ -36,8 +34,6 @@ autocmd FileType *
 ```
 
 #### Fuzzy file/buffer/text finder [(Unite)](https://github.com/Shougo/unite.vim)
-
-My settings:
 
 ```VimL
 
@@ -70,11 +66,7 @@ call unite#custom#profile('default', 'context', {
 
 " Add syntax highlighting
 let g:unite_source_line_enable_highlight=1
-```
 
-My mappings:
-
-```VimL
 " Custom mappings for the unite buffer
 autocmd FileType unite call s:unite_settings()
 function! s:unite_settings()
@@ -117,8 +109,6 @@ nnoremap <silent> <leader>y :<C-u>Unite -buffer-name=yank-history -auto-resize h
 
 #### Snippets support [(Ultisnips)](https://github.com/SirVer/ultisnips)
 
-My settings:
-
 ```VimL
 " Disable built-in cx-ck to be able to go backward in US
 inoremap <c-x><c-k> <nop>
@@ -129,8 +119,6 @@ let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 ```
 
 #### Fast text navigation [(Easymotion)](https://github.com/Lokaltog/vim-easymotion)
-
-My settings:
 
 ```VimL
 " Turn on case sensitive feature
