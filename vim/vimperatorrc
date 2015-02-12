@@ -1,0 +1,5 @@
+"3.8.3 (created: 2014/11/09 13:19:01)
+" vim: set ft=vimperator:
+
+colorscheme indigo
+set editor="xterm -e nvim"
