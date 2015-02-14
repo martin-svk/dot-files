@@ -1,5 +1,4 @@
-"3.8.3 (created: 2014/11/09 13:19:01)
-" vim: set ft=vimperator:
+" Vimperator config file
 
-colorscheme indigo
+colorscheme default
 set editor="xterm -e nvim"
