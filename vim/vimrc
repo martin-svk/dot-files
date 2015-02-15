@@ -83,6 +83,8 @@ Plug 'Lokaltog/vim-easymotion'
 Plug 'Shougo/unite.vim'
 " Unite outline plugin
 Plug 'Shougo/unite-outline'
+" Vimfiler file browser
+Plug 'Shougo/vimfiler.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.4 Text insertion improving plugins
@@ -363,9 +365,9 @@ nnoremap <silent> <localleader>f mzgg=G`z
 " -----------------------------------------------------
 
 " Toggle nerdtree (file browser) panel
-nnoremap <silent> <F1> :Edit .<CR>
+nnoremap <silent> <F1> :VimFiler -find -force-quit<CR>
 " Toggle explorer in current file dir
-nnoremap <silent> <F2> :Explorer<CR>
+nnoremap <silent> <F2> :VimFilerBufferDir -find -force-quit<CR>
 " Toggle spelling on and off
 nnoremap <silent> <F4> :set spell!<CR>
 " Source (reload) vimrc, so new setting will be applied
