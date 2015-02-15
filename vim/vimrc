@@ -264,9 +264,9 @@ autocmd BufNewFile,BufRead *.sass set ft=sass.css
 " use syntax complete if nothing else available
 if has("autocmd") && exists("+omnifunc")
   autocmd Filetype *
-    \ if &omnifunc == "" |
-    \   setlocal omnifunc=syntaxcomplete#Complete |
-    \ endif
+        \ if &omnifunc == "" |
+        \   setlocal omnifunc=syntaxcomplete#Complete |
+        \ endif
 endif
 
 " Dont show preview scratch buffers
@@ -364,10 +364,10 @@ nnoremap <silent> <localleader>f mzgg=G`z
 " 3.5 Toggles
 " -----------------------------------------------------
 
-" Toggle nerdtree (file browser) panel
-nnoremap <silent> <F1> :VimFiler -find -force-quit<CR>
-" Toggle explorer in current file dir
-nnoremap <silent> <F2> :VimFilerBufferDir -find -force-quit<CR>
+" Toggle file explorer
+nnoremap <silent> <F1> :VimFilerExplorer<CR>
+" Toggle syntax checking
+nnoremap <silent> <F2> :SyntasticToggleMode<CR>
 " Toggle spelling on and off
 nnoremap <silent> <F4> :set spell!<CR>
 " Source (reload) vimrc, so new setting will be applied
@@ -376,14 +376,10 @@ nnoremap <silent> <F5> :source $MYVIMRC<CR>
 nnoremap <silent> <F6> :set nohlsearch!<CR>
 " Toggle white characters visibility
 nnoremap <silent> <F7> :set list!<CR>
-" Toggle syntax checking
-nnoremap <silent> <F8> :SyntasticToggleMode<CR>
 " Toggle rainbow paranthesis
-nnoremap <silent> <F9> :RainbowParenthesesToggle<CR>
+nnoremap <silent> <F8> :RainbowParenthesesToggle<CR>
 " Toggle Goyo mode
-nnoremap <silent> <F10> :Goyo<CR>
-" Free to use
-" nnoremap <silent> <F11>
+nnoremap <silent> <F9> :Goyo<CR>
 " Echo out toggles legend on <F12>
 nnoremap <F12> :call ShowToggles()<CR>
 
@@ -466,9 +462,9 @@ call unite#custom#source('file_rec', 'ignore_globs', split(&wildignore, ','))
 
 " Custom profile
 call unite#custom#profile('default', 'context', {
-\   'prompt': '» ',
-\   'winheight': 15,
-\ })
+      \   'prompt': '» ',
+      \   'winheight': 15,
+      \ })
 
 " Add syntax highlighting
 let g:unite_source_line_enable_highlight=1
@@ -497,9 +493,9 @@ let g:loaded_syntastic_css_csslint_checker=0
 " -----------------------------------------------------
 let g:SuperTabDefaultCompletionType='context'
 autocmd FileType *
-  \ if &omnifunc != '' |
-  \   call SuperTabChain(&omnifunc, "<c-p>") |
-  \ endif
+      \ if &omnifunc != '' |
+      \   call SuperTabChain(&omnifunc, "<c-p>") |
+      \ endif
 
 " -----------------------------------------------------
 " 4.5 Goyo
@@ -541,14 +537,12 @@ function! s:unite_settings()
   nmap <silent> <buffer> m <Plug>(unite_toggle_mark_current_candidate)
 endfunction
 
-" Search in cwd files recursively ([o]pen)
-nnoremap <silent> <leader>o :<C-u>Unite -no-split -buffer-name=project-files -start-insert file_rec/async:!<CR>
-" [s]witch between open files (buffer)
-nnoremap <silent> <leader>s :<C-u>Unite -no-split -buffer-name=buffers buffer<CR>
+" Search in cwd [f]iles recursively
+nnoremap <silent> <leader>f :<C-u>Unite -no-split -buffer-name=project-files -start-insert file_rec/async:!<CR>
+" search between open files - [b]uffer
+nnoremap <silent> <leader>b :<C-u>Unite -no-split -buffer-name=buffers buffer<CR>
 " Search in current file tags
 nnoremap <silent> <leader>t :<C-u>Unite -no-split -buffer-name=tags -start-insert outline<CR>
-" Simple file browse
-nnoremap <silent> <leader>f :<C-u>Unite -no-split -buffer-name=files file<CR>
 " Search for term in cwd file ([g]rep)
 nnoremap <silent> <leader>g :<C-u>Unite -silent -auto-resize grep:.<CR>
 " Search in edit [h]istory
@@ -603,6 +597,11 @@ let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 nmap <localleader>cc :SimpleComment<CR>
 " uncomment line
 nmap <localleader>cu :SimpleUncomment<CR>
+
+" -----------------------------------------------------
+" 5.6 Vimfiler
+" -----------------------------------------------------
+nnoremap <leader>o :VimFiler -find -force-quit<CR>
 "}}}
 
 " ======================================================================================================================
@@ -668,7 +667,7 @@ autocmd BufLeave * set nocursorline
 autocmd BufWritePre * :%s/\s\+$//e
 
 function! ShowToggles()
-  echom "| <F1> Netrw | <F2> Netrw cwd | <F3> Paste mode | <F4> Spellcheck | <F5> Source .rc | <F6> Search Highlight |" .
-        \" <F7> Whitechars | <F8> Syntastic | <F9> Rainbow() | <F10> Goyo mode | <F11> <noop> | <F12> This message |"
+  echom "| <F1> Vimfiler | <F2> Syntastic | <F3> Paste mode | <F4> Spellcheck | <F5> Source .rc | <F6> Search Highlight |" .
+        \" <F7> Whitechars | <F8> Rainbow() | <F9> Goyo mode | <F12> This message |"
 endfunction
 "}}}

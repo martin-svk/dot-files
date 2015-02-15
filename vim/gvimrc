@@ -1,6 +1,6 @@
 " Misc settings
 " ------------------------------------------------------------
-set guifont=Ubuntu\ Mono\ Bold\ 12
+set guifont=Ubuntu\ Mono\ 12
 set fuoptions=maxvert,maxhorz
 
 " Colorscheme
