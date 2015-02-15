@@ -31,7 +31,7 @@ xterm*eightBitInput: false
 xterm*eightBitOutput: true
 
 ! Borders
-xterm*borderWidth: 0
+xterm*BorderWidth: 0
 
 ! =============================================================================
 ! ============================== COLOR CONFIG =================================
