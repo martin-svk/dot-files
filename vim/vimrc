@@ -41,6 +41,8 @@ Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby'] }
 Plug 'tpope/vim-endwise', { 'for': ['ruby', 'eruby'] }
 " Ruby eval plugin
 Plug 'kmdsbng/vim-ruby-eval', { 'for': ['ruby', 'eruby'] }
+" Partial extraction
+Plug 'jbgutierrez/vim-partial'
 " Change between ruby 1.9 and 1.8 hash syntax
 Plug 'ck3g/vim-change-hash-syntax', { 'for': ['ruby', 'eruby'] }
 " Refactoring tools
@@ -66,11 +68,6 @@ Plug 'othree/tern_for_vim_coffee', { 'for': ['javascript', 'coffee'] }
 " JS libs syntax files, ember, angular, etc.
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffee'] }
 
-" -----------------------------------------------------
-" Android
-" -----------------------------------------------------
-Plug 'hsanson/vim-android', { 'for': 'java' }
-
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.2 Motion/text navigation improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
@@ -86,12 +83,6 @@ Plug 'Lokaltog/vim-easymotion'
 Plug 'Shougo/unite.vim'
 " Unite outline plugin
 Plug 'Shougo/unite-outline'
-" Nerdtree file browser
-Plug 'scrooloose/nerdtree'
-" File browser
-Plug 'Shougo/vimfiler.vim'
-" Tags (methods, classes) display window
-Plug 'majutsushi/tagbar'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.4 Text insertion improving plugins
@@ -121,14 +112,10 @@ Plug 'jszakmeister/vim-togglecursor'
 
 " Git wrapper
 Plug 'tpope/vim-fugitive'
-" Fugitive extension for branch management
-Plug 'idanarye/vim-merginal'
 " Git changes visualizer
 Plug 'airblade/vim-gitgutter'
 " Gitk for vim
 Plug 'gregsexton/gitv'
-" Commit encouraging
-Plug 'esneider/YUNOcommit.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.7 Text objects improving plugins
@@ -376,9 +363,9 @@ nnoremap <silent> <localleader>f mzgg=G`z
 " -----------------------------------------------------
 
 " Toggle nerdtree (file browser) panel
-nnoremap <silent> <F1> :NERDTreeToggle<CR>
-" Toggle tagbar (methods, classes, etc.) window
-nnoremap <silent> <F2> :NERDTreeFind<CR>
+nnoremap <silent> <F1> :Edit .<CR>
+" Toggle explorer in current file dir
+nnoremap <silent> <F2> :Explorer<CR>
 " Toggle spelling on and off
 nnoremap <silent> <F4> :set spell!<CR>
 " Source (reload) vimrc, so new setting will be applied
@@ -393,8 +380,8 @@ nnoremap <silent> <F8> :SyntasticToggleMode<CR>
 nnoremap <silent> <F9> :RainbowParenthesesToggle<CR>
 " Toggle Goyo mode
 nnoremap <silent> <F10> :Goyo<CR>
-" Toggle tagbar (methods, classes, etc.) window
-nnoremap <silent> <F11> :TagbarToggle<CR>
+" Free to use
+" nnoremap <silent> <F11>
 " Echo out toggles legend on <F12>
 nnoremap <F12> :call ShowToggles()<CR>
 
@@ -451,17 +438,7 @@ let g:airline#extensions#tabline#fnamecollapse=1
 let g:airline#extensions#hunks#non_zero_only=1
 
 " -----------------------------------------------------
-" 4.2 Nerdtree (file browser) setting
-" -----------------------------------------------------
-let NERDTreeMinimalUI=1
-let NERDTreeDirArrows=1
-let g:NERDTreeWinSize=40
-
-" 4.2.1 NerdTree buffer settings
-autocmd FileType nerdtree set nolist
-
-" -----------------------------------------------------
-" 4.3 Unite
+" 4.2 Unite
 " -----------------------------------------------------
 
 " Matcher settings
@@ -495,7 +472,7 @@ call unite#custom#profile('default', 'context', {
 let g:unite_source_line_enable_highlight=1
 
 " -----------------------------------------------------
-" 4.4 Syntastic (syntax checker)
+" 4.3 Syntastic (syntax checker)
 " -----------------------------------------------------
 let g:syntastic_ruby_checkers=['mri']
 " mark syntax errors with :signs
@@ -514,21 +491,7 @@ let g:syntastic_mode_map={ 'mode': 'passive', 'active_filetypes': [],'passive_fi
 let g:loaded_syntastic_css_csslint_checker=0
 
 " -----------------------------------------------------
-" 4.5 Tagbar (methods, classes, etc. browser)
-" -----------------------------------------------------
-let g:tagbar_type_ruby={
-      \ 'kinds' : [
-      \ 'm:modules',
-      \ 'c:classes',
-      \ 'd:describes',
-      \ 'C:contexts',
-      \ 'f:methods',
-      \ 'F:singleton methods'
-      \ ]
-      \ }
-
-" -----------------------------------------------------
-" 4.6 Superatab
+" 4.4 Superatab
 " -----------------------------------------------------
 let g:SuperTabDefaultCompletionType='context'
 autocmd FileType *
@@ -537,19 +500,14 @@ autocmd FileType *
   \ endif
 
 " -----------------------------------------------------
-" 4.7 Goyo
+" 4.5 Goyo
 " -----------------------------------------------------
 let g:goyo_width=120
 let g:goyo_margin_top=2
 let g:goyo_margin_bottom=2
 
 " -----------------------------------------------------
-" 4.8 YUNo commit
-" -----------------------------------------------------
-let g:YUNOcommit_after=20
-
-" -----------------------------------------------------
-" 4.9 EasyMotion
+" 4.6 EasyMotion
 " -----------------------------------------------------
 " Turn on case sensitive feature
 let g:EasyMotion_smartcase = 1
@@ -609,18 +567,12 @@ nmap cq cs"'
 nmap cQ cs'"
 
 " -----------------------------------------------------
-" 5.3 Expand region
-" -----------------------------------------------------
-vmap v <Plug>(expand_region_expand)
-vmap <C-v> <Plug>(expand_region_shrink)
-
-" -----------------------------------------------------
-" 5.4 Ruby eval
+" 5.3 Ruby eval
 " -----------------------------------------------------
 nmap <silent> <localleader>r :<C-u>RubyEval<CR>
 
 " -----------------------------------------------------
-" 5.5 EasyMotion
+" 5.4 EasyMotion
 " -----------------------------------------------------
 " [m]otion prefix
 nmap m <Plug>(easymotion-prefix)
@@ -633,7 +585,7 @@ map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 
 " -----------------------------------------------------
-" 5.6 Ultisnips
+" 5.5 Ultisnips
 " -----------------------------------------------------
 " Disable built-in cx-ck to be able to go backward in US
 inoremap <c-x><c-k> <nop>
@@ -643,7 +595,7 @@ let g:UltiSnipsJumpForwardTrigger='<c-j>'
 let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 
 " -----------------------------------------------------
-" 5.7 Simple commenter
+" 5.6 Simple commenter
 " -----------------------------------------------------
 " comment line
 nmap <localleader>cc :SimpleComment<CR>
@@ -706,9 +658,6 @@ autocmd FileType vim setlocal keywordprg=:help tabstop=2 shiftwidth=2 softtabsto
 " 8.0 Custom functions and autocommands
 " ======================================================================================================================
 "{{{
-" Close vim if the last open window is nerdtree
-autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
 " Hide cursorlines when focus lost
 autocmd BufEnter * set cursorline
 autocmd BufLeave * set nocursorline
@@ -717,7 +666,7 @@ autocmd BufLeave * set nocursorline
 autocmd BufWritePre * :%s/\s\+$//e
 
 function! ShowToggles()
-  echom "| <F1> NerdTree | <F2> NerdTreeFind | <F3> Paste mode | <F4> Spellcheck | <F5> Source .rc | <F6> Search Highlight |" .
-        \" <F7> Whitechars | <F8> Syntastic | <F9> Rainbow() | <F10> Goyo mode | <F11> Tagbar | <F12> This message |"
+  echom "| <F1> Netrw | <F2> Netrw cwd | <F3> Paste mode | <F4> Spellcheck | <F5> Source .rc | <F6> Search Highlight |" .
+        \" <F7> Whitechars | <F8> Syntastic | <F9> Rainbow() | <F10> Goyo mode | <F11> <noop> | <F12> This message |"
 endfunction
 "}}}
