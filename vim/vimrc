@@ -538,8 +538,8 @@ function! s:unite_settings()
   nmap <silent> <buffer> m <Plug>(unite_toggle_mark_current_candidate)
 endfunction
 
-" Search in cwd [f]iles recursively
-nnoremap <silent> <leader>f :<C-u>Unite -no-split -buffer-name=project-files -start-insert file_rec/async:!<CR>
+" [o]pen files recursively
+nnoremap <silent> <leader>o :<C-u>Unite -no-split -buffer-name=project-files -start-insert file_rec/async:!<CR>
 " search between open files - [b]uffer
 nnoremap <silent> <leader>b :<C-u>Unite -no-split -buffer-name=buffers buffer<CR>
 " Search in current file tags
@@ -602,7 +602,7 @@ nmap <localleader>cu :SimpleUncomment<CR>
 " -----------------------------------------------------
 " 5.6 Vimfiler
 " -----------------------------------------------------
-nnoremap <leader>o :VimFiler -find -force-quit<CR>
+nnoremap <leader>f :VimFiler -find -force-quit<CR>
 "}}}
 
 " ======================================================================================================================
