@@ -500,9 +500,10 @@ autocmd FileType *
 " -----------------------------------------------------
 " 4.5 Goyo
 " -----------------------------------------------------
-let g:goyo_width=120
-let g:goyo_margin_top=2
-let g:goyo_margin_bottom=2
+let g:goyo_width=140
+let g:goyo_margin_top=1
+let g:goyo_margin_bottom=1
+let g:goyo_linenr=1
 
 " -----------------------------------------------------
 " 4.6 EasyMotion
