@@ -364,10 +364,9 @@ nnoremap <silent> <localleader>f mzgg=G`z
 " 3.5 Toggles
 " -----------------------------------------------------
 
-" Toggle file explorer
-nnoremap <silent> <F1> :VimFilerExplorer<CR>
-" Toggle syntax checking
-nnoremap <silent> <F2> :SyntasticToggleMode<CR>
+" Toggle file broser
+nnoremap <silent> <F1> :VimFiler -find -force-quit<CR>
+nnoremap <silent> <F2> :VimFilerBufferDir -find -force-quit<CR>
 " Toggle spelling on and off
 nnoremap <silent> <F4> :set spell!<CR>
 " Source (reload) vimrc, so new setting will be applied
@@ -380,6 +379,8 @@ nnoremap <silent> <F7> :set list!<CR>
 nnoremap <silent> <F8> :RainbowParenthesesToggle<CR>
 " Toggle Goyo mode
 nnoremap <silent> <F9> :Goyo<CR>
+" Toggle syntax checking
+nnoremap <silent> <F11> :SyntasticToggleMode<CR>
 " Echo out toggles legend on <F12>
 nnoremap <F12> :call ShowToggles()<CR>
 
@@ -598,11 +599,6 @@ let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 nmap <localleader>cc :SimpleComment<CR>
 " uncomment line
 nmap <localleader>cu :SimpleUncomment<CR>
-
-" -----------------------------------------------------
-" 5.6 Vimfiler
-" -----------------------------------------------------
-nnoremap <leader>f :VimFiler -find -force-quit<CR>
 "}}}
 
 " ======================================================================================================================
