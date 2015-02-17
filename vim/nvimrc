@@ -85,6 +85,8 @@ Plug 'Shougo/unite.vim'
 Plug 'Shougo/unite-outline'
 " Vimfiler file browser
 Plug 'Shougo/vimfiler.vim'
+" Nerdtree file browser
+Plug 'scrooloose/nerdtree'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.4 Text insertion improving plugins
@@ -94,8 +96,6 @@ Plug 'Shougo/vimfiler.vim'
 Plug 'ervandew/supertab'
 " Multiple cursors feature
 Plug 'terryma/vim-multiple-cursors'
-" Auto-closing brackets and quotes
-Plug 'Raimondi/delimitMate'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.5 Interface improving plugins
@@ -364,8 +364,9 @@ nnoremap <silent> <localleader>f mzgg=G`z
 " 3.5 Toggles
 " -----------------------------------------------------
 
-" Toggle file browser
-nnoremap <silent> <F1> :VimFiler -find -force-quit<CR>
+" Toggle nerdtree (file browser) panel
+nnoremap <silent> <F1> :NERDTreeToggle<CR>
+" Toggle in-buffer file browser
 nnoremap <silent> <F2> :VimFilerBufferDir -find -force-quit<CR>
 " Toggle spelling on and off
 nnoremap <silent> <F4> :set spell!<CR>
@@ -511,6 +512,15 @@ let g:goyo_linenr=1
 " -----------------------------------------------------
 " Turn on case sensitive feature
 let g:EasyMotion_smartcase = 1
+
+" -----------------------------------------------------
+" 4.6 NERDTree
+" -----------------------------------------------------
+let NERDTreeMinimalUI=1
+let NERDTreeDirArrows=1
+let g:NERDTreeWinSize=40
+" NerdTree buffer settings
+autocmd FileType nerdtree set nolist
 "}}}
 
 " ======================================================================================================================
@@ -656,6 +666,9 @@ autocmd FileType vim setlocal keywordprg=:help tabstop=2 shiftwidth=2 softtabsto
 " 8.0 Custom functions and autocommands
 " ======================================================================================================================
 "{{{
+" Close vim if the last open window is nerdtree
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
 " Hide cursorlines when focus lost
 autocmd BufEnter * set cursorline
 autocmd BufLeave * set nocursorline
