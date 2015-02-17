@@ -96,8 +96,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'ervandew/supertab'
 " Multiple cursors feature
 Plug 'terryma/vim-multiple-cursors'
-" Auto-closing brackets and quotes
-Plug 'Raimondi/delimitMate'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.5 Interface improving plugins
