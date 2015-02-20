@@ -1,12 +1,11 @@
 " Misc settings
 " ------------------------------------------------------------
-set guifont=Ubuntu\ Mono\ 12
-set fuoptions=maxvert,maxhorz
+set guifont=M+\ 1m\ Medium\ 12
 
 " Colorscheme
 " ------------------------------------------------------------
 set background=dark
-colorscheme jellybeans
+colorscheme molokai
 
 " GUI options
 " ------------------------------------------------------------
@@ -15,3 +14,6 @@ set guioptions-=l
 set guioptions-=R
 set guioptions-=r
 set guioptions-=T
+
+" Disable blink cursor
+set guicursor+=a:blinkon0
