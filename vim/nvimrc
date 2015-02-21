@@ -31,6 +31,8 @@ Plug 'scrooloose/syntastic', { 'for': ['java', 'ruby', 'eruby', 'coffee', 'javas
 Plug 'SirVer/ultisnips'
 " Commenting support
 Plug 'joshhartigan/SimpleCommenter'
+" Vim tips
+Plug 'hobbestigrou/vimtips-fortune'
 
 " -----------------------------------------------------
 " Ruby/Rails
@@ -107,6 +109,8 @@ Plug 'bling/vim-airline'
 Plug 'junegunn/goyo.vim'
 " Automatic cursor shape change
 Plug 'jszakmeister/vim-togglecursor'
+" Interesting words highlighter
+Plug 'vasconcelloslf/vim-interestingwords'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.6 Git/Github support plugins
@@ -521,6 +525,11 @@ let NERDTreeDirArrows=1
 let g:NERDTreeWinSize=40
 " NerdTree buffer settings
 autocmd FileType nerdtree set nolist
+
+" -----------------------------------------------------
+" 4.7 Interesting words
+" -----------------------------------------------------
+let g:interestingWordsTermColors = ['154', '121', '211', '137', '214', '222']
 "}}}
 
 " ======================================================================================================================
@@ -609,6 +618,12 @@ let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 nmap <localleader>cc :SimpleComment<CR>
 " uncomment line
 nmap <localleader>cu :SimpleUncomment<CR>
+
+" -----------------------------------------------------
+" 5.7 Interesting words
+" -----------------------------------------------------
+nnoremap <silent> <leader>k :call InterestingWords('n')<CR>
+nnoremap <silent> <leader>kk :call UncolorAllWords()<CR>
 "}}}
 
 " ======================================================================================================================
