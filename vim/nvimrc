@@ -31,8 +31,6 @@ Plug 'scrooloose/syntastic', { 'for': ['java', 'ruby', 'eruby', 'coffee', 'javas
 Plug 'SirVer/ultisnips'
 " Commenting support
 Plug 'joshhartigan/SimpleCommenter'
-" Vim tips
-Plug 'hobbestigrou/vimtips-fortune'
 
 " -----------------------------------------------------
 " Ruby/Rails
