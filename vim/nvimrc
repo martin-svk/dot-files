@@ -343,6 +343,12 @@ nnoremap L $
 vnoremap H ^
 vnoremap L $
 
+" Window navigations using arrow keys only
+nnoremap <silent> <Left>  <C-w>h
+nnoremap <silent> <Down>  <C-w>j
+nnoremap <silent> <Up>    <C-w>k
+nnoremap <silent> <Right> <C-w>l
+
 " More logical Y (defaul was alias for yy)
 nnoremap Y y$
 
