@@ -30,7 +30,7 @@ Plug 'scrooloose/syntastic', { 'for': ['java', 'ruby', 'eruby', 'coffee', 'javas
 " Snippets support
 Plug 'SirVer/ultisnips'
 " Commenting support
-Plug 'joshhartigan/SimpleCommenter'
+Plug 'tpope/vim-commentary'
 
 " -----------------------------------------------------
 " Ruby/Rails
