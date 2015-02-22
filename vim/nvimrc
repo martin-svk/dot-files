@@ -178,7 +178,7 @@ set cmdheight=1                             " Command line height
 set pumheight=10                            " Completion window max size
 set iskeyword-=_                            " Set underscore as a word separator
 set iskeyword-=-                            " Set dash as a word separator
-set timeoutlen=200                          " Setting ESC timeout
+set timeoutlen=250                          " Setting ESC timeout
 set hlsearch                                " Highlight search
 set incsearch                               " Incremental search
 set hidden                                  " Enables to switch between unsaved buffers and keep undo history
@@ -393,11 +393,11 @@ nnoremap <F12> :call ShowToggles()<CR>
 " 3.6 Window / Buffer management
 " -----------------------------------------------------
 
-" Windows resizing using arrow keys
-nnoremap <silent> <Left> :vertical resize -1<CR>
-nnoremap <silent> <Right> :vertical resize +1<CR>
-nnoremap <silent> <Up> :resize +1<CR>
-nnoremap <silent> <Down> :resize -1<CR>
+" Windows resizing using window prefix and arrow keys
+nnoremap <silent> <leader><Left> :vertical resize -1<CR>
+nnoremap <silent> <leader><Right> :vertical resize +1<CR>
+nnoremap <silent> <leader><Up> :resize +1<CR>
+nnoremap <silent> <leader><Down> :resize -1<CR>
 
 " Buffers navigation and management
 nnoremap <silent> + :bn<CR>
