@@ -7,11 +7,11 @@
 local current_dir='${PWD/#$HOME/~}'
 
 # rbenv info
-local ruby_info=' ruby:(%{$fg[red]%}$(rbenv_prompt_info)%{$reset_color%})'
+local ruby_info=' (%{$fg[red]%}$(rbenv_prompt_info)%{$reset_color%})'
 
 # Git info
 local git_info='$(git_prompt_info)'
-ZSH_THEME_GIT_PROMPT_PREFIX=" git:[%{$fg[cyan]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX=" [%{$fg[cyan]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}]"
 ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[cyan]%}+"
 
