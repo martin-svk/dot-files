@@ -101,6 +101,8 @@ Plug 'terryma/vim-multiple-cursors'
 " 1.1.5 Interface improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
+" Improved start screen
+Plug 'mhinz/vim-startify'
 " Airline (improved status line)
 Plug 'bling/vim-airline'
 " Distraction free editing
