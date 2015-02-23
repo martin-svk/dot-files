@@ -359,6 +359,10 @@ nnoremap Q @q
 " m is used as EasyMotion leader
 nnoremap M m
 
+" Yank and Paste uses custom functions which use xclip
+vnoremap <silent> y y:call ClipboardYank()<CR>
+nnoremap <silent> p :call ClipboardPaste()<CR>p
+
 " -----------------------------------------------------
 " 3.4 Common tasks
 " -----------------------------------------------------
@@ -567,7 +571,7 @@ endfunction
 " [o]pen files recursively
 nnoremap <silent> <leader>o :<C-u>Unite -no-split -buffer-name=project-files -start-insert file_rec/async:!<CR>
 " search between open files - [b]uffer
-nnoremap <silent> <leader>b :<C-u>Unite -no-split -buffer-name=buffers buffer<CR>
+nnoremap <silent> <Tab> :<C-u>Unite -no-split -buffer-name=buffers buffer<CR>
 " Search in current file tags
 nnoremap <silent> <leader>t :<C-u>Unite -no-split -buffer-name=tags -start-insert outline<CR>
 " Search for term in cwd file ([g]rep)
@@ -700,5 +704,14 @@ autocmd BufWritePre * :%s/\s\+$//e
 function! ShowToggles()
   echom "| <F1> Vimfiler | <F2> Vimfiler CWD | <F3> Paste mode | <F4> Spellcheck | <F5> Source .rc | <F6> Search Highlight |" .
         \" <F7> Whitechars | <F8> Rainbow() | <F9> Goyo mode | <F10> Syntastic | <F12> This message |"
+endfunction
+
+" Copy and paste function using xclip
+function! ClipboardYank()
+  call system('xclip -i -selection clipboard', @@)
+endfunction
+
+function! ClipboardPaste()
+  let @@ = system('xclip -o -selection clipboard')
 endfunction
 "}}}
