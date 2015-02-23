@@ -360,8 +360,8 @@ nnoremap Q @q
 nnoremap M m
 
 " Yank and Paste uses custom functions which use xclip
-vnoremap <silent> y y:call ClipboardYank()<CR>
-nnoremap <silent> p :call ClipboardPaste()<CR>p
+vnoremap <silent> <localleader>y y:call ClipboardYank()<CR>
+nnoremap <silent> <localleader>p :call ClipboardPaste()<CR>p
 
 " -----------------------------------------------------
 " 3.4 Common tasks
