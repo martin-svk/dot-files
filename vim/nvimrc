@@ -85,8 +85,6 @@ Plug 'Lokaltog/vim-easymotion'
 Plug 'Shougo/unite.vim'
 " Unite outline plugin
 Plug 'Shougo/unite-outline'
-" Vimfiler file browser
-Plug 'Shougo/vimfiler.vim'
 " Nerdtree file browser
 Plug 'scrooloose/nerdtree'
 
@@ -378,10 +376,10 @@ nnoremap <silent> <localleader>f mzgg=G`z
 " 3.5 Toggles
 " -----------------------------------------------------
 
-" Toggle nerdtree (file browser) panel
+" NERDTree panel
 nnoremap <silent> <F1> :NERDTreeToggle<CR>
-" Toggle in-buffer file browser
-nnoremap <silent> <F2> :VimFilerBufferDir -find -force-quit<CR>
+" Quickly explore current file directory
+nnoremap <silent> <F2> :Explore<CR>
 " Toggle spelling on and off
 nnoremap <silent> <F4> :set spell!<CR>
 " Source (reload) vimrc, so new setting will be applied
@@ -532,7 +530,7 @@ let g:EasyMotion_smartcase = 1
 " -----------------------------------------------------
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
-let g:NERDTreeWinSize=40
+let g:NERDTreeWinSize=45
 " NerdTree buffer settings
 autocmd FileType nerdtree set nolist
 
