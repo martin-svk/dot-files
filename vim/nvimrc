@@ -39,10 +39,8 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby'] }
 " Automatically inserts 'end' wisely
 Plug 'tpope/vim-endwise', { 'for': ['ruby', 'eruby'] }
-" Ruby eval plugin (need gem rcodetools)
-Plug 't9md/vim-ruby-xmpfilter', { 'for': ['ruby', 'eruby'] }
 " Partial extraction
-Plug 'jbgutierrez/vim-partial'
+Plug 'jbgutierrez/vim-partial', { 'for': ['ruby', 'eruby'] }
 " Change between ruby 1.9 and 1.8 hash syntax
 Plug 'ck3g/vim-change-hash-syntax', { 'for': ['ruby', 'eruby'] }
 " Refactoring tools
@@ -50,7 +48,7 @@ Plug 'ecomba/vim-ruby-refactoring', { 'for': ['ruby', 'eruby'] }
 " Ruby best practices checker
 Plug 'ngmy/vim-rubocop', { 'for': ['ruby', 'eruby'] }
 " Test runner
-Plug 'skalnik/vim-vroom'
+Plug 'skalnik/vim-vroom', { 'for': ['ruby', 'eruby'] }
 
 " -----------------------------------------------------
 " HTML/CSS
@@ -111,7 +109,7 @@ Plug 'jszakmeister/vim-togglecursor'
 Plug 'vasconcelloslf/vim-interestingwords'
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 1.1.6 Git/Github support plugins
+" 1.1.6 External tools support plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Git wrapper
@@ -379,6 +377,9 @@ nnoremap <silent> <localleader>q :q<CR>
 " Reformat whole file
 nnoremap <silent> <localleader>f mzgg=G`z
 
+" Run current file with using vimux
+nnoremap <silent> <localleader>r :!ruby %<CR>
+
 " -----------------------------------------------------
 " 3.5 Toggles
 " -----------------------------------------------------
@@ -512,11 +513,12 @@ let g:loaded_syntastic_css_csslint_checker=0
 " -----------------------------------------------------
 " 4.4 Superatab
 " -----------------------------------------------------
-let g:SuperTabDefaultCompletionType='context'
-autocmd FileType *
-      \ if &omnifunc != '' |
-      \   call SuperTabChain(&omnifunc, "<c-p>") |
-      \ endif
+" Neovim is not built with +ruby yet
+" let g:SuperTabDefaultCompletionType='context'
+" autocmd FileType *
+"       \ if &omnifunc != '' |
+"       \   call SuperTabChain(&omnifunc, "<c-p>") |
+"       \ endif
 
 " -----------------------------------------------------
 " 4.5 Goyo
@@ -545,6 +547,12 @@ autocmd FileType nerdtree set nolist
 " 4.7 Interesting words
 " -----------------------------------------------------
 let g:interestingWordsTermColors = ['154', '121', '211', '137', '214', '222']
+
+" -----------------------------------------------------
+" 4.8 Vroom settings
+" -----------------------------------------------------
+let g:vroom_map_keys=0
+let g:vroom_use_vimux=0
 "}}}
 
 " ======================================================================================================================
@@ -643,9 +651,8 @@ nnoremap <silent> <leader>kk :call UncolorAllWords()<CR>
 " -----------------------------------------------------
 " 5.7 Vroom test runner
 " -----------------------------------------------------
-let g:vroom_map_keys=0
-silent map <localleader>r :VroomRunTestFile<CR>
-silent map <localleader>t :VroomRunNearestTest<CR>
+silent map <localleader>t :VroomRunTestFile<CR>
+silent map <localleader>T :VroomRunNearestTest<CR>
 "}}}
 
 " ======================================================================================================================
