@@ -49,6 +49,8 @@ Plug 'ck3g/vim-change-hash-syntax', { 'for': ['ruby', 'eruby'] }
 Plug 'ecomba/vim-ruby-refactoring', { 'for': ['ruby', 'eruby'] }
 " Ruby best practices checker
 Plug 'ngmy/vim-rubocop', { 'for': ['ruby', 'eruby'] }
+" Test runner
+Plug 'skalnik/vim-vroom'
 
 " -----------------------------------------------------
 " HTML/CSS
@@ -594,7 +596,7 @@ nmap cQ cs'"
 " -----------------------------------------------------
 " 5.3 Ruby eval
 " -----------------------------------------------------
-nmap <silent> ,r <Plug>(xmpfilter-run)
+nmap <silent> <localleader>e <Plug>(xmpfilter-run)
 
 " -----------------------------------------------------
 " 5.4 EasyMotion
@@ -632,6 +634,13 @@ nmap <localleader>cu :SimpleUncomment<CR>
 " -----------------------------------------------------
 nnoremap <silent> <leader>k :call InterestingWords('n')<CR>
 nnoremap <silent> <leader>kk :call UncolorAllWords()<CR>
+
+" -----------------------------------------------------
+" 5.7 Vroom test runner
+" -----------------------------------------------------
+let g:vroom_map_keys=0
+silent map <localleader>r :VroomRunTestFile<CR>
+silent map <localleader>t :VroomRunNearestTest<CR>
 "}}}
 
 " ======================================================================================================================
