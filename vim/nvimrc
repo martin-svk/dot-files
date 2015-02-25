@@ -147,6 +147,8 @@ Plug 'vim-scripts/CSApprox'
 
 " Async processing (for Unite) (make after checkout)
 Plug 'Shougo/vimproc.vim'
+" Run commands in tmux split
+Plug 'benmills/vimux'
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " 1.2 End of plugin declaration
@@ -377,7 +379,7 @@ nnoremap <silent> <localleader>q :q<CR>
 " Reformat whole file
 nnoremap <silent> <localleader>f mzgg=G`z
 
-" Run current file with using vimux
+" Run current file
 nnoremap <silent> <localleader>r :!ruby %<CR>
 
 " -----------------------------------------------------
@@ -552,7 +554,7 @@ let g:interestingWordsTermColors = ['154', '121', '211', '137', '214', '222']
 " 4.8 Vroom settings
 " -----------------------------------------------------
 let g:vroom_map_keys=0
-let g:vroom_use_vimux=0
+let g:vroom_use_vimux=1
 "}}}
 
 " ======================================================================================================================
@@ -676,6 +678,9 @@ if strftime("%H") < 14
   let g:rehash256=1
   let g:airline_theme='tomorrow'
   colorscheme molokai
+elseif strftime("%H") < 18
+  let g:airline_theme='tomorrow'
+  colorscheme hybrid
 else
   let g:airline_theme='jellybeans'
   colorscheme jellybeans

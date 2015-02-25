@@ -25,3 +25,25 @@ endsnippet
 snippet asm "assert_match"
 assert_match ${1:expected}, ${2:actual}
 endsnippet
+
+# --------------------------------
+# RSpec
+# --------------------------------
+
+snippet desc "describe block"
+describe '${1:something}' do
+	$2
+end
+endsnippet
+
+snippet cont "context block"
+context '${1:error case}' do
+	$2
+end
+endsnippet
+
+snippet it "it block"
+it 'should ${1}' do
+	$2
+end
+endsnippet
