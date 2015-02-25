@@ -84,7 +84,7 @@ Plug 'Shougo/unite.vim'
 " Unite outline plugin
 Plug 'Shougo/unite-outline'
 " Nerdtree file browser
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.4 Text insertion improving plugins
@@ -102,7 +102,7 @@ Plug 'terryma/vim-multiple-cursors'
 " Airline (improved status line)
 Plug 'bling/vim-airline'
 " Distraction free editing
-Plug 'junegunn/goyo.vim'
+Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 " Automatic cursor shape change
 Plug 'jszakmeister/vim-togglecursor'
 " Interesting words highlighter
@@ -117,7 +117,7 @@ Plug 'tpope/vim-fugitive'
 " Git changes visualizer
 Plug 'airblade/vim-gitgutter'
 " Gitk for vim
-Plug 'gregsexton/gitv'
+Plug 'gregsexton/gitv', { 'on':  'Gitv' }
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 1.1.7 Text objects improving plugins
