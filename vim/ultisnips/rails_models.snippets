@@ -13,6 +13,10 @@ snippet hmr "has_many relation"
 has_many :$0s
 endsnippet
 
+snippet hmtr "has_many trough relation"
+has_many :$1s, through: :$2s
+endsnippet
+
 # --------------------------------
 # Validations
 # --------------------------------
@@ -22,6 +26,10 @@ endsnippet
 
 snippet vap "validates presence"
 validates :$1, presence: true$2
+endsnippet
+
+snippet vau "validates uniqueness"
+validates :$1, uniqueness: ${3:true}
 endsnippet
 
 # --------------------------------
@@ -34,10 +42,10 @@ endsnippet
 # --------------------------------
 # Filters
 # --------------------------------
-snippet bsh "before save hook"
+snippet bsf "before save hook"
 before_save :${1:method_name}
 endsnippet
 
-snippet ach "after create hook"
+snippet acf "after create hook"
 after_create :${1:method_name}
 endsnippet
