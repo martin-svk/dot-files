@@ -148,8 +148,6 @@ Plug 'vim-scripts/CSApprox'
 
 " Async processing (for Unite) (make after checkout)
 Plug 'Shougo/vimproc.vim'
-" Run commands in tmux split
-Plug 'benmills/vimux'
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " 1.2 End of plugin declaration
@@ -556,7 +554,6 @@ let g:interestingWordsTermColors = ['154', '121', '211', '137', '214', '222']
 " 4.8 Vroom settings
 " -----------------------------------------------------
 let g:vroom_map_keys=0
-let g:vroom_use_vimux=1
 "}}}
 
 " ======================================================================================================================
