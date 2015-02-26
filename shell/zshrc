@@ -130,15 +130,14 @@ alias ssredis='sudo service redis-server start'
 # ------------------------------------------
 # Applications
 # ------------------------------------------
-alias e='nvim'
+alias n='nvim'
+alias v='nvim'
 alias g='git'
-alias v='vim -X'
+alias t='tmux attach -t main || tmux new -s main'
 alias f='ranger'
 alias rb='ruby'
 alias be='bundle exec'
 alias msql='mysql -uroot -p'
-alias acp='android create project -n ExampleApp -t 1 -p . -k com.example -a MainActivity'
-alias cfc='coffee -c'
 
 # ------------------------------------------
 # SSH servers
@@ -172,13 +171,6 @@ if [ -d $HOME/lib/android-sdk-linux ]; then
   if [ -d $HOME/lib/android-sdk-linux/platform-tools ]; then
     export PATH=$HOME/lib/android-sdk-linux/platform-tools:$PATH
   fi
-fi
-
-# Add linuxbrew to path if exists
-if [ -d $HOME/.linuxbrew ]; then
-  export PATH="$HOME/.linuxbrew/bin:$PATH"
-  export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
-  export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 fi
 
 # Setting default editor
