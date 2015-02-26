@@ -18,13 +18,10 @@ call plug#begin('~/.nvim/plugged')
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 1.1.1 Language or framework supporting plugins
+" Language supporting plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
-" -----------------------------------------------------
-" Universal
-" -----------------------------------------------------
-" Most common languages support (syntax, indenting, etc. ) for ruby, js, etc.
+" Most common languages filetypes (syntax, indenting, etc.)
 Plug 'sheerun/vim-polyglot'
 " Needs linters to be installed to work properly (see https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers)
 Plug 'scrooloose/syntastic', { 'for': ['java', 'ruby', 'eruby', 'coffee', 'javascript', 'html'] }
@@ -70,14 +67,7 @@ Plug 'othree/tern_for_vim_coffee', { 'for': ['javascript', 'coffee'] }
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffee'] }
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 1.1.2 Motion/text navigation improving plugins
-" ---------------------------------------------------------------------------------------------------------------------
-
-" Easy motion
-Plug 'Lokaltog/vim-easymotion'
-
-" ---------------------------------------------------------------------------------------------------------------------
-" 1.1.3 Files/code navigation improving plugins
+" Files/code navigation/management plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Unite (Files, Buffers, Commands, etc. fuzzy searcher)
@@ -86,18 +76,17 @@ Plug 'Shougo/unite.vim'
 Plug 'Shougo/unite-outline'
 " Nerdtree file browser
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-
-" ---------------------------------------------------------------------------------------------------------------------
-" 1.1.4 Text insertion improving plugins
-" ---------------------------------------------------------------------------------------------------------------------
-
+" Easy motion
+Plug 'Lokaltog/vim-easymotion'
 " Completion with tab
 Plug 'ervandew/supertab'
-" Multiple cursors feature
+" Multiple cursors
 Plug 'terryma/vim-multiple-cursors'
+" Interesting words highlighter
+Plug 'vasconcelloslf/vim-interestingwords'
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 1.1.5 Interface improving plugins
+" Interface improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Airline (improved status line)
@@ -106,35 +95,33 @@ Plug 'bling/vim-airline'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 " Automatic cursor shape change
 Plug 'jszakmeister/vim-togglecursor'
-" Interesting words highlighter
-Plug 'vasconcelloslf/vim-interestingwords'
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 1.1.6 External tools support plugins
+" External tools supporting plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Git wrapper
 Plug 'tpope/vim-fugitive'
-" Git changes visualizer
+" Git changes showed on line numbers
 Plug 'airblade/vim-gitgutter'
 " Gitk for vim
 Plug 'gregsexton/gitv', { 'on':  'Gitv' }
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 1.1.8 Color-scheme plugins
+" Color-scheme plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
+" Approximation to make gvim schemes work in terminal
+Plug 'godlygeek/csapprox'
 " Molokai theme
 Plug 'tomasr/molokai'
 " Hybrid dark color theme
 Plug 'w0ng/vim-hybrid'
 " Jellybeans theme
 Plug 'nanotech/jellybeans.vim'
-" Approximation to make gvim schemes work in terminal
-Plug 'vim-scripts/CSApprox'
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 1.1.9 Dependencies
+" Dependencies
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Async processing (for Unite) (make after checkout)
