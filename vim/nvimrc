@@ -121,15 +121,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'gregsexton/gitv', { 'on':  'Gitv' }
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 1.1.7 Text objects improving plugins
-" ---------------------------------------------------------------------------------------------------------------------
-"
-" Matchit better textobj support
-Plug 'tmhedberg/matchit'
-" Change surroundings characters
-Plug 'tpope/vim-surround'
-
-" ---------------------------------------------------------------------------------------------------------------------
 " 1.1.8 Color-scheme plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
@@ -602,12 +593,6 @@ nnoremap <silent> <leader>l :<C-u>Unite -no-split -buffer-name=line-search -star
 nnoremap <silent> <leader>y :<C-u>Unite -buffer-name=yank-history -auto-resize history/yank<CR>
 
 " -----------------------------------------------------
-" 5.2 Surround shortcut for quotes changing
-" -----------------------------------------------------
-nmap cq cs"'
-nmap cQ cs'"
-
-" -----------------------------------------------------
 " 5.3 Ruby eval
 " -----------------------------------------------------
 nmap <silent> <localleader>e <Plug>(xmpfilter-run)
@@ -644,16 +629,16 @@ nmap <localleader>cc :SimpleComment<CR>
 nmap <localleader>cu :SimpleUncomment<CR>
 
 " -----------------------------------------------------
-" 5.7 Interesting words
+" 5.7 Interesting words highlighting
 " -----------------------------------------------------
-nnoremap <silent> <leader>k :call InterestingWords('n')<CR>
-nnoremap <silent> <leader>kk :call UncolorAllWords()<CR>
+nnoremap <silent> <localleader>h :call InterestingWords('n')<CR>
+nnoremap <silent> <localleader>hh :call UncolorAllWords()<CR>
 
 " -----------------------------------------------------
 " 5.7 Vroom test runner
 " -----------------------------------------------------
-silent map <localleader>t :VroomRunTestFile<CR>
-silent map <localleader>T :VroomRunNearestTest<CR>
+map <silent> <localleader>t :VroomRunTestFile<CR>
+map <silent> <localleader>T :VroomRunNearestTest<CR>
 "}}}
 
 " ======================================================================================================================
