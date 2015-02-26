@@ -2,7 +2,7 @@
 " ### Author : Martin Toma <martin.toma.svk@gmail.com>                                                               ###
 " ######################################################################################################################
 " ### NVIMRC Configuration focused on RAILS development                                                              ###
-" ### Date created : Tue Oct 14 19:58:11 CEST 2014                                                                   ###
+" ### Date created : Tue Oct 14 19:58:11 CET 2014                                                                   ###
 " ### Vimmer since : Tue Nov 12 14:14:56 CET 2013                                                                    ###
 " ######################################################################################################################
 
@@ -21,7 +21,7 @@ call plug#begin('~/.nvim/plugged')
 " Language supporting plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Most common languages filetypes (syntax, indenting, etc.)
+" Most common languages file types (syntax, indenting, etc.)
 Plug 'sheerun/vim-polyglot'
 " Needs linters to be installed to work properly (see https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers)
 Plug 'scrooloose/syntastic', { 'for': ['java', 'ruby', 'eruby', 'coffee', 'javascript', 'html'] }
@@ -165,19 +165,20 @@ set mat=2                                   " How many tenths of a second to bli
 set lazyredraw                              " Don't redraw while executing macros (better performance)
 set magic                                   " For regular expressions turn magic on
 set showmatch                               " Show matching brackets when text indicator is over them
-set encoding=utf8                           " Set utf8 as standard encoding and en_US as the standard language
-set list                                    " Display whitechars by default (use F7)
+set encoding=utf8                           " Set UTF-8 as standard encoding and en_US as the standard language
+set list                                    " Display white chars by default (use <F7>)
 set spelllang=en_us                         " Set language to us English
-set backspace=indent,eol,start              " Set default behaviour of backspace
-set spellfile=~/.vim/dictionary.utf-8.add   " Use this file for spell checking
+set backspace=indent,eol,start              " Set default behavior of backspace
+set spellfile=~/.nvim/dictionary.utf-8.add  " Use this file for spell checking
+set nospell                                 " Set spelling off by default
 set nostartofline                           " Prevent cursor from moving to beginning of line when switching buffers
 set virtualedit=block                       " To be able to select past EOL in visual block mode
 set nojoinspaces                            " No extra space when joining a line which ends with . ? !
 set startofline                             " When doing thing like gg or G, will move cursor to start of line
 set wrapscan                                " Search again from top when reached the bottom
 set showcmd                                 " Show incomplete commands
-set scrolloff=5                             " Scroll when closing to top or bottom of the sceeen
-set updatetime=1000                         " Updatetime used to create swapfile or i.e. to refresh tagbar
+set scrolloff=5                             " Scroll when closing to top or bottom of the screen
+set updatetime=1000                         " Update time used to create swap file or other things
 
 " -----------------------------------------------------
 " 2.1 Intendation settings (2 spaces tabs)
@@ -324,12 +325,6 @@ nnoremap L $
 vnoremap H ^
 vnoremap L $
 
-" Window navigations using arrow keys only
-nnoremap <silent> <Left>  <C-w>h
-nnoremap <silent> <Down>  <C-w>j
-nnoremap <silent> <Up>    <C-w>k
-nnoremap <silent> <Right> <C-w>l
-
 " More logical Y (defaul was alias for yy)
 nnoremap Y y$
 
@@ -342,6 +337,7 @@ nnoremap M m
 
 " Yank and Paste uses custom functions which use xclip (default gp pasted before cursor)
 vnoremap <silent> gy y:call ClipboardYank()<CR>
+vnoremap <silent> gyy yy:call ClipboardYank()<CR>
 nnoremap <silent> gp :call ClipboardPaste()<CR>p
 
 " -----------------------------------------------------
@@ -351,11 +347,13 @@ nnoremap <silent> gp :call ClipboardPaste()<CR>p
 " Quick save and quit / buffer delete
 nnoremap <localleader>w :w<CR>
 nnoremap <silent> <localleader>q :q<CR>
+nnoremap <silent> <localleader>d :bd<CR>
 
 " Reformat whole file
 nnoremap <silent> <localleader>f mzgg=G`z
 
 " Run current file
+" TODO: refactor into function
 nnoremap <silent> <localleader>r :!ruby %<CR>
 
 " -----------------------------------------------------
@@ -364,8 +362,8 @@ nnoremap <silent> <localleader>r :!ruby %<CR>
 
 " NERDTree panel
 nnoremap <silent> <F1> :NERDTreeToggle<CR>
-" Quickly explore current file directory
-nnoremap <silent> <F2> :Explore<CR>
+" NERDTree find current file
+nnoremap <silent> <F2> :NERDTreeFind<CR>
 " Paste mode toggling
 nnoremap <silent> <F3> :set paste!<CR>
 " Toggle spelling on and off
@@ -389,16 +387,15 @@ nnoremap <F12> :call ShowToggles()<CR>
 " 3.6 Window / Buffer management
 " -----------------------------------------------------
 
-" Windows resizing using window prefix and arrow keys
-nnoremap <silent> <leader><Left> :vertical resize -1<CR>
-nnoremap <silent> <leader><Right> :vertical resize +1<CR>
-nnoremap <silent> <leader><Up> :resize +1<CR>
-nnoremap <silent> <leader><Down> :resize -1<CR>
+" Windows resizing using arrow keys
+nnoremap <silent> <Left> :vertical resize -1<CR>
+nnoremap <silent> <Right> :vertical resize +1<CR>
+nnoremap <silent> <Up> :resize +1<CR>
+nnoremap <silent> <Down> :resize -1<CR>
 
 " Buffers navigation and management
 nnoremap <silent> + :bn<CR>
 nnoremap <silent> _ :bp<CR>
-nnoremap <silent> ,d :bd<CR>
 
 " -----------------------------------------------------
 " 3.7 Command abbrevations and mappings
