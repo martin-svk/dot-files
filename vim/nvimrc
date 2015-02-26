@@ -106,6 +106,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 " Gitk for vim
 Plug 'gregsexton/gitv', { 'on':  'Gitv' }
+" Tmux integration
+Plug 'tpope/vim-tbone'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Color-scheme plugins
