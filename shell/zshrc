@@ -137,6 +137,8 @@ alias t='tmux attach -t main || tmux new -s main'
 alias f='ranger'
 alias rb='ruby'
 alias be='bundle exec'
+alias xcopy='xclip -selection clipboard'
+alias xpaste='xclip -o'
 alias msql='mysql -uroot -p'
 
 # ------------------------------------------
