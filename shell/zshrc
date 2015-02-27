@@ -26,7 +26,7 @@ DISABLE_AUTO_TITLE="true"
 # =====================================================================================================================
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(adb battery bgnotify bower bundler coffee colored-man common-aliases docker extract gitfast
+plugins=(adb bgnotify bower bundler coffee colored-man common-aliases docker extract gitfast
         gem httpie jsontools meteor npm rake-fast rails rbenv rsync tmux tmuxinator vagrant zsh-syntax-highlighting)
 
 # =====================================================================================================================
