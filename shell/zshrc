@@ -90,6 +90,11 @@ alias s-deploy='ssh deploy@178.62.244.81'
 alias s-martin='ssh martin@178.62.244.81'
 
 # ------------------------------------------
+# Language specific
+# ------------------------------------------
+alias rb='ruby'
+
+# ------------------------------------------
 # Other
 # ------------------------------------------
 alias q='exit'
@@ -97,11 +102,7 @@ alias xcopy='xclip -selection clipboard'
 alias xpaste='xclip -o'
 alias capless='xmodmap /home/martin/config/dot-files/other/Xmodmap'
 alias topdu='du -a | sort -nr | head -50'
-
-# ------------------------------------------
-# Language specific
-# ------------------------------------------
-alias rb='ruby'
+alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
 # =====================================================================================================================
 # Other exports
