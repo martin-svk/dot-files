@@ -2,11 +2,15 @@
 
 #-----------------------------------------------------
 # @author Martin Toma
-# @version 3.0
+# @version 4.0
 # @date Fri Nov 15 13:13:22 CET 2013
 # @date of v2 Sat Aug  2 14:46:00 CEST 2014
 # @date of v3 Sun Oct 12 17:07:31 CEST 2014
+# @date of v4 Fri Feb 27 22:00:54 CET 2015
 #-----------------------------------------------------
+
+# Dont continue on error
+set -e
 
 #-----------------------------------------------------
 # Functions and variables
@@ -18,8 +22,26 @@ command_exists () {
 }
 
 install_oh_my_zsh () {
-
+  curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 }
+
+install_plug_vim() {
+  curl -fLo ~/.nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+}
+
+install_nvim_folder() {
+  install_plug_vim
+  ln -s $current_path/nvim/dictionary.utf-8.add ~/.nvim/dictionary.utf-8.add
+  ln -s $current_path/nvim/ultisnips/ ~/.nvim/UltiSnips
+}
+
+#-----------------------------------------------------
+# Basic requirements check
+#-----------------------------------------------------
+
+if !command_exists curl; then
+  sudo apt-get install -y curl
+fi
 
 #-----------------------------------------------------
 # Bash and zsh installation
@@ -51,8 +73,7 @@ else
   echo "ZSH is not installed, want to install now? [Y/n]"
   read answer
   if [ answer -eq "y" ]; then
-    sudo apt-get install zsh &&
-    install_oh_my_zsh
+    sudo apt-get install zsh && install_oh_my_zsh
   else
     echo "Not installing zsh!"
   fi
@@ -95,27 +116,33 @@ else
 fi
 
 #-----------------------------------------------------
-# Vim, Neovim (vimrc, nvimrc, plugins)
+# Neovim, dictionary, ultisnips
 #-----------------------------------------------------
-echo -n "[ vimrc ]"
+echo -n "[ nvimrc ]"
 
-if [ ! -f ~/.vimrc ]; then
+if !command_exists nvim; then
+  sudo add-apt-repository ppa:neovim-ppa/unstable && sudo apt-get update && sudo apt-get install -y neovim
+fi
+
+if [ ! -f ~/.nvimrc ]; then
   echo "    Creating!"
-  ln -s $current_path/vim/vimrc ~/.vimrc
+  ln -s $current_path/vim/nvimrc ~/.nvimrc
 else
   echo "    Deleting old one!"
-  rm ~/.vimrc
-  ln -s $current_path/vim/vimrc ~/.vimrc
+  rm ~/.nvimrc
+  ln -s $current_path/vim/nvimrc ~/.nvimrc
 fi
 
-if [ ! -d ~/.vim ]; then
-  mkdir ~/.vim
-  curl -fLo ~/.vim/autoload/plug.vim \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+if [ ! -d ~/.nvim ]; then
+  mkdir ~/.nvim
+  install_nvim_folder
+else
+  rm -rf ~/.nvim
+  install_nvim_folder
 fi
 
 #-----------------------------------------------------
-# Installing tmux and tmuxinator
+# Installing tmux
 #-----------------------------------------------------
 echo -n "[ tmux.conf ]"
 
@@ -126,19 +153,6 @@ else
   echo "    Deleting old one!"
   rm ~/.tmux.conf
   ln -s $current_path/tmux/tmux.conf ~/.tmux.conf
-fi
-
-echo -n "[ tmuxinator ]"
-
-if command_exists gem; then
-  if command_exists tmuxinator; then
-    echo "    Already installed, adding rails template!"
-    cp $current_path/tmux/tmuxinator-ror-template.yml ~/.tmuxinator/tmuxinator-ror-template.yml
-  else
-    echo "    Installing tmuxinator!"
-    gem install tmuxinator &&
-    cp $current_path/tmux/tmuxinator-ror-template.yml ~/.tmuxinator/tmuxinator-ror-template.yml
-  fi
 fi
 
 #-----------------------------------------------------
@@ -169,9 +183,21 @@ if command_exists ruby; then
     ln -s $current_path/ruby/pryrc ~/.pryrc
   else
     echo "   Installing pry!"
-    gem install pry &&
-    ln -s $current_path/ruby/pryrc ~/.pryrc
+    gem install pry && ln -s $current_path/ruby/pryrc ~/.pryrc
   fi
 else
   echo "    Aborting, ruby is not installed. Please install rbenv or rvm and rerun this script again."
 fi
+
+#-----------------------------------------------------
+# Installing remaining files
+#-----------------------------------------------------
+
+if command_exists ag; then
+  ln -s $current_path/other/agignore ~/.agignore
+else
+  sudo apt-get install -y silversearcher-ag
+  ln -s $current_path/other/agignore ~/.agignore
+fi
+
+# TODO: devilspie2
