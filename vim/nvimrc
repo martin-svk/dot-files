@@ -129,6 +129,12 @@ Plug 'nanotech/jellybeans.vim'
 " Async processing (for Unite) (make after checkout)
 Plug 'Shougo/vimproc.vim'
 
+" ---------------------------------------------------------------------------------------------------------------------
+" Other
+" ---------------------------------------------------------------------------------------------------------------------
+" HackerNews browsing in vim!
+Plug 'ryanss/vim-hackernews'
+
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " 1.2 End of plugin declaration
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -696,8 +702,8 @@ autocmd BufLeave * set nocursorline
 autocmd BufWritePre * :%s/\s\+$//e
 
 function! ShowToggles()
-  echom "| <F1> Vimfiler | <F2> Vimfiler CWD | <F3> Paste mode | <F4> Spellcheck | <F5> Source .rc | <F6> Search Highlight |" .
-        \" <F7> Whitechars | <F8> Rainbow() | <F9> Goyo mode | <F10> Syntastic | <F12> This message |"
+  echom "| <F1> NERDTree | <F2> NERDTreeFind | <F3> Paste mode | <F4> Spellcheck | <F5> Reload rc | <F6> Search Highlight |" .
+        \" <F7> Whitechars | <F8> <free> | <F9> Goyo mode | <F10> <free> | <F11> Syntastic | <F12> This message |"
 endfunction
 
 " Copy and paste function using xclip
