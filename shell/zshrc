@@ -26,8 +26,8 @@ DISABLE_AUTO_TITLE="true"
 # =====================================================================================================================
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(coffee colored-man common-aliases extract gitfast
-  git-extras gem meteor rake-fast rails rbenv tmux tmuxinator zsh-syntax-highlighting)
+plugins=(adb battery bgnotify bower bundler coffee colored-man common-aliases docker extract gitfast
+        gem httpie jsontools meteor npm rake-fast rails rbenv rsync tmux tmuxinator vagrant zsh-syntax-highlighting)
 
 # =====================================================================================================================
 # Plugins settings
@@ -48,66 +48,8 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
 # =====================================================================================================================
-# Aliases
+# My additional aliases
 # =====================================================================================================================
-
-# ------------------------------------------
-# Navigation, file and directories
-# ------------------------------------------
-
-# alias l='ls -lFh'     #size,show type,human readable
-# alias la='ls -lAFh'   #long list,show almost all,show type,human readable
-# alias lr='ls -tRFh'   #sorted by date,recursive,show type,human readable
-# alias lt='ls -ltFh'   #long list,sorted by date,show type,human readable
-# alias ll='ls -l'      #long list
-# alias ldot='ls -ld .*'
-# alias lS='ls -1FSsh'
-# alias lart='ls -1Fcart'
-# alias lrt='ls -1Fcrt'
-
-# alias zshrc='vim ~/.zshrc' # Quick access to the ~/.zshrc file
-# alias grep='grep --color'
-# alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
-# alias t='tail -f'
-# alias ..='cd ../'
-# alias ...='cd ../../'
-# alias ....='cd ../../../'
-# alias .....='cd ../../../../'
-
-# ------------------------------------------
-# Command line head / tail shortcuts
-# ------------------------------------------
-
-# alias -g H='| head'
-# alias -g T='| tail'
-# alias -g G='| grep'
-# alias -g L="| less"
-# alias -g M="| most"
-# alias -g LL="2>&1 | less"
-# alias -g CA="2>&1 | cat -A"
-# alias -g NE="2> /dev/null"
-# alias -g NUL="> /dev/null 2>&1"
-# alias -g P="2>&1| pygmentize -l pytb"
-
-# ------------------------------------------
-# Other unix utilities
-# ------------------------------------------
-
-# alias dud='du -d 1 -h'
-# alias duf='du -sh *'
-# alias fd='find . -type d -name'
-# alias ff='find . -type f -name'
-# alias h='history'
-# alias hgrep="fc -El 0 | grep"
-# alias help='man'
-# alias j='jobs'
-# alias p='ps -f'
-# alias sortnr='sort -n -r'
-# alias unexport='unset'
-# alias whereami=display_info
-# alias rm='rm -i'
-# alias cp='cp -i'
-# alias mv='mv -i'
 
 # ------------------------------------------
 #  APT-GET
@@ -136,10 +78,6 @@ alias g='git'
 alias t='tmux attach -t main || tmux new -s main'
 alias f='ranger'
 alias e='echo -n'
-alias rb='ruby'
-alias be='bundle exec'
-alias xcopy='xclip -selection clipboard'
-alias xpaste='xclip -o'
 alias msql='mysql -uroot -p'
 
 # ------------------------------------------
@@ -155,8 +93,15 @@ alias s-martin='ssh martin@178.62.244.81'
 # Other
 # ------------------------------------------
 alias q='exit'
+alias xcopy='xclip -selection clipboard'
+alias xpaste='xclip -o'
 alias capless='xmodmap /home/martin/config/dot-files/other/Xmodmap'
 alias topdu='du -a | sort -nr | head -50'
+
+# ------------------------------------------
+# Language specific
+# ------------------------------------------
+alias rb='ruby'
 
 # =====================================================================================================================
 # Other exports
