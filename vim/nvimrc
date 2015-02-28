@@ -128,6 +128,8 @@ Plug 'nanotech/jellybeans.vim'
 
 " Async processing (for Unite) (make after checkout)
 Plug 'Shougo/vimproc.vim'
+" Matchit enhances motions like %
+Plug 'edsono/vim-matchit'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Other
