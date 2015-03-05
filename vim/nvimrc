@@ -240,11 +240,12 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType c set omnifunc=ccomplete#Complete
 autocmd FileType java set omnifunc=javacomplete#Complete
-autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading=1
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
-autocmd FileType ruby,eruby let g:rubycomplete_rails=1
-autocmd FileType ruby,eruby let g:rubycomplete_load_gemfile=1
+" No +ruby compiled neovim for now
+" autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+" autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading=1
+" autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
+" autocmd FileType ruby,eruby let g:rubycomplete_rails=1
+" autocmd FileType ruby,eruby let g:rubycomplete_load_gemfile=1
 
 " make CSS omni-completion work for SASS and SCSS
 autocmd BufNewFile,BufRead *.scss set ft=scss.css
@@ -501,11 +502,11 @@ let g:loaded_syntastic_css_csslint_checker=0
 " 4.4 Superatab
 " -----------------------------------------------------
 " Neovim is not built with +ruby yet
-" let g:SuperTabDefaultCompletionType='context'
-" autocmd FileType *
-"       \ if &omnifunc != '' |
-"       \   call SuperTabChain(&omnifunc, "<c-p>") |
-"       \ endif
+let g:SuperTabDefaultCompletionType='context'
+autocmd FileType *
+      \ if &omnifunc != '' |
+      \   call SuperTabChain(&omnifunc, "<c-p>") |
+      \ endif
 
 " -----------------------------------------------------
 " 4.5 Goyo
