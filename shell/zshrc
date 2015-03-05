@@ -5,6 +5,9 @@
 # Disable control flow (ctrl-s / ctrl-q)
 stty stop '' -ixoff -ixon
 
+# Set spelling correction
+setopt correct
+
 # Dont raise errors when regex nomatch fires
 unsetopt nomatch
 
