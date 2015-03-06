@@ -29,6 +29,8 @@ Plug 'scrooloose/syntastic', { 'for': ['java', 'ruby', 'eruby', 'coffee', 'javas
 Plug 'SirVer/ultisnips'
 " Commenting support
 Plug 'tpope/vim-commentary'
+" Surround
+Plug 'tpope/vim-surround'
 
 " -----------------------------------------------------
 " Ruby/Rails
