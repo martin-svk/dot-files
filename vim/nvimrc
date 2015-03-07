@@ -23,7 +23,7 @@ call plug#begin('~/.nvim/plugged')
 
 " Most common languages file types (syntax, indenting, etc.)
 Plug 'sheerun/vim-polyglot'
-" Needs linters to be installed to work properly (see https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers)
+" Needs linters to work properly (see https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers)
 Plug 'scrooloose/syntastic', { 'for': ['java', 'ruby', 'eruby', 'coffee', 'javascript', 'html'] }
 " Snippets support
 Plug 'SirVer/ultisnips'
@@ -61,7 +61,7 @@ Plug 'rstacruz/sparkup', { 'for': ['html', 'xhtml']}
 " -----------------------------------------------------
 " JavaScript / CoffeeScript
 " -----------------------------------------------------
-" Tern auto-completion engine (run 'npm install tern-coffee' after update)
+" Tern auto-completion engine (run 'npm install && npm install tern-coffee' after update)
 Plug 'marijnh/tern_for_vim', { 'for': ['javascript', 'coffee'] }
 " Tern for CoffeeScript
 Plug 'othree/tern_for_vim_coffee', { 'for': ['javascript', 'coffee'] }
@@ -84,8 +84,6 @@ Plug 'Lokaltog/vim-easymotion'
 Plug 'ervandew/supertab'
 " Multiple cursors
 Plug 'terryma/vim-multiple-cursors'
-" Interesting words highlighter
-Plug 'vasconcelloslf/vim-interestingwords'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Interface improving plugins
@@ -93,9 +91,8 @@ Plug 'vasconcelloslf/vim-interestingwords'
 
 " Airline (improved status line)
 Plug 'bling/vim-airline'
-" Distraction free editing
-Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 " Automatic cursor shape change
+" TODO: find out why not work in nvim
 Plug 'jszakmeister/vim-togglecursor'
 
 " ---------------------------------------------------------------------------------------------------------------------
@@ -115,8 +112,6 @@ Plug 'tpope/vim-tbone'
 " Color-scheme plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Approximation to make gvim schemes work in terminal
-Plug 'godlygeek/csapprox'
 " Molokai theme
 Plug 'tomasr/molokai'
 " Hybrid dark color theme
@@ -132,12 +127,6 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'Shougo/vimproc.vim'
 " Matchit enhances motions like %
 Plug 'edsono/vim-matchit'
-
-" ---------------------------------------------------------------------------------------------------------------------
-" Other
-" ---------------------------------------------------------------------------------------------------------------------
-" HackerNews browsing in vim!
-Plug 'ryanss/vim-hackernews'
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " 1.2 End of plugin declaration
@@ -178,6 +167,7 @@ set lazyredraw                              " Don't redraw while executing macro
 set magic                                   " For regular expressions turn magic on
 set showmatch                               " Show matching brackets when text indicator is over them
 set encoding=utf8                           " Set UTF-8 as standard encoding and en_US as the standard language
+scriptencoding utf-8                        " Also for scripts
 set list                                    " Display white chars by default (use <F7>)
 set spelllang=en_us                         " Set language to us English
 set backspace=indent,eol,start              " Set default behavior of backspace
@@ -389,8 +379,6 @@ nnoremap <silent> <F6> :set nohlsearch!<CR>
 nnoremap <silent> <F7> :set list!<CR>
 " Toggle rainbow paranthesis
 nnoremap <silent> <F8> :RainbowParenthesesToggle<CR>
-" Toggle Goyo mode
-nnoremap <silent> <F9> :Goyo<CR>
 " Toggle syntax checking
 nnoremap <silent> <F11> :SyntasticToggleMode<CR>
 " Echo out toggles legend on <F12>
@@ -511,15 +499,7 @@ autocmd FileType *
       \ endif
 
 " -----------------------------------------------------
-" 4.5 Goyo
-" -----------------------------------------------------
-let g:goyo_width=140
-let g:goyo_margin_top=1
-let g:goyo_margin_bottom=1
-let g:goyo_linenr=1
-
-" -----------------------------------------------------
-" 4.6 EasyMotion
+" 4.5 EasyMotion
 " -----------------------------------------------------
 " Turn on case sensitive feature
 let g:EasyMotion_smartcase = 1
@@ -534,12 +514,7 @@ let g:NERDTreeWinSize=45
 autocmd FileType nerdtree set nolist
 
 " -----------------------------------------------------
-" 4.7 Interesting words
-" -----------------------------------------------------
-let g:interestingWordsTermColors = ['154', '121', '211', '137', '214', '222']
-
-" -----------------------------------------------------
-" 4.8 Vroom settings
+" 4.7 Vroom settings
 " -----------------------------------------------------
 let g:vroom_map_keys=0
 "}}}
@@ -573,7 +548,7 @@ endfunction
 " [o]pen files recursively
 nnoremap <silent> <leader>o :<C-u>Unite -no-split -buffer-name=project-files -start-insert file_rec/async:!<CR>
 " search between open files - [b]uffer
-nnoremap <silent> <Tab> :<C-u>Unite -no-split -buffer-name=buffers -start-insert buffer<CR>
+nnoremap <silent> <leader>b :<C-u>Unite -no-split -buffer-name=buffers -start-insert buffer<CR>
 " Search in current file tags
 nnoremap <silent> <leader>t :<C-u>Unite -no-split -buffer-name=tags -start-insert outline<CR>
 " Search for term in cwd file ([g]rep)
@@ -618,21 +593,7 @@ let g:UltiSnipsJumpForwardTrigger='<c-j>'
 let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 
 " -----------------------------------------------------
-" 5.6 Simple commenter
-" -----------------------------------------------------
-" comment line
-nmap <localleader>cc :SimpleComment<CR>
-" uncomment line
-nmap <localleader>cu :SimpleUncomment<CR>
-
-" -----------------------------------------------------
-" 5.7 Interesting words highlighting
-" -----------------------------------------------------
-nnoremap <silent> <localleader>h :call InterestingWords('n')<CR>
-nnoremap <silent> <localleader>hh :call UncolorAllWords()<CR>
-
-" -----------------------------------------------------
-" 5.7 Vroom test runner
+" 5.6 Vroom test runner
 " -----------------------------------------------------
 map <silent> <localleader>t :VroomRunTestFile<CR>
 map <silent> <localleader>T :VroomRunNearestTest<CR>
