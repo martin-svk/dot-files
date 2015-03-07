@@ -76,8 +76,6 @@ Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffee']
 Plug 'Shougo/unite.vim'
 " Unite outline plugin
 Plug 'Shougo/unite-outline'
-" Nerdtree file browser
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 " Easy motion
 Plug 'Lokaltog/vim-easymotion'
 " Completion with tab
@@ -89,11 +87,16 @@ Plug 'terryma/vim-multiple-cursors'
 " Interface improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
+" Nerdtree file browser
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 " Airline (improved status line)
 Plug 'bling/vim-airline'
-" Automatic cursor shape change
-" TODO: find out why not work in nvim
-Plug 'jszakmeister/vim-togglecursor'
+" Molokai theme
+Plug 'tomasr/molokai'
+" Hybrid dark color theme
+Plug 'w0ng/vim-hybrid'
+" Jellybeans theme
+Plug 'nanotech/jellybeans.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " External tools supporting plugins
@@ -107,17 +110,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'gregsexton/gitv', { 'on':  'Gitv' }
 " Tmux integration
 Plug 'tpope/vim-tbone'
-
-" ---------------------------------------------------------------------------------------------------------------------
-" Color-scheme plugins
-" ---------------------------------------------------------------------------------------------------------------------
-
-" Molokai theme
-Plug 'tomasr/molokai'
-" Hybrid dark color theme
-Plug 'w0ng/vim-hybrid'
-" Jellybeans theme
-Plug 'nanotech/jellybeans.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Dependencies
