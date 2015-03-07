@@ -1,5 +1,5 @@
 !
-! Set Caps_Lock to no symbol
+! Change capslock to control
 !
 remove Lock = Caps_Lock
 keysym Caps_Lock = Control_L
