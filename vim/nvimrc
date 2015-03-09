@@ -112,6 +112,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'gregsexton/gitv', { 'on':  'Gitv' }
 " Tmux integration
 Plug 'tpope/vim-tbone'
+" Dirvish (netrw replacement)
+Plug 'justinmk/vim-dirvish'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Dependencies
@@ -261,13 +263,6 @@ set wildignore+=*.gem
 set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
-
-" -----------------------------------------------------
-" 2.9 Netrw settings
-" -----------------------------------------------------
-let g:netrw_menu=0
-let g:netrw_liststyle=3
-let g:netrw_banner=0
 "}}}
 
 " ======================================================================================================================
