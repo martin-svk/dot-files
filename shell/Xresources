@@ -38,26 +38,51 @@ xterm*BorderWidth: 0
 ! =============================================================================
 
 ! -----------------------------------------------------------------------------
+! Gotham
+! -----------------------------------------------------------------------------
+
+xterm*foreground:   #98d1ce
+xterm*background:   #0a0f14
+xterm*cursorColor:  #98d1ce
+xterm*color0:       #0a0f14
+xterm*color8:       #10151b
+xterm*color1:       #c33027
+xterm*color9:       #d26939
+xterm*color2:       #26a98b
+xterm*color10:      #081f2d
+/* xterm*color3:       #edb54b */
+xterm*color3:       #d26939
+xterm*color11:      #245361
+xterm*color4:       #195465
+xterm*color12:      #093748
+xterm*color5:       #4e5165
+xterm*color13:      #888ba5
+xterm*color6:       #33859d
+xterm*color14:      #599caa
+xterm*color7:       #98d1ce
+xterm*color15:      #d3ebe9
+
+! -----------------------------------------------------------------------------
 ! Solarized Dark / Desaturated Dark
 ! -----------------------------------------------------------------------------
 
-#define S_yellow        #b58900
-#define S_orange        #cb4b16
-#define S_red           #dc322f
-#define S_magenta       #d33682
-#define S_violet        #6c71c4
-#define S_blue          #268bd2
-#define S_cyan          #2aa198
-#define S_green         #859900
+/* #define S_yellow        #b58900 */
+/* #define S_orange        #cb4b16 */
+/* #define S_red           #dc322f */
+/* #define S_magenta       #d33682 */
+/* #define S_violet        #6c71c4 */
+/* #define S_blue          #268bd2 */
+/* #define S_cyan          #2aa198 */
+/* #define S_green         #859900 */
 
-#define S_base03        #002b36
-#define S_base02        #073642
-#define S_base01        #586e75
-#define S_base00        #657b83
-#define S_base0         #839496
-#define S_base1         #93a1a1
-#define S_base2         #eee8d5
-#define S_base3         #fdf6e3
+/* #define S_base03        #002b36 */
+/* #define S_base02        #073642 */
+/* #define S_base01        #586e75 */
+/* #define S_base00        #657b83 */
+/* #define S_base0         #839496 */
+/* #define S_base1         #93a1a1 */
+/* #define S_base2         #eee8d5 */
+/* #define S_base3         #fdf6e3 */
 
 ! Desaturated
 
@@ -79,26 +104,26 @@ xterm*BorderWidth: 0
 /* #define S_cyan       #2aa198 */
 /* #define S_green      #859900 */
 
-xterm*background:              S_base03
-xterm*foreground:              S_base0
-xterm*fading:                  40
-xterm*fadeColor:               S_base03
-xterm*cursorColor:             S_base1
-xterm*pointerColorBackground:  S_base01
-xterm*pointerColorForeground:  S_base1
-xterm*color0:                  S_base02
-xterm*color1:                  S_red
-xterm*color2:                  S_green
-xterm*color3:                  S_yellow
-xterm*color4:                  S_blue
-xterm*color5:                  S_magenta
-xterm*color6:                  S_cyan
-xterm*color7:                  S_base2
-xterm*color8:                  S_base03
-xterm*color9:                  S_orange
-xterm*color10:                 S_base01
-xterm*color11:                 S_base00
-xterm*color12:                 S_base0
-xterm*color13:                 S_violet
-xterm*color14:                 S_base1
-xterm*color15:                 S_base3
+/* xterm*background:              S_base03 */
+/* xterm*foreground:              S_base0 */
+/* xterm*fading:                  40 */
+/* xterm*fadeColor:               S_base03 */
+/* xterm*cursorColor:             S_base1 */
+/* xterm*pointerColorBackground:  S_base01 */
+/* xterm*pointerColorForeground:  S_base1 */
+/* xterm*color0:                  S_base02 */
+/* xterm*color1:                  S_red */
+/* xterm*color2:                  S_green */
+/* xterm*color3:                  S_yellow */
+/* xterm*color4:                  S_blue */
+/* xterm*color5:                  S_magenta */
+/* xterm*color6:                  S_cyan */
+/* xterm*color7:                  S_base2 */
+/* xterm*color8:                  S_base03 */
+/* xterm*color9:                  S_orange */
+/* xterm*color10:                 S_base01 */
+/* xterm*color11:                 S_base00 */
+/* xterm*color12:                 S_base0 */
+/* xterm*color13:                 S_violet */
+/* xterm*color14:                 S_base1 */
+/* xterm*color15:                 S_base3 */

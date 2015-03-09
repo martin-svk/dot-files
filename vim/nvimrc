@@ -99,6 +99,8 @@ Plug 'tomasr/molokai'
 Plug 'w0ng/vim-hybrid'
 " Jellybeans theme
 Plug 'nanotech/jellybeans.vim'
+" Gotham
+Plug 'whatyouhide/vim-gotham'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " External tools supporting plugins
@@ -609,8 +611,10 @@ elseif strftime("%H") < 18
   let g:airline_theme='tomorrow'
   colorscheme hybrid
 else
-  let g:airline_theme='jellybeans'
-  colorscheme jellybeans
+  " let g:airline_theme='jellybeans'
+  " colorscheme jellybeans
+  let g:airline_theme='gotham'
+  colorscheme gotham
 endif
 
 " Git gutter (signcolumn color)
