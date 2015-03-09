@@ -145,7 +145,7 @@ set showmode                                " Always show mode
 set wildmenu                                " Better auto-complete of ex commands
 set textwidth=120                           " Text width is 120 chars
 set autoread                                " Automatically reload change files on disk
-set cursorline                              " Set default cursor line (highlighting is done by color scheme)
+set nocursorline                              " Set default cursor line (highlighting is done by color scheme)
 set cmdheight=1                             " Command line height
 set pumheight=10                            " Completion window max size
 set iskeyword-=_                            " Set underscore as a word separator
@@ -631,11 +631,7 @@ elseif strftime("%H") < 18
 else
   let g:airline_theme='jellybeans'
   colorscheme jellybeans
-  highlight ColorColumn ctermbg=235
 endif
-
-" Color column
-let &colorcolumn=121
 
 " Git gutter (signcolumn color)
 highlight clear SignColumn
@@ -665,13 +661,10 @@ autocmd FileType vim setlocal keywordprg=:help tabstop=2 shiftwidth=2 softtabsto
 " Close vim if the last open window is nerdtree
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-" Hide cursorlines when focus lost
-autocmd BufEnter * set cursorline
-autocmd BufLeave * set nocursorline
-
 " Remove trailing whitespaces automatically before save
 autocmd BufWritePre * :%s/\s\+$//e
 
+" Informative echo line
 function! ShowToggles()
   echom "<F1> NERDTree | <F2> NERDTreeFind | <F3> Paste mode | <F4> Spellcheck | <F5> Reload rc | <F6> Search Highlight |" .
         \" <F7> Whitechars | <F8> <free> | <F9> <free> | <F10> Tagbar | <F11> Syntastic | <F12> This message"
