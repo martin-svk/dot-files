@@ -88,7 +88,7 @@ Plug 'terryma/vim-multiple-cursors'
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Nerdtree file browser
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeFind' }
 " Airline (improved status line)
 Plug 'bling/vim-airline'
 " Tagbar tag browser
@@ -352,22 +352,20 @@ nnoremap <silent> <localleader>r :call utils#runCurrentFile()<CR>
 
 " NERDTree find current file
 nnoremap <silent> <F1> :NERDTreeFind<CR>
+" Tagbar panel
+nnoremap <silent> <F2> :TagbarToggle<CR>
 " Paste mode toggling
 nnoremap <silent> <F3> :set paste!<CR>
 " Toggle spelling on and off
 nnoremap <silent> <F4> :set spell!<CR>
-" Source (reload) vimrc, so new setting will be applied
+" Source (reload) nvimrc
 nnoremap <silent> <F5> :source $MYNVIMRC<CR>
 " Toggle search highlight
 nnoremap <silent> <F6> :set nohlsearch!<CR>
 " Toggle white characters visibility
 nnoremap <silent> <F7> :set list!<CR>
-" Toggle rainbow paranthesis
-nnoremap <silent> <F8> :RainbowParenthesesToggle<CR>
-" Tagbar panel
-nnoremap <silent> <F10> :TagbarToggle<CR>
 " Toggle syntax checking
-nnoremap <silent> <F11> :SyntasticToggleMode<CR>
+nnoremap <silent> <F8> :SyntasticToggleMode<CR>
 " Echo out toggles legend on <F12>
 nnoremap <F12> :call utils#showToggles()<CR>
 
