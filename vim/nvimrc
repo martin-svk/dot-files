@@ -93,6 +93,8 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'bling/vim-airline'
 " Tagbar tag browser
 Plug 'majutsushi/tagbar'
+" DWM like window manager
+Plug 'spolu/dwm.vim'
 " Molokai theme
 Plug 'tomasr/molokai'
 " Hybrid dark color theme
@@ -121,6 +123,8 @@ Plug 'tpope/vim-tbone'
 Plug 'Shougo/vimproc.vim'
 " Matchit enhances motions like %
 Plug 'edsono/vim-matchit'
+" Repeat ads repeat via . functionality for some plugins
+Plug 'tpope/vim-repeat'
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " 1.2 End of plugin declaration
