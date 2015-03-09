@@ -335,9 +335,13 @@ nnoremap Q @q
 nnoremap M m
 
 " Yank and Paste uses custom functions which use xclip (default gp pasted before cursor)
-vnoremap <silent> gy y:call ClipboardYank()<CR>
-vnoremap <silent> gyy yy:call ClipboardYank()<CR>
-nnoremap <silent> gp :call ClipboardPaste()<CR>p
+" NOTE: this works now without the need of xclip, find out why!
+" vnoremap <silent> gy y:call ClipboardYank()<CR>
+" vnoremap <silent> gyy yy:call ClipboardYank()<CR>
+" nnoremap <silent> gp :call ClipboardPaste()<CR>p
+
+" Override window cycling
+nnoremap <C-w><C-w> :call IntelligentCycling()<CR>
 
 " -----------------------------------------------------
 " 3.4 Common tasks
@@ -520,7 +524,6 @@ let g:vroom_map_keys=0
 " 4.8 Tagbar settings
 " -----------------------------------------------------
 let g:tagbar_compact=1
-let g:tagbar_autofocus=1
 "}}}
 
 " ======================================================================================================================
@@ -672,8 +675,8 @@ autocmd BufLeave * set nocursorline
 autocmd BufWritePre * :%s/\s\+$//e
 
 function! ShowToggles()
-  echom "| <F1> NERDTree | <F2> NERDTreeFind | <F3> Paste mode | <F4> Spellcheck | <F5> Reload rc | <F6> Search Highlight |" .
-        \" <F7> Whitechars | <F8> <free> | <F9> <free> | <F10> Tagbar | <F11> Syntastic | <F12> This message |"
+  echom "<F1> NERDTree | <F2> NERDTreeFind | <F3> Paste mode | <F4> Spellcheck | <F5> Reload rc | <F6> Search Highlight |" .
+        \" <F7> Whitechars | <F8> <free> | <F9> <free> | <F10> Tagbar | <F11> Syntastic | <F12> This message"
 endfunction
 
 " Copy and paste function using xclip
@@ -683,5 +686,15 @@ endfunction
 
 function! ClipboardPaste()
   let @@ = system('xclip -o -selection clipboard')
+endfunction
+
+" When cycling ignore NERDTree and Tagbar
+function! IntelligentCycling()
+  " Cycle firstly
+  wincmd w
+  " Handle where you are now
+  if &buftype ==# 'nofile'
+    call IntelligentCycling()
+  endif
 endfunction
 "}}}
