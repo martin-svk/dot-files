@@ -35,20 +35,16 @@ Plug 'tpope/vim-surround'
 " -----------------------------------------------------
 " Ruby/Rails
 " -----------------------------------------------------
-" Rails navigation, etc. plugin (i.e. :Rmigration)
-Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby'] }
+" (:A, :R, :Rmigration, :Rextract)
+Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby', 'haml', 'slim'] }
 " Automatically inserts 'end' wisely
 Plug 'tpope/vim-endwise', { 'for': ['ruby', 'eruby'] }
-" Partial extraction
-Plug 'jbgutierrez/vim-partial', { 'for': ['ruby', 'eruby'] }
 " Change between ruby 1.9 and 1.8 hash syntax
-Plug 'ck3g/vim-change-hash-syntax', { 'for': ['ruby', 'eruby'] }
-" Refactoring tools
-Plug 'ecomba/vim-ruby-refactoring', { 'for': ['ruby', 'eruby'] }
+Plug 'ck3g/vim-change-hash-syntax', { 'for': ['ruby', 'eruby'], 'on': 'ChangeHashSyntax' }
 " Ruby best practices checker
-Plug 'ngmy/vim-rubocop', { 'for': ['ruby', 'eruby'] }
+Plug 'ngmy/vim-rubocop', { 'for': ['ruby', 'eruby'], 'on': 'RuboCop' }
 " Test runner
-Plug 'skalnik/vim-vroom', { 'for': ['ruby', 'eruby'] }
+Plug 'skalnik/vim-vroom', { 'for': ['ruby', 'eruby'], 'on': 'VroomRunTestFile'  }
 
 " -----------------------------------------------------
 " HTML/CSS
@@ -56,9 +52,9 @@ Plug 'skalnik/vim-vroom', { 'for': ['ruby', 'eruby'] }
 " CSS color highlighter
 Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'sass', 'scss', 'less'] }
 " Sparkup, emmet alternative (<C-e> to expand expression)
-Plug 'rstacruz/sparkup', { 'for': ['html', 'xhtml']}
+Plug 'rstacruz/sparkup', { 'for': ['html', 'xhtml'] }
 " Spacebars
-Plug 'Slava/vim-spacebars', { 'for': ['html', 'xhtml']}
+Plug 'Slava/vim-spacebars', { 'for': ['html', 'xhtml'] }
 
 " -----------------------------------------------------
 " JavaScript / CoffeeScript
