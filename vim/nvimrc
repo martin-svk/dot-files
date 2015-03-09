@@ -93,8 +93,6 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'bling/vim-airline'
 " Tagbar tag browser
 Plug 'majutsushi/tagbar'
-" DWM like window manager
-Plug 'spolu/dwm.vim'
 " Molokai theme
 Plug 'tomasr/molokai'
 " Hybrid dark color theme
