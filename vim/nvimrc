@@ -137,6 +137,7 @@ call plug#end()
 
 set shell=/bin/bash                         " Setting shell to bash
 set nocompatible                            " No compatible with vi mode
+set encoding=utf8                           " Set UTF-8 as standard encoding and en_US as the standard language
 set number                                  " Line numbers
 set ignorecase                              " Don't ignore cases
 set smartcase                               " Make search case sensitive only if it contains uppercase letters
@@ -162,8 +163,6 @@ set mat=2                                   " How many tenths of a second to bli
 set lazyredraw                              " Don't redraw while executing macros (better performance)
 set magic                                   " For regular expressions turn magic on
 set showmatch                               " Show matching brackets when text indicator is over them
-set encoding=utf8                           " Set UTF-8 as standard encoding and en_US as the standard language
-scriptencoding utf-8                        " Also for scripts
 set list                                    " Display white chars by default (use <F7>)
 set spelllang=en_us                         " Set language to us English
 set backspace=indent,eol,start              " Set default behavior of backspace
