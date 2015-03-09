@@ -24,12 +24,12 @@ call plug#begin('~/.nvim/plugged')
 " Most common languages file types (syntax, indenting, etc.)
 Plug 'sheerun/vim-polyglot'
 " Needs linters to work properly (see https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers)
-Plug 'scrooloose/syntastic', { 'for': ['java', 'ruby', 'eruby', 'coffee', 'javascript', 'html'] }
+Plug 'scrooloose/syntastic', { 'for': ['java', 'ruby', 'eruby', 'coffee', 'javascript', 'html'], 'on': 'SyntasticToggleMode' }
 " Snippets support
 Plug 'SirVer/ultisnips'
-" Commenting support
+" Commenting support (gc)
 Plug 'tpope/vim-commentary'
-" Surround
+" Surround (cs"')
 Plug 'tpope/vim-surround'
 
 " -----------------------------------------------------
