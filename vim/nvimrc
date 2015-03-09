@@ -141,6 +141,7 @@ set shell=/bin/bash                         " Setting shell to bash
 set nocompatible                            " No compatible with vi mode
 set encoding=utf8                           " Set UTF-8 as standard encoding and en_US as the standard language
 set number                                  " Line numbers
+set ignorecase                              " Ignore case by default
 set smartcase                               " Make search case sensitive only if it contains uppercase letters
 set laststatus=2                            " Always show status line
 set showmode                                " Always show mode
@@ -299,6 +300,9 @@ nnoremap Q <nop>
 " 3.3 Vim defaults overriding
 " -----------------------------------------------------
 
+" Intelligent window cycling
+nmap <silent> <C-w><C-w> :call utils#intelligentCycling()<CR>
+
 " Visual linewise up and down by default
 noremap j gj
 noremap k gk
@@ -324,17 +328,8 @@ nnoremap Y y$
 nnoremap Q @q
 
 " Mark with big M (default to middle of the screen overriden)
-" m is used as EasyMotion leader
+" m is used as EasyMotion leader key
 nnoremap M m
-
-" Yank and Paste uses custom functions which use xclip (default gp pasted before cursor)
-" NOTE: this works now without the need of xclip, find out why!
-" vnoremap <silent> gy y:call ClipboardYank()<CR>
-" vnoremap <silent> gyy yy:call ClipboardYank()<CR>
-" nnoremap <silent> gp :call ClipboardPaste()<CR>p
-
-" Override window cycling
-nnoremap <silent> <C-w><C-w> :call IntelligentCycling()<CR>
 
 " -----------------------------------------------------
 " 3.4 Common tasks
@@ -349,17 +344,14 @@ nnoremap <silent> <localleader>d :bd<CR>
 nnoremap <silent> <localleader>f mzgg=G`z
 
 " Run current file
-" TODO: refactor into function
-nnoremap <silent> <localleader>r :!ruby %<CR>
+nnoremap <silent> <localleader>r :call utils#runCurrentFile()<CR>
 
 " -----------------------------------------------------
 " 3.5 Toggles
 " -----------------------------------------------------
 
-" NERDTree panel
-nnoremap <silent> <F1> :NERDTreeToggle<CR>
 " NERDTree find current file
-nnoremap <silent> <F2> :NERDTreeFind<CR>
+nnoremap <silent> <F1> :NERDTreeFind<CR>
 " Paste mode toggling
 nnoremap <silent> <F3> :set paste!<CR>
 " Toggle spelling on and off
@@ -377,7 +369,7 @@ nnoremap <silent> <F10> :TagbarToggle<CR>
 " Toggle syntax checking
 nnoremap <silent> <F11> :SyntasticToggleMode<CR>
 " Echo out toggles legend on <F12>
-nnoremap <F12> :call ShowToggles()<CR>
+nnoremap <F12> :call utils#showToggles()<CR>
 
 " -----------------------------------------------------
 " 3.6 Window / Buffer management
@@ -565,12 +557,7 @@ nnoremap <silent> <leader>l :<C-u>Unite -no-split -buffer-name=line-search -star
 nnoremap <silent> <leader>y :<C-u>Unite -buffer-name=yank-history -auto-resize history/yank<CR>
 
 " -----------------------------------------------------
-" 5.3 Ruby eval
-" -----------------------------------------------------
-nmap <silent> <localleader>e <Plug>(xmpfilter-run)
-
-" -----------------------------------------------------
-" 5.4 EasyMotion
+" 5.3 EasyMotion
 " -----------------------------------------------------
 " [m]otion prefix
 nmap m <Plug>(easymotion-prefix)
@@ -583,9 +570,9 @@ map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 
 " -----------------------------------------------------
-" 5.5 Ultisnips
+" 5.4 Ultisnips
 " -----------------------------------------------------
-" Disable built-in cx-ck to be able to go backward in US
+" Disable built-in cx-ck to be able to go backward
 inoremap <c-x><c-k> <nop>
 let g:UltiSnipsExpandTrigger='<c-j>'
 let g:UltiSnipsListSnippets='<c-l>'
@@ -593,7 +580,7 @@ let g:UltiSnipsJumpForwardTrigger='<c-j>'
 let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 
 " -----------------------------------------------------
-" 5.6 Vroom test runner
+" 5.5 Vroom test runner
 " -----------------------------------------------------
 map <silent> <localleader>t :VroomRunTestFile<CR>
 map <silent> <localleader>T :VroomRunNearestTest<CR>
@@ -650,7 +637,7 @@ autocmd FileType vim setlocal keywordprg=:help tabstop=2 shiftwidth=2 softtabsto
 "}}}
 
 " ======================================================================================================================
-" 8.0 Custom functions and autocommands
+" 8.0 Custom scripts and autocommands
 " ======================================================================================================================
 "{{{
 " Close vim if the last open window is nerdtree
@@ -659,28 +646,10 @@ autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " Remove trailing whitespaces automatically before save
 autocmd BufWritePre * :%s/\s\+$//e
 
-" Informative echo line
-function! ShowToggles()
-  echom "<F1> NERDTree | <F2> NERDTreeFind | <F3> Paste mode | <F4> Spellcheck | <F5> Reload rc | <F6> Search Highlight |" .
-        \" <F7> Whitechars | <F8> <free> | <F9> <free> | <F10> Tagbar | <F11> Syntastic | <F12> This message"
-endfunction
-
-" Copy and paste function using xclip
-function! ClipboardYank()
-  call system('xclip -i -selection clipboard', @@)
-endfunction
-
-function! ClipboardPaste()
-  let @@ = system('xclip -o -selection clipboard')
-endfunction
-
-" When cycling ignore NERDTree and Tagbar
-function! IntelligentCycling()
-  " Cycle firstly
-  wincmd w
-  " Handle where you are now
-  if &buftype ==# 'nofile'
-    call IntelligentCycling()
-  endif
-endfunction
+" Load other scripts
+if filereadable(expand("~/config/dot-files/vim/scripts/utils.vim"))
+  source ~/config/dot-files/vim/scripts/utils.vim
+else
+  echo "Update path to vim scripts!"
+endif
 "}}}
