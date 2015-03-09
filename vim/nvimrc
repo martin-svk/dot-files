@@ -139,7 +139,6 @@ set shell=/bin/bash                         " Setting shell to bash
 set nocompatible                            " No compatible with vi mode
 set encoding=utf8                           " Set UTF-8 as standard encoding and en_US as the standard language
 set number                                  " Line numbers
-set ignorecase                              " Don't ignore cases
 set smartcase                               " Make search case sensitive only if it contains uppercase letters
 set laststatus=2                            " Always show status line
 set showmode                                " Always show mode
@@ -201,7 +200,7 @@ set noswapfile
 " -----------------------------------------------------
 " 2.4 Highlight whitespaces
 " -----------------------------------------------------
-set listchars=tab:▸\ ,trail:·,extends:#,nbsp:·,eol:¬
+set listchars=tab:▸\ ,trail:·,extends:#,nbsp:·
 
 " -----------------------------------------------------
 " 2.5 Filetype settings
