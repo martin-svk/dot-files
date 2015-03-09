@@ -341,7 +341,7 @@ nnoremap M m
 " nnoremap <silent> gp :call ClipboardPaste()<CR>p
 
 " Override window cycling
-nnoremap <C-w><C-w> :call IntelligentCycling()<CR>
+nnoremap <silent> <C-w><C-w> :call IntelligentCycling()<CR>
 
 " -----------------------------------------------------
 " 3.4 Common tasks
