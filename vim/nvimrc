@@ -57,6 +57,8 @@ Plug 'skalnik/vim-vroom', { 'for': ['ruby', 'eruby'] }
 Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'sass', 'scss', 'less'] }
 " Sparkup, emmet alternative (<C-e> to expand expression)
 Plug 'rstacruz/sparkup', { 'for': ['html', 'xhtml']}
+" Spacebars
+Plug 'Slava/vim-spacebars', { 'for': ['html', 'xhtml']}
 
 " -----------------------------------------------------
 " JavaScript / CoffeeScript
