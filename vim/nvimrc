@@ -86,7 +86,7 @@ Plug 'terryma/vim-multiple-cursors'
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Nerdtree file browser
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeFind' }
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeFind', 'NERDTreeToggle'] }
 " Airline (improved status line)
 Plug 'bling/vim-airline'
 " Tagbar tag browser
@@ -351,7 +351,7 @@ nnoremap <silent> <localleader>r :call utils#runCurrentFile()<CR>
 " -----------------------------------------------------
 
 " NERDTree find current file
-nnoremap <silent> <F1> :NERDTreeFind<CR>
+nnoremap <silent> <F1> :call utils#nerdWrapper()<CR>
 " Tagbar panel
 nnoremap <silent> <F2> :TagbarToggle<CR>
 " Paste mode toggling

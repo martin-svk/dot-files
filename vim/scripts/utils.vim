@@ -23,6 +23,16 @@ function! utils#intelligentCycling()
   endif
 endfunction
 
+" Run current file
 function! utils#runCurrentFile()
   !ruby %
+endfunction
+
+" Run NERDTreeFind or Toggle based on current buffer
+function! utils#nerdWrapper()
+  if &filetype ==# ''
+    :NERDTreeToggle
+  else
+    :NERDTreeFind
+  endif
 endfunction
