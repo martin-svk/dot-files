@@ -37,35 +37,6 @@ xterm*BorderWidth: 0
 ! ============================== COLOR CONFIG =================================
 ! =============================================================================
 
-! -----------------------------------------------------------------------------
-! Gotham
-/* xterm*color3:       #edb54b */
-! -----------------------------------------------------------------------------
-
-/* xterm*foreground:   #98d1ce */
-/* xterm*background:   #0a0f14 */
-/* xterm*cursorColor:  #98d1ce */
-/* xterm*color0:       #0a0f14 */
-/* xterm*color8:       #10151b */
-/* xterm*color1:       #c33027 */
-/* xterm*color9:       #d26939 */
-/* xterm*color2:       #26a98b */
-/* xterm*color10:      #081f2d */
-/* xterm*color3:       #d26939 */
-/* xterm*color11:      #245361 */
-/* xterm*color4:       #195465 */
-/* xterm*color12:      #093748 */
-/* xterm*color5:       #4e5165 */
-/* xterm*color13:      #888ba5 */
-/* xterm*color6:       #33859d */
-/* xterm*color14:      #599caa */
-/* xterm*color7:       #98d1ce */
-/* xterm*color15:      #d3ebe9 */
-
-! -----------------------------------------------------------------------------
-! Solarized Dark / Desaturated Dark
-! -----------------------------------------------------------------------------
-
 #define S_yellow        #b58900
 #define S_orange        #cb4b16
 #define S_red           #dc322f
@@ -83,26 +54,6 @@ xterm*BorderWidth: 0
 #define S_base1         #93a1a1
 #define S_base2         #eee8d5
 #define S_base3         #fdf6e3
-
-! Desaturated
-
-/* #define S_base03     #262626 */
-/* #define S_base02     #303030 */
-/* #define S_base01     #6a6a6a */
-/* #define S_base00     #777777 */
-/* #define S_base0      #919191 */
-/* #define S_base1      #9e9e9e */
-/* #define S_base2      #e8e8e8 */
-/* #define S_base3      #f6f6f6 */
-
-/* #define S_yellow     #b58900 */
-/* #define S_orange     #cb4b16 */
-/* #define S_red        #dc322f */
-/* #define S_magenta    #d33682 */
-/* #define S_violet     #6c71c4 */
-/* #define S_blue       #268bd2 */
-/* #define S_cyan       #2aa198 */
-/* #define S_green      #859900 */
 
 xterm*background:              S_base03
 xterm*foreground:              S_base0
