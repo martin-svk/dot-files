@@ -29,14 +29,11 @@ Plug 'scrooloose/syntastic', { 'for': ['java', 'ruby', 'eruby', 'coffee', 'javas
 Plug 'SirVer/ultisnips'
 " Commenting support (gc)
 Plug 'tpope/vim-commentary'
-" Surround (cs"')
-Plug 'tpope/vim-surround'
-" Easy alignment
-Plug 'godlygeek/tabular', { 'on':  'Tabularize' }
 
 " -----------------------------------------------------
 " Ruby/Rails
 " -----------------------------------------------------
+
 " (:A, :R, :Rmigration, :Rextract)
 Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby', 'haml', 'slim'] }
 " Automatically inserts 'end' wisely
@@ -51,6 +48,7 @@ Plug 'skalnik/vim-vroom', { 'for': ['ruby', 'eruby'], 'on': 'VroomRunTestFile'  
 " -----------------------------------------------------
 " HTML/CSS
 " -----------------------------------------------------
+
 " CSS color highlighter
 Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'sass', 'scss', 'less'] }
 " Sparkup, emmet alternative (<C-e> to expand expression)
@@ -61,6 +59,7 @@ Plug 'Slava/vim-spacebars', { 'for': ['html', 'xhtml'] }
 " -----------------------------------------------------
 " JavaScript / CoffeeScript
 " -----------------------------------------------------
+
 " Tern auto-completion engine (run 'npm install && npm install tern-coffee' after update)
 Plug 'marijnh/tern_for_vim', { 'for': ['javascript', 'coffee'] }
 " Tern for CoffeeScript
@@ -78,10 +77,34 @@ Plug 'Shougo/unite.vim'
 Plug 'Shougo/unite-outline'
 " Easy motion
 Plug 'Lokaltog/vim-easymotion'
+" Dirvish (netrw replacement)
+Plug 'justinmk/vim-dirvish'
+
+" ---------------------------------------------------------------------------------------------------------------------
+" External tools integration plugins
+" ---------------------------------------------------------------------------------------------------------------------
+
+" Git wrapper
+Plug 'tpope/vim-fugitive'
+" Git changes showed on line numbers
+Plug 'airblade/vim-gitgutter'
+" Gitk for vim
+Plug 'gregsexton/gitv', { 'on':  'Gitv' }
+" Tmux integration
+Plug 'tpope/vim-tbone'
+
+" ---------------------------------------------------------------------------------------------------------------------
+" Text insertion/manipulation
+" ---------------------------------------------------------------------------------------------------------------------
+
 " Completion with tab
 Plug 'ervandew/supertab'
 " Multiple cursors
 Plug 'terryma/vim-multiple-cursors'
+" Surround (cs"')
+Plug 'tpope/vim-surround'
+" Easy alignment
+Plug 'godlygeek/tabular', { 'on':  'Tabularize' }
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Interface improving plugins
@@ -99,21 +122,6 @@ Plug 'tomasr/molokai'
 Plug 'w0ng/vim-hybrid'
 " Gotham
 Plug 'whatyouhide/vim-gotham'
-
-" ---------------------------------------------------------------------------------------------------------------------
-" External tools supporting plugins
-" ---------------------------------------------------------------------------------------------------------------------
-
-" Git wrapper
-Plug 'tpope/vim-fugitive'
-" Git changes showed on line numbers
-Plug 'airblade/vim-gitgutter'
-" Gitk for vim
-Plug 'gregsexton/gitv', { 'on':  'Gitv' }
-" Tmux integration
-Plug 'tpope/vim-tbone'
-" Dirvish (netrw replacement)
-Plug 'justinmk/vim-dirvish'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Dependencies
