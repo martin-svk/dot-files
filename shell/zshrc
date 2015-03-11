@@ -82,6 +82,7 @@ alias t='tmux attach -t main || tmux new -s main'
 alias f='ranger'
 alias e='echo -n'
 alias msql='mysql -uroot -p'
+alias colo='dynamic-colors switch'
 
 # ------------------------------------------
 # SSH servers
