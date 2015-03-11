@@ -40,6 +40,8 @@ Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby', 'haml', 'slim'] }
 Plug 'tpope/vim-endwise', { 'for': ['ruby', 'eruby'] }
 " Change between ruby 1.9 and 1.8 hash syntax
 Plug 'ck3g/vim-change-hash-syntax', { 'for': ['ruby', 'eruby'], 'on': 'ChangeHashSyntax' }
+" Rails I18 support
+Plug 'stefanoverna/vim-i18n', { 'for': ['ruby', 'eruby'], 'on': 'I18nTranslateString'  }
 " Ruby best practices checker
 Plug 'ngmy/vim-rubocop', { 'for': ['ruby', 'eruby'], 'on': 'RuboCop' }
 " Test runner
@@ -71,6 +73,8 @@ Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffee']
 " Files/code navigation/management plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
+" Extends :e, :new to create new directories in path
+Plug 'duggiefresh/vim-easydir'
 " Unite (Files, Buffers, Commands, etc. fuzzy searcher)
 Plug 'Shougo/unite.vim'
 " Unite outline plugin
@@ -105,6 +109,8 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
 " Easy alignment
 Plug 'godlygeek/tabular', { 'on':  'Tabularize' }
+" RSI movements for vim
+Plug 'tpope/vim-rsi'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Interface improving plugins
