@@ -11,24 +11,24 @@ if (string.find(get_application_name(), "Chromium") or get_application_name()=="
 elseif (get_application_name()=="xterm") then
    set_window_workspace(2);
    maximize();
--- PDF viewer
-elseif (get_application_name()=="Document Viewer") then
+-- DevDocs
+elseif (get_application_name()=="Untitled" or string.find(get_application_name(), "DevDocs")) then
    set_window_workspace(3);
    maximize();
 -- Geary
 elseif (get_application_name()=="Geary") then
-   set_window_workspace(5);
+   set_window_workspace(6);
    maximize();
 -- HipChat
 elseif (get_application_name()=="HipChat") then
-   set_window_workspace(6);
+   set_window_workspace(7);
    maximize();
 -- Spotify
 elseif (get_application_name()=="Spotify Free - Linux Preview") then
-   set_window_workspace(7);
+   set_window_workspace(8);
    maximize();
 -- Steam
 elseif (get_application_name()=="Steam") then
-   set_window_workspace(8);
+   set_window_workspace(9);
    maximize();
 end
