@@ -618,9 +618,6 @@ else
   colorscheme gotham
 endif
 
-" Git gutter (signcolumn color)
-highlight clear SignColumn
-
 " Remove underline in folded lines
 hi Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE
 "}}}
