@@ -507,8 +507,6 @@ let g:EasyMotion_smartcase = 1
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
 let g:NERDTreeWinSize=45
-" NerdTree buffer settings
-autocmd FileType nerdtree set nolist
 
 " -----------------------------------------------------
 " 4.7 Vroom settings
