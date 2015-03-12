@@ -122,8 +122,6 @@ Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeFind', 'NERDTreeToggle'] }
 Plug 'bling/vim-airline'
 " Tagbar tag browser
 Plug 'majutsushi/tagbar'
-" Molokai theme
-Plug 'tomasr/molokai'
 " Hybrid dark color theme
 Plug 'w0ng/vim-hybrid'
 " Gotham
@@ -614,12 +612,7 @@ endif
 set bg=dark
 
 " Color scheme based on time
-if strftime("%H") < 14
-  let g:molokai_original=1
-  let g:rehash256=1
-  let g:airline_theme='tomorrow'
-  colorscheme molokai
-elseif strftime("%H") < 18
+if strftime("%H") < 15
   let g:airline_theme='tomorrow'
   colorscheme hybrid
 else
