@@ -122,8 +122,13 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 if [ -d $HOME/.dynamic-colors ]; then
   export PATH="$HOME/.dynamic-colors/bin:$PATH"
   source $HOME/.dynamic-colors/completions/dynamic-colors.zsh
-  # Initialize
-  dynamic-colors init
+
+  # Setting color
+  if [[ $(date +%H) -le 15 ]]; then
+    dynamic-colors init
+  else
+    dynamic-colors switch gotham
+  fi
 fi
 
 # Add android sdk to path if it exists
