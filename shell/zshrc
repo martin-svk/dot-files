@@ -125,7 +125,7 @@ if [ -d $HOME/.dynamic-colors ]; then
 
   # Setting color
   if [[ $(date +%H) -le 15 ]]; then
-    dynamic-colors init
+    dynamic-colors switch solarized-dark-desaturated
   else
     dynamic-colors switch gotham
   fi
