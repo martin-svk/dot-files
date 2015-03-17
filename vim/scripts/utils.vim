@@ -1,6 +1,6 @@
 " Informative echo line
 function! utils#showToggles()
-  echom "<F1> NERDTreeFind | <F2> Tagbar | <F3> Paste mode | <F4> Spellcheck | <F5> Reload rc | <F6> Highlighting |" .
+  echom "<F1> NERDTree | <F2> Tagbar | <F3> Paste mode | <F4> Spellcheck | <F5> Reload rc | <F6> Highlighting |" .
         \" <F7> Whitechars | <F8> Syntastic | <F9> <free> | <F10> <free> | <F11> <free> | <F12> This message"
 endfunction
 
