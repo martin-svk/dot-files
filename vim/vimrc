@@ -20,50 +20,48 @@ call plug#begin('~/.vim/plugged')
 " 1.1.1 Language or framework supporting plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
-" -----------------------------------------------------
-" Universal
-" -----------------------------------------------------
 " Most common languages support (syntax, indenting, etc. ) for ruby, js, etc.
 Plug 'sheerun/vim-polyglot'
-" Needs linters to be installed to work properly (see https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers)
-Plug 'scrooloose/syntastic', { 'for': ['java', 'ruby', 'eruby', 'coffee', 'javascript', 'html'] }
+" Needs linters to work properly (see https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers)
+Plug 'scrooloose/syntastic', { 'for': ['java', 'ruby', 'eruby', 'coffee', 'javascript', 'html'], 'on': 'SyntasticToggleMode' }
 " Snippets support
 Plug 'SirVer/ultisnips'
-" Commenting support
+" Commenting support (gc)
 Plug 'tpope/vim-commentary'
 
 " -----------------------------------------------------
 " Ruby/Rails
 " -----------------------------------------------------
-" Rails navigation, etc. plugin (i.e. :Rmigration)
-Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby'] }
+
+" (:A, :R, :Rmigration, :Rextract)
+Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby', 'haml', 'slim'] }
 " Automatically inserts 'end' wisely
 Plug 'tpope/vim-endwise', { 'for': ['ruby', 'eruby'] }
-" Ruby eval plugin
-Plug 'kmdsbng/vim-ruby-eval', { 'for': ['ruby', 'eruby'] }
-" Partial extraction
-Plug 'jbgutierrez/vim-partial'
 " Change between ruby 1.9 and 1.8 hash syntax
-Plug 'ck3g/vim-change-hash-syntax', { 'for': ['ruby', 'eruby'] }
-" Refactoring tools
-Plug 'ecomba/vim-ruby-refactoring', { 'for': ['ruby', 'eruby'] }
+Plug 'ck3g/vim-change-hash-syntax', { 'for': ['ruby', 'eruby'], 'on': 'ChangeHashSyntax' }
+" Rails I18 support
+Plug 'stefanoverna/vim-i18n', { 'for': ['ruby', 'eruby'], 'on': 'I18nTranslateString'  }
 " Ruby best practices checker
-Plug 'ngmy/vim-rubocop', { 'for': ['ruby', 'eruby'] }
+Plug 'ngmy/vim-rubocop', { 'for': ['ruby', 'eruby'], 'on': 'RuboCop' }
 " Test runner
-Plug 'skalnik/vim-vroom'
+Plug 'skalnik/vim-vroom', { 'for': ['ruby', 'eruby'], 'on': 'VroomRunTestFile'  }
 
 " -----------------------------------------------------
 " HTML/CSS
 " -----------------------------------------------------
+
 " CSS color highlighter
 Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'sass', 'scss', 'less'] }
 " Sparkup, emmet alternative (<C-e> to expand expression)
-Plug 'rstacruz/sparkup', { 'for': ['html', 'xhtml']}
+Plug 'rstacruz/sparkup', { 'for': ['html', 'xhtml'] }
+" Spacebars
+Plug 'Slava/vim-spacebars', { 'for': ['html', 'xhtml'] }
 
 " -----------------------------------------------------
 " JavaScript / CoffeeScript
 " -----------------------------------------------------
-" Tern auto-completion engine (run 'npm install tern-coffee' after update)
+
+" Tern auto-completion engine (run 'npm install && npm install tern-coffee' after update)
 Plug 'marijnh/tern_for_vim', { 'for': ['javascript', 'coffee'] }
 " Tern for CoffeeScript
 Plug 'othree/tern_for_vim_coffee', { 'for': ['javascript', 'coffee'] }
@@ -71,86 +69,71 @@ Plug 'othree/tern_for_vim_coffee', { 'for': ['javascript', 'coffee'] }
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffee'] }
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 1.1.2 Motion/text navigation improving plugins
+" Files/code navigation/management plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Easy motion
-Plug 'Lokaltog/vim-easymotion'
-
-" ---------------------------------------------------------------------------------------------------------------------
-" 1.1.3 Files/code navigation improving plugins
-" ---------------------------------------------------------------------------------------------------------------------
-
+" Extends :e, :new to create new directories in path
+Plug 'duggiefresh/vim-easydir'
 " Unite (Files, Buffers, Commands, etc. fuzzy searcher)
 Plug 'Shougo/unite.vim'
 " Unite outline plugin
 Plug 'Shougo/unite-outline'
-" Vimfiler file browser
-Plug 'Shougo/vimfiler.vim'
-" Nerdtree file browser
-Plug 'scrooloose/nerdtree'
+" Easy motion
+Plug 'Lokaltog/vim-easymotion'
+" Dirvish (netrw replacement)
+Plug 'justinmk/vim-dirvish'
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 1.1.4 Text insertion improving plugins
-" ---------------------------------------------------------------------------------------------------------------------
-
-" Completion with tab
-Plug 'ervandew/supertab'
-" Multiple cursors feature
-Plug 'terryma/vim-multiple-cursors'
-
-" ---------------------------------------------------------------------------------------------------------------------
-" 1.1.5 Interface improving plugins
-" ---------------------------------------------------------------------------------------------------------------------
-
-" Airline (improved status line)
-Plug 'bling/vim-airline'
-" Distraction free editing
-Plug 'junegunn/goyo.vim'
-" Automatic cursor shape change
-Plug 'jszakmeister/vim-togglecursor'
-" Interesting words highlighter
-Plug 'vasconcelloslf/vim-interestingwords'
-
-" ---------------------------------------------------------------------------------------------------------------------
-" 1.1.6 Git/Github support plugins
+" External tools integration plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Git wrapper
 Plug 'tpope/vim-fugitive'
-" Git changes visualizer
+" Git changes showed on line numbers
 Plug 'airblade/vim-gitgutter'
 " Gitk for vim
-Plug 'gregsexton/gitv'
+Plug 'gregsexton/gitv', { 'on':  'Gitv' }
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 1.1.7 Text objects improving plugins
+" Text insertion/manipulation
 " ---------------------------------------------------------------------------------------------------------------------
-"
-" Matchit better textobj support
-Plug 'tmhedberg/matchit'
-" Change surroundings characters
+
+" Completion with tab
+Plug 'ervandew/supertab'
+" Multiple cursors
+Plug 'terryma/vim-multiple-cursors'
+" Surround (cs"')
 Plug 'tpope/vim-surround'
+" Easy alignment
+Plug 'godlygeek/tabular', { 'on':  'Tabularize' }
+" RSI movements for vim
+Plug 'tpope/vim-rsi'
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 1.1.8 Color-scheme plugins
+" Interface improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Molokai theme
-Plug 'tomasr/molokai'
+" Nerdtree file browser
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeFind', 'NERDTreeToggle'] }
+" Airline (improved status line)
+Plug 'bling/vim-airline'
+" Tagbar tag browser
+Plug 'majutsushi/tagbar'
 " Hybrid dark color theme
 Plug 'w0ng/vim-hybrid'
-" Jellybeans theme
-Plug 'nanotech/jellybeans.vim'
-" Approximation to make gvim schemes work in terminal
-Plug 'vim-scripts/CSApprox'
+" Gotham
+Plug 'whatyouhide/vim-gotham'
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 1.1.9 Dependencies
+" Dependencies
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Async processing (for Unite) (make after checkout)
 Plug 'Shougo/vimproc.vim'
+" Matchit enhances motions like %
+Plug 'edsono/vim-matchit'
+" Repeat ads repeat via . functionality for some plugins
+Plug 'tpope/vim-repeat'
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " 1.2 End of plugin declaration
@@ -165,8 +148,9 @@ call plug#end()
 
 set shell=/bin/bash                         " Setting shell to bash
 set nocompatible                            " No compatible with vi mode
+set encoding=utf8                           " Set UTF-8 as standard encoding and en_US as the standard language
 set number                                  " Line numbers
-set ignorecase                              " Don't ignore cases
+set ignorecase                              " Ignore case by default
 set smartcase                               " Make search case sensitive only if it contains uppercase letters
 set laststatus=2                            " Always show status line
 set showmode                                " Always show mode
@@ -190,20 +174,19 @@ set mat=2                                   " How many tenths of a second to bli
 set lazyredraw                              " Don't redraw while executing macros (better performance)
 set magic                                   " For regular expressions turn magic on
 set showmatch                               " Show matching brackets when text indicator is over them
-set encoding=utf8                           " Set utf8 as standard encoding and en_US as the standard language
-set pastetoggle=<F3>                        " Toggle between paste and nopaste
-set list                                    " Display whitechars by default (use F7)
+set list                                    " Display white chars by default (use <F7>)
 set spelllang=en_us                         " Set language to us English
-set backspace=indent,eol,start              " Set default behaviour of backspace
-set spellfile=~/.vim/dictionary.utf-8.add   " Use this file for spell checking
+set backspace=indent,eol,start              " Set default behavior of backspace
+set spellfile=~/.nvim/dictionary.utf-8.add  " Use this file for spell checking
+set nospell                                 " Set spelling off by default
 set nostartofline                           " Prevent cursor from moving to beginning of line when switching buffers
 set virtualedit=block                       " To be able to select past EOL in visual block mode
 set nojoinspaces                            " No extra space when joining a line which ends with . ? !
 set startofline                             " When doing thing like gg or G, will move cursor to start of line
 set wrapscan                                " Search again from top when reached the bottom
 set showcmd                                 " Show incomplete commands
-set scrolloff=5                             " Scroll when closing to top or bottom of the sceeen
-set updatetime=1000                         " Updatetime used to create swapfile or i.e. to refresh tagbar
+set scrolloff=5                             " Scroll when closing to top or bottom of the screen
+set updatetime=1000                         " Update time used to create swap file or other things
 
 " -----------------------------------------------------
 " 2.1 Intendation settings (2 spaces tabs)
@@ -229,7 +212,7 @@ set noswapfile
 " -----------------------------------------------------
 " 2.4 Highlight whitespaces
 " -----------------------------------------------------
-set listchars=tab:▸\ ,trail:·,extends:#,nbsp:·,eol:¬
+set listchars=tab:▸\ ,trail:·,extends:#,nbsp:·
 
 " -----------------------------------------------------
 " 2.5 Filetype settings
@@ -325,6 +308,9 @@ nnoremap Q <nop>
 " 3.3 Vim defaults overriding
 " -----------------------------------------------------
 
+" Intelligent window cycling
+nmap <silent> <C-w><C-w> :call utils#intelligentCycling()<CR>
+
 " Visual linewise up and down by default
 noremap j gj
 noremap k gk
@@ -343,12 +329,6 @@ nnoremap L $
 vnoremap H ^
 vnoremap L $
 
-" Window navigations using arrow keys only
-nnoremap <silent> <Left>  <C-w>h
-nnoremap <silent> <Down>  <C-w>j
-nnoremap <silent> <Up>    <C-w>k
-nnoremap <silent> <Right> <C-w>l
-
 " More logical Y (defaul was alias for yy)
 nnoremap Y y$
 
@@ -356,12 +336,8 @@ nnoremap Y y$
 nnoremap Q @q
 
 " Mark with big M (default to middle of the screen overriden)
-" m is used as EasyMotion leader
+" m is used as EasyMotion leader key
 nnoremap M m
-
-" Yank and Paste uses custom functions which use xclip
-vnoremap <silent> <localleader>y y:call ClipboardYank()<CR>
-nnoremap <silent> <localleader>p :call ClipboardPaste()<CR>p
 
 " -----------------------------------------------------
 " 3.4 Common tasks
@@ -370,49 +346,50 @@ nnoremap <silent> <localleader>p :call ClipboardPaste()<CR>p
 " Quick save and quit / buffer delete
 nnoremap <localleader>w :w<CR>
 nnoremap <silent> <localleader>q :q<CR>
+nnoremap <silent> <localleader>d :bd<CR>
 
 " Reformat whole file
 nnoremap <silent> <localleader>f mzgg=G`z
+
+" Run current file
+nnoremap <silent> <localleader>r :call utils#runCurrentFile()<CR>
 
 " -----------------------------------------------------
 " 3.5 Toggles
 " -----------------------------------------------------
 
-" Toggle nerdtree (file browser) panel
-nnoremap <silent> <F1> :NERDTreeToggle<CR>
-" Toggle in-buffer file browser
-nnoremap <silent> <F2> :VimFilerBufferDir -find -force-quit<CR>
+" NERDTree find current file
+nnoremap <silent> <F1> :call utils#nerdWrapper()<CR>
+" Tagbar panel
+nnoremap <silent> <F2> :TagbarToggle<CR>
+" Paste mode toggling
+nnoremap <silent> <F3> :set paste!<CR>
 " Toggle spelling on and off
 nnoremap <silent> <F4> :set spell!<CR>
-" Source (reload) vimrc, so new setting will be applied
-nnoremap <silent> <F5> :source $MYVIMRC<CR>
+" Source (reload) nvimrc
+nnoremap <silent> <F5> :source $MYNVIMRC<CR>
 " Toggle search highlight
 nnoremap <silent> <F6> :set nohlsearch!<CR>
 " Toggle white characters visibility
 nnoremap <silent> <F7> :set list!<CR>
-" Toggle rainbow paranthesis
-nnoremap <silent> <F8> :RainbowParenthesesToggle<CR>
-" Toggle Goyo mode
-nnoremap <silent> <F9> :Goyo<CR>
 " Toggle syntax checking
-nnoremap <silent> <F11> :SyntasticToggleMode<CR>
+nnoremap <silent> <F8> :SyntasticToggleMode<CR>
 " Echo out toggles legend on <F12>
-nnoremap <F12> :call ShowToggles()<CR>
+nnoremap <F12> :call utils#showToggles()<CR>
 
 " -----------------------------------------------------
 " 3.6 Window / Buffer management
 " -----------------------------------------------------
 
-" Windows resizing using window prefix and arrow keys
-nnoremap <silent> <leader><Left> :vertical resize -1<CR>
-nnoremap <silent> <leader><Right> :vertical resize +1<CR>
-nnoremap <silent> <leader><Up> :resize +1<CR>
-nnoremap <silent> <leader><Down> :resize -1<CR>
+" Windows resizing using arrow keys
+nnoremap <silent> <Left> :vertical resize -1<CR>
+nnoremap <silent> <Right> :vertical resize +1<CR>
+nnoremap <silent> <Up> :resize +1<CR>
+nnoremap <silent> <Down> :resize -1<CR>
 
 " Buffers navigation and management
 nnoremap <silent> + :bn<CR>
 nnoremap <silent> _ :bp<CR>
-nnoremap <silent> ,d :bd<CR>
 
 " -----------------------------------------------------
 " 3.7 Command abbrevations and mappings
@@ -514,15 +491,7 @@ autocmd FileType *
       \ endif
 
 " -----------------------------------------------------
-" 4.5 Goyo
-" -----------------------------------------------------
-let g:goyo_width=140
-let g:goyo_margin_top=1
-let g:goyo_margin_bottom=1
-let g:goyo_linenr=1
-
-" -----------------------------------------------------
-" 4.6 EasyMotion
+" 4.5 EasyMotion
 " -----------------------------------------------------
 " Turn on case sensitive feature
 let g:EasyMotion_smartcase = 1
@@ -532,14 +501,17 @@ let g:EasyMotion_smartcase = 1
 " -----------------------------------------------------
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
-let g:NERDTreeWinSize=40
-" NerdTree buffer settings
-autocmd FileType nerdtree set nolist
+let g:NERDTreeWinSize=45
 
 " -----------------------------------------------------
-" 4.7 Interesting words
+" 4.7 Vroom settings
 " -----------------------------------------------------
-let g:interestingWordsTermColors = ['154', '121', '211', '137', '214', '222']
+let g:vroom_map_keys=0
+
+" -----------------------------------------------------
+" 4.8 Tagbar settings
+" -----------------------------------------------------
+let g:tagbar_compact=1
 "}}}
 
 " ======================================================================================================================
@@ -571,7 +543,7 @@ endfunction
 " [o]pen files recursively
 nnoremap <silent> <leader>o :<C-u>Unite -no-split -buffer-name=project-files -start-insert file_rec/async:!<CR>
 " search between open files - [b]uffer
-nnoremap <silent> <Tab> :<C-u>Unite -no-split -buffer-name=buffers -start-insert buffer<CR>
+nnoremap <silent> <leader>b :<C-u>Unite -no-split -buffer-name=buffers -start-insert buffer<CR>
 " Search in current file tags
 nnoremap <silent> <leader>t :<C-u>Unite -no-split -buffer-name=tags -start-insert outline<CR>
 " Search for term in cwd file ([g]rep)
@@ -588,18 +560,7 @@ nnoremap <silent> <leader>l :<C-u>Unite -no-split -buffer-name=line-search -star
 nnoremap <silent> <leader>y :<C-u>Unite -buffer-name=yank-history -auto-resize history/yank<CR>
 
 " -----------------------------------------------------
-" 5.2 Surround shortcut for quotes changing
-" -----------------------------------------------------
-nmap cq cs"'
-nmap cQ cs'"
-
-" -----------------------------------------------------
-" 5.3 Ruby [e]val
-" -----------------------------------------------------
-nmap <silent> <localleader>e :<C-u>RubyEval<CR>
-
-" -----------------------------------------------------
-" 5.4 EasyMotion
+" 5.3 EasyMotion
 " -----------------------------------------------------
 " [m]otion prefix
 nmap m <Plug>(easymotion-prefix)
@@ -612,9 +573,9 @@ map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 
 " -----------------------------------------------------
-" 5.5 Ultisnips
+" 5.4 Ultisnips
 " -----------------------------------------------------
-" Disable built-in cx-ck to be able to go backward in US
+" Disable built-in cx-ck to be able to go backward
 inoremap <c-x><c-k> <nop>
 let g:UltiSnipsExpandTrigger='<c-j>'
 let g:UltiSnipsListSnippets='<c-l>'
@@ -622,25 +583,10 @@ let g:UltiSnipsJumpForwardTrigger='<c-j>'
 let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 
 " -----------------------------------------------------
-" 5.6 Simple commenter
+" 5.5 Vroom test runner
 " -----------------------------------------------------
-" comment line
-nmap <localleader>cc :SimpleComment<CR>
-" uncomment line
-nmap <localleader>cu :SimpleUncomment<CR>
-
-" -----------------------------------------------------
-" 5.7 Interesting words
-" -----------------------------------------------------
-nnoremap <silent> <leader>k :call InterestingWords('n')<CR>
-nnoremap <silent> <leader>kk :call UncolorAllWords()<CR>
-
-" -----------------------------------------------------
-" 5.7 Vroom test runner
-" -----------------------------------------------------
-let g:vroom_map_keys=0
-silent map <localleader>r :VroomRunTestFile<CR>
-silent map <localleader>t :VroomRunNearestTest<CR>
+map <silent> <localleader>t :VroomRunTestFile<CR>
+map <silent> <localleader>T :VroomRunNearestTest<CR>
 "}}}
 
 " ======================================================================================================================
@@ -659,22 +605,13 @@ endif
 set bg=dark
 
 " Color scheme based on time
-if strftime("%H") < 14
-  let g:molokai_original=1
-  let g:rehash256=1
+if strftime("%H") < 18
   let g:airline_theme='tomorrow'
-  colorscheme molokai
+  colorscheme hybrid
 else
-  let g:airline_theme='jellybeans'
-  colorscheme jellybeans
-  highlight ColorColumn ctermbg=235
+  let g:airline_theme='gotham'
+  colorscheme gotham
 endif
-
-" Color column
-let &colorcolumn=121
-
-" Git gutter (signcolumn color)
-highlight clear SignColumn
 
 " Remove underline in folded lines
 hi Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE
@@ -695,30 +632,19 @@ autocmd FileType vim setlocal keywordprg=:help tabstop=2 shiftwidth=2 softtabsto
 "}}}
 
 " ======================================================================================================================
-" 8.0 Custom functions and autocommands
+" 8.0 Custom scripts and autocommands
 " ======================================================================================================================
 "{{{
 " Close vim if the last open window is nerdtree
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-" Hide cursorlines when focus lost
-autocmd BufEnter * set cursorline
-autocmd BufLeave * set nocursorline
-
 " Remove trailing whitespaces automatically before save
 autocmd BufWritePre * :%s/\s\+$//e
 
-function! ShowToggles()
-  echom "| <F1> Vimfiler | <F2> Vimfiler CWD | <F3> Paste mode | <F4> Spellcheck | <F5> Source .rc | <F6> Search Highlight |" .
-        \" <F7> Whitechars | <F8> Rainbow() | <F9> Goyo mode | <F10> Syntastic | <F12> This message |"
-endfunction
-
-" Copy and paste function using xclip
-function! ClipboardYank()
-  call system('xclip -i -selection clipboard', @@)
-endfunction
-
-function! ClipboardPaste()
-  let @@ = system('xclip -o -selection clipboard')
-endfunction
+" Load other scripts
+if filereadable(expand("~/config/dot-files/vim/scripts/utils.vim"))
+  source ~/config/dot-files/vim/scripts/utils.vim
+else
+  echo "Update path to vim scripts!"
+endif
 "}}}
