@@ -124,8 +124,8 @@ if [ -d $HOME/.dynamic-colors ]; then
   source $HOME/.dynamic-colors/completions/dynamic-colors.zsh
 
   # Setting color
-  if [[ $(date +%H) -lt 15 ]]; then
-    dynamic-colors switch solarized-dark-desaturated
+  if [[ $(date +%H) -lt 18 ]]; then
+    dynamic-colors switch solarized-dark
   else
     dynamic-colors switch gotham
   fi
