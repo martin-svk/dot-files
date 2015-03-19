@@ -5,7 +5,7 @@ set guifont=M+\ 1m\ Medium\ 12
 " Colorscheme
 " ------------------------------------------------------------
 set background=dark
-colorscheme molokai
+colorscheme hybrid
 
 " GUI options
 " ------------------------------------------------------------
