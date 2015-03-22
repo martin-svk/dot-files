@@ -60,7 +60,7 @@ bindkey '^[[B' history-substring-search-down
 alias install='sudo apt-get install'
 alias update='sudo apt-get update'
 alias upgrade='sudo apt-get upgrade'
-alias up='sudo apt-get update && apt-get upgrade -y'
+alias up='sudo apt-get update && sudo apt-get upgrade -y'
 alias autoremove='sudo apt-get autoremove'
 alias purge='sudo apt-get purge'
 alias dist-upgrade='sudo apt-get dist-upgrade'
