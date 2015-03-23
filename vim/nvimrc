@@ -274,6 +274,12 @@ set wildignore+=*.gem
 set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
+
+" -----------------------------------------------------
+" 2.9 Neovim specific settings
+" -----------------------------------------------------
+" Set an environment variable to use the t_SI/t_EI hack
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 "}}}
 
 " ======================================================================================================================
