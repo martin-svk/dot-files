@@ -119,6 +119,8 @@ Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeFind', 'NERDTreeToggle'] }
 Plug 'bling/vim-airline'
 " Tagbar tag browser
 Plug 'majutsushi/tagbar'
+" Automatic cursor toggle
+Plug 'jszakmeister/vim-togglecursor'
 " Hybrid dark color theme
 Plug 'w0ng/vim-hybrid'
 " Gotham
