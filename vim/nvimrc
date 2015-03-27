@@ -347,6 +347,9 @@ nnoremap Q @q
 " m is used as EasyMotion leader key
 nnoremap M m
 
+" Cancel terminal mode with escape
+tnoremap <ESC> <c-\><c-n>
+
 " -----------------------------------------------------
 " 3.4 Common tasks
 " -----------------------------------------------------
@@ -361,6 +364,9 @@ nnoremap <silent> <localleader>f mzgg=G`z
 
 " Run current file
 nnoremap <silent> <localleader>r :call utils#runCurrentFile()<CR>
+
+" Run terminal shell buffer in right vsplit
+nnoremap <silent> <leader>s :vsplit<CR>:terminal<CR>
 
 " -----------------------------------------------------
 " 3.5 Toggles
