@@ -147,7 +147,7 @@ call plug#end()
 " ======================================================================================================================
 "{{{
 
-set shell=/bin/bash                         " Setting shell to bash
+set shell=/bin/zsh                          " Setting shell to zsh
 set nocompatible                            " No compatible with vi mode
 set encoding=utf8                           " Set UTF-8 as standard encoding and en_US as the standard language
 set number                                  " Line numbers
@@ -366,7 +366,7 @@ nnoremap <silent> <localleader>f mzgg=G`z
 nnoremap <silent> <localleader>r :call utils#runCurrentFile()<CR>
 
 " Run terminal shell buffer in right vsplit
-nnoremap <silent> <leader>s :vsplit<CR>:terminal<CR>
+nnoremap <silent> <leader>s :call utils#newVertTerm()<CR>
 
 " -----------------------------------------------------
 " 3.5 Toggles
@@ -655,6 +655,12 @@ autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 " Remove trailing whitespaces automatically before save
 autocmd BufWritePre * :%s/\s\+$//e
+
+" Show / hide cursorlines
+autocmd VimEnter    * setlocal cursorline
+autocmd WinEnter    * setlocal cursorline
+autocmd BufWinEnter * setlocal cursorline
+autocmd WinLeave    * setlocal nocursorline
 
 " Load other scripts
 if filereadable(expand("~/config/dot-files/vim/scripts/utils.vim"))

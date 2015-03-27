@@ -36,3 +36,10 @@ function! utils#nerdWrapper()
     :NERDTreeFind
   endif
 endfunction
+
+" Run built-in terminal in vertical split
+function! utils#newVertTerm()
+  wincmd v
+  vertical resize 80
+  :terminal
+endfunction
