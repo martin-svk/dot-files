@@ -148,8 +148,6 @@ call plug#end()
 "{{{
 
 set shell=/bin/zsh                          " Setting shell to zsh
-set nocompatible                            " No compatible with vi mode
-set encoding=utf8                           " Set UTF-8 as standard encoding and en_US as the standard language
 set number                                  " Line numbers
 set ignorecase                              " Ignore case by default
 set smartcase                               " Make search case sensitive only if it contains uppercase letters
