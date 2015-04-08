@@ -29,6 +29,8 @@ Plug 'scrooloose/syntastic', { 'for': ['java', 'ruby', 'eruby', 'coffee', 'javas
 Plug 'SirVer/ultisnips'
 " Commenting support (gc)
 Plug 'tpope/vim-commentary'
+" Safely editing in isolation
+Plug 'ferranpm/vim-isolate', { 'on':  'Isolate' }
 
 " -----------------------------------------------------
 " Ruby/Rails
