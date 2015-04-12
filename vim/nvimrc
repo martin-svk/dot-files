@@ -638,10 +638,10 @@ if $TERM == 'xterm-256color' || 'screen-256color'
 endif
 
 " Color scheme based on time
-if strftime("%H") < 15
+if strftime("%H") < 18
   let g:airline_theme='tomorrow'
   colorscheme flattened_light
-elseif strftime("%H") < 20
+elseif strftime("%H") < 21
   let g:airline_theme='tomorrow'
   colorscheme hybrid
 else
