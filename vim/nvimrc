@@ -125,12 +125,12 @@ Plug 'majutsushi/tagbar'
 " Color schemes
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Hybrid dark color theme
+" Hybrid
 Plug 'w0ng/vim-hybrid'
 " Gotham
 Plug 'whatyouhide/vim-gotham'
-" Solarized without bullshits
-Plug 'romainl/flattened'
+" Molokai
+Plug 'tomasr/molokai'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Dependencies
@@ -629,10 +629,11 @@ if $TERM == 'xterm-256color' || 'screen-256color'
 endif
 
 " Color scheme based on time
-if strftime("%H") < 18
+if strftime("%H") < 15
+  let g:rehash256 = 1
   let g:airline_theme='tomorrow'
-  colorscheme flattened_light
-elseif strftime("%H") < 21
+  colorscheme molokai
+elseif strftime("%H") < 20
   let g:airline_theme='tomorrow'
   colorscheme hybrid
 else
