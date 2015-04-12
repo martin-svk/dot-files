@@ -25,7 +25,7 @@ endfunction
 
 " Run current file
 function! utils#runCurrentFile()
-  !ruby %
+  :T ruby %
 endfunction
 
 " Run NERDTreeFind or Toggle based on current buffer
@@ -41,5 +41,12 @@ endfunction
 function! utils#newVertTerm()
   wincmd v
   vertical resize 80
+  :terminal
+endfunction
+
+" Run built-in terminal in horizontal split
+function! utils#newTerm()
+  wincmd s
+  resize 15
   :terminal
 endfunction
