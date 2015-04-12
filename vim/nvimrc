@@ -122,10 +122,17 @@ Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeFind', 'NERDTreeToggle'] }
 Plug 'bling/vim-airline'
 " Tagbar tag browser
 Plug 'majutsushi/tagbar'
+
+" ---------------------------------------------------------------------------------------------------------------------
+" Color schemes
+" ---------------------------------------------------------------------------------------------------------------------
+
 " Hybrid dark color theme
 Plug 'w0ng/vim-hybrid'
 " Gotham
 Plug 'whatyouhide/vim-gotham'
+" Solarized without bullshits
+Plug 'romainl/flattened'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Dependencies
@@ -158,7 +165,7 @@ set showmode                                " Always show mode
 set wildmenu                                " Better auto-complete of ex commands
 set textwidth=120                           " Text width is 120 chars
 set autoread                                " Automatically reload change files on disk
-set cursorline                              " Set default cursor line (highlighting is done by color scheme)
+set nocursorline                            " Dont set default cursor line
 set cmdheight=1                             " Command line height
 set pumheight=10                            " Completion window max size
 set iskeyword-=_                            " Set underscore as a word separator
@@ -618,11 +625,11 @@ if $TERM == 'xterm-256color' || 'screen-256color'
   set t_Co=256
 endif
 
-" Dark background as default
-set bg=dark
-
 " Color scheme based on time
-if strftime("%H") < 18
+if strftime("%H") < 15
+  let g:airline_theme='tomorrow'
+  colorscheme flattened_light
+elseif strftime("%H") < 20
   let g:airline_theme='tomorrow'
   colorscheme hybrid
 else
@@ -657,12 +664,6 @@ autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 " Remove trailing whitespaces automatically before save
 autocmd BufWritePre * :%s/\s\+$//e
-
-" Show / hide cursorlines
-autocmd VimEnter    * setlocal cursorline
-autocmd WinEnter    * setlocal cursorline
-autocmd BufWinEnter * setlocal cursorline
-autocmd WinLeave    * setlocal nocursorline
 
 " Load other scripts
 if filereadable(expand("~/config/dot-files/vim/scripts/utils.vim"))
