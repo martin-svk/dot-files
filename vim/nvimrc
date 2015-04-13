@@ -300,7 +300,6 @@ let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 " 3.1 Setting leaders
 " -----------------------------------------------------
 let g:mapleader="\<space>"
-let g:maplocalleader=","
 
 " -----------------------------------------------------
 " 3.2 Disabling arrow keys, space key, exmode enter
@@ -364,15 +363,15 @@ tnoremap <ESC> <c-\><c-n>
 " -----------------------------------------------------
 
 " Quick save and quit / buffer delete
-nnoremap <localleader>w :w<CR>
-nnoremap <silent> <localleader>q :q<CR>
-nnoremap <silent> <localleader>d :bd<CR>
+nnoremap ,w :w<CR>
+nnoremap <silent> ,q :q<CR>
+nnoremap <silent> ,d :bd<CR>
 
 " Reformat whole file
-nnoremap <silent> <localleader>f mzgg=G`z
+nnoremap <silent> ,f mzgg=G`z
 
 " Run current file
-nnoremap <silent> <localleader>r :call utils#runCurrentFile()<CR>
+nnoremap <silent> ,r :call utils#runCurrentFile()<CR>
 
 " Run terminal shell buffer in right vsplit
 nnoremap <silent> <leader>s :call utils#newVertTerm()<CR>
