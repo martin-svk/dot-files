@@ -25,7 +25,17 @@ endfunction
 
 " Run current file
 function! utils#runCurrentFile()
-  :T ruby %
+  if &filetype ==? 'ruby'
+    let command = 'ruby %'
+  elseif &filetype ==? 'sh'
+    let command = 'sh %'
+  else
+    echom "Can't run current file (unsupported filetype: " . &filetype . ")"
+  endif
+
+  if exists('command')
+    execute ':T ' . command
+  endif
 endfunction
 
 " Run NERDTreeFind or Toggle based on current buffer
