@@ -571,7 +571,7 @@ endfunction
 " [o]pen files recursively
 nnoremap <silent> <leader>o :<C-u>Unite -no-split -buffer-name=project-files -start-insert file_rec/async:!<CR>
 " search between open files - [b]uffer
-nnoremap <silent> <leader>b :<C-u>Unite -no-split -buffer-name=buffers -start-insert buffer<CR>
+nnoremap <silent> ,, :<C-u>Unite -no-split -buffer-name=buffers -auto-preview -auto-resize buffer<CR>
 " Search in current file tags
 nnoremap <silent> <leader>t :<C-u>Unite -no-split -buffer-name=tags -start-insert outline<CR>
 " Search for term in cwd file ([g]rep)
