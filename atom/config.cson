@@ -1,0 +1,78 @@
+"*":
+  "exception-reporting":
+    userId: "9cab43fa-bc86-b847-cc5f-fd843ef1374d"
+  welcome:
+    showOnStartup: false
+  core:
+    audioBeep: false
+    projectHome: "/home/martin/dev"
+    ignoredNames: [
+      ".git"
+      ".meteor"
+    ]
+    disabledPackages: [
+      "ex-mode"
+      "easy-motion"
+      "file-icons"
+      "metrics"
+      "welcome"
+      "autocomplete"
+      "vim-mode"
+    ]
+  editor:
+    invisibles: {}
+    fontSize: 12
+    fontFamily: "Meslo LG S DZ for Powerline"
+    scrollPastEnd: true
+    zoomFontWhenCtrlScrolling: false
+    preferredLineLength: 120
+    showInvisibles: true
+  "vim-mode":
+    useSmartcaseForSearch: true
+  "git-plus": {}
+  "autocomplete-ruby": {}
+  "easy-motion": {}
+  "autocomplete-plus":
+    maxVisibleSuggestions: 5
+    enableBuiltinProvider: false
+  "keybinding-cheatsheet": {}
+  "file-explorer": {}
+  emmet: {}
+  "merge-conflicts": {}
+  "git-history": {}
+  "isotope-ui":
+    fontWeight: "Regular"
+    spaciousMode: true
+    fontFamily: "Source Sans Pro"
+    lowContrastTooltip: true
+    backgroundColor: "false"
+    customBackgroundColorPicker:
+      red: 68
+      green: 78
+      blue: 72
+      alpha: 1
+  "meteor-helper": {}
+".js.rails.source source.jquery.js":
+  editor:
+    preferredLineLength: 120
+".rails.rjs.ruby.source":
+  editor:
+    preferredLineLength: 120
+".html.ruby.text":
+  editor:
+    preferredLineLength: 120
+".rails.ruby.source":
+  editor:
+    preferredLineLength: 120
+".ruby.source.sql":
+  editor:
+    preferredLineLength: 120
+".coffee.source":
+  editor:
+    preferredLineLength: 120
+".js.source":
+  editor:
+    preferredLineLength: 120
+".diff.source":
+  editor:
+    preferredLineLength: 120
