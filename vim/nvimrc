@@ -496,6 +496,8 @@ let g:unite_source_line_enable_highlight=1
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_ruby_checkers=['mri']
 
+" Disable ugly signs
+let g:syntastic_enable_signs=1
 " Check on open as well as save
 let g:syntastic_check_on_open=1
 " Don't care about warnings
