@@ -24,7 +24,7 @@ call plug#begin('~/.nvim/plugged')
 " Most common languages file types (syntax, indenting, etc.)
 Plug 'sheerun/vim-polyglot'
 " Needs linters to work properly (see https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers)
-Plug 'scrooloose/syntastic', { 'for': ['java', 'ruby', 'eruby', 'coffee', 'javascript', 'html'], 'on': 'SyntasticToggleMode' }
+Plug 'scrooloose/syntastic', { 'on': 'SyntasticToggleMode' }
 " Snippets support
 Plug 'SirVer/ultisnips'
 " Commenting support (gc)
@@ -492,21 +492,16 @@ let g:unite_source_line_enable_highlight=1
 " -----------------------------------------------------
 " 4.3 Syntastic (syntax checker)
 " -----------------------------------------------------
+" Overriding default linters
+let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_ruby_checkers=['mri']
-" mark syntax errors with :signs
-let g:syntastic_enable_signs=1
-" automatically jump to the error when saving the file
-let g:syntastic_auto_jump=0
-" show the error list automatically
-let g:syntastic_auto_loc_list=1
-" check on open as well as save
+
+" Check on open as well as save
 let g:syntastic_check_on_open=1
-" don't care about warnings
-let g:syntastic_quiet_messages={'level': 'warnings'}
+" Don't care about warnings
+let g:syntastic_quiet_messages={ 'level': 'warnings' }
 " Passive mode is default
 let g:syntastic_mode_map={ 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
-" Disable csslint, scss and sass syntax checking is not behaving correctly
-let g:loaded_syntastic_css_csslint_checker=0
 
 " -----------------------------------------------------
 " 4.4 Superatab
