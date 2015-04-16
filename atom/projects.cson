@@ -3,3 +3,8 @@
   'paths': [
     '/home/martin/dev/learning/meteor/notes'
   ]
+'tabrec':
+  'title': 'tabrec'
+  'paths': [
+    '/home/martin/dev/school/dp/extension'
+  ]

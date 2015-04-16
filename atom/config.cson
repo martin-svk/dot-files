@@ -16,8 +16,6 @@
       "file-icons"
       "metrics"
       "welcome"
-      "autocomplete"
-      "vim-mode"
     ]
   editor:
     invisibles: {}
@@ -26,7 +24,6 @@
     scrollPastEnd: true
     zoomFontWhenCtrlScrolling: false
     preferredLineLength: 120
-    showInvisibles: true
   "vim-mode":
     useSmartcaseForSearch: true
   "git-plus": {}
@@ -52,19 +49,32 @@
       blue: 72
       alpha: 1
   "meteor-helper": {}
+  "atom-ternjs":
+    coffeeScript: true
+  minimap: {}
+  linter:
+    lintOnChange: false
+    lintOnEditorFocus: false
+    lintOnSave: false
+    clearOnChange: true
+    showHighlighting: false
+    showErrorInline: false
+    statusBar: "Show error of the selected line"
+  "linter-csslint": {}
+  "linter-jshint": {}
 ".js.rails.source source.jquery.js":
   editor:
     preferredLineLength: 120
 ".rails.rjs.ruby.source":
   editor:
     preferredLineLength: 120
-".html.ruby.text":
+".ruby.source.sql":
   editor:
     preferredLineLength: 120
 ".rails.ruby.source":
   editor:
     preferredLineLength: 120
-".ruby.source.sql":
+".html.ruby.text":
   editor:
     preferredLineLength: 120
 ".coffee.source":
