@@ -16,7 +16,6 @@
       "file-icons"
       "metrics"
       "welcome"
-      "vim-mode"
     ]
   editor:
     invisibles: {}
@@ -56,7 +55,7 @@
   linter:
     lintOnChange: false
     lintOnEditorFocus: false
-    lintOnSave: false
+    lintOnSave: true
     clearOnChange: true
     showHighlighting: false
     showErrorInline: false

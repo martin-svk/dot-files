@@ -2,7 +2,7 @@
 	"always_show_minimap_viewport": true,
 	"atomic_save": false,
 	"caret_style": "solid",
-	"color_scheme": "Packages/Theme - Spacegray/base16-ocean.dark.tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/base16-ocean.dark (SL).tmTheme",
 	"default_line_ending": "unix",
 	"drag_text": false,
 	"font_face": "Ubuntu Mono",
