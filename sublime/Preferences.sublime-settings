@@ -2,11 +2,7 @@
 	"always_show_minimap_viewport": true,
 	"atomic_save": false,
 	"caret_style": "solid",
-	"codeintel_disabled_languages":
-	[
-		"javascript"
-	],
-	"color_scheme": "Packages/Theme - Spacegray/base16-ocean.light.tmTheme",
+	"color_scheme": "Packages/Theme - Spacegray/base16-ocean.dark.tmTheme",
 	"default_line_ending": "unix",
 	"drag_text": false,
 	"font_face": "Ubuntu Mono",
@@ -34,7 +30,7 @@
 	"show_line_endings": true,
 	"spell_check": false,
 	"tab_size": 2,
-	"theme": "Soda Light.sublime-theme",
+	"theme": "Spacegray.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"tree_animation_enabled": false,
 	"trim_trailing_white_space_on_save": true,

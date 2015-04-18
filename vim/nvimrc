@@ -239,31 +239,6 @@ set fillchars="fold: "
 " -----------------------------------------------------
 " 2.7 Omni completion settings
 " -----------------------------------------------------
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType c set omnifunc=ccomplete#Complete
-autocmd FileType java set omnifunc=javacomplete#Complete
-" No +ruby compiled neovim for now
-" autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-" autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading=1
-" autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
-" autocmd FileType ruby,eruby let g:rubycomplete_rails=1
-" autocmd FileType ruby,eruby let g:rubycomplete_load_gemfile=1
-
-" make CSS omni-completion work for SASS and SCSS
-autocmd BufNewFile,BufRead *.scss set ft=scss.css
-autocmd BufNewFile,BufRead *.sass set ft=sass.css
-
-" use syntax complete if nothing else available
-if has("autocmd") && exists("+omnifunc")
-  autocmd Filetype *
-        \ if &omnifunc == "" |
-        \   setlocal omnifunc=syntaxcomplete#Complete |
-        \ endif
-endif
 
 " Dont show preview scratch buffers
 set completeopt-=preview
@@ -506,9 +481,8 @@ let g:syntastic_quiet_messages={ 'level': 'warnings' }
 let g:syntastic_mode_map={ 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 
 " -----------------------------------------------------
-" 4.4 Superatab
+" 4.4 Supertab
 " -----------------------------------------------------
-" Neovim is not built with +ruby yet
 let g:SuperTabDefaultCompletionType='context'
 autocmd FileType *
       \ if &omnifunc != '' |
@@ -639,7 +613,7 @@ hi Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE
 "}}}
 
 " ======================================================================================================================
-" 7.0 Filetype specific settings
+" 7.0 filetype specific settings and autocommands
 " ======================================================================================================================
 "{{{
 autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
@@ -650,18 +624,47 @@ autocmd FileType html,htmldjango,xhtml,haml setlocal tabstop=2 shiftwidth=2 soft
 autocmd FileType sass,scss,css setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType snippets setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
 autocmd FileType vim setlocal keywordprg=:help tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
-"}}}
 
-" ======================================================================================================================
-" 8.0 Custom scripts and autocommands
-" ======================================================================================================================
-"{{{
+" Omni complete function settings
+autocmd FileType html,markdown set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType c set omnifunc=ccomplete#Complete
+autocmd FileType java set omnifunc=javacomplete#Complete
+" No +ruby compiled neovim for now
+" autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+" autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading=1
+" autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
+" autocmd FileType ruby,eruby let g:rubycomplete_rails=1
+" autocmd FileType ruby,eruby let g:rubycomplete_load_gemfile=1
+
+" make CSS omni-completion work for SASS and SCSS
+autocmd BufNewFile,BufRead *.scss set ft=scss.css
+autocmd BufNewFile,BufRead *.sass set ft=sass.css
+
+" use syntax complete if nothing else available
+if has("autocmd") && exists("+omnifunc")
+  autocmd Filetype *
+        \ if &omnifunc == "" |
+        \   setlocal omnifunc=syntaxcomplete#Complete |
+        \ else |
+        \   let g:SuperTabContextDefaultCompletionType='<c-x><c-u>' |
+        \ endif
+endif
+
 " Close vim if the last open window is nerdtree
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Remove trailing whitespaces automatically before save
 autocmd BufWritePre * :%s/\s\+$//e
+"}}}
 
+" ======================================================================================================================
+" 8.0 Other stuff
+" ======================================================================================================================
+"{{{
 " Load other scripts
 if filereadable(expand("~/config/dot-files/vim/scripts/utils.vim"))
   source ~/config/dot-files/vim/scripts/utils.vim
