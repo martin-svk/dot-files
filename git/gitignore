@@ -1,4 +1,6 @@
 # Compiled sources
+# ===========================
+
 *.com
 *.class
 *.dll
@@ -7,6 +9,8 @@
 *.so
 
 # Packages
+# ===========================
+
 *.7z
 *.dmg
 *.gz
@@ -17,11 +21,15 @@
 *.zip
 
 # Logs and databases
+# ===========================
+
 *.log
 *.sql
 *.sqlite
 
 # OS generated files
+# ===========================
+
 .DS_Store
 .DS_Store?
 ._*
@@ -30,20 +38,30 @@ ehthumbs.db
 Thumbs.db
 
 # Codekits
+# ===========================
+
 .sass-cache/
 .codekit-config.json
 config.codekit
+
+# Meteor
+.meteor/
+
+# Editors
+# ===========================
 
 # VIM
 .*.swo
 .*.swp
 *~
 
-# Other
-.rake_tasks
-
-# Meteor
-.meteor/
-
 # Idea
 .idea/
+
+# Sublime
+*.sublime-project
+
+# Other
+# ===========================
+
+.rake_tasks
