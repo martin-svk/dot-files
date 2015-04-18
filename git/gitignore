@@ -44,3 +44,6 @@ config.codekit
 
 # Meteor
 .meteor/
+
+# Idea
+.idea/
