@@ -1,4 +1,0 @@
-" Vimperator config file
-
-colorscheme default
-set editor="xterm -e nvim"
