@@ -29,6 +29,8 @@ Plug 'scrooloose/syntastic', { 'on': 'SyntasticToggleMode' }
 Plug 'SirVer/ultisnips'
 " Commenting support (gc)
 Plug 'tpope/vim-commentary'
+" Double tab to remove auto inserted comment
+Plug 'Osse/double-tap'
 " Safely editing in isolation
 Plug 'ferranpm/vim-isolate', { 'on':  'Isolate' }
 
