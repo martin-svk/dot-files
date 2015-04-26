@@ -96,6 +96,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 " Gitk for vim
 Plug 'gregsexton/gitv', { 'on':  'Gitv' }
+" Git menu for Nerdtree
+Plug 'low-ghost/nerdtree-fugitive', { 'on': ['NERDTreeFind', 'NERDTreeToggle'] }
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Text insertion/manipulation
@@ -542,24 +544,26 @@ function! s:unite_settings()
   nmap <silent> <buffer> m <Plug>(unite_toggle_mark_current_candidate)
 endfunction
 
-" [o]pen files recursively
-nnoremap <silent> <leader>o :<C-u>Unite -no-split -buffer-name=project-files -start-insert -auto-preview -auto-resize file_rec/async:!<CR>
-" search between open files - [b]uffer
-nnoremap <silent> ,, :<C-u>Unite -no-split -buffer-name=buffers -auto-preview -auto-resize buffer<CR>
+" [U]nite menu
+nnoremap <silent> <leader>u :Unite -start-insert source<CR>
+" [O]pen files recursively
+nnoremap <silent> <leader>o :Unite -no-split -buffer-name=project-files -start-insert -auto-preview -auto-resize file_rec/async:!<CR>
+" Search between open files - [b]uffer
+nnoremap <silent> ,, :Unite -no-split -buffer-name=buffers -auto-preview -auto-resize buffer<CR>
 " Search in current file tags
-nnoremap <silent> <leader>t :<C-u>Unite -no-split -buffer-name=tags -start-insert outline<CR>
+nnoremap <silent> <leader>t :Unite -no-split -buffer-name=tags -start-insert outline<CR>
 " Search for term in cwd file ([g]rep)
-nnoremap <silent> <leader>g :<C-u>Unite -silent -auto-resize grep:.<CR>
+nnoremap <silent> <leader>g :Unite -silent -auto-resize grep:.<CR>
 " Search in edit [h]istory
-nnoremap <silent> <leader>h :<C-u>Unite -buffer-name=edit-history -auto-resize change<CR>
+nnoremap <silent> <leader>h :Unite -buffer-name=edit-history -auto-resize change<CR>
 " Search in [c]ommands
-nnoremap <silent> <leader>c :<C-u>Unite -start-insert -auto-resize command<CR>
+nnoremap <silent> <leader>c :Unite -start-insert -auto-resize command<CR>
 " Search in defined [m]appings
-nnoremap <silent> <leader>m :<C-u>Unite -start-insert -auto-resize mapping<CR>
+nnoremap <silent> <leader>m :Unite -start-insert -auto-resize mapping<CR>
 " Search in [l]ines on current buffer
-nnoremap <silent> <leader>l :<C-u>Unite -no-split -buffer-name=line-search -start-insert line<CR>
+nnoremap <silent> <leader>l :Unite -no-split -buffer-name=line-search -start-insert line<CR>
 " Search in [y]ank history
-nnoremap <silent> <leader>y :<C-u>Unite -buffer-name=yank-history -auto-resize history/yank<CR>
+nnoremap <silent> <leader>y :Unite -buffer-name=yank-history -auto-resize history/yank<CR>
 
 " -----------------------------------------------------
 " 5.3 EasyMotion
