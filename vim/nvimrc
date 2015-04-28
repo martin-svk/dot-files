@@ -29,8 +29,6 @@ Plug 'scrooloose/syntastic', { 'on': 'SyntasticToggleMode' }
 Plug 'SirVer/ultisnips'
 " Commenting support (gc)
 Plug 'tpope/vim-commentary'
-" Double tab to remove auto inserted comment
-Plug 'Osse/double-tap'
 " Safely editing in isolation
 Plug 'ferranpm/vim-isolate', { 'on':  'Isolate' }
 
@@ -57,7 +55,7 @@ Plug 'ngmy/vim-rubocop', { 'for': ['ruby', 'eruby'], 'on': 'RuboCop' }
 Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'sass', 'scss', 'less'] }
 " Sparkup, emmet alternative (<C-e> to expand expression)
 Plug 'rstacruz/sparkup', { 'for': ['html', 'xhtml'] }
-" Spacebars
+" Spacebars syntax
 Plug 'Slava/vim-spacebars', { 'for': ['html', 'xhtml'] }
 
 " -----------------------------------------------------
@@ -79,12 +77,10 @@ Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffee']
 Plug 'duggiefresh/vim-easydir'
 " Unite (Files, Buffers, Commands, etc. fuzzy searcher)
 Plug 'Shougo/unite.vim'
-" Unite outline plugin
+" Unite tags source
 Plug 'Shougo/unite-outline'
 " Easy motion
 Plug 'Lokaltog/vim-easymotion'
-" Dirvish (netrw replacement)
-Plug 'justinmk/vim-dirvish'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " External tools integration plugins
@@ -142,9 +138,9 @@ Plug 'tomasr/molokai'
 " Dependencies
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Async processing (for Unite) (make after checkout)
-Plug 'Shougo/vimproc.vim'
-" Matchit enhances motions like %
+" Async processing (for Unite)
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+" Matchit enhances motions
 Plug 'edsono/vim-matchit'
 " Repeat ads repeat via . functionality for some plugins
 Plug 'tpope/vim-repeat'
