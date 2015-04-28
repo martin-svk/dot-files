@@ -113,6 +113,8 @@ Plug 'tpope/vim-surround'
 Plug 'godlygeek/tabular', { 'on':  'Tabularize' }
 " RSI movements for vim
 Plug 'tpope/vim-rsi'
+" Peekabo displays what registers contains
+Plug 'junegunn/vim-peekaboo'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Interface improving plugins
