@@ -145,7 +145,7 @@ Plug 'edsono/vim-matchit'
 " Repeat ads repeat via . functionality for some plugins
 Plug 'tpope/vim-repeat'
 " Neovim terminal helpers
-Plug 'kassio/neoterm', { 'on':  'T' }
+Plug 'kassio/neoterm'
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " 1.2 End of plugin declaration
