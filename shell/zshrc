@@ -143,6 +143,9 @@ if [ -d $HOME/lib/android-sdk-linux ]; then
   fi
 fi
 
+# Fuzzy finder
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Setting default editor
 export EDITOR='nvim'
 export MYNVIMRC='~/.nvimrc'
