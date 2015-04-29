@@ -1,6 +1,7 @@
 " Misc settings
 " ------------------------------------------------------------
 set guifont=M+\ 1m\ Medium\ 12
+" set guifont=Ubuntu\ Mono\ derivative\ Powerline\ Bold\ 12
 
 " GUI options
 " ------------------------------------------------------------
@@ -9,6 +10,13 @@ set guioptions-=l
 set guioptions-=R
 set guioptions-=r
 set guioptions-=T
+set guioptions-=m
 
 " Disable blink cursor
 set guicursor+=a:blinkon0
+
+" Disable cursorline
+set nocursorline
+
+" White colorscheme
+colorscheme hybrid-light
