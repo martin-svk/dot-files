@@ -332,9 +332,6 @@ nnoremap Q @q
 " m is used as EasyMotion leader key
 nnoremap M m
 
-" Cancel terminal mode with escape
-tnoremap <ESC> <c-\><c-n>
-
 " -----------------------------------------------------
 " 3.4 Common tasks
 " -----------------------------------------------------
