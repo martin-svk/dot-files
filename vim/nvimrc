@@ -69,6 +69,13 @@ Plug 'othree/tern_for_vim_coffee', { 'for': ['javascript', 'coffee'] }
 " JS libs syntax files, ember, angular, etc.
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffee'] }
 
+" -----------------------------------------------------
+" Other
+" -----------------------------------------------------
+
+" Latex
+Plug 'LaTeX-Box-Team/LaTeX-Box', { 'for': ['tex'] }
+
 " ---------------------------------------------------------------------------------------------------------------------
 " Files/code navigation/management plugins
 " ---------------------------------------------------------------------------------------------------------------------
@@ -638,6 +645,7 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType c set omnifunc=ccomplete#Complete
 autocmd FileType java set omnifunc=javacomplete#Complete
+autocmd FileType tex set omnifunc=LatexBox_Complete
 " No +ruby compiled neovim for now
 " autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 " autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading=1
