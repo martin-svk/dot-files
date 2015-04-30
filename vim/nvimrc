@@ -136,14 +136,16 @@ Plug 'junegunn/vim-peekaboo'
 
 " Airline (improved status line)
 Plug 'bling/vim-airline'
+" Highlight long lines
+Plug 'whatyouhide/vim-lengthmatters'
 " Hybrid
 Plug 'w0ng/vim-hybrid'
 " Gotham
 Plug 'whatyouhide/vim-gotham'
 " Molokai
 Plug 'tomasr/molokai'
-" Highlight long lines
-Plug 'whatyouhide/vim-lengthmatters'
+" Badwolf
+Plug 'sjl/badwolf'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Dependencies
