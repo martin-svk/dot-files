@@ -77,6 +77,17 @@ Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffee']
 Plug 'LaTeX-Box-Team/LaTeX-Box', { 'for': ['tex'] }
 
 " ---------------------------------------------------------------------------------------------------------------------
+" File, tags, undo browsers
+" ---------------------------------------------------------------------------------------------------------------------
+
+" Nerdtree file browser
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeFind', 'NERDTreeToggle'] }
+" Tagbar tag browser
+Plug 'majutsushi/tagbar'
+" Undo tree
+Plug 'mbbill/undotree', { 'on': ['UndotreeToggle'] }
+
+" ---------------------------------------------------------------------------------------------------------------------
 " Files/code navigation/management plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
@@ -123,17 +134,8 @@ Plug 'junegunn/vim-peekaboo'
 " Interface improving plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Nerdtree file browser
-Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeFind', 'NERDTreeToggle'] }
 " Airline (improved status line)
 Plug 'bling/vim-airline'
-" Tagbar tag browser
-Plug 'majutsushi/tagbar'
-
-" ---------------------------------------------------------------------------------------------------------------------
-" Color schemes
-" ---------------------------------------------------------------------------------------------------------------------
-
 " Hybrid
 Plug 'w0ng/vim-hybrid'
 " Gotham
@@ -151,7 +153,7 @@ Plug 'whatyouhide/vim-lengthmatters'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 " Matchit enhances motions
 Plug 'edsono/vim-matchit'
-" Repeat ads repeat via . functionality for some plugins
+" More . repeat functionality
 Plug 'tpope/vim-repeat'
 " Neovim terminal helpers
 Plug 'kassio/neoterm'
@@ -229,33 +231,47 @@ set nowb
 set noswapfile
 
 " -----------------------------------------------------
-" 2.4 Highlight whitespaces
+" 2.4 Persistent undo, for non-git projects
+" -----------------------------------------------------
+if has('persistent_undo')
+  " Save undo history to file
+  set undofile
+  " undo files in folder
+  set undodir=~/.nvim/tmp/undo//
+  " Maximum number of undos
+  set undolevels=100000
+  " Save complete files for undo on reload if it has less lines than this
+  set undoreload=100000
+endif
+
+" -----------------------------------------------------
+" 2.5 Highlight whitespaces
 " -----------------------------------------------------
 set listchars=tab:▸\ ,trail:·,extends:#,nbsp:·
 
 " -----------------------------------------------------
-" 2.5 Filetype settings
+" 2.6 Filetype settings
 " -----------------------------------------------------
 filetype off
 filetype plugin on
 filetype indent on
 
 " -----------------------------------------------------
-" 2.6 Folding settings, by default is disabled, use 'za'
+" 2.7 Folding settings, by default is disabled, use 'za'
 " -----------------------------------------------------
 set foldmethod=marker
 set foldlevelstart=2
 set fillchars="fold: "
 
 " -----------------------------------------------------
-" 2.7 Omni completion settings
+" 2.8 Omni completion settings
 " -----------------------------------------------------
 
 " Dont show preview scratch buffers
 set completeopt-=preview
 
 " -----------------------------------------------------
-" 2.8 Completion ignore list
+" 2.9 Completion ignore list
 " -----------------------------------------------------
 set wildignore=*.o,*.obj,*~
 set wildignore+=*vim/backups*
@@ -269,7 +285,7 @@ set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
 
 " -----------------------------------------------------
-" 2.9 Neovim specific settings
+" 2.10 Neovim specific settings
 " -----------------------------------------------------
 " Set an environment variable to use the t_SI/t_EI hack
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
@@ -382,11 +398,12 @@ nnoremap <silent> <F6> :set nohlsearch!<CR> :set nohlsearch?<CR>
 nnoremap <silent> <F7> :set list!<CR> :set list?<CR>
 " Toggle syntax checking
 nnoremap <F8> :SyntasticToggleMode<CR>
-" F9 - F11 testing via neoterm
-nnoremap <silent> <F9> :call neoterm#test#run('file')<cr>
-nnoremap <silent> <F10> :call neoterm#test#run('current')<cr>
-nnoremap <silent> <F11> :call neoterm#repl#line()<cr>
-vnoremap <silent> <F11> :call neoterm#repl#selection()<cr>
+" Toggle undo tree
+nnoremap <silent> <F9> :UndotreeToggle<CR>
+" Run current file tests
+nnoremap <silent> <F10> :call neoterm#test#run('file')<cr>
+" Run current cursor test
+nnoremap <silent> <F11> :call neoterm#test#run('current')<cr>
 " Echo out toggles legend on <F12>
 nnoremap <F12> :call utils#showToggles()<CR>
 
@@ -525,6 +542,11 @@ let g:tagbar_compact=1
 " -----------------------------------------------------
 let g:neoterm_position='vertical'
 let g:neoterm_size=80
+
+" -----------------------------------------------------
+" 4.9 Undotree settings
+" -----------------------------------------------------
+let g:undotree_WindowLayout=3
 "}}}
 
 " ======================================================================================================================

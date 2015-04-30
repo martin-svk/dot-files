@@ -1,7 +1,7 @@
 " Informative echo line
 function! utils#showToggles()
   echom "<F1> NERDTree | <F2> Tagbar | <F3> Paste mode | <F4> Spellcheck | <F5> Reload rc | <F6> Highlighting |" .
-        \" <F7> Whitechars | <F8> Syntastic | <F9> Test whole file | <F10> Test current | <F11> Run in REPL | <F12> This message"
+        \" <F7> Whitechars | <F8> Syntastic | <F9> Undotree | <F10> Test file | <F11> Test current | <F12> This message"
 endfunction
 
 " Copy and paste function using xclip
