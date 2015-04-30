@@ -133,6 +133,18 @@ Plug 'majutsushi/tagbar'
 " Color schemes
 " ---------------------------------------------------------------------------------------------------------------------
 
+" Pencil
+Plug 'reedes/vim-colors-pencil'
+" Spacegray
+Plug 'ajh17/Spacegray.vim'
+" Gruvbox
+Plug 'morhetz/gruvbox'
+" Hemisu
+Plug 'noahfrederick/vim-hemisu'
+" Badwolf
+Plug 'sjl/badwolf'
+" Kolor
+Plug 'zeis/vim-kolor'
 " Hybrid
 Plug 'w0ng/vim-hybrid'
 " Gotham
