@@ -375,7 +375,7 @@ nnoremap <silent> <F3> :set paste!<CR> :set paste?<CR>
 " Toggle spelling on and off
 nnoremap <silent> <F4> :set spell!<CR> :set spell?<CR>
 " Source (reload) nvimrc
-nnoremap <silent> <F5> :source $MYNVIMRC<CR>
+nnoremap <silent> <F5> :source $MYVIMRC<CR>
 " Toggle search highlight
 nnoremap <silent> <F6> :set nohlsearch!<CR> :set nohlsearch?<CR>
 " Toggle white characters visibility

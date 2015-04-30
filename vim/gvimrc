@@ -1,7 +1,8 @@
 " Misc settings
 " ------------------------------------------------------------
-set guifont=M+\ 1m\ Medium\ 12
-" set guifont=Ubuntu\ Mono\ derivative\ Powerline\ Bold\ 12
+" set guifont=M+\ 1m\ Medium\ 12
+" set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
+set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline\ 10
 
 " GUI options
 " ------------------------------------------------------------
@@ -19,5 +20,6 @@ set guicursor+=a:blinkon0
 set nocursorline
 
 " White colorscheme
+set bg=light
 let g:airline_theme='tomorrow'
-colorscheme hybrid-light
+colorscheme pencil
