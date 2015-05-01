@@ -588,7 +588,7 @@ let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 "}}}
 
 " ======================================================================================================================
-" 6.0 Color and highlighting settings
+" 6.0 Misc, Color and highlighting settings
 " ======================================================================================================================
 "{{{
 " Syntax highlighting
@@ -599,17 +599,19 @@ if $TERM == 'xterm-256color' || 'screen-256color'
   set t_Co=256
 endif
 
-" Color scheme based on time
-if strftime("%H") < 15
-  let g:rehash256 = 1
-  let g:airline_theme='tomorrow'
-  colorscheme molokai
-elseif strftime("%H") < 20
-  let g:airline_theme='tomorrow'
-  colorscheme hybrid
-else
-  let g:airline_theme='gotham'
-  colorscheme gotham
+if !has("gui_running")
+  " Color scheme based on time
+  if strftime("%H") < 15
+    let g:rehash256 = 1
+    let g:airline_theme='tomorrow'
+    colorscheme molokai
+  elseif strftime("%H") < 20
+    let g:airline_theme='tomorrow'
+    colorscheme hybrid
+  else
+    let g:airline_theme='gotham'
+    colorscheme gotham
+  endif
 endif
 
 " Remove underline in folded lines
