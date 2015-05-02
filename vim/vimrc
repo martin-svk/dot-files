@@ -692,7 +692,7 @@ endif
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Remove trailing whitespaces automatically before save
-autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre * :call utils#stripTrailingWhitespaces()
 "}}}
 
 " ======================================================================================================================
