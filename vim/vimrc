@@ -28,8 +28,6 @@ Plug 'scrooloose/syntastic', { 'on': 'SyntasticToggleMode' }
 Plug 'SirVer/ultisnips'
 " Commenting support (gc)
 Plug 'tpope/vim-commentary'
-" Safely editing in isolation
-Plug 'ferranpm/vim-isolate', { 'on':  'Isolate' }
 
 " -----------------------------------------------------
 " Ruby/Rails
@@ -76,7 +74,7 @@ Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffee']
 Plug 'LaTeX-Box-Team/LaTeX-Box', { 'for': ['tex'] }
 
 " ---------------------------------------------------------------------------------------------------------------------
-" File, tags, undo browsers
+" File, tags, undo, registers browsers
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Nerdtree file browser
@@ -85,19 +83,25 @@ Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeFind', 'NERDTreeToggle'] }
 Plug 'majutsushi/tagbar'
 " Undo tree
 Plug 'mbbill/undotree', { 'on': ['UndotreeToggle'] }
+" Peekabo displays what registers contains
+Plug 'junegunn/vim-peekaboo'
 
 " ---------------------------------------------------------------------------------------------------------------------
-" Files/code navigation/management plugins
+" Projects/Files/code navigation/management plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Extends :e, :new to create new directories in path
-Plug 'duggiefresh/vim-easydir'
 " Unite (Files, Buffers, Commands, etc. fuzzy searcher)
 Plug 'Shougo/unite.vim'
 " Unite tags source
 Plug 'Shougo/unite-outline'
 " Easy motion
 Plug 'Lokaltog/vim-easymotion'
+" Mksession on steroids
+Plug 'xolox/vim-session'
+" Extends :e, :new to create new directories in path
+Plug 'duggiefresh/vim-easydir'
+" RSI movements for vim
+Plug 'tpope/vim-rsi'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " External tools integration plugins
@@ -120,14 +124,12 @@ Plug 'low-ghost/nerdtree-fugitive', { 'on': ['NERDTreeFind', 'NERDTreeToggle'] }
 Plug 'ervandew/supertab'
 " Multiple cursors
 Plug 'terryma/vim-multiple-cursors'
+" Safely editing in isolation
+Plug 'ferranpm/vim-isolate', { 'on':  'Isolate' }
 " Surround (cs"')
 Plug 'tpope/vim-surround'
 " Easy alignment
 Plug 'godlygeek/tabular', { 'on':  'Tabularize' }
-" RSI movements for vim
-Plug 'tpope/vim-rsi'
-" Peekabo displays what registers contains
-Plug 'junegunn/vim-peekaboo'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Interface improving plugins
