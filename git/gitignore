@@ -51,6 +51,7 @@ config.codekit
 # ===========================
 
 # VIM
+Session.vim
 .*.swo
 .*.swp
 *~
