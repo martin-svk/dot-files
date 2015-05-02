@@ -560,7 +560,7 @@ let g:undotree_WindowLayout=3
 " Don't restore help windows
 set sessionoptions-=help
 " Dont autosave sessions
-let g:session_autoload='no'
+let g:session_autosave='no'
 " Dont save color options
 let g:session_persist_colors=0
 " Set session folder
