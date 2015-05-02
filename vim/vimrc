@@ -97,7 +97,7 @@ Plug 'Shougo/unite-outline'
 " Easy motion
 Plug 'Lokaltog/vim-easymotion'
 " Mksession on steroids
-Plug 'xolox/vim-session', { 'on': ['OpenSession'] }
+Plug 'xolox/vim-session', { 'on': ['OpenSession', 'SaveSession'] }
 " Extends :e, :new to create new directories in path
 Plug 'duggiefresh/vim-easydir'
 " RSI movements for vim
