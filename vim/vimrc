@@ -97,7 +97,7 @@ Plug 'Shougo/unite-outline'
 " Easy motion
 Plug 'Lokaltog/vim-easymotion'
 " Mksession on steroids
-Plug 'xolox/vim-session'
+Plug 'xolox/vim-session', { 'on': ['OpenSession'] }
 " Extends :e, :new to create new directories in path
 Plug 'duggiefresh/vim-easydir'
 " RSI movements for vim
@@ -160,6 +160,8 @@ Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'edsono/vim-matchit'
 " More . repeat functionality
 Plug 'tpope/vim-repeat'
+" Misc functions
+Plug 'xolox/vim-misc'
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " 1.2 End of plugin declaration
@@ -530,6 +532,16 @@ let g:tagbar_compact=1
 " 4.9 Undotree settings
 " -----------------------------------------------------
 let g:undotree_WindowLayout=3
+
+" -----------------------------------------------------
+" 4.10 Vim session settings
+" -----------------------------------------------------
+" Don't restore help windows
+set sessionoptions-=help
+" Dont autosave sessions
+let g:session_autoload='no'
+" Dont save color options
+let g:session_persist_colors=0
 "}}}
 
 " ======================================================================================================================
