@@ -1,6 +1,6 @@
 " ~/config/dot-files/vim/sessions/thesis.vim:
 " Vim session script.
-" Created by session.vim 2.10.1 on 02 May 2015 at 14:25:14.
+" Created by session.vim 2.10.1 on 02 May 2015 at 17:43:34.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=agit
@@ -20,16 +20,7 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 thesis.tex
-badd +1 parts/anotacia.tex
-badd +1 parts/navrh_riesenia.tex
-badd +1 parts/odporucanie_v_para.tex
-badd +1 parts/overenie.tex
-badd +1 parts/para_prehliadanie.tex
-badd +1 parts/prilohy.tex
-badd +1 parts/uvod.tex
-badd +1 parts/vzory_v_para.tex
-badd +1 parts/zhodnotenie_a_plan.tex
+badd +0 thesis.tex
 silent! argdel *
 edit thesis.tex
 set splitbelow splitright
@@ -62,11 +53,11 @@ setlocal fdl=2
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 3 - ((2 * winheight(0) + 27) / 55)
+let s:l = 1 - ((0 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-3
+1
 normal! 0
 wincmd w
 2wincmd w
