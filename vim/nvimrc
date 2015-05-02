@@ -563,6 +563,8 @@ set sessionoptions-=help
 let g:session_autoload='no'
 " Dont save color options
 let g:session_persist_colors=0
+" Set session folder
+let g:session_directory='~/.nvim/sessions'
 "}}}
 
 " ======================================================================================================================
