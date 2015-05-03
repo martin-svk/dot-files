@@ -1,6 +1,6 @@
 " ~/config/dot-files/vim/sessions/thesis.vim:
 " Vim session script.
-" Created by session.vim 2.10.1 on 02 May 2015 at 17:43:34.
+" Created by session.vim 2.10.1 on 03 May 2015 at 19:47:06.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=agit
@@ -20,9 +20,9 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 thesis.tex
+badd +0 parts/kap5_existujuce_riesenia.tex
 silent! argdel *
-edit thesis.tex
+edit parts/kap5_existujuce_riesenia.tex
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
