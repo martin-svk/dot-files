@@ -697,12 +697,12 @@ endif
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Remove trailing whitespaces automatically before save
-autocmd BufWritePre * :call utils#stripTrailingWhitespaces()
+autocmd BufWritePre * call utils#stripTrailingWhitespaces()
 
 " Keyboard layout switching
 if g:utils_intelligent_kb_layout == 1
-  autocmd InsertEnter * :silent !setxkbmap sk
-  autocmd InsertLeave * :silent !setxkbmap us
+  autocmd InsertEnter * call utils#setSKKBLayout()
+  autocmd InsertLeave * call utils#setUSKBLayout()
 end
 "}}}
 

@@ -73,3 +73,13 @@ function! utils#stripTrailingWhitespaces()
     let @/=_s
     call cursor(l, c)
 endfunction
+
+" Set SK keyboard layout with qwerty
+function! utils#setSKKBLayout()
+  silent !setxkbmap sk -variant qwerty
+endfunction
+
+" Set US keyboard layout with qwerty
+function! utils#setUSKBLayout()
+  silent !setxkbmap us
+endfunction
