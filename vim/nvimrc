@@ -452,7 +452,12 @@ cab Q q
 "{{{
 
 " -----------------------------------------------------
-" 4.1 Airline (status line)
+" 4.1 My utils settings
+" -----------------------------------------------------
+let g:utils_intelligent_kb_layout=0
+
+" -----------------------------------------------------
+" 4.2 Airline (status line)
 " -----------------------------------------------------
 let g:airline_powerline_fonts=1
 let g:airline_exclude_preview=1
@@ -465,7 +470,7 @@ let g:airline#extensions#tabline#fnamecollapse=1
 let g:airline#extensions#hunks#non_zero_only=1
 
 " -----------------------------------------------------
-" 4.2 Unite
+" 4.3 Unite
 " -----------------------------------------------------
 
 " Matcher settings
@@ -501,7 +506,7 @@ call unite#custom#profile('default', 'context', {
 let g:unite_source_line_enable_highlight=1
 
 " -----------------------------------------------------
-" 4.3 Syntastic (syntax checker)
+" 4.4 Syntastic (syntax checker)
 " -----------------------------------------------------
 " Overriding default linters
 let g:syntastic_javascript_checkers = ['eslint']
@@ -517,7 +522,7 @@ let g:syntastic_quiet_messages={ 'level': 'warnings' }
 let g:syntastic_mode_map={ 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 
 " -----------------------------------------------------
-" 4.4 Supertab
+" 4.5 Supertab
 " -----------------------------------------------------
 let g:SuperTabDefaultCompletionType='context'
 autocmd FileType *
@@ -526,20 +531,20 @@ autocmd FileType *
       \ endif
 
 " -----------------------------------------------------
-" 4.5 EasyMotion
+" 4.6 EasyMotion
 " -----------------------------------------------------
 " Turn on case sensitive feature
 let g:EasyMotion_smartcase = 1
 
 " -----------------------------------------------------
-" 4.6 NERDTree
+" 4.7 NERDTree
 " -----------------------------------------------------
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
 let g:NERDTreeWinSize=45
 
 " -----------------------------------------------------
-" 4.7 Tagbar settings
+" 4.8 Tagbar settings
 " -----------------------------------------------------
 let g:tagbar_compact=1
 
@@ -711,7 +716,13 @@ endif
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Remove trailing whitespaces automatically before save
-autocmd BufWritePre * :call utils#stripTrailingWhitespaces()
+autocmd BufWritePre * call utils#stripTrailingWhitespaces()
+
+" Keyboard layout switching
+if g:utils_intelligent_kb_layout == 1
+  autocmd InsertEnter * call utils#setSKKBLayout()
+  autocmd InsertLeave * call utils#setUSKBLayout()
+end
 "}}}
 
 " ======================================================================================================================
