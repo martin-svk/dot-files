@@ -267,7 +267,35 @@ unsetopt nomatch
 
 ## TMUX
 
-Tmux config overview here!
+I am heavy user of tmux and I am using the excellent [tmuxinator](https://github.com/tmuxinator/tmuxinator) gem to
+quickly boostrap tmux sessions. Below are the most interesting settings in my tmux config file:
+
+```zsh
+# Ctrl-b instead of Ctrl-a
+set -g prefix C-b
+
+# Unset ruby version so it respects .ruby-version files
+set-environment -gu RBENV_VERSION
+
+# For nice colors
+set -g default-terminal "screen-256color"
+
+# XTerm compatibility
+setw -g xterm-keys on
+
+# Vi keys in copy mode
+setw -g mode-keys vi
+
+# Fastest command sequences
+set -s escape-time 0
+
+# UTF-8 settings
+set -g status-utf8 on
+setw -g utf8 on
+
+# History boost
+set -g history-limit 5000
+```
 
 ## XTERM
 
