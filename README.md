@@ -328,3 +328,7 @@ xterm*dynamicColors: true
 ## PRY, GEM, IRB
 
 Ruby CLI tools configs overview here!
+
+## Other utilities (Ag, Devilspie)
+
+Ag and Devilspie2 overview here!
