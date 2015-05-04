@@ -7,11 +7,11 @@ be inspired.
 ## What's included:
 
 * NeoVim (Vim/GVim)
-* Ruby/Rails utilities (pry, gem, irb)
 * ZSH (oh-my-zsh)
 * Tmux
 * Git
 * XTerm (Xresources)
+* Ruby/Rails utilities (pry, gem, irb)
 * Other CLI utilities (Ag search, Xmodmap, Devilspie2)
 
 ## NEOVIM / VIM
@@ -297,6 +297,10 @@ setw -g utf8 on
 set -g history-limit 5000
 ```
 
+## GIT
+
+Git config overview here!
+
 ## XTERM
 My terminal emulator of choice. I use [dynamic-colors](https://github.com/sos4nt/dynamic-colors) to switch colors
 on the fly. Below are some interesting settings I use:
@@ -329,6 +333,6 @@ xterm*dynamicColors: true
 
 Ruby CLI tools configs overview here!
 
-## Other utilities (Ag, Devilspie)
+## AG, DEVILSPIE2
 
 Ag and Devilspie2 overview here!
