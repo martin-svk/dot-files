@@ -1,8 +1,7 @@
 # Opinionated Ruby/Rails centric dot-files.
 
-Caution: This repository is changing constantly as my workflow is changing.
-Below I present the most interesting parts of my config files. Feel free to
-be inspired.
+**Caution**: This repository is changing constantly as my workflow is changing (hopefully improving).
+Below I present the most interesting parts of my config files. Feel free to be inspired.
 
 ## What's included:
 
@@ -354,8 +353,46 @@ xterm*dynamicColors: true
 
 ## PRY, GEM, IRB
 
-Ruby CLI tools configs overview here!
+Don't install RI docs when installing gems (put into your gemrc):
+
+```bash
+gem: --no-ri --no-rdoc
+```
+
+Use editor to edit bigger blocks of code when in pry (put into your pryrc):
+
+```bash
+# === EDITOR ===
+Pry.config.editor = 'nvim'
+```
+
+Require rubygems in *irbrc* to have access while in IRB session (i recommend using Pry):
+
+```ruby
+require 'rubygems'
+```
 
 ## AG, DEVILSPIE2
 
-Ag and Devilspie2 overview here!
+[Ag](http://geoff.greer.fm/ag/) is a popular and blazingly fast find on streoids optimized for developers.
+I recommend to create *agignore* to specify extra path to ignore. While Ag is pretty intelligent most of things
+are already ignored.
+
+```bash
+*.log
+tmp/*
+```
+
+[Devilspie2](http://www.gusnan.se/devilspie2/) is a window matching utility, allowing the user to perform
+scripted actions on windows as they are created. I use it maily to move application to their reserved
+workspace and to make them fullscreeen.
+
+Below is an example of such script:
+
+```lua
+-- XTerm
+if (get_application_name()=="xterm") then
+  set_window_workspace(2);
+  maximize();
+end
+```
