@@ -1,4 +1,4 @@
-# Opiniated Ruby/Rails centric dotfiles.
+# Opinionated Ruby/Rails centric dot-files.
 
 Caution: This repository is changing constantly as my workflow is changing.
 Below I present the most interesting parts of my config files. Feel free to
@@ -238,7 +238,32 @@ hi Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE
 
 ## ZSH
 
-ZSH config overview here!
+I am using the excellent [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) framework.
+
+```zsh
+# Plugins from oh-my-zsh
+plugins=(adb bgnotify bower bundler coffee colored-man common-aliases docker extract gitfast
+        gem httpie jsontools meteor rails rbenv rsync tmux tmuxinator vagrant zsh-syntax-highlighting)
+
+
+# History substring plugin
+source $ZSH/plugins/history-substring-search/history-substring-search.zsh
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+```
+
+And setting some options to improve behaviour to my taste.
+
+```zsh
+# Disable control flow (ctrl-s / ctrl-q)
+stty stop '' -ixoff -ixon
+
+# Set spelling correction
+setopt correct
+
+# Dont raise errors when regex nomatch fires
+unsetopt nomatch
+```
 
 ## TMUX
 
