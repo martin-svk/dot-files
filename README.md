@@ -227,10 +227,13 @@ hi Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE
 ### Screenshot and Cheatsheets
 
 [Molokai + NERDTree + Unite](./images/vim.png)
+
 [Vim-hybrid + NERDTree + Tagbar](./images/vim_hybrid.png)
+
 [Gotham + NERDTree + Tagbar](./images/vim_gotham.png)
 
 [Image cheatsheet](./images/cheatsheet.png)
+
 [PDF cheatsheet](./images/cheatsheet2.pdf)
 
 ## ZSH
