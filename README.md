@@ -299,7 +299,30 @@ set -g history-limit 5000
 
 ## GIT
 
-Git config overview here!
+What about git config? Maybe some useful aliases:
+
+```git
+[alias]
+  a = add --all
+  d = difftool --no-prompt
+  di = diff --staged
+  co = checkout
+  pl = pull
+  ps = push
+  st = status -sb
+  ci = commit
+  br = branch
+  lo = log --oneline -n 15
+  lg = log --pretty=format:'%h | %cd | %an | %s' -n 15
+  ls = log --stat -n 5
+  g1 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%cr)%C(reset) %C(white)%s%C(reset) %C(bold white)— %cn%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+  g2 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%cD%C(reset) %C(bold green)(%cr)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(bold white)— %cn%C(reset)' --abbrev-commit
+  lol = log --oneline --graph --all --decorate
+  unstage = reset HEAD --
+  last = log -1 HEAD
+  rb = rebase -i HEAD~10
+  wc = whatchanged -p --abbrev-commit --pretty=medium
+```
 
 ## XTERM
 My terminal emulator of choice. I use [dynamic-colors](https://github.com/sos4nt/dynamic-colors) to switch colors
