@@ -24,6 +24,44 @@ rc files as well. Below are the most interesting parts of my [n]vimrc file.
 Plugin manager: [vim-plug](https://github.com/junegunn/vim-plug)
 Language/syntax files: [vim-polyglot](https://github.com/sheerun/vim-polyglot)
 
+### [Neo]Vim defaults improving
+
+```viml
+" Intelligent window cycling (ignore NERDTree, TagBar, etc. buffers)
+nmap <silent> <C-w><C-w> :call utils#intelligentCycling()<CR>
+
+" Visual linewise up and down by default
+noremap j gj
+noremap k gk
+
+" When jump to next match also center screen
+noremap n nzz
+noremap N Nzz
+
+" Same when moving up and down
+noremap <c-d> <c-d>zz
+noremap <c-u> <c-u>zz
+
+" Remap H and L (top, bottom of screen to left and right end of line)
+nnoremap H ^
+nnoremap L $
+vnoremap H ^
+vnoremap L $
+
+" More logical Y (defaul was alias for yy)
+nnoremap Y y$
+
+" Quick replay q macro
+nnoremap Q @q
+
+" Mark with big M (default to middle of the screen overriden)
+" m is used as EasyMotion leader key
+nnoremap M m
+
+" Cancel neovim terminal mode with escape
+tnoremap <ESC> <c-\><c-n>
+```
+
 #### Autocomplete [(Supertab)](https://github.com/ervandew/supertab)
 
 ```VimL
@@ -156,44 +194,6 @@ nmap s <Plug>(easymotion-sl2)
 " Improved search
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
-```
-
-### [Neo]Vim defaults improving
-
-```viml
-" Intelligent window cycling (ignore NERDTree, TagBar, etc. buffers)
-nmap <silent> <C-w><C-w> :call utils#intelligentCycling()<CR>
-
-" Visual linewise up and down by default
-noremap j gj
-noremap k gk
-
-" When jump to next match also center screen
-noremap n nzz
-noremap N Nzz
-
-" Same when moving up and down
-noremap <c-d> <c-d>zz
-noremap <c-u> <c-u>zz
-
-" Remap H and L (top, bottom of screen to left and right end of line)
-nnoremap H ^
-nnoremap L $
-vnoremap H ^
-vnoremap L $
-
-" More logical Y (defaul was alias for yy)
-nnoremap Y y$
-
-" Quick replay q macro
-nnoremap Q @q
-
-" Mark with big M (default to middle of the screen overriden)
-" m is used as EasyMotion leader key
-nnoremap M m
-
-" Cancel neovim terminal mode with escape
-tnoremap <ESC> <c-\><c-n>
 ```
 
 ### Color settings based on time
