@@ -26,13 +26,6 @@ xterm*ScrollBar: false
 ! Stop output to terminal from jumping down to bottom of scroll again
 xterm*scrollTtyOutput: false
 
-! Due to emacs meta key detection
-xterm*eightBitInput: false
-xterm*eightBitOutput: true
-
-! Borders
-xterm*BorderWidth: 0
-
 ! Dynamic colors
 xterm*dynamicColors: true
 

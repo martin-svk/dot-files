@@ -298,8 +298,32 @@ set -g history-limit 5000
 ```
 
 ## XTERM
+My terminal emulator of choice. I use [dynamic-colors](https://github.com/sos4nt/dynamic-colors) to switch colors
+on the fly. Below are some interesting settings I use:
 
-Xterm overview here!
+```zsh
+! Unicode support
+xterm*utf8: 1
+
+! Color support
+xterm*customization: -color
+xterm*termName: xterm-256color
+
+! For inclusion of all necessary environment variables
+xterm*loginShell: true
+
+! Scrollback setting
+xterm*savelines: 10000
+
+! Disable right scrollbar
+xterm*ScrollBar: false
+
+! Stop output to terminal from jumping down to bottom of scroll again
+xterm*scrollTtyOutput: false
+
+! Dynamic colors
+xterm*dynamicColors: true
+```
 
 ## PRY, GEM, IRB
 
