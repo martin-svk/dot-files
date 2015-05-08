@@ -66,3 +66,4 @@ Session.vim
 # ===========================
 
 .rake_tasks
+.tags/

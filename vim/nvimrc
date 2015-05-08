@@ -299,6 +299,11 @@ set wildignore+=*.png,*.jpg,*.gif
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 " Turn on true colors support
 " let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+" -----------------------------------------------------
+" 2.11 Ctags settings
+" -----------------------------------------------------
+set tags+=.tags/tags
 "}}}
 
 " ======================================================================================================================
@@ -386,6 +391,9 @@ nnoremap <silent> ,r :call utils#runCurrentFile()<CR>
 
 " Run terminal shell buffer in right vsplit
 nnoremap <silent> <leader>s :call utils#newVertTerm()<CR>
+
+" Generate tags definitions
+nnoremap ,gt :call utils#generateCtags()<CR>
 
 " -----------------------------------------------------
 " 3.5 F-key actions

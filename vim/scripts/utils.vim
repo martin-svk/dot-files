@@ -83,3 +83,10 @@ endfunction
 function! utils#setUSKBLayout()
   silent !setxkbmap us
 endfunction
+
+" Generate ctags and put them into .tags directory
+function! utils#generateCtags()
+  silent !mkdir .tags > /dev/null 2>&1
+  silent !ctags --tag-relative --extra=+f -Rf .tags/tags --exclude=.git --languages=-sql
+  echom "Tags generated into .tags/tags file!"
+endfunction
