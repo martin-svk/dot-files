@@ -103,6 +103,8 @@ Plug 'xolox/vim-session'
 Plug 'duggiefresh/vim-easydir'
 " RSI movements for vim
 Plug 'tpope/vim-rsi'
+" Intelligent buffer closing
+Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
 
 " ---------------------------------------------------------------------------------------------------------------------
 " External tools integration plugins
@@ -370,10 +372,11 @@ tnoremap <ESC> <c-\><c-n>
 " 3.4 Common tasks
 " -----------------------------------------------------
 
-" Quick save and quit / buffer delete
+" Quick save and quit / delete buffers intelligently
 nnoremap ,w :w<CR>
 nnoremap <silent> ,q :q<CR>
 nnoremap <silent> ,d :bd<CR>
+nnoremap <silent> ,c :Sayonara!<CR>
 
 " Reformat whole file
 nnoremap <silent> ,f mzgg=G`z
