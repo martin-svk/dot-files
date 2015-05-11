@@ -373,6 +373,9 @@ nnoremap M m
 " Cancel terminal mode with escape
 tnoremap <ESC> <c-\><c-n>
 
+" Automatically reselect and yank overpasted text in visual mode
+xnoremap p pgvy
+
 " -----------------------------------------------------
 " 3.4 Common tasks
 " -----------------------------------------------------
