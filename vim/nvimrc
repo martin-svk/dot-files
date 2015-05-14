@@ -468,7 +468,7 @@ cab Q q
 " -----------------------------------------------------
 " 4.1 My utils settings
 " -----------------------------------------------------
-let g:utils_intelligent_kb_layout=0
+let g:utils_autoswitch_kb_layout=0
 
 " -----------------------------------------------------
 " 4.2 Airline (status line)
@@ -733,7 +733,7 @@ autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 autocmd BufWritePre * call utils#stripTrailingWhitespaces()
 
 " Keyboard layout switching
-if g:utils_intelligent_kb_layout == 1
+if g:utils_autoswitch_kb_layout == 1
   autocmd InsertEnter * call utils#setSKKBLayout()
   autocmd InsertLeave * call utils#setUSKBLayout()
 end
