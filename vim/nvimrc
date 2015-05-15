@@ -97,8 +97,6 @@ Plug 'Shougo/unite.vim'
 Plug 'Shougo/unite-outline'
 " Easy motion
 Plug 'Lokaltog/vim-easymotion'
-" Mksession on steroids
-Plug 'xolox/vim-session'
 " Extends :e, :new to create new directories in path
 Plug 'duggiefresh/vim-easydir'
 " RSI movements for vim
@@ -572,18 +570,6 @@ let g:neoterm_size=80
 " 4.9 Undotree settings
 " -----------------------------------------------------
 let g:undotree_WindowLayout=3
-
-" -----------------------------------------------------
-" 4.10 Vim session settings
-" -----------------------------------------------------
-" Don't restore help windows
-set sessionoptions-=help
-" Dont autosave sessions
-let g:session_autosave='no'
-" Dont save color options
-let g:session_persist_colors=0
-" Set session folder
-let g:session_directory='~/.nvim/sessions'
 "}}}
 
 " ======================================================================================================================

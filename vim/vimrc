@@ -551,7 +551,7 @@ let g:session_autosave='no'
 " Dont save color options
 let g:session_persist_colors=0
 " Set session folder
-let g:session_directory='~/.nvim/sessions'
+let g:session_directory='~/.vim/sessions'
 "}}}
 
 " ======================================================================================================================
