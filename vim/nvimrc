@@ -356,7 +356,7 @@ noremap <c-u> <c-u>zz
 nnoremap H ^
 nnoremap L $
 vnoremap H ^
-vnoremap L $
+vnoremap L g_
 
 " More logical Y (defaul was alias for yy)
 nnoremap Y y$
