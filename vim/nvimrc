@@ -148,6 +148,8 @@ Plug 'whatyouhide/vim-gotham'
 Plug 'tomasr/molokai'
 " Badwolf
 Plug 'sjl/badwolf'
+" Pencil
+Plug 'reedes/vim-colors-pencil'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Dependencies
