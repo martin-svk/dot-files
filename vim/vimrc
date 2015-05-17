@@ -96,12 +96,12 @@ Plug 'Shougo/unite.vim'
 Plug 'Shougo/unite-outline'
 " Easy motion
 Plug 'Lokaltog/vim-easymotion'
-" Mksession on steroids
-Plug 'xolox/vim-session'
 " Extends :e, :new to create new directories in path
 Plug 'duggiefresh/vim-easydir'
 " RSI movements for vim
 Plug 'tpope/vim-rsi'
+" Intelligent buffer closing
+Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
 
 " ---------------------------------------------------------------------------------------------------------------------
 " External tools integration plugins
@@ -344,7 +344,7 @@ noremap <c-u> <c-u>zz
 nnoremap H ^
 nnoremap L $
 vnoremap H ^
-vnoremap L $
+vnoremap L g_
 
 " More logical Y (defaul was alias for yy)
 nnoremap Y y$
@@ -363,10 +363,11 @@ xnoremap p pgvy
 " 3.4 Common tasks
 " -----------------------------------------------------
 
-" Quick save and quit / buffer delete
+" Quick save and quit / delete buffers intelligently
 nnoremap ,w :w<CR>
 nnoremap <silent> ,q :q<CR>
 nnoremap <silent> ,d :bd<CR>
+nnoremap <silent> ,c :Sayonara!<CR>
 
 " Reformat whole file
 nnoremap <silent> ,f mzgg=G`z
@@ -443,7 +444,7 @@ cab Q q
 " -----------------------------------------------------
 " 4.1 My utils settings
 " -----------------------------------------------------
-let g:utils_intelligent_kb_layout=1
+let g:utils_autoswitch_kb_layout=0
 
 " -----------------------------------------------------
 " 4.2 Airline (status line)
@@ -523,7 +524,7 @@ autocmd FileType *
 " 4.6 EasyMotion
 " -----------------------------------------------------
 " Turn on case sensitive feature
-let g:EasyMotion_smartcase = 1
+let g:EasyMotion_smartcase=1
 
 " -----------------------------------------------------
 " 4.7 NERDTree
@@ -536,6 +537,7 @@ let g:NERDTreeWinSize=45
 " 4.8 Tagbar settings
 " -----------------------------------------------------
 let g:tagbar_compact=1
+
 " -----------------------------------------------------
 " 4.10 Undotree settings
 " -----------------------------------------------------
@@ -703,7 +705,7 @@ autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 autocmd BufWritePre * call utils#stripTrailingWhitespaces()
 
 " Keyboard layout switching
-if g:utils_intelligent_kb_layout == 1
+if g:utils_autoswitch_kb_layout == 1
   autocmd InsertEnter * call utils#setSKKBLayout()
   autocmd InsertLeave * call utils#setUSKBLayout()
 end
