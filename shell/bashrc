@@ -176,6 +176,6 @@ export HISTFILESIZE=${HISTSIZE}
 export HISTCONTROL=ignoreboth
 
 # Xiki shell
-if [ -d $HOME/.xsh ]; then
+if [ -f $HOME/.xsh ]; then
   source ~/.xsh
 fi

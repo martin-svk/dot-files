@@ -152,6 +152,6 @@ export EDITOR='nvim'
 export MYNVIMRC='~/.nvimrc'
 
 # Xiki shell
-if [ -d $HOME/.xsh ]; then
+if [ -f $HOME/.xsh ]; then
   source ~/.xsh
 fi
