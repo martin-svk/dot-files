@@ -150,3 +150,8 @@ fi
 # Setting default editor
 export EDITOR='nvim'
 export MYNVIMRC='~/.nvimrc'
+
+# Xiki shell
+if [ -d $HOME/.xsh ]; then
+  source ~/.xsh
+fi

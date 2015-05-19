@@ -174,3 +174,8 @@ export EDITOR=vim
 export HISTSIZE=10000
 export HISTFILESIZE=${HISTSIZE}
 export HISTCONTROL=ignoreboth
+
+# Xiki shell
+if [ -d $HOME/.xsh ]; then
+  source ~/.xsh
+fi
