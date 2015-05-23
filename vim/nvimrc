@@ -150,6 +150,8 @@ Plug 'tomasr/molokai'
 Plug 'sjl/badwolf'
 " Pencil
 Plug 'reedes/vim-colors-pencil'
+" Material design
+Plug 'NLKNguyen/papercolor-theme'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Dependencies
