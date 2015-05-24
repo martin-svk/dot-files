@@ -140,6 +140,11 @@ Plug 'godlygeek/tabular', { 'on':  'Tabularize' }
 Plug 'bling/vim-airline'
 " Highlight long lines
 Plug 'whatyouhide/vim-lengthmatters'
+
+" ---------------------------------------------------------------------------------------------------------------------
+" Colorschemes
+" ---------------------------------------------------------------------------------------------------------------------
+
 " Hybrid
 Plug 'w0ng/vim-hybrid'
 " Gotham
