@@ -157,6 +157,8 @@ Plug 'sjl/badwolf'
 Plug 'reedes/vim-colors-pencil'
 " Material design
 Plug 'NLKNguyen/papercolor-theme'
+" Solarized without the bullshit
+Plug 'romainl/flattened'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Dependencies
