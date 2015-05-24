@@ -395,17 +395,13 @@ nnoremap <silent> ,q :q<CR>
 nnoremap <silent> ,d :bd<CR>
 nnoremap <silent> ,c :Sayonara!<CR>
 
+" Yank and paste from clipboard
+nnoremap ,y "+y
+nnoremap ,yy "+yy
+nnoremap ,p "+p
+
 " Reformat whole file
 nnoremap <silent> ,f mzgg=G`z
-
-" Run current file
-nnoremap <silent> ,r :call utils#runCurrentFile()<CR>
-
-" Run terminal shell buffer in right vsplit
-nnoremap <silent> <leader>s :call utils#newVertTerm()<CR>
-
-" Generate tags definitions
-nnoremap ,gt :call utils#generateCtags()<CR>
 
 " -----------------------------------------------------
 " 3.5 F-key actions
@@ -467,6 +463,23 @@ cab wQ wq
 cab WQ wq
 cab W w
 cab Q q
+
+" -----------------------------------------------------
+" 3.7 Custom commands and functions
+" -----------------------------------------------------
+
+" Run current file
+nnoremap <silent> ,r :call utils#runCurrentFile()<CR>
+
+" Run terminal shell buffer in right vsplit
+nnoremap <silent> <leader>s :call utils#newVertTerm()<CR>
+
+" Generate tags definitions
+command! GenerateCT :call utils#generateCtags()<CR>
+
+" Rename currecnt file
+command! Rename :call utils#renameFile()<CR>
+
 "}}}
 
 " ======================================================================================================================
