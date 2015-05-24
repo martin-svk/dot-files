@@ -63,15 +63,15 @@ endfunction
 
 " Strip trailing spaces
 function! utils#stripTrailingWhitespaces()
-    " Preparation: save last search, and cursor position.
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    " Do the business:
-    %s/\s\+$//e
-    " Clean up: restore previous search history, and cursor position
-    let @/=_s
-    call cursor(l, c)
+  " Preparation: save last search, and cursor position.
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  " Do the business:
+  %s/\s\+$//e
+  " Clean up: restore previous search history, and cursor position
+  let @/=_s
+  call cursor(l, c)
 endfunction
 
 " Set SK keyboard layout with qwerty
@@ -89,4 +89,15 @@ function! utils#generateCtags()
   silent !mkdir .tags > /dev/null 2>&1
   silent !ctags --tag-relative --extra=+f -Rf .tags/tags --exclude=.git --languages=-sql
   echom "Tags generated into .tags/tags file!"
+endfunction
+
+" Rename current file (from @grb - https://github.com/garybernhardt)
+function! utils#renameFile()
+  let old_name = expand('%')
+  let new_name = input('New file name: ', expand('%'), 'file')
+  if new_name != '' && new_name != old_name
+    exec ':saveas ' . new_name
+    exec ':silent !rm ' . old_name
+    redraw!
+  endif
 endfunction
