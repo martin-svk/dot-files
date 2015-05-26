@@ -725,7 +725,7 @@ autocmd BufNewFile,BufRead *.scss set ft=scss.css
 autocmd BufNewFile,BufRead *.sass set ft=sass.css
 
 " use syntax complete if nothing else available
-if has("autocmd") && exists("+omnifunc")
+if exists("+omnifunc")
   autocmd Filetype *
         \ if &omnifunc == "" |
         \   setlocal omnifunc=syntaxcomplete#Complete |
@@ -745,6 +745,9 @@ if g:utils_autoswitch_kb_layout == 1
   autocmd InsertEnter * call utils#setSKKBLayout()
   autocmd InsertLeave * call utils#setUSKBLayout()
 end
+
+" Make neovim terminal buffers unlisted
+autocmd TermOpen * setlocal nobuflisted
 "}}}
 
 " ======================================================================================================================
