@@ -50,12 +50,7 @@ set splitright
 "{{{
 
 " -----------------------------------------------------
-" 2.1 Setting leaders
-" -----------------------------------------------------
-let g:mapleader="\<space>"
-
-" -----------------------------------------------------
-" 2.2 Disabling arrow keys, space key, exmode enter
+" 2.1 Disabling arrow keys, space key, exmode enter
 " with Q key, help with F1, etc.
 " -----------------------------------------------------
 nnoremap <up> <nop>
@@ -74,7 +69,7 @@ nnoremap <F1> <nop>
 nnoremap Q <nop>
 
 " -----------------------------------------------------
-" 2.3 Vim defaults overriding
+" 2.2 Vim defaults overriding
 " -----------------------------------------------------
 
 " Visual linewise up and down by default
@@ -105,12 +100,12 @@ nnoremap Q @q
 xnoremap p pgvy
 
 " -----------------------------------------------------
-" 2.4 Common tasks
+" 2.3 Common tasks
 " -----------------------------------------------------
 
 " Quick save and quit / delete buffers intelligently
 nnoremap ,w :w<CR>
-nnoremap <silent> ,d :q<CR>
+nnoremap ,d :q<CR>
 
 " Yank and paste from clipboard
 nnoremap ,y "+y
@@ -118,13 +113,23 @@ nnoremap ,yy "+yy
 nnoremap ,p "+p
 
 " Reformat whole file
-nnoremap <silent> ,f :action ReformatCode<CR>
+nnoremap ,f :action ReformatCode<CR>
 
 " -----------------------------------------------------
-" 2.5 Window / Buffer management
+" 2.4 Window / Buffer management
 " -----------------------------------------------------
 
 " Buffers navigation and management
-nnoremap <silent> + :bn<CR>
-nnoremap <silent> _ :bp<CR>
+nnoremap + :action NextTab<CR>
+nnoremap _ :action PreviousTab<CR>
+
+" -----------------------------------------------------
+" 2.5 Goto mappings
+" -----------------------------------------------------
+
+nnoremap <space>o :action GotoFile<CR>
+nnoremap <space>p :action GotoClass<CR>
+nnoremap <space>t :action GotoSymbol<CR>
+nnoremap <space>a :action GotoAction<CR>
+nnoremap <space><space> :action SearchEverywhere<CR>
 "}}}
