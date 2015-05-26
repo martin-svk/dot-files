@@ -201,16 +201,3 @@ else
 fi
 
 # TODO: devilspie2
-
-#-----------------------------------------------------
-# Install atom config files
-#-----------------------------------------------------
-if command_exists atom; then
-  ln -s $current_path/atom/config.cson ~/.atom/config.cson
-  ln -s $current_path/atom/init.coffee ~/.atom/init.coffee
-  ln -s $current_path/atom/keymap.cson ~/.atom/keymap.cson
-  ln -s $current_path/atom/projects.cson ~/.atom/projects.cson
-  ln -s $current_path/atom/styles.less ~/.atom/styles.less
-else
-  echo "    Aborting, atom is not installed. Please install atom and rerun this script again."
-fi
