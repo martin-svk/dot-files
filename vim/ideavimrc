@@ -1,1 +1,130 @@
-source ~/.nvimrc
+" ######################################################################################################################
+" ### Author : Martin Toma <martin.toma.svk@gmail.com>                                                               ###
+" ######################################################################################################################
+" ### Ideavim Configuration focused on Android developemnt                                                           ###
+" ### Date created : Tue May 26 12:58:42 CEST 2015
+" ######################################################################################################################
+
+" ======================================================================================================================
+" 1.0 Basic settings
+" ======================================================================================================================
+"{{{
+
+set ignorecase                              " Ignore case by default
+set smartcase                               " Make search case sensitive only if it contains uppercase letters
+set textwidth=120                           " Text width is 120 chars
+set iskeyword-=_                            " Set underscore as a word separator
+set iskeyword-=-                            " Set dash as a word separator
+set incsearch                               " Incremental search
+set history=1024                            " Number of things to remember in history
+set nohlsearch                              " Don't highlight after search
+set magic                                   " For regular expressions turn magic on
+set showmatch                               " Show matching brackets when text indicator is over them
+set nospell                                 " Set spelling off by default
+set nostartofline                           " Prevent cursor from moving to beginning of line when switching buffers
+set virtualedit=block                       " To be able to select past EOL in visual block mode
+set nojoinspaces                            " No extra space when joining a line which ends with . ? !
+set startofline                             " When doing thing like gg or G, will move cursor to start of line
+set wrapscan                                " Search again from top when reached the bottom
+set showcmd                                 " Show incomplete commands
+set scrolloff=5                             " Scroll when closing to top or bottom of the screen
+
+" -----------------------------------------------------
+" 1.1 Intendation settings (2 spaces tabs)
+" -----------------------------------------------------
+set autoindent
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+
+" -----------------------------------------------------
+" 1.2 Split settings (more natural).
+" -----------------------------------------------------
+set splitbelow
+set splitright
+"}}}
+
+" ======================================================================================================================
+" 2.0 Mapping settings
+" ======================================================================================================================
+"{{{
+
+" -----------------------------------------------------
+" 2.1 Setting leaders
+" -----------------------------------------------------
+let g:mapleader="\<space>"
+
+" -----------------------------------------------------
+" 2.2 Disabling arrow keys, space key, exmode enter
+" with Q key, help with F1, etc.
+" -----------------------------------------------------
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+nnoremap <bs> <nop>
+nnoremap <delete> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+nnoremap <Space> <nop>
+inoremap <F1> <nop>
+nnoremap <F1> <nop>
+nnoremap Q <nop>
+
+" -----------------------------------------------------
+" 2.3 Vim defaults overriding
+" -----------------------------------------------------
+
+" Visual linewise up and down by default
+noremap j gj
+noremap k gk
+
+" When jump to next match also center screen
+noremap n nzz
+noremap N Nzz
+
+" Same when moving up and down
+noremap <c-d> <c-d>zz
+noremap <c-u> <c-u>zz
+
+" Remap H and L (top, bottom of screen to left and right end of line)
+nnoremap H ^
+nnoremap L $
+vnoremap H ^
+vnoremap L g_
+
+" More logical Y (defaul was alias for yy)
+nnoremap Y y$
+
+" Quick replay q macro
+nnoremap Q @q
+
+" Automatically reselect and yank overpasted text in visual mode
+xnoremap p pgvy
+
+" -----------------------------------------------------
+" 2.4 Common tasks
+" -----------------------------------------------------
+
+" Quick save and quit / delete buffers intelligently
+nnoremap ,w :w<CR>
+nnoremap <silent> ,d :q<CR>
+
+" Yank and paste from clipboard
+nnoremap ,y "+y
+nnoremap ,yy "+yy
+nnoremap ,p "+p
+
+" Reformat whole file
+nnoremap <silent> ,f :action ReformatCode<CR>
+
+" -----------------------------------------------------
+" 2.5 Window / Buffer management
+" -----------------------------------------------------
+
+" Buffers navigation and management
+nnoremap <silent> + :bn<CR>
+nnoremap <silent> _ :bp<CR>
+"}}}
