@@ -711,7 +711,6 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType c set omnifunc=ccomplete#Complete
-autocmd FileType java set omnifunc=javacomplete#Complete
 autocmd FileType tex set omnifunc=LatexBox_Complete
 " No +ruby compiled neovim for now
 " autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
