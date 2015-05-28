@@ -24,7 +24,7 @@ command_exists () {
 
 install_oh_my_zsh () {
   curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-  ln -s $current_path/shell/martinus.zsh-theme ~/.oh-my-zsh/themes/martinus.zsh-theme
+  ln -sf $current_path/shell/martinus.zsh-theme ~/.oh-my-zsh/themes/martinus.zsh-theme
   echo "    Change your default shell to zsh"
   sudo chsh
 }
@@ -36,8 +36,8 @@ install_plug_vim() {
 install_nvim_folder() {
   mkdir -p ~/.nvim/autoload
   install_plug_vim
-  ln -s $current_path/nvim/dictionary.utf-8.add ~/.nvim/dictionary.utf-8.add
-  ln -s $current_path/nvim/ultisnips/ ~/.nvim/UltiSnips
+  ln -sf $current_path/nvim/dictionary.utf-8.add ~/.nvim/dictionary.utf-8.add
+  ln -sf $current_path/nvim/ultisnips/ ~/.nvim/UltiSnips
 }
 
 #-----------------------------------------------------
@@ -68,11 +68,11 @@ echo -n "[ zshrc ]"
 
 if [ ! -f ~/.zshrc ]; then
   echo "    Creating!"
-  ln -s $current_path/shell/zshrc ~/.zshrc
+  ln -sf $current_path/shell/zshrc ~/.zshrc
 else
   echo "    Deleting old one!"
   rm ~/.zshrc
-  ln -s $current_path/shell/zshrc ~/.zshrc
+  ln -sf $current_path/shell/zshrc ~/.zshrc
 fi
 
 #-----------------------------------------------------
@@ -82,22 +82,22 @@ echo -n "[ gitconfig ]"
 
 if [ ! -f ~/.gitconfig ]; then
   echo "    Creating!"
-  ln -s $current_path/git/gitconfig ~/.gitconfig
+  ln -sf $current_path/git/gitconfig ~/.gitconfig
 else
   echo "    Deleting old one!"
   rm ~/.gitconfig
-  ln -s $current_path/git/gitconfig ~/.gitconfig
+  ln -sf $current_path/git/gitconfig ~/.gitconfig
 fi
 
 echo -n "[ gitignore ]"
 
 if [ ! -f ~/.gitignore ]; then
   echo "    Creating!"
-  ln -s $current_path/git/gitignore ~/.gitignore
+  ln -sf $current_path/git/gitignore ~/.gitignore
 else
   echo "    Deleting old one!"
   rm ~/.gitignore
-  ln -s $current_path/git/gitignore ~/.gitignore
+  ln -sf $current_path/git/gitignore ~/.gitignore
 fi
 
 #-----------------------------------------------------
@@ -111,11 +111,11 @@ fi
 
 if [ ! -f ~/.nvimrc ]; then
   echo "    Creating!"
-  ln -s $current_path/vim/nvimrc ~/.nvimrc
+  ln -sf $current_path/vim/nvimrc ~/.nvimrc
 else
   echo "    Deleting old one!"
   rm ~/.nvimrc
-  ln -s $current_path/vim/nvimrc ~/.nvimrc
+  ln -sf $current_path/vim/nvimrc ~/.nvimrc
 fi
 
 if [ ! -d ~/.nvim ]; then
@@ -137,11 +137,11 @@ fi
 
 if [ ! -f ~/.tmux.conf ]; then
   echo "    Creating!"
-  ln -s $current_path/tmux/tmux.conf ~/.tmux.conf
+  ln -sf $current_path/tmux/tmux.conf ~/.tmux.conf
 else
   echo "    Deleting old one!"
   rm ~/.tmux.conf
-  ln -s $current_path/tmux/tmux.conf ~/.tmux.conf
+  ln -sf $current_path/tmux/tmux.conf ~/.tmux.conf
 fi
 
 #-----------------------------------------------------
@@ -155,11 +155,11 @@ fi
 
 if [ ! -f ~/.Xresources ]; then
   echo "   Creating!"
-  ln -s $current_path/shell/Xresources ~/.Xresources
+  ln -sf $current_path/shell/Xresources ~/.Xresources
 else
   echo "   Deleting old one!"
   rm ~/.Xresources
-  ln -s $current_path/shell/Xresources ~/.Xresources
+  ln -sf $current_path/shell/Xresources ~/.Xresources
 fi
 
 #-----------------------------------------------------
@@ -169,14 +169,14 @@ echo -n "[ Ruby utilities (gemrc, irbrc, rdebugrc) ]"
 
 if command_exists ruby; then
   echo "   Creating!"
-  ln -s $current_path/ruby/gemrc ~/.gemrc
-  ln -s $current_path/ruby/irbrc ~/.irbrc
-  ln -s $current_path/ruby/rdebugrc ~/.rdebugrc
+  ln -sf $current_path/ruby/gemrc ~/.gemrc
+  ln -sf $current_path/ruby/irbrc ~/.irbrc
+  ln -sf $current_path/ruby/rdebugrc ~/.rdebugrc
   if command_exists pry; then
-    ln -s $current_path/ruby/pryrc ~/.pryrc
+    ln -sf $current_path/ruby/pryrc ~/.pryrc
   else
     echo "   Installing pry!"
-    gem install pry && ln -s $current_path/ruby/pryrc ~/.pryrc
+    gem install pry && ln -sf $current_path/ruby/pryrc ~/.pryrc
   fi
 else
   echo "    Installing, rbenv and rubybuild."
@@ -190,8 +190,8 @@ fi
 #-----------------------------------------------------
 
 if command_exists ag; then
-  ln -s $current_path/other/agignore ~/.agignore
+  ln -sf $current_path/other/agignore ~/.agignore
 else
   sudo apt-get install -y silversearcher-ag
-  ln -s $current_path/other/agignore ~/.agignore
+  ln -sf $current_path/other/agignore ~/.agignore
 fi
