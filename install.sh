@@ -7,6 +7,7 @@
 # @date of v2 Sat Aug  2 14:46:00 CEST 2014
 # @date of v3 Sun Oct 12 17:07:31 CEST 2014
 # @date of v4 Fri Feb 27 22:00:54 CET 2015
+# @date of v5 Thu May 28 21:14:31 CEST 2015
 #-----------------------------------------------------
 
 # Dont continue on error
@@ -23,6 +24,9 @@ command_exists () {
 
 install_oh_my_zsh () {
   curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+  ln -s $current_path/shell/martinus.zsh-theme ~/.oh-my-zsh/themes/martinus.zsh-theme
+  echo "    Change your default shell to zsh"
+  sudo chsh
 }
 
 install_plug_vim() {
@@ -30,6 +34,7 @@ install_plug_vim() {
 }
 
 install_nvim_folder() {
+  mkdir -p ~/.nvim/autoload
   install_plug_vim
   ln -s $current_path/nvim/dictionary.utf-8.add ~/.nvim/dictionary.utf-8.add
   ln -s $current_path/nvim/ultisnips/ ~/.nvim/UltiSnips
@@ -44,39 +49,19 @@ if !command_exists curl; then
 fi
 
 #-----------------------------------------------------
-# Bash and zsh installation
+# ZSH installation
 #-----------------------------------------------------
-echo -n "[ bashrc ]"
-
-if [ ! -f ~/.bashrc ]; then
-  echo "    Creating!"
-  ln -s $current_path/shell/bashrc ~/.bashrc
-else
-  echo "    Deleting old one!"
-  rm ~/.bashrc
-  ln -s $current_path/shell/bashrc ~/.bashrc
-fi
 
 echo -n "[ oh-my-zsh ]"
 
 if command_exists zsh; then
   if [ ! -d ~/.oh-my-zsh ]; then
-    echo "Oh my zsh is not installed, want to install now? [Y/n]"
-    read answer
-    if [ answer -eq "y" ]; then
-      install_oh_my_zsh
-    else
-      echo "Not installing oh-my-zsh!"
-    fi
+    echo "Installing oh my zsh is"
+    install_oh_my_zsh
   fi
 else
-  echo "ZSH is not installed, want to install now? [Y/n]"
-  read answer
-  if [ answer -eq "y" ]; then
-    sudo apt-get install zsh && install_oh_my_zsh
-  else
-    echo "Not installing zsh!"
-  fi
+  echo "Installing ZSH."
+  sudo apt-get install zsh -y
 fi
 
 echo -n "[ zshrc ]"
@@ -146,6 +131,10 @@ fi
 #-----------------------------------------------------
 echo -n "[ tmux.conf ]"
 
+if !command_exists tmux; then
+  sudo apt-get install tmux -y
+fi
+
 if [ ! -f ~/.tmux.conf ]; then
   echo "    Creating!"
   ln -s $current_path/tmux/tmux.conf ~/.tmux.conf
@@ -159,6 +148,10 @@ fi
 # Installing Xresources
 #-----------------------------------------------------
 echo -n "[ Xresources ]"
+
+if !command_exists xterm; then
+  sudo apt-get install xterm -y
+fi
 
 if [ ! -f ~/.Xresources ]; then
   echo "   Creating!"
@@ -186,11 +179,14 @@ if command_exists ruby; then
     gem install pry && ln -s $current_path/ruby/pryrc ~/.pryrc
   fi
 else
-  echo "    Aborting, ruby is not installed. Please install rbenv or rvm and rerun this script again."
+  echo "    Installing, rbenv and rubybuild."
+  git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+  git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+  echo "    Restart your shell and install ruby by rbenv install ruby-version"
 fi
 
 #-----------------------------------------------------
-# Installing remaining files
+# Installing Ag
 #-----------------------------------------------------
 
 if command_exists ag; then
@@ -199,5 +195,3 @@ else
   sudo apt-get install -y silversearcher-ag
   ln -s $current_path/other/agignore ~/.agignore
 fi
-
-# TODO: devilspie2
