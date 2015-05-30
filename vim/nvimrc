@@ -145,8 +145,6 @@ Plug 'whatyouhide/vim-lengthmatters'
 
 " Hybrid
 Plug 'w0ng/vim-hybrid'
-" Gotham
-Plug 'whatyouhide/vim-gotham'
 " Molokai
 Plug 'tomasr/molokai'
 " Badwolf
@@ -684,15 +682,15 @@ endif
 
 " Color scheme based on time
 if strftime("%H") < 15
+  let g:airline_theme='badwolf'
+  colorscheme badwolf
+elseif strftime("%H") < 20
   let g:rehash256 = 1
   let g:airline_theme='tomorrow'
   colorscheme molokai
-elseif strftime("%H") < 20
+else
   let g:airline_theme='tomorrow'
   colorscheme hybrid
-else
-  let g:airline_theme='gotham'
-  colorscheme gotham
 endif
 
 " Remove underline in folded lines
