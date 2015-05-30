@@ -82,7 +82,6 @@ alias g='git'
 alias t='tmux attach -t main || tmux new -s main'
 alias vim='vim -X'
 alias msql='mysql -uroot -p'
-alias colo='dynamic-colors switch'
 
 # ------------------------------------------
 # SSH servers
@@ -113,21 +112,6 @@ export TERM=xterm-256color
 
 # Add my bin folders to PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Add dynamic colors to path if exists
-if [ -d $HOME/.dynamic-colors ]; then
-  export PATH="$HOME/.dynamic-colors/bin:$PATH"
-  source $HOME/.dynamic-colors/completions/dynamic-colors.zsh
-
-  # Setting color
-  if [[ $(date +%H) -lt 15 ]]; then
-    dynamic-colors switch molokai
-  elif [[ $(date +%H) -lt 20 ]]; then
-    dynamic-colors switch solarized-dark-desaturated
-  else
-    dynamic-colors switch gotham
-  fi
-fi
 
 # Add android sdk to path if it exists
 if [ -d $HOME/lib/android-sdk-linux ]; then

@@ -26,9 +26,6 @@ xterm*ScrollBar: false
 ! Stop output to terminal from jumping down to bottom of scroll again
 xterm*scrollTtyOutput: false
 
-! Dynamic colors
-xterm*dynamicColors: true
-
 ! =============================================================================
 ! ============================== COLOR CONFIG =================================
 ! =============================================================================
