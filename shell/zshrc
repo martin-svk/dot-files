@@ -125,9 +125,6 @@ fi
 # Fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Xresources
-[ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
-
 # Setting default editor
 export EDITOR='nvim'
 export MYNVIMRC='~/.nvimrc'
