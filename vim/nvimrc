@@ -38,13 +38,11 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby', 'haml', 'slim'] }
 " Automatically inserts 'end' wisely
 Plug 'tpope/vim-endwise', { 'for': ['ruby', 'eruby'] }
-" Change between ruby 1.9 and 1.8 hash syntax
-Plug 'ck3g/vim-change-hash-syntax', { 'for': ['ruby', 'eruby'], 'on': 'ChangeHashSyntax' }
 " Ruby best practices checker
 Plug 'ngmy/vim-rubocop', { 'for': ['ruby', 'eruby'], 'on': 'RuboCop' }
 
 " -----------------------------------------------------
-" HTML/CSS
+" HTML/CSS/JS
 " -----------------------------------------------------
 
 " CSS color highlighter
@@ -53,52 +51,45 @@ Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'sass', 'scss', 'less'] }
 Plug 'rstacruz/sparkup', { 'for': ['html', 'xhtml'] }
 " Spacebars syntax
 Plug 'Slava/vim-spacebars', { 'for': ['html', 'xhtml'] }
-
-" -----------------------------------------------------
-" JavaScript / CoffeeScript
-" -----------------------------------------------------
-
-" Tern auto-completion engine (run 'npm install && npm install tern-coffee' after update)
-Plug 'marijnh/tern_for_vim', { 'for': ['javascript', 'coffee'] }
-" Tern for CoffeeScript
-Plug 'othree/tern_for_vim_coffee', { 'for': ['javascript', 'coffee'] }
 " JS libs syntax files, ember, angular, etc.
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffee'] }
 
-" -----------------------------------------------------
-" Other
-" -----------------------------------------------------
-
-" Latex
-Plug 'LaTeX-Box-Team/LaTeX-Box', { 'for': ['tex'] }
-
 " ---------------------------------------------------------------------------------------------------------------------
-" File, tags, undo, registers browsers
+" Interface improving
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Nerdtree file browser
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeFind', 'NERDTreeToggle'] }
 " Tagbar tag browser
 Plug 'majutsushi/tagbar'
-" Undo tree
-Plug 'mbbill/undotree', { 'on': ['UndotreeToggle'] }
-" Peekabo displays what registers contains
-Plug 'junegunn/vim-peekaboo'
-
-" ---------------------------------------------------------------------------------------------------------------------
-" Projects/Files/code navigation/management plugins
-" ---------------------------------------------------------------------------------------------------------------------
-
 " Unite (Files, Buffers, Commands, etc. fuzzy searcher)
 Plug 'Shougo/unite.vim'
 " Unite tags source
 Plug 'Shougo/unite-outline'
+" Undo tree
+Plug 'mbbill/undotree', { 'on': ['UndotreeToggle'] }
+" Peekabo displays what registers contains
+Plug 'junegunn/vim-peekaboo'
+" Airline (improved status line)
+Plug 'bling/vim-airline'
+" Highlight long lines
+Plug 'whatyouhide/vim-lengthmatters'
+
+" ---------------------------------------------------------------------------------------------------------------------
+" Code navigation
+" ---------------------------------------------------------------------------------------------------------------------
+
 " Easy motion
 Plug 'Lokaltog/vim-easymotion'
-" Extends :e, :new to create new directories in path
-Plug 'duggiefresh/vim-easydir'
 " RSI movements for vim
 Plug 'tpope/vim-rsi'
+
+" ---------------------------------------------------------------------------------------------------------------------
+" Buffer / window manipulation
+" ---------------------------------------------------------------------------------------------------------------------
+
+" Extends :e, :new to create new directories in path
+Plug 'duggiefresh/vim-easydir'
 " Intelligent buffer closing
 Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
 
@@ -119,8 +110,6 @@ Plug 'low-ghost/nerdtree-fugitive', { 'on': ['NERDTreeFind', 'NERDTreeToggle'] }
 " Text insertion/manipulation
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Completion with tab
-Plug 'ervandew/supertab'
 " Multiple cursors
 Plug 'terryma/vim-multiple-cursors'
 " Safely editing in isolation
@@ -129,15 +118,6 @@ Plug 'ferranpm/vim-isolate', { 'on':  'Isolate' }
 Plug 'tpope/vim-surround'
 " Easy alignment
 Plug 'godlygeek/tabular', { 'on':  'Tabularize' }
-
-" ---------------------------------------------------------------------------------------------------------------------
-" Interface improving plugins
-" ---------------------------------------------------------------------------------------------------------------------
-
-" Airline (improved status line)
-Plug 'bling/vim-airline'
-" Highlight long lines
-Plug 'whatyouhide/vim-lengthmatters'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Colorschemes
@@ -153,8 +133,6 @@ Plug 'sjl/badwolf'
 Plug 'reedes/vim-colors-pencil'
 " Material design
 Plug 'NLKNguyen/papercolor-theme'
-" Solarized without the bullshit
-Plug 'romainl/flattened'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Dependencies
@@ -380,6 +358,9 @@ tnoremap <ESC> <c-\><c-n>
 
 " Automatically reselect and yank overpasted text in visual mode
 xnoremap p pgvy
+
+" Omni-complete based on ctags
+inoremap <c-x><c-]> <c-]>
 
 " -----------------------------------------------------
 " 3.4 Common tasks
