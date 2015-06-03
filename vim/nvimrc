@@ -685,12 +685,6 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType c set omnifunc=ccomplete#Complete
 autocmd FileType tex set omnifunc=LatexBox_Complete
-" No +ruby compiled neovim for now
-" autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-" autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading=1
-" autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
-" autocmd FileType ruby,eruby let g:rubycomplete_rails=1
-" autocmd FileType ruby,eruby let g:rubycomplete_load_gemfile=1
 
 " make CSS omni-completion work for SASS and SCSS
 autocmd BufNewFile,BufRead *.scss set ft=scss.css
