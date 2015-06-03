@@ -457,6 +457,12 @@ command! GenerateCT :call utils#generateCtags()<CR>
 " Rename currecnt file
 command! Rename :call utils#renameFile()<CR>
 
+" -----------------------------------------------------
+" 3.8 Multipurpose tab key (inspired by Gary Bernhardt)
+" -----------------------------------------------------
+
+inoremap <expr> <tab> utils#insertTabWrapper()
+inoremap <s-tab> <c-n>
 "}}}
 
 " ======================================================================================================================
