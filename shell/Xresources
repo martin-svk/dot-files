@@ -27,7 +27,61 @@ xterm*ScrollBar: false
 xterm*scrollTtyOutput: false
 
 ! =============================================================================
-! ============================== COLOR CONFIG =================================
+! ============================== BADWOLF ======================================
+! =============================================================================
+
+/* #define   plain            #f8f6f2 */
+/* #define   snow             #ffffff */
+/* #define   coal             #000000 */
+
+/* #define   brightgravel     #d9cec3 */
+/* #define   lightgravel      #998f84 */
+/* #define   gravel           #857f78 */
+/* #define   mediumgravel     #666462 */
+/* #define   deepgravel       #45413b */
+/* #define   deepergravel     #35322d */
+/* #define   darkgravel       #242321 */
+/* #define   blackgravel      #1c1b1a */
+/* #define   blackestgravel   #141413 */
+
+/* #define   dalespale        #fade3e */
+/* #define   dirtyblonde      #f4cf86 */
+/* #define   taffy            #ff2c4b */
+/* #define   saltwatertaffy   #8cffba */
+/* #define   tardis           #0a9dff */
+/* #define   orange           #ffa724 */
+/* #define   lime             #aeee00 */
+/* #define   dress            #ff9eb8 */
+/* #define   toffee           #b88853 */
+/* #define   coffee           #c7915b */
+/* #define   darkroast        #88633f */
+
+/* xterm*background:  blackgravel */
+/* xterm*foreground:  plain */
+/* xterm*cursorColor: snow */
+/* xterm*scrollColor: deepgravel */
+/* xterm*fadeColor:   snow */
+/* xterm*fading:      20 */
+
+/* xterm*color0:      blackestgravel */
+/* xterm*color8:      coal */
+/* xterm*color1:      taffy */
+/* xterm*color9:      taffy */
+/* xterm*color2:      lime */
+/* xterm*color10:     lime */
+/* xterm*color3:      dalespale */
+/* xterm*color11:     orange */
+/* xterm*color4:      tardis */
+/* xterm*color12:     tardis */
+/* xterm*color5:      dress */
+/* xterm*color13:     dress */
+/* xterm*color6:      saltwatertaffy */
+/* xterm*color14:     saltwatertaffy */
+/* xterm*color7:      brightgravel */
+/* xterm*color15:     snow */
+
+! =============================================================================
+! ============================== SOLARIZED ====================================
 ! =============================================================================
 
 #define S_yellow        #b58900
