@@ -535,29 +535,20 @@ let g:syntastic_quiet_messages={ 'level': 'warnings' }
 let g:syntastic_mode_map={ 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 
 " -----------------------------------------------------
-" 4.5 Supertab
-" -----------------------------------------------------
-let g:SuperTabDefaultCompletionType='context'
-autocmd FileType *
-      \ if &omnifunc != '' |
-      \   call SuperTabChain(&omnifunc, "<c-p>") |
-      \ endif
-
-" -----------------------------------------------------
-" 4.6 EasyMotion
+" 4.5 EasyMotion
 " -----------------------------------------------------
 " Turn on case sensitive feature
 let g:EasyMotion_smartcase=1
 
 " -----------------------------------------------------
-" 4.7 NERDTree
+" 4.6 NERDTree
 " -----------------------------------------------------
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
 let g:NERDTreeWinSize=45
 
 " -----------------------------------------------------
-" 4.8 Tagbar settings
+" 4.7 Tagbar settings
 " -----------------------------------------------------
 let g:tagbar_compact=1
 
@@ -589,8 +580,6 @@ let g:UltiSnipsUsePythonVersion=3
 " Custom mappings for the unite buffer
 autocmd FileType unite call s:unite_settings()
 function! s:unite_settings()
-  " Play nice with supertab
-  let b:SuperTabDisabled=1
   " Enable navigation with control-j and control-k in insert mode
   imap <silent> <buffer> <C-j> <Plug>(unite_select_next_line)
   imap <silent> <buffer> <C-k> <Plug>(unite_select_previous_line)
@@ -706,16 +695,6 @@ autocmd FileType tex set omnifunc=LatexBox_Complete
 " make CSS omni-completion work for SASS and SCSS
 autocmd BufNewFile,BufRead *.scss set ft=scss.css
 autocmd BufNewFile,BufRead *.sass set ft=sass.css
-
-" use syntax complete if nothing else available
-if exists("+omnifunc")
-  autocmd Filetype *
-        \ if &omnifunc == "" |
-        \   setlocal omnifunc=syntaxcomplete#Complete |
-        \ else |
-        \   let g:SuperTabContextDefaultCompletionType='<c-x><c-u>' |
-        \ endif
-endif
 
 " Close vim if the last open window is nerdtree
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
