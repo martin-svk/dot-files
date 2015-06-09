@@ -720,6 +720,6 @@ autocmd TermOpen * setlocal nobuflisted
 if filereadable(expand("~/config/dot-files/vim/scripts/utils.vim"))
   source ~/config/dot-files/vim/scripts/utils.vim
 else
-  echo "Update path to vim scripts!"
+  echo "Update path to utils scripts!"
 endif
 "}}}
