@@ -76,8 +76,8 @@ alias ssredis='sudo service redis-server start'
 # ------------------------------------------
 # Applications
 # ------------------------------------------
-alias n='nvim'
 alias v='nvim'
+alias n='nvim ~/notes/'
 alias g='git'
 alias t='tmux attach -t main || tmux new -s main'
 alias vim='vim -X'
