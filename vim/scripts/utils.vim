@@ -111,3 +111,8 @@ function! utils#insertTabWrapper()
         return "\<c-p>"
     endif
 endfunction
+
+" Simple notes management
+function! utils#createNote(name)
+  execute ':e ~/notes/' . a:name . '.md'
+endfunction
