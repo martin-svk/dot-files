@@ -40,6 +40,8 @@ Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby', 'haml', 'slim'] }
 Plug 'tpope/vim-endwise', { 'for': ['ruby', 'eruby'] }
 " Ruby best practices checker
 Plug 'ngmy/vim-rubocop', { 'for': ['ruby', 'eruby'], 'on': 'RuboCop' }
+" String interpolation helper
+Plug 'p0deje/vim-ruby-interpolation', { 'for': ['ruby', 'eruby', 'haml', 'slim'] }
 
 " -----------------------------------------------------
 " HTML/CSS/JS
@@ -456,6 +458,9 @@ command! GenerateCT :call utils#generateCtags()<CR>
 
 " Rename currecnt file
 command! Rename :call utils#renameFile()<CR>
+
+" Create new note
+command! -nargs=1 Note :call utils#createNote(<f-args>)
 
 " -----------------------------------------------------
 " 3.8 Multipurpose tab key (inspired by Gary Bernhardt)
