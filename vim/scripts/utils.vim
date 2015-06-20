@@ -116,3 +116,7 @@ endfunction
 function! utils#createNote(name)
   execute ':e ~/notes/' . a:name . '.md'
 endfunction
+
+function! utils#openNotes()
+  execute ':e ~/notes/'
+endfunction

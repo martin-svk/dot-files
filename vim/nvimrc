@@ -462,6 +462,9 @@ command! Rename :call utils#renameFile()<CR>
 " Create new note
 command! -nargs=1 Note :call utils#createNote(<f-args>)
 
+" Open note
+command! Notes :call utils#openNotes()
+
 " -----------------------------------------------------
 " 3.8 Multipurpose tab key (inspired by Gary Bernhardt)
 " -----------------------------------------------------
