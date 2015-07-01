@@ -201,6 +201,7 @@ set wrapscan                                " Search again from top when reached
 set showcmd                                 " Show incomplete commands
 set scrolloff=5                             " Scroll when closing to top or bottom of the screen
 set updatetime=1000                         " Update time used to create swap file or other things
+set mouse=                                  " Disable mouse integration
 
 " -----------------------------------------------------
 " 2.1 Intendation settings (2 spaces tabs)
