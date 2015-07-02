@@ -55,6 +55,8 @@ Plug 'rstacruz/sparkup', { 'for': ['html', 'xhtml'] }
 Plug 'Slava/vim-spacebars', { 'for': ['html', 'xhtml'] }
 " JS libs syntax files, ember, angular, etc.
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffee'] }
+" React JSX Highlighting
+Plug 'mxw/vim-jsx', { 'for': ['javascript', 'coffee'] }
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Interface improving
@@ -590,6 +592,11 @@ let g:UltiSnipsUsePythonVersion=3
 " 4.11 Gitgutter settings
 " -----------------------------------------------------
 let g:gitgutter_max_signs=9999
+
+" -----------------------------------------------------
+" 4.12 Vim JSX highlighting settings
+" -----------------------------------------------------
+let g:jsx_ext_required=0
 "}}}
 
 " ======================================================================================================================
@@ -695,7 +702,7 @@ hi Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE
 " ======================================================================================================================
 "{{{
 autocmd FileType ruby,coffee,sass,scss,haml,slim,vim setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
-autocmd FileType html,htmldjango,xhtml,css,javascript,snippets setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
+autocmd FileType html,htmldjango,xhtml,css,javascript,javascript.jsx,snippets setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
 
 " Keywordprg settings
 autocmd FileType vim setlocal keywordprg=:help
