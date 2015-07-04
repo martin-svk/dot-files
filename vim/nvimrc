@@ -50,7 +50,7 @@ Plug 'p0deje/vim-ruby-interpolation', { 'for': ['ruby', 'eruby', 'haml', 'slim']
 " CSS color highlighter
 Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'sass', 'scss', 'less'] }
 " Sparkup, emmet alternative (<C-e> to expand expression)
-Plug 'rstacruz/sparkup', { 'for': ['html', 'xhtml'] }
+Plug 'rstacruz/sparkup', { 'for': ['html', 'xhtml', 'eruby'] }
 " Spacebars syntax
 Plug 'Slava/vim-spacebars', { 'for': ['html', 'xhtml'] }
 " JS libs syntax files, ember, angular, etc.
