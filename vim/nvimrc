@@ -68,8 +68,8 @@ Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeFind', 'NERDTreeToggle'] }
 Plug 'Shougo/unite.vim'
 " Unite tags source
 Plug 'Shougo/unite-outline'
-" Airline (improved status line)
-" Plug 'bling/vim-airline'
+" Lightline (improved status line)
+Plug 'itchyny/lightline.vim'
 " Highlight long lines
 Plug 'whatyouhide/vim-lengthmatters'
 
@@ -92,6 +92,8 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
 " RSI movements for vim
 Plug 'tpope/vim-rsi'
+" Sneak (f on steroids)
+Plug 'justinmk/vim-sneak'
 " Easy alignment
 Plug 'godlygeek/tabular', { 'on':  'Tabularize' }
 " Safely editing in isolation
@@ -535,6 +537,32 @@ let g:gitgutter_max_signs=9999
 " 4.8 Vim JSX highlighting settings
 " -----------------------------------------------------
 let g:jsx_ext_required=0
+
+" -----------------------------------------------------
+" 4.9 Lightline settings
+" -----------------------------------------------------
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component': {
+      \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
+      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}'
+      \ },
+      \ 'component_visible_condition': {
+      \   'readonly': '(&filetype!="help"&& &readonly)',
+      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))'
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
+      \ }
+
+" -----------------------------------------------------
+" 4.10 Vim sneak settings
+" -----------------------------------------------------
+let g:sneak#streak=1
 "}}}
 
 " ======================================================================================================================
