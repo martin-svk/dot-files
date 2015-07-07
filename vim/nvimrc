@@ -124,8 +124,6 @@ Plug 'edsono/vim-matchit'
 Plug 'tpope/vim-repeat'
 " Neovim terminal helpers
 Plug 'kassio/neoterm'
-" Misc functions
-Plug 'xolox/vim-misc'
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " 1.2 End of plugin declaration
@@ -609,6 +607,8 @@ nnoremap <silent> <leader>y :Unite -buffer-name=yank-history history/yank<CR>
 nnoremap <silent> <leader>r :Unite -buffer-name=registers register<CR>
 " Search in opened [w]indow splits
 nnoremap <silent> <leader>w :Unite -no-split -buffer-name=splits window<CR>
+" Search in ultisnips snippets
+nnoremap <silent> <leader>j :Unite -no-split -buffer-name=snippets -start-insert ultisnips<CR>
 
 " -----------------------------------------------------
 " 5.2 Ultisnips
