@@ -55,6 +55,8 @@ Plug 'rstacruz/sparkup', { 'for': ['html', 'xhtml', 'eruby'] }
 Plug 'Slava/vim-spacebars', { 'for': ['html', 'xhtml'] }
 " JS libs syntax files, ember, angular, etc.
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffee'] }
+" JS ES6 syntax highlighting
+Plug 'othree/yajs.vim', { 'for': ['javascript', 'coffee'] }
 " React JSX Highlighting
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'coffee'] }
 
@@ -72,6 +74,8 @@ Plug 'Shougo/unite-outline'
 Plug 'itchyny/lightline.vim'
 " Highlight long lines
 Plug 'whatyouhide/vim-lengthmatters'
+" Buffer list
+Plug 'bling/vim-bufferline'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " External tools integration plugins
