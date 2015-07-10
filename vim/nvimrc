@@ -51,14 +51,14 @@ Plug 'p0deje/vim-ruby-interpolation', { 'for': ['ruby', 'eruby', 'haml', 'slim']
 Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'sass', 'scss', 'less'] }
 " Sparkup, emmet alternative (<C-e> to expand expression)
 Plug 'rstacruz/sparkup', { 'for': ['html', 'xhtml', 'eruby'] }
-" Spacebars syntax
-Plug 'Slava/vim-spacebars', { 'for': ['html', 'xhtml'] }
 " JS libs syntax files, ember, angular, etc.
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffee'] }
 " JS ES6 syntax highlighting
 Plug 'othree/yajs.vim', { 'for': ['javascript', 'coffee'] }
 " React JSX Highlighting
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'coffee'] }
+" Spacebars syntax
+Plug 'Slava/vim-spacebars', { 'for': ['html', 'xhtml'] }
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Interface improving
@@ -70,7 +70,7 @@ Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeFind', 'NERDTreeToggle'] }
 Plug 'Shougo/unite.vim'
 " Unite tags source
 Plug 'Shougo/unite-outline'
-" Lightline (improved status line)
+" Lightline (simple status line)
 Plug 'itchyny/lightline.vim'
 " Highlight long lines
 Plug 'whatyouhide/vim-lengthmatters'
@@ -81,8 +81,6 @@ Plug 'whatyouhide/vim-lengthmatters'
 
 " Git changes showed on line numbers
 Plug 'airblade/vim-gitgutter'
-" Gitk for vim
-Plug 'gregsexton/gitv', { 'on':  'Gitv' }
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Text insertion/manipulation
