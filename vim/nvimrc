@@ -74,8 +74,6 @@ Plug 'Shougo/unite-outline'
 Plug 'itchyny/lightline.vim'
 " Highlight long lines
 Plug 'whatyouhide/vim-lengthmatters'
-" Buffer list
-Plug 'bling/vim-bufferline'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " External tools integration plugins
@@ -155,7 +153,6 @@ set pumheight=10                            " Completion window max size
 set iskeyword-=_                            " Set underscore as a word separator
 set iskeyword-=-                            " Set dash as a word separator
 set timeoutlen=250                          " Setting ESC timeout
-set hlsearch                                " Highlight search
 set incsearch                               " Incremental search
 set hidden                                  " Enables to switch between unsaved buffers and keep undo history
 set undolevels=100                          " How many undo commands to remember
@@ -176,7 +173,6 @@ set virtualedit=block                       " To be able to select past EOL in v
 set nojoinspaces                            " No extra space when joining a line which ends with . ? !
 set startofline                             " When doing thing like gg or G, will move cursor to start of line
 set wrapscan                                " Search again from top when reached the bottom
-set showcmd                                 " Show incomplete commands
 set scrolloff=5                             " Scroll when closing to top or bottom of the screen
 set updatetime=1000                         " Update time used to create swap file or other things
 set mouse=                                  " Disable mouse integration
@@ -208,7 +204,7 @@ set noswapfile
 if has('persistent_undo')
   " Save undo history to file
   set undofile
-  " undo files in folder
+  " Undo files in folder (this folder must exists!)
   set undodir=~/.nvim/tmp/undo//
   " Maximum number of undos
   set undolevels=100000
@@ -598,9 +594,9 @@ endfunction
 " [U]nite menu
 nnoremap <silent> <leader>u :Unite -start-insert source<CR>
 " [O]pen files recursively
-nnoremap <silent> <leader>o :Unite -no-split -buffer-name=project-files -start-insert file_rec/async:!<CR>
+nnoremap <silent> <leader>o :Unite -no-split -buffer-name=project-files -auto-preview -start-insert file_rec/async:!<CR>
 " Search between open files - [b]uffers
-nnoremap <silent> <leader>b :Unite -no-split -buffer-name=buffers buffer<CR>
+nnoremap <silent> <leader>b :Unite -no-split -buffer-name=buffers -auto-preview -start-insert buffer<CR>
 " Search in current file tags
 nnoremap <silent> <leader>t :Unite -no-split -buffer-name=tags -start-insert outline<CR>
 " Search for term in cwd file ([g]rep)
