@@ -41,7 +41,7 @@ Plug 'tpope/vim-endwise', { 'for': ['ruby', 'eruby'] }
 " Ruby best practices checker
 Plug 'ngmy/vim-rubocop', { 'for': ['ruby', 'eruby'], 'on': 'RuboCop' }
 " String interpolation helper
-Plug 'p0deje/vim-ruby-interpolation', { 'for': ['ruby', 'eruby', 'haml', 'slim'] }
+Plug 'p0deje/vim-ruby-interpolation', { 'for': ['ruby'] }
 
 " -----------------------------------------------------
 " HTML/CSS/JS
