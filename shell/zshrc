@@ -87,7 +87,8 @@ alias msql='mysql -uroot -p'
 # SSH servers
 # ------------------------------------------
 alias s-tabber='ssh toma@tabber.fiit.stuba.sk'
-alias s-web='ssh root@188.226.223.249'
+alias s-wr='ssh root@martintoma.com'
+alias s-wd='ssh deploy@martintoma.com'
 
 # ------------------------------------------
 # Language specific
