@@ -55,8 +55,6 @@ Plug 'rstacruz/sparkup', { 'for': ['html', 'xhtml', 'eruby'] }
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffee'] }
 " JS ES6 syntax highlighting
 Plug 'othree/yajs.vim', { 'for': ['javascript', 'coffee'] }
-" React JSX Highlighting
-Plug 'mxw/vim-jsx', { 'for': ['javascript', 'coffee'] }
 " Spacebars syntax
 Plug 'Slava/vim-spacebars', { 'for': ['html', 'xhtml'] }
 
