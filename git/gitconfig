@@ -37,6 +37,7 @@
   g2 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%cD%C(reset) %C(bold green)(%cr)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(bold white)— %cn%C(reset)' --abbrev-commit
   wc = whatchanged -p --abbrev-commit --pretty=medium
   unstage = reset HEAD --
+  edit = "!nvim `git ls-files -m`"
 [github]
   user = martin-svk
 [branch]
