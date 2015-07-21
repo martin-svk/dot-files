@@ -639,18 +639,12 @@ if $TERM == 'xterm-256color' || 'screen-256color'
   set t_Co=256
 endif
 
-" Color scheme based on time
-if strftime("%H") < 15
-  let g:airline_theme='badwolf'
-  colorscheme badwolf
-elseif strftime("%H") < 20
-  let g:rehash256 = 1
-  let g:airline_theme='tomorrow'
-  colorscheme molokai
-else
-  let g:airline_theme='tomorrow'
-  colorscheme hybrid
-endif
+" Badwolf color scheme
+let g:airline_theme='badwolf'
+colorscheme badwolf
+
+" Highlight VCS conflict markers
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 " Remove underline in folded lines
 hi Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE
@@ -684,6 +678,9 @@ autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 " Remove trailing whitespaces automatically before save
 autocmd BufWritePre * call utils#stripTrailingWhitespaces()
+
+" Resize splits when the window is resized
+autocmd VimResized * :wincmd =
 
 " Keyboard layout switching
 if g:utils_autoswitch_kb_layout == 1
