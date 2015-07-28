@@ -544,7 +544,7 @@ let g:jsx_ext_required=0
 " 4.9 Lightline settings
 " -----------------------------------------------------
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'powerline',
       \ 'tab': {
       \   'active': [ 'tabnum', 'filename', 'modified' ],
       \   'inactive': [ 'tabnum', 'filename', 'modified' ]
