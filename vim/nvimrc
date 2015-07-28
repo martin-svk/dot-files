@@ -304,9 +304,11 @@ nnoremap Q <nop>
 " Intelligent window cycling
 nmap <silent> <C-w><C-w> :call utils#intelligentCycling()<CR>
 
-" Visual linewise up and down by default
+" Visual linewise up and down by default (and use gj gk to go quicker)
 noremap j gj
 noremap k gk
+nnoremap gj 5j
+nnoremap gk 5k
 
 " When jump to next match also center screen
 noremap n nzz
