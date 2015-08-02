@@ -598,9 +598,9 @@ endfunction
 " [U]nite menu
 nnoremap <silent> <leader>u :Unite -start-insert source<CR>
 " [O]pen files recursively
-nnoremap <silent> <leader>o :Unite -no-split -buffer-name=project-files -auto-preview -start-insert file_rec/async:!<CR>
+nnoremap <silent> <leader>o :Unite -no-split -buffer-name=project-files -start-insert file_rec/async:!<CR>
 " Search between open files - [b]uffers
-nnoremap <silent> <leader>b :Unite -no-split -buffer-name=buffers -auto-preview -start-insert buffer<CR>
+nnoremap <silent> <leader>b :Unite -no-split -buffer-name=buffers -start-insert buffer<CR>
 " Search in current file tags
 nnoremap <silent> <leader>t :Unite -no-split -buffer-name=tags -start-insert outline<CR>
 " Search for term in cwd file ([g]rep)
