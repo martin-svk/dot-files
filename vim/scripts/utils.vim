@@ -112,6 +112,15 @@ function! utils#insertTabWrapper()
     endif
 endfunction
 
+function! utils#insertTabOmniWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-x>\<c-o>"
+    endif
+endfunction
+
 " Simple notes management
 function! utils#createNote(name)
   execute ':e ~/notes/' . a:name . '.md'
@@ -119,4 +128,9 @@ endfunction
 
 function! utils#openNotes()
   execute ':e ~/notes/'
+endfunction
+
+" Use omni complete source as default
+function! utils#useOmniTabWrapper()
+  inoremap <buffer> <expr> <tab> utils#insertTabOmniWrapper()
 endfunction
