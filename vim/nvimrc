@@ -24,7 +24,7 @@ call plug#begin('~/.nvim/plugged')
 " Most common languages file types (syntax, indenting, etc.)
 Plug 'sheerun/vim-polyglot'
 " Needs linters to work properly (see https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers)
-Plug 'scrooloose/syntastic', { 'on': 'SyntasticToggleMode' }
+Plug 'scrooloose/syntastic', { 'on': ['SyntasticToggleMode', 'SyntasticCheck'] }
 " Snippets support
 Plug 'SirVer/ultisnips'
 " Commenting support (gc)
@@ -374,8 +374,8 @@ nnoremap <silent> <F5> :source $MYNVIMRC<CR>
 nnoremap <silent> <F6> :set nohlsearch!<CR> :set nohlsearch?<CR>
 " Toggle white characters visibility
 nnoremap <silent> <F7> :set list!<CR> :set list?<CR>
-" Toggle syntax checking
-nnoremap <F8> :SyntasticToggleMode<CR>
+" Syntax checking
+nnoremap <silent> <F8> :SyntasticCheck<CR>
 " F9 free
 " nnoremap <silent> <F9> :UndotreeToggle<CR>
 " Run current file tests
@@ -477,11 +477,13 @@ if executable('ag')
   let g:unite_source_grep_command='ag'
   let g:unite_source_grep_default_opts='--nocolor --line-numbers --nogroup -S -C0'
   let g:unite_source_grep_recursive_opt=''
-  " Ignore vcs files
-  let g:unite_source_rec_async_command='ag --nocolor --nogroup --ignore ".hg" --ignore ".svn" --ignore ".git" --ignore
-        \ ".bzr" --ignore ".meteor" --ignore "**/bower_components/" --hidden -g ""'
-  let g:unite_source_file_async_command='ag --nocolor --nogroup --ignore ".hg" --ignore ".svn" --ignore ".git" --ignore
-        \ ".bzr" --ignore ".meteor" --ignore "**/bower_components/" --hidden -g ""'
+
+  " Set rec source command
+  let g:unite_source_rec_async_command =
+        \ ['ag', '--follow', '--nocolor', '--nogroup',
+        \  '--ignore', '.git', '--ignore', '.hg', '--ignore', '.svn', '--ignore', '.bzr',
+        \  '--ignore', '.meteor', '--ignore', '**/bower_components/',
+        \  '--hidden', '-g', '']
 endif
 
 " Ignore wildignore files
@@ -501,15 +503,18 @@ let g:unite_source_line_enable_highlight=1
 " -----------------------------------------------------
 " Overriding default linters
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_ruby_checkers=['mri']
+let g:syntastic_ruby_checkers=['rubocop', 'mri']
 
-" Disable ugly signs
+" Show error signs
 let g:syntastic_enable_signs=1
-" Check on open as well as save
-let g:syntastic_check_on_open=1
-" Don't care about warnings
-let g:syntastic_quiet_messages={ 'level': 'warnings' }
-" Passive mode is default
+let g:syntastic_check_on_wq=1
+" Signs
+let g:syntastic_error_symbol = "✗"
+let g:syntastic_warning_symbol = "⚠"
+" Dont check on open and on save
+let g:syntastic_check_on_open=0
+let g:syntastic_check_on_save=0
+" Active mode is default
 let g:syntastic_mode_map={ 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 
 " -----------------------------------------------------
@@ -641,9 +646,18 @@ if $TERM == 'xterm-256color' || 'screen-256color'
   set t_Co=256
 endif
 
-" Badwolf color scheme
-let g:airline_theme='badwolf'
-colorscheme badwolf
+" Color scheme based on time    +" Badwolf color scheme
+if strftime("%H") < 15
+  let g:airline_theme='badwolf'
+  colorscheme badwolf
+elseif strftime("%H") < 20
+  let g:rehash256 = 1
+  let g:airline_theme='tomorrow'
+  colorscheme molokai
+else
+  let g:airline_theme='tomorrow'
+  colorscheme hybrid
+endif
 
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
