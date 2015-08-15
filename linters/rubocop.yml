@@ -1,3 +1,4 @@
+# gem install rubocop
 AllCops:
   RunRailsCops: true
   Include:

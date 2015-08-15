@@ -1,4 +1,5 @@
 # vim: ft=yaml
+# Need npm install eslintrc, eslint-plugin-react
 rules:
   indent:
     - 2
