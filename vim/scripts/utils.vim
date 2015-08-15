@@ -86,8 +86,15 @@ endfunction
 
 " Generate ctags and put them into .tags directory
 function! utils#generateCtags()
-  silent !mkdir .tags > /dev/null 2>&1
-  silent !ctags --tag-relative --extra=+f -Rf .tags/tags --exclude=.git --languages=-sql
+  silent execute '!mkdir .tags > /dev/null 2>&1'
+  silent execute '!ctags --tag-relative --extra=+f -Rf .tags/tags --exclude=.git --languages=-sql'
+  echom "Tags generated into .tags/tags file!"
+endfunction
+
+" Generate ctags with also gems and put them into .tags directory
+function! utils#generateRubyCtags()
+  silent execute '!mkdir .tags > /dev/null 2>&1'
+  silent execute '!ctags --tag-relative --extra=+f -Rf .tags/tags --exclude=.git --languages=-sql . $(bundle list --paths)'
   echom "Tags generated into .tags/tags file!"
 endfunction
 
@@ -96,8 +103,8 @@ function! utils#renameFile()
   let old_name = expand('%')
   let new_name = input('New file name: ', expand('%'), 'file')
   if new_name != '' && new_name != old_name
-    exec ':saveas ' . new_name
-    exec ':silent !rm ' . old_name
+    execute ':saveas ' . new_name
+    execute ':silent !rm ' . old_name
     redraw!
   endif
 endfunction
