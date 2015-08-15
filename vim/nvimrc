@@ -350,6 +350,7 @@ nnoremap <silent> ,d :bd<CR>
 
 " Yank and paste from clipboard
 nnoremap ,y "+y
+vnoremap ,y "+y
 nnoremap ,yy "+yy
 nnoremap ,p "+p
 
@@ -428,7 +429,8 @@ nnoremap <silent> ,r :call utils#runCurrentFile()<CR>
 nnoremap <silent> <leader>s :call utils#newVertTerm()<CR>
 
 " Generate tags definitions
-command! GenerateCT :call utils#generateCtags()<CR>
+command! GenerateCT :call utils#generateCtags()
+command! GenerateRubyCT :call utils#generateRubyCtags()
 
 " Rename currecnt file
 command! Rename :call utils#renameFile()<CR>
