@@ -1,0 +1,12 @@
+AllCops:
+  RunRailsCops: true
+  Include:
+    - '**/Rakefile'
+    - '**/config.ru'
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+
+# other configuration
+# ..
