@@ -1,4 +1,6 @@
 # gem install rubocop
+Documentation:
+  Enabled: false
 AllCops:
   RunRailsCops: true
   Include:
@@ -8,6 +10,3 @@ AllCops:
     - 'db/**/*'
     - 'config/**/*'
     - 'script/**/*'
-
-# other configuration
-# ..
