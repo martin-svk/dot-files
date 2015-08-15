@@ -1,6 +1,8 @@
 # gem install rubocop
 Documentation:
   Enabled: false
+Metrics/LineLength:
+  Max: 120
 AllCops:
   RunRailsCops: true
   Include:
