@@ -141,3 +141,53 @@ endfunction
 function! utils#useOmniTabWrapper()
   inoremap <buffer> <expr> <tab> utils#insertTabOmniWrapper()
 endfunction
+
+" Unite commands wrappers
+
+function! utils#uniteSources()
+  execute 'Unite -start-insert source'
+endfunction
+
+function! utils#uniteFileRec()
+  execute 'Unite -no-split -buffer-name=project-files -start-insert file_rec/async:!'
+endfunction
+
+function! utils#uniteBuffers()
+  execute 'Unite -no-split -buffer-name=buffers -start-insert buffer'
+endfunction
+
+function! utils#uniteTags()
+  execute 'Unite -no-split -buffer-name=tags -start-insert outline'
+endfunction
+
+function! utils#uniteGrep()
+  execute 'Unite -silent grep:.'
+endfunction
+
+function! utils#uniteHistory()
+  execute 'Unite -buffer-name=edit-history change'
+endfunction
+
+function! utils#uniteLineSearch()
+  execute 'Unite -no-split -buffer-name=line-search -start-insert line'
+endfunction
+
+function! utils#uniteYankHistory()
+  execute 'Unite -buffer-name=yank-history history/yank'
+endfunction
+
+function! utils#uniteRegisters()
+  execute 'Unite -buffer-name=registers register'
+endfunction
+
+function! utils#uniteWindows()
+  execute 'Unite -no-split -buffer-name=splits window'
+endfunction
+
+function! utils#uniteSnippets()
+  execute 'Unite -no-split -buffer-name=snippets -start-insert ultisnips'
+endfunction
+
+function! utils#uniteCustomMenu()
+  execute 'Unite menu'
+endfunction
