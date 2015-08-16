@@ -87,14 +87,24 @@ endfunction
 " Generate ctags and put them into .tags directory
 function! utils#generateCtags()
   silent execute '!mkdir .tags > /dev/null 2>&1'
-  silent execute '!ctags --tag-relative --extra=+f -Rf .tags/tags --exclude=.git --languages=-sql'
+  silent execute '!ctags --tag-relative --extra=+f -Rf .tags/tags'
+        \ '--exclude=.git --languages=-sql'
   echom "Tags generated into .tags/tags file!"
 endfunction
 
 " Generate ctags with also gems and put them into .tags directory
 function! utils#generateRubyCtags()
   silent execute '!mkdir .tags > /dev/null 2>&1'
-  silent execute '!ctags --tag-relative --extra=+f -Rf .tags/tags --exclude=.git --languages=-sql . $(bundle list --paths)'
+  silent execute '!ctags --tag-relative --extra=+f -Rf .tags/tags'
+        \ '--exclude=.git --languages=-sql . $(bundle list --paths)'
+  echom "Tags generated into .tags/tags file!"
+endfunction
+
+" Generate ctags for JS projects (ignoring .meteor, node_modules, bower_components)
+function! utils#generateJSCtags()
+  silent execute '!mkdir .tags > /dev/null 2>&1'
+  silent execute '!ctags --tag-relative --extra=+f -Rf .tags/tags'
+        \ '--exclude=.git --exclude=node_modules --exclude=bower_components --languages=-sql'
   echom "Tags generated into .tags/tags file!"
 endfunction
 

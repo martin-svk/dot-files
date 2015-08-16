@@ -427,6 +427,7 @@ nnoremap <silent> ,r :call utils#runCurrentFile()<CR>
 
 " Generate tags definitions
 command! GenerateCT :call utils#generateCtags()
+command! GenerateJSCT :call utils#generateJSCtags()
 command! GenerateRubyCT :call utils#generateRubyCtags()
 
 " Rename currecnt file
@@ -505,8 +506,12 @@ let g:unite_source_menu_menus.utils = {
       \     'description' : 'Utility commands',
       \ }
 let g:unite_source_menu_menus.utils.command_candidates = [
+      \       ['Format JSON', 'FormatJSON'],
       \       ['Generate Ctags', 'GenerateCT'],
+      \       ['Generate JS Ctags', 'GenerateJSCT'],
       \       ['Generate Ruby/Rails Ctags', 'GenerateRailsCT'],
+      \       ['Rename file', 'Rename'],
+      \       ['Show notes', 'Notes'],
       \     ]
 
 " Git menu
@@ -709,8 +714,8 @@ if $TERM == 'xterm-256color' || 'screen-256color'
   set t_Co=256
 endif
 
-" Color scheme based on time    +" Badwolf color scheme
-if strftime("%H") < 15
+" Color scheme based on time
+if strftime("%H") < 14
   let g:airline_theme='badwolf'
   colorscheme badwolf
 elseif strftime("%H") < 20
