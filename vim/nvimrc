@@ -500,6 +500,54 @@ call unite#custom#profile('default', 'context', {
 " Add syntax highlighting
 let g:unite_source_line_enable_highlight=1
 
+" Custom unite menus
+let g:unite_source_menu_menus = {}
+
+" Utils menu
+let g:unite_source_menu_menus.utils = {
+      \     'description' : 'Utility commands',
+      \ }
+let g:unite_source_menu_menus.utils.command_candidates = [
+      \       ['Generate Ctags', 'GenerateCT'],
+      \       ['Generate Ruby/Rails Ctags', 'GenerateRailsCT'],
+      \     ]
+
+" Git menu
+let g:unite_source_menu_menus.git = {
+      \     'description' : 'Git commands',
+      \ }
+let g:unite_source_menu_menus.git.command_candidates = [
+      \       ['Stage', 'Gwrite'],
+      \       ['Status', 'Gstatus'],
+      \       ['Diff', 'Gvdiff'],
+      \       ['Commit', 'Gcommit'],
+      \       ['Revert', 'Gread'],
+      \       ['Log', 'Glog'],
+      \       ['Unite Log', 'Unite giti/log'],
+      \       ['Visual Log', 'Gitv'],
+      \     ]
+
+" Plug menu
+let g:unite_source_menu_menus.plug = {
+      \     'description' : 'Plugin management commands',
+      \ }
+let g:unite_source_menu_menus.plug.command_candidates = [
+      \       ['Install plugins', 'PlugInstall'],
+      \       ['Update plugins', 'PlugUpdate'],
+      \       ['Clean plugins', 'PlugClean'],
+      \       ['Upgrade vim-plug', 'PlugUpgrade'],
+      \     ]
+
+" Syntastic menu
+let g:unite_source_menu_menus.syntastic = {
+      \     'description' : 'Syntastic syntax checker commands',
+      \ }
+let g:unite_source_menu_menus.syntastic.command_candidates = [
+      \       ['Check current file', 'SyntasticCheck'],
+      \       ['Remove error markers', 'SyntasticReset'],
+      \       ['Current file info', 'SyntasticInfo'],
+      \     ]
+
 " -----------------------------------------------------
 " 4.3 Syntastic (syntax checker)
 " -----------------------------------------------------
@@ -619,6 +667,8 @@ nnoremap <silent> <leader>r :Unite -buffer-name=registers register<CR>
 nnoremap <silent> <leader>w :Unite -no-split -buffer-name=splits window<CR>
 " Search in ultisnips snippets
 nnoremap <silent> <leader>j :Unite -no-split -buffer-name=snippets -start-insert ultisnips<CR>
+" My custom unite menu with commonly used commands not mapped to keys
+nnoremap <silent> <leader>m :Unite menu<CR>
 
 " -----------------------------------------------------
 " 5.2 Ultisnips
