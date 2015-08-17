@@ -33,6 +33,8 @@ Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-commentary'
 " Iabbrev auto-correction library
 Plug 'chip/vim-fat-finger'
+" Intelligent buffer closing
+Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
 
 " -----------------------------------------------------
 " Ruby/Rails
@@ -353,10 +355,9 @@ inoremap <c-x><c-]> <c-]>
 " 3.4 Common tasks
 " -----------------------------------------------------
 
-" Quick save and quit / delete buffers intelligently
+" Quick save and close buffer
 nnoremap ,w :w<CR>
-nnoremap <silent> ,q :q<CR>
-nnoremap <silent> ,d :bd<CR>
+nnoremap <silent> ,q :Sayonara!<CR>
 
 " Yank and paste from clipboard
 nnoremap ,y "+y
