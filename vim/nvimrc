@@ -72,6 +72,8 @@ Plug 'Shougo/unite-outline'
 Plug 'itchyny/lightline.vim'
 " Highlight long lines
 Plug 'whatyouhide/vim-lengthmatters'
+" Shows current search match / total matches
+Plug 'henrik/vim-indexed-search', { 'on':  'ShowSearchIndex' }
 
 " ---------------------------------------------------------------------------------------------------------------------
 " External tools integration plugins
@@ -85,6 +87,8 @@ Plug 'gregsexton/gitv', { 'on': 'Gitv' }
 Plug 'kmnk/vim-unite-giti'
 " Git changes showed on line numbers
 Plug 'airblade/vim-gitgutter'
+" Man reading in vim
+Plug 'jez/vim-superman'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Text insertion/manipulation
@@ -102,6 +106,8 @@ Plug 'justinmk/vim-sneak'
 Plug 'godlygeek/tabular', { 'on':  'Tabularize' }
 " Safely editing in isolation
 Plug 'ferranpm/vim-isolate', { 'on':  'Isolate' }
+" Software capslock (<C-L> in insert mode)
+Plug 'tpope/vim-capslock'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Colorschemes
@@ -512,6 +518,7 @@ let g:unite_source_menu_menus.utils.command_candidates = [
       \       ['Generate Ruby/Rails Ctags', 'GenerateRailsCT'],
       \       ['Rename file', 'Rename'],
       \       ['Show notes', 'Notes'],
+      \       ['Show search status', 'ShowSearchIndex'],
       \     ]
 
 " Git menu
@@ -621,12 +628,13 @@ let g:lightline = {
       \   'inactive': [ 'tabnum', 'filename', 'modified' ]
       \ },
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
+      \   'left': [ [ 'mode', 'paste', 'capslock' ],
       \             [ 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'component': {
       \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
-      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}'
+      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+      \   'capslock': '%{exists("*CapsLockStatusline")?CapsLockStatusline():""}'
       \ },
       \ 'component_visible_condition': {
       \   'readonly': '(&filetype!="help"&& &readonly)',
@@ -640,6 +648,14 @@ let g:lightline = {
 " 4.10 Vim sneak settings
 " -----------------------------------------------------
 let g:sneak#streak=1
+
+" -----------------------------------------------------
+" 4.11 Indexed search settings
+" -----------------------------------------------------
+let g:indexed_search_colors=0
+let g:indexed_search_shortmess=1
+let g:indexed_search_numbered_only=1
+let g:indexed_search_mappings=0
 "}}}
 
 " ======================================================================================================================
@@ -700,6 +716,11 @@ let g:UltiSnipsExpandTrigger='<c-j>'
 let g:UltiSnipsListSnippets='<c-l>'
 let g:UltiSnipsJumpForwardTrigger='<c-j>'
 let g:UltiSnipsJumpBackwardTrigger='<c-k>'
+
+" -----------------------------------------------------
+" 5.3 Capslock mappings
+" -----------------------------------------------------
+imap <C-L> <C-O><Plug>CapsLockToggle
 "}}}
 
 " ======================================================================================================================
