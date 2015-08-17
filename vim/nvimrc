@@ -25,10 +25,14 @@ call plug#begin('~/.nvim/plugged')
 Plug 'sheerun/vim-polyglot'
 " Needs linters to work properly (see https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers)
 Plug 'scrooloose/syntastic', { 'on': ['SyntasticCheck', 'SyntasticReset', 'SyntasticInfo'] }
+" Autocomplete support
+Plug 'ajh17/VimCompletesMe'
 " Snippets support
 Plug 'SirVer/ultisnips'
 " Commenting support (gc)
 Plug 'tpope/vim-commentary'
+" Iabbrev auto-correction library
+Plug 'chip/vim-fat-finger'
 
 " -----------------------------------------------------
 " Ruby/Rails
@@ -447,13 +451,6 @@ command! Notes :call utils#openNotes()
 
 " Format JSON
 command! FormatJSON %!python -m json.tool
-
-" -----------------------------------------------------
-" 3.8 Multipurpose tab key (inspired by Gary Bernhardt)
-" -----------------------------------------------------
-
-inoremap <expr> <tab> utils#insertTabWrapper()
-inoremap <s-tab> <c-n>
 "}}}
 
 " ======================================================================================================================
