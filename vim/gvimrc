@@ -1,3 +1,6 @@
+" Basic settings
+syntax on
+
 " Misc settings
 " set guifont=M+\ 1m\ Medium\ 12
 " set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
@@ -11,16 +14,8 @@ set guioptions-=r
 set guioptions-=T
 set guioptions-=m
 
-" Make fullscreen hack
-set lines=999 columns=999
-
 " Disable blink cursor
 set guicursor+=a:blinkon0
 
 " Disable cursorline
 set nocursorline
-
-" White colorscheme
-set bg=light
-let g:airline_theme='pencil'
-colorscheme pencil
