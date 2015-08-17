@@ -31,10 +31,6 @@ Plug 'ajh17/VimCompletesMe'
 Plug 'SirVer/ultisnips'
 " Commenting support (gc)
 Plug 'tpope/vim-commentary'
-" Iabbrev auto-correction library
-Plug 'chip/vim-fat-finger'
-" Intelligent buffer closing
-Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
 
 " -----------------------------------------------------
 " Ruby/Rails
@@ -53,16 +49,16 @@ Plug 'p0deje/vim-ruby-interpolation', { 'for': ['ruby'] }
 " HTML/CSS/JS
 " -----------------------------------------------------
 
-" CSS color highlighter
-Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'sass', 'scss', 'less'] }
-" Sparkup, emmet alternative (<C-e> to expand expression)
-Plug 'rstacruz/sparkup', { 'for': ['html', 'xhtml', 'eruby'] }
 " JS libs syntax files, ember, angular, etc.
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffee'] }
 " JS ES6 syntax highlighting
 Plug 'othree/yajs.vim', { 'for': ['javascript', 'coffee'] }
 " Spacebars syntax
 Plug 'Slava/vim-spacebars', { 'for': ['html', 'xhtml'] }
+" Sparkup, emmet alternative (<C-e> to expand expression)
+Plug 'rstacruz/sparkup', { 'for': ['html', 'xhtml', 'eruby'] }
+" CSS color highlighter
+Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'sass', 'scss', 'less'] }
 " Color picker
 Plug 'KabbAmine/vCoolor.vim', { 'on': 'VCoolor' }
 
@@ -95,8 +91,6 @@ Plug 'gregsexton/gitv', { 'on': 'Gitv' }
 Plug 'kmnk/vim-unite-giti'
 " Git changes showed on line numbers
 Plug 'airblade/vim-gitgutter'
-" Man reading in vim
-Plug 'jez/vim-superman'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Text insertion/manipulation
@@ -140,8 +134,21 @@ Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'edsono/vim-matchit'
 " More . repeat functionality
 Plug 'tpope/vim-repeat'
+
+" ---------------------------------------------------------------------------------------------------------------------
+" Other
+" ---------------------------------------------------------------------------------------------------------------------
+
+" Intelligent buffer closing
+Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
+" Iabbrev auto-correction library
+Plug 'chip/vim-fat-finger'
 " Neovim terminal helpers
 Plug 'kassio/neoterm'
+" Hacker typing
+Plug 'natw/keyboard_cat.vim', { 'on':  'PlayMeOff' }
+" Man reading in vim
+Plug 'jez/vim-superman'
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " 1.2 End of plugin declaration
