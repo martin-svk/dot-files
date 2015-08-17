@@ -63,6 +63,8 @@ Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffee']
 Plug 'othree/yajs.vim', { 'for': ['javascript', 'coffee'] }
 " Spacebars syntax
 Plug 'Slava/vim-spacebars', { 'for': ['html', 'xhtml'] }
+" Color picker
+Plug 'KabbAmine/vCoolor.vim', { 'on': 'VCoolor' }
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Interface improving
@@ -510,6 +512,7 @@ let g:unite_source_menu_menus.utils = {
       \     'description' : 'Utility commands',
       \ }
 let g:unite_source_menu_menus.utils.command_candidates = [
+      \       ['Color picker', 'VCoolor'],
       \       ['Format JSON', 'FormatJSON'],
       \       ['Generate Ctags', 'GenerateCT'],
       \       ['Generate JS Ctags', 'GenerateJSCT'],
@@ -654,6 +657,11 @@ let g:indexed_search_colors=0
 let g:indexed_search_shortmess=1
 let g:indexed_search_numbered_only=1
 let g:indexed_search_mappings=0
+
+" -----------------------------------------------------
+" 4.12 Color picker settings
+" -----------------------------------------------------
+let g:vcoolor_disable_mappings=1
 "}}}
 
 " ======================================================================================================================
