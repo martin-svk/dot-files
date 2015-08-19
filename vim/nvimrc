@@ -336,8 +336,8 @@ noremap n nzz
 noremap N Nzz
 
 " Same when moving up and down
-noremap <c-d> <c-d>zz
-noremap <c-u> <c-u>zz
+noremap <C-d> <C-d>zz
+noremap <C-u> <C-u>zz
 
 " Remap H and L (top, bottom of screen to left and right end of line)
 nnoremap H ^
@@ -352,13 +352,13 @@ nnoremap Y y$
 nnoremap Q @q
 
 " Cancel terminal mode with escape
-tnoremap <ESC> <c-\><c-n>
+tnoremap <ESC> <C-\><C-n>
 
 " Automatically reselect and yank overpasted text in visual mode
 xnoremap p pgvy
 
 " Omni-complete based on ctags
-inoremap <c-x><c-]> <c-]>
+inoremap <C-x><C-]> <C-]>
 
 " -----------------------------------------------------
 " 3.4 Common tasks
@@ -467,7 +467,7 @@ command! FormatJSON %!python -m json.tool
 " -----------------------------------------------------
 
 inoremap <expr> <tab> utils#insertTabWrapper()
-inoremap <s-tab> <c-n>
+inoremap <s-tab> <C-n>
 "}}}
 
 " ======================================================================================================================
@@ -731,16 +731,11 @@ nnoremap <silent> <leader>m :call utils#uniteCustomMenu()<CR>
 " 5.2 Ultisnips
 " -----------------------------------------------------
 " Disable built-in cx-ck to be able to go backward
-inoremap <c-x><c-k> <nop>
-let g:UltiSnipsExpandTrigger='<c-j>'
-let g:UltiSnipsListSnippets='<c-l>'
-let g:UltiSnipsJumpForwardTrigger='<c-j>'
-let g:UltiSnipsJumpBackwardTrigger='<c-k>'
-
-" -----------------------------------------------------
-" 5.3 Capslock mappings
-" -----------------------------------------------------
-imap <C-L> <C-O><Plug>CapsLockToggle
+inoremap <C-x><C-k> <nop>
+let g:UltiSnipsExpandTrigger='<C-j>'
+let g:UltiSnipsListSnippets='<C-l>'
+let g:UltiSnipsJumpForwardTrigger='<C-j>'
+let g:UltiSnipsJumpBackwardTrigger='<C-k>'
 "}}}
 
 " ======================================================================================================================
