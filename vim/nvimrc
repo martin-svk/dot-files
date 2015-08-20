@@ -23,8 +23,8 @@ call plug#begin('~/.nvim/plugged')
 
 " Most common languages file types (syntax, indenting, etc.)
 Plug 'sheerun/vim-polyglot'
-" Needs linters to work properly (see https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers)
-Plug 'scrooloose/syntastic', { 'on': ['SyntasticCheck', 'SyntasticReset', 'SyntasticInfo'] }
+" Asynchronous maker and linter (async syntastic, needs linters to work properly)
+Plug 'benekastah/neomake', { 'on': ['Neomake'] }
 " Automatically closing stuff
 Plug 'cohama/lexima.vim'
 " Snippets support
@@ -381,10 +381,10 @@ nnoremap <silent> ,f mzgg=G`z
 " 3.5 F-key actions
 " -----------------------------------------------------
 
-" NERDTree find current file
+" NERDTree wrapper
 nnoremap <silent> <F1> :call utils#nerdWrapper()<CR>
-" F2 free
-" nnoremap <silent> <F2> :TagbarToggle<CR>
+" Run Neomake (insert param)
+nnoremap <silent> <F2> :Neomake
 " Paste mode toggling
 nnoremap <silent> <F3> :set paste!<CR> :set paste?<CR>
 " Toggle spelling on and off
@@ -395,10 +395,10 @@ nnoremap <silent> <F5> :source $MYNVIMRC<CR>
 nnoremap <silent> <F6> :set nohlsearch!<CR> :set nohlsearch?<CR>
 " Toggle white characters visibility
 nnoremap <silent> <F7> :set list!<CR> :set list?<CR>
-" Syntax checking
-nnoremap <silent> <F8> :SyntasticCheck<CR>
-" Syntax check clear
-nnoremap <silent> <F9> :SyntasticReset<CR>
+" Free
+" nnoremap <silent> <F8> :Command<CR>
+" Free
+" nnoremap <silent> <F9> :Command<CR>
 " Run current file tests
 nnoremap <silent> <F10> :call neoterm#test#run('file')<cr>
 " Run current cursor test
@@ -562,19 +562,9 @@ let g:unite_source_menu_menus.plug.command_candidates = [
       \       ['Upgrade vim-plug', 'PlugUpgrade'],
       \     ]
 
-" Syntastic menu
-let g:unite_source_menu_menus.syntastic = {
-      \     'description' : 'Syntastic syntax checker commands',
-      \ }
-let g:unite_source_menu_menus.syntastic.command_candidates = [
-      \       ['Check current file', 'SyntasticCheck'],
-      \       ['Remove error markers', 'SyntasticReset'],
-      \       ['Current file info', 'SyntasticInfo'],
-      \     ]
-
 " My unite menu
 let g:unite_source_menu_menus.unite = {
-      \     'description' : 'Syntastic syntax checker commands',
+      \     'description' : 'My Unite sources',
       \ }
 let g:unite_source_menu_menus.unite.command_candidates = [
       \       ['Unite buffers', 'call utils#uniteBuffers()'],
@@ -592,49 +582,35 @@ let g:unite_source_menu_menus.unite.command_candidates = [
       \     ]
 
 " -----------------------------------------------------
-" 4.3 Syntastic (syntax checker)
-" -----------------------------------------------------
-" Overriding default linters
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_ruby_checkers=['rubocop', 'mri']
-
-" Other settings
-let g:syntastic_shell='/bin/zsh'
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
-let g:syntastic_auto_loc_list=1
-let g:syntastic_mode_map={ 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
-
-" -----------------------------------------------------
-" 4.4 NERDTree
+" 4.3 NERDTree
 " -----------------------------------------------------
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
 let g:NERDTreeWinSize=45
 
 " -----------------------------------------------------
-" 4.5 Neoterm settings
+" 4.4 Neoterm settings
 " -----------------------------------------------------
 let g:neoterm_position='vertical'
 let g:neoterm_size=80
 
 " -----------------------------------------------------
-" 4.6 Ultisnips settings
+" 4.5 Ultisnips settings
 " -----------------------------------------------------
 let g:UltiSnipsUsePythonVersion=3
 
 " -----------------------------------------------------
-" 4.7 Gitgutter settings
+" 4.6 Gitgutter settings
 " -----------------------------------------------------
 let g:gitgutter_max_signs=9999
 
 " -----------------------------------------------------
-" 4.8 Vim JSX highlighting settings
+" 4.7 Vim JSX highlighting settings
 " -----------------------------------------------------
 let g:jsx_ext_required=0
 
 " -----------------------------------------------------
-" 4.9 Lightline settings
+" 4.8 Lightline settings
 " -----------------------------------------------------
 let g:lightline = {
       \ 'colorscheme': 'powerline',
@@ -660,12 +636,12 @@ let g:lightline = {
       \ }
 
 " -----------------------------------------------------
-" 4.10 Vim sneak settings
+" 4.9 Vim sneak settings
 " -----------------------------------------------------
 let g:sneak#streak=1
 
 " -----------------------------------------------------
-" 4.11 Indexed search settings
+" 4.10 Indexed search settings
 " -----------------------------------------------------
 let g:indexed_search_colors=0
 let g:indexed_search_shortmess=1
@@ -673,9 +649,14 @@ let g:indexed_search_numbered_only=1
 let g:indexed_search_mappings=0
 
 " -----------------------------------------------------
-" 4.12 Color picker settings
+" 4.11 Color picker settings
 " -----------------------------------------------------
 let g:vcoolor_disable_mappings=1
+
+" -----------------------------------------------------
+" 4.12 Neomake settings
+" -----------------------------------------------------
+let g:neomake_verbose=0
 "}}}
 
 " ======================================================================================================================
@@ -810,6 +791,12 @@ end
 
 " Make neovim terminal buffers unlisted
 autocmd TermOpen * setlocal nobuflisted
+
+" Run linters after save
+autocmd BufWritePost *.js Neomake eslint
+autocmd BufWritePost *.rb Neomake rubocop
+autocmd BufWritePost *.html Neomake tidy
+autocmd BufWritePost *.scss Neomake scsslint
 "}}}
 
 " ======================================================================================================================
