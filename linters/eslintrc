@@ -5,8 +5,8 @@ rules:
     - 2
     - 4
   quotes:
-    - 2
-    - single
+    - 1
+    - double
   linebreak-style:
     - 2
     - unix
