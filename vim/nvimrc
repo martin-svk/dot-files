@@ -74,6 +74,8 @@ Plug 'Shougo/unite.vim'
 Plug 'Shougo/unite-outline'
 " Lightline (simple status line)
 Plug 'itchyny/lightline.vim'
+" Show opened buffers
+Plug 'bling/vim-bufferline'
 " Highlight long lines
 Plug 'whatyouhide/vim-lengthmatters'
 " Shows current search match / total matches
@@ -620,12 +622,15 @@ let g:lightline = {
       \ },
       \ 'active': {
       \   'left': [ [ 'mode', 'paste', 'capslock' ],
-      \             [ 'readonly', 'filename', 'modified' ] ]
+      \             [ 'readonly', 'bufferline', 'modified' ] ]
       \ },
       \ 'component': {
       \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
       \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-      \   'capslock': '%{exists("*CapsLockStatusline")?CapsLockStatusline():""}'
+      \   'capslock': '%{exists("*CapsLockStatusline")?CapsLockStatusline():""}',
+      \   'bufferline': '%{bufferline#refresh_status()}%{utils#MyBufferLine()[0]}' .
+      \                 '%{g:bufferline_status_info.current}' .
+      \                 '%{utils#MyBufferLine()[2]}'
       \ },
       \ 'component_visible_condition': {
       \   'readonly': '(&filetype!="help"&& &readonly)',
@@ -657,6 +662,15 @@ let g:vcoolor_disable_mappings=1
 " 4.12 Neomake settings
 " -----------------------------------------------------
 let g:neomake_verbose=0
+
+" -----------------------------------------------------
+" 4.13 BufferLine settings
+" -----------------------------------------------------
+let g:bufferline_echo=0
+let g:bufferline_modified=''
+let g:bufferline_show_bufnr=0
+let g:bufferline_active_buffer_left='*'
+let g:bufferline_active_buffer_right=''
 "}}}
 
 " ======================================================================================================================
