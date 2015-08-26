@@ -622,7 +622,7 @@ let g:lightline = {
       \ },
       \ 'active': {
       \   'left': [ [ 'mode', 'paste', 'capslock' ],
-      \             [ 'readonly', 'bufferline', 'modified' ] ]
+      \             [ 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'component': {
       \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
