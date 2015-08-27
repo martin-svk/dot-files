@@ -360,6 +360,9 @@ xnoremap p pgvy
 " Omni-complete based on ctags
 inoremap <C-x><C-]> <C-]>
 
+" Dont yank to default register when changing something
+nnoremap c "xc
+
 " -----------------------------------------------------
 " 3.4 Common tasks
 " -----------------------------------------------------
