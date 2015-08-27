@@ -38,8 +38,6 @@ Plug 'tpope/vim-commentary'
 
 " (:A, :R, :Rmigration, :Rextract)
 Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby', 'haml', 'slim'] }
-" Automatically inserts 'end' wisely
-Plug 'tpope/vim-endwise', { 'for': ['ruby', 'eruby'] }
 " Ruby best practices checker
 Plug 'ngmy/vim-rubocop', { 'for': ['ruby', 'eruby'], 'on': 'RuboCop' }
 " String interpolation helper
