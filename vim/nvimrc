@@ -363,6 +363,9 @@ inoremap <C-x><C-]> <C-]>
 " Dont yank to default register when changing something
 nnoremap c "xc
 
+" Dont copy overpasted text in visual mode
+xnoremap p "_dP
+
 " -----------------------------------------------------
 " 3.4 Common tasks
 " -----------------------------------------------------
