@@ -5,7 +5,7 @@ debug_print("Application name: " .. get_application_name())
 -- Handling program default workspaces
 
 -- Chromium
-if (string.find(get_application_name(), "Chromium") or get_application_name()=="Firefox") then
+if (string.find(get_application_name(), "Google Chrome")) then
    set_window_workspace(1);
    maximize();
 -- XTerm
@@ -22,7 +22,6 @@ elseif (get_application_name()=="SmartGit") then
 -- Music
 elseif (get_application_name()=="Spotify Free - Linux Preview" or get_application_name()=="VLC media player") then
    set_window_workspace(5);
-   maximize();
 -- Mail
 elseif (get_application_name()=="Geary") then
    set_window_workspace(6);
