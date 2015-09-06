@@ -7,14 +7,13 @@ debug_print("Application name: " .. get_application_name())
 -- Chromium
 if (string.find(get_application_name(), "Google Chrome")) then
    set_window_workspace(1);
-   maximize();
 -- XTerm
 elseif (get_application_name()=="xterm") then
    set_window_workspace(2);
+   maximize();
 -- Android Studio
 elseif (get_application_name()=="Android Studio") then
    set_window_workspace(3);
-   maximize();
 -- SmartGit
 elseif (get_application_name()=="SmartGit") then
    set_window_workspace(4);
@@ -25,7 +24,6 @@ elseif (get_application_name()=="Spotify Free - Linux Preview" or get_applicatio
 -- Mail
 elseif (get_application_name()=="Geary") then
    set_window_workspace(6);
-   maximize();
 -- HipChat
 elseif (get_application_name()=="HipChat") then
    set_window_workspace(7);
