@@ -73,7 +73,7 @@ Plug 'Shougo/unite-outline'
 " Lightline (simple status line)
 Plug 'itchyny/lightline.vim'
 " Show opened buffers
-Plug 'bling/vim-bufferline'
+" Plug 'bling/vim-bufferline'
 " Highlight long lines
 Plug 'whatyouhide/vim-lengthmatters'
 " Shows current search match / total matches
@@ -671,7 +671,7 @@ let g:neomake_verbose=0
 " -----------------------------------------------------
 " 4.13 BufferLine settings
 " -----------------------------------------------------
-let g:bufferline_echo=1
+let g:bufferline_echo=0
 let g:bufferline_modified='+'
 let g:bufferline_show_bufnr=0
 let g:bufferline_active_buffer_left='['
