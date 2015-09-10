@@ -44,9 +44,6 @@ Thumbs.db
 .codekit-config.json
 config.codekit
 
-# Meteor
-.meteor/
-
 # Editors
 # ===========================
 
@@ -55,6 +52,7 @@ Session.vim
 .*.swo
 .*.swp
 *~
+.tags/
 
 # Idea
 .idea/
@@ -66,4 +64,4 @@ Session.vim
 # ===========================
 
 .rake_tasks
-.tags/
+.meteor/
