@@ -9,7 +9,7 @@ root: ~/dev/learning/rails
 # pre: sudo service postgresql start
 
 # Useful for setting up interpreter versions, rvm setting
-pre_window: rvm use 2.0.0 && clear
+# pre_window: rvm use 2.0.0 && clear
 
 windows:
   - editor:
@@ -22,7 +22,7 @@ windows:
       layout: tiled
       panes:
         - git status
-        - # just bash
+        - # just zsh
         - git log -n 3
         - htop
   - logs:
