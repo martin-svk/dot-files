@@ -2,7 +2,7 @@
 
 #-----------------------------------------------------
 # @author Martin Toma
-# @version 4.0
+# @version 5.0
 # @date Fri Nov 15 13:13:22 CET 2013
 # @date of v2 Sat Aug  2 14:46:00 CEST 2014
 # @date of v3 Sun Oct 12 17:07:31 CEST 2014
