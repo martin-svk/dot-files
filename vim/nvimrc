@@ -110,6 +110,8 @@ Plug 'godlygeek/tabular', { 'on':  'Tabularize' }
 Plug 'ferranpm/vim-isolate', { 'on':  'Isolate' }
 " Software capslock (<C-L> in insert mode)
 Plug 'tpope/vim-capslock'
+" Additional text objects
+Plug 'wellle/targets.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Colorschemes
@@ -175,7 +177,7 @@ set cmdheight=1                             " Command line height
 set pumheight=10                            " Completion window max size
 set iskeyword-=_                            " Set underscore as a word separator
 set iskeyword-=-                            " Set dash as a word separator
-set timeoutlen=250                          " Setting ESC timeout
+set timeoutlen=300                          " Setting ESC timeout
 set incsearch                               " Incremental search
 set hidden                                  " Enables to switch between unsaved buffers and keep undo history
 set undolevels=100                          " How many undo commands to remember
