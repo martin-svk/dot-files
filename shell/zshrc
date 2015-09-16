@@ -145,3 +145,6 @@ fi
 # Setting default editor
 export EDITOR='nvim'
 export MYNVIMRC='~/.nvimrc'
+
+# Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
