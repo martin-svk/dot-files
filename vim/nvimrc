@@ -121,8 +121,8 @@ Plug 'wellle/targets.vim'
 Plug 'w0ng/vim-hybrid'
 " Molokai
 Plug 'tomasr/molokai'
-" Badwolf
-Plug 'sjl/badwolf'
+" Badfox
+Plug 'viccuad/badfox'
 " Pencil
 Plug 'reedes/vim-colors-pencil'
 
