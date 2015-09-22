@@ -473,7 +473,7 @@ autocmd BufWritePre * call utils#stripTrailingWhitespaces()
 "{{{
 " Load other scripts
 if filereadable(expand("~/dotfiles/vim/scripts/utils.vim"))
-  source ~/config/dot-files/vim/scripts/utils.vim
+  source ~/dotfiles/vim/scripts/utils.vim
 else
   echo "Update path to vim scripts!"
 endif
