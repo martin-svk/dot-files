@@ -29,13 +29,13 @@ install_oh_my_zsh () {
   sudo chsh
 }
 
-install_plug_vim() {
+install_plug_nvim() {
   curl -fLo ~/.nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 }
 
 install_nvim_folder() {
   mkdir -p ~/.nvim/autoload
-  install_plug_vim
+  install_plug_nvim
   ln -sf $current_path/nvim/dictionary.utf-8.add ~/.nvim/dictionary.utf-8.add
   ln -sf $current_path/nvim/ultisnips/ ~/.nvim/UltiSnips
 }
