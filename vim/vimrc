@@ -1,8 +1,9 @@
 " ######################################################################################################################
 " ### Author : Martin Toma <martin.toma.svk@gmail.com>                                                               ###
 " ######################################################################################################################
-" ### VIMRC Configuration focused on RAILS development                                                               ###
+" ### VIMRC Configuration primarly for use on virtuals                                                               ###
 " ### Date created : Tue Nov 12 14:14:56 CET 2013                                                                    ###
+" ### Date v.virtual : Tue Sep 22 10:55:15 CEST 2015                                                                 ###
 " ######################################################################################################################
 
 " ======================================================================================================================
@@ -22,27 +23,8 @@ call plug#begin('~/.vim/plugged')
 
 " Most common languages file types (syntax, indenting, etc.)
 Plug 'sheerun/vim-polyglot'
-" Needs linters to work properly (see https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers)
-Plug 'scrooloose/syntastic', { 'on': 'SyntasticToggleMode' }
-" Snippets support
-Plug 'SirVer/ultisnips'
 " Commenting support (gc)
 Plug 'tpope/vim-commentary'
-
-" -----------------------------------------------------
-" Ruby/Rails
-" -----------------------------------------------------
-
-" (:A, :R, :Rmigration, :Rextract)
-Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby', 'haml', 'slim'] }
-" Automatically inserts 'end' wisely
-Plug 'tpope/vim-endwise', { 'for': ['ruby', 'eruby'] }
-" Change between ruby 1.9 and 1.8 hash syntax
-Plug 'ck3g/vim-change-hash-syntax', { 'for': ['ruby', 'eruby'], 'on': 'ChangeHashSyntax' }
-" Rails I18 support
-Plug 'stefanoverna/vim-i18n', { 'for': ['ruby', 'eruby'], 'on': 'I18nTranslateString'  }
-" Ruby best practices checker
-Plug 'ngmy/vim-rubocop', { 'for': ['ruby', 'eruby'], 'on': 'RuboCop' }
 
 " -----------------------------------------------------
 " HTML/CSS
@@ -50,28 +32,13 @@ Plug 'ngmy/vim-rubocop', { 'for': ['ruby', 'eruby'], 'on': 'RuboCop' }
 
 " CSS color highlighter
 Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'sass', 'scss', 'less'] }
-" Sparkup, emmet alternative (<C-e> to expand expression)
-Plug 'rstacruz/sparkup', { 'for': ['html', 'xhtml'] }
-" Spacebars syntax
-Plug 'Slava/vim-spacebars', { 'for': ['html', 'xhtml'] }
 
 " -----------------------------------------------------
 " JavaScript / CoffeeScript
 " -----------------------------------------------------
 
-" Tern auto-completion engine (run 'npm install && npm install tern-coffee' after update)
-Plug 'marijnh/tern_for_vim', { 'for': ['javascript', 'coffee'] }
-" Tern for CoffeeScript
-Plug 'othree/tern_for_vim_coffee', { 'for': ['javascript', 'coffee'] }
 " JS libs syntax files, ember, angular, etc.
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffee'] }
-
-" -----------------------------------------------------
-" Other
-" -----------------------------------------------------
-
-" Latex
-Plug 'LaTeX-Box-Team/LaTeX-Box', { 'for': ['tex'] }
 
 " ---------------------------------------------------------------------------------------------------------------------
 " File, tags, undo, registers browsers
@@ -79,12 +46,6 @@ Plug 'LaTeX-Box-Team/LaTeX-Box', { 'for': ['tex'] }
 
 " Nerdtree file browser
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeFind', 'NERDTreeToggle'] }
-" Tagbar tag browser
-Plug 'majutsushi/tagbar'
-" Undo tree
-Plug 'mbbill/undotree', { 'on': ['UndotreeToggle'] }
-" Peekabo displays what registers contains
-Plug 'junegunn/vim-peekaboo'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Projects/Files/code navigation/management plugins
@@ -94,27 +55,15 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'Shougo/unite.vim'
 " Unite tags source
 Plug 'Shougo/unite-outline'
-" Easy motion
-Plug 'Lokaltog/vim-easymotion'
-" Extends :e, :new to create new directories in path
-Plug 'duggiefresh/vim-easydir'
 " RSI movements for vim
 Plug 'tpope/vim-rsi'
-" Intelligent buffer closing
-Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
 
 " ---------------------------------------------------------------------------------------------------------------------
 " External tools integration plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Git wrapper
-Plug 'tpope/vim-fugitive'
 " Git changes showed on line numbers
 Plug 'airblade/vim-gitgutter'
-" Gitk for vim
-Plug 'gregsexton/gitv', { 'on':  'Gitv' }
-" Git menu for Nerdtree
-Plug 'low-ghost/nerdtree-fugitive', { 'on': ['NERDTreeFind', 'NERDTreeToggle'] }
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Text insertion/manipulation
@@ -124,12 +73,8 @@ Plug 'low-ghost/nerdtree-fugitive', { 'on': ['NERDTreeFind', 'NERDTreeToggle'] }
 Plug 'ervandew/supertab'
 " Multiple cursors
 Plug 'terryma/vim-multiple-cursors'
-" Safely editing in isolation
-Plug 'ferranpm/vim-isolate', { 'on':  'Isolate' }
 " Surround (cs"')
 Plug 'tpope/vim-surround'
-" Easy alignment
-Plug 'godlygeek/tabular', { 'on':  'Tabularize' }
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Interface improving plugins
@@ -139,16 +84,8 @@ Plug 'godlygeek/tabular', { 'on':  'Tabularize' }
 Plug 'bling/vim-airline'
 " Highlight long lines
 Plug 'whatyouhide/vim-lengthmatters'
-" Hybrid
-Plug 'w0ng/vim-hybrid'
-" Gotham
-Plug 'whatyouhide/vim-gotham'
 " Molokai
 Plug 'tomasr/molokai'
-" Badwolf
-Plug 'sjl/badwolf'
-" Pencil
-Plug 'reedes/vim-colors-pencil'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Dependencies
@@ -160,8 +97,6 @@ Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'edsono/vim-matchit'
 " More . repeat functionality
 Plug 'tpope/vim-repeat'
-" Misc functions
-Plug 'xolox/vim-misc'
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " 1.2 End of plugin declaration
@@ -205,7 +140,7 @@ set showmatch                               " Show matching brackets when text i
 set list                                    " Display white chars by default (use <F7>)
 set spelllang=en_us                         " Set language to us English
 set backspace=indent,eol,start              " Set default behavior of backspace
-set spellfile=~/.nvim/dictionary.utf-8.add  " Use this file for spell checking
+set spellfile=~/.vim/dictionary.utf-8.add   " Use this file for spell checking
 set nospell                                 " Set spelling off by default
 set nostartofline                           " Prevent cursor from moving to beginning of line when switching buffers
 set virtualedit=block                       " To be able to select past EOL in visual block mode
@@ -236,20 +171,6 @@ set splitright
 set nobackup
 set nowb
 set noswapfile
-
-" -----------------------------------------------------
-" 2.4 Persistent undo, for non-git projects
-" -----------------------------------------------------
-if has('persistent_undo')
-  " Save undo history to file
-  set undofile
-  " undo files in folder
-  set undodir=~/.nvim/tmp/undo//
-  " Maximum number of undos
-  set undolevels=100000
-  " Save complete files for undo on reload if it has less lines than this
-  set undoreload=100000
-endif
 
 " -----------------------------------------------------
 " 2.5 Highlight whitespaces
@@ -325,9 +246,6 @@ nnoremap Q <nop>
 " 3.3 Vim defaults overriding
 " -----------------------------------------------------
 
-" Intelligent window cycling
-nmap <silent> <C-w><C-w> :call utils#intelligentCycling()<CR>
-
 " Visual linewise up and down by default
 noremap j gj
 noremap k gk
@@ -352,10 +270,6 @@ nnoremap Y y$
 " Quick replay q macro
 nnoremap Q @q
 
-" Mark with big M (default to middle of the screen overriden)
-" m is used as EasyMotion leader key
-nnoremap M m
-
 " Automatically reselect and yank overpasted text in visual mode
 xnoremap p pgvy
 
@@ -367,23 +281,16 @@ xnoremap p pgvy
 nnoremap ,w :w<CR>
 nnoremap <silent> ,q :q<CR>
 nnoremap <silent> ,d :bd<CR>
-nnoremap <silent> ,c :Sayonara!<CR>
 
 " Reformat whole file
 nnoremap <silent> ,f mzgg=G`z
-
-" Run current file
-nnoremap <silent> ,r :call utils#runCurrentFile()<CR>
-
-" Run terminal shell buffer in right vsplit
-nnoremap <silent> <leader>s :call utils#newVertTerm()<CR>
 
 " -----------------------------------------------------
 " 3.5 F-key actions
 " -----------------------------------------------------
 
-" NERDTree find current file
-nnoremap <silent> <F1> :call utils#nerdWrapper()<CR>
+" NERDTree
+nnoremap <silent> <F1> :NERDTreeToggle<CR>
 " Tagbar panel
 nnoremap <silent> <F2> :TagbarToggle<CR>
 " Paste mode toggling
@@ -396,12 +303,6 @@ nnoremap <silent> <F5> :source $MYVIMRC<CR>
 nnoremap <silent> <F6> :set nohlsearch!<CR> :set nohlsearch?<CR>
 " Toggle white characters visibility
 nnoremap <silent> <F7> :set list!<CR> :set list?<CR>
-" Toggle syntax checking
-nnoremap <F8> :SyntasticToggleMode<CR>
-" Toggle undo tree
-nnoremap <silent> <F9> :UndotreeToggle<CR>
-" Echo out toggles legend on <F12>
-nnoremap <F12> :call utils#showToggles()<CR>
 
 " -----------------------------------------------------
 " 3.6 Window / Buffer management
@@ -496,23 +397,7 @@ call unite#custom#profile('default', 'context', {
 let g:unite_source_line_enable_highlight=1
 
 " -----------------------------------------------------
-" 4.4 Syntastic (syntax checker)
-" -----------------------------------------------------
-" Overriding default linters
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_ruby_checkers=['mri']
-
-" Disable ugly signs
-let g:syntastic_enable_signs=1
-" Check on open as well as save
-let g:syntastic_check_on_open=1
-" Don't care about warnings
-let g:syntastic_quiet_messages={ 'level': 'warnings' }
-" Passive mode is default
-let g:syntastic_mode_map={ 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
-
-" -----------------------------------------------------
-" 4.5 Supertab
+" 4.4 Supertab
 " -----------------------------------------------------
 let g:SuperTabDefaultCompletionType='context'
 autocmd FileType *
@@ -521,27 +406,11 @@ autocmd FileType *
       \ endif
 
 " -----------------------------------------------------
-" 4.6 EasyMotion
-" -----------------------------------------------------
-" Turn on case sensitive feature
-let g:EasyMotion_smartcase=1
-
-" -----------------------------------------------------
-" 4.7 NERDTree
+" 4.5 NERDTree
 " -----------------------------------------------------
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
 let g:NERDTreeWinSize=45
-
-" -----------------------------------------------------
-" 4.8 Tagbar settings
-" -----------------------------------------------------
-let g:tagbar_compact=1
-
-" -----------------------------------------------------
-" 4.10 Undotree settings
-" -----------------------------------------------------
-let g:undotree_WindowLayout=3
 "}}}
 
 " ======================================================================================================================
@@ -590,29 +459,6 @@ nnoremap <silent> <leader>y :Unite -buffer-name=yank-history history/yank<CR>
 nnoremap <silent> <leader>r :Unite -buffer-name=registers register<CR>
 " Search in opened [w]indow splits
 nnoremap <silent> <leader>w :Unite -no-split -buffer-name=splits window<CR>
-
-" -----------------------------------------------------
-" 5.3 EasyMotion
-" -----------------------------------------------------
-" [m]otion prefix
-nmap m <Plug>(easymotion-prefix)
-
-" Seek 2 character motion
-nmap s <Plug>(easymotion-sl2)
-
-" Improved search
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-
-" -----------------------------------------------------
-" 5.4 Ultisnips
-" -----------------------------------------------------
-" Disable built-in cx-ck to be able to go backward
-inoremap <c-x><c-k> <nop>
-let g:UltiSnipsExpandTrigger='<c-j>'
-let g:UltiSnipsListSnippets='<c-l>'
-let g:UltiSnipsJumpForwardTrigger='<c-j>'
-let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 "}}}
 
 " ======================================================================================================================
@@ -628,18 +474,9 @@ if $TERM == 'xterm-256color' || 'screen-256color'
 endif
 
 if !has("gui_running")
-  " Color scheme based on time
-  if strftime("%H") < 15
-    let g:rehash256 = 1
-    let g:airline_theme='tomorrow'
-    colorscheme molokai
-  elseif strftime("%H") < 20
-    let g:airline_theme='tomorrow'
-    colorscheme hybrid
-  else
-    let g:airline_theme='gotham'
-    colorscheme gotham
-  endif
+  let g:rehash256 = 1
+  let g:airline_theme='tomorrow'
+  colorscheme molokai
 endif
 
 " Remove underline in folded lines
@@ -650,9 +487,6 @@ hi Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE
 " 7.0 filetype specific settings and autocommands
 " ======================================================================================================================
 "{{{
-autocmd FileType ruby,coffee,sass,scss,haml,slim,vim setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
-autocmd FileType html,htmldjango,xhtml,css,javascript,snippets setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
-
 " Keywordprg settings
 autocmd FileType vim setlocal keywordprg=:help
 
@@ -664,39 +498,16 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType c set omnifunc=ccomplete#Complete
 autocmd FileType java set omnifunc=javacomplete#Complete
-autocmd FileType tex set omnifunc=LatexBox_Complete
-" No +ruby compiled neovim for now
-" autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-" autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading=1
-" autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
-" autocmd FileType ruby,eruby let g:rubycomplete_rails=1
-" autocmd FileType ruby,eruby let g:rubycomplete_load_gemfile=1
 
 " make CSS omni-completion work for SASS and SCSS
 autocmd BufNewFile,BufRead *.scss set ft=scss.css
 autocmd BufNewFile,BufRead *.sass set ft=sass.css
-
-" use syntax complete if nothing else available
-if has("autocmd") && exists("+omnifunc")
-  autocmd Filetype *
-        \ if &omnifunc == "" |
-        \   setlocal omnifunc=syntaxcomplete#Complete |
-        \ else |
-        \   let g:SuperTabContextDefaultCompletionType='<c-x><c-u>' |
-        \ endif
-endif
 
 " Close vim if the last open window is nerdtree
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Remove trailing whitespaces automatically before save
 autocmd BufWritePre * call utils#stripTrailingWhitespaces()
-
-" Keyboard layout switching
-if g:utils_autoswitch_kb_layout == 1
-  autocmd InsertEnter * call utils#setSKKBLayout()
-  autocmd InsertLeave * call utils#setUSKBLayout()
-end
 "}}}
 
 " ======================================================================================================================
