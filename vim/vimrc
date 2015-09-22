@@ -235,6 +235,9 @@ nnoremap Q <nop>
 " 3.3 Vim defaults overriding
 " -----------------------------------------------------
 
+" Intelligent window cycling
+nmap <silent> <C-w><C-w> :call utils#intelligentCycling()<CR>
+
 " Visual linewise up and down by default
 noremap j gj
 noremap k gk
@@ -279,7 +282,7 @@ nnoremap <silent> ,f mzgg=G`z
 " -----------------------------------------------------
 
 " NERDTree
-nnoremap <silent> <F1> :NERDTreeToggle<CR>
+nnoremap <silent> <F1> :call utils#nerdWrapper()<CR>
 " Paste mode toggling
 nnoremap <silent> <F3> :set paste!<CR> :set paste?<CR>
 " Toggle spelling on and off
