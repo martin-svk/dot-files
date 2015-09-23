@@ -121,8 +121,6 @@ Plug 'w0ng/vim-hybrid'
 Plug 'tomasr/molokai'
 " Badfox
 Plug 'viccuad/badfox'
-" Pencil
-Plug 'reedes/vim-colors-pencil'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Dependencies
