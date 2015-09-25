@@ -394,10 +394,10 @@ nnoremap <silent> <F7> :set list!<CR> :set list?<CR>
 " nnoremap <silent> <F8> :Command<CR>
 " Free
 " nnoremap <silent> <F9> :Command<CR>
-" Run current file tests
-nnoremap <silent> <F10> :call neoterm#test#run('file')<cr>
-" Run current cursor test
-nnoremap <silent> <F11> :call neoterm#test#run('current')<cr>
+" Free
+" nnoremap <silent> <F10> :Command<CR>
+" Free
+" nnoremap <silent> <F11> :Command<CR>
 " Echo out toggles legend on <F12>
 nnoremap <F12> :call utils#showToggles()<CR>
 
@@ -584,28 +584,22 @@ let NERDTreeDirArrows=1
 let g:NERDTreeWinSize=45
 
 " -----------------------------------------------------
-" 4.4 Neoterm settings
-" -----------------------------------------------------
-let g:neoterm_position='vertical'
-let g:neoterm_size=80
-
-" -----------------------------------------------------
-" 4.5 Ultisnips settings
+" 4.4 Ultisnips settings
 " -----------------------------------------------------
 let g:UltiSnipsUsePythonVersion=3
 
 " -----------------------------------------------------
-" 4.6 Gitgutter settings
+" 4.5 Gitgutter settings
 " -----------------------------------------------------
 let g:gitgutter_max_signs=9999
 
 " -----------------------------------------------------
-" 4.7 Vim JSX highlighting settings
+" 4.6 Vim JSX highlighting settings
 " -----------------------------------------------------
 let g:jsx_ext_required=0
 
 " -----------------------------------------------------
-" 4.8 Lightline settings
+" 4.7 Lightline settings
 " -----------------------------------------------------
 let g:lightline = {
       \ 'colorscheme': 'powerline',
@@ -631,25 +625,12 @@ let g:lightline = {
       \ }
 
 " -----------------------------------------------------
-" 4.9 Vim sneak settings
-" -----------------------------------------------------
-let g:sneak#streak=1
-
-" -----------------------------------------------------
-" 4.10 Indexed search settings
-" -----------------------------------------------------
-let g:indexed_search_colors=0
-let g:indexed_search_shortmess=1
-let g:indexed_search_numbered_only=1
-let g:indexed_search_mappings=0
-
-" -----------------------------------------------------
-" 4.11 Color picker settings
+" 4.8 Color picker settings
 " -----------------------------------------------------
 let g:vcoolor_disable_mappings=1
 
 " -----------------------------------------------------
-" 4.12 Neomake settings
+" 4.9 Neomake settings
 " -----------------------------------------------------
 let g:neomake_verbose=0
 "}}}
@@ -748,7 +729,7 @@ hi Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE
 "}}}
 
 " ======================================================================================================================
-" 7.0 filetype specific settings and autocommands
+" 7.0 Filetype specific settings and autocommands
 " ======================================================================================================================
 "{{{
 autocmd FileType ruby,coffee,sass,scss,haml,slim,vim setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
@@ -756,15 +737,6 @@ autocmd FileType html,htmldjango,xhtml,css,javascript,javascript.jsx,snippets se
 
 " Keywordprg settings
 autocmd FileType vim setlocal keywordprg=:help
-
-" Omni complete function settings
-autocmd FileType html,markdown set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType c set omnifunc=ccomplete#Complete
-autocmd FileType tex set omnifunc=LatexBox_Complete
 
 " make CSS omni-completion work for SASS and SCSS
 autocmd BufNewFile,BufRead *.scss set ft=scss.css
