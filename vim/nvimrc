@@ -211,14 +211,16 @@ set noswapfile
 " 2.4 Persistent undo, for non-git projects
 " -----------------------------------------------------
 if has('persistent_undo')
-  " Save undo history to file
-  set undofile
-  " Undo files in folder (this folder must exists!)
-  set undodir=~/.nvim/tmp/undo//
-  " Maximum number of undos
-  set undolevels=100000
-  " Save complete files for undo on reload if it has less lines than this
-  set undoreload=100000
+  if !isdirectory('.git')
+    " Save undo history to file
+    set undofile
+    " Undo files in folder (this folder must exists!)
+    set undodir=~/.nvim/tmp/undo//
+    " Maximum number of undos
+    set undolevels=1000
+    " Save complete files for undo on reload if it has less lines than this
+    set undoreload=1000
+  endif
 endif
 
 " -----------------------------------------------------
