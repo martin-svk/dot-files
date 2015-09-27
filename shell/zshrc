@@ -113,6 +113,7 @@ alias rb='ruby'
 # Other
 # ------------------------------------------
 alias q='exit'
+alias pdf='zathura'
 alias xcopy='xclip -selection clipboard'
 alias xpaste='xclip -o'
 alias capless='xmodmap /home/martin/config/dot-files/other/Xmodmap'
