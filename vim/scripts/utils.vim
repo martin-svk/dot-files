@@ -167,7 +167,7 @@ function! utils#uniteFileRec()
 endfunction
 
 function! utils#uniteBuffers()
-  execute 'Unite -no-split -buffer-name=buffers -auto-preview -start-insert buffer'
+  execute 'Unite -no-split -buffer-name=buffers -start-insert buffer'
 endfunction
 
 function! utils#uniteTags()
