@@ -349,8 +349,8 @@ nnoremap Y y$
 " Quick replay q macro
 nnoremap Q @q
 
-" Cancel terminal mode with escape
-tnoremap <ESC> <C-\><C-n>
+" Cancel terminal mode with ,escape
+tnoremap ,<ESC> <C-\><C-n>
 
 " Automatically reselect and yank overpasted text in visual mode
 xnoremap p pgvy
@@ -400,8 +400,8 @@ nnoremap <silent> <F5> :source $MYNVIMRC<CR>
 nnoremap <silent> <F6> :set nohlsearch!<CR> :set nohlsearch?<CR>
 " Toggle white characters visibility
 nnoremap <silent> <F7> :set list!<CR> :set list?<CR>
-" Free
-" nnoremap <silent> <F8> :Command<CR>
+" New horizontal term buffer
+nnoremap <silent> <F8> :call utils#newVertTerm()<CR>
 " Free
 " nnoremap <silent> <F9> :Command<CR>
 " Free
@@ -734,6 +734,9 @@ endif
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
+" Highlight term cursor differently
+highlight TermCursor ctermfg=green guifg=green
+
 " Remove underline in folded lines
 hi Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE
 "}}}
@@ -753,7 +756,7 @@ autocmd BufNewFile,BufRead *.scss set ft=scss.css
 autocmd BufNewFile,BufRead *.sass set ft=sass.css
 
 " Close vim if the last open window is nerdtree
-autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Remove trailing whitespaces automatically before save
 autocmd BufWritePre * call utils#stripTrailingWhitespaces()

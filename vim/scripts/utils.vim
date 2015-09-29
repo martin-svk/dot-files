@@ -21,6 +21,10 @@ function! utils#intelligentCycling()
   if &buftype ==# 'nofile'
     call utils#intelligentCycling()
   endif
+  " If in terminal buffer start insert
+  if &buftype == 'terminal'
+    startinsert!
+  endif
 endfunction
 
 " Run current file
@@ -50,7 +54,7 @@ endfunction
 " Run built-in terminal in vertical split
 function! utils#newVertTerm()
   wincmd v
-  vertical resize 80
+  vertical resize 60
   :terminal
 endfunction
 
@@ -121,21 +125,21 @@ endfunction
 
 " Tab wrapper
 function! utils#insertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
+  let col = col('.') - 1
+  if !col || getline('.')[col - 1] !~ '\k'
+    return "\<tab>"
+  else
+    return "\<c-p>"
+  endif
 endfunction
 
 function! utils#insertTabOmniWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-x>\<c-o>"
-    endif
+  let col = col('.') - 1
+  if !col || getline('.')[col - 1] !~ '\k'
+    return "\<tab>"
+  else
+    return "\<c-x>\<c-o>"
+  endif
 endfunction
 
 " Simple notes management
