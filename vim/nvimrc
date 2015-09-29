@@ -734,6 +734,7 @@ elseif strftime("%H") < 20
   let g:airline_theme='tomorrow'
   colorscheme molokai
 else
+  set bg=dark
   let g:airline_theme='tomorrow'
   colorscheme hybrid
 endif
