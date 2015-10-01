@@ -60,6 +60,9 @@ Session.vim
 # Sublime
 *.sublime-project
 
+# Atom
+.tern-project
+
 # Other
 # ===========================
 
