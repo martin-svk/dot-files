@@ -52,7 +52,6 @@ Session.vim
 .*.swo
 .*.swp
 *~
-.tags/
 
 # Idea
 .idea/
@@ -68,3 +67,4 @@ Session.vim
 
 .rake_tasks
 .meteor/
+.tags
