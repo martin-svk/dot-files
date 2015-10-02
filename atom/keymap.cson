@@ -17,11 +17,14 @@
 # Vim mode mappings
 # =======================================================================================
 
+# ---------------------------------------------------------------------------------------
 # Normal mode mappings
+# ---------------------------------------------------------------------------------------
+
 'atom-text-editor:not(.mini).vim-mode:not(.insert-mode)':
   # Defaults overriding
   'H': 'vim-mode:move-to-first-character-of-line'
-  'L': 'vim-mode:move-to-last-nonblank-character-of-line-and-down'
+  'L': 'vim-mode:move-to-last-character-of-line'
   # Common tasks
   ', w': 'core:save'
   ', q': 'core:close'
@@ -49,6 +52,19 @@
   # Matching ruby block
   'ctrl-b': 'ruby-block:go-to-matching-line'
 
-
+# ---------------------------------------------------------------------------------------
 # Insert mode mappings
-# 'atom-text-editor:not(.mini).vim-mode.insert-mode':
+# ---------------------------------------------------------------------------------------
+
+'atom-text-editor:not(.mini).vim-mode.insert-mode':
+  'ctrl-a': 'vim-mode:move-to-first-character-of-line'
+
+# ---------------------------------------------------------------------------------------
+# Visual mode mappings
+# ---------------------------------------------------------------------------------------
+
+'atom-text-editor:not(.mini).vim-mode.visual-mode':
+  'H': 'vim-mode:move-to-first-character-of-line'
+  'L': 'vim-mode:move-to-last-nonblank-character-of-line-and-down'
+  # Multiple cursors
+  'ctrl-n': 'find-and-replace:select-next'
