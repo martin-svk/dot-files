@@ -2,6 +2,13 @@
 # Plugin mappings
 # =======================================================================================
 
+# Tree view mappings
+'.tree-view':
+  'o': 'tree-view:open-selected-entry'
+  'i': 'tree-view:open-selected-entry-down'
+  'v': 'tree-view:open-selected-entry-right'
+  'f1': 'tree-view:toggle-focus'
+
 # Jumpy mappings
 'atom-text-editor:not(.mini).vim-mode:not(.insert-mode):not(.jumpy-jump-mode)':
   ', ,': 'jumpy:toggle'
@@ -35,6 +42,13 @@
   'space y': 'clipboard-plus:toggle'
   'space s': 'snippets:available'
   'space g': 'project-find:show'
+  'space r': 'find-and-replace:show'
+  # Git diff
+  '] c': 'git-diff:move-to-next-diff'
+  '[ c': 'git-diff:move-to-previous-diff'
+  # Matching ruby block
+  'ctrl-b': 'ruby-block:go-to-matching-line'
+
 
 # Insert mode mappings
 # 'atom-text-editor:not(.mini).vim-mode.insert-mode':
