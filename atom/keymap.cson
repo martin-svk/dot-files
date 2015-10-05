@@ -31,9 +31,6 @@
   ', f': 'atom-beautify:beautify-editor'
   'up': 'pane:increase-size'
   'down': 'pane:decrease-size'
-  # Buffer management
-  '_': 'pane:show-previous-item'
-  '+': 'pane:show-next-item'
   # F-keys
   'f1': 'tree-view:toggle-focus'
   'f2': 'tree-view:reveal-active-file'
@@ -48,9 +45,15 @@
   'space r': 'find-and-replace:show'
   'space f': 'file-explorer:toggle-home-directory'
   'space e': 'symbols-view:toggle-project-symbols'
-  # Git diff
+  'space j': 'project-manager:list-projects'
+  # Buffer management
+  '_': 'pane:show-previous-item'
+  '+': 'pane:show-next-item'
+  # Git hunks
   '] c': 'git-diff:move-to-next-diff'
   '[ c': 'git-diff:move-to-previous-diff'
+  # Linter (error) hunks
+  '] e': 'linter:next-error'
   # Matching ruby block
   'ctrl-b': 'ruby-block:go-to-matching-line'
 
@@ -60,6 +63,7 @@
 
 'atom-text-editor:not(.mini).vim-mode.insert-mode':
   'ctrl-a': 'vim-mode:move-to-first-character-of-line'
+  'ctrl-e': 'vim-mode:move-to-last-character-of-line'
 
 # ---------------------------------------------------------------------------------------
 # Visual mode mappings
@@ -68,5 +72,4 @@
 'atom-text-editor:not(.mini).vim-mode.visual-mode':
   'H': 'vim-mode:move-to-first-character-of-line'
   'L': 'vim-mode:move-to-last-nonblank-character-of-line-and-down'
-  # Multiple cursors
-  'ctrl-n': 'find-and-replace:select-next'
+  'ctrl-n': 'find-and-replace:select-next' # Multiple cursors
