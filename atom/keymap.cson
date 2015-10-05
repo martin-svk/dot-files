@@ -46,6 +46,8 @@
   'space s': 'snippets:available'
   'space g': 'project-find:show'
   'space r': 'find-and-replace:show'
+  'space f': 'file-explorer:toggle-home-directory'
+  'space e': 'symbols-view:toggle-project-symbols'
   # Git diff
   '] c': 'git-diff:move-to-next-diff'
   '[ c': 'git-diff:move-to-previous-diff'
