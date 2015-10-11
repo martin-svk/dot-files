@@ -46,9 +46,7 @@ Plug 'p0deje/vim-ruby-interpolation', { 'for': ['ruby'] }
 " -----------------------------------------------------
 
 " JS libs syntax files, ember, angular, etc.
-" Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffee'] }
-" JS ES6 syntax highlighting
-Plug 'othree/yajs.vim', { 'for': ['javascript', 'coffee'] }
+Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffee'] }
 " SCSS syntax
 Plug 'cakebaker/scss-syntax.vim', { 'for': ['scss'] }
 " Sparkup, emmet alternative (<C-e> to expand expression)
