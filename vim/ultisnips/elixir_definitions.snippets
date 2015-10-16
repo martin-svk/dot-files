@@ -7,6 +7,10 @@ def $1 do
 end
 endsnippet
 
+snippet defi "inline function definition"
+def $1, do: $2
+endsnippet
+
 snippet defm "module definition"
 defmodule $1 do
 	$2
@@ -17,4 +21,8 @@ snippet defp "private function definition"
 defp $1 do
 	$2
 end
+endsnippet
+
+snippet defpi "inline private function definition"
+defp $1, do: $2
 endsnippet
