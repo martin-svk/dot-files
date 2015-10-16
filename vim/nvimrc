@@ -474,9 +474,6 @@ command! FormatJSON %!python -m json.tool
 " Multipurpose tab key (inspired by Gary Bernhardt)
 inoremap <expr> <tab> utils#insertTabWrapper()
 inoremap <s-tab> <C-n>
-
-" Omni complete with ,TAB
-inoremap ,<tab> <C-x><C-o>
 "}}}
 
 " ======================================================================================================================
