@@ -67,7 +67,7 @@ xterm*fadeColor:   snow
 xterm*fading:      20
 
 xterm*color0:      blackestgravel
-xterm*color8:      coal
+xterm*color8:      gravel
 xterm*color1:      taffy
 xterm*color9:      taffy
 xterm*color2:      lime
