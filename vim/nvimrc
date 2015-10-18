@@ -380,7 +380,7 @@ nnoremap ,yy "+yy
 nnoremap ,p "+p
 
 " Reformat whole file
-nnoremap <silent> ,f mzgg=G`z
+nnoremap <silent> ,f :call utils#formatFile()<CR>
 
 " -----------------------------------------------------
 " 3.5 F-key actions

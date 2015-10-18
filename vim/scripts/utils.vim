@@ -200,3 +200,19 @@ endfunction
 function! utils#uniteCustomMenu()
   execute 'Unite menu'
 endfunction
+
+" Format function
+function! utils#formatFile()
+  if &filetype ==? 'javascript.jsx'
+    let command = '%!js-beautify -f -'
+  elseif &filetype ==? 'ruby'
+    let command = '%!rbeautify -s -c 2'
+  else
+    " Basic vim format fallback
+    normal mzgg=G`z
+  endif
+
+  if exists('command')
+    execute command
+  endif
+endfunction
