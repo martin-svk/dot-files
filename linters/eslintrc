@@ -1,8 +1,9 @@
+# vim: ft=json
 {
   "rules": {
     "indent": [
       2,
-      2
+      4
     ],
     "quotes": [
       1,
