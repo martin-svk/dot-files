@@ -203,16 +203,18 @@ endfunction
 
 " Format function
 function! utils#formatFile()
-  if &filetype ==? 'javascript.jsx'
-    let command = '%!js-beautify -f -'
+  let command_prefix = '%!'
+
+  if &filetype ==? 'javascript.jsx' || &filetype ==? 'json'
+    let command = 'js-beautify -f -'
   elseif &filetype ==? 'ruby'
-    let command = '%!rbeautify -s -c 2'
+    let command = 'rbeautify -s -c 2'
   else
     " Basic vim format fallback
     normal mzgg=G`z
   endif
 
   if exists('command')
-    execute command
+    execute command_prefix . command
   endif
 endfunction

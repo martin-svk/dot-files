@@ -95,7 +95,7 @@ Plug 'tpope/vim-surround'
 " Easy alignment
 Plug 'godlygeek/tabular', { 'on':  'Tabularize' }
 " Safely editing in isolation
-Plug 'ferranpm/vim-isolate', { 'on':  'Isolate' }
+Plug 'ferranpm/vim-isolate', { 'on':  ['Isolate', 'UnIsolate'] }
 " Software capslock (<C-L> in insert mode)
 Plug 'tpope/vim-capslock'
 " Additional text objects
@@ -379,7 +379,7 @@ vnoremap ,y "+y
 nnoremap ,yy "+yy
 nnoremap ,p "+p
 
-" Reformat whole file
+" Reformat whole or selection from file
 nnoremap <silent> ,f :call utils#formatFile()<CR>
 
 " -----------------------------------------------------
@@ -708,6 +708,12 @@ let g:UltiSnipsExpandTrigger='<C-j>'
 let g:UltiSnipsListSnippets='<C-l>'
 let g:UltiSnipsJumpForwardTrigger='<C-j>'
 let g:UltiSnipsJumpBackwardTrigger='<C-k>'
+
+" -----------------------------------------------------
+" 5.3 Isolate
+" -----------------------------------------------------
+vnoremap ,i :Isolate<CR>
+nnoremap ,u :UnIsolate<CR>
 "}}}
 
 " ======================================================================================================================
