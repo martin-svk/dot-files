@@ -507,7 +507,7 @@ if executable('ag')
   let g:unite_source_rec_async_command =
         \ ['ag', '--follow', '--nocolor', '--nogroup',
         \  '--ignore', '.git', '--ignore', '.hg', '--ignore', '.svn', '--ignore', '.bzr',
-        \  '--ignore', '.meteor', '--ignore', '**/bower_components/',
+        \  '--ignore', '.meteor', '--ignore', '**/bower_components/', '--ignore', '**/node_modules/',
         \  '--hidden', '-g', '']
 endif
 
