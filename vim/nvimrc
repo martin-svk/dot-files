@@ -382,6 +382,10 @@ nnoremap ,p "+p
 " Reformat whole or selection from file
 nnoremap <silent> ,f :call utils#formatFile()<CR>
 
+" Move visual block
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
 " -----------------------------------------------------
 " 3.5 F-key actions
 " -----------------------------------------------------
