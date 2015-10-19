@@ -1,6 +1,16 @@
 # --------------------------------
 # Elixir lang basic snippets
 # --------------------------------
+snippet req "require statement"
+require $0
+endsnippet
+
 snippet p "pipe"
 |> $0
+endsnippet
+
+snippet test "test block"
+test "${1:test description}" do
+	${2:assert 1 == 1}
+end
 endsnippet

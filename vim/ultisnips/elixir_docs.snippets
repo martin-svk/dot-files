@@ -1,0 +1,19 @@
+# --------------------------------
+# Elixir docs snippets
+# --------------------------------
+snippet doc "documentation block"
+@doc ~S"""
+${1:Function description. Use `backtics` for
+highlight.}
+
+## Examples
+
+iex> ${2:Module.function(parameter)}
+${3:return value}
+
+"""
+endsnippet
+
+snippet spec "spec block"
+@spec ${1:function}(${2:input_type}) :: ${3:return_type}
+endsnippet
