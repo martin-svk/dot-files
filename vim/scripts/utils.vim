@@ -152,7 +152,6 @@ function! utils#useOmniTabWrapper()
 endfunction
 
 " Unite commands wrappers
-
 function! utils#uniteSources()
   execute 'Unite -start-insert source'
 endfunction
@@ -207,11 +206,26 @@ function! utils#formatFile()
 
   if &filetype ==? 'javascript.jsx' || &filetype ==? 'json'
     let command = 'js-beautify -f -'
+  elseif &filetype ==? 'json'
+    let command = 'python -m json.tool'
   elseif &filetype ==? 'ruby'
     let command = 'rbeautify -s -c 2'
   else
     " Basic vim format fallback
     normal mzgg=G`z
+  endif
+
+  if exists('command')
+    execute command_prefix . command
+  endif
+endfunction
+
+" Annotate file function (only ruby support for now)
+function! utils#annotateFile()
+  let command_prefix = '%!'
+
+  if &filetype ==? 'ruby'
+    let command = 'seeing_is_believing -x'
   endif
 
   if exists('command')

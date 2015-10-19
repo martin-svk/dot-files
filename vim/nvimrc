@@ -379,9 +379,6 @@ vnoremap ,y "+y
 nnoremap ,yy "+yy
 nnoremap ,p "+p
 
-" Reformat whole or selection from file
-nnoremap <silent> ,f :call utils#formatFile()<CR>
-
 " Move visual block
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
@@ -451,9 +448,6 @@ cab Q q
 " 3.7 Custom commands and functions
 " -----------------------------------------------------
 
-" Run current file
-nnoremap <silent> ,r :call utils#runCurrentFile()<CR>
-
 " Generate tags definitions
 command! GenerateCT :call utils#generateCtags()
 command! GenerateJSCT :call utils#generateJSCtags()
@@ -468,8 +462,17 @@ command! -nargs=1 Note :call utils#createNote(<f-args>)
 " Open note
 command! Notes :call utils#openNotes()
 
-" Format JSON
-command! FormatJSON %!python -m json.tool
+" Run current file
+command! Run :call utils#runCurrentFile()
+nnoremap <silent> ,r :Run<CR>
+
+" Reformat whole or selection from file
+command! Format :call utils#formatFile()
+nnoremap <silent> ,f :Format<CR>
+
+" Annotate file (show values in special # => comments)
+command! Annotate :call utils#annotateFile()
+nnoremap <silent> ,a :Annotate<CR>
 
 " -----------------------------------------------------
 " 3.8 TAB autocomplete mappings
@@ -536,13 +539,14 @@ let g:unite_source_menu_menus.utils = {
       \ }
 let g:unite_source_menu_menus.utils.command_candidates = [
       \       ['Color picker', 'VCoolor'],
-      \       ['Format JSON', 'FormatJSON'],
+      \       ['Annotate file', 'Annotate'],
+      \       ['Format file', 'Format'],
+      \       ['Run file', 'Run'],
+      \       ['Rename file', 'Rename'],
       \       ['Generate Ctags', 'GenerateCT'],
       \       ['Generate JS Ctags', 'GenerateJSCT'],
       \       ['Generate Ruby/Rails Ctags', 'GenerateRailsCT'],
-      \       ['Rename file', 'Rename'],
       \       ['Show notes', 'Notes'],
-      \       ['Show search status', 'ShowSearchIndex'],
       \     ]
 
 " Git menu
