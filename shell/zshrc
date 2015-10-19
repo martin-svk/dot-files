@@ -93,14 +93,14 @@ alias ssredis='sudo service redis-server start'
 # ------------------------------------------
 alias v='nvim'
 alias g='git'
-alias t='tmux attach -t main || tmux new -s main'
+alias ta='tmux attach -t main || tmux new -s main'
+alias td='tmux detach'
 alias vim='vim -X'
 alias msql='mysql -uroot -p'
 
 # ------------------------------------------
 # SSH servers
 # ------------------------------------------
-alias s-tabber='ssh toma@tabber.fiit.stuba.sk'
 alias s-wr='ssh root@martintoma.com'
 alias s-wd='ssh deploy@martintoma.com'
 
@@ -127,6 +127,10 @@ alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date
 # 256 color support
 export TERM=xterm-256color
 
+# Setting default editor
+export EDITOR='nvim'
+export MYNVIMRC='~/.nvimrc'
+
 # Add my bin folders to PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -145,11 +149,11 @@ if [ -d $HOME/lib/elixir/bin ]; then
 fi
 
 # Fuzzy finder
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Setting default editor
-export EDITOR='nvim'
-export MYNVIMRC='~/.nvimrc'
+if [ -f ~/.fzf.zsh ]; then
+  source ~/.fzf.zsh
+fi
 
 # Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+if [ -d /usr/local/heroku/bin ]; then
+  export PATH=/usr/local/heroku/bin:$PATH
+fi
