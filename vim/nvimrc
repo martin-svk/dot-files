@@ -40,6 +40,8 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby', 'haml', 'slim'] }
 " String interpolation helper
 Plug 'p0deje/vim-ruby-interpolation', { 'for': ['ruby'] }
+" Refactoring tools
+Plug 'ecomba/vim-ruby-refactoring', { 'for': ['ruby'] }
 
 " -----------------------------------------------------
 " HTML/CSS/JS
@@ -651,6 +653,11 @@ let g:vcoolor_disable_mappings=1
 " 4.9 Neomake settings
 " -----------------------------------------------------
 let g:neomake_verbose=0
+
+" -----------------------------------------------------
+" 4.10 Ruby refactoring settings
+" -----------------------------------------------------
+let g:ruby_refactoring_map_keys=0
 "}}}
 
 " ======================================================================================================================
