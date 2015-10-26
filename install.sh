@@ -2,12 +2,8 @@
 
 #-----------------------------------------------------
 # @author Martin Toma
-# @version 5.0
-# @date Fri Nov 15 13:13:22 CET 2013
-# @date of v2 Sat Aug  2 14:46:00 CEST 2014
-# @date of v3 Sun Oct 12 17:07:31 CEST 2014
-# @date of v4 Fri Feb 27 22:00:54 CET 2015
-# @date of v5 Thu May 28 21:14:31 CEST 2015
+# @version 5.1
+# @creted Fri Nov 15 13:13:22 CET 2013
 #-----------------------------------------------------
 
 # Dont continue on error
@@ -30,14 +26,14 @@ install_oh_my_zsh () {
 }
 
 install_plug_nvim() {
-  curl -fLo ~/.nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  curl -fLo ~/config/nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 }
 
 install_nvim_folder() {
-  mkdir -p ~/.nvim/autoload
+  mkdir -p ~/.config/nvim/autoload
   install_plug_nvim
-  ln -sf $current_path/nvim/dictionary.utf-8.add ~/.nvim/dictionary.utf-8.add
-  ln -sf $current_path/nvim/ultisnips/ ~/.nvim/UltiSnips
+  ln -sf $current_path/nvim/dictionary.utf-8.add ~/config/nvim/dictionary.utf-8.add
+  ln -sf $current_path/nvim/ultisnips/ ~/config/nvim/UltiSnips
 }
 
 #-----------------------------------------------------
@@ -103,26 +99,26 @@ fi
 #-----------------------------------------------------
 # Neovim, dictionary, ultisnips
 #-----------------------------------------------------
-echo -n "[ nvimrc ]"
+echo -n "[ init.vim ]"
 
 if !command_exists nvim; then
   sudo add-apt-repository ppa:neovim-ppa/unstable && sudo apt-get update && sudo apt-get install -y neovim
 fi
 
-if [ ! -f ~/.nvimrc ]; then
+if [ ! -f ~/config/nvim/init.vim ]; then
   echo "    Creating!"
-  ln -sf $current_path/vim/nvimrc ~/.nvimrc
+  ln -sf $current_path/vim/init.vim ~/config/nvim/init.vim
 else
   echo "    Deleting old one!"
-  rm ~/.nvimrc
-  ln -sf $current_path/vim/nvimrc ~/.nvimrc
+  rm ~/config/nvim/init.vim
+  ln -sf $current_path/vim/init.vim ~/config/nvim/init.vim
 fi
 
-if [ ! -d ~/.nvim ]; then
-  mkdir ~/.nvim
+if [ ! -d ~/config/nvim ]; then
+  mkdir ~/config/nvim
   install_nvim_folder
 else
-  rm -rf ~/.nvim
+  rm -rf ~/config/nvim
   install_nvim_folder
 fi
 
