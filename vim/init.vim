@@ -792,9 +792,6 @@ if g:utils_autoswitch_kb_layout == 1
   autocmd InsertLeave * call utils#setUSKBLayout()
 end
 
-" Make neovim terminal buffers unlisted
-autocmd TermOpen * setlocal nobuflisted
-
 " Run linters after save
 autocmd BufWritePost *.js Neomake eslint
 autocmd BufWritePost *.rb Neomake rubocop
