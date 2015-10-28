@@ -129,7 +129,7 @@ export TERM=xterm-256color
 
 # Setting default editor
 export EDITOR='nvim'
-export MYNVIMRC='~/.nvimrc'
+export MYNVIMRC='~/config/nvim/init.vim'
 
 # Add my bin folders to PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
