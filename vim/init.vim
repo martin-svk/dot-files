@@ -219,7 +219,7 @@ if has('persistent_undo')
     " Save undo history to file
     set undofile
     " Undo files in folder (this folder must exists!)
-    set undodir=~/.nvim/tmp/undo//
+    set undodir=~/.config/nvim/tmp/undo//
     " Maximum number of undos
     set undolevels=1000
     " Save complete files for undo on reload if it has less lines than this
