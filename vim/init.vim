@@ -1,7 +1,7 @@
 " ######################################################################################################################
 " ### Author : Martin Toma <martin.toma.svk@gmail.com>                                                               ###
 " ######################################################################################################################
-" ### NeoVim Configuration focused on Web development                                                                ###
+" ### Neovim Configuration focused on Web development                                                                ###
 " ### Date created : Tue Oct 14 19:58:11 CET 2014                                                                    ###
 " ### Vimmer since : Tue Nov 12 14:14:56 CET 2013                                                                    ###
 " ######################################################################################################################
@@ -23,7 +23,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Most common languages file types (syntax, indenting, etc.)
 Plug 'sheerun/vim-polyglot'
-" Asynchronous maker and linter (async syntastic, needs linters to work properly)
+" Asynchronous maker and linter (Asynchronous runner, needs linters to work properly)
 Plug 'benekastah/neomake', { 'on': ['Neomake'] }
 " Automatically closing stuff
 Plug 'cohama/lexima.vim'
@@ -162,7 +162,7 @@ set showmode                                " Always show mode
 set wildmenu                                " Better auto-complete of ex commands
 set textwidth=120                           " Text width is 120 chars
 set autoread                                " Automatically reload change files on disk
-set nocursorline                            " Dont set default cursor line
+set nocursorline                            " Don't set default cursor line
 set cmdheight=1                             " Command line height
 set pumheight=10                            " Completion window max size
 set iskeyword-=_                            " Set underscore as a word separator
@@ -181,8 +181,6 @@ set showmatch                               " Show matching brackets when text i
 set list                                    " Display white chars by default (use <F7>)
 set spelllang=en_us                         " Set language to us English
 set backspace=indent,eol,start              " Set default behavior of backspace
-set spellfile=~/.nvim/dictionary.utf-8.add  " Use this file for spell checking
-set nospell                                 " Set spelling off by default
 set nostartofline                           " Prevent cursor from moving to beginning of line when switching buffers
 set virtualedit=block                       " To be able to select past EOL in visual block mode
 set nojoinspaces                            " No extra space when joining a line which ends with . ? !
@@ -193,7 +191,7 @@ set updatetime=1000                         " Update time used to create swap fi
 set mouse=                                  " Disable mouse integration
 
 " -----------------------------------------------------
-" 2.1 Intendation settings (2 spaces tabs)
+" 2.1 Indentation settings (2 spaces tabs)
 " -----------------------------------------------------
 set autoindent
 set expandtab
@@ -212,6 +210,12 @@ set splitright
 set nobackup
 set nowb
 set noswapfile
+
+" -----------------------------------------------------
+" 2.4 Spelling settings
+" -----------------------------------------------------
+set spellfile=~/.config/nvim/dictionary.utf-8.add
+set nospell " Off by default
 
 " -----------------------------------------------------
 " 2.4 Persistent undo, for non-git projects
@@ -252,7 +256,7 @@ set fillchars="fold: "
 " 2.8 Omni completion settings
 " -----------------------------------------------------
 
-" Dont show preview scratch buffers
+" Don't show preview scratch buffers
 set completeopt-=preview
 
 " -----------------------------------------------------
@@ -362,11 +366,11 @@ xnoremap p pgvy
 " Omni-complete based on ctags
 inoremap <C-x><C-]> <C-]>
 
-" Dont yank to default register when changing something
+" Don't yank to default register when changing something
 nnoremap c "xc
 xnoremap c "xc
 
-" Dont copy overpasted text in visual mode
+" Don't copy over-pasted text in visual mode
 xnoremap p "_dP
 
 " -----------------------------------------------------
@@ -393,13 +397,13 @@ vnoremap K :m '<-2<CR>gv=gv
 
 " NERDTree wrapper
 nnoremap <silent> <F1> :call utils#nerdWrapper()<CR>
-" Run Neomake (insert param)
+" Run Neomake (run command asynchronously)
 nnoremap <silent> <F2> :Neomake
 " Paste mode toggling
 nnoremap <silent> <F3> :set paste!<CR> :set paste?<CR>
 " Toggle spelling on and off
 nnoremap <silent> <F4> :set spell!<CR> :set spell?<CR>
-" Source (reload) nvimrc
+" Source (reload configuration)
 nnoremap <silent> <F5> :source $MYNVIMRC<CR>
 " Toggle search highlight
 nnoremap <silent> <F6> :set nohlsearch!<CR> :set nohlsearch?<CR>
@@ -431,7 +435,7 @@ nnoremap <silent> + :bn<CR>
 nnoremap <silent> _ :bp<CR>
 
 " -----------------------------------------------------
-" 3.7 Command abbrevations and mappings
+" 3.7 Command abbreviations and mappings
 " -----------------------------------------------------
 
 " Quiting and saving all
@@ -457,7 +461,7 @@ command! GenerateCT :call utils#generateCtags()
 command! GenerateJSCT :call utils#generateJSCtags()
 command! GenerateRubyCT :call utils#generateRubyCtags()
 
-" Rename currecnt file
+" Rename current file
 command! Rename :call utils#renameFile()<CR>
 
 " Create new note
@@ -493,7 +497,7 @@ inoremap <s-tab> <C-n>
 "{{{
 
 " -----------------------------------------------------
-" 4.1 My utils settings
+" 4.1 Auto-switch keyboard layout
 " -----------------------------------------------------
 let g:utils_autoswitch_kb_layout=0
 
