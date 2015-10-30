@@ -5,18 +5,18 @@ Below I present the most interesting parts of my config files. Feel free to be i
 
 ## What's included:
 
-* NeoVim (Vim/GVim)
-* ZSH (oh-my-zsh)
+* NeoVim (Vim/GVim/IdeaVim)
 * Tmux
 * Git
+* ZSH (oh-my-zsh)
 * XTerm (Xresources)
 * Ruby/Rails utilities (pry, gem, irb)
-* Other CLI utilities (Ag search, Xmodmap, Devilspie2)
+* Other CLI utilities (Ag search, Devilspie2)
 
 ## NEOVIM / VIM
 
-I am currently switching between [neovim](http://neovim.org/) and vim (gvim) and synchronizing my
-rc files as well. Below are the most interesting parts of my [n]vimrc file.
+I am primary using [neovim](http://neovim.org/) which is about to hit it's first public
+release (version 0.1). Below are the most interesting parts of my [n]vimrc file.
 
 ### Plugins
 
@@ -26,26 +26,28 @@ Language/syntax files: [vim-polyglot](https://github.com/sheerun/vim-polyglot)
 ### [Neo]Vim defaults improving
 
 ```viml
-" Intelligent window cycling (ignore NERDTree, TagBar, etc. buffers)
+" Intelligent window cycling
 nmap <silent> <C-w><C-w> :call utils#intelligentCycling()<CR>
 
-" Visual linewise up and down by default
+" Visual linewise up and down by default (and use gj gk to go quicker)
 noremap j gj
 noremap k gk
+nnoremap gj 5j
+nnoremap gk 5k
 
 " When jump to next match also center screen
 noremap n nzz
 noremap N Nzz
 
 " Same when moving up and down
-noremap <c-d> <c-d>zz
-noremap <c-u> <c-u>zz
+noremap <C-d> <C-d>zz
+noremap <C-u> <C-u>zz
 
 " Remap H and L (top, bottom of screen to left and right end of line)
 nnoremap H ^
 nnoremap L $
 vnoremap H ^
-vnoremap L $
+vnoremap L g_
 
 " More logical Y (defaul was alias for yy)
 nnoremap Y y$
@@ -53,43 +55,37 @@ nnoremap Y y$
 " Quick replay q macro
 nnoremap Q @q
 
-" Mark with big M (default to middle of the screen overriden)
-" m is used as EasyMotion leader key
-nnoremap M m
+" Cancel terminal mode with ,escape
+tnoremap ,<ESC> <C-\><C-n>
 
-" Cancel neovim terminal mode with escape
-tnoremap <ESC> <c-\><c-n>
+" Automatically reselect and yank overpasted text in visual mode
+xnoremap p pgvy
+
+" Omni-complete based on ctags
+inoremap <C-x><C-]> <C-]>
+
+" Dont yank to default register when changing something
+nnoremap c "xc
+xnoremap c "xc
+
+" Dont copy overpasted text in visual mode
+xnoremap p "_dP
 ```
 
-#### Autocomplete [(Supertab)](https://github.com/ervandew/supertab)
+#### Autocomplete (Simple tab wrapper + Ctags)
 
 ```VimL
-" Use context mode
-let g:SuperTabDefaultCompletionType='context'
-autocmd FileType *
-      \ if &omnifunc != '' |
-      \   call SuperTabChain(&omnifunc, "<c-p>") |
-      \ endif
+" Multipurpose tab key (inspired by Gary Bernhardt)
+inoremap <expr> <tab> utils#insertTabWrapper()
+inoremap <s-tab> <C-n>
 
-" Omni complete function settings
-autocmd FileType html,markdown set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType c set omnifunc=ccomplete#Complete
-autocmd FileType java set omnifunc=javacomplete#Complete
-autocmd FileType tex set omnifunc=LatexBox_Complete
+" Ctags settings
+set tags+=.tags
 
-" Use omni-complete where available
-if has("autocmd") && exists("+omnifunc")
-  autocmd Filetype *
-        \ if &omnifunc == "" |
-        \   setlocal omnifunc=syntaxcomplete#Complete |
-        \ else |
-        \   let g:SuperTabContextDefaultCompletionType='<c-x><c-u>' |
-        \ endif
-endif
+" Generate tags definitions
+command! GenerateCT :call utils#generateCtags()
+command! GenerateJSCT :call utils#generateJSCtags()
+command! GenerateRubyCT :call utils#generateRubyCtags()
 ```
 
 #### Fuzzy file/buffer/text finder [(Unite)](https://github.com/Shougo/unite.vim)
@@ -98,7 +94,6 @@ endif
 " Matcher settings
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
-call unite#custom#source('file_rec/async','sorters','sorter_rank')
 
 " Track yank history
 let g:unite_source_history_yank_enable=1
@@ -108,11 +103,13 @@ if executable('ag')
   let g:unite_source_grep_command='ag'
   let g:unite_source_grep_default_opts='--nocolor --line-numbers --nogroup -S -C0'
   let g:unite_source_grep_recursive_opt=''
-  " Ignore vcs files
-  let g:unite_source_rec_async_command='ag --nocolor --nogroup --ignore ".hg" --ignore ".svn" --ignore ".git" --ignore
-        \ ".bzr" --ignore ".meteor"--hidden -g ""'
-  let g:unite_source_file_async_command='ag --nocolor --nogroup --ignore ".hg" --ignore ".svn" --ignore ".git" --ignore
-        \ ".bzr" --ignore ".meteor" --hidden -g ""'
+
+  " Set rec source command
+  let g:unite_source_rec_async_command =
+        \ ['ag', '--follow', '--nocolor', '--nogroup',
+        \  '--ignore', '.git', '--ignore', '.hg', '--ignore', '.svn', '--ignore', '.bzr',
+        \  '--ignore', '.meteor', '--ignore', '**/bower_components/', '--ignore', '**/node_modules/',
+        \  '--hidden', '-g', '']
 endif
 
 " Ignore wildignore files
@@ -127,78 +124,85 @@ call unite#custom#profile('default', 'context', {
 " Add syntax highlighting
 let g:unite_source_line_enable_highlight=1
 
-" Custom mappings for the unite buffer
-autocmd FileType unite call s:unite_settings()
-function! s:unite_settings()
-  " Play nice with supertab
-  let b:SuperTabDisabled=1
-  " Enable navigation with control-j and control-k in insert mode
-  imap <silent> <buffer> <C-j> <Plug>(unite_select_next_line)
-  imap <silent> <buffer> <C-k> <Plug>(unite_select_previous_line)
-  " Runs 'splits' action by <C-s> and <C-v>
-  imap <silent> <buffer> <expr> <C-s> unite#do_action('split')
-  imap <silent> <buffer> <expr> <C-v> unite#do_action('vsplit')
-  " Exit with escape
-  nmap <silent> <buffer> <ESC> <Plug>(unite_exit)
-  " Mark candidates
-  vmap <silent> <buffer> m <Plug>(unite_toggle_mark_selected_candidates)
-  nmap <silent> <buffer> m <Plug>(unite_toggle_mark_current_candidate)
-endfunction
+" Custom unite menus
+let g:unite_source_menu_menus = {}
 
-" [U]nite menu
-nnoremap <silent> <leader>u :Unite -start-insert source<CR>
-" [O]pen files recursively
-nnoremap <silent> <leader>o :Unite -no-split -buffer-name=project-files -start-insert file_rec/async:!<CR>
-" Search between open files - [b]uffers
-nnoremap <silent> <leader>b :Unite -no-split -buffer-name=buffers buffer<CR>
-" Search in current file tags
-nnoremap <silent> <leader>t :Unite -no-split -buffer-name=tags -start-insert outline<CR>
-" Search for term in cwd file ([g]rep)
-nnoremap <silent> <leader>g :Unite -silent grep:.<CR>
-" Search in edit [h]istory
-nnoremap <silent> <leader>h :Unite -buffer-name=edit-history change<CR>
-" Search in [l]ines on current buffer
-nnoremap <silent> <leader>l :Unite -no-split -buffer-name=line-search -start-insert line<CR>
-" Search in [y]ank history
-nnoremap <silent> <leader>y :Unite -buffer-name=yank-history history/yank<CR>
-" Search in [r]egisters
-nnoremap <silent> <leader>r :Unite -buffer-name=registers register<CR>
-" Search in opened [w]indow splits
-nnoremap <silent> <leader>w :Unite -no-split -buffer-name=splits window<CR>
+" Utils menu
+let g:unite_source_menu_menus.utils = {
+      \     'description' : 'Utility commands',
+      \ }
+let g:unite_source_menu_menus.utils.command_candidates = [
+      \       ['Color picker', 'VCoolor'],
+      \       ['Annotate file', 'Annotate'],
+      \       ['Format file', 'Format'],
+      \       ['Run file', 'Run'],
+      \       ['Rename file', 'Rename'],
+      \       ['Generate Ctags', 'GenerateCT'],
+      \       ['Generate JS Ctags', 'GenerateJSCT'],
+      \       ['Generate Ruby/Rails Ctags', 'GenerateRailsCT'],
+      \       ['Show notes', 'Notes'],
+      \     ]
+
+" Git menu
+let g:unite_source_menu_menus.git = {
+      \     'description' : 'Git commands',
+      \ }
+let g:unite_source_menu_menus.git.command_candidates = [
+      \       ['Stage', 'Gwrite'],
+      \       ['Status', 'Gstatus'],
+      \       ['Diff', 'Gvdiff'],
+      \       ['Commit', 'Gcommit'],
+      \       ['Revert', 'Gread'],
+      \       ['Log', 'Glog'],
+      \       ['Unite Log', 'Unite giti/log'],
+      \       ['Visual Log', 'Gitv'],
+      \     ]
+
+" Plug menu
+let g:unite_source_menu_menus.plug = {
+      \     'description' : 'Plugin management commands',
+      \ }
+let g:unite_source_menu_menus.plug.command_candidates = [
+      \       ['Install plugins', 'PlugInstall'],
+      \       ['Update plugins', 'PlugUpdate'],
+      \       ['Clean plugins', 'PlugClean'],
+      \       ['Upgrade vim-plug', 'PlugUpgrade'],
+      \     ]
+
+" My unite menu
+let g:unite_source_menu_menus.unite = {
+      \     'description' : 'My Unite sources',
+      \ }
+let g:unite_source_menu_menus.unite.command_candidates = [
+      \       ['Unite buffers', 'call utils#uniteBuffers()'],
+      \       ['Unite file search', 'call utils#uniteFileRec()'],
+      \       ['Unite grep', 'call utils#uniteGrep()'],
+      \       ['Unite history', 'call utils#uniteHistory()'],
+      \       ['Unite line search', 'call utils#uniteLineSearch()'],
+      \       ['Unite menu', 'call utils#uniteCustomMenu()'],
+      \       ['Unite registers', 'call utils#uniteRegisters()'],
+      \       ['Unite snippets', 'call utils#uniteSnippets()'],
+      \       ['Unite sources', 'call utils#uniteSources()'],
+      \       ['Unite tags', 'call utils#uniteTags()'],
+      \       ['Unite windows', 'call utils#uniteWindows()'],
+      \       ['Unite yank history', 'call utils#uniteYankHistory()'],
+      \     ]
 ```
 
 #### Snippets support [(Ultisnips)](https://github.com/SirVer/ultisnips)
 
 ```VimL
 " Disable built-in cx-ck to be able to go backward
-inoremap <c-x><c-k> <nop>
-let g:UltiSnipsExpandTrigger='<c-j>'
-let g:UltiSnipsListSnippets='<c-l>'
-let g:UltiSnipsJumpForwardTrigger='<c-j>'
-let g:UltiSnipsJumpBackwardTrigger='<c-k>'
-```
-
-#### Fast text navigation [(Easymotion)](https://github.com/Lokaltog/vim-easymotion)
-
-```VimL
-" Turn on case sensitive feature
-let g:EasyMotion_smartcase=1
-
-" [m]otion prefix
-nmap m <Plug>(easymotion-prefix)
-
-" Seek 2 character motion
-nmap s <Plug>(easymotion-sl2)
-
-" Improved search
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
+inoremap <C-x><C-k> <nop>
+let g:UltiSnipsExpandTrigger='<C-j>'
+let g:UltiSnipsListSnippets='<C-l>'
+let g:UltiSnipsJumpForwardTrigger='<C-j>'
+let g:UltiSnipsJumpBackwardTrigger='<C-k>'
 ```
 
 ### Color settings based on time
 
 ```viml
-" Syntax highlighting
 syntax on
 
 " XTerm 256 colors
@@ -207,17 +211,25 @@ if $TERM == 'xterm-256color' || 'screen-256color'
 endif
 
 " Color scheme based on time
-if strftime("%H") < 15
+if strftime("%H") < 14
+  let g:airline_theme='badwolf'
+  let g:badfox_html_link_underline=0
+  colorscheme badfox
+elseif strftime("%H") < 20
   let g:rehash256 = 1
   let g:airline_theme='tomorrow'
   colorscheme molokai
-elseif strftime("%H") < 20
+else
+  set bg=dark
   let g:airline_theme='tomorrow'
   colorscheme hybrid
-else
-  let g:airline_theme='gotham'
-  colorscheme gotham
 endif
+
+" Highlight VCS conflict markers
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+
+" Highlight term cursor differently
+highlight TermCursor ctermfg=green guifg=green
 
 " Remove underline in folded lines
 hi Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE
@@ -251,7 +263,7 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 ```
 
-And setting some options to improve behaviour to my taste.
+And setting some options to improve behavior to my taste.
 
 ```zsh
 # Disable control flow (ctrl-s / ctrl-q)
@@ -267,7 +279,7 @@ unsetopt nomatch
 ## TMUX
 
 I am heavy user of tmux and I am using the excellent [tmuxinator](https://github.com/tmuxinator/tmuxinator) gem to
-quickly boostrap tmux sessions. Below are the most interesting settings in my tmux config file:
+quickly bootstrap tmux sessions. Below are the most interesting settings in my tmux config file:
 
 ```zsh
 # Ctrl-b instead of Ctrl-a
@@ -324,8 +336,7 @@ What about git config? Maybe some useful aliases:
 ```
 
 ## XTERM
-My terminal emulator of choice. I use [dynamic-colors](https://github.com/sos4nt/dynamic-colors) to switch colors
-on the fly. Below are some interesting settings I use:
+My terminal emulator of choice. Below are some interesting settings I use:
 
 ```zsh
 ! Unicode support
@@ -346,9 +357,6 @@ xterm*ScrollBar: false
 
 ! Stop output to terminal from jumping down to bottom of scroll again
 xterm*scrollTtyOutput: false
-
-! Dynamic colors
-xterm*dynamicColors: true
 ```
 
 ## PRY, GEM, IRB
@@ -366,7 +374,7 @@ Use editor to edit bigger blocks of code when in pry (put into your pryrc):
 Pry.config.editor = 'nvim'
 ```
 
-Require rubygems in *irbrc* to have access while in IRB session (i recommend using Pry):
+Require rubygems in *irbrc* to have access while in IRB session (I recommend using Pry):
 
 ```ruby
 require 'rubygems'
@@ -374,7 +382,7 @@ require 'rubygems'
 
 ## AG, DEVILSPIE2
 
-[Ag](http://geoff.greer.fm/ag/) is a popular and blazingly fast find on streoids optimized for developers.
+[Ag](http://geoff.greer.fm/ag/) is a popular and blazingly fast find on steroids optimized for developers.
 I recommend to create *agignore* to specify extra path to ignore. While Ag is pretty intelligent most of things
 are already ignored.
 
@@ -384,8 +392,8 @@ tmp/*
 ```
 
 [Devilspie2](http://www.gusnan.se/devilspie2/) is a window matching utility, allowing the user to perform
-scripted actions on windows as they are created. I use it maily to move application to their reserved
-workspace and to make them fullscreeen.
+scripted actions on windows as they are created. I use it mainly to move application to their reserved
+workspace and to make them go fullscreen automatically.
 
 Below is an example of such script:
 
