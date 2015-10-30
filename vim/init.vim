@@ -66,6 +66,8 @@ Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeFind', 'NERDTreeToggle'] }
 Plug 'Shougo/unite.vim'
 " Unite tags source
 Plug 'Shougo/unite-outline'
+" Unite history/yank source
+Plug 'Shougo/neoyank.vim'
 " Lightline (simple status line)
 Plug 'itchyny/lightline.vim'
 " Highlight long lines
