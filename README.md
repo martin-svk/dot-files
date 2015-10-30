@@ -16,7 +16,7 @@ Below I present the most interesting parts of my config files. Feel free to be i
 ## NEOVIM / VIM
 
 I am primary using [neovim](http://neovim.org/) which is about to hit it's first public
-release (version 0.1). Below are the most interesting parts of my [n]vimrc file.
+release (version 0.1). Below are the most interesting parts of my neovim configuration file.
 
 ### Plugins
 
