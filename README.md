@@ -23,7 +23,7 @@ release (version 0.1). Below are the most interesting parts of my neovim configu
 Plugin manager: [vim-plug](https://github.com/junegunn/vim-plug)
 Language/syntax files: [vim-polyglot](https://github.com/sheerun/vim-polyglot)
 
-### [Neo]Vim defaults improving
+### Neovim defaults overriding/improving
 
 ```viml
 " Intelligent window cycling
