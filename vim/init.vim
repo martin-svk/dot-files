@@ -100,7 +100,7 @@ Plug 'tpope/vim-surround'
 Plug 'godlygeek/tabular', { 'on':  'Tabularize' }
 " Safely editing in isolation
 Plug 'ferranpm/vim-isolate', { 'on':  ['Isolate', 'UnIsolate'] }
-" Software capslock (<C-L> in insert mode)
+" Software capslock (gC in normal mode, <C-G>c in insert mode)
 Plug 'tpope/vim-capslock'
 " Additional text objects
 Plug 'wellle/targets.vim'
