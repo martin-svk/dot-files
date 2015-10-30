@@ -32,6 +32,10 @@ elseif (get_application_name()=="Geary") then
 -- HipChat
 elseif (get_application_name()=="HipChat") then
    set_window_workspace(7);
+-- Slack
+elseif (get_application_name()=="Slack") then
+   set_window_workspace(7);
+   set_window_size(1600, 900);
 -- Steam
 elseif (get_application_name()=="Steam") then
    set_window_workspace(8);
