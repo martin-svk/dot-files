@@ -278,7 +278,7 @@ set wildignore+=*.png,*.jpg,*.gif
 " -----------------------------------------------------
 " Set an environment variable to use the t_SI/t_EI hack
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-" Turn on true colors support
+" Turn on true colors support (does not work inside tmux)
 " let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 " -----------------------------------------------------
