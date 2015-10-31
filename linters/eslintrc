@@ -1,37 +1,37 @@
-# vim: ft=json
+# vim: ft = json
 {
-  "rules": {
-    "indent": [
-      2,
-      4
-    ],
-    "quotes": [
-      1,
-      "single"
-    ],
-    "linebreak-style": [
-      2,
-      "unix"
-    ],
-    "semi": [
-      2,
-      "always"
+    "rules": {
+        "indent": [
+            2,
+            4
+        ],
+        "quotes": [
+            1,
+            "single"
+        ],
+        "linebreak-style": [
+            2,
+            "unix"
+        ],
+        "semi": [
+            2,
+            "always"
+        ]
+    },
+    "globals": {
+        "require": true,
+        "module": true
+    },
+    "env": {
+        "es6": true,
+        "browser": true,
+        "node": true
+    },
+    "ecmaFeatures": {
+        "jsx": true,
+        "modules": true
+    },
+    "plugins": [
+        "react"
     ]
-  },
-  "globals": {
-    "require": true,
-    "module": true
-  },
-  "env": {
-    "es6": true,
-    "browser": true,
-    "node": true
-  },
-  "ecmaFeatures": {
-    "jsx": true,
-    "modules": true
-  },
-  "plugins": [
-    "react"
-  ]
 }
