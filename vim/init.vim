@@ -746,16 +746,13 @@ endif
 
 " Color scheme based on time
 if strftime("%H") < 14
-  let g:airline_theme='badwolf'
   let g:badfox_html_link_underline=0
   colorscheme badfox
 elseif strftime("%H") < 20
   let g:rehash256 = 1
-  let g:airline_theme='tomorrow'
   colorscheme molokai
 else
   set bg=dark
-  let g:airline_theme='tomorrow'
   colorscheme hybrid
 endif
 
