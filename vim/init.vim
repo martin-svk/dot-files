@@ -31,6 +31,8 @@ Plug 'cohama/lexima.vim'
 Plug 'SirVer/ultisnips'
 " Commenting support (gc)
 Plug 'tpope/vim-commentary'
+" Multi-language testing support (uses NeoTerm)
+Plug 'janko-m/vim-test', { 'on': ['TestFile', 'TestLast', 'TestNearest', 'TestSuite', 'TestVisit'] }
 
 " -----------------------------------------------------
 " Ruby/Rails
@@ -74,6 +76,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'whatyouhide/vim-lengthmatters'
 " Shows current search match / total matches
 Plug 'henrik/vim-indexed-search', { 'on':  'ShowSearchIndex' }
+" Neovim terminal improving
+Plug 'kassio/neoterm', { 'on': 'T' }
 
 " ---------------------------------------------------------------------------------------------------------------------
 " External tools integration plugins
@@ -87,8 +91,6 @@ Plug 'gregsexton/gitv', { 'on': 'Gitv' }
 Plug 'airblade/vim-gitgutter'
 " Color picker
 Plug 'KabbAmine/vCoolor.vim', { 'on': 'VCoolor' }
-" Neovim terminal helpers
-Plug 'kassio/neoterm'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Text insertion/manipulation
@@ -608,8 +610,8 @@ let g:unite_source_menu_menus.unite.command_candidates = [
 " 4.3 NERDTree
 " -----------------------------------------------------
 let NERDTreeMinimalUI=1
-let NERDTreeDirArrows=1
-let g:NERDTreeWinSize=45
+let NERDTreeDirArrows=0
+let g:NERDTreeWinSize=50
 
 " -----------------------------------------------------
 " 4.4 Ultisnips settings
@@ -670,8 +672,13 @@ let g:ruby_refactoring_map_keys=0
 " -----------------------------------------------------
 " 4.11 NeoTerm settings
 " -----------------------------------------------------
-let g:neoterm_size=15
-let g:neoterm_position='horizontal'
+let g:neoterm_size=60
+let g:neoterm_position='vertical'
+
+" -----------------------------------------------------
+" 4.12 Vim-Test settings
+" -----------------------------------------------------
+let g:test#strategy = "neoterm"
 "}}}
 
 " ======================================================================================================================
