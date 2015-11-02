@@ -10,7 +10,7 @@ if (string.find(get_application_name(), "Google Chrome")) then
 -- XTerm
 elseif (get_application_name()=="xterm") then
    set_window_workspace(2);
-   set_window_size(1600, 950);
+   maximize();
 -- Android Studio
 elseif (get_application_name()=="Android Studio") then
    set_window_workspace(3);
