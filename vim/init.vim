@@ -663,6 +663,14 @@ let g:vcoolor_disable_mappings=1
 " 4.9 Neomake settings
 " -----------------------------------------------------
 let g:neomake_verbose=0
+let g:neomake_warning_sign = {
+    \ 'text': '>',
+    \ 'texthl': 'WarningMsg',
+    \ }
+let g:neomake_error_sign = {
+    \ 'text': '>',
+    \ 'texthl': 'ErrorMsg',
+    \ }
 
 " -----------------------------------------------------
 " 4.10 Ruby refactoring settings
