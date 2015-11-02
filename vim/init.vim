@@ -603,7 +603,7 @@ let g:unite_source_menu_menus.unite.command_candidates = [
 " -----------------------------------------------------
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=0
-let g:NERDTreeWinSize=50
+let g:NERDTreeWinSize=55
 
 " -----------------------------------------------------
 " 4.4 Ultisnips settings
