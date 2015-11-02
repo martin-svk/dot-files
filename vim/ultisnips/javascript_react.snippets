@@ -2,7 +2,17 @@ snippet comp "react component ES6"
 class $1 extends React.Component {
 	constructor(props) {
 		super(props);
-		$3
+		$2
 	}
 }
+endsnippet
+
+snippet props "prop types definition"
+${1:Component}.propTypes = {
+	${2:prop}: $3
+}
+endsnippet
+
+snippet propt "one prop type definition"
+React.PropTypes.${1:object}${2:.isRequired}
 endsnippet
