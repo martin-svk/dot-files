@@ -156,6 +156,10 @@ function! utils#uniteSources()
   execute 'Unite -start-insert source'
 endfunction
 
+function! utils#uniteMRUs()
+  execute 'Unite -no-split -buffer-name=most-recently-used -start-insert file_mru'
+endfunction
+
 function! utils#uniteFileRec()
   execute 'Unite -no-split -buffer-name=project-files -start-insert file_rec/async:!'
 endfunction

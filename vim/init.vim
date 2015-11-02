@@ -70,6 +70,8 @@ Plug 'Shougo/unite.vim'
 Plug 'Shougo/unite-outline'
 " Unite history/yank source
 Plug 'Shougo/neoyank.vim'
+" Unite MRU source
+Plug 'Shougo/neomru.vim'
 " Lightline (simple status line)
 Plug 'itchyny/lightline.vim'
 " Highlight long lines
@@ -383,7 +385,8 @@ xnoremap p "_dP
 
 " Quick save and close buffer
 nnoremap ,w :w<CR>
-nnoremap <silent> ,q :Sayonara!<CR>
+nnoremap <silent> ,c :Sayonara!<CR>
+nnoremap <silent> ,q :Sayonara<CR>
 
 " Yank and paste from clipboard
 nnoremap ,y "+y
@@ -592,6 +595,7 @@ let g:unite_source_menu_menus.unite = {
       \     'description' : 'My Unite sources',
       \ }
 let g:unite_source_menu_menus.unite.command_candidates = [
+      \       ['Unite MRUs', 'call utils#uniteMRUs()'],
       \       ['Unite buffers', 'call utils#uniteBuffers()'],
       \       ['Unite file search', 'call utils#uniteFileRec()'],
       \       ['Unite grep', 'call utils#uniteGrep()'],
