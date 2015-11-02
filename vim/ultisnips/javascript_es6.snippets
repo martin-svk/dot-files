@@ -1,3 +1,14 @@
+# ===============================================
+# Classes, imports, exports
+# ===============================================
+snippet class "es6 class"
+class $1 {
+	constructor() {
+		$2
+	}
+}
+endsnippet
+
 snippet import "import statement"
 import $1 from '$2';
 endsnippet
@@ -6,6 +17,24 @@ snippet export "export statement"
 export default $1;
 endsnippet
 
-snippet r "fat arrow (rocket) sign"
+snippet new "new statement"
+new ${1:Class}()
+endsnippet
+
+# ===============================================
+# Variables
+# ===============================================
+snippet con "constant declaration"
+const ${1:name} = ${2:value};
+endsnippet
+
+snippet let "block scoped variable declaration"
+let ${1:name} = ${2:value};
+endsnippet
+
+# ===============================================
+# Miscleanous
+# ===============================================
+snippet r "fat arrow (rocket) sign" w
 => $0
 endsnippet

@@ -1,19 +1,44 @@
+# ===============================================
+# Variables
+# ===============================================
 snippet fun "function"
 function $1($2) {
 	$3
 }
 endsnippet
 
+# ===============================================
+# Common functions and constructs
+# ===============================================
 snippet log "console log"
-console.log('${1}');
+console.log('${1:message}');
 endsnippet
 
+snippet bt "bind this" w
+bind(this);
+endsnippet
+
+# ===============================================
+# Miscleanous
+# ===============================================
 snippet strict "enable strict mode"
 'use strict';
 endsnippet
 
 snippet /* "block comment"
 /**
- * ${1:Description of class}
+ * ${1:Description of class or function}
  */
+endsnippet
+
+snippet req "require statement"
+require('$1');
+endsnippet
+
+snippet kw "key value pair"
+${1:key}: ${2:value}
+endsnippet
+
+snippet kwc "key value constant pair"
+${1:KEY}: '$1'
 endsnippet

@@ -1,18 +1,76 @@
+# ===============================================
+# Components declarations
+# ===============================================
 snippet comp "react component ES6"
+import { React } from 'react';
+
 class $1 extends React.Component {
 	constructor(props) {
 		super(props);
 		$2
 	}
+
+	render() {
+		return (
+			${3:<div>Hello World</div>}
+		);
+	}
 }
+
+$1.propTypes = {};
+$1.defaultProps = {};
+
+export default $1;
 endsnippet
 
-snippet props "prop types definition"
-${1:Component}.propTypes = {
+snippet fcomp "stateless, function component"
+function ${1:Component}(props) {
+	return (
+		${2:<div>Hello</div>}
+	);
+}
+
+$1.propTypes = {};
+$1.defaultProps = {};
+export default $1;
+endsnippet
+
+# ===============================================
+# Prop types and default props
+# ===============================================
+snippet propt "prop types definition" w
+propTypes = {
 	${2:prop}: $3
 }
 endsnippet
 
-snippet propt "one prop type definition"
+snippet dpropt "default prop values" w
+defaultProps = {
+	${2:prop}: ${3:defaultValue}
+}
+endsnippet
+
+snippet prop "one prop type definition"
 React.PropTypes.${1:object}${2:.isRequired}
+endsnippet
+
+# ===============================================
+# Component lifecycle functions
+# ===============================================
+snippet compwm "Component will mount method"
+componentWillMount() {
+	$1
+}
+endsnippet
+
+snippet compwu "Component will unmount method"
+componentWillUnmount() {
+	$1
+}
+endsnippet
+
+snippet compdm "Component did mount method"
+componentDidMount() {
+	$1
+}
 endsnippet

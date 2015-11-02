@@ -1,0 +1,35 @@
+# ===============================================
+# Flux helpers
+# ===============================================
+snippet dispatch "dispatcher dispatch function"
+Dispatcher.dispatch({
+	type: ActionTypes.${1:DATA_RECEIVED},
+	${2:data}: $2
+});
+endsnippet
+
+snippet store "basic es6 flux store"
+import { EventEmitter } from "events";
+const CHANGE_EVENT = "change";
+
+class Store extends EventEmitter {
+	constructor() {
+		super();
+		this.dispatchToken = null;
+	}
+
+	emitChange() {
+		this.emit(CHANGE_EVENT);
+	}
+
+	addChangeListener(callback) {
+		this.on(CHANGE_EVENT, callback);
+	}
+
+	removeChangeListener(callback) {
+		this.removeListener(CHANGE_EVENT, callback);
+	}
+}
+
+export default Store;
+endsnippet

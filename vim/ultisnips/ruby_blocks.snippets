@@ -13,10 +13,10 @@ each do |$1|
 end
 endsnippet
 
-snippet "(\S+)\.map" "map inline block" r
-`!p snip.rv=match.group(1)`.map(&:${1::method})$0
+snippet map "map inline block" w
+map(&:${1:method})$0
 endsnippet
 
-snippet "(\S+)\.red" "reduce inline block" r
-`!p snip.rv=match.group(1)`.reduce(&:${1:+})$0
+snippet red "reduce inline block" w
+reduce(&:${1:+})$0
 endsnippet
