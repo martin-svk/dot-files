@@ -10,8 +10,8 @@ xterm*customization: -color
 xterm*termName: xterm-256color
 
 ! Font settings
-xterm*faceName: Meslo LG S DZ for Powerline:Bold
-xterm*faceSize: 10
+xterm*faceName: Droid Sans Mono for Powerline:Bold
+xterm*faceSize: 9
 xterm*allowBoldFonts: false
 
 ! For inclusion of all necessary environment variables
