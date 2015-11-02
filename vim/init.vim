@@ -514,9 +514,6 @@ let g:utils_autoswitch_kb_layout=0
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
 
-" Track yank history
-let g:unite_source_history_yank_enable=1
-
 " Use ag if available
 if executable('ag')
   let g:unite_source_grep_command='ag'
