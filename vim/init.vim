@@ -84,7 +84,7 @@ Plug 'kassio/neoterm', { 'on': 'T' }
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Fugitive
-Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive', { 'on': ['Gread', 'Gwrite', 'Glog', 'Gcommit', 'Gdiff', 'Gbrowse'] }
 " Git log viewer
 Plug 'gregsexton/gitv', { 'on': 'Gitv' }
 " Git changes showed on line numbers
