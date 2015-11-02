@@ -1,2 +1,8 @@
 *.log
-tmp/*
+tmp/**
+node_modules/**
+bower_components/**
+.git
+.svn
+.bzr
+.hg

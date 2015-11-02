@@ -272,8 +272,6 @@ set wildignore=*.o,*.obj,*~
 set wildignore+=*vim/backups*
 set wildignore+=*sass-cache*
 set wildignore+=*DS_Store*
-set wildignore+=vendor/rails/**
-set wildignore+=vendor/cache/**
 set wildignore+=*.gem
 set wildignore+=log/**
 set wildignore+=tmp/**
@@ -526,15 +524,8 @@ if executable('ag')
   let g:unite_source_grep_recursive_opt=''
 
   " Set rec source command
-  let g:unite_source_rec_async_command =
-        \ ['ag', '--follow', '--nocolor', '--nogroup',
-        \  '--ignore', '.git', '--ignore', '.hg', '--ignore', '.svn', '--ignore', '.bzr',
-        \  '--ignore', '.meteor', '--ignore', '**/bower_components/', '--ignore', '**/node_modules/',
-        \  '--hidden', '-g', '']
+  let g:unite_source_rec_async_command = ['ag', '--follow', '--nocolor', '--nogroup', '--hidden', '-g', '']
 endif
-
-" Ignore wildignore files
-call unite#custom#source('file_rec', 'ignore_globs', split(&wildignore, ','))
 
 " Custom profile
 call unite#custom#profile('default', 'context', {
