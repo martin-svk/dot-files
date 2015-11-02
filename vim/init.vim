@@ -87,6 +87,8 @@ Plug 'gregsexton/gitv', { 'on': 'Gitv' }
 Plug 'airblade/vim-gitgutter'
 " Color picker
 Plug 'KabbAmine/vCoolor.vim', { 'on': 'VCoolor' }
+" Neovim terminal helpers
+Plug 'kassio/neoterm'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Text insertion/manipulation
@@ -664,6 +666,12 @@ let g:neomake_verbose=0
 " 4.10 Ruby refactoring settings
 " -----------------------------------------------------
 let g:ruby_refactoring_map_keys=0
+
+" -----------------------------------------------------
+" 4.11 NeoTerm settings
+" -----------------------------------------------------
+let g:neoterm_size=15
+let g:neoterm_position='horizontal'
 "}}}
 
 " ======================================================================================================================
