@@ -59,27 +59,28 @@ Plug 'rstacruz/sparkup', { 'for': ['html', 'xhtml', 'eruby'] }
 Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'sass', 'scss', 'less'] }
 
 " ---------------------------------------------------------------------------------------------------------------------
+" Unite fuzzy searcher
+" ---------------------------------------------------------------------------------------------------------------------
+
+" Unite files, buffers, command sources | Async source depends on vimproc
+Plug 'Shougo/unite.vim' | Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+" Tags source
+Plug 'Shougo/unite-outline'
+" History/yank source
+Plug 'Shougo/neoyank.vim'
+" MRU source
+Plug 'Shougo/neomru.vim'
+
+" ---------------------------------------------------------------------------------------------------------------------
 " Interface improving
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Nerdtree file browser
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeFind', 'NERDTreeToggle'] }
-" Unite (Files, Buffers, Commands, etc. fuzzy searcher)
-Plug 'Shougo/unite.vim'
-" Unite tags source
-Plug 'Shougo/unite-outline'
-" Unite history/yank source
-Plug 'Shougo/neoyank.vim'
-" Unite MRU source
-Plug 'Shougo/neomru.vim'
 " Lightline (simple status line)
 Plug 'itchyny/lightline.vim'
 " Highlight long lines
 Plug 'whatyouhide/vim-lengthmatters'
-" Shows current search match / total matches
-Plug 'henrik/vim-indexed-search', { 'on':  'ShowSearchIndex' }
-" Neovim terminal improving
-Plug 'kassio/neoterm', { 'on': 'T' }
 
 " ---------------------------------------------------------------------------------------------------------------------
 " External tools integration plugins
@@ -93,6 +94,8 @@ Plug 'gregsexton/gitv', { 'on': 'Gitv' }
 Plug 'airblade/vim-gitgutter'
 " Color picker
 Plug 'KabbAmine/vCoolor.vim', { 'on': 'VCoolor' }
+" Neovim terminal improving
+Plug 'kassio/neoterm', { 'on': 'T' }
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Text insertion/manipulation
@@ -100,6 +103,10 @@ Plug 'KabbAmine/vCoolor.vim', { 'on': 'VCoolor' }
 
 " Multiple cursors
 Plug 'terryma/vim-multiple-cursors'
+" Clever F, T
+Plug 'rhysd/clever-f.vim'
+" Additional text objects
+Plug 'wellle/targets.vim'
 " Surround (cs"')
 Plug 'tpope/vim-surround'
 " Easy alignment
@@ -108,10 +115,6 @@ Plug 'godlygeek/tabular', { 'on':  'Tabularize' }
 Plug 'ferranpm/vim-isolate', { 'on':  ['Isolate', 'UnIsolate'] }
 " Software capslock (gC in normal mode, <C-G>c in insert mode)
 Plug 'tpope/vim-capslock'
-" Additional text objects
-Plug 'wellle/targets.vim'
-" Clever F, T
-Plug 'rhysd/clever-f.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Colorschemes
@@ -136,13 +139,6 @@ Plug 'chip/vim-fat-finger'
 Plug 'natw/keyboard_cat.vim', { 'on':  'PlayMeOff' }
 " Man reading in vim
 Plug 'jez/vim-superman'
-
-" ---------------------------------------------------------------------------------------------------------------------
-" Dependencies
-" ---------------------------------------------------------------------------------------------------------------------
-
-" Async processing (for Unite)
-Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 " Matchit enhances motions
 Plug 'edsono/vim-matchit'
 " More . repeat functionality
@@ -800,9 +796,6 @@ autocmd FileType vim setlocal keywordprg=:help
 " make CSS omni-completion work for SASS and SCSS
 autocmd BufNewFile,BufRead *.scss set ft=scss.css
 autocmd BufNewFile,BufRead *.sass set ft=sass.css
-
-" Close vim if the last open window is nerdtree
-" autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Remove trailing whitespaces automatically before save
 autocmd BufWritePre * call utils#stripTrailingWhitespaces()
