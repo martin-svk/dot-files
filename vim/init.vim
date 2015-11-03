@@ -601,9 +601,10 @@ let g:unite_source_menu_menus.unite.command_candidates = [
 " -----------------------------------------------------
 " 4.3 NERDTree
 " -----------------------------------------------------
-let NERDTreeMinimalUI=1
-let NERDTreeDirArrows=0
+let g:NERDTreeMinimalUI=1
+let g:NERDTreeDirArrows=0
 let g:NERDTreeWinSize=55
+let g:NERDTreeAutoDeleteBuffer=1
 
 " -----------------------------------------------------
 " 4.4 Ultisnips settings
@@ -618,6 +619,7 @@ let g:gitgutter_sign_added='+'
 let g:gitgutter_sign_modified='~'
 let g:gitgutter_sign_removed='-'
 let g:gitgutter_sign_modified_removed='~'
+let g:gitgutter_sign_removed_first_line='-'
 
 " -----------------------------------------------------
 " 4.6 Vim JSX highlighting settings
