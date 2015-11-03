@@ -126,6 +126,8 @@ Plug 'w0ng/vim-hybrid'
 Plug 'tomasr/molokai'
 " Badfox
 Plug 'viccuad/badfox'
+" Gruvbox
+Plug 'morhetz/gruvbox'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Other
@@ -770,7 +772,7 @@ elseif strftime("%H") < 20
   colorscheme molokai
 else
   set bg=dark
-  colorscheme hybrid
+  colorscheme gruvbox
 endif
 
 " Highlight VCS conflict markers
