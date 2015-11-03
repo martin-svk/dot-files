@@ -614,6 +614,10 @@ let g:UltiSnipsUsePythonVersion=3
 " 4.5 Gitgutter settings
 " -----------------------------------------------------
 let g:gitgutter_max_signs=9999
+let g:gitgutter_sign_added='+'
+let g:gitgutter_sign_modified='~'
+let g:gitgutter_sign_removed='-'
+let g:gitgutter_sign_modified_removed='~'
 
 " -----------------------------------------------------
 " 4.6 Vim JSX highlighting settings
