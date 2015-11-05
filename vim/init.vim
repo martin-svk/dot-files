@@ -21,8 +21,6 @@ call plug#begin('~/.config/nvim/plugged')
 " Language agnostic plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Most common languages file types (syntax, indenting, etc.)
-Plug 'sheerun/vim-polyglot'
 " Asynchronous maker and linter (Asynchronous runner, needs linters to work properly)
 Plug 'benekastah/neomake', { 'on': ['Neomake'] }
 " Automatically closing stuff
@@ -38,7 +36,14 @@ Plug 'janko-m/vim-test', { 'on': ['TestFile', 'TestLast', 'TestNearest', 'TestSu
 " Ruby/Rails
 " -----------------------------------------------------
 
-" (:A, :R, :Rmigration, :Rextract)
+" Ruby syntax
+Plug 'vim-ruby/vim-ruby'
+" Slim syntax
+Plug 'slim-template/vim-slim'
+" Haml syntax
+Plug 'tpope/vim-haml'
+
+" Rails support (:A, :R, :Rmigration, :Rextract)
 Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby', 'haml', 'slim'] }
 " String interpolation helper
 Plug 'p0deje/vim-ruby-interpolation', { 'for': ['ruby'] }
@@ -49,14 +54,40 @@ Plug 'ecomba/vim-ruby-refactoring', { 'for': ['ruby'] }
 " HTML/CSS/JS
 " -----------------------------------------------------
 
-" JS libs syntax files, ember, angular, etc.
-" Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffee'] }
+" HTML syntax
+Plug 'othree/html5.vim'
+" JS syntax
+Plug 'othree/yajs.vim'
+" JS libs syntax (React, Angular)
+Plug 'othree/javascript-libraries-syntax.vim'
+" JSX syntax
+Plug 'mxw/vim-jsx'
+" Typescript syntax
+Plug 'leafgarland/typescript-vim'
 " SCSS syntax
-Plug 'cakebaker/scss-syntax.vim', { 'for': ['scss'] }
+Plug 'cakebaker/scss-syntax.vim'
+" JSON syntax
+Plug 'sheerun/vim-json'
+
 " Sparkup, emmet alternative (<C-e> to expand expression)
 Plug 'rstacruz/sparkup', { 'for': ['html', 'xhtml', 'eruby'] }
 " CSS color highlighter
 Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'sass', 'scss', 'less'] }
+
+" -----------------------------------------------------
+" Other languages
+" -----------------------------------------------------
+
+" Elixir syntax
+Plug 'elixir-lang/vim-elixir'
+" Python syntax
+Plug 'mitsuhiko/vim-python-combined'
+" Tmux syntax
+Plug 'tejr/vim-tmux'
+" Git syntax
+Plug 'tpope/vim-git'
+" Dockerfile
+Plug 'honza/dockerfile.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Unite fuzzy searcher
