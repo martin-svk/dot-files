@@ -34,55 +34,55 @@ xterm*selectToClipboard: true
 ! ============================== BADWOLF ======================================
 ! =============================================================================
 
-/* #define   plain            #f8f6f2 */
-/* #define   snow             #ffffff */
-/* #define   coal             #000000 */
+#define   plain            #f8f6f2
+#define   snow             #ffffff
+#define   coal             #000000
 
-/* #define   brightgravel     #d9cec3 */
-/* #define   lightgravel      #998f84 */
-/* #define   gravel           #857f78 */
-/* #define   mediumgravel     #666462 */
-/* #define   deepgravel       #45413b */
-/* #define   deepergravel     #35322d */
-/* #define   darkgravel       #242321 */
-/* #define   blackgravel      #1c1b1a */
-/* #define   blackestgravel   #141413 */
+#define   brightgravel     #d9cec3
+#define   lightgravel      #998f84
+#define   gravel           #857f78
+#define   mediumgravel     #666462
+#define   deepgravel       #45413b
+#define   deepergravel     #35322d
+#define   darkgravel       #242321
+#define   blackgravel      #1c1b1a
+#define   blackestgravel   #141413
 
-/* #define   dalespale        #fade3e */
-/* #define   dirtyblonde      #f4cf86 */
-/* #define   taffy            #ff2c4b */
-/* #define   saltwatertaffy   #8cffba */
-/* #define   tardis           #0a9dff */
-/* #define   orange           #ffa724 */
-/* #define   lime             #aeee00 */
-/* #define   dress            #ff9eb8 */
-/* #define   toffee           #b88853 */
-/* #define   coffee           #c7915b */
-/* #define   darkroast        #88633f */
+#define   dalespale        #fade3e
+#define   dirtyblonde      #f4cf86
+#define   taffy            #ff2c4b
+#define   saltwatertaffy   #8cffba
+#define   tardis           #0a9dff
+#define   orange           #ffa724
+#define   lime             #aeee00
+#define   dress            #ff9eb8
+#define   toffee           #b88853
+#define   coffee           #c7915b
+#define   darkroast        #88633f
 
-/* xterm*background:  blackgravel */
-/* xterm*foreground:  plain */
-/* xterm*cursorColor: snow */
-/* xterm*scrollColor: deepgravel */
-/* xterm*fadeColor:   snow */
-/* xterm*fading:      20 */
+xterm*background:  blackgravel
+xterm*foreground:  plain
+xterm*cursorColor: snow
+xterm*scrollColor: deepgravel
+xterm*fadeColor:   snow
+xterm*fading:      20
 
-/* xterm*color0:      blackestgravel */
-/* xterm*color8:      gravel */
-/* xterm*color1:      taffy */
-/* xterm*color9:      taffy */
-/* xterm*color2:      lime */
-/* xterm*color10:     lime */
-/* xterm*color3:      dalespale */
-/* xterm*color11:     orange */
-/* xterm*color4:      tardis */
-/* xterm*color12:     tardis */
-/* xterm*color5:      dress */
-/* xterm*color13:     dress */
-/* xterm*color6:      saltwatertaffy */
-/* xterm*color14:     saltwatertaffy */
-/* xterm*color7:      brightgravel */
-/* xterm*color15:     snow */
+xterm*color0:      blackestgravel
+xterm*color8:      gravel
+xterm*color1:      taffy
+xterm*color9:      taffy
+xterm*color2:      lime
+xterm*color10:     lime
+xterm*color3:      dalespale
+xterm*color11:     orange
+xterm*color4:      tardis
+xterm*color12:     tardis
+xterm*color5:      dress
+xterm*color13:     dress
+xterm*color6:      saltwatertaffy
+xterm*color14:     saltwatertaffy
+xterm*color7:      brightgravel
+xterm*color15:     snow
 
 ! =============================================================================
 ! ============================== MOLOKAI =====================================
@@ -157,21 +157,21 @@ xterm*selectToClipboard: true
 ! ============================== GRUVBOX ======================================
 ! =============================================================================
 
-xterm*background: #282828
-xterm*foreground: #ebdbb2
-xterm*color0:  #282828
-xterm*color8:  #928374
-xterm*color1:  #cc241d
-xterm*color9:  #fb4934
-xterm*color2:  #98971a
-xterm*color10: #b8bb26
-xterm*color3:  #d79921
-xterm*color11: #fabd2f
-xterm*color4:  #458588
-xterm*color12: #83a598
-xterm*color5:  #b16286
-xterm*color13: #d3869b
-xterm*color6:  #689d6a
-xterm*color14: #8ec07c
-xterm*color7:  #a89984
-xterm*color15: #ebdbb2
+/* xterm*background: #282828 */
+/* xterm*foreground: #ebdbb2 */
+/* xterm*color0:  #282828 */
+/* xterm*color8:  #928374 */
+/* xterm*color1:  #cc241d */
+/* xterm*color9:  #fb4934 */
+/* xterm*color2:  #98971a */
+/* xterm*color10: #b8bb26 */
+/* xterm*color3:  #d79921 */
+/* xterm*color11: #fabd2f */
+/* xterm*color4:  #458588 */
+/* xterm*color12: #83a598 */
+/* xterm*color5:  #b16286 */
+/* xterm*color13: #d3869b */
+/* xterm*color6:  #689d6a */
+/* xterm*color14: #8ec07c */
+/* xterm*color7:  #a89984 */
+/* xterm*color15: #ebdbb2 */
