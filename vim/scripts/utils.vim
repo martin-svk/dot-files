@@ -205,11 +205,16 @@ function! utils#uniteCustomMenu()
 endfunction
 
 " Format function
+" Needs: npm install js-beautify, gem install rbeautify, python
 function! utils#formatFile()
   let command_prefix = '%!'
 
-  if &filetype ==? 'javascript.jsx' || &filetype ==? 'json'
+  if &filetype ==? 'javascript.jsx'
     let command = 'js-beautify -X -f -'
+  elseif &filetype ==? 'html'
+    let command = 'html-beautify -f -'
+  elseif &filetype ==? 'css'
+    let command = 'css-beautify -f -'
   elseif &filetype ==? 'json'
     let command = 'python -m json.tool'
   elseif &filetype ==? 'ruby'
