@@ -42,7 +42,6 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'slim-template/vim-slim'
 " Haml syntax
 Plug 'tpope/vim-haml'
-
 " Rails support (:A, :R, :Rmigration, :Rextract)
 Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby', 'haml', 'slim'] }
 " String interpolation helper
@@ -82,6 +81,8 @@ Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'sass', 'scss', 'less'] }
 Plug 'elixir-lang/vim-elixir'
 " Python syntax
 Plug 'mitsuhiko/vim-python-combined'
+" Elm
+Plug 'lambdatoast/elm.vim'
 " Tmux syntax
 Plug 'tejr/vim-tmux'
 " Git syntax
@@ -95,12 +96,14 @@ Plug 'honza/dockerfile.vim'
 
 " Unite files, buffers, command sources | Async source depends on vimproc
 Plug 'Shougo/unite.vim' | Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-" Tags source
+" Outline source
 Plug 'Shougo/unite-outline'
 " History/yank source
 Plug 'Shougo/neoyank.vim'
 " MRU source
 Plug 'Shougo/neomru.vim'
+" Tag source
+Plug 'tsukkee/unite-tag'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Interface improving
@@ -110,6 +113,8 @@ Plug 'Shougo/neomru.vim'
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeFind', 'NERDTreeToggle'] }
 " Lightline (simple status line)
 Plug 'itchyny/lightline.vim'
+" Buffers tabline
+Plug 'ap/vim-buftabline'
 " Highlight long lines
 Plug 'whatyouhide/vim-lengthmatters'
 
@@ -159,11 +164,15 @@ Plug 'tomasr/molokai'
 Plug 'viccuad/badfox'
 " Gruvbox
 Plug 'morhetz/gruvbox'
+" Iceberg
+Plug 'cocopon/iceberg.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Other
 " ---------------------------------------------------------------------------------------------------------------------
 
+" Search for highlighted work with *
+Plug 'thinca/vim-visualstar'
 " Intelligent buffer closing
 Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
 " Iabbrev auto-correction library
