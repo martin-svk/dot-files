@@ -1,4 +1,4 @@
-# vim: ft = json
+# vim: ft=json
 {
     "rules": {
         "indent": [
@@ -32,6 +32,7 @@
         "modules": true
     },
     "plugins": [
-        "react"
+        "react",
+        "flowtype"
     ]
 }
