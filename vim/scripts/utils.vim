@@ -209,7 +209,7 @@ function! utils#formatFile()
   let command_prefix = '%!'
 
   if &filetype ==? 'javascript.jsx' || &filetype ==? 'json'
-    let command = 'js-beautify -f -'
+    let command = 'js-beautify -X -f -'
   elseif &filetype ==? 'json'
     let command = 'python -m json.tool'
   elseif &filetype ==? 'ruby'
