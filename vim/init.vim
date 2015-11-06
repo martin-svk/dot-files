@@ -228,13 +228,16 @@ set startofline                             " When doing thing like gg or G, wil
 set wrapscan                                " Search again from top when reached the bottom
 set scrolloff=5                             " Scroll when closing to top or bottom of the screen
 set updatetime=1000                         " Update time used to create swap file or other things
-set mouse=                                  " Disable mouse integration
+set mouse=a                                 " Enable mouse integration
+set noendofline                             " Dont add empty lines at the end of file
 
 " -----------------------------------------------------
 " 2.1 Indentation settings (2 spaces tabs)
 " -----------------------------------------------------
 set autoindent
+set smartindent
 set expandtab
+set smarttab
 set shiftwidth=2
 set softtabstop=2
 
