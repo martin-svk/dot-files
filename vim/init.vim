@@ -323,14 +323,6 @@ let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 " 2.11 Ctags settings
 " -----------------------------------------------------
 set tags+=.tags
-
-" -----------------------------------------------------
-" 2.12 Clever F settings
-" -----------------------------------------------------
-let g:clever_f_across_no_line=1
-let g:clever_f_smart_case=1
-let g:clever_f_show_prompt=1
-let g:clever_f_chars_match_any_signs=';'
 "}}}
 
 " ======================================================================================================================
@@ -719,6 +711,14 @@ let g:neoterm_position='vertical'
 " 4.12 Vim-Test settings
 " -----------------------------------------------------
 let g:test#strategy = "neoterm"
+
+" -----------------------------------------------------
+" 4.13 Clever F settings
+" -----------------------------------------------------
+let g:clever_f_across_no_line=1
+let g:clever_f_smart_case=1
+let g:clever_f_show_prompt=1
+let g:clever_f_chars_match_any_signs=';'
 "}}}
 
 " ======================================================================================================================
