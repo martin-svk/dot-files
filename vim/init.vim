@@ -803,6 +803,8 @@ endif
 if strftime("%H") < 15
   let g:badfox_html_link_underline=0
   colorscheme badfox
+elseif strftime("%H") < 20
+  colorscheme jellybeans
 else
   colorscheme iceberg
 endif
@@ -814,7 +816,13 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 highlight TermCursor ctermfg=green guifg=green
 
 " Remove underline in folded lines
-hi Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE
+hi! Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE
+
+" Link highlight groups to improve buftabline colors
+hi! link BufTabLineCurrent Statement
+hi! link BufTabLineActive Comment
+hi! link BufTabLineHidden Comment
+hi! link BufTabLineFill Comment
 "}}}
 
 " ======================================================================================================================
