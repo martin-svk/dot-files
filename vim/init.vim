@@ -568,7 +568,7 @@ let g:unite_source_menu_menus.utils = {
       \ }
 let g:unite_source_menu_menus.utils.command_candidates = [
       \       ['Color picker', 'VCoolor'],
-      \       ['Annotate file', 'Annotate'],
+      \       ['Run XMPFilter', 'Annotate'],
       \       ['Format file', 'Format'],
       \       ['Run file', 'Run'],
       \       ['Rename file', 'Rename'],
@@ -583,13 +583,14 @@ let g:unite_source_menu_menus.git = {
       \     'description' : 'Git commands',
       \ }
 let g:unite_source_menu_menus.git.command_candidates = [
+      \       ['Stage hunk', 'GitGutterStageHunk'],
+      \       ['Unstage hunk', 'GitGutterRevertHunk'],
       \       ['Stage', 'Gwrite'],
       \       ['Status', 'Gstatus'],
       \       ['Diff', 'Gvdiff'],
-      \       ['Commit', 'Gcommit'],
+      \       ['Commit', 'Gcommit --verbose'],
       \       ['Revert', 'Gread'],
       \       ['Log', 'Glog'],
-      \       ['Unite Log', 'Unite giti/log'],
       \       ['Visual Log', 'Gitv'],
       \     ]
 
@@ -640,6 +641,7 @@ let g:UltiSnipsUsePythonVersion=3
 " -----------------------------------------------------
 " 4.5 Gitgutter settings
 " -----------------------------------------------------
+let g:gitgutter_map_keys=0
 let g:gitgutter_max_signs=9999
 let g:gitgutter_sign_added='+'
 let g:gitgutter_sign_modified='~'
@@ -785,6 +787,14 @@ let g:UltiSnipsJumpBackwardTrigger='<C-k>'
 " -----------------------------------------------------
 vnoremap ,i :Isolate<CR>
 nnoremap ,u :UnIsolate<CR>
+
+" -----------------------------------------------------
+" 5.3 Gitgutter
+" -----------------------------------------------------
+nnoremap [c :GitGutterPrevHunk<CR>
+nnoremap ]c :GitGutterNextHunk<CR>
+nnoremap ,hs :GitGutterStageHunk<CR>
+nnoremap ,hr :GitGutterRevertHunk<CR>
 "}}}
 
 " ======================================================================================================================
