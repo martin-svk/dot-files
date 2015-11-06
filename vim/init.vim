@@ -156,14 +156,8 @@ Plug 'tpope/vim-capslock'
 " Colorschemes
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Hybrid
-Plug 'w0ng/vim-hybrid'
-" Molokai
-Plug 'tomasr/molokai'
-" Badfox
+" Badfox (badwolf fork)
 Plug 'viccuad/badfox'
-" Gruvbox
-Plug 'morhetz/gruvbox'
 " Iceberg
 Plug 'cocopon/iceberg.vim'
 
@@ -804,15 +798,11 @@ if $TERM == 'xterm-256color' || 'screen-256color'
 endif
 
 " Color scheme based on time
-if strftime("%H") < 14
+if strftime("%H") < 15
   let g:badfox_html_link_underline=0
   colorscheme badfox
-elseif strftime("%H") < 20
-  let g:rehash256 = 1
-  colorscheme molokai
 else
-  set bg=dark
-  colorscheme gruvbox
+  colorscheme iceberg
 endif
 
 " Highlight VCS conflict markers
