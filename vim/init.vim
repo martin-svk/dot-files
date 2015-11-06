@@ -167,6 +167,8 @@ Plug 'nanotech/jellybeans.vim'
 " Other
 " ---------------------------------------------------------------------------------------------------------------------
 
+" Easily expand selected region
+Plug 'terryma/vim-expand-region'
 " Search for highlighted work with *
 Plug 'thinca/vim-visualstar'
 " Intelligent buffer closing
