@@ -53,14 +53,14 @@ Plug 'ecomba/vim-ruby-refactoring', { 'for': ['ruby'] }
 " HTML/CSS/JS
 " -----------------------------------------------------
 
-" HTML syntax
+" HTML5 syntax
 Plug 'othree/html5.vim'
 " JS syntax
 Plug 'othree/yajs.vim'
 " JS libs syntax (React, Angular)
 Plug 'othree/javascript-libraries-syntax.vim'
-" JSX syntax
-Plug 'mxw/vim-jsx'
+" JSX syntax (needs vim-javascript for indentation)
+Plug 'mxw/vim-jsx' | Plug 'pangloss/vim-javascript'
 " Typescript syntax
 Plug 'leafgarland/typescript-vim'
 " SCSS syntax
