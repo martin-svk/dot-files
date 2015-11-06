@@ -139,8 +139,6 @@ Plug 'kassio/neoterm', { 'on': 'T' }
 
 " Multiple cursors
 Plug 'terryma/vim-multiple-cursors'
-" Clever F, T
-Plug 'rhysd/clever-f.vim'
 " Additional text objects
 Plug 'wellle/targets.vim'
 " Surround (cs"')
