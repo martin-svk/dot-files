@@ -799,10 +799,10 @@ endif
 
 " Color scheme based on time
 if strftime("%H") < 15
+  colorscheme iceberg
+else
   let g:badfox_html_link_underline=0
   colorscheme badfox
-else
-  colorscheme iceberg
 endif
 
 " Highlight VCS conflict markers
