@@ -721,6 +721,12 @@ let g:clever_f_across_no_line=1
 let g:clever_f_smart_case=1
 let g:clever_f_show_prompt=1
 let g:clever_f_chars_match_any_signs=';'
+
+" -----------------------------------------------------
+" 4.14 Multiple cursors settings
+" -----------------------------------------------------
+let g:multi_cursor_exit_from_visual_mode=0
+let g:multi_cursor_exit_from_insert_mode=0
 "}}}
 
 " ======================================================================================================================
