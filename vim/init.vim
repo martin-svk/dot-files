@@ -160,6 +160,8 @@ Plug 'tpope/vim-capslock'
 Plug 'viccuad/badfox'
 " Iceberg
 Plug 'cocopon/iceberg.vim'
+" Jellybeans
+Plug 'nanotech/jellybeans.vim'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Other
