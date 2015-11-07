@@ -23,19 +23,16 @@ elseif (get_application_name()=="SmartGit") then
    set_window_workspace(4);
    maximize();
 -- Music
-elseif (get_application_name()=="Spotify Free - Linux Preview" or get_application_name()=="VLC media player") then
+elseif (string.find(get_application_name(), "Spotify") or get_application_name()=="VLC media player") then
    set_window_workspace(5);
    set_window_size(1600, 900);
 -- Mail
 elseif (get_application_name()=="Geary") then
    set_window_workspace(6);
--- HipChat
-elseif (get_application_name()=="HipChat") then
+-- HipChat and Slack
+elseif (string.find(get_application_name(), "Slack") or get_application_name()=="HipChat") then
    set_window_workspace(7);
--- Slack
-elseif (get_application_name()=="Slack") then
-   set_window_workspace(7);
-   set_window_size(1600, 900);
+   maximize();
 -- Steam
 elseif (get_application_name()=="Steam") then
    set_window_workspace(8);
