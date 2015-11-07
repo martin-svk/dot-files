@@ -370,6 +370,10 @@ noremap k gk
 nnoremap gj 5j
 nnoremap gk 5k
 
+" More useful enter and backspace
+nnoremap <CR> G
+nnoremap <BS> gg
+
 " When jump to next match also center screen
 noremap n nzz
 noremap N Nzz
@@ -393,9 +397,6 @@ nnoremap Q @q
 " Cancel terminal mode with ,escape
 tnoremap ,<ESC> <C-\><C-n>
 
-" Automatically reselect and yank overpasted text in visual mode
-xnoremap p pgvy
-
 " Omni-complete based on ctags
 inoremap <C-x><C-]> <C-]>
 
@@ -403,8 +404,14 @@ inoremap <C-x><C-]> <C-]>
 nnoremap c "xc
 xnoremap c "xc
 
-" Don't copy over-pasted text in visual mode
-xnoremap p "_dP
+" After block yank and paste, move cursor to the end of operated text
+" Also, don't copy over-pasted text in visual mode
+vnoremap y y`]
+vnoremap p "_dP`]
+nnoremap p p`]
+
+" No more accidentally showing up command window (Use C-f to show it)
+map q: :q
 
 " -----------------------------------------------------
 " 3.4 Common tasks
@@ -798,12 +805,18 @@ vnoremap ,i :Isolate<CR>
 nnoremap ,u :UnIsolate<CR>
 
 " -----------------------------------------------------
-" 5.3 Gitgutter
+" 5.4 Gitgutter
 " -----------------------------------------------------
 nnoremap [c :GitGutterPrevHunk<CR>
 nnoremap ]c :GitGutterNextHunk<CR>
 nnoremap ,hs :GitGutterStageHunk<CR>
 nnoremap ,hr :GitGutterRevertHunk<CR>
+
+" -----------------------------------------------------
+" 5.5 Expand region
+" -----------------------------------------------------
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
 "}}}
 
 " ======================================================================================================================
