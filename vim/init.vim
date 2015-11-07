@@ -195,7 +195,6 @@ call plug#end()
 
 set shell=/bin/zsh                          " Setting shell to zsh
 set number                                  " Line numbers
-set relativenumber                          " Line numbers
 set ignorecase                              " Ignore case by default
 set smartcase                               " Make search case sensitive only if it contains uppercase letters
 set laststatus=2                            " Always show status line
