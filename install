@@ -229,3 +229,38 @@ else
   echo "   Creating agignore!"
   ln -sf $current_path/other/agignore ~/.agignore
 fi
+
+#-----------------------------------------------------
+# Installing linters
+#-----------------------------------------------------
+echo -n "[ Rubocop ]"
+
+if [ ! -d ~/dev ]; then
+  mkdir ~/dev
+fi
+
+if command_exists rubocop; then
+  ln -sf $current_path/linters/rubocop.yml ~/dev/.rubocop.yml
+else
+  echo "   Installing rubocop!"
+  gem install rubocop
+  ln -sf $current_path/linters/rubocop.yml ~/dev/.rubocop.yml
+fi
+
+echo -n "[ Eslint ]"
+
+if command_exists eslint; then
+  ln -sf $current_path/linters/eslintrc ~/dev/.eslintrc
+else
+  if command_exists npm; then
+    npm install -g eslint
+    ln -sf $current_path/linters/eslintrc ~/dev/.eslintrc
+  else
+    echo "   Install node and npm, then rerun script again!"
+    exit
+  fi
+fi
+
+#-----------------------------------------------------
+# Installing Other stuff
+#-----------------------------------------------------
