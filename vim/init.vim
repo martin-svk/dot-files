@@ -154,8 +154,8 @@ Plug 'tpope/vim-capslock'
 " Colorschemes
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Badfox (badwolf fork)
-Plug 'viccuad/badfox'
+" Molokai
+Plug 'tomasr/molokai'
 " Iceberg
 Plug 'cocopon/iceberg.vim'
 " Jellybeans
@@ -820,8 +820,8 @@ endif
 
 " Color scheme based on time
 if strftime("%H") < 15
-  let g:badfox_html_link_underline=0
-  colorscheme badfox
+  let g:rehash256 = 1
+  colorscheme molokai
 elseif strftime("%H") < 20
   colorscheme jellybeans
 else
