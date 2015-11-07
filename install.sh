@@ -2,12 +2,15 @@
 
 #-----------------------------------------------------
 # @author Martin Toma
-# @version 5.1
+# @version 6.0
 # @creted Fri Nov 15 13:13:22 CET 2013
 #-----------------------------------------------------
 
 # Dont continue on error
 set -e
+
+# Existing files won't be replaced
+REPLACE_FILES=false
 
 #-----------------------------------------------------
 # Functions and variables
@@ -26,14 +29,15 @@ install_oh_my_zsh () {
 }
 
 install_plug_nvim() {
-  curl -fLo ~/config/nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  curl -fLo ~/.config/nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 }
 
 install_nvim_folder() {
   mkdir -p ~/.config/nvim/autoload
   install_plug_nvim
-  ln -sf $current_path/nvim/dictionary.utf-8.add ~/config/nvim/dictionary.utf-8.add
-  ln -sf $current_path/nvim/ultisnips/ ~/config/nvim/UltiSnips
+  ln -sf $current_path/neovim/spell/dictionary.utf-8.add ~/.config/nvim/dictionary.utf-8.add
+  ln -sf $current_path/neovim/UltiSnips ~/.config/nvim/UltiSnips
+  ln -sf $current_path/neovim/init.vim ~/.config/nvim/init.vim
 }
 
 #-----------------------------------------------------
@@ -47,28 +51,30 @@ fi
 #-----------------------------------------------------
 # ZSH installation
 #-----------------------------------------------------
+echo -n "[ zshrc ]"
+
+if [ ! -f ~/.zshrc ]; then
+  echo "    Creating zshrc!"
+  ln -sf $current_path/shell/zshrc ~/.zshrc
+else if REPLACE_FILES; then
+  echo "    Deleting old zshrc!"
+  rm ~/.zshrc
+  ln -sf $current_path/shell/zshrc ~/.zshrc
+else
+  echo "    Keeping existing zshrc!"
+fi
 
 echo -n "[ oh-my-zsh ]"
 
 if command_exists zsh; then
   if [ ! -d ~/.oh-my-zsh ]; then
-    echo "Installing oh my zsh is"
+    echo "    Installing Oh my zsh"
     install_oh_my_zsh
   fi
 else
-  echo "Installing ZSH."
+  echo "    Installing ZSH."
   sudo apt-get install zsh -y
-fi
-
-echo -n "[ zshrc ]"
-
-if [ ! -f ~/.zshrc ]; then
-  echo "    Creating!"
-  ln -sf $current_path/shell/zshrc ~/.zshrc
-else
-  echo "    Deleting old one!"
-  rm ~/.zshrc
-  ln -sf $current_path/shell/zshrc ~/.zshrc
+  install_oh_my_zsh
 fi
 
 #-----------------------------------------------------
@@ -77,49 +83,53 @@ fi
 echo -n "[ gitconfig ]"
 
 if [ ! -f ~/.gitconfig ]; then
-  echo "    Creating!"
+  echo "    Creating gitconfig!"
   ln -sf $current_path/git/gitconfig ~/.gitconfig
-else
-  echo "    Deleting old one!"
+else if REPLACE_FILES; then
+  echo "    Deleting old gitconfig!"
   rm ~/.gitconfig
   ln -sf $current_path/git/gitconfig ~/.gitconfig
+else
+  echo "    Keeping existing gitconfig!"
 fi
 
 echo -n "[ gitignore ]"
 
 if [ ! -f ~/.gitignore ]; then
-  echo "    Creating!"
+  echo "    Creating gitignore!"
   ln -sf $current_path/git/gitignore ~/.gitignore
-else
-  echo "    Deleting old one!"
+else if REPLACE_FILES; then
+  echo "    Deleting old gitignore!"
   rm ~/.gitignore
   ln -sf $current_path/git/gitignore ~/.gitignore
+else
+  echo "    Keeping existing gitignore!"
 fi
 
 #-----------------------------------------------------
 # Neovim, dictionary, ultisnips
 #-----------------------------------------------------
-echo -n "[ init.vim ]"
+echo -n "[ Neovim ]"
 
 if !command_exists nvim; then
-  sudo add-apt-repository ppa:neovim-ppa/unstable && sudo apt-get update && sudo apt-get install -y neovim
+  echo "    Installing Neovim!"
+  sudo add-apt-repository ppa:neovim-ppa/unstable
+  sudo apt-get update
+  sudo apt-get install -y neovim
 fi
 
-if [ ! -f ~/config/nvim/init.vim ]; then
-  echo "    Creating!"
-  ln -sf $current_path/vim/init.vim ~/config/nvim/init.vim
-else
-  echo "    Deleting old one!"
-  rm ~/config/nvim/init.vim
-  ln -sf $current_path/vim/init.vim ~/config/nvim/init.vim
-fi
+echo -n "[ Neovim config ]"
 
-if [ ! -d ~/config/nvim ]; then
-  mkdir ~/config/nvim
+if [ ! -d ~/.config/nvim ]; then
+  echo "    Creating nvim folder!"
+  mkdir ~/.config/nvim
+  install_nvim_folder
+else if REPLACE_FILES; then
+  echo "    Deleting old nvim folder!"
+  rm -rf ~/.config/nvim
   install_nvim_folder
 else
-  rm -rf ~/config/nvim
-  install_nvim_folder
+  echo "    Keeping existing nvim folder!"
 fi
 
 #-----------------------------------------------------
@@ -132,12 +142,14 @@ if !command_exists tmux; then
 fi
 
 if [ ! -f ~/.tmux.conf ]; then
-  echo "    Creating!"
+  echo "    Creating tmux.conf!"
   ln -sf $current_path/tmux/tmux.conf ~/.tmux.conf
-else
-  echo "    Deleting old one!"
+else if REPLACE_FILES; then
+  echo "    Deleting old tmux.conf!"
   rm ~/.tmux.conf
   ln -sf $current_path/tmux/tmux.conf ~/.tmux.conf
+else
+  echo "    Keeping existing tmux.conf!"
 fi
 
 #-----------------------------------------------------
@@ -150,44 +162,70 @@ if !command_exists xterm; then
 fi
 
 if [ ! -f ~/.Xresources ]; then
-  echo "   Creating!"
+  echo "   Creating Xresources!"
   ln -sf $current_path/shell/Xresources ~/.Xresources
-else
-  echo "   Deleting old one!"
+  xrdb -merge  ~/.Xresources
+else if REPLACE_FILES; then
+  echo "   Deleting old Xresources!"
   rm ~/.Xresources
   ln -sf $current_path/shell/Xresources ~/.Xresources
+  xrdb -merge  ~/.Xresources
+else
+  echo "   Keeping existing Xresources!"
 fi
 
 #-----------------------------------------------------
-# Installing ruby utilities
+# Installing Ruby utilities
 #-----------------------------------------------------
-echo -n "[ Ruby utilities (gemrc, irbrc, rdebugrc) ]"
+echo -n "[ Ruby (rbenv) and utilities (gemrc, irbrc, rdebugrc) ]"
 
 if command_exists ruby; then
-  echo "   Creating!"
-  ln -sf $current_path/ruby/gemrc ~/.gemrc
-  ln -sf $current_path/ruby/irbrc ~/.irbrc
-  ln -sf $current_path/ruby/rdebugrc ~/.rdebugrc
+  if [ ! -f ~/.gemrc ]; then
+    echo "   Creating gemrc, irbrc, rdebugrc!"
+    ln -sf $current_path/ruby/gemrc ~/.gemrc
+    ln -sf $current_path/ruby/irbrc ~/.irbrc
+    ln -sf $current_path/ruby/rdebugrc ~/.rdebugrc
+  else
+    echo "   Keeping existing gemrc, irbrc, rdebugrc!"
+  fi
+
   if command_exists pry; then
-    ln -sf $current_path/ruby/pryrc ~/.pryrc
+    if [ ! -f ~/.pryrc ]; then
+      echo "   Creating pryrc!"
+      ln -sf $current_path/ruby/pryrc ~/.pryrc
+    else
+      echo "   Keeping existing pryrc!"
+    fi
   else
     echo "   Installing pry!"
-    gem install pry && ln -sf $current_path/ruby/pryrc ~/.pryrc
+    gem install pry
+    echo "   Creating pryrc!"
+    ln -sf $current_path/ruby/pryrc ~/.pryrc
   fi
 else
   echo "    Installing, rbenv and rubybuild."
   git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
   git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
   echo "    Restart your shell and install ruby by rbenv install ruby-version"
+  echo "    Then run this script again."
+  exit
 fi
 
 #-----------------------------------------------------
 # Installing Ag
 #-----------------------------------------------------
+echo -n "[ Ag ]"
 
 if command_exists ag; then
-  ln -sf $current_path/other/agignore ~/.agignore
+  if [ ! -f ~/.agignore ]; then
+    echo "   Creating agignore!"
+    ln -sf $current_path/other/agignore ~/.agignore
+  else
+    echo "   Keeping existing agignore!"
+  fi
 else
+  echo "   Installing Ag!"
   sudo apt-get install -y silversearcher-ag
+  echo "   Creating agignore!"
   ln -sf $current_path/other/agignore ~/.agignore
 fi
