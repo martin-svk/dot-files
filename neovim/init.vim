@@ -898,8 +898,8 @@ autocmd BufWritePost *.scss Neomake scsslint
 " ======================================================================================================================
 "{{{
 " Load other scripts
-if filereadable(expand("~/config/dot-files/vim/scripts/utils.vim"))
-  source ~/config/dot-files/vim/scripts/utils.vim
+if filereadable(expand("~/config/dot-files/neovim/scripts/utils.vim"))
+  source ~/config/dot-files/neovim/scripts/utils.vim
 else
   echo "Update path to utils scripts!"
 endif
