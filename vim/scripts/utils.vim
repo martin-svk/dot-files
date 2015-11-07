@@ -153,7 +153,7 @@ endfunction
 
 " Unite commands wrappers
 function! utils#uniteSources()
-  execute 'Unite -start-insert source'
+  execute 'Unite -no-split -buffer-name=sources -start-insert source'
 endfunction
 
 function! utils#uniteMRUs()
@@ -168,8 +168,12 @@ function! utils#uniteBuffers()
   execute 'Unite -no-split -buffer-name=buffers -start-insert buffer'
 endfunction
 
+function! utils#uniteOutline()
+  execute 'Unite -no-split -buffer-name=symbols -start-insert outline'
+endfunction
+
 function! utils#uniteTags()
-  execute 'Unite -no-split -buffer-name=tags -start-insert outline'
+  execute 'Unite -no-split -buffer-name=tags -start-insert tag'
 endfunction
 
 function! utils#uniteGrep()
@@ -201,7 +205,7 @@ function! utils#uniteSnippets()
 endfunction
 
 function! utils#uniteCustomMenu()
-  execute 'Unite menu'
+  execute 'Unite -no-split -buffer-name=menu -start-insert menu'
 endfunction
 
 " Format function

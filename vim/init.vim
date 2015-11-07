@@ -630,6 +630,7 @@ let g:unite_source_menu_menus.unite.command_candidates = [
       \       ['Unite registers', 'call utils#uniteRegisters()'],
       \       ['Unite snippets', 'call utils#uniteSnippets()'],
       \       ['Unite sources', 'call utils#uniteSources()'],
+      \       ['Unite symbols', 'call utils#uniteOutline()'],
       \       ['Unite tags', 'call utils#uniteTags()'],
       \       ['Unite windows', 'call utils#uniteWindows()'],
       \       ['Unite yank history', 'call utils#uniteYankHistory()'],
@@ -763,13 +764,15 @@ function! s:unite_settings()
   nmap <silent> <buffer> m <Plug>(unite_toggle_mark_current_candidate)
 endfunction
 
+" Search files recursively (Ctrl-[P] mnemonics)
+nnoremap <silent> <leader>p :call utils#uniteFileRec()<CR>
 " [U]nite sources
 nnoremap <silent> <leader>u :call utils#uniteSources()<CR>
-" [O]pen files recursively
-nnoremap <silent> <leader>o :call utils#uniteFileRec()<CR>
 " Search between open files - [b]uffers
 nnoremap <silent> <leader>b :call utils#uniteBuffers()<CR>
-" Search in current file [t]ags
+" Search in current file [o]utline
+nnoremap <silent> <leader>o :call utils#uniteOutline()<CR>
+" Search project [t]ags
 nnoremap <silent> <leader>t :call utils#uniteTags()<CR>
 " Search for term - [g]rep
 nnoremap <silent> <leader>g :call utils#uniteGrep()<CR>
