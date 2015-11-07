@@ -20,8 +20,8 @@ Below are the most interesting parts of my neovim configuration file.
 
 ### Plugins
 
-Plugin manager: [vim-plug](https://github.com/junegunn/vim-plug)
-Language/syntax files: [vim-polyglot](https://github.com/sheerun/vim-polyglot)
+I use excellent [vim-plug](https://github.com/junegunn/vim-plug) package manager.
+It support, parallel fetching, lazy loading, after install hooks, etc. You should use it :)
 
 ### Neovim defaults overriding/improving
 
@@ -126,7 +126,11 @@ let g:unite_source_line_enable_highlight=1
 
 " Custom unite menus
 let g:unite_source_menu_menus = {}
+```
 
+Custom Unite menu for when You forgot the keybindings.
+
+```
 " Utils menu
 let g:unite_source_menu_menus.utils = {
       \     'description' : 'Utility commands',
@@ -237,15 +241,15 @@ hi Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE
 
 ### Screenshot and Cheatsheets
 
-[Molokai + NERDTree + Unite](./images/vim.png)
+[Molokai + NERDTree + Unite](./data/screenshots/vim.png)
 
-[Vim-hybrid + NERDTree + Tagbar](./images/vim_hybrid.png)
+[Vim-hybrid + NERDTree + Tagbar](./data/screenshots/vim_hybrid.png)
 
-[Gotham + NERDTree + Tagbar](./images/vim_gotham.png)
+[Gotham + NERDTree + Tagbar](./data/screenshots/vim_gotham.png)
 
-[Image cheatsheet](./images/cheatsheet.png)
+[Image cheatsheet](./data/screenshots/cheatsheet.png)
 
-[PDF cheatsheet](./images/cheatsheet2.pdf)
+[PDF cheatsheet](./data/screenshots/cheatsheet2.pdf)
 
 ## ZSH
 
