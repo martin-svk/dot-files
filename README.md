@@ -5,7 +5,7 @@ Below I present the most interesting parts of my config files. Feel free to be i
 
 ## What's included:
 
-* NeoVim (Vim/GVim/IdeaVim)
+* NeoVim
 * Tmux
 * Git
 * ZSH (oh-my-zsh)
@@ -13,10 +13,10 @@ Below I present the most interesting parts of my config files. Feel free to be i
 * Ruby/Rails utilities (pry, gem, irb)
 * Other CLI utilities (Ag search, Devilspie2)
 
-## NEOVIM / VIM
+## NEOVIM
 
-I am primary using [neovim](http://neovim.org/) which is about to hit it's first public
-release (version 0.1). Below are the most interesting parts of my neovim configuration file.
+I am using [neovim](http://neovim.org/) which is a vim fork focused on maintainability.
+Below are the most interesting parts of my neovim configuration file.
 
 ### Plugins
 
