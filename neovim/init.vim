@@ -894,6 +894,7 @@ autocmd BufWritePost *.js Neomake eslint
 autocmd BufWritePost *.rb Neomake rubocop
 autocmd BufWritePost *.html Neomake tidy
 autocmd BufWritePost *.scss Neomake scsslint
+autocmd BufWritePost *.sh Neomake shellcheck
 "}}}
 
 " ======================================================================================================================
