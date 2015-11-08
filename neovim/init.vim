@@ -224,18 +224,15 @@ set backspace=indent,eol,start              " Set default behavior of backspace
 set nostartofline                           " Prevent cursor from moving to beginning of line when switching buffers
 set virtualedit=block                       " To be able to select past EOL in visual block mode
 set nojoinspaces                            " No extra space when joining a line which ends with . ? !
-set startofline                             " When doing thing like gg or G, will move cursor to start of line
 set wrapscan                                " Search again from top when reached the bottom
 set scrolloff=5                             " Scroll when closing to top or bottom of the screen
 set updatetime=1000                         " Update time used to create swap file or other things
 set mouse=a                                 " Enable mouse integration
-set noendofline                             " Dont add empty lines at the end of file
 
 " -----------------------------------------------------
 " 2.1 Indentation settings (2 spaces tabs)
 " -----------------------------------------------------
 set autoindent
-set smartindent
 set expandtab
 set smarttab
 set shiftwidth=2
@@ -284,7 +281,6 @@ set listchars=tab:>\ ,trail:·,extends:#,nbsp:·
 " -----------------------------------------------------
 " 2.6 Filetype settings
 " -----------------------------------------------------
-filetype off
 filetype plugin on
 filetype indent on
 
@@ -398,7 +394,7 @@ nnoremap Q @q
 tnoremap ,<ESC> <C-\><C-n>
 
 " Omni-complete based on ctags
-inoremap <C-x><C-]> <C-]>
+inoremap <C-]> <C-x><C-]>
 
 " Don't yank to default register when changing something
 nnoremap c "xc
@@ -829,11 +825,6 @@ vmap <C-v> <Plug>(expand_region_shrink)
 " Syntax highlighting
 syntax on
 
-" XTerm 256 colors
-if $TERM == 'xterm-256color' || 'screen-256color'
-  set t_Co=256
-endif
-
 " Color scheme based on time
 if strftime("%H") < 15
   let g:rehash256 = 1
@@ -870,10 +861,6 @@ autocmd FileType html,htmldjango,xhtml,css,javascript,javascript.jsx,snippets se
 " Keywordprg settings
 autocmd FileType vim setlocal keywordprg=:help
 
-" make CSS omni-completion work for SASS and SCSS
-autocmd BufNewFile,BufRead *.scss set ft=scss.css
-autocmd BufNewFile,BufRead *.sass set ft=sass.css
-
 " Turn spellcheck on for markdown files.
 autocmd BufNewFile,BufRead *.md setlocal spell
 
@@ -895,16 +882,4 @@ autocmd BufWritePost *.rb Neomake rubocop
 autocmd BufWritePost *.html Neomake tidy
 autocmd BufWritePost *.scss Neomake scsslint
 autocmd BufWritePost *.sh Neomake shellcheck
-"}}}
-
-" ======================================================================================================================
-" 8.0 Other stuff
-" ======================================================================================================================
-"{{{
-" Load other scripts
-if filereadable(expand("~/config/dot-files/neovim/scripts/utils.vim"))
-  source ~/config/dot-files/neovim/scripts/utils.vim
-else
-  echo "Update path to utils scripts!"
-endif
 "}}}
