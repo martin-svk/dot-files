@@ -13,7 +13,7 @@ Below I present the most interesting parts of my config files. **Feel free to be
 * [ZSH](#zsh) ([source](./shell/zshrc))
 * [Tmux](#tmux) ([source](./tmux/tmux.conf))
 * [Git](#git) ([source](./git/gitconfig))
-* [Xterm](#xterm) ([ source ](./shell/Xresources))
+* [Xterm](#xterm) ([source](./shell/Xresources))
 * [Ruby / Rails utilities (pry, gem, IRB)](#pry-gem-irb)
 * [Other utilities (Ag search, Devilspie2)](#ag-devilspie2)
 
