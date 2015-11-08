@@ -16,14 +16,28 @@ Below I present the most interesting parts of my config files. Feel free to be i
 ## NEOVIM
 
 I am using [neovim](http://neovim.org/) which is a Vim fork focused on maintainability.
-Below are the most interesting parts of my Neovim configuration file.
+Below are the most interesting parts of my Neovim configuration.
 
 ### Plugins
 
-I use excellent [vim-plug](https://github.com/junegunn/vim-plug) package manager.
-It support, parallel fetching, lazy loading, after install hooks, etc. You should use it :)
+I use the excellent [vim-plug](https://github.com/junegunn/vim-plug) package manager.
+It supports parallel fetching, lazy loading, after install hooks, etc. You should consider using it :)
 
-Which plugins I use? Look [here](https://github.com/martin-svk/dot-files/blob/master/neovim/init.vim#L17).
+And which plugins I use? Currently I use about 60 plugins. Some of the most interesting and not
+so widely known are:
+
+* [Neomake](https://github.com/benekastah/neomake) - Linter integration (Syntastic alternative) with asynchronous support.
+* [Lexima](https://github.com/cohama/lexima.vim) - Auto-closing (,",' and even some language constructs like ruby blocks. With dot repeat support.
+* [Unite](https://github.com/Shougo/unite.vim) - Search and display information from arbitrary sources.
+* [Multiple cursors](https://github.com/terryma/vim-multiple-cursors) - ST inspired multiple cursors.
+* [Isolate](https://github.com/ferranpm/vim-isolate) - Safely edit in isolation.
+
+For complete list, look [here](https://github.com/martin-svk/dot-files/blob/master/neovim/init.vim#L17).
+
+### Utility scripts
+
+In the code snippets below I ofter call *utils#...* namespaced functions. Those are some
+simple multiple lines long *vimscript* functions. You can look find them [here](./neovim/scripts/utils.vim).
 
 ### Vim defaults overriding (improving)
 
