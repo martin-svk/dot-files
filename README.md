@@ -154,7 +154,7 @@ command! GenerateJSCT :call utils#generateJSCtags()
 command! GenerateRubyCT :call utils#generateRubyCtags()
 ```
 
-### Browser and fuzzy searcher for multiple sources [(Unite)](https://github.com/Shougo/unite.vim)
+### Browser and fuzzy searcher for multiple sources ([Unite](https://github.com/Shougo/unite.vim))
 
 ```VimL
 " Matcher settings
@@ -181,9 +181,9 @@ call unite#custom#profile('default', 'context', {
 let g:unite_source_line_enable_highlight=1
 ```
 
-#### Custom Unite menu (for when You forgot the shortcuts).
+##### Custom Unite menu (for when You forgot the shortcuts).
 
-```
+```VimL
 " Custom unite menus
 let g:unite_source_menu_menus = {}
 
@@ -252,7 +252,7 @@ let g:unite_source_menu_menus.unite.command_candidates = [
       \     ]
 ```
 
-### Unite buffer mappings
+##### Unite buffer mappings
 
 ```VimL
 " Custom mappings for the unite buffer
@@ -272,7 +272,7 @@ function! s:unite_settings()
 endfunction
 ```
 
-### Improved status line [(Lightline)](https://github.com/itchyny/lightline.vim)
+### Improved status line ([Lightline](https://github.com/itchyny/lightline.vim))
 
 ```VimL
 let g:lightline = {
@@ -299,7 +299,7 @@ let g:lightline = {
       \ }
 ```
 
-### Snippets support [(Ultisnips)](https://github.com/SirVer/ultisnips)
+### Snippets support ([Ultisnips](https://github.com/SirVer/ultisnips))
 
 ```VimL
 " Disable built-in cx-ck to be able to go backward
