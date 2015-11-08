@@ -377,8 +377,15 @@ setopt correct
 # Dont raise errors when regex nomatch fires
 unsetopt nomatch
 
-# Use vman as man wrapper
+# Use vman as man wrapper (Needs superman vim plugin)
 compdef vman="man"
+vman() {
+  nvim -c "SuperMan $*"
+
+  if [ "$?" != "0" ]; then
+    echo "No manual entry for $*"
+  fi
+}
 ```
 
 I am also using the excellent [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) framework.
