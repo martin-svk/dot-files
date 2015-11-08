@@ -874,6 +874,9 @@ autocmd FileType vim setlocal keywordprg=:help
 autocmd BufNewFile,BufRead *.scss set ft=scss.css
 autocmd BufNewFile,BufRead *.sass set ft=sass.css
 
+" Turn spellcheck on for markdown files.
+autocmd BufNewFile,BufRead *.md setlocal spell
+
 " Remove trailing whitespaces automatically before save
 autocmd BufWritePre * call utils#stripTrailingWhitespaces()
 
