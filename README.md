@@ -1,4 +1,4 @@
-# Opinionated, very well documented, terminal centric dot files.
+# Well documented, terminal centric web developer's dot files.
 
 Hey everybody. I am Martin, a software developer with an obsession for workflow improvement.
 Below I present the most interesting parts of my config files. **Feel free to be inspired**.
