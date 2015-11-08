@@ -5,25 +5,27 @@ Below I present the most interesting parts of my config files. Feel free to be i
 
 ## What's included:
 
-* NeoVim
+* Neovim
 * Tmux
 * Git
 * ZSH (oh-my-zsh)
-* XTerm (Xresources)
-* Ruby/Rails utilities (pry, gem, irb)
-* Other CLI utilities (Ag search, Devilspie2)
+* Xterm (Xresources)
+* Ruby/Rails utilities (pry, gem, IRB)
+* Other utilities (Ag search, Devilspie2)
 
 ## NEOVIM
 
-I am using [neovim](http://neovim.org/) which is a vim fork focused on maintainability.
-Below are the most interesting parts of my neovim configuration file.
+I am using [neovim](http://neovim.org/) which is a Vim fork focused on maintainability.
+Below are the most interesting parts of my Neovim configuration file.
 
 ### Plugins
 
 I use excellent [vim-plug](https://github.com/junegunn/vim-plug) package manager.
 It support, parallel fetching, lazy loading, after install hooks, etc. You should use it :)
 
-### Neovim defaults overriding/improving
+Which plugins I use? Look [here](https://github.com/martin-svk/dot-files/blob/master/neovim/init.vim#L17).
+
+### Vim defaults overriding (improving)
 
 ```viml
 " Intelligent window cycling
@@ -34,6 +36,10 @@ noremap j gj
 noremap k gk
 nnoremap gj 5j
 nnoremap gk 5k
+
+" More useful enter and backspace
+nnoremap <CR> G
+nnoremap <BS> gg
 
 " When jump to next match also center screen
 noremap n nzz
@@ -58,21 +64,57 @@ nnoremap Q @q
 " Cancel terminal mode with ,escape
 tnoremap ,<ESC> <C-\><C-n>
 
-" Automatically reselect and yank overpasted text in visual mode
-xnoremap p pgvy
-
 " Omni-complete based on ctags
 inoremap <C-x><C-]> <C-]>
 
-" Dont yank to default register when changing something
+" Don't yank to default register when changing something
 nnoremap c "xc
 xnoremap c "xc
 
-" Dont copy overpasted text in visual mode
-xnoremap p "_dP
+" After block yank and paste, move cursor to the end of operated text
+" Also, don't copy over-pasted text in visual mode
+vnoremap y y`]
+vnoremap p "_dP`]
+nnoremap p p`]
+
+" No more accidentally showing up command window (Use C-f to show it)
+map q: :q
 ```
 
-#### Autocomplete (Simple tab wrapper + Ctags)
+### Common tasks
+
+```VimL
+" Quick save and close buffer
+nnoremap ,w :w<CR>
+nnoremap <silent> ,c :Sayonara!<CR>
+nnoremap <silent> ,q :Sayonara<CR>
+
+" Yank and paste from clipboard
+nnoremap ,y "+y
+vnoremap ,y "+y
+nnoremap ,yy "+yy
+nnoremap ,p "+p
+
+" Move visual block
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+```
+
+### Buffer management
+
+```VimL
+" Windows resizing using arrow keys
+nnoremap <silent> <Left> :vertical resize -1<CR>
+nnoremap <silent> <Right> :vertical resize +1<CR>
+nnoremap <silent> <Up> :resize +1<CR>
+nnoremap <silent> <Down> :resize -1<CR>
+
+" Buffers navigation and management
+nnoremap <silent> + :bn<CR>
+nnoremap <silent> _ :bp<CR>
+```
+
+### Autocomplete (Simple tab wrapper + Ctags)
 
 ```VimL
 " Multipurpose tab key (inspired by Gary Bernhardt)
@@ -88,15 +130,12 @@ command! GenerateJSCT :call utils#generateJSCtags()
 command! GenerateRubyCT :call utils#generateRubyCtags()
 ```
 
-#### Fuzzy file/buffer/text finder [(Unite)](https://github.com/Shougo/unite.vim)
+### Browser and fuzzy searcher for multiple sources [(Unite)](https://github.com/Shougo/unite.vim)
 
 ```VimL
 " Matcher settings
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
-
-" Track yank history
-let g:unite_source_history_yank_enable=1
 
 " Use ag if available
 if executable('ag')
@@ -105,15 +144,8 @@ if executable('ag')
   let g:unite_source_grep_recursive_opt=''
 
   " Set rec source command
-  let g:unite_source_rec_async_command =
-        \ ['ag', '--follow', '--nocolor', '--nogroup',
-        \  '--ignore', '.git', '--ignore', '.hg', '--ignore', '.svn', '--ignore', '.bzr',
-        \  '--ignore', '.meteor', '--ignore', '**/bower_components/', '--ignore', '**/node_modules/',
-        \  '--hidden', '-g', '']
+  let g:unite_source_rec_async_command = ['ag', '--follow', '--nocolor', '--nogroup', '--hidden', '-g', '']
 endif
-
-" Ignore wildignore files
-call unite#custom#source('file_rec', 'ignore_globs', split(&wildignore, ','))
 
 " Custom profile
 call unite#custom#profile('default', 'context', {
@@ -123,21 +155,21 @@ call unite#custom#profile('default', 'context', {
 
 " Add syntax highlighting
 let g:unite_source_line_enable_highlight=1
+```
 
+#### Custom Unite menu (for when You forgot the shortcuts).
+
+```
 " Custom unite menus
 let g:unite_source_menu_menus = {}
-```
 
-Custom Unite menu for when You forgot the keybindings.
-
-```
 " Utils menu
 let g:unite_source_menu_menus.utils = {
       \     'description' : 'Utility commands',
       \ }
 let g:unite_source_menu_menus.utils.command_candidates = [
       \       ['Color picker', 'VCoolor'],
-      \       ['Annotate file', 'Annotate'],
+      \       ['Run XMPFilter', 'Annotate'],
       \       ['Format file', 'Format'],
       \       ['Run file', 'Run'],
       \       ['Rename file', 'Rename'],
@@ -152,13 +184,14 @@ let g:unite_source_menu_menus.git = {
       \     'description' : 'Git commands',
       \ }
 let g:unite_source_menu_menus.git.command_candidates = [
+      \       ['Stage hunk', 'GitGutterStageHunk'],
+      \       ['Unstage hunk', 'GitGutterRevertHunk'],
       \       ['Stage', 'Gwrite'],
       \       ['Status', 'Gstatus'],
       \       ['Diff', 'Gvdiff'],
-      \       ['Commit', 'Gcommit'],
+      \       ['Commit', 'Gcommit --verbose'],
       \       ['Revert', 'Gread'],
       \       ['Log', 'Glog'],
-      \       ['Unite Log', 'Unite giti/log'],
       \       ['Visual Log', 'Gitv'],
       \     ]
 
@@ -178,6 +211,7 @@ let g:unite_source_menu_menus.unite = {
       \     'description' : 'My Unite sources',
       \ }
 let g:unite_source_menu_menus.unite.command_candidates = [
+      \       ['Unite MRUs', 'call utils#uniteMRUs()'],
       \       ['Unite buffers', 'call utils#uniteBuffers()'],
       \       ['Unite file search', 'call utils#uniteFileRec()'],
       \       ['Unite grep', 'call utils#uniteGrep()'],
@@ -187,13 +221,61 @@ let g:unite_source_menu_menus.unite.command_candidates = [
       \       ['Unite registers', 'call utils#uniteRegisters()'],
       \       ['Unite snippets', 'call utils#uniteSnippets()'],
       \       ['Unite sources', 'call utils#uniteSources()'],
+      \       ['Unite symbols', 'call utils#uniteOutline()'],
       \       ['Unite tags', 'call utils#uniteTags()'],
       \       ['Unite windows', 'call utils#uniteWindows()'],
       \       ['Unite yank history', 'call utils#uniteYankHistory()'],
       \     ]
 ```
 
-#### Snippets support [(Ultisnips)](https://github.com/SirVer/ultisnips)
+### Unite buffer mappings
+
+```VimL
+" Custom mappings for the unite buffer
+autocmd FileType unite call s:unite_settings()
+function! s:unite_settings()
+  " Enable navigation with control-j and control-k in insert mode
+  imap <silent> <buffer> <C-j> <Plug>(unite_select_next_line)
+  imap <silent> <buffer> <C-k> <Plug>(unite_select_previous_line)
+  " Runs 'splits' action by <C-s> and <C-v>
+  imap <silent> <buffer> <expr> <C-s> unite#do_action('split')
+  imap <silent> <buffer> <expr> <C-v> unite#do_action('vsplit')
+  " Exit with escape
+  nmap <silent> <buffer> <ESC> <Plug>(unite_exit)
+  " Mark candidates
+  vmap <silent> <buffer> m <Plug>(unite_toggle_mark_selected_candidates)
+  nmap <silent> <buffer> m <Plug>(unite_toggle_mark_current_candidate)
+endfunction
+```
+
+### Improved status line [(Lightline)](https://github.com/itchyny/lightline.vim)
+
+```VimL
+let g:lightline = {
+      \ 'colorscheme': 'powerline',
+      \ 'tab': {
+      \   'active': [ 'tabnum', 'filename', 'modified' ],
+      \   'inactive': [ 'tabnum', 'filename', 'modified' ]
+      \ },
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste', 'capslock' ],
+      \             [ 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component': {
+      \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
+      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+      \   'capslock': '%{exists("*CapsLockStatusline")?CapsLockStatusline():""}'
+      \ },
+      \ 'component_visible_condition': {
+      \   'readonly': '(&filetype!="help"&& &readonly)',
+      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))'
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
+      \ }
+```
+
+### Snippets support [(Ultisnips)](https://github.com/SirVer/ultisnips)
 
 ```VimL
 " Disable built-in cx-ck to be able to go backward
@@ -207,6 +289,7 @@ let g:UltiSnipsJumpBackwardTrigger='<C-k>'
 ### Color settings based on time
 
 ```viml
+" Syntax highlighting
 syntax on
 
 " XTerm 256 colors
@@ -215,18 +298,13 @@ if $TERM == 'xterm-256color' || 'screen-256color'
 endif
 
 " Color scheme based on time
-if strftime("%H") < 14
-  let g:airline_theme='badwolf'
-  let g:badfox_html_link_underline=0
-  colorscheme badfox
-elseif strftime("%H") < 20
+if strftime("%H") < 15
   let g:rehash256 = 1
-  let g:airline_theme='tomorrow'
   colorscheme molokai
+elseif strftime("%H") < 20
+  colorscheme jellybeans
 else
-  set bg=dark
-  let g:airline_theme='tomorrow'
-  colorscheme hybrid
+  colorscheme iceberg
 endif
 
 " Highlight VCS conflict markers
@@ -236,16 +314,18 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 highlight TermCursor ctermfg=green guifg=green
 
 " Remove underline in folded lines
-hi Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE
+hi! Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE
+
+" Link highlight groups to improve buftabline colors
+hi! link BufTabLineCurrent Statement
+hi! link BufTabLineActive Comment
+hi! link BufTabLineHidden Comment
+hi! link BufTabLineFill Comment
 ```
 
-### Screenshot and Cheatsheets
+### Screenshots and cheatsheets
 
-[Molokai + NERDTree + Unite](./data/screenshots/vim.png)
-
-[Vim-hybrid + NERDTree + Tagbar](./data/screenshots/vim_hybrid.png)
-
-[Gotham + NERDTree + Tagbar](./data/screenshots/vim_gotham.png)
+[Jellybeans](./data/screenshots/Jellybeans.png)
 
 [Image cheatsheet](./data/screenshots/cheatsheet.png)
 
@@ -397,7 +477,7 @@ tmp/*
 
 [Devilspie2](http://www.gusnan.se/devilspie2/) is a window matching utility, allowing the user to perform
 scripted actions on windows as they are created. I use it mainly to move application to their reserved
-workspace and to make them go fullscreen automatically.
+workspace and to make them go full screen automatically.
 
 Below is an example of such script:
 
