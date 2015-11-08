@@ -3,7 +3,7 @@
 **Caution**: This repository is changing constantly as my workflow is changing (hopefully improving).
 Below I present the most interesting parts of my config files. Feel free to be inspired.
 
-## What's included:
+## What's included?
 
 * Neovim
 * Tmux
@@ -13,10 +13,16 @@ Below I present the most interesting parts of my config files. Feel free to be i
 * Ruby/Rails utilities (pry, gem, IRB)
 * Other utilities (Ag search, Devilspie2)
 
-## NEOVIM
+## Neovim
 
 I am using [neovim](http://neovim.org/) which is a Vim fork focused on maintainability.
 Below are the most interesting parts of my Neovim configuration.
+
+### Show me the end result first!
+
+Here you go.
+
+![Neovim + Jellybeas](./data/screenshots/jellybeans.png)
 
 ### Plugins
 
@@ -337,9 +343,7 @@ hi! link BufTabLineHidden Comment
 hi! link BufTabLineFill Comment
 ```
 
-### Screenshots and cheatsheets
-
-[Jellybeans](./data/screenshots/Jellybeans.png)
+### Vim cheatsheets
 
 [Image cheatsheet](./data/screenshots/cheatsheet.png)
 
