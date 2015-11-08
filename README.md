@@ -27,7 +27,7 @@ And which plugins I use? Currently I use about 60 plugins. Some of the most inte
 so widely known are:
 
 * [Neomake](https://github.com/benekastah/neomake) - Linter integration (Syntastic alternative) with asynchronous support.
-* [Lexima](https://github.com/cohama/lexima.vim) - Auto-closing (,",' and even some language constructs like ruby blocks. With dot repeat support.
+* [Lexima](https://github.com/cohama/lexima.vim) - Auto-closing (,",' and some language constructs (ruby blocks). Dot repeat supported.
 * [Unite](https://github.com/Shougo/unite.vim) - Search and display information from arbitrary sources.
 * [Multiple cursors](https://github.com/terryma/vim-multiple-cursors) - ST inspired multiple cursors.
 * [Isolate](https://github.com/ferranpm/vim-isolate) - Safely edit in isolation.
@@ -36,8 +36,8 @@ For complete list, look [here](https://github.com/martin-svk/dot-files/blob/mast
 
 ### Utility scripts
 
-In the code snippets below I ofter call *utils#...* namespaced functions. Those are some
-simple multiple lines long *vimscript* functions. You can look find them [here](./neovim/scripts/utils.vim).
+In the code snippets below I ofter call `utils#xxx()` namespaced functions. Those are some
+simple multiple lines long vimscript functions. You can look find them [here](./neovim/scripts/utils.vim).
 
 ### Vim defaults overriding (improving)
 
