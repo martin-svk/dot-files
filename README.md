@@ -91,7 +91,7 @@ nnoremap Q @q
 tnoremap ,<ESC> <C-\><C-n>
 
 " Omni-complete based on ctags
-inoremap <C-x><C-]> <C-]>
+inoremap <C-]> <C-x><C-]>
 
 " Don't yank to default register when changing something
 nnoremap c "xc
@@ -317,11 +317,6 @@ let g:UltiSnipsJumpBackwardTrigger='<C-k>'
 ```viml
 " Syntax highlighting
 syntax on
-
-" XTerm 256 colors
-if $TERM == 'xterm-256color' || 'screen-256color'
-  set t_Co=256
-endif
 
 " Color scheme based on time
 if strftime("%H") < 15
