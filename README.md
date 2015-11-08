@@ -1,7 +1,9 @@
-# Opinionated, keyboard centric dot files from a Ruby/JS developer.
+# Opinionated, very well documented, terminal centric dot files.
 
-**Caution**: This repository is changing very often as my workflow is changing (hopefully improving).
+Hey everybody. I am Martin, a software developer with an obsession for workflow improvement.
 Below I present the most interesting parts of my config files. **Feel free to be inspired**.
+
+P.S. **Caution**: This repository is changing often as my workflow is changing (and hopefully improving).
 
 ## What's included?
 
@@ -24,7 +26,7 @@ Here you go.
 
 ![Neovim + Jellybeans](./data/screenshots/jellybeans.png)
 
-Want more? Scroll down to the appropriate [section](#Screenshots and Cheatsheets).
+Want more? Scroll down to the appropriate [section](#screenshots-and-cheatsheets).
 
 ### Plugins
 
