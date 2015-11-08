@@ -22,7 +22,7 @@ REPLACE_FILES=false
 current_path=$(pwd)
 
 command_exists() {
-  type "$1" > "/dev/null 2>$1"
+  type "$1" 2>/dev/null
 }
 
 install_oh_my_zsh() {
@@ -48,7 +48,7 @@ install_nvim_folder() {
 # Basic requirements check
 #-----------------------------------------------------
 
-if ! command_exists pt-get; then
+if ! command_exists apt-get; then
   echo "This istaller is only comaptible with debian/ubuntu based Linux distributrions."
   echo "Please install configuration files manually."
   exit
