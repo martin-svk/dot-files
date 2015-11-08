@@ -18,6 +18,7 @@ compdef vman="man"
 # Custom functions
 # =====================================================================================================================
 
+# Uses SuperMan vim plugin
 vman() {
   nvim -c "SuperMan $*"
 
