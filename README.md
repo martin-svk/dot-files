@@ -3,7 +3,7 @@
 Hey everybody. I am Martin, a software developer with an obsession for workflow improvement.
 Below I present the most interesting parts of my config files. **Feel free to be inspired**.
 
-P.S. **Caution**: This repository is changing often as my workflow is changing (and hopefully improving).
+**Caution**: This repository is changing often as my workflow is changing (and hopefully improving).
 
 ## What's included?
 
@@ -17,7 +17,7 @@ P.S. **Caution**: This repository is changing often as my workflow is changing (
 
 ## Neovim
 
-I am using [neovim](http://neovim.org/) which is a Vim fork focused on maintainability.
+I am using [neovim](http://neovim.org/) which is a **Vim** fork focused on maintainability.
 Below are the most interesting parts of my Neovim configuration.
 
 ### Show me the end result first!
@@ -33,25 +33,25 @@ Want more? Scroll down to the appropriate [section](#screenshots-and-cheatsheets
 I use the excellent [vim-plug](https://github.com/junegunn/vim-plug) package manager.
 It supports parallel fetching, lazy loading, after install hooks, etc. You should consider using it :)
 
-And which plugins I use? Currently I use about 60 plugins. Some of the most interesting and not
-so widely known are:
+And which plugins I use? Currently I use about **60** plugins. Some of the most interesting
+while probably not so widely known are:
 
 * [Neomake](https://github.com/benekastah/neomake) - Linter integration (Syntastic alternative) with asynchronous support.
-* [Lexima](https://github.com/cohama/lexima.vim) - Auto-closing (,",' and some language constructs (ruby blocks). Dot repeat supported.
 * [Unite](https://github.com/Shougo/unite.vim) - Search and display information from arbitrary sources.
 * [Multiple cursors](https://github.com/terryma/vim-multiple-cursors) - ST inspired multiple cursors.
 * [Isolate](https://github.com/ferranpm/vim-isolate) - Safely edit in isolation.
+* [Lexima](https://github.com/cohama/lexima.vim) - Auto-closing (,",' and some language constructs (ruby blocks). Dot repeat supported.
 
-For complete list, look [here](https://github.com/martin-svk/dot-files/blob/master/neovim/init.vim#L17).
+For a complete list, look [here](https://github.com/martin-svk/dot-files/blob/master/neovim/init.vim#L17).
 
 ### Utility scripts
 
-In the code snippets below I ofter call `utils#xxx()` namespaced functions. Those are some
-simple multiple lines long vimscript functions. You can look find them [here](./neovim/scripts/utils.vim).
+In the code snippets below I ofter call `utils#xxx()` functions. Those are just simple multiple lines long
+vimscript functions (often inspired by other people). You can find them [here](./neovim/scripts/utils.vim).
 
 ### Vim defaults overriding (improving)
 
-```viml
+```VimL
 " Intelligent window cycling
 nmap <silent> <C-w><C-w> :call utils#intelligentCycling()<CR>
 
@@ -392,61 +392,146 @@ unsetopt nomatch
 
 ## TMUX
 
-I am heavy user of tmux and I am using the excellent [tmuxinator](https://github.com/tmuxinator/tmuxinator) gem to
-quickly bootstrap tmux sessions. Below are the most interesting settings in my tmux config file:
+I am a heavy user of tmux. I am using the [tpm](https://github.com/tmux-plugins/tpm) package manager
+and mainly it's [tmux ressurect](https://github.com/tmux-plugins/tmux-resurrect) plugin which allows me
+to persist sessions on the disk.
+
+I am also using the [tmuxinator](https://github.com/tmuxinator/tmuxinator) gem to
+quickly bootstrap new tmux sessions. Below are the most interesting settings in my tmux config file:
+
+### Settings
 
 ```zsh
-# Ctrl-b instead of Ctrl-a
-set -g prefix C-b
-
 # Unset ruby version so it respects .ruby-version files
 set-environment -gu RBENV_VERSION
+
+# UTF-8 settings
+set -g status-utf8 on
+set -g utf8 on
+
+# Fastest command sequences (http://superuser.com/a/252717/65504)
+set -s escape-time 0
 
 # For nice colors
 set -g default-terminal "screen-256color"
 
 # XTerm compatibility
-setw -g xterm-keys on
+set -g xterm-keys on
 
 # Vi keys in copy mode
-setw -g mode-keys vi
-
-# Fastest command sequences
-set -s escape-time 0
-
-# UTF-8 settings
-set -g status-utf8 on
-setw -g utf8 on
+set -g mode-keys vi
 
 # History boost
-set -g history-limit 5000
+set -g history-limit 50000
+
+# Enable mouse
+set -g mode-mouse on
+set -g mouse-select-pane on
+set -g mouse-resize-pane on
+set -g mouse-select-window on
+
+# Emacs key bindings in command prompt (prefix + :) are better than vi keys, even for vim users
+set -g status-keys emacs
+
+# Focus events enabled for terminals that support them
+set -g focus-events on
+
+# Super useful when using "grouped sessions" and multi-monitor setup
+setw -g aggressive-resize on
+
+# Messages are displayed for 3 seconds
+set -g display-time 3000
+```
+
+### Key bindings
+
+```zsh
+# Backtick as Prefix
+unbind C-b
+set -g prefix `
+bind-key ` send-prefix
+
+# Reload the file with Prefix r
+bind R source-file ~/.tmux.conf \; display "Sourced tmux.conf"
+
+# Next and prev window like in vim
+bind -r - previous-window
+bind -r = next-window
+
+# New windows and panes in the same dir
+bind-key n new-window -c "#{pane_current_path}"
+bind-key i split-window -h -c "#{pane_current_path}"
+bind-key v split-window -c "#{pane_current_path}"
+
+# Pane switching
+bind-key h select-pane -L
+bind-key j select-pane -D
+bind-key k select-pane -U
+bind-key l select-pane -R
+bind-key \ select-pane -l
+
+# Resize panes with arrows
+bind-key -r Left resize-pane -L 1
+bind-key -r Down resize-pane -D 1
+bind-key -r Up resize-pane -U 1
+bind-key -r Right resize-pane -R 1
+
+# <prefix> r to rename window
+bind-key r command-prompt 'rename-window %%'
+
+# <prefix> p to paste buffer
+unbind p
+bind p paste-buffer
+
+# <prefix> P to choose which buffer to paste
+bind P choose-buffer
+```
+
+### Plugins
+
+```zsh
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-yank' # yanking helpers
+set -g @plugin 'tmux-plugins/tmux-sessionist' # session helpers prexif + C (new session)
+set -g @plugin 'tmux-plugins/tmux-resurrect' # prefix + C-s save, C-r restore
+set -g @plugin 'tmux-plugins/tmux-battery' # Batter percentage
+set -g @plugin 'tmux-plugins/tmux-online-status' # Online status
+
+# Initialize plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'
 ```
 
 ## GIT
 
-What about git config? Maybe some useful aliases:
+What about my git config? Maybe some useful aliases:
 
 ```git
 [alias]
-  a = add --all
-  d = difftool --no-prompt
-  di = diff --staged
+  a = add
+  aa = add --all
+  di = diff
+  ds = diff --staged
+  dt = difftool --no-prompt
+  ci = commit --verbose
+  amend = commit --amend --verbose
   co = checkout
   pl = pull
   ps = push
+  pom = push origin master
+  pod = push origin develop
+  rb = rebase -i HEAD~10
   st = status -sb
-  ci = commit
   br = branch
   lo = log --oneline -n 15
   lg = log --pretty=format:'%h | %cd | %an | %s' -n 15
   ls = log --stat -n 5
+  lol = log --oneline --graph --all --decorate
   g1 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%cr)%C(reset) %C(white)%s%C(reset) %C(bold white)— %cn%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
   g2 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%cD%C(reset) %C(bold green)(%cr)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(bold white)— %cn%C(reset)' --abbrev-commit
-  lol = log --oneline --graph --all --decorate
-  unstage = reset HEAD --
-  last = log -1 HEAD
-  rb = rebase -i HEAD~10
   wc = whatchanged -p --abbrev-commit --pretty=medium
+  unstage = reset HEAD --
+  edit = "!nvim `git ls-files -m`"
 ```
 
 ## XTERM
@@ -460,6 +545,11 @@ xterm*utf8: 1
 xterm*customization: -color
 xterm*termName: xterm-256color
 
+! Font settings
+xterm*faceName: Droid Sans Mono for Powerline:Bold
+xterm*faceSize: 9
+xterm*allowBoldFonts: false
+
 ! For inclusion of all necessary environment variables
 xterm*loginShell: true
 
@@ -471,6 +561,9 @@ xterm*ScrollBar: false
 
 ! Stop output to terminal from jumping down to bottom of scroll again
 xterm*scrollTtyOutput: false
+
+! Save selections to clipboard
+xterm*selectToClipboard: true
 ```
 
 ## PRY, GEM, IRB
