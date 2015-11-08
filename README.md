@@ -19,7 +19,7 @@ Below I present the most interesting parts of my config files. **Feel free to be
 
 ## Neovim
 
-I am using [neovim](http://neovim.org/) which is a **Vim** fork focused on maintainability.
+I am using [Neovim](http://neovim.org/) which is a **Vim** fork focused on maintainability.
 Below are the most interesting parts of my Neovim configuration.
 
 ### Show me the end result first!
