@@ -22,12 +22,12 @@ REPLACE_FILES=false
 current_path=$(pwd)
 
 command_exists() {
-  type "$1" 2>/dev/null
+  type "$1" &>/dev/null
 }
 
 install_oh_my_zsh() {
   curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-  ln -sf "$current_path/shell/martinus.zsh-theme ~/.oh-my-zsh/themes/martinus.zsh-theme"
+  ln -sf $current_path/shell/martinus.zsh-theme ~/.oh-my-zsh/themes/martinus.zsh-theme
   echo "    Change your default shell to zsh"
   sudo chsh
 }
@@ -39,9 +39,9 @@ install_plug_nvim() {
 install_nvim_folder() {
   mkdir -p ~/.config/nvim/autoload
   install_plug_nvim
-  ln -sf "$current_path/neovim/spell/dictionary.utf-8.add ~/.config/nvim/dictionary.utf-8.add"
-  ln -sf "$current_path/neovim/UltiSnips ~/.config/nvim/UltiSnips"
-  ln -sf "$current_path/neovim/init.vim ~/.config/nvim/init.vim"
+  ln -sf $current_path/neovim/spell/dictionary.utf-8.add ~/.config/nvim/dictionary.utf-8.add
+  ln -sf $current_path/neovim/UltiSnips ~/.config/nvim/UltiSnips
+  ln -sf $current_path/neovim/init.vim ~/.config/nvim/init.vim
 }
 
 #-----------------------------------------------------
@@ -69,11 +69,11 @@ echo -n "[ zshrc ]"
 
 if [ ! -f ~/.zshrc ]; then
   echo "    Creating zshrc!"
-  ln -sf "$current_path/shell/zshrc ~/.zshrc"
+  ln -sf $current_path/shell/zshrc ~/.zshrc
 elif $REPLACE_FILES; then
   echo "    Deleting old zshrc!"
   rm ~/.zshrc
-  ln -sf "$current_path/shell/zshrc ~/.zshrc"
+  ln -sf $current_path/shell/zshrc ~/.zshrc
 else
   echo "    Keeping existing zshrc!"
 fi
@@ -98,11 +98,11 @@ echo -n "[ gitconfig ]"
 
 if [ ! -f ~/.gitconfig ]; then
   echo "    Creating gitconfig!"
-  ln -sf "$current_path/git/gitconfig ~/.gitconfig"
-elif REPLACE_FILES; then
+  ln -sf $current_path/git/gitconfig ~/.gitconfig
+elif $REPLACE_FILES; then
   echo "    Deleting old gitconfig!"
   rm ~/.gitconfig
-  ln -sf "$current_path/git/gitconfig ~/.gitconfig"
+  ln -sf $current_path/git/gitconfig ~/.gitconfig
 else
   echo "    Keeping existing gitconfig!"
 fi
@@ -111,11 +111,11 @@ echo -n "[ gitignore ]"
 
 if [ ! -f ~/.gitignore ]; then
   echo "    Creating gitignore!"
-  ln -sf "$current_path/git/gitignore ~/.gitignore"
-elif REPLACE_FILES; then
+  ln -sf $current_path/git/gitignore ~/.gitignore
+elif $REPLACE_FILES; then
   echo "    Deleting old gitignore!"
   rm ~/.gitignore
-  ln -sf "$current_path/git/gitignore ~/.gitignore"
+  ln -sf $current_path/git/gitignore ~/.gitignore
 else
   echo "    Keeping existing gitignore!"
 fi
@@ -138,7 +138,7 @@ if [ ! -d ~/.config/nvim ]; then
   echo "    Creating nvim folder!"
   mkdir ~/.config/nvim
   install_nvim_folder
-elif REPLACE_FILES; then
+elif $REPLACE_FILES; then
   echo "    Deleting old nvim folder!"
   rm -rf ~/.config/nvim
   install_nvim_folder
@@ -157,11 +157,11 @@ fi
 
 if [ ! -f ~/.tmux.conf ]; then
   echo "    Creating tmux.conf!"
-  ln -sf "$current_path/tmux/tmux.conf ~/.tmux.conf"
-elif REPLACE_FILES; then
+  ln -sf $current_path/tmux/tmux.conf ~/.tmux.conf
+elif $REPLACE_FILES; then
   echo "    Deleting old tmux.conf!"
   rm ~/.tmux.conf
-  ln -sf "$current_path/tmux/tmux.conf ~/.tmux.conf"
+  ln -sf $current_path/tmux/tmux.conf ~/.tmux.conf
 else
   echo "    Keeping existing tmux.conf!"
 fi
@@ -177,12 +177,12 @@ fi
 
 if [ ! -f ~/.Xresources ]; then
   echo "   Creating Xresources!"
-  ln -sf "$current_path/shell/Xresources ~/.Xresources"
+  ln -sf $current_path/shell/Xresources ~/.Xresources
   xrdb -merge  ~/.Xresources
-elif REPLACE_FILES; then
+elif $REPLACE_FILES; then
   echo "   Deleting old Xresources!"
   rm ~/.Xresources
-  ln -sf "$current_path/shell/Xresources ~/.Xresources"
+  ln -sf $current_path/shell/Xresources ~/.Xresources
   xrdb -merge  ~/.Xresources
 else
   echo "   Keeping existing Xresources!"
@@ -196,9 +196,9 @@ echo -n "[ Ruby (rbenv) and utilities (gemrc, irbrc, rdebugrc) ]"
 if command_exists ruby; then
   if [ ! -f ~/.gemrc ]; then
     echo "   Creating gemrc, irbrc, rdebugrc!"
-    ln -sf "$current_path/ruby/gemrc ~/.gemrc"
-    ln -sf "$current_path/ruby/irbrc ~/.irbrc"
-    ln -sf "$current_path/ruby/rdebugrc ~/.rdebugrc"
+    ln -sf $current_path/ruby/gemrc ~/.gemrc
+    ln -sf $current_path/ruby/irbrc ~/.irbrc
+    ln -sf $current_path/ruby/rdebugrc ~/.rdebugrc
   else
     echo "   Keeping existing gemrc, irbrc, rdebugrc!"
   fi
@@ -206,7 +206,7 @@ if command_exists ruby; then
   if command_exists pry; then
     if [ ! -f ~/.pryrc ]; then
       echo "   Creating pryrc!"
-      ln -sf "$current_path/ruby/pryrc ~/.pryrc"
+      ln -sf $current_path/ruby/pryrc ~/.pryrc
     else
       echo "   Keeping existing pryrc!"
     fi
@@ -214,7 +214,7 @@ if command_exists ruby; then
     echo "   Installing pry!"
     gem install pry
     echo "   Creating pryrc!"
-    ln -sf "$current_path/ruby/pryrc ~/.pryrc"
+    ln -sf $current_path/ruby/pryrc ~/.pryrc
   fi
 else
   echo "    Installing, rbenv and rubybuild."
@@ -233,7 +233,7 @@ echo -n "[ Ag ]"
 if command_exists ag; then
   if [ ! -f ~/.agignore ]; then
     echo "   Creating agignore!"
-    ln -sf "$current_path/other/agignore ~/.agignore"
+    ln -sf $current_path/other/agignore ~/.agignore
   else
     echo "   Keeping existing agignore!"
   fi
@@ -241,7 +241,7 @@ else
   echo "   Installing Ag!"
   sudo apt-get install -y silversearcher-ag
   echo "   Creating agignore!"
-  ln -sf "$current_path/other/agignore ~/.agignore"
+  ln -sf $current_path/other/agignore ~/.agignore
 fi
 
 #-----------------------------------------------------
@@ -254,21 +254,21 @@ if [ ! -d ~/dev ]; then
 fi
 
 if command_exists rubocop; then
-  ln -sf "$current_path/linters/rubocop.yml ~/dev/.rubocop.yml"
+  ln -sf $current_path/linters/rubocop.yml ~/dev/.rubocop.yml
 else
   echo "   Installing rubocop!"
   gem install rubocop
-  ln -sf "$current_path/linters/rubocop.yml ~/dev/.rubocop.yml"
+  ln -sf $current_path/linters/rubocop.yml ~/dev/.rubocop.yml
 fi
 
 echo -n "[ Eslint ]"
 
 if command_exists eslint; then
-  ln -sf "$current_path/linters/eslintrc ~/dev/.eslintrc"
+  ln -sf $current_path/linters/eslintrc ~/dev/.eslintrc
 else
   if command_exists npm; then
     npm install -g eslint
-    ln -sf "$current_path/linters/eslintrc ~/dev/.eslintrc"
+    ln -sf $current_path/linters/eslintrc ~/dev/.eslintrc
   else
     echo "   Install node and npm, then rerun script again!"
     exit
