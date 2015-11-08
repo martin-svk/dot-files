@@ -361,7 +361,7 @@ hi! link BufTabLineFill Comment
 
 [PDF cheatsheet](./data/screenshots/cheatsheet2.pdf)
 
-## ZSH
+## Zsh
 
 I am using the excellent [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) framework.
 
@@ -390,7 +390,7 @@ setopt correct
 unsetopt nomatch
 ```
 
-## TMUX
+## Tmux
 
 I am a heavy user of tmux. I am using the [tpm](https://github.com/tmux-plugins/tpm) package manager
 and mainly it's [tmux ressurect](https://github.com/tmux-plugins/tmux-resurrect) plugin which allows me
@@ -502,7 +502,7 @@ set -g @plugin 'tmux-plugins/tmux-online-status' # Online status
 run '~/.tmux/plugins/tpm/tpm'
 ```
 
-## GIT
+## Git
 
 What about my git config? Maybe some useful aliases:
 
@@ -534,7 +534,7 @@ What about my git config? Maybe some useful aliases:
   edit = "!nvim `git ls-files -m`"
 ```
 
-## XTERM
+## Xterm
 My terminal emulator of choice. Below are some interesting settings I use:
 
 ```zsh
@@ -566,7 +566,7 @@ xterm*scrollTtyOutput: false
 xterm*selectToClipboard: true
 ```
 
-## PRY, GEM, IRB
+## Pry, Gem, IRB
 
 Don't install RI docs when installing gems (put into your gemrc):
 
@@ -587,7 +587,7 @@ Require rubygems in *irbrc* to have access while in IRB session (I recommend usi
 require 'rubygems'
 ```
 
-## AG, DEVILSPIE2
+## Ag, Devilspie2
 
 [Ag](http://geoff.greer.fm/ag/) is a popular and blazingly fast find on steroids optimized for developers.
 I recommend to create *agignore* to specify extra path to ignore. While Ag is pretty intelligent most of things
