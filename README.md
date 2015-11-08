@@ -49,7 +49,7 @@ For a complete list, look [here](./neovim/init.vim#L17).
 ### Utility scripts
 
 In the code snippets below I ofter call `utils#xxx()` functions. Those are just simple multiple lines long
-vimscript functions (often inspired by other people). You can find them [here](./neovim/scripts/utils.vim).
+vimscript functions (often inspired by other people). You can find them [here](./neovim/autoload/utils.vim).
 
 ### Vim defaults overriding (improving)
 
