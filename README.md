@@ -614,16 +614,17 @@ end
 
 # Credits
 
-Very big portion of these configuration files was inspired and ofter just copied
-by other people, plugin authors, blog writers, etc. I want to say **Thank You** to all of them.
+Very big portion of these configuration files was inspired and often even copied
+from other people, plugin authors, blog writers, etc. I want to say **Thank You** to all of them.
 
 Especially, I want to mention these guys:
 
-* @tpope
-* @garybernhardt
-* @Shougo
+* [tpope](https://github.com/tpope)
+* [garybernhardt](https://github.com/garybernhardt)
+* [Shougo](https://github.com/Shougo)
 
-And also, the whole [Neovim](https://github.com/neovim/neovim) team for their good work.
+For their contribution to Vim and Neovim ecosystem. Speaking of Neovim, also, the whole
+[Neovim](https://github.com/neovim/neovim) team should be mentioned for their great work.
 
 # License
 
