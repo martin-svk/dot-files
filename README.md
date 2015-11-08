@@ -1,16 +1,16 @@
-# Opinionated Ruby/Rails centric dot-files.
+# Opinionated, keyboard centric dot files from a Ruby/JS developer.
 
-**Caution**: This repository is changing constantly as my workflow is changing (hopefully improving).
-Below I present the most interesting parts of my config files. Feel free to be inspired.
+**Caution**: This repository is changing very often as my workflow is changing (hopefully improving).
+Below I present the most interesting parts of my config files. **Feel free to be inspired**.
 
 ## What's included?
 
 * Neovim
+* ZSH (oh-my-zsh)
 * Tmux
 * Git
-* ZSH (oh-my-zsh)
 * Xterm (Xresources)
-* Ruby/Rails utilities (pry, gem, IRB)
+* Ruby / Rails utilities (pry, gem, IRB)
 * Other utilities (Ag search, Devilspie2)
 
 ## Neovim
@@ -22,7 +22,9 @@ Below are the most interesting parts of my Neovim configuration.
 
 Here you go.
 
-![Neovim + Jellybeas](./data/screenshots/jellybeans.png)
+![Neovim + Jellybeans](./data/screenshots/jellybeans.png)
+
+Want more? Scroll down to the appropriate [section](#Screenshots and Cheatsheets).
 
 ### Plugins
 
@@ -343,7 +345,15 @@ hi! link BufTabLineHidden Comment
 hi! link BufTabLineFill Comment
 ```
 
-### Vim cheatsheets
+### Screenshots and Cheatsheets
+
+[Iceberg + ReactJS](./data/screenshots/iceberg_react.png)
+
+[Jellybeans + Unite file search](./data/screenshots/jellybeans_unite_file_search.png)
+
+[Jellybeans + Unite line search](./data/screenshots/jellybeans_unite_line_filter.png)
+
+[Jellybeans + Unite yank history](./data/screenshots/jellybeans_unite_yank_history.png)
 
 [Image cheatsheet](./data/screenshots/cheatsheet.png)
 
