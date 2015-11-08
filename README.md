@@ -623,8 +623,8 @@ Especially, I want to mention these guys:
 * [garybernhardt](https://github.com/garybernhardt)
 * [Shougo](https://github.com/Shougo)
 
-For their contribution to Vim and Neovim ecosystem. Speaking of Neovim, also, the whole
-[Neovim](https://github.com/neovim/neovim) team should be mentioned for their great work.
+For their contribution to Vim and Neovim ecosystem. Speaking of [Neovim](https://github.com/neovim/neovim)
+, the whole [team](https://github.com/neovim/neovim/graphs/contributors) team should be mentioned for their great work.
 
 # License
 
