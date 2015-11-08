@@ -9,11 +9,11 @@ Below I present the most interesting parts of my config files. **Feel free to be
 
 ## What's included?
 
-* [Neovim](#neovim)
-* [ZSH](#zsh)
-* [Tmux](#tmux)
-* [Git](#git)
-* [Xterm](#xterm)
+* [Neovim](#neovim) ((source)[./neovim/init.vim])
+* [ZSH](#zsh) ((source)[./shell/zshrc])
+* [Tmux](#tmux) ((source)[./tmux/tmux.conf])
+* [Git](#git) ((source)[./git/gitconfig])
+* [Xterm](#xterm) ((source)[./shell/Xresources])
 * [Ruby / Rails utilities (pry, gem, IRB)](#pry-gem-irb)
 * [Other utilities (Ag search, Devilspie2)](#ag-devilspie2)
 
@@ -44,7 +44,7 @@ while probably not so widely known are:
 * [Isolate](https://github.com/ferranpm/vim-isolate) - Safely edit in isolation.
 * [Lexima](https://github.com/cohama/lexima.vim) - Auto-closing (,",' and some language constructs (ruby blocks). Dot repeat supported.
 
-For a complete list, look [here](https://github.com/martin-svk/dot-files/blob/master/neovim/init.vim#L17).
+For a complete list, look [here](./neovim/init.vim#L17).
 
 ### Utility scripts
 
