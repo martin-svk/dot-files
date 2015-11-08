@@ -5,15 +5,17 @@ Below I present the most interesting parts of my config files. **Feel free to be
 
 **Caution**: This repository is changing often as my workflow is changing (and hopefully improving).
 
+| [Credits](#credits) | [License](#license) |
+
 ## What's included?
 
-* Neovim
-* ZSH (oh-my-zsh)
-* Tmux
-* Git
-* Xterm (Xresources)
-* Ruby / Rails utilities (pry, gem, IRB)
-* Other utilities (Ag search, Devilspie2)
+* [Neovim](#neovim)
+* [ZSH](#zsh)
+* [Tmux](#tmux)
+* [Git](#git)
+* [Xterm](#xterm)
+* [Ruby / Rails utilities (pry, gem, IRB)](#pry-gem-irb)
+* [Other utilities (Ag search, Devilspie2)](#ag-devilspie2)
 
 ## Neovim
 
@@ -623,8 +625,8 @@ Especially, I want to mention these guys:
 * [garybernhardt](https://github.com/garybernhardt)
 * [Shougo](https://github.com/Shougo)
 
-For their contribution to Vim and Neovim ecosystem. Speaking of [Neovim](https://github.com/neovim/neovim)
-, the whole [team](https://github.com/neovim/neovim/graphs/contributors) team should be mentioned for their great work.
+For their contribution to Vim and Neovim ecosystem. Speaking of [Neovim](https://github.com/neovim/neovim),
+the whole [team](https://github.com/neovim/neovim/graphs/contributors) should be mentioned for their great work.
 
 # License
 
