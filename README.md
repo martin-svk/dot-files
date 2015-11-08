@@ -365,21 +365,7 @@ hi! link BufTabLineFill Comment
 
 ## Zsh
 
-I am using the excellent [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) framework.
-
-```zsh
-# Plugins from oh-my-zsh
-plugins=(adb bgnotify bower bundler coffee colored-man common-aliases docker extract gitfast
-        gem httpie jsontools meteor rails rbenv rsync tmux tmuxinator vagrant zsh-syntax-highlighting)
-
-
-# History substring plugin
-source $ZSH/plugins/history-substring-search/history-substring-search.zsh
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
-```
-
-And setting some options to improve behavior to my taste.
+My shell interpreter of choice. Here are some options to improve the behavior to my taste.
 
 ```zsh
 # Disable control flow (ctrl-s / ctrl-q)
@@ -390,6 +376,33 @@ setopt correct
 
 # Dont raise errors when regex nomatch fires
 unsetopt nomatch
+
+# Use vman as man wrapper
+compdef vman="man"
+```
+
+I am also using the excellent [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) framework.
+
+```zsh
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+
+# Set name of the theme to load.
+ZSH_THEME="martinus"
+
+# Disable auto title setting
+DISABLE_AUTO_TITLE="true"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+plugins=(adb bgnotify bower bundler common-aliases docker extract gem gitfast gulp heroku httpie jsontools meteor mix
+         npm rails rbenv redis-cli rsync tmux tmuxinator vagrant zsh-syntax-highlighting)
+
+source $ZSH/oh-my-zsh.sh
+source $ZSH/plugins/history-substring-search/history-substring-search.zsh
+
+# History substring search plugin binding
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 ```
 
 ## Tmux
