@@ -32,9 +32,9 @@ Plug 'tpope/vim-commentary'
 " Multi-language testing support (uses NeoTerm)
 Plug 'janko-m/vim-test', { 'on': ['TestFile', 'TestLast', 'TestNearest', 'TestSuite', 'TestVisit'] }
 
-" -----------------------------------------------------
+" ---------------------------------------------------------------------------------------------------------------------
 " Ruby/Rails
-" -----------------------------------------------------
+" ---------------------------------------------------------------------------------------------------------------------
 
 " Ruby syntax
 Plug 'vim-ruby/vim-ruby'
@@ -49,9 +49,9 @@ Plug 'p0deje/vim-ruby-interpolation', { 'for': ['ruby'] }
 " Refactoring tools
 Plug 'ecomba/vim-ruby-refactoring', { 'for': ['ruby'] }
 
-" -----------------------------------------------------
+" ---------------------------------------------------------------------------------------------------------------------
 " HTML/CSS/JS
-" -----------------------------------------------------
+" ---------------------------------------------------------------------------------------------------------------------
 
 " HTML5 syntax
 Plug 'othree/html5.vim'
@@ -73,9 +73,9 @@ Plug 'rstacruz/sparkup', { 'for': ['html', 'xhtml', 'eruby'] }
 " CSS color highlighter
 Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'sass', 'scss', 'less'] }
 
-" -----------------------------------------------------
+" ---------------------------------------------------------------------------------------------------------------------
 " Other languages
-" -----------------------------------------------------
+" ---------------------------------------------------------------------------------------------------------------------
 
 " Elixir syntax
 Plug 'elixir-lang/vim-elixir'
@@ -194,113 +194,95 @@ call plug#end()
 "{{{
 
 set shell=/bin/zsh                          " Setting shell to zsh
-set number                                  " Line numbers
-set ignorecase                              " Ignore case by default
-set smartcase                               " Make search case sensitive only if it contains uppercase letters
+set number                                  " Line numbers on
 set laststatus=2                            " Always show status line
 set showmode                                " Always show mode
 set wildmenu                                " Better auto-complete of ex commands
-set textwidth=120                           " Text width is 120 chars
+set textwidth=120                           " Text width is 120 characters
 set autoread                                " Automatically reload change files on disk
-set nocursorline                            " Don't set default cursor line
 set cmdheight=1                             " Command line height
 set pumheight=10                            " Completion window max size
-set iskeyword-=_                            " Set underscore as a word separator
-set iskeyword-=-                            " Set dash as a word separator
-set timeoutlen=300                          " Setting ESC timeout
-set incsearch                               " Incremental search
+set timeoutlen=300                          " ESC timeout
 set hidden                                  " Enables to switch between unsaved buffers and keep undo history
-set undolevels=100                          " How many undo commands to remember
-set clipboard+=unnamed                      " Use system clipboard
-set history=1024                            " Number of things to remember in history
-set nohlsearch                              " Don't highlight after search
-set mat=2                                   " How many tenths of a second to blink when matching brackets
+set clipboard+=unnamed                      " Allow to use system clipboard
+set history=4096                            " Size of commands history
 set lazyredraw                              " Don't redraw while executing macros (better performance)
-set magic                                   " For regular expressions turn magic on
 set showmatch                               " Show matching brackets when text indicator is over them
-set list                                    " Display white chars by default (use <F7>)
-set spelllang=en_us                         " Set language to us English
+set matchtime=2                             " How many tenths of a second to blink when matching brackets
 set backspace=indent,eol,start              " Set default behavior of backspace
 set nostartofline                           " Prevent cursor from moving to beginning of line when switching buffers
 set virtualedit=block                       " To be able to select past EOL in visual block mode
 set nojoinspaces                            " No extra space when joining a line which ends with . ? !
-set wrapscan                                " Search again from top when reached the bottom
 set scrolloff=5                             " Scroll when closing to top or bottom of the screen
 set updatetime=1000                         " Update time used to create swap file or other things
 set mouse=a                                 " Enable mouse integration
 
-" -----------------------------------------------------
+" ---------------------------------------------------------------------------------------------------------------------
 " 2.1 Indentation settings (2 spaces tabs)
-" -----------------------------------------------------
-set autoindent
-set expandtab
-set smarttab
-set shiftwidth=2
-set softtabstop=2
+" ---------------------------------------------------------------------------------------------------------------------
+set expandtab                               " Use the appropriate number of spaces to insert a <Tab>
+set shiftwidth=0                            " Zero so the 'ts' value will be used
+set softtabstop=-1                          " When 'sts' is negative, the value of 'shiftwidth' is used
+set tabstop=4                               " Number of spaces that a <Tab> in the file counts for
 
-" -----------------------------------------------------
+" ---------------------------------------------------------------------------------------------------------------------
 " 2.2 Split settings (more natural).
-" -----------------------------------------------------
-set splitbelow
-set splitright
+" ---------------------------------------------------------------------------------------------------------------------
+set splitbelow                              " Splitting a window will put the new window below the current
+set splitright                              " Splitting a window will put the new window right of the current
 
-" -----------------------------------------------------
-" 2.3 Turn backup off, since most stuff is in git
-" -----------------------------------------------------
-set nobackup
-set nowb
-set noswapfile
+" ---------------------------------------------------------------------------------------------------------------------
+" 2.3 Backup settings (defaults + noswapfile)
+" ---------------------------------------------------------------------------------------------------------------------
+set noswapfile                              " New buffers will be loaded without creating a swapfile
 
-" -----------------------------------------------------
+" ---------------------------------------------------------------------------------------------------------------------
 " 2.4 Spelling settings
-" -----------------------------------------------------
+" ---------------------------------------------------------------------------------------------------------------------
 set spellfile=~/.config/nvim/dictionary.utf-8.add
-set nospell " Off by default
+set spelllang=en_us                         " Set language to US English
+set nospell                                 " Disable checking by default (use <F4> to toggle)
 
-" -----------------------------------------------------
-" 2.4 Persistent undo, for non-git projects
-" -----------------------------------------------------
+" ---------------------------------------------------------------------------------------------------------------------
+" 2.5 Search settings
+" ---------------------------------------------------------------------------------------------------------------------
+set ignorecase                              " Ignore case by default
+set smartcase                               " Make search case sensitive only if it contains uppercase letters
+set incsearch                               " Incremental search
+set wrapscan                                " Search again from top when reached the bottom
+set nohlsearch                              " Don't highlight after search
+
+" ---------------------------------------------------------------------------------------------------------------------
+" 2.6 Persistent undo settings
+" ---------------------------------------------------------------------------------------------------------------------
 if has('persistent_undo')
-  if !isdirectory('.git')
-    " Save undo history to file
-    set undofile
-    " Undo files in folder (this folder must exists!)
-    set undodir=~/.config/nvim/tmp/undo//
-    " Maximum number of undos
-    set undolevels=1000
-    " Save complete files for undo on reload if it has less lines than this
-    set undoreload=1000
-  endif
+  set undofile
+  set undodir=~/.config/nvim/tmp/undo//
 endif
 
-" -----------------------------------------------------
-" 2.5 Highlight whitespaces
-" -----------------------------------------------------
+" ---------------------------------------------------------------------------------------------------------------------
+" 2.7 White characters settings
+" ---------------------------------------------------------------------------------------------------------------------
+set list                                    " Show listchars by default
 set listchars=tab:>\ ,trail:·,extends:#,nbsp:·
 
-" -----------------------------------------------------
-" 2.6 Filetype settings
-" -----------------------------------------------------
+" ---------------------------------------------------------------------------------------------------------------------
+" 2.8 Filetype settings
+" ---------------------------------------------------------------------------------------------------------------------
 filetype plugin on
 filetype indent on
 
-" -----------------------------------------------------
-" 2.7 Folding settings, by default is disabled, use 'za'
-" -----------------------------------------------------
-set foldmethod=marker
-set foldlevelstart=2
-set fillchars="fold: "
+" ---------------------------------------------------------------------------------------------------------------------
+" 2.9 Folding settings (by default is disabled, use 'za')
+" ---------------------------------------------------------------------------------------------------------------------
+set foldmethod=marker                       " Markers are used to specify folds.
+set foldlevelstart=2                        " At which level folds will be closed by default
+set fillchars="fold: "                      " Characters to fill the statuslines and vertical separators
 
-" -----------------------------------------------------
-" 2.8 Omni completion settings
-" -----------------------------------------------------
-
-" Don't show preview scratch buffers
-set completeopt-=preview
-
-" -----------------------------------------------------
-" 2.9 Completion ignore list
-" -----------------------------------------------------
+" ---------------------------------------------------------------------------------------------------------------------
+" 2.10 Omni completion settings
+" ---------------------------------------------------------------------------------------------------------------------
+set completeopt-=preview                    " Don't show preview scratch buffers
 set wildignore=*.o,*.obj,*~
 set wildignore+=*vim/backups*
 set wildignore+=*sass-cache*
@@ -310,18 +292,16 @@ set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
 
-" -----------------------------------------------------
-" 2.10 Neovim specific settings
-" -----------------------------------------------------
-" Set an environment variable to use the t_SI/t_EI hack
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-" Turn on true colors support (does not work inside tmux)
-" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+" ---------------------------------------------------------------------------------------------------------------------
+" 2.11 Neovim specific settings
+" ---------------------------------------------------------------------------------------------------------------------
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1       " Set an environment variable to use the t_SI/t_EI hack
+" let $NVIM_TUI_ENABLE_TRUE_COLOR=1       " Turn on true colors support (does not work inside tmux yet)
 
 " -----------------------------------------------------
-" 2.11 Ctags settings
+" 2.12 Ctags settings
 " -----------------------------------------------------
-set tags+=.tags
+set tags+=.tags                           " Look for .tags file as well
 "}}}
 
 " ======================================================================================================================
@@ -330,7 +310,7 @@ set tags+=.tags
 "{{{
 
 " -----------------------------------------------------
-" 3.1 Setting leaders
+" 3.1 Setting leader
 " -----------------------------------------------------
 let g:mapleader="\<space>"
 
@@ -855,8 +835,13 @@ hi! link BufTabLineFill Comment
 " 7.0 Filetype specific settings and autocommands
 " ======================================================================================================================
 "{{{
-autocmd FileType ruby,coffee,sass,scss,haml,slim,vim setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
-autocmd FileType html,htmldjango,xhtml,css,javascript,javascript.jsx,snippets setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
+autocmd FileType ruby,coffee,sass,scss,haml,slim,vim setlocal tabstop=2
+autocmd FileType html,htmldjango,xhtml,css,javascript,javascript.jsx,snippets setlocal tabstop=4
+
+" Set underscore as a word separator
+autocmd FileType ruby,erb,elixir setlocal iskeyword -=_
+" Set dash as a word separator
+autocmd FileType html,xhtml,css,scss.css,less.css setlocal iskeyword -=-
 
 " Keywordprg settings
 autocmd FileType vim setlocal keywordprg=:help
