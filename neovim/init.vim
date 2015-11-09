@@ -306,7 +306,7 @@ let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1       " Set an environment variable to use t
 " For Ruby STD ctags use tpope/rbenv-ctags + vim-ruby
 " For gem ctags use tpope/gem-ctags + vim-bundler
 " -----------------------------------------------------
-set tags+=.tags                           " Look for .tags file as well
+set tags+=.tags                           " Project tags are in .tags file
 "}}}
 
 " ======================================================================================================================
