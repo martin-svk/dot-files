@@ -31,78 +31,120 @@ xterm*scrollTtyOutput: false
 xterm*selectToClipboard: true
 
 ! =============================================================================
-! ============================== BADWOLF ======================================
+! =============================== SCHEMES =====================================
 ! =============================================================================
 
-/* #define   plain            #f8f6f2 */
-/* #define   snow             #ffffff */
-/* #define   coal             #000000 */
+! -----------------------------------------------------------------------------
+! BROGRAMMER
+! -----------------------------------------------------------------------------
 
-/* #define   brightgravel     #d9cec3 */
-/* #define   lightgravel      #998f84 */
-/* #define   gravel           #857f78 */
-/* #define   mediumgravel     #666462 */
-/* #define   deepgravel       #45413b */
-/* #define   deepergravel     #35322d */
-/* #define   darkgravel       #242321 */
-/* #define   blackgravel      #1c1b1a */
-/* #define   blackestgravel   #141413 */
+/* #define     Ansi_0_Color        #1f1f1f */
+/* #define     Ansi_1_Color        #f81118 */
+/* #define     Ansi_10_Color       #1dd361 */
+/* #define     Ansi_11_Color       #f3bd09 */
+/* #define     Ansi_12_Color       #1081d6 */
+/* #define     Ansi_13_Color       #5350b9 */
+/* #define     Ansi_14_Color       #0f7ddb */
+/* #define     Ansi_15_Color       #ffffff */
+/* #define     Ansi_2_Color        #2dc55e */
+/* #define     Ansi_3_Color        #ecba0f */
+/* #define     Ansi_4_Color        #2a84d2 */
+/* #define     Ansi_5_Color        #4e5ab7 */
+/* #define     Ansi_6_Color        #1081d6 */
+/* #define     Ansi_7_Color        #d6dbe5 */
+/* #define     Ansi_8_Color        #d6dbe5 */
+/* #define     Ansi_9_Color        #de352e */
+/* #define     Background_Color    #131313 */
+/* #define     Badge_Color         #ff0000 */
+/* #define     Bold_Color          #d6dbe5 */
+/* #define     Cursor_Color        #b9b9b9 */
+/* #define     Cursor_Guide_Color  #a6e8ff */
+/* #define     Cursor_Text_Color   #101010 */
+/* #define     Foreground_Color    #d6dbe5 */
+/* #define     Link_Color          #0645ad */
+/* #define     Selected_Text_Color #d6dbe5 */
+/* #define     Selection_Color     #3a3a3a */
+/* #define     Tab_Color           #000000 */
 
-/* #define   dalespale        #fade3e */
-/* #define   dirtyblonde      #f4cf86 */
-/* #define   taffy            #ff2c4b */
-/* #define   saltwatertaffy   #8cffba */
-/* #define   tardis           #0a9dff */
-/* #define   orange           #ffa724 */
-/* #define   lime             #aeee00 */
-/* #define   dress            #ff9eb8 */
-/* #define   toffee           #b88853 */
-/* #define   coffee           #c7915b */
-/* #define   darkroast        #88633f */
+! -----------------------------------------------------------------------------
+! MONOKAI
+! -----------------------------------------------------------------------------
 
-/* xterm*background:  blackgravel */
-/* xterm*foreground:  plain */
-/* xterm*cursorColor: snow */
-/* xterm*scrollColor: deepgravel */
-/* xterm*fadeColor:   snow */
-/* xterm*fading:      20 */
+/* #define   Ansi_0_Color          #1a1a1a */
+/* #define   Ansi_1_Color          #f4005f */
+/* #define   Ansi_10_Color         #98e024 */
+/* #define   Ansi_11_Color         #e0d561 */
+/* #define   Ansi_12_Color         #9d65ff */
+/* #define   Ansi_13_Color         #f4005f */
+/* #define   Ansi_14_Color         #58d1eb */
+/* #define   Ansi_15_Color         #f6f6ef */
+/* #define   Ansi_2_Color          #98e024 */
+/* #define   Ansi_3_Color          #fa8419 */
+/* #define   Ansi_4_Color          #9d65ff */
+/* #define   Ansi_5_Color          #f4005f */
+/* #define   Ansi_6_Color          #58d1eb */
+/* #define   Ansi_7_Color          #c4c5b5 */
+/* #define   Ansi_8_Color          #625e4c */
+/* #define   Ansi_9_Color          #f4005f */
+/* #define   Background_Color      #1a1a1a */
+/* #define   Bold_Color            #c4c5b5 */
+/* #define   Cursor_Color          #f6f7ec */
+/* #define   Cursor_Text_Color     #c4c5b5 */
+/* #define   Foreground_Color      #c4c5b5 */
+/* #define   Selected_Text_Color   #c4c5b5 */
+/* #define   Selection_Color       #343434 */
 
-/* xterm*color0:      blackestgravel */
-/* xterm*color8:      gravel */
-/* xterm*color1:      taffy */
-/* xterm*color9:      taffy */
-/* xterm*color2:      lime */
-/* xterm*color10:     lime */
-/* xterm*color3:      dalespale */
-/* xterm*color11:     orange */
-/* xterm*color4:      tardis */
-/* xterm*color12:     tardis */
-/* xterm*color5:      dress */
-/* xterm*color13:     dress */
-/* xterm*color6:      saltwatertaffy */
-/* xterm*color14:     saltwatertaffy */
-/* xterm*color7:      brightgravel */
-/* xterm*color15:     snow */
+! -----------------------------------------------------------------------------
+! SPACEGRAY (customized black color)
+! -----------------------------------------------------------------------------
+
+#define   Ansi_0_Color          #353D50
+#define   Ansi_1_Color          #b04b57
+#define   Ansi_10_Color         #87b379
+#define   Ansi_11_Color         #e5c179
+#define   Ansi_12_Color         #7d8fa4
+#define   Ansi_13_Color         #a47996
+#define   Ansi_14_Color         #85a7a5
+#define   Ansi_15_Color         #ffffff
+#define   Ansi_2_Color          #87b379
+#define   Ansi_3_Color          #e5c179
+#define   Ansi_4_Color          #7d8fa4
+#define   Ansi_5_Color          #a47996
+#define   Ansi_6_Color          #85a7a5
+#define   Ansi_7_Color          #b3b8c3
+#define   Ansi_8_Color          #353D50
+#define   Ansi_9_Color          #b04b57
+#define   Background_Color      #20242d
+#define   Bold_Color            #b3b8c3
+#define   Cursor_Color          #b3b8c3
+#define   Cursor_Text_Color     #1d1f21
+#define   Foreground_Color      #b3b8c3
+#define   Selected_Text_Color   #b3b8c3
+#define   Selection_Color       #16181e
 
 ! =============================================================================
-! ============================== MOLOKAI =====================================
+! ============================ COLOR APPLICATION ==============================
 ! =============================================================================
 
-xterm*foreground:#CCCCCC
-xterm*background:#1B1D1E
-xterm*color0:    #1B1D1E
-xterm*color8:    #808080
-xterm*color1:    #FF0044
-xterm*color9:    #F92672
-xterm*color2:    #82B414
-xterm*color10:   #A6E22E
-xterm*color3:    #FD971F
-xterm*color11:   #E6DB74
-xterm*color4:    #266C98
-xterm*color12:   #7070F0
-xterm*color5:    #AC0CB1
-xterm*color13:   #D63AE1
-xterm*color6:    #AE81FF
-xterm*color14:   #66D9EF
-xterm*color7:    #CCCCCC
-xterm*color15:   #F8F8F2
+xterm*color0:      Ansi_0_Color
+xterm*color1:      Ansi_1_Color
+xterm*color2:      Ansi_2_Color
+xterm*color3:      Ansi_3_Color
+xterm*color4:      Ansi_4_Color
+xterm*color5:      Ansi_5_Color
+xterm*color6:      Ansi_6_Color
+xterm*color7:      Ansi_7_Color
+xterm*color8:      Ansi_8_Color
+xterm*color9:      Ansi_9_Color
+xterm*color10:     Ansi_10_Color
+xterm*color11:     Ansi_11_Color
+xterm*color12:     Ansi_12_Color
+xterm*color13:     Ansi_13_Color
+xterm*color14:     Ansi_14_Color
+xterm*color15:     Ansi_15_Color
+xterm*colorBD:     Bold_Color
+xterm*colorIT:     Italic_Color
+xterm*colorUL:     Underline_Color
+xterm*foreground:  Foreground_Color
+xterm*background:  Background_Color
+xterm*cursorColor: Cursor_Color
