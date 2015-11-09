@@ -36,7 +36,7 @@ Plug 'janko-m/vim-test', { 'on': ['TestFile', 'TestLast', 'TestNearest', 'TestSu
 " Ruby/Rails
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Ruby syntax (plays nicely with https://github.com/tpope/rbenv-ctags)
+" Ruby syntax (plays nicely with tpope/rbenv-ctags)
 Plug 'vim-ruby/vim-ruby'
 " Slim syntax
 Plug 'slim-template/vim-slim'
@@ -44,7 +44,7 @@ Plug 'slim-template/vim-slim'
 Plug 'tpope/vim-haml'
 " Rails support (:A, :R, :Rmigration, :Rextract)
 Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby', 'haml', 'slim'] }
-" Bundler support (play nicely with https://github.com/tpope/gem-ctags)
+" Bundler support (play nicely with tpope/gem-ctags)
 Plug 'tpope/vim-bundler', { 'for': ['ruby', 'eruby', 'haml', 'slim'] }
 " String interpolation helper
 Plug 'p0deje/vim-ruby-interpolation', { 'for': ['ruby'] }
@@ -303,6 +303,9 @@ let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1       " Set an environment variable to use t
 " -----------------------------------------------------
 " 2.12 Ctags settings
 " -----------------------------------------------------
+" For Ruby STD ctags use tpope/rbenv-ctags + vim-ruby
+" For gem ctags use tpope/gem-ctags + vim-bundler
+" -----------------------------------------------------
 set tags+=.tags                           " Look for .tags file as well
 "}}}
 
@@ -409,6 +412,10 @@ nnoremap ,p "+p
 " Move visual block
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+
+" CTags navigation (:tselect to select from menu)
+nnoremap ]t :tn<CR>
+nnoremap [t :tp<CR>
 
 " -----------------------------------------------------
 " 3.5 F-key actions
