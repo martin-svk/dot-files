@@ -354,9 +354,9 @@ hi! link BufTabLineFill Comment
 
 [Jellybeans + Unite yank history](./data/screenshots/jellybeans_unite_yank_history.png)
 
-[Image cheatsheet](./data/screenshots/cheatsheet.png)
+[Image cheatsheet](./data/cheatsheet.png)
 
-[PDF cheatsheet](./data/screenshots/cheatsheet2.pdf)
+[PDF cheatsheet](./data/cheatsheet2.pdf)
 
 ## Zsh
 
