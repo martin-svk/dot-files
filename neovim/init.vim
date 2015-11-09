@@ -36,7 +36,7 @@ Plug 'janko-m/vim-test', { 'on': ['TestFile', 'TestLast', 'TestNearest', 'TestSu
 " Ruby/Rails
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Ruby syntax
+" Ruby syntax (plays nicely with https://github.com/tpope/rbenv-ctags)
 Plug 'vim-ruby/vim-ruby'
 " Slim syntax
 Plug 'slim-template/vim-slim'
@@ -44,6 +44,8 @@ Plug 'slim-template/vim-slim'
 Plug 'tpope/vim-haml'
 " Rails support (:A, :R, :Rmigration, :Rextract)
 Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby', 'haml', 'slim'] }
+" Bundler support (play nicely with https://github.com/tpope/gem-ctags)
+Plug 'tpope/vim-bundler', { 'for': ['ruby', 'eruby', 'haml', 'slim'] }
 " String interpolation helper
 Plug 'p0deje/vim-ruby-interpolation', { 'for': ['ruby'] }
 " Refactoring tools
