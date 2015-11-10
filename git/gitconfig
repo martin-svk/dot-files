@@ -25,7 +25,9 @@
   pl = pull
   ps = push
   pom = push origin master
+  pbm = push backup master
   pod = push origin develop
+  pbd = push backup develop
   rb = rebase -i HEAD~10
   st = status -sb
   br = branch
