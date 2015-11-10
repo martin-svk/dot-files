@@ -154,6 +154,10 @@ set tags+=.tags
 command! GenerateCT :call utils#generateCtags()
 command! GenerateJSCT :call utils#generateJSCtags()
 command! GenerateRubyCT :call utils#generateRubyCtags()
+
+" CTags navigation (:tselect to select from menu)
+nnoremap ]t :tn<CR>
+nnoremap [t :tp<CR>
 ```
 
 ### Browser and fuzzy searcher for multiple sources ([Unite](https://github.com/Shougo/unite.vim))
