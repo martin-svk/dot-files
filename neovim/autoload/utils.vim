@@ -150,12 +150,8 @@ function! utils#insertTabOmniWrapper()
 endfunction
 
 " Simple notes management
-function! utils#createNote(name)
-  execute ':e ~/notes/' . a:name . '.md'
-endfunction
-
 function! utils#openNotes()
-  execute ':e ~/notes/'
+  execute ':e ~/dev/notes/vim-notes.md'
 endfunction
 
 " Use omni complete source as default

@@ -490,10 +490,7 @@ command! GenerateRubyCT :call utils#generateRubyCtags()
 " Rename current file
 command! Rename :call utils#renameFile()<CR>
 
-" Create new note
-command! -nargs=1 Note :call utils#createNote(<f-args>)
-
-" Open note
+" Open notes
 command! Notes :call utils#openNotes()
 
 " Run current file
