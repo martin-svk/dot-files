@@ -819,9 +819,9 @@ if strftime("%H") < 15
   let g:rehash256 = 1
   colorscheme molokai
 elseif strftime("%H") < 20
-  colorscheme jellybeans
-else
   colorscheme iceberg
+else
+  colorscheme jellybeans
 endif
 
 " Highlight VCS conflict markers
