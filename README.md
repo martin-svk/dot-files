@@ -129,9 +129,9 @@ vnoremap K :m '<-2<CR>gv=gv
 ### Buffer management
 
 ```VimL
-" Windows resizing using arrow keys
-nnoremap <silent> <Left> :vertical resize -1<CR>
-nnoremap <silent> <Right> :vertical resize +1<CR>
+" Intelligent windows resizing using arrow keys
+nnoremap <silent> <Right> :call utils#intelligentVerticalResize('right')<CR>
+nnoremap <silent> <Left> :call utils#intelligentVerticalResize('left')<CR>
 nnoremap <silent> <Up> :resize +1<CR>
 nnoremap <silent> <Down> :resize -1<CR>
 
