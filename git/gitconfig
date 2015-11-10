@@ -18,7 +18,7 @@
   di = diff
   ds = diff --staged
   dt = difftool --no-prompt
-  ci = commit --verbose
+  ci = commit --verbose --reedit-message=HEAD
   amend = commit --amend --verbose
   co = checkout
   pl = pull
