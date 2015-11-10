@@ -583,7 +583,7 @@ let g:unite_source_menu_menus.git.command_candidates = [
       \       ['Stage', 'Gwrite'],
       \       ['Status', 'Gstatus'],
       \       ['Diff', 'Gvdiff'],
-      \       ['Commit', 'Gcommit --verbose --reuse-message=HEAD'],
+      \       ['Commit', 'Gcommit --verbose'],
       \       ['Revert', 'Gread'],
       \       ['Log', 'Glog'],
       \       ['Visual Log', 'Gitv'],
