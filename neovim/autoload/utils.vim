@@ -168,8 +168,12 @@ function! utils#uniteMRUs()
   execute 'Unite -no-split -buffer-name=most-recently-used -start-insert file_mru'
 endfunction
 
+function! utils#uniteFileBrowse()
+  execute 'Unite -no-split -buffer-name=project-files -start-insert file'
+endfunction
+
 function! utils#uniteFileRec()
-  execute 'Unite -no-split -buffer-name=project-files -start-insert file_rec/async:!'
+  execute 'Unite -no-split -buffer-name=file-recursive-search -start-insert file_rec/async:!'
 endfunction
 
 function! utils#uniteBuffers()
