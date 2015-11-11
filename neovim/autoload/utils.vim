@@ -119,17 +119,6 @@ function! utils#generateJSCtags()
   echom "Tags generated into .tags file!"
 endfunction
 
-" Rename current file (from @grb - https://github.com/garybernhardt)
-function! utils#renameFile()
-  let old_name = expand('%')
-  let new_name = input('New file name: ', expand('%'), 'file')
-  if new_name != '' && new_name != old_name
-    execute ':saveas ' . new_name
-    execute ':silent !rm ' . old_name
-    redraw!
-  endif
-endfunction
-
 " Tab wrapper
 function! utils#insertTabWrapper()
   let col = col('.') - 1
