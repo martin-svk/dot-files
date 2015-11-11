@@ -185,11 +185,11 @@ function! utils#uniteTags()
 endfunction
 
 function! utils#uniteGrep()
-  execute 'Unite -silent grep:.'
+  execute 'Unite -no-split -buffer-name=ag -silent grep:.'
 endfunction
 
 function! utils#uniteHistory()
-  execute 'Unite -buffer-name=edit-history change'
+  execute 'Unite -no-split -buffer-name=edit-history change'
 endfunction
 
 function! utils#uniteLineSearch()
@@ -197,11 +197,11 @@ function! utils#uniteLineSearch()
 endfunction
 
 function! utils#uniteYankHistory()
-  execute 'Unite -buffer-name=yank-history history/yank'
+  execute 'Unite -no-split -buffer-name=yank-history history/yank'
 endfunction
 
 function! utils#uniteRegisters()
-  execute 'Unite -buffer-name=registers register'
+  execute 'Unite -no-split -buffer-name=registers register'
 endfunction
 
 function! utils#uniteWindows()
