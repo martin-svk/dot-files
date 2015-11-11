@@ -85,6 +85,8 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'mitsuhiko/vim-python-combined'
 " Elm
 Plug 'lambdatoast/elm.vim'
+" Markdown syntax and helpers
+Plug 'plasticboy/vim-markdown'
 " Tmux syntax
 Plug 'tejr/vim-tmux'
 " Git syntax
@@ -713,6 +715,12 @@ let g:clever_f_chars_match_any_signs=';'
 " -----------------------------------------------------
 let g:multi_cursor_exit_from_visual_mode=0
 let g:multi_cursor_exit_from_insert_mode=0
+
+" -----------------------------------------------------
+" 4.15 Vim Markdown settings
+" -----------------------------------------------------
+let g:vim_markdown_no_default_key_mappings=1
+let g:vim_markdown_folding_disabled=1
 "}}}
 
 " ======================================================================================================================
@@ -795,6 +803,12 @@ nnoremap ,hr :GitGutterRevertHunk<CR>
 " -----------------------------------------------------
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
+
+" -----------------------------------------------------
+" 5.6 Vim Markdown
+" -----------------------------------------------------
+nmap [[ <Plug>Markdown_MoveToPreviousHeader
+nmap ]] <Plug>Markdown_MoveToNextHeader
 "}}}
 
 " ======================================================================================================================
