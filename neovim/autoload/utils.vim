@@ -13,6 +13,14 @@ function! utils#clipboardPaste()
   let @@ = system('xclip -o -selection clipboard')
 endfunction
 
+" Profile neovim and save results to profile.log
+function! utils#profile()
+  execute 'profile start profile.log'
+  execute 'profile func *'
+  execute 'profile file *'
+  echom "Profiling started (will last until you quit neovim)."
+endfunction
+
 " When cycling ignore NERDTree and Tagbar
 function! utils#intelligentCycling()
   " Cycle firstly
