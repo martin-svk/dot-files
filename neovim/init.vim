@@ -134,6 +134,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'KabbAmine/vCoolor.vim', { 'on': 'VCoolor' }
 " Neovim terminal improving
 Plug 'kassio/neoterm', { 'on': 'T' }
+" Unix commands integration
+Plug 'tpope/vim-eunuch'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Text insertion/manipulation
@@ -468,16 +470,6 @@ nnoremap <silent> _ :bp<CR>
 cmap ww wqall
 cmap qq qall
 
-" Accepting case errors
-cab W! w!
-cab Q! q!
-cab Wq wq
-cab Wa wa
-cab wQ wq
-cab WQ wq
-cab W w
-cab Q q
-
 " -----------------------------------------------------
 " 3.7 Custom commands and functions
 " -----------------------------------------------------
@@ -486,9 +478,6 @@ cab Q q
 command! GenerateCT :call utils#generateCtags()
 command! GenerateJSCT :call utils#generateJSCtags()
 command! GenerateRubyCT :call utils#generateRubyCtags()
-
-" Rename current file
-command! Rename :call utils#renameFile()<CR>
 
 " Open notes
 command! Notes :call utils#openNotes()
@@ -563,10 +552,8 @@ let g:unite_source_menu_menus.utils.command_candidates = [
       \       ['Run XMPFilter', 'Annotate'],
       \       ['Format file', 'Format'],
       \       ['Run file', 'Run'],
-      \       ['Rename file', 'Rename'],
       \       ['Generate Ctags', 'GenerateCT'],
       \       ['Generate JS Ctags', 'GenerateJSCT'],
-      \       ['Generate Ruby/Rails Ctags', 'GenerateRailsCT'],
       \       ['Show notes', 'Notes'],
       \     ]
 
