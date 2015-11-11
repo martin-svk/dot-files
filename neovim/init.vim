@@ -185,6 +185,8 @@ Plug 'jez/vim-superman'
 Plug 'edsono/vim-matchit'
 " More . repeat functionality
 Plug 'tpope/vim-repeat'
+" Delete all but current buffer
+Plug 'vim-scripts/BufOnly.vim'
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " 1.2 End of plugin declaration
@@ -493,6 +495,9 @@ nnoremap <silent> ,f :Format<CR>
 " Annotate file (show values in special # => comments)
 command! Annotate :call utils#annotateFile()
 nnoremap <silent> ,a :Annotate<CR>
+
+" Profile
+command! Profile :call utils#profile()
 
 " -----------------------------------------------------
 " 3.8 TAB autocomplete mappings
