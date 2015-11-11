@@ -623,7 +623,7 @@ let g:unite_source_menu_menus.unite.command_candidates = [
 " 4.3 NERDTree
 " -----------------------------------------------------
 let g:NERDTreeMinimalUI=1
-let g:NERDTreeDirArrows=0
+let g:NERDTreeDirArrows=1
 let g:NERDTreeWinSize=55
 let g:NERDTreeAutoDeleteBuffer=1
 
