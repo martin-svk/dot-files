@@ -94,6 +94,7 @@ alias ssredis='sudo service redis-server start'
 # ------------------------------------------
 alias v='nvim'
 alias g='git'
+alias f='ranger'
 alias ta='tmux attach -t main || tmux new -s main'
 alias td='tmux detach'
 alias vim='vim -X'
