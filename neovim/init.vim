@@ -229,8 +229,8 @@ set mouse=a                                 " Enable mouse integration
 " 2.1 Indentation settings (2 spaces tabs)
 " ---------------------------------------------------------------------------------------------------------------------
 set expandtab                               " Use the appropriate number of spaces to insert a <Tab>
-set shiftwidth=0                            " Zero so the 'ts' value will be used
-set softtabstop=-1                          " When 'sts' is negative, the value of 'shiftwidth' is used
+set shiftwidth=4                            " Number of spaces
+set softtabstop=4                           " Same but when use soft tabs
 set tabstop=4                               " Number of spaces that a <Tab> in the file counts for
 
 " ---------------------------------------------------------------------------------------------------------------------
@@ -848,8 +848,8 @@ hi! link BufTabLineFill Comment
 " 7.0 Filetype specific settings and autocommands
 " ======================================================================================================================
 "{{{
-autocmd FileType ruby,coffee,sass,scss,haml,slim,vim setlocal tabstop=2
-autocmd FileType html,htmldjango,xhtml,css,javascript,javascript.jsx,snippets setlocal tabstop=4
+autocmd FileType ruby,coffee,sass,scss,haml,slim,vim setlocal shiftwidth=2 softtabstop=2 tabstop=2
+autocmd FileType html,htmldjango,xhtml,css,javascript,javascript.jsx,snippets setlocal shiftwidth=4 softtabstop=4 tabstop=4
 
 " Set underscore as a word separator
 autocmd FileType ruby,erb,elixir setlocal iskeyword -=_
