@@ -33,6 +33,17 @@ let ${1:name} = ${2:value};
 endsnippet
 
 # ===============================================
+# Functions
+# ===============================================
+snippet map "builtin map function" w
+map((${1:param}) => {
+	return (
+		$2
+	);
+});
+endsnippet
+
+# ===============================================
 # Miscleanous
 # ===============================================
 snippet r "fat arrow (rocket) sign" w
