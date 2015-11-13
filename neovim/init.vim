@@ -359,7 +359,9 @@ nnoremap gk 5k
 
 " More useful enter and backspace
 nnoremap <CR> G
+vnoremap <CR> G
 nnoremap <BS> gg
+vnoremap <BS> gg
 
 " When jump to next match also center screen
 noremap n nzz
