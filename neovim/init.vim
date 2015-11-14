@@ -527,7 +527,7 @@ let g:utils_autoswitch_kb_layout=0
 " -----------------------------------------------------
 
 " Matcher settings
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#filters#matcher_default#use(['matcher_fuzzy', 'matcher_hide_current_file'])
 call unite#filters#sorter_default#use(['sorter_rank'])
 
 " Use ag if available
@@ -613,6 +613,7 @@ let g:unite_source_menu_menus.unite.command_candidates = [
       \       ['Unite tags', 'call utils#uniteTags()'],
       \       ['Unite windows', 'call utils#uniteWindows()'],
       \       ['Unite yank history', 'call utils#uniteYankHistory()'],
+      \       ['Unite jump history', 'call utils#uniteJumps()'],
       \     ]
 
 " -----------------------------------------------------
@@ -680,13 +681,13 @@ let g:vcoolor_disable_mappings=1
 " -----------------------------------------------------
 let g:neomake_verbose=0
 let g:neomake_warning_sign = {
-    \ 'text': '>',
-    \ 'texthl': 'WarningMsg',
-    \ }
+      \ 'text': '>',
+      \ 'texthl': 'WarningMsg',
+      \ }
 let g:neomake_error_sign = {
-    \ 'text': '>',
-    \ 'texthl': 'ErrorMsg',
-    \ }
+      \ 'text': '>',
+      \ 'texthl': 'ErrorMsg',
+      \ }
 
 " -----------------------------------------------------
 " 4.10 Ruby refactoring settings
@@ -773,6 +774,8 @@ nnoremap <silent> <leader>r :call utils#uniteRegisters()<CR>
 nnoremap <silent> <leader>w :call utils#uniteWindows()<CR>
 " Search in ultisnips [s]nippets
 nnoremap <silent> <leader>s :call utils#uniteSnippets()<CR>
+" Search in latest [j]ump positions
+nnoremap <silent> <leader>j :call utils#uniteJumps()<CR>
 " My custom unite [m]enu with commonly used commands not mapped to keys
 nnoremap <silent> <leader>m :call utils#uniteCustomMenu()<CR>
 

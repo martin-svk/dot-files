@@ -162,7 +162,7 @@ function! utils#uniteSources()
 endfunction
 
 function! utils#uniteMRUs()
-  execute 'Unite -no-split -buffer-name=most-recently-used -start-insert file_mru'
+  execute 'Unite -no-split -buffer-name=most-recently-used -start-insert neomru/file'
 endfunction
 
 function! utils#uniteFileBrowse()
@@ -215,6 +215,10 @@ endfunction
 
 function! utils#uniteCustomMenu()
   execute 'Unite -no-split -buffer-name=menu -start-insert menu'
+endfunction
+
+function! utils#uniteJumps()
+  execute 'Unite -no-split -buffer-name=jumps -start-insert jump'
 endfunction
 
 " Format function
