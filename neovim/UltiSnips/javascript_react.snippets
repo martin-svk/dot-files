@@ -73,3 +73,24 @@ componentDidMount() {
 	$1
 }
 endsnippet
+
+# ===============================================
+# Misc
+# ===============================================
+snippet tp "this.props." w
+this.props.${1:property}
+endsnippet
+
+snippet ts "this.state." w
+this.state.${1:property}
+endsnippet
+
+snippet sets "this.setState" w
+setState({
+	${1:property}: ${2:value}$0
+});
+endsnippet
+
+snippet prevd "prevent default on event" w
+preventDefault();
+endsnippet
