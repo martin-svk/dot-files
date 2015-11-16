@@ -52,11 +52,9 @@ Plug 'p0deje/vim-ruby-interpolation', { 'for': ['ruby'] }
 Plug 'ecomba/vim-ruby-refactoring', { 'for': ['ruby'] }
 
 " ---------------------------------------------------------------------------------------------------------------------
-" HTML/CSS/JS
+" JS (ES6, React)
 " ---------------------------------------------------------------------------------------------------------------------
 
-" HTML5 syntax
-Plug 'othree/html5.vim'
 " JS syntax
 Plug 'othree/yajs.vim'
 " JS libs syntax (React, Angular)
@@ -65,11 +63,17 @@ Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'mxw/vim-jsx' | Plug 'pangloss/vim-javascript'
 " Typescript syntax
 Plug 'leafgarland/typescript-vim'
-" SCSS syntax
-Plug 'cakebaker/scss-syntax.vim'
 " JSON syntax
 Plug 'sheerun/vim-json'
 
+" ---------------------------------------------------------------------------------------------------------------------
+" HTML/CSS
+" ---------------------------------------------------------------------------------------------------------------------
+
+" HTML5 syntax
+Plug 'othree/html5.vim'
+" SCSS syntax
+Plug 'cakebaker/scss-syntax.vim'
 " Sparkup, emmet alternative (<C-e> to expand expression)
 Plug 'rstacruz/sparkup', { 'for': ['html', 'xhtml', 'eruby'] }
 " CSS color highlighter
@@ -879,10 +883,20 @@ if g:utils_autoswitch_kb_layout == 1
   autocmd InsertLeave * call utils#setUSKBLayout()
 end
 
-" Run linters after save
+" -----------------------------------------------------
+" 7.1 Run linters after save
+" -----------------------------------------------------
+
+" npm install -g eslint
 autocmd BufWritePost *.js Neomake eslint
+" gem install rubocop
 autocmd BufWritePost *.rb Neomake rubocop
+" apt-get install tidy
 autocmd BufWritePost *.html Neomake tidy
+" gem install scsslint
 autocmd BufWritePost *.scss Neomake scsslint
+" apt-get install shellcheck
 autocmd BufWritePost *.sh Neomake shellcheck
+" pip3 install vim-vint
+autocmd BufWritePost *.vim Neomake vint
 "}}}
