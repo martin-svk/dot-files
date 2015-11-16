@@ -21,7 +21,7 @@ call plug#begin('~/.config/nvim/plugged')
 " Language agnostic plugins
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Asynchronous maker and linter (Asynchronous runner, needs linters to work properly)
+" Asynchronous maker and linter (needs linters to work)
 Plug 'benekastah/neomake', { 'on': ['Neomake'] }
 " Automatically closing stuff
 Plug 'cohama/lexima.vim'
@@ -29,7 +29,7 @@ Plug 'cohama/lexima.vim'
 Plug 'SirVer/ultisnips'
 " Commenting support (gc)
 Plug 'tpope/vim-commentary'
-" Multi-language testing support (uses NeoTerm)
+" Multi-language testing support
 Plug 'janko-m/vim-test', { 'on': ['TestFile', 'TestLast', 'TestNearest', 'TestSuite', 'TestVisit'] }
 
 " ---------------------------------------------------------------------------------------------------------------------
