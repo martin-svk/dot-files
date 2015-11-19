@@ -88,6 +88,7 @@ alias ss='sudo service'
 alias ssmysql='sudo service mysql start'
 alias sspgsql='sudo service postgresql start'
 alias ssredis='sudo service redis-server start'
+alias sselastic='sudo service elasticsearch start'
 
 # ------------------------------------------
 # Applications
