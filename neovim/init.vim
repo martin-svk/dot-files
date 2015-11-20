@@ -31,6 +31,8 @@ Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-commentary'
 " Multi-language testing support
 Plug 'janko-m/vim-test', { 'on': ['TestFile', 'TestLast', 'TestNearest', 'TestSuite', 'TestVisit'] }
+" CamelCase and snake_case motions
+Plug 'bkad/CamelCaseMotion'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Ruby/Rails
@@ -42,6 +44,8 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'slim-template/vim-slim'
 " Haml syntax
 Plug 'tpope/vim-haml'
+" Minitest syntax
+Plug 'sunaku/vim-ruby-minitest'
 " Rails support (:A, :R, :Rmigration, :Rextract)
 Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby', 'haml', 'slim'] }
 " Bundler support (play nicely with tpope/gem-ctags)
@@ -405,6 +409,16 @@ nnoremap p p`]
 
 " No more accidentally showing up command window (Use C-f to show it)
 map q: :q
+
+" Use CamelCaseMotion instead of default motions
+map <silent> w <Plug>CamelCaseMotion_w
+map <silent> b <Plug>CamelCaseMotion_b
+map <silent> e <Plug>CamelCaseMotion_e
+map <silent> ge <Plug>CamelCaseMotion_ge
+sunmap w
+sunmap b
+sunmap e
+sunmap ge
 
 " -----------------------------------------------------
 " 3.4 Common tasks
@@ -861,9 +875,9 @@ autocmd FileType ruby,coffee,sass,scss,haml,slim,vim setlocal shiftwidth=2 softt
 autocmd FileType html,htmldjango,xhtml,css,javascript,javascript.jsx,snippets setlocal shiftwidth=4 softtabstop=4 tabstop=4
 
 " Set underscore as a word separator
-autocmd FileType ruby,erb,elixir,vim setlocal iskeyword -=_
+" autocmd FileType ruby,erb,elixir,vim setlocal iskeyword -=_
 " Set dash as a word separator
-autocmd FileType html,xhtml,css,sass,scss,less setlocal iskeyword -=-
+" autocmd FileType html,xhtml,css,sass,scss,less setlocal iskeyword -=-
 
 " Keywordprg settings
 autocmd FileType vim setlocal keywordprg=:help
