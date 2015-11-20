@@ -116,6 +116,8 @@ Plug 'Shougo/neoyank.vim'
 Plug 'Shougo/neomru.vim'
 " Tag source
 Plug 'tsukkee/unite-tag'
+" Colorscheme source
+Plug 'ujihisa/unite-colorscheme'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Interface improving
@@ -842,13 +844,13 @@ nmap ]] <Plug>Markdown_MoveToNextHeader
 syntax on
 
 " Color scheme based on time
-if strftime("%H") < 15
+if strftime("%H") < 14
   let g:rehash256 = 1
   colorscheme molokai
 elseif strftime("%H") < 20
-  colorscheme iceberg
-else
   colorscheme jellybeans
+else
+  colorscheme iceberg
 endif
 
 " Highlight VCS conflict markers
