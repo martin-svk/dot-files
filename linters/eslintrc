@@ -32,7 +32,6 @@
         "modules": true
     },
     "plugins": [
-        "react",
-        "flowtype"
+        "react"
     ]
 }
