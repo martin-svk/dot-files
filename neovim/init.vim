@@ -874,11 +874,6 @@ hi! link BufTabLineFill Comment
 autocmd FileType ruby,coffee,sass,scss,haml,slim,vim setlocal shiftwidth=2 softtabstop=2 tabstop=2
 autocmd FileType html,htmldjango,xhtml,css,javascript,javascript.jsx,snippets setlocal shiftwidth=4 softtabstop=4 tabstop=4
 
-" Set underscore as a word separator
-" autocmd FileType ruby,erb,elixir,vim setlocal iskeyword -=_
-" Set dash as a word separator
-" autocmd FileType html,xhtml,css,sass,scss,less setlocal iskeyword -=-
-
 " Keywordprg settings
 autocmd FileType vim setlocal keywordprg=:help
 
