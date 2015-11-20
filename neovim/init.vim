@@ -422,6 +422,11 @@ sunmap b
 sunmap e
 sunmap ge
 
+" Fix the cw at the end of line bug
+" default vim has special treatment (:help cw)
+nmap cw ce
+nmap dw de
+
 " -----------------------------------------------------
 " 3.4 Common tasks
 " -----------------------------------------------------
