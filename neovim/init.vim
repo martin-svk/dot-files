@@ -207,33 +207,27 @@ call plug#end()
 "}}}
 
 " ======================================================================================================================
-" 2.0 Basic settings
+" 2.0 Basic settings (Neovim defaults: https://neovim.io/doc/user/vim_diff.html#nvim-option-defaults)
 " ======================================================================================================================
 "{{{
 
 set shell=/bin/zsh                          " Setting shell to zsh
 set number                                  " Line numbers on
-set laststatus=2                            " Always show status line
 set showmode                                " Always show mode
-set wildmenu                                " Better auto-complete of ex commands
 set textwidth=120                           " Text width is 120 characters
-set autoread                                " Automatically reload change files on disk
 set cmdheight=1                             " Command line height
 set pumheight=10                            " Completion window max size
 set timeoutlen=300                          " ESC timeout
 set hidden                                  " Enables to switch between unsaved buffers and keep undo history
 set clipboard+=unnamed                      " Allow to use system clipboard
-set history=4096                            " Size of commands history
 set lazyredraw                              " Don't redraw while executing macros (better performance)
 set showmatch                               " Show matching brackets when text indicator is over them
 set matchtime=2                             " How many tenths of a second to blink when matching brackets
-set backspace=indent,eol,start              " Set default behavior of backspace
 set nostartofline                           " Prevent cursor from moving to beginning of line when switching buffers
 set virtualedit=block                       " To be able to select past EOL in visual block mode
 set nojoinspaces                            " No extra space when joining a line which ends with . ? !
 set scrolloff=5                             " Scroll when closing to top or bottom of the screen
 set updatetime=1000                         " Update time used to create swap file or other things
-set mouse=a                                 " Enable mouse integration
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 2.1 Indentation settings (2 spaces tabs)
@@ -266,7 +260,6 @@ set nospell                                 " Disable checking by default (use <
 " ---------------------------------------------------------------------------------------------------------------------
 set ignorecase                              " Ignore case by default
 set smartcase                               " Make search case sensitive only if it contains uppercase letters
-set incsearch                               " Incremental search
 set wrapscan                                " Search again from top when reached the bottom
 set nohlsearch                              " Don't highlight after search
 
