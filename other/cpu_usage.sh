@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# This script is used in my tmux status line.
+# Make sure it is located in your PATH variable.
+
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
     # Linux
     cat <(grep 'cpu ' /proc/stat) <(sleep 1 && grep 'cpu ' /proc/stat) |
