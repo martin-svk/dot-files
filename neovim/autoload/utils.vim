@@ -1,7 +1,7 @@
 " Informative echo line
 function! utils#showToggles()
-  echom "<F1> NERDTree | <F2> Neomake | <F3> Paste mode | <F4> Spellcheck | <F5> Reload rc | <F6> Highlighting |" .
-        \" <F7> Whitechars | <F8> Free | <F9> Free | <F10> Free | <F11> Free | <F12> This message"
+  echom "<F1> NERDTree | <F2> Caps mode | <F3> Paste mode | <F4> Spellcheck | <F5> Reload rc | <F6> Highlighting |" .
+        \" <F7> Whitechars | <F8> Free | <F9> Free | <F10> Free | <F11> Free | <F12> You know, this message :)"
 endfunction
 
 " Copy and paste function using xclip
@@ -257,4 +257,35 @@ function! utils#annotateFile()
   if exists('command')
     execute command_prefix . command
   endif
+endfunction
+
+" Mode function for Lightline statusline
+function! utils#lightLineMode()
+  let fname = expand('%:t')
+  return fname =~ 'NERD_tree' ? 'NT' :
+        \ &ft == 'unite' ? 'Unite' :
+        \ winwidth(0) > 70 ? lightline#mode() : ''
+endfunction
+
+" File format function for Lightline statusline
+function! utils#lightLineFileformat()
+  return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+" Filetype function for Lightline statusline
+function! utils#lightLineFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
+endfunction
+
+" File encoding function for Lightline statusline
+function! utils#lightLineFileencoding()
+  return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
+endfunction
+
+" File name function for Lightline statusline
+function! utils#lightLineFilename()
+  let fname = expand('%:t')
+  return fname =~ 'NERD_tree' ? 'NERDTree' :
+        \ &ft == 'unite' ? unite#get_status_string() :
+        \ ('' != fname ? fname : '[No Name]')
 endfunction
