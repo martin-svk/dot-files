@@ -671,21 +671,26 @@ let g:jsx_ext_required=0
 let g:lightline = {
       \ 'colorscheme': 'powerline',
       \ 'tab': {
-      \   'active': [ 'tabnum', 'filename', 'modified' ],
-      \   'inactive': [ 'tabnum', 'filename', 'modified' ]
+      \   'active': [ 'filename' ],
+      \   'inactive': [ 'filename' ]
       \ },
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste', 'capslock' ],
-      \             [ 'readonly', 'filename', 'modified' ] ]
+      \   'left': [ [ 'mode' ], [ 'paste', 'capslock' ], [ 'readonly', 'filename' ] ],
+      \   'right': [ [ 'lineinfo' ], [ 'percent' ], [ 'filetype', 'fileencoding', 'fileformat' ] ]
       \ },
       \ 'component': {
-      \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
-      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-      \   'capslock': '%{exists("*CapsLockStatusline")?CapsLockStatusline():""}'
+      \   'readonly': '%{&filetype=="help"?"HELP":&readonly?"RO":""}',
+      \   'capslock': '%{exists("*CapsLockStatusline")?CapsLockStatusline("CAPS"):""}'
+      \ },
+      \ 'component_function': {
+      \   'mode': 'utils#lightLineMode',
+      \   'filename': 'utils#lightLineFilename',
+      \   'filetype': 'utils#lightLineFiletype',
+      \   'fileformat': 'utils#lightLineFileformat',
+      \   'fileencoding': 'utils#lightLineFileencoding'
       \ },
       \ 'component_visible_condition': {
-      \   'readonly': '(&filetype!="help"&& &readonly)',
-      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))'
+      \   'readonly': '(&readonly)'
       \ },
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '', 'right': '' }
