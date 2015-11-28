@@ -449,8 +449,8 @@ nnoremap [t :tp<CR>
 
 " NERDTree wrapper
 nnoremap <silent> <F1> :call utils#nerdWrapper()<CR>
-" Run Neomake (run command asynchronously)
-nnoremap <silent> <F2> :Neomake
+" Caps lock mode toggling
+nnoremap <silent> <F2> :execute "normal \<Plug>CapsLockToggle"<CR>
 " Paste mode toggling
 nnoremap <silent> <F3> :set paste!<CR> :set paste?<CR>
 " Toggle spelling on and off
