@@ -567,6 +567,9 @@ call unite#custom#profile('default', 'context', {
 " Add syntax highlighting
 let g:unite_source_line_enable_highlight=1
 
+" Dont override status line
+let g:unite_force_overwrite_statusline=0
+
 " Custom unite menus
 let g:unite_source_menu_menus = {}
 
