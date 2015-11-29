@@ -183,7 +183,7 @@ Plug 'nanotech/jellybeans.vim'
 
 " Easily expand selected region
 Plug 'terryma/vim-expand-region'
-" Search for highlighted work with *
+" Search for highlighted word with *
 Plug 'thinca/vim-visualstar'
 " Intelligent buffer closing
 Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
@@ -198,7 +198,7 @@ Plug 'edsono/vim-matchit'
 " More . repeat functionality
 Plug 'tpope/vim-repeat'
 " Delete all but current buffer
-Plug 'vim-scripts/BufOnly.vim'
+Plug 'vim-scripts/BufOnly.vim', { 'on': 'Bonly' }
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " 1.2 End of plugin declaration
