@@ -78,8 +78,8 @@ Plug 'sheerun/vim-json'
 Plug 'othree/html5.vim'
 " SCSS syntax
 Plug 'cakebaker/scss-syntax.vim'
-" Sparkup, emmet alternative (<C-e> to expand expression)
-Plug 'rstacruz/sparkup', { 'for': ['html', 'xhtml', 'eruby'] }
+" Emmet (<C-e> to expand expression)
+Plug 'mattn/emmet-vim'
 " CSS color highlighter
 Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'sass', 'scss', 'less'] }
 
@@ -751,10 +751,15 @@ let g:vim_markdown_no_default_key_mappings=1
 let g:vim_markdown_folding_disabled=1
 
 " -----------------------------------------------------
-" 4.15 Vim REST console settings
+" 4.16 Vim REST console settings
 " -----------------------------------------------------
 let g:vrc_set_default_mapping=0
 let g:vrc_output_buffer_name='__RESPONSE__'
+
+" -----------------------------------------------------
+" 4.17 Emmet settings
+" -----------------------------------------------------
+let g:user_emmet_expandabbr_key = '<C-e>'
 "}}}
 
 " ======================================================================================================================
