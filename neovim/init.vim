@@ -148,6 +148,8 @@ Plug 'KabbAmine/vCoolor.vim', { 'on': 'VCoolor' }
 Plug 'kassio/neoterm', { 'on': 'T' }
 " Unix commands integration
 Plug 'tpope/vim-eunuch'
+" REST Console
+Plug 'diepm/vim-rest-console', { 'for': 'rest' }
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Text insertion/manipulation
@@ -463,8 +465,8 @@ nnoremap <silent> <F6> :set nohlsearch!<CR> :set nohlsearch?<CR>
 nnoremap <silent> <F7> :set list!<CR> :set list?<CR>
 " New horizontal term buffer
 nnoremap <silent> <F8> :call utils#newVertTerm()<CR>
-" Free
-" nnoremap <silent> <F9> :Command<CR>
+" Fire REST Request
+nnoremap <silent> <F9> :call VrcQuery()<CR>
 " Free
 " nnoremap <silent> <F10> :Command<CR>
 " Free
@@ -749,6 +751,12 @@ let g:multi_cursor_exit_from_insert_mode=0
 " -----------------------------------------------------
 let g:vim_markdown_no_default_key_mappings=1
 let g:vim_markdown_folding_disabled=1
+
+" -----------------------------------------------------
+" 4.15 Vim REST console settings
+" -----------------------------------------------------
+let g:vrc_set_default_mapping=0
+let g:vrc_output_buffer_name='__RESPONSE__'
 "}}}
 
 " ======================================================================================================================
