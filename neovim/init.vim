@@ -79,7 +79,7 @@ Plug 'othree/html5.vim'
 " SCSS syntax
 Plug 'cakebaker/scss-syntax.vim'
 " Emmet (<C-e> to expand expression)
-Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim', { 'for': [ 'css', 'scss', 'less', 'sass', 'html', 'xhtml', 'javascript.jsx' ] }
 " CSS color highlighter
 Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'sass', 'scss', 'less'] }
 
@@ -147,7 +147,7 @@ Plug 'KabbAmine/vCoolor.vim', { 'on': 'VCoolor' }
 " Neovim terminal improving
 Plug 'kassio/neoterm', { 'on': 'T' }
 " Unix commands integration
-Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-eunuch', { 'on': [ 'Rename', 'Move', 'SudoWrite' ] }
 " REST Console
 Plug 'diepm/vim-rest-console', { 'for': 'rest' }
 
