@@ -1,7 +1,8 @@
 " Informative echo line
 function! utils#showToggles()
   echom "<F1> NERDTree | <F2> Caps mode | <F3> Paste mode | <F4> Spellcheck | <F5> Reload rc | <F6> Highlighting |" .
-        \" <F7> Whitechars | <F8> Free | <F9> Free | <F10> Free | <F11> Free | <F12> You know, this message :)"
+        \" <F7> Whitechars | <F8> Vertical Term | <F9> Fire REST Request | <F10> Free | <F11> Free |" .
+        \"<F12> You know, this message :)"
 endfunction
 
 " Copy and paste function using xclip
