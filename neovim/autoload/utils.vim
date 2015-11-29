@@ -70,9 +70,11 @@ endfunction
 
 " Run NERDTreeFind or Toggle based on current buffer
 function! utils#nerdWrapper()
-  if &filetype ==# ''
+  if &filetype ==# '' " Empty buffer
     :NERDTreeToggle
-  else
+  elseif expand('%:t') =~ 'NERD_tree' " In NERD_tree buffer
+    wincmd w
+  else " Normal file buffer
     :NERDTreeFind
   endif
 endfunction
