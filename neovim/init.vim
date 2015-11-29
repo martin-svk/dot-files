@@ -191,8 +191,6 @@ Plug 'thinca/vim-visualstar'
 Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
 " Iabbrev auto-correction library
 Plug 'chip/vim-fat-finger'
-" Hacker typing
-Plug 'natw/keyboard_cat.vim', { 'on':  'PlayMeOff' }
 " Man reading in vim
 Plug 'jez/vim-superman'
 " Matchit enhances motions
