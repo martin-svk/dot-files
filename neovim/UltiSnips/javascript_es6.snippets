@@ -1,7 +1,7 @@
 # ===============================================
 # Classes, imports, exports
 # ===============================================
-snippet class "es6 class"
+snippet class "es6 class" b
 class $1 {
 	constructor() {
 		$2
@@ -9,11 +9,11 @@ class $1 {
 }
 endsnippet
 
-snippet import "import statement"
+snippet im "import statement" b
 import $1 from '$2';
 endsnippet
 
-snippet export "export statement"
+snippet ex "export statement" b
 export default $1;
 endsnippet
 
@@ -24,11 +24,11 @@ endsnippet
 # ===============================================
 # Variables
 # ===============================================
-snippet con "constant declaration"
+snippet con "constant declaration" b
 const ${1:name} = ${2:value};
 endsnippet
 
-snippet let "block scoped variable declaration"
+snippet let "block scoped variable declaration" b
 let ${1:name} = ${2:value};
 endsnippet
 

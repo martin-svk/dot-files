@@ -1,39 +1,39 @@
-snippet pl "vim-plug plugin definition"
+snippet pl "vim-plug plugin definition" b
 " ${1:Plugin description}
 Plug '$2'
 endsnippet
 
-snippet nn "normal mode map coomand"
+snippet nn "normal mode map coomand" b
 nnoremap ${1:key} ${2:command}
 endsnippet
 
-snippet in "insert mode map coomand"
+snippet in "insert mode map coomand" b
 inoremap ${1:key} ${2:command}
 endsnippet
 
-snippet vn "visual mode map coomand"
+snippet vn "visual mode map coomand" b
 vnoremap ${1:key} ${2:command}
 endsnippet
 
-snippet if "if statement"
+snippet if "if statement" b
 if $1
 	$2
 endif
 endsnippet
 
-snippet ife "if ... else statement"
+snippet ife "if ... else statement" b
 if $1
 	$2
 else
 	$3
 endsnippet
 
-snippet fun "function! definition"
+snippet fun "function! definition" b
 function! ${1:FunctionName}()
 	$2
 endfunction
 endsnippet
 
-snippet === "commented separator"
+snippet "== "commented separator" b
 " ======================================================================================================================
 endsnippet

@@ -1,6 +1,10 @@
 # Global snippets
-snippet todo "todo note"
+snippet todo "todo note" w
 TODO: $0
+endsnippet
+
+snippet note "note note" w
+NOTE: $0
 endsnippet
 
 snippet date "current date"
@@ -12,17 +16,17 @@ snippet datetime "current date and time"
 endsnippet
 
 snippet sign "my signature"
-Martin Toma <http://www.martintoma.com>
+Ing. Martin Toma, CEng. <http://www.martintoma.com>
 endsnippet
 
-snippet lorem "lorem ipsum"
+snippet lorem "lorem ipsum" b
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
 aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
 sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 endsnippet
 
-snippet MIT "mit license"
+snippet MIT "mit license" b
 ${1:one line to give the program's name and a brief description}
 Copyright (C) `strftime("%Y")` ${2:copyright holder}
 

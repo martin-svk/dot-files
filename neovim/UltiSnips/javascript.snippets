@@ -1,7 +1,7 @@
 # ===============================================
 # Variables
 # ===============================================
-snippet fun "function"
+snippet fun "function" b
 function $1($2) {
 	$3
 }
@@ -25,24 +25,24 @@ snippet strict "enable strict mode"
 'use strict';
 endsnippet
 
-snippet /* "block comment"
+snippet /* "block comment" b
 /**
  * ${1:Description of class or function}
  */
 endsnippet
 
-snippet req "require statement"
+snippet req "require statement" b
 require('$1');
 endsnippet
 
-snippet kw "key value pair"
+snippet : "key value pair" b
 ${1:key}: ${2:value}
 endsnippet
 
-snippet kwc "key value constant pair"
+snippet :c "key value constant pair" b
 ${1:KEY}: '$1'
 endsnippet
 
-snippet dbg "debugger"
+snippet dbg "debugger" b
 debugger;
 endsnippet

@@ -3,8 +3,8 @@
 # ===============================================
 snippet dispatch "dispatcher dispatch function"
 Dispatcher.dispatch({
-	type: ActionTypes.${1:DATA_RECEIVED},
-	${2:data}: $2
+	type: ${1:ActionTypes}.${2:ACTION_CONSTANT},
+	${3:data}: $4
 });
 endsnippet
 
@@ -35,9 +35,9 @@ export default Store;
 endsnippet
 
 snippet acl "addChangeListener" w
-addChangeListener(this._onChange);
+addChangeListener(this.${1:_onChange});
 endsnippet
 
 snippet rcl "removeChangeListener" w
-removeChangeListener(this._onChange);
+removeChangeListener(this.${1:_onChange});
 endsnippet

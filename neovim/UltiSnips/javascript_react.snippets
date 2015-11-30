@@ -1,7 +1,7 @@
 # ===============================================
 # Components declarations
 # ===============================================
-snippet comp "react component ES6"
+snippet comp "react component ES6" b
 import React from 'react';
 
 class $1 extends React.Component {
@@ -22,7 +22,7 @@ $1.defaultProps = {};
 export default $1;
 endsnippet
 
-snippet fcomp "stateless, function component"
+snippet fcomp "stateless, function component" b
 function ${1:Component}(props) {
 	return (
 		${2:<div>Hello</div>}
@@ -49,26 +49,26 @@ defaultProps = {
 };
 endsnippet
 
-snippet prop "one prop type definition"
+snippet prop "one prop type definition" w
 React.PropTypes.${1:object}${2:.isRequired}
 endsnippet
 
 # ===============================================
 # Component lifecycle functions
 # ===============================================
-snippet compwm "Component will mount method"
+snippet cwm "Component will mount method" b
 componentWillMount() {
 	$1
 }
 endsnippet
 
-snippet compwu "Component will unmount method"
+snippet cwu "Component will unmount method" b
 componentWillUnmount() {
 	$1
 }
 endsnippet
 
-snippet compdm "Component did mount method"
+snippet cdm "Component did mount method" b
 componentDidMount() {
 	$1
 }
@@ -85,7 +85,7 @@ snippet ts "this.state." w
 this.state.${1:property}
 endsnippet
 
-snippet sets "this.setState" w
+snippet ss "this.setState" w
 setState({
 	${1:property}: ${2:value}$0
 });
