@@ -23,7 +23,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Asynchronous maker and linter (needs linters to work)
 Plug 'benekastah/neomake', { 'on': ['Neomake'] }
-" Automatically closing stuff
+" Automatically closing pair stuff
 Plug 'cohama/lexima.vim'
 " Snippets support
 Plug 'SirVer/ultisnips'
