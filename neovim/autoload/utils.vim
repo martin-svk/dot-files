@@ -173,7 +173,7 @@ function! utils#uniteFileBrowse()
 endfunction
 
 function! utils#uniteFileRec()
-  execute 'Unite -no-split -buffer-name=file-recursive-search -start-insert file_rec/async:!'
+  execute 'Unite -no-split -buffer-name=file-recursive-search -start-insert file_rec/neovim'
 endfunction
 
 function! utils#uniteBuffers()
