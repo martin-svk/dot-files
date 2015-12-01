@@ -8,6 +8,33 @@ function $1($2) {
 endsnippet
 
 # ===============================================
+# Control flow
+# ===============================================
+snippet if "if block" b
+if ($1) {
+	$2
+}
+endsnippet
+
+snippet ife "if/esle block" b
+if ($1) {
+	$2
+} else {
+	$3
+}
+endsnippet
+
+snippet ifef "if/else if/else block" b
+if ($1) {
+	$2
+} else if ($3) {
+	$4
+} else {
+	$5
+}
+endsnippet
+
+# ===============================================
 # Common functions and constructs
 # ===============================================
 snippet log "console log"
