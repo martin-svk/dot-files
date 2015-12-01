@@ -879,7 +879,7 @@ highlight TermCursor ctermfg=green guifg=green
 hi! Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE
 
 " Link highlight groups to improve buftabline colors
-hi! link BufTabLineCurrent Statement
+hi! link BufTabLineCurrent Identifier
 hi! link BufTabLineActive Comment
 hi! link BufTabLineHidden Comment
 hi! link BufTabLineFill Comment
