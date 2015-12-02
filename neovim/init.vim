@@ -106,8 +106,8 @@ Plug 'honza/dockerfile.vim'
 " Unite fuzzy searcher
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Unite files, buffers, command sources
-Plug 'Shougo/unite.vim'
+" Unite files, buffers, command sources (Grep source depends on vimproc)
+Plug 'Shougo/unite.vim' | Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 " Outline source
 Plug 'Shougo/unite-outline'
 " History/yank source
