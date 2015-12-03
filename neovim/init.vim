@@ -159,6 +159,8 @@ Plug 'diepm/vim-rest-console', { 'for': 'rest' }
 Plug 'terryma/vim-multiple-cursors'
 " Additional text objects
 Plug 'wellle/targets.vim'
+" Line movement improvement
+Plug 'unblevable/quick-scope'
 " Surround (cs"')
 Plug 'tpope/vim-surround'
 " Easy alignment
@@ -167,6 +169,8 @@ Plug 'godlygeek/tabular', { 'on':  'Tabularize' }
 Plug 'ferranpm/vim-isolate', { 'on':  ['Isolate', 'UnIsolate'] }
 " Software capslock (gC in normal mode, <C-G>c in insert mode)
 Plug 'tpope/vim-capslock'
+" Cycling via C-a C-x
+Plug 'zef/vim-cycle'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Colorschemes
@@ -760,6 +764,11 @@ let g:vrc_output_buffer_name='__RESPONSE__'
 " 4.17 Emmet settings
 " -----------------------------------------------------
 let g:user_emmet_expandabbr_key = '<C-e>'
+
+" -----------------------------------------------------
+" 4.18 Quick scope settings
+" -----------------------------------------------------
+let g:qs_highlight_on_keys=['f', 'F', 't', 'T']
 "}}}
 
 " ======================================================================================================================
