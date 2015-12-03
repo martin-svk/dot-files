@@ -1,6 +1,10 @@
-snippet pl "vim-plug plugin definition" b
+snippet plug "vim-plug plugin definition" b
 " ${1:Plugin description}
 Plug '$2'
+endsnippet
+
+snippet pl "plugize github url or just entry one"
+Plug '${0:${VISUAL:ghrepo}}'
 endsnippet
 
 snippet nn "normal mode map coomand" b
