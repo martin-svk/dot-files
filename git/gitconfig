@@ -1,50 +1,50 @@
 [user]
-  name = Martin Toma
-  email = martin.toma.svk@gmail.com
+    name = Martin Toma
+    email = martin.toma.svk@gmail.com
 [credential]
-  helper = cache --timeout=3600
+    helper = cache --timeout=3600
 [core]
-  excludesfile = ~/.gitignore
+    excludesfile = ~/.gitignore
 [push]
-  default = simple
+    default = simple
 [color]
-  status = always
-  ui = true
+    status = always
+    ui = true
 [core]
-  editor = nvim
+    editor = nvim
 [alias]
-  a = add
-  aa = add --all
-  di = diff
-  ds = diff --staged
-  dt = difftool --no-prompt
-  ci = commit --verbose
-  cim = commit --verbose --reedit-message=HEAD --reset-author
-  amend = commit --amend --verbose
-  co = checkout
-  pl = pull
-  ps = push
-  pom = push origin master
-  pbm = push backup master
-  pod = push origin develop
-  pbd = push backup develop
-  rb = rebase -i HEAD~10
-  st = status -sb
-  br = branch
-  lo = log --oneline -n 15
-  lg = log --pretty=format:'%h | %cd | %an | %s' -n 15
-  ls = log --stat -n 5
-  lol = log --oneline --graph --all --decorate
-  g1 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%cr)%C(reset) %C(white)%s%C(reset) %C(bold white)— %cn%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
-  g2 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%cD%C(reset) %C(bold green)(%cr)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(bold white)— %cn%C(reset)' --abbrev-commit
-  wc = whatchanged -p --abbrev-commit --pretty=medium
-  unstage = reset HEAD --
-  edit = "!nvim `git ls-files -m`"
+    a = add
+    aa = add --all
+    di = diff
+    ds = diff --staged
+    dt = difftool --no-prompt
+    ci = commit --verbose
+    cim = commit --verbose --reedit-message=HEAD --reset-author
+    amend = commit --amend --verbose
+    co = checkout
+    pl = pull
+    ps = push
+    pom = push origin master
+    pbm = push backup master
+    pod = push origin develop
+    pbd = push backup develop
+    rb = rebase -i HEAD~10
+    st = status -sb
+    br = branch
+    lo = log --oneline -n 15
+    lg = log --pretty=format:'%h | %cd | %an | %s' -n 15
+    ls = log --stat -n 5
+    lol = log --oneline --graph --all --decorate
+    g1 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%cr)%C(reset) %C(white)%s%C(reset) %C(bold white)— %cn%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+    g2 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%cD%C(reset) %C(bold green)(%cr)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(bold white)— %cn%C(reset)' --abbrev-commit
+    wc = whatchanged -p --abbrev-commit --pretty=medium
+    unstage = reset HEAD --
+    edit = "!nvim `git ls-files -m`"
 [github]
-  user = martin-svk
+    user = martin-svk
 [branch]
-  autosetuprebase = always
+    autosetuprebase = always
 [diff]
-  tool = nvimdiff
+    tool = nvimdiff
 [difftool "nvimdiff"]
-  cmd = diff_wrapper "$LOCAL" "$REMOTE"
+    cmd = diff_wrapper "$LOCAL" "$REMOTE"
