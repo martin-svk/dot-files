@@ -135,8 +135,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'ap/vim-buftabline'
 " Highlight long lines
 Plug 'whatyouhide/vim-lengthmatters'
-" Highlight interesting words
-Plug 'vasconcelloslf/vim-interestingwords'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " External tools integration plugins
@@ -243,6 +241,7 @@ call plug#end()
 set shell=/bin/zsh                          " Setting shell to zsh
 set number                                  " Line numbers on
 set showmode                                " Always show mode
+set showcmd                                 " Show commands as you type them
 set textwidth=120                           " Text width is 120 characters
 set cmdheight=1                             " Command line height
 set pumheight=10                            " Completion window max size
@@ -505,16 +504,16 @@ nnoremap <silent> <F3> :set paste!<CR> :set paste?<CR>
 nnoremap <silent> <F4> :set spell!<CR> :set spell?<CR>
 " Source (reload configuration)
 nnoremap <silent> <F5> :source $MYNVIMRC<CR>
-" Toggle highlight of current word
-nnoremap <silent> <F6> :call InterestingWords('n')<CR>
+" Toggle search highlight
+nnoremap <silent> <F6> :set nohlsearch!<CR> :set nohlsearch?<CR>
 " Toggle white characters visibility
 nnoremap <silent> <F7> :set list!<CR> :set list?<CR>
 " New horizontal term buffer
 nnoremap <silent> <F8> :call utils#newVertTerm()<CR>
 " Fire REST Request
 nnoremap <silent> <F9> :call VrcQuery()<CR>
-" Toggle search highlight
-nnoremap <silent> <F10> :set nohlsearch!<CR> :set nohlsearch?<CR>
+" Free
+" nnoremap <silent> <F10>
 " Howdoi integration (pip install howdoi)
 nnoremap <silent> <F11> :call utils#howDoI()<CR>
 " Echo out toggles legend on <F12>
@@ -816,11 +815,6 @@ let g:user_emmet_expandabbr_key = '<C-e>'
 " 4.18 Quick scope settings
 " -----------------------------------------------------
 let g:qs_highlight_on_keys=['f', 'F', 't', 'T']
-
-" -----------------------------------------------------
-" 4.19 Interesting words color settings
-" -----------------------------------------------------
-let g:interestingWordsTermColors=['154', '121', '211', '137', '214', '222']
 "}}}
 
 " ======================================================================================================================
