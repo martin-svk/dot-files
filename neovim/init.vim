@@ -103,6 +103,8 @@ Plug 'tpope/vim-git'
 Plug 'honza/dockerfile.vim'
 " Yaml indentation
 Plug 'martin-svk/vim-yaml'
+" Crystal lang
+Plug 'rhysd/vim-crystal'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Unite fuzzy searcher
@@ -902,7 +904,7 @@ hi! link BufTabLineFill Comment
 " 7.0 Filetype specific settings and autocommands
 " ======================================================================================================================
 "{{{
-autocmd FileType ruby,coffee,sass,scss,haml,slim,vim,yaml setlocal shiftwidth=2 softtabstop=2 tabstop=2
+autocmd FileType ruby,coffee,sass,scss,haml,slim,vim,yaml,crystal setlocal shiftwidth=2 softtabstop=2 tabstop=2
 autocmd FileType html,htmldjango,xhtml,css,javascript,javascript.jsx,snippets setlocal shiftwidth=4 softtabstop=4 tabstop=4
 
 " Keywordprg settings
