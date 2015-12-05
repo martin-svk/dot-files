@@ -135,6 +135,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'ap/vim-buftabline'
 " Highlight long lines
 Plug 'whatyouhide/vim-lengthmatters'
+" Highlight interesting words
+Plug 'vasconcelloslf/vim-interestingwords'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " External tools integration plugins
@@ -467,16 +469,16 @@ nnoremap <silent> <F3> :set paste!<CR> :set paste?<CR>
 nnoremap <silent> <F4> :set spell!<CR> :set spell?<CR>
 " Source (reload configuration)
 nnoremap <silent> <F5> :source $MYNVIMRC<CR>
-" Toggle search highlight
-nnoremap <silent> <F6> :set nohlsearch!<CR> :set nohlsearch?<CR>
+" Toggle highlight of current word
+nnoremap <silent> <F6> :call InterestingWords('n')<CR>
 " Toggle white characters visibility
 nnoremap <silent> <F7> :set list!<CR> :set list?<CR>
 " New horizontal term buffer
 nnoremap <silent> <F8> :call utils#newVertTerm()<CR>
 " Fire REST Request
 nnoremap <silent> <F9> :call VrcQuery()<CR>
-" Free
-" nnoremap <silent> <F10> :Command<CR>
+" Toggle search highlight
+nnoremap <silent> <F10> :set nohlsearch!<CR> :set nohlsearch?<CR>
 " Howdoi integration (pip install howdoi)
 nnoremap <silent> <F11> :call utils#howDoI()<CR>
 " Echo out toggles legend on <F12>
@@ -775,6 +777,11 @@ let g:user_emmet_expandabbr_key = '<C-e>'
 " 4.18 Quick scope settings
 " -----------------------------------------------------
 let g:qs_highlight_on_keys=['f', 'F', 't', 'T']
+
+" -----------------------------------------------------
+" 4.19 Interesting words colors
+" -----------------------------------------------------
+let g:interestingWordsTermColors=['154', '121', '211', '137', '214', '222']
 "}}}
 
 " ======================================================================================================================
