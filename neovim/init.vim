@@ -173,7 +173,7 @@ Plug 'godlygeek/tabular', { 'on':  'Tabularize' }
 Plug 'ferranpm/vim-isolate', { 'on':  ['Isolate', 'UnIsolate'] }
 " Software capslock (gC in normal mode, <C-G>c in insert mode)
 Plug 'tpope/vim-capslock'
-" Cycling via C-a C-x
+" Cycling related words via C-a C-x (i.e. true/false)
 Plug 'zef/vim-cycle'
 
 " ---------------------------------------------------------------------------------------------------------------------
