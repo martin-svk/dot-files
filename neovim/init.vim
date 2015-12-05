@@ -919,6 +919,20 @@ vmap <C-v> <Plug>(expand_region_shrink)
 " -----------------------------------------------------
 nmap [[ <Plug>Markdown_MoveToPreviousHeader
 nmap ]] <Plug>Markdown_MoveToNextHeader
+
+" -----------------------------------------------------
+" 5.7 Argumentative (use a instead of ,)
+" -----------------------------------------------------
+xmap ia <Plug>Argumentative_InnerTextObject
+xmap aa <Plug>Argumentative_OuterTextObject
+omap ia <Plug>Argumentative_OpPendingInnerTextObject
+omap aa <Plug>Argumentative_OpPendingOuterTextObject
+nmap [a <Plug>Argumentative_Prev
+nmap ]a <Plug>Argumentative_Next
+xmap [a <Plug>Argumentative_XPrev
+xmap ]a <Plug>Argumentative_XNext
+nmap <a <Plug>Argumentative_MoveLeft
+nmap >a <Plug>Argumentative_MoveRight
 "}}}
 
 " ======================================================================================================================
