@@ -161,10 +161,6 @@ Plug 'diepm/vim-rest-console', { 'for': 'rest' }
 Plug 'unblevable/quick-scope'
 " Multiple cursors
 Plug 'terryma/vim-multiple-cursors'
-" Additional text objects
-Plug 'wellle/targets.vim'
-" Line movement improvement
-Plug 'unblevable/quick-scope'
 " Surround (cs"')
 Plug 'tpope/vim-surround'
 " Easy alignment
@@ -479,8 +475,8 @@ nnoremap <silent> <F8> :call utils#newVertTerm()<CR>
 nnoremap <silent> <F9> :call VrcQuery()<CR>
 " Free
 " nnoremap <silent> <F10> :Command<CR>
-" Free
-" nnoremap <silent> <F11> :Command<CR>
+" Howdoi integration (pip install howdoi)
+nnoremap <silent> <F11> :call utils#howDoI()<CR>
 " Echo out toggles legend on <F12>
 nnoremap <F12> :call utils#showToggles()<CR>
 

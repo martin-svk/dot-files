@@ -1,7 +1,7 @@
 " Informative echo line
 function! utils#showToggles()
   echom "<F1> NERDTree | <F2> Caps mode | <F3> Paste mode | <F4> Spellcheck | <F5> Reload rc | <F6> Highlighting |" .
-        \" <F7> Whitechars | <F8> Vertical Term | <F9> Fire REST Request | <F10> Free | <F11> Free |" .
+        \" <F7> Whitechars | <F8> Vertical Term | <F9> Fire REST Request | <F10> How do I | <F11> Free |" .
         \"<F12> You know, this message :)"
 endfunction
 
@@ -291,4 +291,18 @@ function! utils#lightLineFilename()
   return fname =~ 'NERD_tree' ? 'NERDTree' :
         \ &ft == 'unite' ? unite#get_status_string() :
         \ ('' != fname ? fname : '[No Name]')
+endfunction
+
+" Howdoi integration (pip install howdoi)
+function! utils#howDoI()
+  let command_prefix = 'read '
+  let howdoi = '!howdoi '
+
+  call inputsave()
+  let query = input('How do I: ')
+  call inputrestore()
+
+  if query != ''
+    execute command_prefix . howdoi . query
+  endif
 endfunction
