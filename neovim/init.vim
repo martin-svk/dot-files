@@ -175,10 +175,27 @@ Plug 'ferranpm/vim-isolate', { 'on':  ['Isolate', 'UnIsolate'] }
 Plug 'tpope/vim-capslock'
 " Cycling related words via C-a C-x (i.e. true/false)
 Plug 'zef/vim-cycle'
-" Argument text object, (ci, >,)
+" Titlecase motion (gt)
+Plug 'christoomey/vim-titlecase'
+
+" ---------------------------------------------------------------------------------------------------------------------
+" Extra text objects
+" ---------------------------------------------------------------------------------------------------------------------
+
+" Custom text objects creation (dependency for the latter)
+Plug 'kana/vim-textobj-user'
+" Argument text object (via, >a)
 Plug 'PeterRincker/vim-argumentative'
 " Indent text object (vii)
-Plug 'michaeljsmith/vim-indent-object'
+Plug 'kana/vim-textobj-indent'
+" Line text object (vil)
+Plug 'kana/vim-textobj-line'
+" Entire buffer text object (vae)
+Plug 'kana/vim-textobj-entire'
+" Ruby block text object (vir)
+Plug 'nelstrom/vim-textobj-rubyblock'
+" Comment text object (vac)
+Plug 'glts/vim-textobj-comment'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Colorschemes
