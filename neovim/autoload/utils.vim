@@ -224,6 +224,14 @@ function! utils#uniteJumps()
   execute 'Unite -no-split -buffer-name=jumps -start-insert jump'
 endfunction
 
+function! utils#uniteCommands()
+  execute 'Unite -no-split -buffer-name=commands -start-insert command'
+endfunction
+
+function! utils#uniteMappings()
+  execute 'Unite -no-split -buffer-name=mappings -start-insert mapping'
+endfunction
+
 " Format function
 " Needs: npm install js-beautify, gem install rbeautify, python
 function! utils#formatFile()

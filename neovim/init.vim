@@ -400,8 +400,10 @@ noremap n nzz
 noremap N Nzz
 
 " Same when moving up and down
-noremap <C-d> <C-d>zz
 noremap <C-u> <C-u>zz
+noremap <C-d> <C-d>zz
+nnoremap <C-f> <C-f>zz
+nnoremap <C-b> <C-b>zz
 
 " Remap H and L (top, bottom of screen to left and right end of line)
 nnoremap H ^
@@ -815,7 +817,7 @@ let g:user_emmet_expandabbr_key = '<C-e>'
 let g:qs_highlight_on_keys=['f', 'F', 't', 'T']
 
 " -----------------------------------------------------
-" 4.19 Interesting words colors
+" 4.19 Interesting words color settings
 " -----------------------------------------------------
 let g:interestingWordsTermColors=['154', '121', '211', '137', '214', '222']
 "}}}
@@ -870,8 +872,12 @@ nnoremap <silent> <leader>w :call utils#uniteWindows()<CR>
 nnoremap <silent> <leader>s :call utils#uniteSnippets()<CR>
 " Search in latest [j]ump positions
 nnoremap <silent> <leader>j :call utils#uniteJumps()<CR>
-" My custom unite [m]enu with commonly used commands not mapped to keys
+" Search in my custom unite [m]enu with my commands
 nnoremap <silent> <leader>m :call utils#uniteCustomMenu()<CR>
+" Seach in help menu for commands
+nnoremap <silent> <leader>? :call utils#uniteCommands()<CR>
+" Seach in help menu for mappings
+nnoremap <silent> ,? :call utils#uniteMappings()<CR>
 
 " -----------------------------------------------------
 " 5.2 Ultisnips
