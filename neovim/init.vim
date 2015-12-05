@@ -973,6 +973,15 @@ autocmd BufWritePre * call utils#stripTrailingWhitespaces()
 " Resize splits when the window is resized
 autocmd VimResized * :wincmd =
 
+" Make sure Vim returns to the same line when you reopen a file. Thanks, Amit and Steve Losh.
+augroup line_return
+    au!
+    au BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \     execute 'normal! g`"zvzz' |
+        \ endif
+augroup END
+
 " Keyboard layout switching
 if g:utils_autoswitch_kb_layout == 1
   autocmd InsertEnter * call utils#setSKKBLayout()
