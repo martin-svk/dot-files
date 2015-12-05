@@ -175,6 +175,10 @@ Plug 'ferranpm/vim-isolate', { 'on':  ['Isolate', 'UnIsolate'] }
 Plug 'tpope/vim-capslock'
 " Cycling related words via C-a C-x (i.e. true/false)
 Plug 'zef/vim-cycle'
+" Argument text object, (ci, >,)
+Plug 'PeterRincker/vim-argumentative'
+" Indent text object (vii)
+Plug 'michaeljsmith/vim-indent-object'
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Colorschemes
