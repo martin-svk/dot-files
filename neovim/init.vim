@@ -996,3 +996,9 @@ autocmd BufWritePost *.sh Neomake shellcheck
 " pip3 install vim-vint
 autocmd BufWritePost *.vim Neomake vint
 "}}}
+
+" ======================================================================================================================
+" 8.0 Training (mappings to disable stuff I want to unlearn and notify me about the preferred way)
+" ======================================================================================================================
+"{{{
+"}}}
