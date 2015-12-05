@@ -229,7 +229,7 @@ set showmode                                " Always show mode
 set textwidth=120                           " Text width is 120 characters
 set cmdheight=1                             " Command line height
 set pumheight=10                            " Completion window max size
-set timeoutlen=300                          " ESC timeout
+set noswapfile                              " New buffers will be loaded without creating a swapfile
 set hidden                                  " Enables to switch between unsaved buffers and keep undo history
 set clipboard+=unnamed                      " Allow to use system clipboard
 set lazyredraw                              " Don't redraw while executing macros (better performance)
@@ -256,9 +256,12 @@ set splitbelow                              " Splitting a window will put the ne
 set splitright                              " Splitting a window will put the new window right of the current
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 2.3 Backup settings (defaults + noswapfile)
+" 2.3 Timeout settings
 " ---------------------------------------------------------------------------------------------------------------------
-set noswapfile                              " New buffers will be loaded without creating a swapfile
+" Time out on key codes but not mappings. Basically this makes terminal Vim work sanely. (by Steve Losh)
+set notimeout
+set ttimeout
+set ttimeoutlen=10
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 2.4 Spelling settings
@@ -287,7 +290,8 @@ endif
 " 2.7 White characters settings
 " ---------------------------------------------------------------------------------------------------------------------
 set list                                    " Show listchars by default
-set listchars=tab:>\ ,trail:·,extends:#,nbsp:·
+set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:·,nbsp:·
+set showbreak=↪
 
 " ---------------------------------------------------------------------------------------------------------------------
 " 2.8 Filetype settings
@@ -296,7 +300,7 @@ filetype plugin on
 filetype indent on
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 2.9 Folding settings (by default is disabled, use 'za')
+" 2.9 Folding settings
 " ---------------------------------------------------------------------------------------------------------------------
 set foldmethod=marker                       " Markers are used to specify folds.
 set foldlevelstart=2                        " At which level folds will be closed by default
