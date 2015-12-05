@@ -18,7 +18,7 @@ call plug#begin('~/.config/nvim/plugged')
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 " ---------------------------------------------------------------------------------------------------------------------
-" Language agnostic plugins
+" Language agnostic plugins"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Asynchronous maker and linter (needs linters to work)
@@ -33,9 +33,10 @@ Plug 'tpope/vim-commentary'
 Plug 'janko-m/vim-test', { 'on': ['TestFile', 'TestLast', 'TestNearest', 'TestSuite', 'TestVisit'] }
 " CamelCase and snake_case motions
 Plug 'bkad/CamelCaseMotion'
+"}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
-" Ruby/Rails
+" Ruby/Rails"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Ruby syntax (plays nicely with tpope/rbenv-ctags)
@@ -54,9 +55,10 @@ Plug 'tpope/vim-bundler', { 'for': ['ruby', 'eruby', 'haml', 'slim'] }
 Plug 'p0deje/vim-ruby-interpolation', { 'for': ['ruby'] }
 " Refactoring tools
 Plug 'ecomba/vim-ruby-refactoring', { 'for': ['ruby'] }
+"}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
-" JS (ES6, React)
+" JS (ES6, React)"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 
 " JS syntax
@@ -69,9 +71,10 @@ Plug 'mxw/vim-jsx' | Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 " JSON syntax
 Plug 'sheerun/vim-json'
+"}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
-" HTML/CSS
+" HTML/CSS"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 
 " HTML5 syntax
@@ -82,9 +85,10 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'mattn/emmet-vim', { 'for': [ 'css', 'scss', 'less', 'sass', 'html', 'xhtml', 'javascript.jsx' ] }
 " CSS color highlighter
 Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'sass', 'scss', 'less'] }
+"}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
-" Other languages
+" Other languages"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Elixir syntax
@@ -105,9 +109,10 @@ Plug 'honza/dockerfile.vim'
 Plug 'martin-svk/vim-yaml'
 " Crystal lang
 Plug 'rhysd/vim-crystal'
+"}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
-" Unite fuzzy searcher
+" Unite fuzzy searcher"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Unite files, buffers, command sources (Grep source depends on vimproc)
@@ -122,9 +127,10 @@ Plug 'Shougo/neomru.vim'
 Plug 'tsukkee/unite-tag'
 " Colorscheme source
 Plug 'ujihisa/unite-colorscheme'
+"}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
-" Interface improving
+" Interface improving"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Nerdtree file browser
@@ -135,9 +141,10 @@ Plug 'itchyny/lightline.vim'
 Plug 'ap/vim-buftabline'
 " Highlight long lines
 Plug 'whatyouhide/vim-lengthmatters'
+"}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
-" External tools integration plugins
+" External tools integration plugins"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Fugitive
@@ -154,9 +161,10 @@ Plug 'kassio/neoterm', { 'on': 'T' }
 Plug 'tpope/vim-eunuch', { 'on': [ 'Rename', 'Move', 'SudoWrite' ] }
 " REST Console
 Plug 'diepm/vim-rest-console', { 'for': 'rest' }
+"}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
-" Text insertion/manipulation
+" Text insertion/manipulation"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Highlight jump characters on f, F, t, T
@@ -175,9 +183,10 @@ Plug 'tpope/vim-capslock'
 Plug 'zef/vim-cycle'
 " Titlecase motion (gt)
 Plug 'christoomey/vim-titlecase'
+"}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
-" Extra text objects
+" Extra text objects"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Custom text objects creation (dependency for the latter)
@@ -194,9 +203,10 @@ Plug 'kana/vim-textobj-entire'
 Plug 'nelstrom/vim-textobj-rubyblock'
 " Comment text object (vac)
 Plug 'glts/vim-textobj-comment'
+"}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
-" Colorschemes
+" Colorschemes"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Molokai
@@ -205,9 +215,10 @@ Plug 'tomasr/molokai'
 Plug 'cocopon/iceberg.vim'
 " Jellybeans
 Plug 'nanotech/jellybeans.vim'
+"}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
-" Other
+" Other"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 
 " Easily expand selected region
@@ -228,6 +239,7 @@ Plug 'edsono/vim-matchit'
 Plug 'tpope/vim-repeat'
 " Delete all but current buffer
 Plug 'vim-scripts/BufOnly.vim', { 'on': 'Bonly' }
+"}}}
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " 1.2 End of plugin declaration
@@ -236,7 +248,7 @@ call plug#end()
 "}}}
 
 " ======================================================================================================================
-" 2.0 Basic settings (Neovim defaults: https://neovim.io/doc/user/vim_diff.html#nvim-option-defaults)
+" 2.0 Basic settings (Neovim defaults: https://neovim.io/doc/user/vim_diff.html#nvim-option-defaults)"{{{
 " ======================================================================================================================
 "{{{
 
@@ -258,74 +270,84 @@ set virtualedit=block                       " To be able to select past EOL in v
 set nojoinspaces                            " No extra space when joining a line which ends with . ? !
 set scrolloff=5                             " Scroll when closing to top or bottom of the screen
 set updatetime=1000                         " Update time used to create swap file or other things
+"}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 2.1 Indentation settings (2 spaces tabs)
+" 2.1 Indentation settings (2 spaces tabs)"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 set expandtab                               " Use the appropriate number of spaces to insert a <Tab>
 set shiftwidth=4                            " Number of spaces
 set softtabstop=4                           " Same but when use soft tabs
 set tabstop=4                               " Number of spaces that a <Tab> in the file counts for
+"}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 2.2 Split settings (more natural).
+" 2.2 Split settings (more natural)."{{{
 " ---------------------------------------------------------------------------------------------------------------------
 set splitbelow                              " Splitting a window will put the new window below the current
 set splitright                              " Splitting a window will put the new window right of the current
+"}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 2.3 Timeout settings
+" 2.3 Timeout settings"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 " Time out on key codes but not mappings. Basically this makes terminal Vim work sanely. (by Steve Losh)
 set notimeout
 set ttimeout
 set ttimeoutlen=10
+"}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 2.4 Spelling settings
+" 2.4 Spelling settings"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 set spellfile=~/.config/nvim/dictionary.utf-8.add
 set spelllang=en_us                         " Set language to US English
 set nospell                                 " Disable checking by default (use <F4> to toggle)
+"}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 2.5 Search settings
+" 2.5 Search settings"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 set ignorecase                              " Ignore case by default
 set smartcase                               " Make search case sensitive only if it contains uppercase letters
 set wrapscan                                " Search again from top when reached the bottom
 set nohlsearch                              " Don't highlight after search
+"}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 2.6 Persistent undo settings
+" 2.6 Persistent undo settings"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 if has('persistent_undo')
   set undofile
   set undodir=~/.config/nvim/tmp/undo//
 endif
+"}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 2.7 White characters settings
+" 2.7 White characters settings"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 set list                                    " Show listchars by default
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:·,nbsp:·
 set showbreak=↪
+"}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 2.8 Filetype settings
+" 2.8 Filetype settings"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 filetype plugin on
 filetype indent on
+"}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 2.9 Folding settings
+" 2.9 Folding settings"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 set foldmethod=marker                       " Markers are used to specify folds.
-set foldlevel=2                             " Start folding automatically from level 2
+set foldlevel=1                             " Start folding automatically from level 1
 set fillchars="fold: "                      " Characters to fill the statuslines and vertical separators
+"}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 2.10 Omni completion settings
+" 2.10 Omni completion settings"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 set completeopt-=preview                    " Don't show preview scratch buffers
 set wildignore=*.o,*.obj,*~
@@ -336,20 +358,24 @@ set wildignore+=*.gem
 set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
+"}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 2.11 Neovim specific settings
+" 2.11 Neovim specific settings"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1       " Set an environment variable to use the t_SI/t_EI hack
 " let $NVIM_TUI_ENABLE_TRUE_COLOR=1       " Turn on true colors support (does not work inside tmux yet)
+"}}}
 
 " -----------------------------------------------------
-" 2.12 Ctags settings
+" 2.12 Ctags settings"{{{
 " -----------------------------------------------------
 " For Ruby STD ctags use tpope/rbenv-ctags + vim-ruby
 " For gem ctags use tpope/gem-ctags + vim-bundler
 " -----------------------------------------------------
 set tags+=.tags                           " Project tags are in .tags file
+"}}}
+
 "}}}
 
 " ======================================================================================================================
@@ -358,12 +384,13 @@ set tags+=.tags                           " Project tags are in .tags file
 "{{{
 
 " -----------------------------------------------------
-" 3.1 Setting leader
+" 3.1 Setting leader"{{{
 " -----------------------------------------------------
 let g:mapleader="\<space>"
+"}}}
 
 " -----------------------------------------------------
-" 3.2 Disabling arrow keys, space key, exmode enter
+" 3.2 Disabling arrow keys, space key, exmode enter"{{{
 " with Q key, help with F1, etc.
 " -----------------------------------------------------
 nnoremap <up> <nop>
@@ -380,9 +407,10 @@ nnoremap <Space> <nop>
 inoremap <F1> <nop>
 nnoremap <F1> <nop>
 nnoremap Q <nop>
+"}}}
 
 " -----------------------------------------------------
-" 3.3 Vim defaults overriding
+" 3.3 Vim defaults overriding"{{{
 " -----------------------------------------------------
 
 " Intelligent window cycling
@@ -460,8 +488,12 @@ if has('nvim')
     tnoremap ,<ESC> <ESC>
 endif
 
+" Stay down after creating fold
+vnoremap zf mzzf`zzz
+"}}}
+
 " -----------------------------------------------------
-" 3.4 Common tasks
+" 3.4 Common tasks"{{{
 " -----------------------------------------------------
 
 " Quick save and close buffer
@@ -491,9 +523,10 @@ nnoremap J mzJ`z
 
 " [S]plit line (sister to [J]oin lines) S is covered by cc.
 nnoremap S mzi<CR><ESC>`z
+"}}}
 
 " -----------------------------------------------------
-" 3.5 F-key actions
+" 3.5 F-key actions"{{{
 " -----------------------------------------------------
 
 " NERDTree wrapper
@@ -520,9 +553,10 @@ nnoremap <silent> <F9> :call VrcQuery()<CR>
 nnoremap <silent> <F11> :call utils#howDoI()<CR>
 " Echo out toggles legend on <F12>
 nnoremap <F12> :call utils#showToggles()<CR>
+"}}}
 
 " -----------------------------------------------------
-" 3.6 Window / Buffer management
+" 3.6 Window / Buffer management"{{{
 " -----------------------------------------------------
 
 " Intelligent windows resizing using arrow keys
@@ -534,9 +568,10 @@ nnoremap <silent> <Down> :resize -1<CR>
 " Buffers navigation and management
 nnoremap <silent> + :bn<CR>
 nnoremap <silent> _ :bp<CR>
+"}}}
 
 " -----------------------------------------------------
-" 3.7 Command abbreviations and mappings
+" 3.7 Command abbreviations and mappings"{{{
 " -----------------------------------------------------
 
 " Substitution
@@ -545,9 +580,10 @@ cnoremap ss %s/
 " Quiting and saving all
 cnoremap ww wqall
 cnoremap qq qall
+"}}}
 
 " -----------------------------------------------------
-" 3.7 Custom commands and functions
+" 3.7 Custom commands and functions"{{{
 " -----------------------------------------------------
 
 " Generate tags definitions
@@ -572,14 +608,17 @@ nnoremap <silent> ,a :Annotate<CR>
 
 " Profile
 command! Profile :call utils#profile()
+"}}}
 
 " -----------------------------------------------------
-" 3.8 TAB autocomplete mappings
+" 3.8 TAB autocomplete mappings"{{{
 " -----------------------------------------------------
 
 " Multipurpose tab key (inspired by Gary Bernhardt)
 inoremap <expr> <tab> utils#insertTabWrapper()
 inoremap <s-tab> <C-n>
+"}}}
+
 "}}}
 
 " ======================================================================================================================
@@ -588,12 +627,13 @@ inoremap <s-tab> <C-n>
 "{{{
 
 " -----------------------------------------------------
-" 4.1 Auto-switch keyboard layout
+" 4.1 Auto-switch keyboard layout"{{{
 " -----------------------------------------------------
 let g:utils_autoswitch_kb_layout=0
+"}}}
 
 " -----------------------------------------------------
-" 4.2 Unite
+" 4.2 Unite"{{{
 " -----------------------------------------------------
 
 " Matcher settings
@@ -688,21 +728,24 @@ let g:unite_source_menu_menus.unite.command_candidates = [
       \       ['Unite yank history', 'call utils#uniteYankHistory()'],
       \       ['Unite jump history', 'call utils#uniteJumps()'],
       \     ]
+"}}}
 
 " -----------------------------------------------------
-" 4.3 NERDTree
+" 4.3 NERDTree"{{{
 " -----------------------------------------------------
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeWinSize=55
 let g:NERDTreeAutoDeleteBuffer=1
+"}}}
 
 " -----------------------------------------------------
-" 4.4 Ultisnips settings
+" 4.4 Ultisnips settings"{{{
 " -----------------------------------------------------
 let g:UltiSnipsUsePythonVersion=3
+"}}}
 
 " -----------------------------------------------------
-" 4.5 Gitgutter settings
+" 4.5 Gitgutter settings"{{{
 " -----------------------------------------------------
 let g:gitgutter_map_keys=0
 let g:gitgutter_max_signs=9999
@@ -711,14 +754,16 @@ let g:gitgutter_sign_modified='~'
 let g:gitgutter_sign_removed='-'
 let g:gitgutter_sign_modified_removed='~'
 let g:gitgutter_sign_removed_first_line='-'
+"}}}
 
 " -----------------------------------------------------
-" 4.6 Vim JSX highlighting settings
+" 4.6 Vim JSX highlighting settings"{{{
 " -----------------------------------------------------
 let g:jsx_ext_required=0
+"}}}
 
 " -----------------------------------------------------
-" 4.7 Lightline settings
+" 4.7 Lightline settings"{{{
 " -----------------------------------------------------
 let g:lightline = {
       \ 'colorscheme': 'powerline',
@@ -747,76 +792,89 @@ let g:lightline = {
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '', 'right': '' }
       \ }
+"}}}
 
 " -----------------------------------------------------
-" 4.8 Color picker settings
+" 4.8 Color picker settings"{{{
 " -----------------------------------------------------
 let g:vcoolor_disable_mappings=1
+"}}}
 
 " -----------------------------------------------------
-" 4.9 Neomake settings
+" 4.9 Neomake settings"{{{
 " -----------------------------------------------------
 let g:neomake_verbose=0
 let g:neomake_warning_sign = {
-      \ 'text': '>',
+      \ 'text': '❯',
       \ 'texthl': 'WarningMsg',
       \ }
 let g:neomake_error_sign = {
-      \ 'text': '>',
+      \ 'text': '❯',
       \ 'texthl': 'ErrorMsg',
       \ }
+"}}}
 
 " -----------------------------------------------------
-" 4.10 Ruby refactoring settings
+" 4.10 Ruby refactoring settings"{{{
 " -----------------------------------------------------
 let g:ruby_refactoring_map_keys=0
+"}}}
 
 " -----------------------------------------------------
-" 4.11 NeoTerm settings
+" 4.11 NeoTerm settings"{{{
 " -----------------------------------------------------
 let g:neoterm_size=60
 let g:neoterm_position='vertical'
+"}}}
 
 " -----------------------------------------------------
-" 4.12 Vim-Test settings
+" 4.12 Vim-Test settings"{{{
 " -----------------------------------------------------
 let g:test#strategy = "neoterm"
+"}}}
 
 " -----------------------------------------------------
-" 4.13 Clever F settings
+" 4.13 Clever F settings"{{{
 " -----------------------------------------------------
 let g:clever_f_across_no_line=1
 let g:clever_f_smart_case=1
 let g:clever_f_show_prompt=1
 let g:clever_f_chars_match_any_signs=';'
+"}}}
 
 " -----------------------------------------------------
-" 4.14 Multiple cursors settings
+" 4.14 Multiple cursors settings"{{{
 " -----------------------------------------------------
 let g:multi_cursor_exit_from_visual_mode=0
 let g:multi_cursor_exit_from_insert_mode=0
+"}}}
 
 " -----------------------------------------------------
-" 4.15 Vim Markdown settings
+" 4.15 Vim Markdown settings"{{{
 " -----------------------------------------------------
 let g:vim_markdown_no_default_key_mappings=1
 let g:vim_markdown_folding_disabled=1
+"}}}
 
 " -----------------------------------------------------
-" 4.16 Vim REST console settings
+" 4.16 Vim REST console settings"{{{
 " -----------------------------------------------------
 let g:vrc_set_default_mapping=0
 let g:vrc_output_buffer_name='__RESPONSE__'
+"}}}
 
 " -----------------------------------------------------
-" 4.17 Emmet settings
+" 4.17 Emmet settings"{{{
 " -----------------------------------------------------
 let g:user_emmet_expandabbr_key = '<C-e>'
+"}}}
 
 " -----------------------------------------------------
-" 4.18 Quick scope settings
+" 4.18 Quick scope settings"{{{
 " -----------------------------------------------------
 let g:qs_highlight_on_keys=['f', 'F', 't', 'T']
+"}}}
+
 "}}}
 
 " ======================================================================================================================
@@ -824,7 +882,7 @@ let g:qs_highlight_on_keys=['f', 'F', 't', 'T']
 " ======================================================================================================================
 "{{{
 " -----------------------------------------------------
-" 5.1 Unite and extensions
+" 5.1 Unite and extensions"{{{
 " -----------------------------------------------------
 
 " Custom mappings for the unite buffer
@@ -875,9 +933,10 @@ nnoremap <silent> <leader>m :call utils#uniteCustomMenu()<CR>
 nnoremap <silent> <leader>? :call utils#uniteCommands()<CR>
 " Seach in help menu for mappings
 nnoremap <silent> ,? :call utils#uniteMappings()<CR>
+"}}}
 
 " -----------------------------------------------------
-" 5.2 Ultisnips
+" 5.2 Ultisnips"{{{
 " -----------------------------------------------------
 " Disable built-in cx-ck to be able to go backward
 inoremap <C-x><C-k> <nop>
@@ -885,35 +944,40 @@ let g:UltiSnipsExpandTrigger='<C-j>'
 let g:UltiSnipsListSnippets='<C-l>'
 let g:UltiSnipsJumpForwardTrigger='<C-j>'
 let g:UltiSnipsJumpBackwardTrigger='<C-k>'
+"}}}
 
 " -----------------------------------------------------
-" 5.3 Isolate
+" 5.3 Isolate"{{{
 " -----------------------------------------------------
 vnoremap ,i :Isolate<CR>
 nnoremap ,u :UnIsolate<CR>
+"}}}
 
 " -----------------------------------------------------
-" 5.4 Gitgutter
+" 5.4 Gitgutter"{{{
 " -----------------------------------------------------
 nnoremap [c :GitGutterPrevHunk<CR>
 nnoremap ]c :GitGutterNextHunk<CR>
 nnoremap ,hs :GitGutterStageHunk<CR>
 nnoremap ,hr :GitGutterRevertHunk<CR>
+"}}}
 
 " -----------------------------------------------------
-" 5.5 Expand region
+" 5.5 Expand region"{{{
 " -----------------------------------------------------
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
+"}}}
 
 " -----------------------------------------------------
-" 5.6 Vim Markdown
+" 5.6 Vim Markdown"{{{
 " -----------------------------------------------------
 nmap [[ <Plug>Markdown_MoveToPreviousHeader
 nmap ]] <Plug>Markdown_MoveToNextHeader
+"}}}
 
 " -----------------------------------------------------
-" 5.7 Argumentative (use a instead of ,)
+" 5.7 Argumentative (use a instead of ,)"{{{
 " -----------------------------------------------------
 xmap ia <Plug>Argumentative_InnerTextObject
 xmap aa <Plug>Argumentative_OuterTextObject
@@ -927,14 +991,17 @@ nmap <a <Plug>Argumentative_MoveLeft
 nmap >a <Plug>Argumentative_MoveRight
 "}}}
 
+"}}}
+
 " ======================================================================================================================
 " 6.0 Color and highlighting settings
 " ======================================================================================================================
 "{{{
-" Syntax highlighting
+" Syntax highlighting"{{{
 syntax on
+"}}}
 
-" Color scheme based on time
+" Color scheme based on time"{{{
 if strftime("%H") < 14
   let g:rehash256 = 1
   colorscheme molokai
@@ -943,43 +1010,55 @@ elseif strftime("%H") < 20
 else
   colorscheme jellybeans
 endif
+"}}}
 
-" Highlight VCS conflict markers
+" Highlight VCS conflict markers"{{{
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+"}}}
 
-" Highlight term cursor differently
+" Highlight term cursor differently"{{{
 highlight TermCursor ctermfg=green guifg=green
+"}}}
 
-" Remove underline in folded lines
+" Remove underline in folded lines"{{{
 hi! Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE
+"}}}
 
-" Link highlight groups to improve buftabline colors
+" Link highlight groups to improve buftabline colors"{{{
 hi! link BufTabLineCurrent Identifier
 hi! link BufTabLineActive Comment
 hi! link BufTabLineHidden Comment
 hi! link BufTabLineFill Comment
 "}}}
 
+"}}}
+
 " ======================================================================================================================
 " 7.0 Autocommands
 " ======================================================================================================================
 "{{{
+" Setting locat tab values"{{{
 autocmd FileType ruby,coffee,sass,scss,haml,slim,vim,yaml,crystal setlocal shiftwidth=2 softtabstop=2 tabstop=2
 autocmd FileType html,htmldjango,xhtml,css,javascript,javascript.jsx,snippets setlocal shiftwidth=4 softtabstop=4 tabstop=4
+"}}}
 
-" Keywordprg settings
+" Keywordprg settings"{{{
 autocmd FileType vim setlocal keywordprg=:help
+"}}}
 
-" Turn spellcheck on for markdown files.
+" Turn spellcheck on for markdown files."{{{
 autocmd BufNewFile,BufRead *.md setlocal spell
+"}}}
 
-" Remove trailing whitespaces automatically before save
+" Remove trailing whitespaces automatically before save"{{{
 autocmd BufWritePre * call utils#stripTrailingWhitespaces()
+"}}}
 
-" Resize splits when the window is resized
+" Resize splits when the window is resized"{{{
 autocmd VimResized * :wincmd =
+"}}}
 
-" Make sure Vim returns to the same line when you reopen a file. Thanks, Amit and Steve Losh.
+" Make sure Vim returns to the same line when you reopen a file. Thanks, Amit and Steve Losh."{{{
 augroup line_return
     au!
     au BufReadPost *
@@ -987,15 +1066,17 @@ augroup line_return
         \     execute 'normal! g`"zvzz' |
         \ endif
 augroup END
+"}}}
 
-" Keyboard layout switching
+" Keyboard layout switching"{{{
 if g:utils_autoswitch_kb_layout == 1
   autocmd InsertEnter * call utils#setSKKBLayout()
   autocmd InsertLeave * call utils#setUSKBLayout()
 end
+"}}}
 
 " -----------------------------------------------------
-" 7.1 Run linters after save
+" 7.1 Run linters after save"{{{
 " -----------------------------------------------------
 
 " npm install -g eslint
@@ -1010,6 +1091,8 @@ autocmd BufWritePost *.scss Neomake scsslint
 autocmd BufWritePost *.sh Neomake shellcheck
 " pip3 install vim-vint
 autocmd BufWritePost *.vim Neomake vint
+"}}}
+
 "}}}
 
 " ======================================================================================================================
