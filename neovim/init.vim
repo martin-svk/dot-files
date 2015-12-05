@@ -214,6 +214,8 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'terryma/vim-expand-region'
 " Search for highlighted word with *
 Plug 'thinca/vim-visualstar'
+" Improve start by not jumping immediately
+Plug 'ironhouzi/vim-stim'
 " Intelligent buffer closing
 Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
 " Iabbrev auto-correction library
