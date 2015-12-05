@@ -157,6 +157,8 @@ Plug 'diepm/vim-rest-console', { 'for': 'rest' }
 " Text insertion/manipulation
 " ---------------------------------------------------------------------------------------------------------------------
 
+" Highlight jump characters on f, F, t, T
+Plug 'unblevable/quick-scope'
 " Multiple cursors
 Plug 'terryma/vim-multiple-cursors'
 " Additional text objects
