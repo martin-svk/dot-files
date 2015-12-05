@@ -393,9 +393,9 @@ noremap k gk
 nnoremap gj 5j
 nnoremap gk 5k
 
-" More useful enter and backspace
+" More useful enter (fold toggling)
 nnoremap <CR> G
-vnoremap <CR> G
+nnoremap <CR> za
 nnoremap <BS> gg
 vnoremap <BS> gg
 
@@ -448,10 +448,24 @@ sunmap b
 sunmap e
 sunmap ge
 
-" Fix the cw at the end of line bug
+" Fix the cw at the end of line bug default vim has special treatment (:help cw)
 " default vim has special treatment (:help cw)
 nmap cw ce
 nmap dw de
+
+" Uppercase word in insert mode
+inoremap <C-u> <ESC>mzgUiw`za
+
+" Matching brackets with TAB (using matchit) (Breaks the <C-i> jump)
+map <TAB> %
+silent! unmap [%
+silent! unmap ]%
+
+" Cancel terminal mode with ,escape
+if has('nvim')
+    tnoremap <ESC> <C-\><C-n>
+    tnoremap ,<ESC> <ESC>
+endif
 
 " -----------------------------------------------------
 " 3.4 Common tasks
@@ -475,6 +489,15 @@ vnoremap K :m '<-2<CR>gv=gv
 " CTags navigation (:tselect to select from menu)
 nnoremap ]t :tn<CR>
 nnoremap [t :tp<CR>
+
+" Reselect last-pasted text
+nnoremap gp `[v`]
+
+" Keep the cursor in place while joining lines
+nnoremap J mzJ`z
+
+" [S]plit line (sister to [J]oin lines) S is covered by cc.
+nnoremap S mzi<CR><ESC>`z
 
 " -----------------------------------------------------
 " 3.5 F-key actions
@@ -523,9 +546,12 @@ nnoremap <silent> _ :bp<CR>
 " 3.7 Command abbreviations and mappings
 " -----------------------------------------------------
 
+" Substitution
+cnoremap ss %s/
+
 " Quiting and saving all
-cmap ww wqall
-cmap qq qall
+cnoremap ww wqall
+cnoremap qq qall
 
 " -----------------------------------------------------
 " 3.7 Custom commands and functions
@@ -929,7 +955,7 @@ hi! link BufTabLineFill Comment
 "}}}
 
 " ======================================================================================================================
-" 7.0 Filetype specific settings and autocommands
+" 7.0 Autocommands
 " ======================================================================================================================
 "{{{
 autocmd FileType ruby,coffee,sass,scss,haml,slim,vim,yaml,crystal setlocal shiftwidth=2 softtabstop=2 tabstop=2
