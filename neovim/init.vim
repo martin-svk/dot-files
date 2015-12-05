@@ -320,7 +320,6 @@ filetype indent on
 " 2.9 Folding settings
 " ---------------------------------------------------------------------------------------------------------------------
 set foldmethod=marker                       " Markers are used to specify folds.
-set foldlevelstart=2                        " At which level folds will be closed by default
 set fillchars="fold: "                      " Characters to fill the statuslines and vertical separators
 
 " ---------------------------------------------------------------------------------------------------------------------
@@ -394,10 +393,7 @@ nnoremap gj 5j
 nnoremap gk 5k
 
 " More useful enter (fold toggling)
-nnoremap <CR> G
 nnoremap <CR> za
-nnoremap <BS> gg
-vnoremap <BS> gg
 
 " When jump to next match also center screen
 noremap n nzz
@@ -419,9 +415,6 @@ nnoremap Y y$
 " Quick replay q macro
 nnoremap Q @q
 
-" Cancel terminal mode with ,escape
-tnoremap ,<ESC> <C-\><C-n>
-
 " Omni-complete based on ctags
 inoremap <C-]> <C-x><C-]>
 
@@ -435,9 +428,6 @@ vnoremap y y`]
 vnoremap p "_dP`]
 nnoremap p p`]
 
-" No more accidentally showing up command window (Use C-f to show it)
-map q: :q
-
 " Use CamelCaseMotion instead of default motions
 map <silent> w <Plug>CamelCaseMotion_w
 map <silent> b <Plug>CamelCaseMotion_b
@@ -449,7 +439,6 @@ sunmap e
 sunmap ge
 
 " Fix the cw at the end of line bug default vim has special treatment (:help cw)
-" default vim has special treatment (:help cw)
 nmap cw ce
 nmap dw de
 
