@@ -241,6 +241,8 @@ Plug 'edsono/vim-matchit'
 Plug 'tpope/vim-repeat'
 " Delete all but current buffer
 Plug 'vim-scripts/BufOnly.vim', { 'on': 'Bonly' }
+" Populate arglist with buffers in quickfix list
+Plug 'nelstrom/vim-qargs', { 'on': 'Qargs' }
 "}}}
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
