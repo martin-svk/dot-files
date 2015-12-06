@@ -889,11 +889,11 @@ let g:deoplete#enable_at_startup=1
 let g:deoplete#auto_completion_start_length=2
 
 let g:deoplete#sources={}
-let g:deoplete#sources._=['buffer', 'file']
-let g:deoplete#sources.ruby=['buffer', 'member', 'file']
-let g:deoplete#sources.vim=['buffer', 'member', 'file']
-let g:deoplete#sources.css=['buffer', 'member', 'file', 'omni']
-let g:deoplete#sources.scss=['buffer', 'member', 'file', 'omni']
+let g:deoplete#sources._    = ['buffer', 'file', 'ultisnips']
+let g:deoplete#sources.ruby = ['buffer', 'member', 'file', 'ultisnips']
+let g:deoplete#sources.vim  = ['buffer', 'member', 'file', 'ultisnips']
+let g:deoplete#sources.css  = ['buffer', 'member', 'file', 'omni', 'ultisnips']
+let g:deoplete#sources.scss = ['buffer', 'member', 'file', 'omni', 'ultisnips']
 "}}}
 
 "}}}
@@ -1087,7 +1087,7 @@ hi! link BufTabLineFill Comment
 " 7.0 Autocommands
 " ======================================================================================================================
 "{{{
-" Setting locat tab values"{{{
+" Setting local tab settings"{{{
 autocmd FileType ruby,coffee,sass,scss,haml,slim,vim,yaml,crystal setlocal shiftwidth=2 softtabstop=2 tabstop=2
 autocmd FileType html,htmldjango,xhtml,css,javascript,javascript.jsx,snippets setlocal shiftwidth=4 softtabstop=4 tabstop=4
 "}}}
