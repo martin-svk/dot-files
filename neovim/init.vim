@@ -179,8 +179,8 @@ Plug 'tpope/vim-surround'
 Plug 'godlygeek/tabular', { 'on':  'Tabularize' }
 " Safely editing in isolation
 Plug 'ferranpm/vim-isolate', { 'on':  ['Isolate', 'UnIsolate'] }
-" Software capslock (gC in normal mode, <C-G>c in insert mode)
-Plug 'tpope/vim-capslock'
+" Software capslock (<F2>/gC in normal mode, <C-G>c in insert mode)
+Plug 'tpope/vim-capslock', { 'on': '<Plug>CapsLockToggle' }
 " Cycling related words via C-a C-x (i.e. true/false)
 Plug 'zef/vim-cycle'
 " Titlecase motion (gt)
