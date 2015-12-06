@@ -417,23 +417,37 @@ nnoremap Q <nop>
 nmap <silent> <C-w><C-w> :call utils#intelligentCycling()<CR>
 
 " Visual linewise up and down by default (and use gj gk to go quicker)
-noremap j gj
-noremap k gk
+nnoremap j gj
+nnoremap k gk
 nnoremap gj 5j
 nnoremap gk 5k
+vnoremap j gj
+vnoremap k gk
+vnoremap gj 5j
+vnoremap gk 5k
 
 " More useful enter (fold toggling)
 nnoremap <CR> za
 
+" Automatically enable very magic mode (:h 'magic')
+nnoremap / /\v
+vnoremap / /\v
+
 " When jump to next match also center screen
-noremap n nzz
-noremap N Nzz
+nnoremap n nzz
+nnoremap N Nzz
+vnoremap n nzz
+vnoremap N Nzz
 
 " Same when moving up and down
-noremap <C-u> <C-u>zz
-noremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+nnoremap <C-d> <C-d>zz
 nnoremap <C-f> <C-f>zz
 nnoremap <C-b> <C-b>zz
+vnoremap <C-u> <C-u>zz
+vnoremap <C-d> <C-d>zz
+vnoremap <C-f> <C-f>zz
+vnoremap <C-b> <C-b>zz
 
 " Remap H and L (top, bottom of screen to left and right end of line)
 nnoremap H ^
@@ -449,6 +463,9 @@ nnoremap Q @q
 
 " Omni-complete based on ctags
 inoremap <C-]> <C-x><C-]>
+
+" Omni-complete based on file names
+inoremap <C-f> <C-x><C-f>
 
 " Don't yank to default register when changing something
 nnoremap c "xc
