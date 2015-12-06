@@ -127,8 +127,6 @@ Plug 'Shougo/neoyank.vim'
 Plug 'Shougo/neomru.vim'
 " Tag source
 Plug 'tsukkee/unite-tag'
-" Colorscheme source
-Plug 'ujihisa/unite-colorscheme'
 " Unite grep replacement (populates the qf list)
 Plug 'rking/ag.vim', { 'on': ['Ag', 'AgBuffer', 'AgAdd', 'AgFile', 'AgFromSearch'] }
 "}}}
