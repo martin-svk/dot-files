@@ -417,8 +417,12 @@ nnoremap Q <nop>
 " 3.3 Vim defaults overriding"{{{
 " -----------------------------------------------------
 
-" Intelligent window cycling
+" Easier window switching
 nmap <silent> <C-w><C-w> :call utils#intelligentCycling()<CR>
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " Visual linewise up and down by default (and use gj gk to go quicker)
 nnoremap j gj
