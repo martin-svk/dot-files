@@ -33,6 +33,8 @@ Plug 'tpope/vim-commentary'
 Plug 'janko-m/vim-test', { 'on': ['TestFile', 'TestLast', 'TestNearest', 'TestSuite', 'TestVisit'] }
 " CamelCase and snake_case motions
 Plug 'bkad/CamelCaseMotion'
+" Autocomplete
+Plug 'Shougo/deoplete.nvim'
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
@@ -461,9 +463,6 @@ nnoremap Y y$
 " Quick replay q macro
 nnoremap Q @q
 
-" Omni-complete based on ctags
-inoremap <C-]> <C-x><C-]>
-
 " Omni-complete based on file names
 inoremap <C-f> <C-x><C-f>
 
@@ -501,8 +500,8 @@ silent! unmap ]%
 
 " Cancel terminal mode with ,escape
 if has('nvim')
-    tnoremap <ESC> <C-\><C-n>
-    tnoremap ,<ESC> <ESC>
+  tnoremap <ESC> <C-\><C-n>
+  tnoremap ,<ESC> <ESC>
 endif
 
 " Stay down after creating fold
@@ -625,15 +624,6 @@ nnoremap <silent> ,a :Annotate<CR>
 
 " Profile
 command! Profile :call utils#profile()
-"}}}
-
-" -----------------------------------------------------
-" 3.8 TAB autocomplete mappings"{{{
-" -----------------------------------------------------
-
-" Multipurpose tab key (inspired by Gary Bernhardt)
-inoremap <expr> <tab> utils#insertTabWrapper()
-inoremap <s-tab> <C-n>
 "}}}
 
 "}}}
@@ -892,6 +882,20 @@ let g:user_emmet_expandabbr_key = '<C-e>'
 let g:qs_highlight_on_keys=['f', 'F', 't', 'T']
 "}}}
 
+" -----------------------------------------------------
+" 4.19 Deoplete autocomplete settings"{{{
+" -----------------------------------------------------
+let g:deoplete#enable_at_startup=1
+let g:deoplete#auto_completion_start_length=2
+
+let g:deoplete#sources={}
+let g:deoplete#sources._=['buffer', 'file']
+let g:deoplete#sources.ruby=['buffer', 'member', 'file']
+let g:deoplete#sources.vim=['buffer', 'member', 'file']
+let g:deoplete#sources.css=['buffer', 'member', 'file', 'omni']
+let g:deoplete#sources.scss=['buffer', 'member', 'file', 'omni']
+"}}}
+
 "}}}
 
 " ======================================================================================================================
@@ -1008,6 +1012,30 @@ nmap <a <Plug>Argumentative_MoveLeft
 nmap >a <Plug>Argumentative_MoveRight
 "}}}
 
+" -----------------------------------------------------
+" 5.7 Deoplete autocomplete"{{{
+" -----------------------------------------------------
+" Select next match or trigger manual complete
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ deoplete#mappings#manual_complete("buffer")
+
+" Manually trigger tag autocomplete (does not work - blinking)
+" inoremap <silent><expr> <C-]> deoplete#mappings#manual_complete("tag")
+" Fallback to default vim tag complete
+inoremap <C-]> <C-x><C-]>
+
+" <C-h>, <BS>: close popup and delete backword char
+inoremap <expr><C-h> deolete#mappings#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> deoplete#mappings#smart_close_popup()."\<C-h>"
+
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return deoplete#mappings#close_popup() . "\<CR>"
+endfunction
+"}}}
+
 "}}}
 
 " ======================================================================================================================
@@ -1077,8 +1105,8 @@ autocmd VimResized * :wincmd =
 
 " Make sure Vim returns to the same line when you reopen a file. Thanks, Amit and Steve Losh."{{{
 augroup line_return
-    au!
-    au BufReadPost *
+  au!
+  au BufReadPost *
         \ if line("'\"") > 0 && line("'\"") <= line("$") |
         \     execute 'normal! g`"zvzz' |
         \ endif
