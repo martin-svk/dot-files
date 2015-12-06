@@ -1058,6 +1058,15 @@ nnoremap <leader>a :Ag!<Space>
 nnoremap <leader>A :AgAdd<Space>
 "}}}
 
+" -----------------------------------------------------
+" 4.20 Vim-Test "{{{
+" -----------------------------------------------------
+nnoremap ,tf :TestFile<CR>
+nnoremap ,tn :TestNearest<CR>
+nnoremap ,ta :TestSuite<CR>
+nnoremap ,tt :TestLast<CR>
+"}}}
+
 "}}}
 
 " ======================================================================================================================
