@@ -907,8 +907,8 @@ let g:deoplete#sources.scss = ['buffer', 'member', 'file', 'omni', 'ultisnips']
 " 4.20 Ag.vim settings"{{{
 " -----------------------------------------------------
 let g:ag_working_path_mode="r"
-let g:ag_highlight=1
 let g:ag_qhandler="copen 20"
+let g:ag_apply_qmappings=0
 "}}}
 
 "}}}
