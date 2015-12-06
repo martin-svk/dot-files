@@ -874,7 +874,7 @@ let g:vim_markdown_folding_disabled=1
 " 4.16 Vim REST console settings"{{{
 " -----------------------------------------------------
 let g:vrc_set_default_mapping=0
-let g:vrc_output_buffer_name='__RESPONSE__'
+let g:vrc_output_buffer_name='__RESPONSE__.rest'
 "}}}
 
 " -----------------------------------------------------
