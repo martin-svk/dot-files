@@ -466,9 +466,6 @@ nnoremap Y y$
 " Quick replay q macro
 nnoremap Q @q
 
-" Omni-complete based on file names
-inoremap <C-f> <C-x><C-f>
-
 " Don't yank to default register when changing something
 nnoremap c "xc
 xnoremap c "xc
