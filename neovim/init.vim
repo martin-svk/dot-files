@@ -434,9 +434,6 @@ vnoremap k gk
 vnoremap gj 5j
 vnoremap gk 5k
 
-" More useful enter (fold toggling)
-nnoremap <CR> za
-
 " Automatically enable very magic mode (:h 'magic')
 nnoremap / /\v
 vnoremap / /\v
