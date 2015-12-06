@@ -227,7 +227,7 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'terryma/vim-expand-region'
 " Search for highlighted word with *
 Plug 'thinca/vim-visualstar'
-" Improve start by not jumping immediately
+" Improve star by not jumping immediately
 Plug 'ironhouzi/vim-stim'
 " Intelligent buffer closing
 Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
@@ -235,7 +235,7 @@ Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
 Plug 'chip/vim-fat-finger'
 " Man reading in vim
 Plug 'jez/vim-superman'
-" Matchit enhances motions
+" Matchit enhances jump motions
 Plug 'edsono/vim-matchit'
 " More . repeat functionality
 Plug 'tpope/vim-repeat'
@@ -346,7 +346,7 @@ filetype indent on
 " 2.9 Folding settings"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 set foldmethod=marker                       " Markers are used to specify folds.
-set foldlevel=1                             " Start folding automatically from level 1
+set foldlevel=2                             " Start folding automatically from level 2
 set fillchars="fold: "                      " Characters to fill the statuslines and vertical separators
 "}}}
 
