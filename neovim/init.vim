@@ -129,6 +129,8 @@ Plug 'Shougo/neomru.vim'
 Plug 'tsukkee/unite-tag'
 " Colorscheme source
 Plug 'ujihisa/unite-colorscheme'
+" Unite grep replacement (populates the qf list)
+Plug 'rking/ag.vim', { 'on': ['Ag', 'AgBuffer', 'AgAdd', 'AgFile', 'AgFromSearch'] }
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
@@ -533,6 +535,10 @@ vnoremap K :m '<-2<CR>gv=gv
 nnoremap ]t :tn<CR>
 nnoremap [t :tp<CR>
 
+" QuickFix navigation
+nnoremap ]q :cn<CR>
+nnoremap [q :cp<CR>
+
 " Reselect last-pasted text
 nnoremap gp `[v`]
 
@@ -896,6 +902,14 @@ let g:deoplete#sources.ruby = ['buffer', 'member', 'file', 'ultisnips']
 let g:deoplete#sources.vim  = ['buffer', 'member', 'file', 'ultisnips']
 let g:deoplete#sources.css  = ['buffer', 'member', 'file', 'omni', 'ultisnips']
 let g:deoplete#sources.scss = ['buffer', 'member', 'file', 'omni', 'ultisnips']
+"}}}
+
+" -----------------------------------------------------
+" 4.20 Ag.vim settings"{{{
+" -----------------------------------------------------
+let g:ag_working_path_mode="r"
+let g:ag_highlight=1
+let g:ag_qhandler="copen 20"
 "}}}
 
 "}}}
