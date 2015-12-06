@@ -543,6 +543,9 @@ nnoremap J mzJ`z
 
 " [S]plit line (sister to [J]oin lines) S is covered by cc.
 nnoremap S mzi<CR><ESC>`z
+
+" Easier fold toggling
+nnoremap ,z za
 "}}}
 
 " -----------------------------------------------------
