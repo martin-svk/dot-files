@@ -919,10 +919,10 @@ let g:used_javascript_libs = 'chai,flux,react,underscore'
 let g:NERDTreeIndicatorMapCustom = {
       \ "Modified"  : "+",
       \ "Staged"    : "+",
-      \ "Untracked" : "u",
-      \ "Renamed"   : "r",
-      \ "Unmerged"  : "m",
-      \ "Deleted"   : "x",
+      \ "Untracked" : "?",
+      \ "Renamed"   : "↪",
+      \ "Unmerged"  : "=",
+      \ "Deleted"   : "¬",
       \ "Dirty"     : "*",
       \ "Clean"     : "✔︎",
       \ "Unknown"   : "?"
