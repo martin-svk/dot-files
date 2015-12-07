@@ -129,8 +129,8 @@ Plug 'Shougo/neoyank.vim'
 Plug 'Shougo/neomru.vim'
 " Tag source
 Plug 'tsukkee/unite-tag'
-" Unite grep replacement (populates the qf list)
-Plug 'rking/ag.vim', { 'on': ['Ag', 'AgBuffer', 'AgAdd', 'AgFile', 'AgFromSearch'] }
+" Ag wrapper (Unite grep alternative) search and edit
+Plug 'dyng/ctrlsf.vim', { 'on': ['CtrlSF', 'CtrlSFToggle'] }
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
@@ -897,11 +897,12 @@ let g:deoplete#sources.scss = ['buffer', 'member', 'file', 'omni', 'ultisnips']
 "}}}
 
 " -----------------------------------------------------
-" 4.20 Ag.vim settings"{{{
+" 4.20 Ctrl-SF settings"{{{
 " -----------------------------------------------------
-let g:ag_working_path_mode="r"
-let g:ag_qhandler="copen 20"
-let g:ag_apply_qmappings=0
+let g:ctrlsf_default_root='project'
+let g:ctrlsf_populate_qflist=1
+let g:ctrlsf_position='bottom'
+let g:ctrlsf_winsize = '50%'
 "}}}
 
 " -----------------------------------------------------
@@ -1047,10 +1048,10 @@ endfunction
 "}}}
 
 " -----------------------------------------------------
-" 5.9 Ag.vim "{{{
+" 5.9 CtrlSF "{{{
 " -----------------------------------------------------
-nnoremap <leader>a :Ag!<Space>
-nnoremap <leader>A :AgAdd<Space>
+nnoremap <leader>a :CtrlSF<Space>
+nnoremap <leader>A :CtrlSFToggle<CR>
 "}}}
 
 " -----------------------------------------------------
