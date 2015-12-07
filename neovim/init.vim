@@ -429,10 +429,6 @@ vnoremap k gk
 vnoremap gj 5j
 vnoremap gk 5k
 
-" Automatically enable very magic mode (:h 'magic')
-nnoremap / /\v
-vnoremap / /\v
-
 " When jump to next match also center screen
 nnoremap n nzz
 nnoremap N Nzz
