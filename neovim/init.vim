@@ -2,8 +2,8 @@
 " ### Author : Martin Toma <martin.toma.svk@gmail.com>                                                               ###
 " ######################################################################################################################
 " ### Neovim Configuration focused on Web development                                                                ###
-" ### Date created : Tue Oct 14 19:58:11 CET 2014                                                                    ###
-" ### Vimmer since : Tue Nov 12 14:14:56 CET 2013                                                                    ###
+" ### Neovimmer since : Tue Oct 14 2014                                                                              ###
+" ### Vimmer since    : Tue Nov 12 2013                                                                              ###
 " ######################################################################################################################
 
 " ======================================================================================================================
@@ -346,7 +346,7 @@ filetype indent on
 " 2.9 Folding settings"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 set foldmethod=marker                       " Markers are used to specify folds.
-set foldlevel=2                             " Start folding automatically from level 2
+set foldlevel=1                             " Start folding automatically from level 1
 set fillchars="fold: "                      " Characters to fill the statuslines and vertical separators
 "}}}
 
@@ -606,7 +606,7 @@ cnoremap qq qall
 "}}}
 
 " -----------------------------------------------------
-" 3.7 Custom commands and functions"{{{
+" 3.8 Custom commands and functions"{{{
 " -----------------------------------------------------
 
 " Generate tags definitions
@@ -1028,7 +1028,7 @@ nmap >a <Plug>Argumentative_MoveRight
 "}}}
 
 " -----------------------------------------------------
-" 5.7 Deoplete autocomplete"{{{
+" 5.8 Deoplete autocomplete"{{{
 " -----------------------------------------------------
 " Select next match or trigger manual complete
 inoremap <silent><expr> <Tab>
@@ -1052,14 +1052,14 @@ endfunction
 "}}}
 
 " -----------------------------------------------------
-" 4.20 Ag.vim "{{{
+" 5.9 Ag.vim "{{{
 " -----------------------------------------------------
 nnoremap <leader>a :Ag!<Space>
 nnoremap <leader>A :AgAdd<Space>
 "}}}
 
 " -----------------------------------------------------
-" 4.20 Vim-Test "{{{
+" 5.10 Vim-Test "{{{
 " -----------------------------------------------------
 nnoremap ,tf :TestFile<CR>
 nnoremap ,tn :TestNearest<CR>
@@ -1177,7 +1177,21 @@ autocmd BufWritePost *.vim Neomake vint
 "}}}
 
 " ======================================================================================================================
-" 8.0 Training (mappings to disable stuff I want to unlearn and notify me about the preferred way)
+" 8.0 Todo, Notes
 " ======================================================================================================================
 "{{{
+
+" -----------------------------------------------------
+" 8.1 Todo"{{{
+" -----------------------------------------------------
+" 1. Revisit all plugins, set up 2nd level mappings.
+" 2. Remove obsolete plugins.
+" 3. Update README file.
+"}}}
+
+" -----------------------------------------------------
+" 8.2 Notes"{{{
+" -----------------------------------------------------
+"}}}
+
 "}}}
