@@ -1031,14 +1031,10 @@ nmap >a <Plug>Argumentative_MoveRight
 " 5.8 Deoplete autocomplete"{{{
 " -----------------------------------------------------
 " Select next match or trigger manual complete
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ deoplete#mappings#manual_complete("buffer")
+inoremap <silent> <expr> <Tab> utils#tabComplete()
 
-" Manually trigger tag autocomplete (does not work - blinking)
-" inoremap <silent><expr> <C-]> deoplete#mappings#manual_complete("tag")
-" Fallback to default vim tag complete
-inoremap <C-]> <C-x><C-]>
+" Manually trigger tag autocomplete
+inoremap <silent> <expr> <C-]> deoplete#mappings#manual_complete("tag")
 
 " <C-h>, <BS>: close popup and delete backword char
 inoremap <expr><C-h> deolete#mappings#smart_close_popup()."\<C-h>"

@@ -131,21 +131,16 @@ function! utils#generateJSCtags()
 endfunction
 
 " Tab wrapper
-function! utils#insertTabWrapper()
+function! utils#tabComplete()
   let col = col('.') - 1
   if !col || getline('.')[col - 1] !~ '\k'
-    return "\<tab>"
+    return "\<TAB>"
   else
-    return "\<c-p>"
-  endif
-endfunction
-
-function! utils#insertTabOmniWrapper()
-  let col = col('.') - 1
-  if !col || getline('.')[col - 1] !~ '\k'
-    return "\<tab>"
-  else
-    return "\<c-x>\<c-o>"
+    if pumvisible()
+      return "\<C-n>"
+    else
+      return deoplete#mappings#manual_complete("buffer")
+    endif
   endif
 endfunction
 
@@ -156,7 +151,7 @@ endfunction
 
 " Use omni complete source as default
 function! utils#useOmniTabWrapper()
-  inoremap <buffer> <expr> <tab> utils#insertTabOmniWrapper()
+  inoremap <buffer> <expr> <TAB> utils#insertTabOmniWrapper()
 endfunction
 
 " Unite commands wrappers
