@@ -139,6 +139,8 @@ Plug 'dyng/ctrlsf.vim', { 'on': ['CtrlSF', 'CtrlSFToggle'] }
 
 " Nerdtree file browser
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeFind', 'NERDTreeToggle'] }
+" Nerdtree git status
+Plug 'Xuyuanp/nerdtree-git-plugin'
 " Lightline (simple status line)
 Plug 'itchyny/lightline.vim'
 " Buffers tabline
@@ -909,6 +911,22 @@ let g:ctrlsf_winsize = '50%'
 " 4.21 Javascript libraries syntax settings"{{{
 " -----------------------------------------------------
 let g:used_javascript_libs = 'chai,flux,react,underscore'
+"}}}
+
+" -----------------------------------------------------
+" 4.22 Nerdtree git status settings"{{{
+" -----------------------------------------------------
+let g:NERDTreeIndicatorMapCustom = {
+      \ "Modified"  : "+",
+      \ "Staged"    : "+",
+      \ "Untracked" : "u",
+      \ "Renamed"   : "r",
+      \ "Unmerged"  : "m",
+      \ "Deleted"   : "x",
+      \ "Dirty"     : "*",
+      \ "Clean"     : "✔︎",
+      \ "Unknown"   : "?"
+      \ }
 "}}}
 
 "}}}
