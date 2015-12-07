@@ -23,9 +23,11 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Asynchronous maker and linter (needs linters to work)
 Plug 'benekastah/neomake', { 'on': ['Neomake'] }
+" Autocomplete
+Plug 'Shougo/deoplete.nvim'
 " Automatically closing pair stuff
 Plug 'cohama/lexima.vim'
-" Snippets support
+" Snippet support (C-j)
 Plug 'SirVer/ultisnips'
 " Commenting support (gc)
 Plug 'tpope/vim-commentary'
@@ -33,8 +35,8 @@ Plug 'tpope/vim-commentary'
 Plug 'janko-m/vim-test', { 'on': ['TestFile', 'TestLast', 'TestNearest', 'TestSuite', 'TestVisit'] }
 " CamelCase and snake_case motions
 Plug 'bkad/CamelCaseMotion'
-" Autocomplete
-Plug 'Shougo/deoplete.nvim'
+" Heuristically set indent settings
+Plug 'tpope/vim-sleuth'
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
@@ -277,23 +279,14 @@ set updatetime=1000                         " Update time used to create swap fi
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 2.1 Indentation settings (2 spaces tabs)"{{{
-" ---------------------------------------------------------------------------------------------------------------------
-set expandtab                               " Use the appropriate number of spaces to insert a <Tab>
-set shiftwidth=4                            " Number of spaces
-set softtabstop=4                           " Same but when use soft tabs
-set tabstop=4                               " Number of spaces that a <Tab> in the file counts for
-"}}}
-
-" ---------------------------------------------------------------------------------------------------------------------
-" 2.2 Split settings (more natural)."{{{
+" 2.1 Split settings (more natural)."{{{
 " ---------------------------------------------------------------------------------------------------------------------
 set splitbelow                              " Splitting a window will put the new window below the current
 set splitright                              " Splitting a window will put the new window right of the current
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 2.3 Timeout settings"{{{
+" 2.2 Timeout settings"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 " Time out on key codes but not mappings. Basically this makes terminal Vim work sanely. (by Steve Losh)
 set notimeout
@@ -302,7 +295,7 @@ set ttimeoutlen=10
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 2.4 Spelling settings"{{{
+" 2.3 Spelling settings"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 set spellfile=~/.config/nvim/dictionary.utf-8.add
 set spelllang=en_us                         " Set language to US English
@@ -310,7 +303,7 @@ set nospell                                 " Disable checking by default (use <
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 2.5 Search settings"{{{
+" 2.4 Search settings"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 set ignorecase                              " Ignore case by default
 set smartcase                               " Make search case sensitive only if it contains uppercase letters
@@ -319,7 +312,7 @@ set nohlsearch                              " Don't highlight after search
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 2.6 Persistent undo settings"{{{
+" 2.5 Persistent undo settings"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 if has('persistent_undo')
   set undofile
@@ -328,7 +321,7 @@ endif
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 2.7 White characters settings"{{{
+" 2.6 White characters settings"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 set list                                    " Show listchars by default
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:·,nbsp:·
@@ -336,14 +329,14 @@ set showbreak=↪
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 2.8 Filetype settings"{{{
+" 2.7 Filetype settings"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 filetype plugin on
 filetype indent on
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 2.9 Folding settings"{{{
+" 2.8 Folding settings"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 set foldmethod=marker                       " Markers are used to specify folds.
 set foldlevel=1                             " Start folding automatically from level 1
@@ -351,7 +344,7 @@ set fillchars="fold: "                      " Characters to fill the statuslines
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 2.10 Omni completion settings"{{{
+" 2.9 Omni completion settings"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 set completeopt-=preview                    " Don't show preview scratch buffers
 set wildignore=*.o,*.obj,*~
@@ -365,14 +358,14 @@ set wildignore+=*.png,*.jpg,*.gif
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
-" 2.11 Neovim specific settings"{{{
+" 2.10 Neovim specific settings"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1       " Set an environment variable to use the t_SI/t_EI hack
 " let $NVIM_TUI_ENABLE_TRUE_COLOR=1       " Turn on true colors support (does not work inside tmux yet)
 "}}}
 
 " -----------------------------------------------------
-" 2.12 Ctags settings"{{{
+" 2.11 Ctags settings"{{{
 " -----------------------------------------------------
 " For Ruby STD ctags use tpope/rbenv-ctags + vim-ruby
 " For gem ctags use tpope/gem-ctags + vim-bundler
@@ -1114,10 +1107,6 @@ hi! link BufTabLineFill Comment
 " 7.0 Autocommands
 " ======================================================================================================================
 "{{{
-" Setting local tab settings"{{{
-autocmd FileType ruby,coffee,sass,scss,haml,slim,vim,yaml,crystal setlocal shiftwidth=2 softtabstop=2 tabstop=2
-autocmd FileType html,htmldjango,xhtml,css,javascript,javascript.jsx,snippets setlocal shiftwidth=4 softtabstop=4 tabstop=4
-"}}}
 
 " Keywordprg settings"{{{
 autocmd FileType vim setlocal keywordprg=:help
