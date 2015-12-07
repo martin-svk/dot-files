@@ -27,7 +27,7 @@ function! utils#intelligentCycling()
   " Cycle firstly
   wincmd w
   " Handle where you are now
-  if &ft ==# '' || &ft ==# 'nerdtree'
+  if &ft ==# 'nerdtree'
     call utils#intelligentCycling()
   endif
   " If in terminal buffer start insert
