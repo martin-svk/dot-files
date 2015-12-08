@@ -89,6 +89,8 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'mattn/emmet-vim', { 'for': [ 'css', 'scss', 'less', 'sass', 'html', 'xhtml', 'javascript.jsx' ] }
 " CSS color highlighter
 Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'sass', 'scss', 'less'] }
+" Closing tags on </
+Plug 'docunext/closetag.vim', { 'for': [ 'html', 'xhtml', 'javascript.jsx' ] }
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
