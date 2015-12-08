@@ -525,8 +525,16 @@ nnoremap ]t :tn<CR>
 nnoremap [t :tp<CR>
 
 " QuickFix navigation
-nnoremap ]q :cn<CR>
-nnoremap [q :cp<CR>
+nnoremap ]q :cnext<CR>
+nnoremap [q :cprevious<CR>
+
+" Location list navigation
+nnoremap ]l :lnext<CR>
+nnoremap [l :lprevious<CR>
+
+" Error mnemonic (Neomake uses location list)
+nnoremap ]e :lnext<CR>
+nnoremap [e :lprevious<CR>
 
 " Reselect last-pasted text
 nnoremap gp `[v`]
