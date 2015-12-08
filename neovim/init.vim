@@ -394,20 +394,20 @@ let g:mapleader="\<space>"
 " 3.2 Disabling arrow keys, space key, exmode enter"{{{
 " with Q key, help with F1, etc.
 " -----------------------------------------------------
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-nnoremap <bs> <nop>
-nnoremap <delete> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-nnoremap <Space> <nop>
-inoremap <F1> <nop>
-nnoremap <F1> <nop>
-nnoremap Q <nop>
+nnoremap <up> <NOP>
+nnoremap <down> <NOP>
+nnoremap <left> <NOP>
+nnoremap <right> <NOP>
+nnoremap <bs> <NOP>
+nnoremap <delete> <NOP>
+inoremap <up> <NOP>
+inoremap <down> <NOP>
+inoremap <left> <NOP>
+inoremap <right> <NOP>
+nnoremap <Space> <NOP>
+inoremap <F1> <NOP>
+nnoremap <F1> <NOP>
+nnoremap Q <NOP>
 "}}}
 
 " -----------------------------------------------------
@@ -999,9 +999,9 @@ nnoremap <silent> ,? :call utils#uniteMappings()<CR>
 " 5.2 Ultisnips"{{{
 " -----------------------------------------------------
 " Disable built-in cx-ck to be able to go backward
-inoremap <C-x><C-k> <nop>
+inoremap <C-x><C-k> <NOP>
 let g:UltiSnipsExpandTrigger='<C-j>'
-let g:UltiSnipsListSnippets='<C-l>'
+let g:UltiSnipsListSnippets='<NOP>'
 let g:UltiSnipsJumpForwardTrigger='<C-j>'
 let g:UltiSnipsJumpBackwardTrigger='<C-k>'
 "}}}
@@ -1208,6 +1208,7 @@ autocmd BufWritePost *.vim Neomake vint
 " -----------------------------------------------------
 " 8.2 Notes"{{{
 " -----------------------------------------------------
+"  1. Ultisnips should be incorporated into tab wrapper
 "}}}
 
 "}}}
