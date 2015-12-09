@@ -559,7 +559,7 @@ nnoremap <silent> <F6> :set nohlsearch!<CR> :set nohlsearch?<CR>
 " Toggle white characters visibility
 nnoremap <silent> <F7> :set list!<CR> :set list?<CR>
 " New horizontal term buffer
-nnoremap <silent> <F8> :call utils#newVertTerm()<CR>
+nnoremap <silent> <F8> :T ls<CR>
 " Fire REST Request
 nnoremap <silent> <F9> :call VrcQuery()<CR>
 " Free

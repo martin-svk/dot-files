@@ -1,7 +1,7 @@
 " Informative echo line
 function! utils#showToggles()
-  echom "<F1> NERDTree | <F2> Caps mode | <F3> Paste mode | <F4> Spellcheck | <F5> Reload rc | <F6> Search HL |" .
-        \" <F7> Whitechars | <F8> Vertical Term | <F9> Fire REST Request | <F10> Multichange  | <F11> How do I |" .
+  echom "<F1> NERDTree | <F2> Multichange | <F3> Paste mode | <F4> Spellcheck | <F5> Reload rc | <F6> Search HL |" .
+        \" <F7> Whitechars | <F8> Vertical Term | <F9> Fire REST Request | <F10> Free  | <F11> How do I |" .
         \" <F12> This message"
 endfunction
 
@@ -78,20 +78,6 @@ function! utils#nerdWrapper()
   else " Normal file buffer
     :NERDTreeFind
   endif
-endfunction
-
-" Run built-in terminal in vertical split
-function! utils#newVertTerm()
-  wincmd v
-  vertical resize 60
-  :terminal
-endfunction
-
-" Run built-in terminal in horizontal split
-function! utils#newTerm()
-  wincmd s
-  resize 15
-  :terminal
 endfunction
 
 " Strip trailing spaces
