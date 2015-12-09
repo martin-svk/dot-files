@@ -1054,6 +1054,13 @@ nnoremap ,ta :TestSuite<CR>
 nnoremap ,tt :TestLast<CR>
 "}}}
 
+" -----------------------------------------------------
+" 5.11 Vim-Plug "{{{
+" -----------------------------------------------------
+nnoremap <leader>pi :PlugInstall<CR>
+nnoremap <leader>pu :PlugUpdate<CR>
+nnoremap <leader>pc :PlugClean<CR>
+
 "}}}
 
 " ======================================================================================================================
