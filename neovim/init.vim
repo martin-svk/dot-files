@@ -178,7 +178,7 @@ Plug 'diepm/vim-rest-console', { 'for': 'rest' }
 " Highlight jump characters on f, F, t, T
 Plug 'unblevable/quick-scope'
 " Multi change replaces multiple cursors plugin
-Plug 'AndrewRadev/multichange.vim', { 'on': 'Multichange' }
+Plug 'AndrewRadev/multichange.vim'
 " Surround (cs"')
 Plug 'tpope/vim-surround'
 " Easy alignment
@@ -571,8 +571,7 @@ nnoremap <silent> <F7> :set list!<CR> :set list?<CR>
 nnoremap <silent> <F8> :call utils#newVertTerm()<CR>
 " Fire REST Request
 nnoremap <silent> <F9> :call VrcQuery()<CR>
-" Change multiple start
-vnoremap <silent> <F10> :Multichange<CR>
+" F10 -> Multichange
 " Howdoi integration (pip install howdoi)
 nnoremap <silent> <F11> :call utils#howDoI()<CR>
 " Echo out toggles legend on <F12>
@@ -597,9 +596,6 @@ nnoremap <silent> _ :bp<CR>
 " -----------------------------------------------------
 " 3.7 Command abbreviations and mappings"{{{
 " -----------------------------------------------------
-
-" Substitution
-cnoremap ss %s/
 
 " Quiting and saving all
 cnoremap ww wqall
@@ -860,7 +856,7 @@ let g:clever_f_chars_match_any_signs=';'
 " -----------------------------------------------------
 " 4.14 Multi change settings"{{{
 " -----------------------------------------------------
-let g:multichange_mapping=''
+let g:multichange_mapping='<F10>'
 let g:multichange_motion_mapping=''
 "}}}
 
@@ -1208,7 +1204,6 @@ autocmd BufWritePost *.vim Neomake vint
 " -----------------------------------------------------
 " 8.2 Notes"{{{
 " -----------------------------------------------------
-"  1. Ultisnips should be incorporated into tab wrapper
 "}}}
 
 "}}}
