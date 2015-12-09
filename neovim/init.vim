@@ -870,19 +870,13 @@ let g:vrc_output_buffer_name='__RESPONSE__.rest'
 "}}}
 
 " -----------------------------------------------------
-" 4.17 Emmet settings"{{{
-" -----------------------------------------------------
-let g:user_emmet_expandabbr_key = '<C-e>'
-"}}}
-
-" -----------------------------------------------------
-" 4.18 Quick scope settings"{{{
+" 4.17 Quick scope settings"{{{
 " -----------------------------------------------------
 let g:qs_highlight_on_keys=['f', 'F', 't', 'T']
 "}}}
 
 " -----------------------------------------------------
-" 4.19 Deoplete autocomplete settings"{{{
+" 4.18 Deoplete autocomplete settings"{{{
 " -----------------------------------------------------
 let g:deoplete#enable_at_startup=1
 let g:deoplete#auto_completion_start_length=2
