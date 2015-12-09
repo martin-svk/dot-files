@@ -151,7 +151,7 @@ Plug 'whatyouhide/vim-lengthmatters'
 
 " Fugitive
 Plug 'tpope/vim-fugitive'
-" Git log viewer
+" Git log viewer (Gitv! for file mode)
 Plug 'gregsexton/gitv', { 'on': 'Gitv' }
 " Git changes showed on line numbers
 Plug 'airblade/vim-gitgutter'
@@ -969,7 +969,7 @@ nnoremap <silent> ,? :call utils#uniteMappings()<CR>
 " Disable built-in cx-ck to be able to go backward
 inoremap <C-x><C-k> <NOP>
 let g:UltiSnipsExpandTrigger='<C-j>'
-let g:UltiSnipsListSnippets='<NOP>'
+let g:UltiSnipsListSnippets='<C-l>'
 let g:UltiSnipsJumpForwardTrigger='<C-j>'
 let g:UltiSnipsJumpBackwardTrigger='<C-k>'
 "}}}
