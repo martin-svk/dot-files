@@ -139,8 +139,6 @@ Plug 'dyng/ctrlsf.vim', { 'on': ['CtrlSF', 'CtrlSFToggle'] }
 
 " Nerdtree file browser
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeFind', 'NERDTreeToggle'] }
-" Nerdtree git status
-Plug 'Xuyuanp/nerdtree-git-plugin'
 " Lightline (simple status line)
 Plug 'itchyny/lightline.vim'
 " Buffers tabline
@@ -898,34 +896,18 @@ let g:deoplete#sources.scss = ['buffer', 'member', 'file', 'omni', 'ultisnips']
 "}}}
 
 " -----------------------------------------------------
-" 4.20 Ctrl-SF settings"{{{
+" 4.19 Ctrl-SF settings"{{{
 " -----------------------------------------------------
 let g:ctrlsf_default_root='project'
 let g:ctrlsf_populate_qflist=1
-let g:ctrlsf_position='bottom'
+let g:ctrlsf_position='right'
 let g:ctrlsf_winsize = '50%'
 "}}}
 
 " -----------------------------------------------------
-" 4.21 Javascript libraries syntax settings"{{{
+" 4.20 Javascript libraries syntax settings"{{{
 " -----------------------------------------------------
 let g:used_javascript_libs = 'chai,flux,react,underscore'
-"}}}
-
-" -----------------------------------------------------
-" 4.22 Nerdtree git status settings"{{{
-" -----------------------------------------------------
-let g:NERDTreeIndicatorMapCustom = {
-      \ "Modified"  : "+",
-      \ "Staged"    : "+",
-      \ "Untracked" : "?",
-      \ "Renamed"   : "↪",
-      \ "Unmerged"  : "=",
-      \ "Deleted"   : "¬",
-      \ "Dirty"     : "*",
-      \ "Clean"     : "✔︎",
-      \ "Unknown"   : "?"
-      \ }
 "}}}
 
 "}}}
