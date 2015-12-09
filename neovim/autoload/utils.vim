@@ -183,10 +183,6 @@ function! utils#uniteTags()
   execute 'Unite -no-split -buffer-name=tags -start-insert tag'
 endfunction
 
-function! utils#uniteGrep()
-  execute 'Unite -no-split -buffer-name=ag -silent grep:.'
-endfunction
-
 function! utils#uniteHistory()
   execute 'Unite -no-split -buffer-name=edit-history change'
 endfunction
