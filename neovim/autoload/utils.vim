@@ -1,37 +1,37 @@
 " Informative echo line
-function! utils#showToggles()
-  echom "<F1> NERDTree | <F2> Multichange | <F3> Paste mode | <F4> Spellcheck | <F5> Reload rc | <F6> Search HL |" .
-        \" <F7> Whitechars | <F8> Vertical Term | <F9> Fire REST Request | <F10> Free  | <F11> How do I |" .
-        \" <F12> This message"
+function! g:utils#showToggles() abort
+  echom '<F1> NERDTree | <F2> Multichange | <F3> Paste mode | <F4> Spellcheck | <F5> Reload rc | <F6> Search HL |' .
+        \' <F7> Whitechars | <F8> Vertical Term | <F9> Fire REST Request | <F10> Free  | <F11> How do I |' .
+        \' <F12> This message'
 endfunction
 
 " Copy and paste function using xclip
-function! utils#clipboardYank()
+function! g:utils#clipboardYank() abort
   call system('xclip -i -selection clipboard', @@)
 endfunction
 
-function! utils#clipboardPaste()
+function! g:utils#clipboardPaste() abort
   let @@ = system('xclip -o -selection clipboard')
 endfunction
 
 " Profile neovim and save results to profile.log
-function! utils#profile()
+function! g:utils#profile() abort
   execute 'profile start profile.log'
   execute 'profile func *'
   execute 'profile file *'
-  echom "Profiling started (will last until you quit neovim)."
+  echom 'Profiling started (will last until you quit neovim).'
 endfunction
 
 " When cycling ignore NERDTree and Tagbar
-function! utils#intelligentCycling()
+function! g:utils#intelligentCycling() abort
   " Cycle firstly
   wincmd w
   " Handle where you are now
-  if &ft ==# 'nerdtree'
-    call utils#intelligentCycling()
+  if &filetype ==# 'nerdtree'
+    call g:utils#intelligentCycling()
   endif
   " If in terminal buffer start insert
-  if &buftype == 'terminal'
+  if &buftype ==# 'terminal'
     startinsert!
   endif
 endfunction
@@ -39,41 +39,41 @@ endfunction
 " Be aware of whether you are right or left vertical split
 " so you can use arrows more naturally.
 " Inspired by https://github.com/ethagnawl.
-function! utils#intelligentVerticalResize(direction)
-  let window_resize_count = 5
-  let current_window_is_last_window = (winnr() == winnr("$"))
+function! g:utils#intelligentVerticalResize(direction) abort
+  let l:window_resize_count = 5
+  let l:current_window_is_last_window = (winnr() == winnr('$'))
 
-  if (a:direction == 'left')
-    let [modifier_1, modifier_2] = ['+', '-']
+  if (a:direction ==# 'left')
+    let [l:modifier_1, l:modifier_2] = ['+', '-']
   else
-    let [modifier_1, modifier_2] = ['-', '+']
+    let [l:modifier_1, l:modifier_2] = ['-', '+']
   endif
 
-  let modifier = current_window_is_last_window ? modifier_1 : modifier_2
-  let command = 'vertical resize ' . modifier . window_resize_count . '<CR>'
-  execute command
+  let l:modifier = l:current_window_is_last_window ? l:modifier_1 : l:modifier_2
+  let l:command = 'vertical resize ' . l:modifier . l:window_resize_count . '<CR>'
+  execute l:command
 endfunction
 
 " Run current file
-function! utils#runCurrentFile()
+function! g:utils#runCurrentFile() abort
   if &filetype ==? 'ruby'
-    let command = 'ruby %'
+    let l:command = 'ruby %'
   elseif &filetype ==? 'sh'
-    let command = 'sh %'
+    let l:command = 'sh %'
   else
-    echom "Can't run current file (unsupported filetype: " . &filetype . ")"
+    echom "Can't run current file (unsupported filetype: " . &filetype . ')'
   endif
 
   if exists('command')
-    execute ':terminal ' . command
+    execute ':terminal ' . l:command
   endif
 endfunction
 
 " Run NERDTreeFind or Toggle based on current buffer
-function! utils#nerdWrapper()
+function! g:utils#nerdWrapper() abort
   if &filetype ==# '' " Empty buffer
     :NERDTreeToggle
-  elseif expand('%:t') =~ 'NERD_tree' " In NERD_tree buffer
+  elseif expand('%:t') =~? 'NERD_tree' " In NERD_tree buffer
     wincmd w
   else " Normal file buffer
     :NERDTreeFind
@@ -81,213 +81,215 @@ function! utils#nerdWrapper()
 endfunction
 
 " Strip trailing spaces
-function! utils#stripTrailingWhitespaces()
+function! g:utils#stripTrailingWhitespaces() abort
   " Preparation: save last search, and cursor position.
-  let _s=@/
-  let l = line(".")
-  let c = col(".")
+  let l:lastSearch = @/
+  let l:line = line('.')
+  let l:col = col('.')
+
   " Do the business:
   %s/\s\+$//e
+
   " Clean up: restore previous search history, and cursor position
-  let @/=_s
-  call cursor(l, c)
+  let @/ = l:lastSearch
+  call cursor(l:line, l:col)
 endfunction
 
 " Set SK keyboard layout with qwerty
-function! utils#setSKKBLayout()
+function! g:utils#setSKKBLayout() abort
   silent !setxkbmap sk -variant qwerty
 endfunction
 
 " Set US keyboard layout with qwerty
-function! utils#setUSKBLayout()
+function! g:utils#setUSKBLayout() abort
   silent !setxkbmap us
 endfunction
 
 " Generate ctags and put them into .tags directory
-function! utils#generateCtags()
+function! g:utils#generateCtags() abort
   silent execute '!ctags  --extra=+f -Rf .tags --exclude=.git --languages=-sql'
-  echom "Tags generated into .tags file!"
+  echom 'Tags generated into .tags file!'
 endfunction
 
 " Generate ctags for JS projects (ignoring .meteor, node_modules, bower_components)
-function! utils#generateJSCtags()
+function! g:utils#generateJSCtags() abort
   silent execute '!ctags  --extra=+f -Rf .tags'
         \ '--exclude=.git --exclude=node_modules --exclude=bower_components --exclude=.meteor --languages=-sql'
-  echom "Tags generated into .tags file!"
+  echom 'Tags generated into .tags file!'
 endfunction
 
 " Tab wrapper
-function! utils#tabComplete()
-  let col = col('.') - 1
-  if !col || getline('.')[col - 1] !~ '\k'
+function! g:utils#tabComplete() abort
+  let l:col = col('.') - 1
+  if !l:col || getline('.')[l:col - 1] !~# '\k'
     return "\<TAB>"
   else
     if pumvisible()
       return "\<C-n>"
     else
-      return deoplete#mappings#manual_complete("buffer")
+      return g:deoplete#mappings#manual_complete('buffer')
     endif
   endif
 endfunction
 
 " Simple notes management
-function! utils#openNotes()
+function! g:utils#openNotes() abort
   execute ':e ~/dev/notes/vim-notes.md'
 endfunction
 
 " Use omni complete source as default
-function! utils#useOmniTabWrapper()
+function! g:utils#useOmniTabWrapper() abort
   inoremap <buffer> <expr> <TAB> utils#insertTabOmniWrapper()
 endfunction
 
 " Unite commands wrappers
-function! utils#uniteSources()
+function! g:utils#uniteSources() abort
   execute 'Unite -no-split -buffer-name=sources -start-insert source'
 endfunction
 
-function! utils#uniteMRUs()
+function! g:utils#uniteMRUs() abort
   execute 'Unite -no-split -buffer-name=most-recently-used -start-insert neomru/file'
 endfunction
 
-function! utils#uniteFileBrowse()
+function! g:utils#uniteFileBrowse() abort
   execute 'Unite -no-split -buffer-name=project-files -start-insert file'
 endfunction
 
-function! utils#uniteFileRec()
+function! g:utils#uniteFileRec() abort
   execute 'Unite -no-split -buffer-name=file-recursive-search -start-insert file_rec/neovim'
 endfunction
 
-function! utils#uniteBuffers()
+function! g:utils#uniteBuffers() abort
   execute 'Unite -no-split -buffer-name=buffers -start-insert buffer'
 endfunction
 
-function! utils#uniteOutline()
+function! g:utils#uniteOutline() abort
   execute 'Unite -no-split -buffer-name=symbols -start-insert outline'
 endfunction
 
-function! utils#uniteTags()
+function! g:utils#uniteTags() abort
   execute 'Unite -no-split -buffer-name=tags -start-insert tag'
 endfunction
 
-function! utils#uniteHistory()
+function! g:utils#uniteHistory() abort
   execute 'Unite -no-split -buffer-name=edit-history change'
 endfunction
 
-function! utils#uniteLineSearch()
+function! g:utils#uniteLineSearch() abort
   execute 'Unite -no-split -buffer-name=line-search -start-insert line'
 endfunction
 
-function! utils#uniteYankHistory()
+function! g:utils#uniteYankHistory() abort
   execute 'Unite -no-split -buffer-name=yank-history history/yank'
 endfunction
 
-function! utils#uniteRegisters()
+function! g:utils#uniteRegisters() abort
   execute 'Unite -no-split -buffer-name=registers register'
 endfunction
 
-function! utils#uniteWindows()
+function! g:utils#uniteWindows() abort
   execute 'Unite -no-split -buffer-name=splits window'
 endfunction
 
-function! utils#uniteSnippets()
+function! g:utils#uniteSnippets() abort
   execute 'Unite -no-split -buffer-name=snippets -start-insert ultisnips'
 endfunction
 
-function! utils#uniteCustomMenu()
+function! g:utils#uniteCustomMenu() abort
   execute 'Unite -no-split -buffer-name=menu -start-insert menu'
 endfunction
 
-function! utils#uniteJumps()
+function! g:utils#uniteJumps() abort
   execute 'Unite -no-split -buffer-name=jumps -start-insert jump'
 endfunction
 
-function! utils#uniteCommands()
+function! g:utils#uniteCommands() abort
   execute 'Unite -no-split -buffer-name=commands -start-insert command'
 endfunction
 
-function! utils#uniteMappings()
+function! g:utils#uniteMappings() abort
   execute 'Unite -no-split -buffer-name=mappings -start-insert mapping'
 endfunction
 
 " Format function
 " Needs: npm install js-beautify, gem install rbeautify, python
-function! utils#formatFile()
-  let command_prefix = '%!'
+function! g:utils#formatFile() abort
+  let l:command_prefix = '%!'
 
   if &filetype ==? 'javascript.jsx'
-    let command = 'js-beautify -X -f -'
+    let l:command = 'js-beautify -X -f -'
   elseif &filetype ==? 'html'
-    let command = 'html-beautify -f -'
+    let l:command = 'html-beautify -f -'
   elseif &filetype ==? 'css'
-    let command = 'css-beautify -f -'
+    let l:command = 'css-beautify -f -'
   elseif &filetype ==? 'json'
-    let command = 'python -m json.tool'
+    let l:command = 'python -m json.tool'
   elseif &filetype ==? 'ruby'
-    let command = 'rbeautify -s -c 2'
+    let l:command = 'rbeautify -s -c 2'
   else
     " Basic vim format fallback
     normal mzgg=G`z
   endif
 
-  if exists('command')
-    execute command_prefix . command
+  if exists('l:command')
+    execute l:command_prefix . l:command
   endif
 endfunction
 
 " Annotate file function (only ruby support for now)
-function! utils#annotateFile()
-  let command_prefix = '%!'
+function! g:utils#annotateFile() abort
+  let l:command_prefix = '%!'
 
   if &filetype ==? 'ruby'
-    let command = 'seeing_is_believing -x'
+    let l:command = 'seeing_is_believing -x'
   endif
 
-  if exists('command')
-    execute command_prefix . command
+  if exists('l:command')
+    execute l:command_prefix . l:command
   endif
 endfunction
 
 " Mode function for Lightline statusline
-function! utils#lightLineMode()
-  let fname = expand('%:t')
-  return fname =~ 'NERD_tree' ? 'NT' :
-        \ &ft == 'unite' ? 'Unite' :
-        \ winwidth(0) > 70 ? lightline#mode() : ''
+function! g:utils#lightLineMode() abort
+  let l:fname = expand('%:t')
+  return l:fname =~? 'NERD_tree' ? 'NT' :
+        \ &filetype ==? 'unite' ? 'Unite' :
+        \ winwidth(0) > 70 ? g:lightline#mode() : ''
 endfunction
 
 " File format function for Lightline statusline
-function! utils#lightLineFileformat()
+function! g:utils#lightLineFileformat() abort
   return winwidth(0) > 70 ? &fileformat : ''
 endfunction
 
 " Filetype function for Lightline statusline
-function! utils#lightLineFiletype()
+function! g:utils#lightLineFiletype() abort
   return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
 endfunction
 
 " File encoding function for Lightline statusline
-function! utils#lightLineFileencoding()
-  return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
+function! g:utils#lightLineFileencoding() abort
+  return winwidth(0) > 70 ? (strlen(&fileencoding) ? &fileencoding : &encoding) : ''
 endfunction
 
 " File name function for Lightline statusline
-function! utils#lightLineFilename()
-  let fname = expand('%:t')
-  return fname =~ 'NERD_tree' ? 'NERDTree' :
-        \ &ft == 'unite' ? unite#get_status_string() :
-        \ ('' != fname ? fname : '[No Name]')
+function! g:utils#lightLineFilename() abort
+  let l:fname = expand('%:t')
+  return l:fname =~? 'NERD_tree' ? 'NERDTree' :
+        \ &filetype ==? 'unite' ? g:unite#get_status_string() :
+        \ ('' !=# l:fname ? l:fname : '[No Name]')
 endfunction
 
 " Howdoi integration (pip install howdoi)
-function! utils#howDoI()
-  let command_prefix = 'read '
-  let howdoi = '!howdoi '
+function! g:utils#howDoI() abort
+  let l:command_prefix = 'read '
+  let l:howdoi = '!howdoi '
 
   call inputsave()
-  let query = input('How do I: ')
+  let l:query = input('How do I: ')
   call inputrestore()
 
-  if query != ''
-    execute command_prefix . howdoi . query
+  if l:query !=# ''
+    execute l:command_prefix . l:howdoi . l:query
   endif
 endfunction
