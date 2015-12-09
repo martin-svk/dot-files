@@ -119,8 +119,8 @@ Plug 'rhysd/vim-crystal'
 " Unite fuzzy searcher"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Unite files, buffers, command sources (Grep source depends on vimproc)
-Plug 'Shougo/unite.vim' | Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+" Unite files, buffers, etc. sources
+Plug 'Shougo/unite.vim'
 " Outline source
 Plug 'Shougo/unite-outline'
 " History/yank source
@@ -724,7 +724,6 @@ let g:unite_source_menu_menus.unite.command_candidates = [
       \       ['Unite buffers', 'call utils#uniteBuffers()'],
       \       ['Unite file browse', 'call utils#uniteFileBrowse()'],
       \       ['Unite file search', 'call utils#uniteFileRec()'],
-      \       ['Unite grep', 'call utils#uniteGrep()'],
       \       ['Unite history', 'call utils#uniteHistory()'],
       \       ['Unite line search', 'call utils#uniteLineSearch()'],
       \       ['Unite menu', 'call utils#uniteCustomMenu()'],
@@ -965,8 +964,6 @@ nnoremap <silent> <leader>u :call utils#uniteSources()<CR>
 nnoremap <silent> <leader>b :call utils#uniteBuffers()<CR>
 " Search in current file ou[t]line (tags in current file)
 nnoremap <silent> <leader>t :call utils#uniteOutline()<CR>
-" Search for term - [g]rep
-nnoremap <silent> <leader>g :call utils#uniteGrep()<CR>
 " Search in edit [h]istory
 nnoremap <silent> <leader>h :call utils#uniteHistory()<CR>
 " Search in [l]ines on current buffer
@@ -1068,8 +1065,7 @@ endfunction
 " -----------------------------------------------------
 " 5.9 CtrlSF "{{{
 " -----------------------------------------------------
-nnoremap <leader>a :CtrlSF<Space>
-nnoremap <leader>A :CtrlSFToggle<CR>
+nnoremap <leader>g :CtrlSF<Space>
 "}}}
 
 " -----------------------------------------------------
