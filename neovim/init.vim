@@ -179,8 +179,6 @@ Plug 'tpope/vim-surround'
 Plug 'godlygeek/tabular', { 'on':  'Tabularize' }
 " Safely editing in isolation
 Plug 'ferranpm/vim-isolate', { 'on':  ['Isolate', 'UnIsolate'] }
-" Software capslock (<F2>/gC in normal mode, <C-G>c in insert mode)
-Plug 'tpope/vim-capslock', { 'on': '<Plug>CapsLockToggle' }
 " Cycling related words via C-a C-x (i.e. true/false)
 Plug 'zef/vim-cycle'
 " Titlecase motion (gt)
@@ -549,8 +547,7 @@ nnoremap ,z za
 
 " NERDTree wrapper
 nnoremap <silent> <F1> :call utils#nerdWrapper()<CR>
-" Caps lock mode toggling
-nnoremap <silent> <F2> :execute "normal \<Plug>CapsLockToggle"<CR>
+" F2 -> Multichange
 " Paste mode toggling
 nnoremap <silent> <F3> :set paste!<CR> :set paste?<CR>
 " Toggle spelling on and off
@@ -565,7 +562,8 @@ nnoremap <silent> <F7> :set list!<CR> :set list?<CR>
 nnoremap <silent> <F8> :call utils#newVertTerm()<CR>
 " Fire REST Request
 nnoremap <silent> <F9> :call VrcQuery()<CR>
-" F10 -> Multichange
+" Free
+" nnoremap <silent> <F10>
 " Howdoi integration (pip install howdoi)
 nnoremap <silent> <F11> :call utils#howDoI()<CR>
 " Echo out toggles legend on <F12>
@@ -776,12 +774,11 @@ let g:lightline = {
       \   'inactive': [ 'filename' ]
       \ },
       \ 'active': {
-      \   'left': [ [ 'mode' ], [ 'paste', 'capslock' ], [ 'readonly', 'filename' ] ],
+      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'filename' ] ],
       \   'right': [ [ 'lineinfo' ], [ 'percent' ], [ 'filetype', 'fileencoding', 'fileformat' ] ]
       \ },
       \ 'component': {
-      \   'readonly': '%{&filetype=="help"?"HELP":&readonly?"RO":""}',
-      \   'capslock': '%{exists("*CapsLockStatusline")?CapsLockStatusline("CAPS"):""}'
+      \   'readonly': '%{&filetype=="help"?"HELP":&readonly?"RO":""}'
       \ },
       \ 'component_function': {
       \   'mode': 'utils#lightLineMode',
@@ -849,7 +846,7 @@ let g:clever_f_chars_match_any_signs=';'
 " -----------------------------------------------------
 " 4.14 Multi change settings"{{{
 " -----------------------------------------------------
-let g:multichange_mapping='<F10>'
+let g:multichange_mapping='<F2>'
 let g:multichange_motion_mapping=''
 "}}}
 
