@@ -890,13 +890,19 @@ let g:deoplete#sources.scss = ['buffer', 'member', 'file', 'omni', 'ultisnips']
 let g:ctrlsf_default_root='project'
 let g:ctrlsf_populate_qflist=1
 let g:ctrlsf_position='right'
-let g:ctrlsf_winsize = '50%'
+let g:ctrlsf_winsize = '40%'
 "}}}
 
 " -----------------------------------------------------
 " 4.20 Javascript libraries syntax settings"{{{
 " -----------------------------------------------------
 let g:used_javascript_libs = 'chai,flux,react,underscore'
+"}}}
+
+" -----------------------------------------------------
+" 4.20 Plug settings"{{{
+" -----------------------------------------------------
+let g:plug_timeout=20
 "}}}
 
 "}}}
