@@ -177,8 +177,8 @@ Plug 'diepm/vim-rest-console', { 'for': 'rest' }
 
 " Highlight jump characters on f, F, t, T
 Plug 'unblevable/quick-scope'
-" Multiple cursors
-Plug 'terryma/vim-multiple-cursors'
+" Multi change replaces multiple cursors plugin
+Plug 'AndrewRadev/multichange.vim', { 'on': 'Multichange' }
 " Surround (cs"')
 Plug 'tpope/vim-surround'
 " Easy alignment
@@ -571,8 +571,8 @@ nnoremap <silent> <F7> :set list!<CR> :set list?<CR>
 nnoremap <silent> <F8> :call utils#newVertTerm()<CR>
 " Fire REST Request
 nnoremap <silent> <F9> :call VrcQuery()<CR>
-" Free
-" nnoremap <silent> <F10>
+" Change multiple start
+vnoremap <silent> <F10> :Multichange<CR>
 " Howdoi integration (pip install howdoi)
 nnoremap <silent> <F11> :call utils#howDoI()<CR>
 " Echo out toggles legend on <F12>
@@ -858,10 +858,10 @@ let g:clever_f_chars_match_any_signs=';'
 "}}}
 
 " -----------------------------------------------------
-" 4.14 Multiple cursors settings"{{{
+" 4.14 Multi change settings"{{{
 " -----------------------------------------------------
-let g:multi_cursor_exit_from_visual_mode=0
-let g:multi_cursor_exit_from_insert_mode=0
+let g:multichange_mapping=''
+let g:multichange_motion_mapping=''
 "}}}
 
 " -----------------------------------------------------
