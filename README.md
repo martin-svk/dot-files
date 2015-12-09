@@ -35,13 +35,14 @@ Want more? Scroll down to the appropriate [section](#screenshots-and-cheatsheets
 I use the excellent [vim-plug](https://github.com/junegunn/vim-plug) package manager.
 It supports parallel fetching, lazy loading, after install hooks, etc. You should consider using it :)
 
-And which plugins I use? Currently I use about **60** plugins. Some of the most interesting
-while probably not so widely known are:
+And which plugins I use? Currently I use about **75** plugins. Some of the most interesting are:
 
 * [Neomake](https://github.com/benekastah/neomake) - Linter integration (Syntastic alternative) with asynchronous support.
 * [Unite](https://github.com/Shougo/unite.vim) - Search and display information from arbitrary sources.
-* [Multiple cursors](https://github.com/terryma/vim-multiple-cursors) - ST inspired multiple cursors.
-* [Isolate](https://github.com/ferranpm/vim-isolate) - Safely edit in isolation.
+* [Deoplete](https://github.com/Shougo/deoplete.nvim) - Autocomplete with Neovim asynchronous support.
+* [Vim-Test](https://github.com/janko-m/vim-test) - Best Vim plugin for running Your tests.
+* [QuickScope](https://github.com/unblevable/quick-scope) - Highlights jump characters on f,F,t,T.
+* [Lightline](https://github.com/itchyny/lightline.vim) - Lightweight but extensible and configurable status line.
 * [Lexima](https://github.com/cohama/lexima.vim) - Auto-closing (,",' and some language constructs (ruby blocks). Dot repeat supported.
 
 For a complete list, look [here](./neovim/init.vim#L17).
