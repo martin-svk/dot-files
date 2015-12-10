@@ -1048,6 +1048,7 @@ endfunction
 " 5.9 CtrlSF "{{{
 " -----------------------------------------------------
 nnoremap <leader>g :CtrlSF<Space>
+nnoremap <leader>G :CtrlSFToggle<Space>
 "}}}
 
 " -----------------------------------------------------
