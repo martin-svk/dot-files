@@ -889,8 +889,10 @@ let g:deoplete#sources.scss = ['buffer', 'member', 'file', 'omni', 'ultisnips']
 " -----------------------------------------------------
 let g:ctrlsf_default_root='project'
 let g:ctrlsf_populate_qflist=1
-let g:ctrlsf_position='right'
-let g:ctrlsf_winsize = '40%'
+let g:ctrlsf_position='bottom'
+let g:ctrlsf_winsize = '30%'
+let g:ctrlsf_auto_close=0
+let g:ctrlsf_regex_pattern=1
 "}}}
 
 " -----------------------------------------------------
@@ -1061,6 +1063,21 @@ nnoremap <leader>pi :PlugInstall<CR>
 nnoremap <leader>pu :PlugUpdate<CR>
 nnoremap <leader>pc :PlugClean<CR>
 
+" -----------------------------------------------------
+" 5.12 Ctrl-SF "{{{
+" -----------------------------------------------------
+let g:ctrlsf_mapping = {
+    \ "next"    : "n",
+    \ "prev"    : "N",
+    \ "quit"    : "q",
+    \ "openb"   : "",
+    \ "split"   : "s",
+    \ "tab"     : "",
+    \ "tabb"    : "",
+    \ "popen"   : "",
+    \ "pquit"   : "",
+    \ "loclist" : "",
+    \ }
 "}}}
 
 " ======================================================================================================================
