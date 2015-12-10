@@ -574,11 +574,11 @@ nnoremap <F12> :call utils#showToggles()<CR>
 " 3.6 Window / Buffer management"{{{
 " -----------------------------------------------------
 
-" Intelligent windows resizing using arrow keys
-nnoremap <silent> <Right> :call utils#intelligentVerticalResize('right')<CR>
-nnoremap <silent> <Left> :call utils#intelligentVerticalResize('left')<CR>
-nnoremap <silent> <Up> :resize +1<CR>
-nnoremap <silent> <Down> :resize -1<CR>
+" Intelligent windows resizing using ctrl + arrow keys
+nnoremap <silent> <C-Right> :call utils#intelligentVerticalResize('right')<CR>
+nnoremap <silent> <C-Left> :call utils#intelligentVerticalResize('left')<CR>
+nnoremap <silent> <C-Up> :resize +1<CR>
+nnoremap <silent> <C-Down> :resize -1<CR>
 
 " Buffers navigation and management
 nnoremap <silent> + :bn<CR>
