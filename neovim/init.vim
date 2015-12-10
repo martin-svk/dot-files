@@ -736,8 +736,11 @@ let g:unite_source_menu_menus.unite.command_candidates = [
 " 4.3 NERDTree"{{{
 " -----------------------------------------------------
 let g:NERDTreeMinimalUI=1
-let g:NERDTreeWinSize=55
+let g:NERDTreeWinSize=50
 let g:NERDTreeAutoDeleteBuffer=1
+let g:NERDTreeShowHidden=1
+let g:NERDTreeHighlightCursorline=0
+let g:NERDTreeRespectWildIgnore=1
 "}}}
 
 " -----------------------------------------------------
