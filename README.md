@@ -215,6 +215,22 @@ let g:deoplete#sources.ruby = ['buffer', 'member', 'file', 'ultisnips']
 let g:deoplete#sources.vim  = ['buffer', 'member', 'file', 'ultisnips']
 let g:deoplete#sources.css  = ['buffer', 'member', 'file', 'omni', 'ultisnips']
 let g:deoplete#sources.scss = ['buffer', 'member', 'file', 'omni', 'ultisnips']
+
+" Select next match or trigger manual complete
+inoremap <silent> <expr> <Tab> utils#tabComplete()
+
+" Manually trigger tag autocomplete
+inoremap <silent> <expr> <C-]> deoplete#mappings#manual_complete("tag")
+
+" <C-h>, <BS>: close popup and delete backword char
+inoremap <expr><C-h> deolete#mappings#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> deoplete#mappings#smart_close_popup()."\<C-h>"
+
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return deoplete#mappings#close_popup() . "\<CR>"
+endfunction
 ```
 
 ### Browser and fuzzy searcher for multiple sources ([Unite](https://github.com/Shougo/unite.vim))
