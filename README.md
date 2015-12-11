@@ -55,26 +55,38 @@ vimscript functions (often inspired by other people). You can find them [here](.
 ### Vim defaults overriding (improving)
 
 ```VimL
-" Intelligent window cycling
+" Easier window switching
 nmap <silent> <C-w><C-w> :call utils#intelligentCycling()<CR>
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " Visual linewise up and down by default (and use gj gk to go quicker)
-noremap j gj
-noremap k gk
+nnoremap j gj
+nnoremap k gk
 nnoremap gj 5j
 nnoremap gk 5k
-
-" More useful enter and backspace
-nnoremap <CR> G
-nnoremap <BS> gg
+vnoremap j gj
+vnoremap k gk
+vnoremap gj 5j
+vnoremap gk 5k
 
 " When jump to next match also center screen
-noremap n nzz
-noremap N Nzz
+nnoremap n nzz
+nnoremap N Nzz
+vnoremap n nzz
+vnoremap N Nzz
 
 " Same when moving up and down
-noremap <C-d> <C-d>zz
-noremap <C-u> <C-u>zz
+nnoremap <C-u> <C-u>zz
+nnoremap <C-d> <C-d>zz
+nnoremap <C-f> <C-f>zz
+nnoremap <C-b> <C-b>zz
+vnoremap <C-u> <C-u>zz
+vnoremap <C-d> <C-d>zz
+vnoremap <C-f> <C-f>zz
+vnoremap <C-b> <C-b>zz
 
 " Remap H and L (top, bottom of screen to left and right end of line)
 nnoremap H ^
@@ -88,12 +100,6 @@ nnoremap Y y$
 " Quick replay q macro
 nnoremap Q @q
 
-" Cancel terminal mode with ,escape
-tnoremap ,<ESC> <C-\><C-n>
-
-" Omni-complete based on ctags
-inoremap <C-]> <C-x><C-]>
-
 " Don't yank to default register when changing something
 nnoremap c "xc
 xnoremap c "xc
@@ -104,8 +110,36 @@ vnoremap y y`]
 vnoremap p "_dP`]
 nnoremap p p`]
 
-" No more accidentally showing up command window (Use C-f to show it)
-map q: :q
+" Use CamelCaseMotion instead of default motions
+map <silent> w <Plug>CamelCaseMotion_w
+map <silent> b <Plug>CamelCaseMotion_b
+map <silent> e <Plug>CamelCaseMotion_e
+map <silent> ge <Plug>CamelCaseMotion_ge
+sunmap w
+sunmap b
+sunmap e
+sunmap ge
+
+" Fix the cw at the end of line bug default vim has special treatment (:help cw)
+nmap cw ce
+nmap dw de
+
+" Uppercase word in insert mode
+inoremap <C-u> <ESC>mzgUiw`za
+
+" Matching brackets with TAB (using matchit) (Breaks the <C-i> jump)
+map <TAB> %
+silent! unmap [%
+silent! unmap ]%
+
+" Cancel terminal mode with ,escape
+if has('nvim')
+  tnoremap <ESC> <C-\><C-n>
+  tnoremap ,<ESC> <ESC>
+endif
+
+" Stay down after creating fold
+vnoremap zf mzzf`zzz
 ```
 
 ### Common tasks
@@ -125,47 +159,69 @@ nnoremap ,p "+p
 " Move visual block
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+
+" CTags navigation (:tselect to select from menu)
+nnoremap ]t :tn<CR>
+nnoremap [t :tp<CR>
+
+" QuickFix navigation
+nnoremap ]q :cnext<CR>
+nnoremap [q :cprevious<CR>
+
+" Location list navigation
+nnoremap ]l :lnext<CR>
+nnoremap [l :lprevious<CR>
+
+" Error mnemonic (Neomake uses location list)
+nnoremap ]e :lnext<CR>
+nnoremap [e :lprevious<CR>
+
+" Reselect last-pasted text
+nnoremap gp `[v`]
+
+" Keep the cursor in place while joining lines
+nnoremap J mzJ`z
+
+" [S]plit line (sister to [J]oin lines) S is covered by cc.
+nnoremap S mzi<CR><ESC>`z
+
+" Easier fold toggling
+nnoremap ,z za
 ```
 
 ### Buffer management
 
 ```VimL
-" Intelligent windows resizing using arrow keys
-nnoremap <silent> <Right> :call utils#intelligentVerticalResize('right')<CR>
-nnoremap <silent> <Left> :call utils#intelligentVerticalResize('left')<CR>
-nnoremap <silent> <Up> :resize +1<CR>
-nnoremap <silent> <Down> :resize -1<CR>
+" Intelligent windows resizing using ctrl + arrow keys
+nnoremap <silent> <C-Right> :call utils#intelligentVerticalResize('right')<CR>
+nnoremap <silent> <C-Left> :call utils#intelligentVerticalResize('left')<CR>
+nnoremap <silent> <C-Up> :resize +1<CR>
+nnoremap <silent> <C-Down> :resize -1<CR>
 
 " Buffers navigation and management
 nnoremap <silent> + :bn<CR>
 nnoremap <silent> _ :bp<CR>
 ```
 
-### Autocomplete (Simple tab wrapper + Ctags)
+### Autocomplete (Deoplete + Ctags)
 
 ```VimL
-" Multipurpose tab key (inspired by Gary Bernhardt)
-inoremap <expr> <tab> utils#insertTabWrapper()
-inoremap <s-tab> <C-n>
+let g:deoplete#enable_at_startup=1
+let g:deoplete#auto_completion_start_length=2
 
-" Ctags settings
-set tags+=.tags
-
-" Generate tags definitions
-command! GenerateCT :call utils#generateCtags()
-command! GenerateJSCT :call utils#generateJSCtags()
-command! GenerateRubyCT :call utils#generateRubyCtags()
-
-" CTags navigation (:tselect to select from menu)
-nnoremap ]t :tn<CR>
-nnoremap [t :tp<CR>
+let g:deoplete#sources={}
+let g:deoplete#sources._    = ['buffer', 'file', 'ultisnips']
+let g:deoplete#sources.ruby = ['buffer', 'member', 'file', 'ultisnips']
+let g:deoplete#sources.vim  = ['buffer', 'member', 'file', 'ultisnips']
+let g:deoplete#sources.css  = ['buffer', 'member', 'file', 'omni', 'ultisnips']
+let g:deoplete#sources.scss = ['buffer', 'member', 'file', 'omni', 'ultisnips']
 ```
 
 ### Browser and fuzzy searcher for multiple sources ([Unite](https://github.com/Shougo/unite.vim))
 
 ```VimL
 " Matcher settings
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#filters#matcher_default#use(['matcher_fuzzy', 'matcher_hide_current_file'])
 call unite#filters#sorter_default#use(['sorter_rank'])
 
 " Use ag if available
@@ -186,77 +242,9 @@ call unite#custom#profile('default', 'context', {
 
 " Add syntax highlighting
 let g:unite_source_line_enable_highlight=1
-```
 
-##### Custom Unite menu (for when You forgot the shortcuts).
-
-```VimL
-" Custom unite menus
-let g:unite_source_menu_menus = {}
-
-" Utils menu
-let g:unite_source_menu_menus.utils = {
-      \     'description' : 'Utility commands',
-      \ }
-let g:unite_source_menu_menus.utils.command_candidates = [
-      \       ['Color picker', 'VCoolor'],
-      \       ['Run XMPFilter', 'Annotate'],
-      \       ['Format file', 'Format'],
-      \       ['Run file', 'Run'],
-      \       ['Rename file', 'Rename'],
-      \       ['Generate Ctags', 'GenerateCT'],
-      \       ['Generate JS Ctags', 'GenerateJSCT'],
-      \       ['Generate Ruby/Rails Ctags', 'GenerateRailsCT'],
-      \       ['Show notes', 'Notes'],
-      \     ]
-
-" Git menu
-let g:unite_source_menu_menus.git = {
-      \     'description' : 'Git commands',
-      \ }
-let g:unite_source_menu_menus.git.command_candidates = [
-      \       ['Stage hunk', 'GitGutterStageHunk'],
-      \       ['Unstage hunk', 'GitGutterRevertHunk'],
-      \       ['Stage', 'Gwrite'],
-      \       ['Status', 'Gstatus'],
-      \       ['Diff', 'Gvdiff'],
-      \       ['Commit', 'Gcommit --verbose'],
-      \       ['Revert', 'Gread'],
-      \       ['Log', 'Glog'],
-      \       ['Visual Log', 'Gitv'],
-      \     ]
-
-" Plug menu
-let g:unite_source_menu_menus.plug = {
-      \     'description' : 'Plugin management commands',
-      \ }
-let g:unite_source_menu_menus.plug.command_candidates = [
-      \       ['Install plugins', 'PlugInstall'],
-      \       ['Update plugins', 'PlugUpdate'],
-      \       ['Clean plugins', 'PlugClean'],
-      \       ['Upgrade vim-plug', 'PlugUpgrade'],
-      \     ]
-
-" My unite menu
-let g:unite_source_menu_menus.unite = {
-      \     'description' : 'My Unite sources',
-      \ }
-let g:unite_source_menu_menus.unite.command_candidates = [
-      \       ['Unite MRUs', 'call utils#uniteMRUs()'],
-      \       ['Unite buffers', 'call utils#uniteBuffers()'],
-      \       ['Unite file search', 'call utils#uniteFileRec()'],
-      \       ['Unite grep', 'call utils#uniteGrep()'],
-      \       ['Unite history', 'call utils#uniteHistory()'],
-      \       ['Unite line search', 'call utils#uniteLineSearch()'],
-      \       ['Unite menu', 'call utils#uniteCustomMenu()'],
-      \       ['Unite registers', 'call utils#uniteRegisters()'],
-      \       ['Unite snippets', 'call utils#uniteSnippets()'],
-      \       ['Unite sources', 'call utils#uniteSources()'],
-      \       ['Unite symbols', 'call utils#uniteOutline()'],
-      \       ['Unite tags', 'call utils#uniteTags()'],
-      \       ['Unite windows', 'call utils#uniteWindows()'],
-      \       ['Unite yank history', 'call utils#uniteYankHistory()'],
-      \     ]
+" Dont override status line
+let g:unite_force_overwrite_statusline=0
 ```
 
 ##### Unite buffer mappings
@@ -285,21 +273,25 @@ endfunction
 let g:lightline = {
       \ 'colorscheme': 'powerline',
       \ 'tab': {
-      \   'active': [ 'tabnum', 'filename', 'modified' ],
-      \   'inactive': [ 'tabnum', 'filename', 'modified' ]
+      \   'active': [ 'filename' ],
+      \   'inactive': [ 'filename' ]
       \ },
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste', 'capslock' ],
-      \             [ 'readonly', 'filename', 'modified' ] ]
+      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'filename' ] ],
+      \   'right': [ [ 'lineinfo' ], [ 'percent' ], [ 'filetype', 'fileencoding', 'fileformat' ] ]
       \ },
       \ 'component': {
-      \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
-      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-      \   'capslock': '%{exists("*CapsLockStatusline")?CapsLockStatusline():""}'
+      \   'readonly': '%{&filetype=="help"?"HELP":&readonly?"RO":""}'
+      \ },
+      \ 'component_function': {
+      \   'mode': 'utils#lightLineMode',
+      \   'filename': 'utils#lightLineFilename',
+      \   'filetype': 'utils#lightLineFiletype',
+      \   'fileformat': 'utils#lightLineFileformat',
+      \   'fileencoding': 'utils#lightLineFileencoding'
       \ },
       \ 'component_visible_condition': {
-      \   'readonly': '(&filetype!="help"&& &readonly)',
-      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))'
+      \   'readonly': '(&readonly)'
       \ },
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '', 'right': '' }
@@ -310,7 +302,7 @@ let g:lightline = {
 
 ```VimL
 " Disable built-in cx-ck to be able to go backward
-inoremap <C-x><C-k> <nop>
+inoremap <C-x><C-k> <NOP>
 let g:UltiSnipsExpandTrigger='<C-j>'
 let g:UltiSnipsListSnippets='<C-l>'
 let g:UltiSnipsJumpForwardTrigger='<C-j>'
@@ -342,8 +334,12 @@ highlight TermCursor ctermfg=green guifg=green
 " Remove underline in folded lines
 hi! Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE
 
+" Listchars highlighting
+highlight NonText ctermfg=235 guifg=gray
+highlight SpecialKey ctermfg=235 guifg=gray
+
 " Link highlight groups to improve buftabline colors
-hi! link BufTabLineCurrent Statement
+hi! link BufTabLineCurrent Identifier
 hi! link BufTabLineActive Comment
 hi! link BufTabLineHidden Comment
 hi! link BufTabLineFill Comment
