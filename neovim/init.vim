@@ -1066,6 +1066,7 @@ nnoremap ,tt :TestLast<CR>
 nnoremap <leader>pi :PlugInstall<CR>
 nnoremap <leader>pu :PlugUpdate<CR>
 nnoremap <leader>pc :PlugClean<CR>
+"}}}
 
 " -----------------------------------------------------
 " 5.12 Ctrl-SF "{{{
