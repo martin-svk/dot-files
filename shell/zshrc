@@ -126,6 +126,7 @@ alias capless='xmodmap /home/martin/config/dot-files/other/Xmodmap'
 alias topdu='du -a | sort -nr | head -50'
 alias fsize='du -s'
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
+alias ?='tldr'
 
 # =====================================================================================================================
 # Exports
