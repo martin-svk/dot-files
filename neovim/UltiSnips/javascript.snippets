@@ -34,10 +34,20 @@ if ($1) {
 }
 endsnippet
 
+snippet switch "switch case statement" b
+switch (${1:variable}) {
+case ${2:value}:
+	$3
+	break;
+default:
+	return;
+}
+endsnippet
+
 # ===============================================
 # Common functions and constructs
 # ===============================================
-snippet log "console log"
+snippet log "console log" w
 console.log('${1:message}');
 endsnippet
 
@@ -45,10 +55,18 @@ snippet bt "bind this" w
 bind(this);
 endsnippet
 
+snippet acl "addChangeListener" w
+addChangeListener(this.${1:_onChange});
+endsnippet
+
+snippet rcl "removeChangeListener" w
+removeChangeListener(this.${1:_onChange});
+endsnippet
+
 # ===============================================
 # Miscleanous
 # ===============================================
-snippet strict "enable strict mode"
+snippet strict "enable strict mode" b
 'use strict';
 endsnippet
 

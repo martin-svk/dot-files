@@ -1,14 +1,19 @@
 # ===============================================
-# Flux helpers
+# Facebook Flux helpers
 # ===============================================
-snippet dispatch "dispatcher dispatch function"
+snippet dispatcher "Facebook flux dispatcher"
+import { Dispatcher } from 'flux';
+export default new Dispatcher();
+endsnippet
+
+snippet dispatch "Facebook dispatcher dispatch function"
 Dispatcher.dispatch({
 	type: ${1:ActionTypes}.${2:ACTION_CONSTANT},
 	${3:data}: $4
 });
 endsnippet
 
-snippet store "basic es6 flux store"
+snippet store "Basic ES6 facebook flux store"
 import { EventEmitter } from "events";
 const CHANGE_EVENT = "change";
 
@@ -32,12 +37,4 @@ class Store extends EventEmitter {
 }
 
 export default Store;
-endsnippet
-
-snippet acl "addChangeListener" w
-addChangeListener(this.${1:_onChange});
-endsnippet
-
-snippet rcl "removeChangeListener" w
-removeChangeListener(this.${1:_onChange});
 endsnippet
