@@ -16,6 +16,7 @@ class $1 extends React.Component {
 	}
 }
 
+$1.contextTypes = {};
 $1.propTypes = {};
 $1.defaultProps = {};
 
@@ -31,28 +32,44 @@ function ${1:Component}(props) {
 	);
 }
 
+$1.contextTypes = {};
 $1.propTypes = {};
 $1.defaultProps = {};
+
 export default $1;
 endsnippet
 
 # ===============================================
-# Prop types and default props
+# Prop types and default props, context
 # ===============================================
 snippet propt "prop types definition" w
 propTypes = {
-	${2:prop}: $3
+	${1:prop}: ${2:value}
 };
 endsnippet
 
 snippet dpropt "default prop values" w
 defaultProps = {
-	${2:prop}: ${3:defaultValue}
+	${1:prop}: ${2:value}
+};
+endsnippet
+
+snippet contt "context types definition" w
+contextTypes = {
+	${1:prop}: ${2:value}
 };
 endsnippet
 
 snippet prop "one prop type definition" w
 React.PropTypes.${1:object}${2:.isRequired}
+endsnippet
+
+snippet gcc "get child context" w
+getChildContext() {
+	return ({
+		${1:name}: ${2:value}
+	});
+}
 endsnippet
 
 # ===============================================
@@ -99,8 +116,8 @@ snippet ts "this.state." w
 this.state.${1:property}
 endsnippet
 
-snippet ss "this.setState" w
-setState({
+snippet tss "this.setState" w
+this.setState({
 	${1:property}: ${2:value}$0
 });
 endsnippet
