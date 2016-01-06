@@ -483,6 +483,10 @@ map <TAB> %
 silent! unmap [%
 silent! unmap ]%
 
+" Don't cancel visual select when shifting
+xnoremap <  <gv
+xnoremap >  >gv
+
 " Cancel terminal mode with ,escape
 if has('nvim')
   tnoremap <ESC> <C-\><C-n>
