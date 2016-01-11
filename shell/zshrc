@@ -100,8 +100,8 @@ alias ta='tmux attach -t main || tmux new -s main'
 alias td='tmux detach'
 alias vim='vim -X'
 alias msql='mysql -uroot -p'
-# npm install -g httpster
-alias ws='http-server'
+# npm install -g http-server
+alias ws='http-server -c-1 -p 3000 -o'
 
 # ------------------------------------------
 # SSH servers
