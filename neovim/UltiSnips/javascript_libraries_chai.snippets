@@ -44,3 +44,11 @@ endsnippet
 snippet asnm "assert not match regex"
 assert.notMatch(${1:value}, ${2:regex});
 endsnippet
+
+snippet ast "assert throws an exception"
+assert.throw(${1:function}, ${2:Error});
+endsnippet
+
+snippet asnt "assert not throws an exception"
+assert.doesNotThrow(${1:function}, ${2:Error});
+endsnippet
