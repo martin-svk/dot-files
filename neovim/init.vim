@@ -57,8 +57,6 @@ Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby', 'haml', 'slim'] }
 Plug 'tpope/vim-bundler', { 'for': ['ruby', 'eruby', 'haml', 'slim'] }
 " String interpolation helper
 Plug 'p0deje/vim-ruby-interpolation', { 'for': ['ruby'] }
-" Refactoring tools
-Plug 'ecomba/vim-ruby-refactoring', { 'for': ['ruby'] }
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
@@ -109,8 +107,6 @@ Plug 'tpope/vim-git'
 Plug 'honza/dockerfile.vim'
 " Yaml indentation
 Plug 'martin-svk/vim-yaml'
-" Crystal lang
-Plug 'rhysd/vim-crystal'
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
@@ -141,8 +137,6 @@ Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeFind', 'NERDTreeToggle'] }
 Plug 'itchyny/lightline.vim'
 " Buffers tabline
 Plug 'ap/vim-buftabline'
-" Highlight long lines
-Plug 'whatyouhide/vim-lengthmatters'
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
@@ -157,10 +151,6 @@ Plug 'gregsexton/gitv', { 'on': 'Gitv' }
 Plug 'airblade/vim-gitgutter'
 " Color picker
 Plug 'KabbAmine/vCoolor.vim', { 'on': 'VCoolor' }
-" Neovim terminal improving
-Plug 'kassio/neoterm', { 'on': 'T' }
-" Unix commands integration
-Plug 'tpope/vim-eunuch', { 'on': [ 'Rename', 'Move', 'SudoWrite' ] }
 " REST Console
 Plug 'diepm/vim-rest-console', { 'for': 'rest' }
 "}}}
@@ -829,20 +819,13 @@ let g:ruby_refactoring_map_keys=0
 "}}}
 
 " -----------------------------------------------------
-" 4.11 NeoTerm settings"{{{
+" 4.11 Vim-Test settings"{{{
 " -----------------------------------------------------
-let g:neoterm_size=60
-let g:neoterm_position='vertical'
+let g:test#strategy = "neovim"
 "}}}
 
 " -----------------------------------------------------
-" 4.12 Vim-Test settings"{{{
-" -----------------------------------------------------
-let g:test#strategy = "neoterm"
-"}}}
-
-" -----------------------------------------------------
-" 4.13 Clever F settings"{{{
+" 4.12 Clever F settings"{{{
 " -----------------------------------------------------
 let g:clever_f_across_no_line=1
 let g:clever_f_smart_case=1
@@ -851,34 +834,34 @@ let g:clever_f_chars_match_any_signs=';'
 "}}}
 
 " -----------------------------------------------------
-" 4.14 Multi change settings"{{{
+" 4.13 Multi change settings"{{{
 " -----------------------------------------------------
 let g:multichange_mapping='<F2>'
 let g:multichange_motion_mapping=''
 "}}}
 
 " -----------------------------------------------------
-" 4.15 Vim Markdown settings"{{{
+" 4.14 Vim Markdown settings"{{{
 " -----------------------------------------------------
 let g:vim_markdown_no_default_key_mappings=1
 let g:vim_markdown_folding_disabled=1
 "}}}
 
 " -----------------------------------------------------
-" 4.16 Vim REST console settings"{{{
+" 4.15 Vim REST console settings"{{{
 " -----------------------------------------------------
 let g:vrc_set_default_mapping=0
 let g:vrc_output_buffer_name='__RESPONSE__.rest'
 "}}}
 
 " -----------------------------------------------------
-" 4.17 Quick scope settings"{{{
+" 4.16 Quick scope settings"{{{
 " -----------------------------------------------------
 let g:qs_highlight_on_keys=['f', 'F', 't', 'T']
 "}}}
 
 " -----------------------------------------------------
-" 4.18 Deoplete autocomplete settings"{{{
+" 4.17 Deoplete autocomplete settings"{{{
 " -----------------------------------------------------
 let g:deoplete#enable_at_startup=1
 let g:deoplete#auto_completion_start_length=2
@@ -892,7 +875,7 @@ let g:deoplete#sources.scss = ['buffer', 'member', 'file', 'omni', 'ultisnips']
 "}}}
 
 " -----------------------------------------------------
-" 4.19 Ctrl-SF settings"{{{
+" 4.18 Ctrl-SF settings"{{{
 " -----------------------------------------------------
 let g:ctrlsf_default_root='project'
 let g:ctrlsf_populate_qflist=1
@@ -903,7 +886,7 @@ let g:ctrlsf_regex_pattern=1
 "}}}
 
 " -----------------------------------------------------
-" 4.20 Javascript libraries syntax settings"{{{
+" 4.19 Javascript libraries syntax settings"{{{
 " -----------------------------------------------------
 let g:used_javascript_libs = 'chai,flux,react,underscore'
 "}}}
