@@ -3,6 +3,8 @@ Documentation:
   Enabled: false
 Metrics/LineLength:
   Max: 120
+Style/MultilineOperationIndentation:
+  EnforcedStyle: indented
 AllCops:
   RunRailsCops: true
   Include:
