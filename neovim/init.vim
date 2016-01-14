@@ -1081,11 +1081,9 @@ syntax on
 "}}}
 
 " Color scheme based on time"{{{
-if strftime("%H") < 14
+if strftime("%H") < 16
   let g:rehash256 = 1
   colorscheme molokai
-elseif strftime("%H") < 20
-  colorscheme iceberg
 else
   colorscheme jellybeans
 endif
@@ -1099,7 +1097,7 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 highlight TermCursor ctermfg=green guifg=green
 "}}}
 
-" Listchars highlighting"{{{
+" Listchars highlighting{{{
 highlight NonText ctermfg=235 guifg=gray
 highlight SpecialKey ctermfg=235 guifg=gray
 "}}}
