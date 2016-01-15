@@ -533,6 +533,9 @@ nnoremap S mzi<CR><ESC>`z
 
 " Easier fold toggling
 nnoremap ,z za
+
+" Start substitute on current word under the cursor
+nnoremap ,s :%s///gc<Left><Left><Left>
 "}}}
 
 " -----------------------------------------------------
