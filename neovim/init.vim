@@ -155,8 +155,6 @@ Plug 'diepm/vim-rest-console', { 'for': 'rest' }
 
 " Highlight jump characters on f, F, t, T
 Plug 'unblevable/quick-scope'
-" Multi change replaces multiple cursors plugin
-Plug 'AndrewRadev/multichange.vim'
 " Surround (cs"')
 Plug 'tpope/vim-surround'
 " Easy alignment
@@ -538,7 +536,8 @@ nnoremap ,s :%s///gc<Left><Left><Left>
 
 " NERDTree wrapper
 nnoremap <silent> <F1> :call utils#nerdWrapper()<CR>
-" F2 -> Multichange
+" Free
+" nnoremap <silent> <F2>
 " Paste mode toggling
 nnoremap <silent> <F3> :set paste!<CR> :set paste?<CR>
 " Toggle spelling on and off
@@ -831,34 +830,27 @@ let g:clever_f_chars_match_any_signs=';'
 "}}}
 
 " -----------------------------------------------------
-" 4.13 Multi change settings"{{{
-" -----------------------------------------------------
-let g:multichange_mapping='<F2>'
-let g:multichange_motion_mapping=''
-"}}}
-
-" -----------------------------------------------------
-" 4.14 Vim Markdown settings"{{{
+" 4.13 Vim Markdown settings"{{{
 " -----------------------------------------------------
 let g:vim_markdown_no_default_key_mappings=1
 let g:vim_markdown_folding_disabled=1
 "}}}
 
 " -----------------------------------------------------
-" 4.15 Vim REST console settings"{{{
+" 4.14 Vim REST console settings"{{{
 " -----------------------------------------------------
 let g:vrc_set_default_mapping=0
 let g:vrc_output_buffer_name='__RESPONSE__.rest'
 "}}}
 
 " -----------------------------------------------------
-" 4.16 Quick scope settings"{{{
+" 4.15 Quick scope settings"{{{
 " -----------------------------------------------------
 let g:qs_highlight_on_keys=['f', 'F', 't', 'T']
 "}}}
 
 " -----------------------------------------------------
-" 4.17 Deoplete autocomplete settings"{{{
+" 4.16 Deoplete autocomplete settings"{{{
 " -----------------------------------------------------
 let g:deoplete#enable_at_startup=1
 let g:deoplete#auto_completion_start_length=2
@@ -872,7 +864,7 @@ let g:deoplete#sources.scss = ['buffer', 'member', 'file', 'omni', 'ultisnips']
 "}}}
 
 " -----------------------------------------------------
-" 4.18 Ctrl-SF settings"{{{
+" 4.17 Ctrl-SF settings"{{{
 " -----------------------------------------------------
 let g:ctrlsf_default_root='project'
 let g:ctrlsf_populate_qflist=1
@@ -883,13 +875,13 @@ let g:ctrlsf_regex_pattern=1
 "}}}
 
 " -----------------------------------------------------
-" 4.19 Javascript libraries syntax settings"{{{
+" 4.18 Javascript libraries syntax settings"{{{
 " -----------------------------------------------------
 let g:used_javascript_libs = 'chai,flux,react,underscore'
 "}}}
 
 " -----------------------------------------------------
-" 4.20 Plug settings"{{{
+" 4.19 Plug settings"{{{
 " -----------------------------------------------------
 let g:plug_timeout=20
 "}}}

@@ -1,6 +1,6 @@
 " Informative echo line
 function! g:utils#showToggles() abort
-  echom '<F1> NERDTree | <F2> Multichange | <F3> Paste mode | <F4> Spellcheck | <F5> Reload rc | <F6> Search HL |' .
+  echom '<F1> NERDTree | <F2> Free | <F3> Paste mode | <F4> Spellcheck | <F5> Reload rc | <F6> Search HL |' .
         \' <F7> Whitechars | <F8> Vertical Term | <F9> Fire REST Request | <F10> Free  | <F11> How do I |' .
         \' <F12> This message'
 endfunction
