@@ -193,8 +193,6 @@ Plug 'glts/vim-textobj-comment'
 
 " Molokai
 Plug 'tomasr/molokai'
-" Iceberg
-Plug 'cocopon/iceberg.vim'
 " Jellybeans
 Plug 'nanotech/jellybeans.vim'
 "}}}
