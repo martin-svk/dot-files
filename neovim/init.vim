@@ -43,7 +43,7 @@ Plug 'tpope/vim-sleuth'
 " Ruby/Rails"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Ruby syntax (plays nicely with tpope/rbenv-ctags)
+" Ruby support (plays nicely with tpope/rbenv-ctags)
 Plug 'vim-ruby/vim-ruby'
 " Slim syntax
 Plug 'slim-template/vim-slim'
@@ -53,10 +53,8 @@ Plug 'tpope/vim-haml'
 Plug 'sunaku/vim-ruby-minitest'
 " Rails support (:A, :R, :Rmigration, :Rextract)
 Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby', 'haml', 'slim'] }
-" Bundler support (play nicely with tpope/gem-ctags)
+" Bundler support (plays nicely with tpope/gem-ctags)
 Plug 'tpope/vim-bundler', { 'for': ['ruby', 'eruby', 'haml', 'slim'] }
-" String interpolation helper
-Plug 'p0deje/vim-ruby-interpolation', { 'for': ['ruby'] }
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
@@ -83,8 +81,8 @@ Plug 'sheerun/vim-json'
 Plug 'othree/html5.vim'
 " SCSS syntax
 Plug 'cakebaker/scss-syntax.vim'
-" CSS color highlighter
-Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'sass', 'scss', 'less'] }
+" Color highlighter
+Plug 'lilydjwg/colorizer', { 'for': ['css', 'sass', 'scss', 'less', 'html', 'xhtml', 'javascript', 'javascript.jsx'] }
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
@@ -93,20 +91,16 @@ Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'sass', 'scss', 'less'] }
 
 " Elixir syntax
 Plug 'elixir-lang/vim-elixir'
-" Python syntax
-Plug 'mitsuhiko/vim-python-combined'
-" Elm
-Plug 'lambdatoast/elm.vim'
 " Markdown syntax and helpers
 Plug 'plasticboy/vim-markdown'
-" Tmux syntax
-Plug 'tejr/vim-tmux'
-" Git syntax
-Plug 'tpope/vim-git'
-" Dockerfile
-Plug 'honza/dockerfile.vim'
 " Yaml indentation
 Plug 'martin-svk/vim-yaml'
+" Git syntax
+Plug 'tpope/vim-git'
+" Tmux syntax
+Plug 'tejr/vim-tmux'
+" Dockerfile
+Plug 'honza/dockerfile.vim'
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
