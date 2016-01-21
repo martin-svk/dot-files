@@ -1061,9 +1061,8 @@ let g:ctrlsf_mapping = {
 " 5.13 Fugitive "{{{
 " -----------------------------------------------------
 nnoremap <leader>gs :Gstatus<CR>
-
 nnoremap <leader>gc :Gcommit --verbose<CR>
-
+nnoremap <leader>gc :Gcommit --verbose<CR>
 nnoremap <leader>gd :Gvdiff<CR>
 "}}}
 
