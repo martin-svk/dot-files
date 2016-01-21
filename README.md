@@ -26,7 +26,7 @@ Below are the most interesting parts of my Neovim configuration.
 
 Here you go.
 
-![Neovim + Iceberg](./data/screenshots/iceberg.png)
+![Neovim + Jellybeans](./data/screenshots/jellybeans.png)
 
 Want more? Scroll down to the appropriate [section](#screenshots-and-cheatsheets).
 
@@ -362,6 +362,8 @@ hi! link BufTabLineFill Comment
 ```
 
 ### Screenshots and Cheatsheets
+
+[Iceberg](./data/screenshots/iceberg.png)
 
 [Iceberg + ReactJS](./data/screenshots/iceberg_react.png)
 
