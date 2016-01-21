@@ -132,6 +132,10 @@ map <TAB> %
 silent! unmap [%
 silent! unmap ]%
 
+" Don't cancel visual select when shifting
+xnoremap <  <gv
+xnoremap >  >gv
+
 " Cancel terminal mode with ,escape
 if has('nvim')
   tnoremap <ESC> <C-\><C-n>
@@ -187,6 +191,9 @@ nnoremap S mzi<CR><ESC>`z
 
 " Easier fold toggling
 nnoremap ,z za
+
+" Start substitute on current word under the cursor
+nnoremap ,s :%s///gc<Left><Left><Left>
 ```
 
 ### Buffer management
@@ -332,13 +339,11 @@ let g:UltiSnipsJumpBackwardTrigger='<C-k>'
 syntax on
 
 " Color scheme based on time
-if strftime("%H") < 15
+if strftime("%H") < 16
   let g:rehash256 = 1
   colorscheme molokai
-elseif strftime("%H") < 20
-  colorscheme jellybeans
 else
-  colorscheme iceberg
+  colorscheme jellybeans
 endif
 
 " Highlight VCS conflict markers
