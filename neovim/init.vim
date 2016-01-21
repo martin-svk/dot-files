@@ -313,7 +313,7 @@ filetype indent on
 " 2.8 Folding settings"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 set foldmethod=marker                       " Markers are used to specify folds.
-set foldlevel=1                             " Start folding automatically from level 1
+set foldlevel=2                             " Start folding automatically from level 2
 set fillchars="fold: "                      " Characters to fill the statuslines and vertical separators
 "}}}
 
