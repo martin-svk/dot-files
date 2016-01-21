@@ -961,8 +961,8 @@ nnoremap ,u :UnIsolate<CR>
 " -----------------------------------------------------
 " 5.4 Gitgutter"{{{
 " -----------------------------------------------------
-nnoremap [c :GitGutterPrevHunk<CR>
-nnoremap ]c :GitGutterNextHunk<CR>
+nnoremap [h :GitGutterPrevHunk<CR>
+nnoremap ]h :GitGutterNextHunk<CR>
 nnoremap ,hs :GitGutterStageHunk<CR>
 nnoremap ,hr :GitGutterRevertHunk<CR>
 "}}}
