@@ -1019,8 +1019,8 @@ endfunction
 " -----------------------------------------------------
 " 5.9 CtrlSF "{{{
 " -----------------------------------------------------
-nnoremap <leader>g :CtrlSF<Space>
-nnoremap <leader>G :CtrlSFToggle<Space>
+nnoremap <leader>gg :CtrlSF<Space>
+nnoremap <leader>gG :CtrlSFToggle<Space>
 "}}}
 
 " -----------------------------------------------------
@@ -1055,6 +1055,14 @@ let g:ctrlsf_mapping = {
     \ "pquit"   : "",
     \ "loclist" : "",
     \ }
+"}}}
+
+" -----------------------------------------------------
+" 5.13 Fugitive "{{{
+" -----------------------------------------------------
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gc :Gcommit --verbose<CR>
+nnoremap <leader>gd :Gvdiff<CR>
 "}}}
 
 " -----------------------------------------------------
