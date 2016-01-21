@@ -91,8 +91,6 @@ Plug 'lilydjwg/colorizer', { 'for': ['css', 'sass', 'scss', 'less', 'html', 'xht
 
 " Elixir syntax
 Plug 'elixir-lang/vim-elixir'
-" Markdown syntax and helpers
-Plug 'plasticboy/vim-markdown'
 " Yaml indentation
 Plug 'martin-svk/vim-yaml'
 " Git syntax
