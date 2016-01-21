@@ -1,3 +1,4 @@
+# vim: ft=ruby
 # === EDITOR ===
 Pry.config.editor = 'nvim'
 
