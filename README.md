@@ -442,7 +442,7 @@ quickly bootstrap new tmux sessions. Below are the most interesting settings in 
 
 ### Settings
 
-```zsh
+```tmux
 # Unset ruby version so it respects .ruby-version files
 set-environment -gu RBENV_VERSION
 
@@ -486,7 +486,7 @@ set -g display-time 3000
 
 ### Key bindings
 
-```zsh
+```tmux
 # Backtick as Prefix
 unbind C-b
 set -g prefix `
@@ -578,7 +578,7 @@ What about my git config? Maybe some useful aliases:
 ## Xterm
 My terminal emulator of choice. Below are some interesting settings I use:
 
-```zsh
+```xdefaults
 ! Unicode support
 xterm*utf8: 1
 

@@ -93,6 +93,8 @@ Plug 'lilydjwg/colorizer', { 'for': ['css', 'sass', 'scss', 'less', 'html', 'xht
 Plug 'elixir-lang/vim-elixir'
 " Yaml indentation
 Plug 'martin-svk/vim-yaml'
+" Markdown syntax
+Plug 'tpope/vim-markdown'
 " Git syntax
 Plug 'tpope/vim-git'
 " Tmux syntax
@@ -880,6 +882,21 @@ let g:used_javascript_libs = 'chai,flux,react,underscore'
 " 4.19 Plug settings"{{{
 " -----------------------------------------------------
 let g:plug_timeout=20
+"}}}
+
+" -----------------------------------------------------
+" 4.20 Vim-markdown settings"{{{
+" -----------------------------------------------------
+let g:markdown_fenced_languages=[
+      \'bash=sh',
+      \'git=gitconfig',
+      \'javascript',
+      \'lua',
+      \'ruby',
+      \'tmux',
+      \'viml=vim',
+      \'xdefaults',
+      \'zsh']
 "}}}
 
 "}}}
