@@ -17,7 +17,7 @@ elseif (get_application_name()=="Android Studio") then
 -- Atom
 elseif (get_application_name()=="Atom") then
    set_window_workspace(3);
-   set_window_size(1600, 950);
+   maximize();
 -- SmartGit
 elseif (get_application_name()=="SmartGit") then
    set_window_workspace(4);
