@@ -31,8 +31,6 @@ Plug 'cohama/lexima.vim'
 Plug 'SirVer/ultisnips'
 " Commenting support (gc)
 Plug 'tpope/vim-commentary'
-" Multi-language testing support
-Plug 'janko-m/vim-test', { 'on': ['TestFile', 'TestLast', 'TestNearest', 'TestSuite', 'TestVisit'] }
 " CamelCase and snake_case motions
 Plug 'bkad/CamelCaseMotion'
 " Heuristically set indent settings
@@ -91,6 +89,8 @@ Plug 'lilydjwg/colorizer', { 'for': ['css', 'sass', 'scss', 'less', 'html', 'xht
 
 " Elixir syntax
 Plug 'elixir-lang/vim-elixir'
+" Elm syntax
+Plug 'lambdatoast/elm.vim'
 " Yaml indentation
 Plug 'martin-svk/vim-yaml'
 " Markdown syntax
@@ -143,8 +143,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'gregsexton/gitv', { 'on': 'Gitv' }
 " Git changes showed on line numbers
 Plug 'airblade/vim-gitgutter'
-" Color picker
-Plug 'KabbAmine/vCoolor.vim', { 'on': 'VCoolor' }
 " REST Console
 Plug 'diepm/vim-rest-console', { 'for': 'rest' }
 "}}}
@@ -211,8 +209,6 @@ Plug 'ironhouzi/vim-stim'
 Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
 " Iabbrev auto-correction library
 Plug 'chip/vim-fat-finger'
-" Man reading in vim
-Plug 'jez/vim-superman'
 " Matchit enhances jump motions
 Plug 'edsono/vim-matchit'
 " More . repeat functionality
@@ -683,7 +679,8 @@ let g:unite_source_menu_menus.git.command_candidates = [
       \       ['Commit', 'Gcommit --verbose'],
       \       ['Revert', 'Gread'],
       \       ['Log', 'Glog'],
-      \       ['Visual Log', 'Gitv'],
+      \       ['Visual log', 'Gitv'],
+      \       ['Current file visual log', 'Gitv!'],
       \     ]
 
 " Plug menu
@@ -1087,6 +1084,14 @@ nnoremap <leader>gd :Gvdiff<CR>
 " 5.13 BufOnly "{{{
 " -----------------------------------------------------
 nnoremap ,C :Bonly<CR>
+"}}}
+
+" -----------------------------------------------------
+" 5.13 Gitv "{{{
+" -----------------------------------------------------
+nnoremap <leader>gh :Gitv!<CR>
+"}}}
+
 "}}}
 
 " ======================================================================================================================
