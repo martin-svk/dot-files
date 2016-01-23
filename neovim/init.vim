@@ -62,7 +62,7 @@ Plug 'tpope/vim-bundler', { 'for': ['ruby', 'eruby', 'haml', 'slim'] }
 " ---------------------------------------------------------------------------------------------------------------------
 
 " JS syntax
-Plug 'othree/yajs.vim'
+Plug 'jelera/vim-javascript-syntax'
 " JS libs syntax (React, Angular)
 Plug 'othree/javascript-libraries-syntax.vim'
 " JSX syntax (needs vim-javascript for indentation)
@@ -191,8 +191,8 @@ Plug 'glts/vim-textobj-comment'
 " Colorschemes"{{{
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Molokai
-Plug 'tomasr/molokai'
+" Hybrid
+Plug 'w0ng/vim-hybrid'
 " Jellybeans
 Plug 'nanotech/jellybeans.vim'
 "}}}
@@ -1099,8 +1099,8 @@ syntax on
 
 " Color scheme based on time"{{{
 if strftime("%H") < 16
-  let g:rehash256 = 1
-  colorscheme molokai
+  set background=dark
+  colorscheme hybrid
 else
   colorscheme jellybeans
 endif
