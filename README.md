@@ -1,4 +1,4 @@
-# Well documented, terminal centric web developer's dot files.
+# Well documented, terminal centric web developer's dot files
 
 Hey everybody. I am Martin, a software developer with an obsession for workflow improvement.
 Below I present the most interesting parts of my config files. **Feel free to be inspired**.
@@ -7,7 +7,7 @@ Below I present the most interesting parts of my config files. **Feel free to be
 
 | [Credits](#credits) | [License](#license) |
 
-## What's included?
+## What's included
 
 * [Neovim](#neovim) ([source](./neovim/init.vim))
 * [ZSH](#zsh) ([source](./shell/zshrc))
@@ -22,7 +22,7 @@ Below I present the most interesting parts of my config files. **Feel free to be
 I am using [Neovim](http://neovim.org/) which is a **Vim** fork focused on maintainability.
 Below are the most interesting parts of my Neovim configuration.
 
-### Show me the end result first!
+### Show me the end result first
 
 Here you go.
 
@@ -576,6 +576,7 @@ What about my git config? Maybe some useful aliases:
 ```
 
 ## Xterm
+
 My terminal emulator of choice. Below are some interesting settings I use:
 
 ```xdefaults
