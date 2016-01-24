@@ -293,3 +293,9 @@ function! g:utils#howDoI() abort
     execute l:command_prefix . l:howdoi . l:query
   endif
 endfunction
+
+" Search current word with CtrlSF
+" Inspired by github.com/zenbro
+function! g:utils#searchCurrentWordWithAg() abort
+  execute 'CtrlSF' expand('<cword>')
+endfunction

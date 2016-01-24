@@ -1063,17 +1063,19 @@ nnoremap <leader>pc :PlugClean<CR>
 " 5.12 Ctrl-SF "{{{
 " -----------------------------------------------------
 let g:ctrlsf_mapping = {
-    \ "next"    : "n",
-    \ "prev"    : "N",
-    \ "quit"    : "q",
-    \ "openb"   : "",
-    \ "split"   : "s",
-    \ "tab"     : "",
-    \ "tabb"    : "",
-    \ "popen"   : "",
-    \ "pquit"   : "",
-    \ "loclist" : "",
-    \ }
+      \ "next"    : "n",
+      \ "prev"    : "N",
+      \ "quit"    : "q",
+      \ "openb"   : "",
+      \ "split"   : "s",
+      \ "tab"     : "",
+      \ "tabb"    : "",
+      \ "popen"   : "",
+      \ "pquit"   : "",
+      \ "loclist" : "",
+      \ }
+
+nnoremap <silent> ,g :call utils#searchCurrentWordWithAg()<CR>
 "}}}
 
 " -----------------------------------------------------
