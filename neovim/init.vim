@@ -1181,12 +1181,22 @@ end
 
 " npm install -g eslint
 autocmd BufWritePost *.js Neomake eslint
+" npm install -g jsonlint
+autocmd BufWritePost *.json Neomake jsonlint
+" npm install -g typescript
+autocmd BufWritePost *.ts Neomake tsc
 " gem install rubocop
 autocmd BufWritePost *.rb Neomake rubocop
+" sudo apt-get install elixir
+autocmd BufWritePost *.ex Neomake elixir
 " apt-get install tidy
 autocmd BufWritePost *.html Neomake tidy
+" gem install haml_lint
+autocmd BufWritePost *.haml Neomake hamllint
 " gem install scsslint
 autocmd BufWritePost *.scss Neomake scsslint
+" gem install mdl
+autocmd BufWritePost *.md Neomake mdl
 " apt-get install shellcheck
 autocmd BufWritePost *.sh Neomake shellcheck
 " pip3 install vim-vint
