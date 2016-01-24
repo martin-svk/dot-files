@@ -15,6 +15,7 @@
 [alias]
     a = add
     aa = add --all
+    ap = add --patch
     di = diff
     ds = diff --staged
     dt = difftool --no-prompt
