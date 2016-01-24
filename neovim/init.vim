@@ -939,8 +939,6 @@ nnoremap <silent> <leader>u :call utils#uniteSources()<CR>
 nnoremap <silent> <leader>b :call utils#uniteBuffers()<CR>
 " Search in current file ou[t]line (tags in current file)
 nnoremap <silent> <leader>t :call utils#uniteOutline()<CR>
-" Search in edit [h]istory
-nnoremap <silent> <leader>h :call utils#uniteHistory()<CR>
 " Search in [l]ines on current buffer
 nnoremap <silent> <leader>l :call utils#uniteLineSearch()<CR>
 " Search in [y]ank history
@@ -956,9 +954,9 @@ nnoremap <silent> <leader>j :call utils#uniteJumps()<CR>
 " Search in my custom unite [m]enu with my commands
 nnoremap <silent> <leader>m :call utils#uniteCustomMenu()<CR>
 " Seach in help menu for commands
-nnoremap <silent> <leader>? :call utils#uniteCommands()<CR>
+nnoremap <silent> <leader>hc :call utils#uniteCommands()<CR>
 " Seach in help menu for mappings
-nnoremap <silent> ,? :call utils#uniteMappings()<CR>
+nnoremap <silent> <leader>hm :call utils#uniteMappings()<CR>
 "}}}
 
 " -----------------------------------------------------
