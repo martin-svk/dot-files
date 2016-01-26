@@ -349,7 +349,6 @@ let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1       " Set an environment variable to use t
 " For Ruby STD ctags use tpope/rbenv-ctags + vim-ruby
 " For gem ctags use tpope/gem-ctags + vim-bundler
 " -----------------------------------------------------
-set tags+=.tags                           " Project tags are in .tags file
 "}}}
 
 "}}}
@@ -597,8 +596,6 @@ cnoremap qq qall
 
 " Generate tags definitions
 command! GenerateCT :call utils#generateCtags()
-command! GenerateJSCT :call utils#generateJSCtags()
-command! GenerateRubyCT :call utils#generateRubyCtags()
 
 " Open notes
 command! Notes :call utils#openNotes()
@@ -675,7 +672,6 @@ let g:unite_source_menu_menus.utils.command_candidates = [
       \       ['Format file', 'Format'],
       \       ['Run file', 'Run'],
       \       ['Generate Ctags', 'GenerateCT'],
-      \       ['Generate JS Ctags', 'GenerateJSCT'],
       \       ['Show notes', 'Notes'],
       \     ]
 
