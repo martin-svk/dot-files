@@ -105,17 +105,11 @@ function! g:utils#setUSKBLayout() abort
   silent !setxkbmap us
 endfunction
 
-" Generate ctags and put them into .tags directory
+" Generate ctags and put them into tags directory
+" gem install starscope
 function! g:utils#generateCtags() abort
-  silent execute '!ctags  --extra=+f -Rf .tags --exclude=.git --languages=-sql'
-  echom 'Tags generated into .tags file!'
-endfunction
-
-" Generate ctags for JS projects (ignoring .meteor, node_modules, bower_components)
-function! g:utils#generateJSCtags() abort
-  silent execute '!ctags  --extra=+f -Rf .tags'
-        \ '--exclude=.git --exclude=node_modules --exclude=bower_components --exclude=.meteor --languages=-sql'
-  echom 'Tags generated into .tags file!'
+  silent execute '!starscope -e ctags'
+  echom 'Tags generated into tags file!'
 endfunction
 
 " Tab wrapper
