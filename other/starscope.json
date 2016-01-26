@@ -1,8 +1,15 @@
 {
     "excludes": [
+        ".meteor",
+        "bower_components",
         "node_modules",
+        "coverage",
 	"dist",
-        "test",
-	"spec"
+        "app/assets",
+        "db",
+        "logs",
+        "public",
+        "tmp",
+        "vendor"
     ]
 }
