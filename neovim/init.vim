@@ -498,9 +498,11 @@ nnoremap ,p "+p
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-" CTags navigation (:tselect to select from menu)
+" CTags generation / navigation (:tselect to select from menu)
 nnoremap ]t :tn<CR>
 nnoremap [t :tp<CR>
+nnoremap ,ts :ts<CR>
+nnoremap ,tg :GenerateTags<CR>
 
 " QuickFix navigation
 nnoremap ]q :cnext<CR>
@@ -595,7 +597,7 @@ cnoremap qq qall
 " -----------------------------------------------------
 
 " Generate tags definitions
-command! GenerateCT :call utils#generateCtags()
+command! GenerateTags :call utils#generateCtags()
 
 " Open notes
 command! Notes :call utils#openNotes()
@@ -671,7 +673,7 @@ let g:unite_source_menu_menus.utils.command_candidates = [
       \       ['Run XMPFilter', 'Annotate'],
       \       ['Format file', 'Format'],
       \       ['Run file', 'Run'],
-      \       ['Generate Ctags', 'GenerateCT'],
+      \       ['Generate Ctags', 'GenerateTags'],
       \       ['Show notes', 'Notes'],
       \     ]
 
@@ -724,6 +726,10 @@ let g:unite_source_menu_menus.unite.command_candidates = [
       \       ['Unite yank history', 'call utils#uniteYankHistory()'],
       \       ['Unite jump history', 'call utils#uniteJumps()'],
       \     ]
+
+" Tag source settings
+let g:unite_source_tag_max_name_length=30
+let g:unite_source_tag_max_fname_length=100
 "}}}
 
 " -----------------------------------------------------
@@ -819,13 +825,7 @@ let g:ruby_refactoring_map_keys=0
 "}}}
 
 " -----------------------------------------------------
-" 4.11 Vim-Test settings"{{{
-" -----------------------------------------------------
-let g:test#strategy = "neovim"
-"}}}
-
-" -----------------------------------------------------
-" 4.12 Clever F settings"{{{
+" 4.11 Clever F settings"{{{
 " -----------------------------------------------------
 let g:clever_f_across_no_line=1
 let g:clever_f_smart_case=1
@@ -834,27 +834,27 @@ let g:clever_f_chars_match_any_signs=';'
 "}}}
 
 " -----------------------------------------------------
-" 4.13 Vim Markdown settings"{{{
+" 4.12 Vim Markdown settings"{{{
 " -----------------------------------------------------
 let g:vim_markdown_no_default_key_mappings=1
 let g:vim_markdown_folding_disabled=1
 "}}}
 
 " -----------------------------------------------------
-" 4.14 Vim REST console settings"{{{
+" 4.13 Vim REST console settings"{{{
 " -----------------------------------------------------
 let g:vrc_set_default_mapping=0
 let g:vrc_output_buffer_name='__RESPONSE__.rest'
 "}}}
 
 " -----------------------------------------------------
-" 4.15 Quick scope settings"{{{
+" 4.14 Quick scope settings"{{{
 " -----------------------------------------------------
 let g:qs_highlight_on_keys=['f', 'F', 't', 'T']
 "}}}
 
 " -----------------------------------------------------
-" 4.16 Deoplete autocomplete settings"{{{
+" 4.15 Deoplete autocomplete settings"{{{
 " -----------------------------------------------------
 let g:deoplete#enable_at_startup=1
 let g:deoplete#auto_completion_start_length=2
@@ -868,7 +868,7 @@ let g:deoplete#sources.scss = ['buffer', 'member', 'file', 'omni', 'ultisnips']
 "}}}
 
 " -----------------------------------------------------
-" 4.17 Ctrl-SF settings"{{{
+" 4.16 Ctrl-SF settings"{{{
 " -----------------------------------------------------
 let g:ctrlsf_default_root='project'
 let g:ctrlsf_populate_qflist=1
@@ -879,19 +879,19 @@ let g:ctrlsf_regex_pattern=1
 "}}}
 
 " -----------------------------------------------------
-" 4.18 Javascript libraries syntax settings"{{{
+" 4.17 Javascript libraries syntax settings"{{{
 " -----------------------------------------------------
 let g:used_javascript_libs = 'chai,flux,react,underscore'
 "}}}
 
 " -----------------------------------------------------
-" 4.19 Plug settings"{{{
+" 4.18 Plug settings"{{{
 " -----------------------------------------------------
 let g:plug_timeout=20
 "}}}
 
 " -----------------------------------------------------
-" 4.20 Vim-markdown settings"{{{
+" 4.19 Vim-markdown settings"{{{
 " -----------------------------------------------------
 let g:markdown_fenced_languages=[
       \'bash=sh',
@@ -903,6 +903,12 @@ let g:markdown_fenced_languages=[
       \'viml=vim',
       \'xdefaults',
       \'zsh']
+"}}}
+
+" -----------------------------------------------------
+" 4.20 Colorizer settings"{{{
+" -----------------------------------------------------
+let g:colorizer_nomap=1
 "}}}
 
 "}}}
@@ -940,7 +946,7 @@ nnoremap <silent> <leader>u :call utils#uniteSources()<CR>
 " Search between open files - [b]uffers
 nnoremap <silent> <leader>b :call utils#uniteBuffers()<CR>
 " Search in current file ou[t]line (tags in current file)
-nnoremap <silent> <leader>t :call utils#uniteOutline()<CR>
+nnoremap <silent> <leader>t :call utils#uniteTags()<CR>
 " Search in [l]ines on current buffer
 nnoremap <silent> <leader>l :call utils#uniteLineSearch()<CR>
 " Search in [y]ank history
@@ -1045,16 +1051,7 @@ nnoremap <leader>gG :CtrlSFToggle<Space>
 "}}}
 
 " -----------------------------------------------------
-" 5.10 Vim-Test "{{{
-" -----------------------------------------------------
-nnoremap ,tf :TestFile<CR>
-nnoremap ,tn :TestNearest<CR>
-nnoremap ,ta :TestSuite<CR>
-nnoremap ,tt :TestLast<CR>
-"}}}
-
-" -----------------------------------------------------
-" 5.11 Vim-Plug "{{{
+" 5.10 Vim-Plug "{{{
 " -----------------------------------------------------
 nnoremap <leader>pi :PlugInstall<CR>
 nnoremap <leader>pu :PlugUpdate<CR>
@@ -1062,7 +1059,7 @@ nnoremap <leader>pc :PlugClean<CR>
 "}}}
 
 " -----------------------------------------------------
-" 5.12 Ctrl-SF "{{{
+" 5.11 Ctrl-SF "{{{
 " -----------------------------------------------------
 let g:ctrlsf_mapping = {
       \ "next"    : "n",
@@ -1081,7 +1078,7 @@ nnoremap <silent> ,g :call utils#searchCurrentWordWithAg()<CR>
 "}}}
 
 " -----------------------------------------------------
-" 5.13 Fugitive "{{{
+" 5.12 Fugitive "{{{
 " -----------------------------------------------------
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gc :Gcommit --verbose<CR>
@@ -1096,7 +1093,7 @@ nnoremap ,C :Bonly<CR>
 "}}}
 
 " -----------------------------------------------------
-" 5.13 Gitv "{{{
+" 5.14 Gitv "{{{
 " -----------------------------------------------------
 nnoremap <leader>gh :Gitv!<CR>
 "}}}
