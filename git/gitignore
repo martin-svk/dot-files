@@ -68,3 +68,5 @@ Session.vim
 .rake_tasks
 .meteor/
 .tags
+tags
+.starscope.db
