@@ -1031,7 +1031,6 @@ nmap >a <Plug>Argumentative_MoveRight
 inoremap <silent> <expr> <Tab> utils#tabComplete()
 
 " Manually trigger tag autocomplete
-" TODO: close pum first
 inoremap <silent> <expr> <C-]> deoplete#mappings#manual_complete("tag")
 
 " <C-h>, <BS>: close popup and delete backword char
@@ -1224,6 +1223,8 @@ autocmd BufWritePost *.vim Neomake vint
 " 1. Revisit all plugins, set up 2nd level mappings.
 " 2. Remove obsolete plugins.
 " 3. Update README file.
+" 4. Find out why < behaves like there is a mapping.
+" 5. Close PUM before triggering manual tag complete
 "}}}
 
 " -----------------------------------------------------
