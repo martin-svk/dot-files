@@ -1027,10 +1027,11 @@ nmap >a <Plug>Argumentative_MoveRight
 " -----------------------------------------------------
 " 5.8 Deoplete autocomplete"{{{
 " -----------------------------------------------------
-" Select next match or trigger manual complete
+" Insert <TAB> or select next match
 inoremap <silent> <expr> <Tab> utils#tabComplete()
 
 " Manually trigger tag autocomplete
+" TODO: close pum first
 inoremap <silent> <expr> <C-]> deoplete#mappings#manual_complete("tag")
 
 " <C-h>, <BS>: close popup and delete backword char

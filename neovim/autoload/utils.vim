@@ -120,8 +120,6 @@ function! g:utils#tabComplete() abort
   else
     if pumvisible()
       return "\<C-n>"
-    else
-      return g:deoplete#mappings#manual_complete('buffer')
     endif
   endif
 endfunction
