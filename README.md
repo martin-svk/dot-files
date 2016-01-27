@@ -40,8 +40,7 @@ And which plugins I use? Currently I use about **75** plugins. Some of the most 
 * [Neomake](https://github.com/benekastah/neomake) - Linter integration (Syntastic alternative) with asynchronous support.
 * [Unite](https://github.com/Shougo/unite.vim) - Search and display information from arbitrary sources.
 * [Deoplete](https://github.com/Shougo/deoplete.nvim) - Autocomplete with Neovim asynchronous support.
-* [Vim-Test](https://github.com/janko-m/vim-test) - Best Vim plugin for running Your tests.
-* [QuickScope](https://github.com/unblevable/quick-scope) - Highlights jump characters on f,F,t,T.
+* [QuickScope](https://github.com/unblevable/quick-scope) - Highlights jump characters on f, F, t, T.
 * [Lightline](https://github.com/itchyny/lightline.vim) - Lightweight but extensible and configurable status line.
 * [Lexima](https://github.com/cohama/lexima.vim) - Auto-closing (,",' and some language constructs (ruby blocks). Dot repeat supported.
 
@@ -94,7 +93,7 @@ nnoremap L $
 vnoremap H ^
 vnoremap L g_
 
-" More logical Y (defaul was alias for yy)
+" More logical Y (default was alias for yy)
 nnoremap Y y$
 
 " Quick replay q macro
@@ -110,7 +109,7 @@ vnoremap y y`]
 vnoremap p "_dP`]
 nnoremap p p`]
 
-" Use CamelCaseMotion instead of default motions
+" Use camel-case motion instead of default motions
 map <silent> w <Plug>CamelCaseMotion_w
 map <silent> b <Plug>CamelCaseMotion_b
 map <silent> e <Plug>CamelCaseMotion_e
@@ -120,7 +119,7 @@ sunmap b
 sunmap e
 sunmap ge
 
-" Fix the cw at the end of line bug default vim has special treatment (:help cw)
+" Fix the cw at the end of line bug default Vim has special treatment (:help cw)
 nmap cw ce
 nmap dw de
 
@@ -164,11 +163,11 @@ nnoremap ,p "+p
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-" CTags navigation (:tselect to select from menu)
+" Ctags navigation (:tselect to select from menu)
 nnoremap ]t :tn<CR>
 nnoremap [t :tp<CR>
 
-" QuickFix navigation
+" Quick-fix window navigation
 nnoremap ]q :cnext<CR>
 nnoremap [q :cprevious<CR>
 
@@ -186,7 +185,7 @@ nnoremap gp `[v`]
 " Keep the cursor in place while joining lines
 nnoremap J mzJ`z
 
-" [S]plit line (sister to [J]oin lines) S is covered by cc.
+" Split line (sister to Join lines) S is covered by cc.
 nnoremap S mzi<CR><ESC>`z
 
 " Easier fold toggling
@@ -199,7 +198,7 @@ nnoremap ,s :%s///gc<Left><Left><Left>
 ### Buffer management
 
 ```VimL
-" Intelligent windows resizing using ctrl + arrow keys
+" Intelligent windows resizing using Ctrl + arrow keys
 nnoremap <silent> <C-Right> :call utils#intelligentVerticalResize('right')<CR>
 nnoremap <silent> <C-Left> :call utils#intelligentVerticalResize('left')<CR>
 nnoremap <silent> <C-Up> :resize +1<CR>
@@ -223,21 +222,15 @@ let g:deoplete#sources.vim  = ['buffer', 'member', 'file', 'ultisnips']
 let g:deoplete#sources.css  = ['buffer', 'member', 'file', 'omni', 'ultisnips']
 let g:deoplete#sources.scss = ['buffer', 'member', 'file', 'omni', 'ultisnips']
 
-" Select next match or trigger manual complete
+" Insert <TAB> or select next match
 inoremap <silent> <expr> <Tab> utils#tabComplete()
 
 " Manually trigger tag autocomplete
-inoremap <silent> <expr> <C-]> deoplete#mappings#manual_complete("tag")
+inoremap <silent> <expr> <C-]> utils#manualTagComplete()
 
-" <C-h>, <BS>: close popup and delete backword char
+" <C-h>, <BS>: close popup and delete previous char
 inoremap <expr><C-h> deolete#mappings#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> deoplete#mappings#smart_close_popup()."\<C-h>"
-
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return deoplete#mappings#close_popup() . "\<CR>"
-endfunction
 ```
 
 ### Browser and fuzzy searcher for multiple sources ([Unite](https://github.com/Shougo/unite.vim))
@@ -247,7 +240,7 @@ endfunction
 call unite#filters#matcher_default#use(['matcher_fuzzy', 'matcher_hide_current_file'])
 call unite#filters#sorter_default#use(['sorter_rank'])
 
-" Use ag if available
+" Use Ag if available
 if executable('ag')
   let g:unite_source_grep_command='ag'
   let g:unite_source_grep_default_opts='--nocolor --line-numbers --nogroup -S -C0'
@@ -266,17 +259,17 @@ call unite#custom#profile('default', 'context', {
 " Add syntax highlighting
 let g:unite_source_line_enable_highlight=1
 
-" Dont override status line
+" Don't override status line
 let g:unite_force_overwrite_statusline=0
 ```
 
-##### Unite buffer mappings
+#### Unite buffer mappings
 
 ```VimL
 " Custom mappings for the unite buffer
 autocmd FileType unite call s:unite_settings()
 function! s:unite_settings()
-  " Enable navigation with control-j and control-k in insert mode
+  " Enable navigation with <C-j> and <C-k> in insert mode
   imap <silent> <buffer> <C-j> <Plug>(unite_select_next_line)
   imap <silent> <buffer> <C-k> <Plug>(unite_select_previous_line)
   " Runs 'splits' action by <C-s> and <C-v>
@@ -321,10 +314,10 @@ let g:lightline = {
       \ }
 ```
 
-### Snippets support ([Ultisnips](https://github.com/SirVer/ultisnips))
+### Snippets support ([UltiSnips](https://github.com/SirVer/ultisnips))
 
 ```VimL
-" Disable built-in cx-ck to be able to go backward
+" Disable built-in <C-x><C-k> to be able to go backward
 inoremap <C-x><C-k> <NOP>
 let g:UltiSnipsExpandTrigger='<C-j>'
 let g:UltiSnipsListSnippets='<C-l>'
@@ -355,11 +348,11 @@ highlight TermCursor ctermfg=green guifg=green
 " Remove underline in folded lines
 hi! Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE
 
-" Listchars highlighting
+" List chars highlighting
 highlight NonText ctermfg=235 guifg=gray
 highlight SpecialKey ctermfg=235 guifg=gray
 
-" Link highlight groups to improve buftabline colors
+" Link highlight groups to improve buffer tab line colors
 hi! link BufTabLineCurrent Identifier
 hi! link BufTabLineActive Comment
 hi! link BufTabLineHidden Comment
@@ -370,7 +363,7 @@ hi! link BufTabLineFill Comment
 
 [Iceberg](./data/screenshots/iceberg.png)
 
-[Iceberg + ReactJS](./data/screenshots/iceberg_react.png)
+[Iceberg + React](./data/screenshots/iceberg_react.png)
 
 [Jellybeans + Unite file search](./data/screenshots/jellybeans_unite_file_search.png)
 
@@ -387,24 +380,14 @@ hi! link BufTabLineFill Comment
 My shell interpreter of choice. Here are some options to improve the behavior to my taste.
 
 ```zsh
-# Disable control flow (ctrl-s / ctrl-q)
+# Disable control flow (<C-s> / <C-q>)
 stty stop '' -ixoff -ixon
 
 # Set spelling correction
 setopt correct
 
-# Dont raise errors when regex nomatch fires
+# Don't raise errors when regex nomatch fires
 unsetopt nomatch
-
-# Use vman as man wrapper (Needs superman vim plugin)
-compdef vman="man"
-vman() {
-  nvim -c "SuperMan $*"
-
-  if [ "$?" != "0" ]; then
-    echo "No manual entry for $*"
-  fi
-}
 ```
 
 I am also using the excellent [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) framework.
@@ -434,7 +417,7 @@ bindkey '^[[B' history-substring-search-down
 ## Tmux
 
 I am a heavy user of tmux. I am using the [tpm](https://github.com/tmux-plugins/tpm) package manager
-and mainly it's [tmux ressurect](https://github.com/tmux-plugins/tmux-resurrect) plugin which allows me
+and mainly it's [tmux resurrect](https://github.com/tmux-plugins/tmux-resurrect) plugin which allows me
 to persist sessions on the disk.
 
 I am also using the [tmuxinator](https://github.com/tmuxinator/tmuxinator) gem to
@@ -534,8 +517,8 @@ bind P choose-buffer
 # List of plugins
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-yank' # yanking helpers
-set -g @plugin 'tmux-plugins/tmux-sessionist' # session helpers prexif + C (new session)
-set -g @plugin 'tmux-plugins/tmux-resurrect' # prefix + C-s save, C-r restore
+set -g @plugin 'tmux-plugins/tmux-sessionist' # session helpers prefix + C (new session)
+set -g @plugin 'tmux-plugins/tmux-resurrect' # prefix + <C-s> save, <C-r> restore
 set -g @plugin 'tmux-plugins/tmux-battery' # Batter percentage
 set -g @plugin 'tmux-plugins/tmux-online-status' # Online status
 
@@ -623,7 +606,7 @@ Use editor to edit bigger blocks of code when in pry (put into your pryrc):
 Pry.config.editor = 'nvim'
 ```
 
-Require rubygems in *irbrc* to have access while in IRB session (I recommend using Pry):
+Require Rubygems in *irbrc* to have access while in IRB session (I recommend using Pry):
 
 ```ruby
 require 'rubygems'
