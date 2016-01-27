@@ -669,7 +669,6 @@ let g:unite_source_menu_menus.utils = {
       \     'description' : 'Utility commands',
       \ }
 let g:unite_source_menu_menus.utils.command_candidates = [
-      \       ['Color picker', 'VCoolor'],
       \       ['Run XMPFilter', 'Annotate'],
       \       ['Format file', 'Format'],
       \       ['Run file', 'Run'],
@@ -799,13 +798,7 @@ let g:lightline = {
 "}}}
 
 " -----------------------------------------------------
-" 4.8 Color picker settings"{{{
-" -----------------------------------------------------
-let g:vcoolor_disable_mappings=1
-"}}}
-
-" -----------------------------------------------------
-" 4.9 Neomake settings"{{{
+" 4.8 Neomake settings"{{{
 " -----------------------------------------------------
 let g:neomake_verbose=0
 let g:neomake_warning_sign = {
@@ -819,13 +812,13 @@ let g:neomake_error_sign = {
 "}}}
 
 " -----------------------------------------------------
-" 4.10 Ruby refactoring settings"{{{
+" 4.9 Ruby refactoring settings"{{{
 " -----------------------------------------------------
 let g:ruby_refactoring_map_keys=0
 "}}}
 
 " -----------------------------------------------------
-" 4.11 Clever F settings"{{{
+" 4.10 Clever F settings"{{{
 " -----------------------------------------------------
 let g:clever_f_across_no_line=1
 let g:clever_f_smart_case=1
@@ -834,27 +827,27 @@ let g:clever_f_chars_match_any_signs=';'
 "}}}
 
 " -----------------------------------------------------
-" 4.12 Vim Markdown settings"{{{
+" 4.11 Vim Markdown settings"{{{
 " -----------------------------------------------------
 let g:vim_markdown_no_default_key_mappings=1
 let g:vim_markdown_folding_disabled=1
 "}}}
 
 " -----------------------------------------------------
-" 4.13 Vim REST console settings"{{{
+" 4.12 Vim REST console settings"{{{
 " -----------------------------------------------------
 let g:vrc_set_default_mapping=0
 let g:vrc_output_buffer_name='__RESPONSE__.rest'
 "}}}
 
 " -----------------------------------------------------
-" 4.14 Quick scope settings"{{{
+" 4.13 Quick scope settings"{{{
 " -----------------------------------------------------
 let g:qs_highlight_on_keys=['f', 'F', 't', 'T']
 "}}}
 
 " -----------------------------------------------------
-" 4.15 Deoplete autocomplete settings"{{{
+" 4.14 Deoplete autocomplete settings"{{{
 " -----------------------------------------------------
 let g:deoplete#enable_at_startup=1
 let g:deoplete#auto_completion_start_length=2
@@ -869,7 +862,7 @@ let g:deoplete#sources.scss = ['buffer', 'member', 'file', 'omni', 'ultisnips']
 "}}}
 
 " -----------------------------------------------------
-" 4.16 Ctrl-SF settings"{{{
+" 4.15 Ctrl-SF settings"{{{
 " -----------------------------------------------------
 let g:ctrlsf_default_root='project'
 let g:ctrlsf_populate_qflist=1
@@ -880,19 +873,19 @@ let g:ctrlsf_regex_pattern=1
 "}}}
 
 " -----------------------------------------------------
-" 4.17 Javascript libraries syntax settings"{{{
+" 4.16 Javascript libraries syntax settings"{{{
 " -----------------------------------------------------
 let g:used_javascript_libs = 'chai,flux,react,underscore'
 "}}}
 
 " -----------------------------------------------------
-" 4.18 Plug settings"{{{
+" 4.17 Plug settings"{{{
 " -----------------------------------------------------
 let g:plug_timeout=20
 "}}}
 
 " -----------------------------------------------------
-" 4.19 Vim-markdown settings"{{{
+" 4.18 Vim-markdown settings"{{{
 " -----------------------------------------------------
 let g:markdown_fenced_languages=[
       \'bash=sh',
@@ -907,7 +900,7 @@ let g:markdown_fenced_languages=[
 "}}}
 
 " -----------------------------------------------------
-" 4.20 Colorizer settings"{{{
+" 4.19 Colorizer settings"{{{
 " -----------------------------------------------------
 let g:colorizer_nomap=1
 "}}}
