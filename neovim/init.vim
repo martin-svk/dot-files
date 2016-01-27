@@ -1208,9 +1208,7 @@ autocmd BufWritePost *.vim Neomake vint
 " -----------------------------------------------------
 " 8.1 Todo {{{
 " -----------------------------------------------------
-" 1. Revisit all plugins, set up 2nd level mappings.
-" 2. Remove obsolete plugins.
-" 3. Update README file.
+" 1. Update README file.
 "}}}
 
 " -----------------------------------------------------
