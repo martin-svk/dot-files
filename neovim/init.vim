@@ -469,7 +469,7 @@ silent! unmap ]%
 xnoremap <  <gv
 xnoremap >  >gv
 
-" Cancel terminal mode with ,escape
+" Terminal mode mappings
 if has('nvim')
   tnoremap <ESC> <C-\><C-n>
   tnoremap ,<ESC> <ESC>
@@ -974,7 +974,7 @@ nnoremap <silent> <leader>hm :call utils#uniteMappings()<CR>
 " Disable built-in cx-ck to be able to go backward
 inoremap <C-x><C-k> <NOP>
 let g:UltiSnipsExpandTrigger='<C-j>'
-let g:UltiSnipsListSnippets='<NOP>'
+let g:UltiSnipsListSnippets='<C-l>'
 let g:UltiSnipsJumpForwardTrigger='<C-j>'
 let g:UltiSnipsJumpBackwardTrigger='<C-k>'
 "}}}
@@ -1223,8 +1223,7 @@ autocmd BufWritePost *.vim Neomake vint
 " 1. Revisit all plugins, set up 2nd level mappings.
 " 2. Remove obsolete plugins.
 " 3. Update README file.
-" 4. Find out why < behaves like there is a mapping.
-" 5. Close PUM before triggering manual tag complete
+" 4. Close PUM before triggering manual tag complete
 "}}}
 
 " -----------------------------------------------------
