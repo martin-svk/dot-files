@@ -88,7 +88,7 @@ function! g:utils#stripTrailingWhitespaces() abort
   let l:col = col('.')
 
   " Do the business:
-  %s/\s\+$//e
+  normal! %s/\s\+$//e
 
   " Clean up: restore previous search history, and cursor position
   let @/ = l:lastSearch
@@ -216,6 +216,8 @@ endfunction
 " Format function
 " Needs: npm install js-beautify, gem install rbeautify, python
 function! g:utils#formatFile() abort
+  let l:line = line('.')
+  let l:col = col('.')
   let l:command_prefix = '%!'
 
   if &filetype ==? 'javascript.jsx'
@@ -230,12 +232,14 @@ function! g:utils#formatFile() abort
     let l:command = 'rbeautify -s -c 2'
   else
     " Basic vim format fallback
-    normal mzgg=G`z
+    normal! gg=G
   endif
 
   if exists('l:command')
     execute l:command_prefix . l:command
   endif
+
+  call cursor(l:line, l:col)
 endfunction
 
 " Annotate file function (only ruby support for now)
