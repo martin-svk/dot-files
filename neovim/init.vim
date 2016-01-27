@@ -427,20 +427,21 @@ nnoremap L $
 vnoremap H ^
 vnoremap L g_
 
-" More logical Y (defaul was alias for yy)
+" More logical Y (default was alias for yy)
 nnoremap Y y$
 
-" Quick replay q macro
+" Quick replay 'q' macro
 nnoremap Q @q
 
 " Don't yank to default register when changing something
 nnoremap c "xc
 xnoremap c "xc
 
-" After block yank and paste, move cursor to the end of operated text
-" Also, don't copy over-pasted text in visual mode
+" After block yank and paste, move cursor to the end of operated text and don't override register
 vnoremap y y`]
 vnoremap p "_dP`]
+
+" Also, don't copy over-pasted text in visual mode
 nnoremap p p`]
 
 " Use CamelCaseMotion instead of default motions

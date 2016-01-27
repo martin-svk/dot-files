@@ -88,7 +88,7 @@ function! g:utils#stripTrailingWhitespaces() abort
   let l:col = col('.')
 
   " Do the business:
-  normal! %s/\s\+$//e
+  execute '%s/\s\+$//e'
 
   " Clean up: restore previous search history, and cursor position
   let @/ = l:lastSearch
