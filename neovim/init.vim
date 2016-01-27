@@ -728,8 +728,8 @@ let g:unite_source_menu_menus.unite.command_candidates = [
       \     ]
 
 " Tag source settings
-let g:unite_source_tag_max_name_length=30
-let g:unite_source_tag_max_fname_length=100
+let g:unite_source_tag_max_name_length=40
+let g:unite_source_tag_max_fname_length=50
 "}}}
 
 " -----------------------------------------------------
