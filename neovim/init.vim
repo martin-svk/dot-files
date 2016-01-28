@@ -331,9 +331,7 @@ set wildignore+=*vim/backups*
 set wildignore+=*sass-cache*
 set wildignore+=*DS_Store*
 set wildignore+=*.gem
-set wildignore+=log/**
 set wildignore+=tmp/**
-set wildignore+=*.png,*.jpg,*.gif
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
@@ -738,6 +736,7 @@ let g:NERDTreeWinSize=50
 let g:NERDTreeAutoDeleteBuffer=1
 let g:NERDTreeShowHidden=1
 let g:NERDTreeHighlightCursorline=0
+let g:NERDTreeRespectWildIgnore=1
 "}}}
 
 " -----------------------------------------------------
