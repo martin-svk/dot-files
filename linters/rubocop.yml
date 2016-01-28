@@ -5,8 +5,9 @@ Metrics/LineLength:
   Max: 120
 Style/MultilineOperationIndentation:
   EnforcedStyle: indented
+Rails:
+  Enabled: true
 AllCops:
-  RunRailsCops: true
   Include:
     - '**/Rakefile'
     - '**/config.ru'
