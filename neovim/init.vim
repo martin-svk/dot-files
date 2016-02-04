@@ -1096,7 +1096,7 @@ syntax on
 "}}}
 
 " Color scheme based on time {{{
-if strftime("%H") < 16
+if strftime("%H") < 13
   set background=dark
   colorscheme hybrid
 else
