@@ -30,7 +30,7 @@ DISABLE_AUTO_TITLE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 plugins=(adb bgnotify bower bundler common-aliases docker extract gem gitfast gulp heroku httpie jsontools meteor mix
-         npm rails rbenv redis-cli rsync tmux tmuxinator vagrant zsh-syntax-highlighting)
+         npm rails rbenv redis-cli rsync tmux tmuxinator vagrant zsh-syntax-highlighting zsh-autosuggestions)
 
 # =====================================================================================================================
 # Plugins settings
@@ -54,6 +54,10 @@ source $ZSH/plugins/history-substring-search/history-substring-search.zsh
 # History substring search plugin binding
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+
+# Autosuggestions + Substring search config
+ZSH_AUTOSUGGEST_CLEAR_WIDGETS=("${(@)ZSH_AUTOSUGGEST_CLEAR_WIDGETS:#(up|down)-line-or-history}")
+ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(history-substring-search-up history-substring-search-down)
 
 # =====================================================================================================================
 # My additional aliases
@@ -148,53 +152,4 @@ fi
 # Heroku Toolbelt
 if [ -d /usr/local/heroku/bin ]; then
   export PATH=/usr/local/heroku/bin:$PATH
-fi
-
-if [ -d $HOME/.fzf ]; then
-  # Use ~~ as the trigger sequence instead of the default **
-  export FZF_COMPLETION_TRIGGER='~~'
-
-  export FZF_DEFAULT_OPTS='
-  --multi
-  --ansi
-  --reverse
-  --bind ctrl-d:page-down,ctrl-u:page-up
-  '
-
-  # Setting ag as the default source for fzf
-  export FZF_DEFAULT_COMMAND='ag -g ""'
-
-  # To apply the command to CTRL-T as well
-  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-fi
-
-# =====================================================================================================================
-# Functions
-# =====================================================================================================================
-
-if [ -d $HOME/.fzf ]; then
-  # cdf to selected directory
-  cdf() {
-    local dir
-    dir=$(find ${1:-*} -path '*/\.*' -prune \
-                    -o -type d -print 2> /dev/null | fzf +m) &&
-    cd "$dir"
-  }
-
-  # cdff - cd into the directory of the selected file
-  cdff() {
-    local file
-    local dir
-    file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
-  }
-
-  # kill process
-  killf() {
-    pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
-
-    if [ "x$pid" != "x" ]
-    then
-      kill -${1:-9} $pid
-    fi
-  }
 fi
