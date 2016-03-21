@@ -1113,7 +1113,7 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 highlight TermCursor ctermfg=green guifg=green
 "}}}
 
-" Listchars highlighting{{{
+" Listchars highlighting {{{
 highlight NonText ctermfg=235 guifg=gray
 highlight SpecialKey ctermfg=235 guifg=gray
 "}}}
