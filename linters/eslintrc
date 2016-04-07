@@ -1,6 +1,5 @@
 # vim: ft=json
 {
-    "parser": "babel-eslint",
     "rules": {
         "indent": [
             2,
@@ -28,9 +27,12 @@
         "browser": true,
         "node": true
     },
-    "ecmaFeatures": {
-        "jsx": true,
-        "modules": true
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "sourceType": "module"
     },
     "plugins": [
         "react"
