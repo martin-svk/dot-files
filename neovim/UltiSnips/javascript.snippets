@@ -91,3 +91,26 @@ endsnippet
 snippet dbg "debugger" b
 debugger;
 endsnippet
+
+# ===============================================
+# Comment docs
+# ===============================================
+snippet cdoc "class documentation"
+/**
+ * ${1:Class description}
+ */
+endsnippet
+
+snippet fdoc "function documentation"
+/**
+ * ${1:Function description}
+ */
+endsnippet
+
+snippet pdoc "param documentation"
+@param {${1:name}: ${2:type}} ${3:Example or description}
+endsnippet
+
+snippet rdoc "return documentation"
+@return {${1:type}} ${2:Example or description}
+endsnippet
