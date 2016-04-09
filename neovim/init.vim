@@ -190,6 +190,8 @@ Plug 'kana/vim-textobj-entire'
 Plug 'nelstrom/vim-textobj-rubyblock'
 " Comment text object (vac)
 Plug 'glts/vim-textobj-comment'
+" Improved targets line cin) next parens
+Plug 'wellle/targets.vim'
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
