@@ -615,6 +615,9 @@ nnoremap <silent> ,a :Annotate<CR>
 
 " Profile
 command! Profile :call utils#profile()
+
+" Retab
+command! Retab :call utils#retabToFourSpaces()
 "}}}
 
 "}}}
