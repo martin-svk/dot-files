@@ -2,7 +2,7 @@
 # Components declarations
 # ===============================================
 snippet comp "react component ES6" b
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 
 class $1 extends React.Component {
 	constructor(props) {
@@ -16,15 +16,15 @@ class $1 extends React.Component {
 	}
 }
 
-$1.contextTypes = {};
 $1.propTypes = {};
 $1.defaultProps = {};
+$1.contextTypes = {};
 
 export default $1;
 endsnippet
 
 snippet fcomp "stateless, function component" b
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 function ${1:Component}(props) {
 	return (
@@ -32,9 +32,9 @@ function ${1:Component}(props) {
 	);
 }
 
-$1.contextTypes = {};
 $1.propTypes = {};
 $1.defaultProps = {};
+$1.contextTypes = {};
 
 export default $1;
 endsnippet
@@ -61,7 +61,7 @@ contextTypes = {
 endsnippet
 
 snippet prop "one prop type definition" w
-React.PropTypes.${1:object}${2:.isRequired}
+PropTypes.${1:object}${2:.isRequired}
 endsnippet
 
 snippet gcc "get child context" w
