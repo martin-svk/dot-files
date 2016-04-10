@@ -1,0 +1,23 @@
+snippet rhtml "react html skeleton"
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="author" content="">
+		<title>$1</title>
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<!-- React entry point -->
+		<div id="${2:root}"></div>
+
+		<!-- Scripts -->
+		<script type="text/javascript">__REACT_DEVTOOLS_GLOBAL_HOOK__ = parent.__REACT_DEVTOOLS_GLOBAL_HOOK__</script>
+		<script type="text/javascript" src="${3:dist/app}.js"></script>
+	</body>
+</html>
+endsnippet
