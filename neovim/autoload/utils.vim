@@ -305,3 +305,9 @@ endfunction
 function! g:utils#searchCurrentWordWithAg() abort
   execute 'CtrlSF' expand('<cword>')
 endfunction
+
+" Reset tabs to 4 spaces
+function! g:utils#retabToFourSpaces() abort
+  setlocal tabstop=4 shiftwidth=4 expandtab
+  retab
+endfunction
