@@ -26,12 +26,16 @@
             4
         ],
         "jsx-a11y/img-uses-alt": 2,
-        "jsx-a11y/onclick-uses-role": 2,
+        "jsx-a11y/label-uses-for": 2,
         "jsx-a11y/mouse-events-map-to-key-events": 2,
         "jsx-a11y/no-access-key": 2,
-        "jsx-a11y/label-uses-for": 2,
         "jsx-a11y/no-hash-href": 2,
+        "jsx-a11y/onclick-uses-role": 2,
         "jsx-a11y/valid-aria-role": 2,
+        "jsx-quotes": [
+            2,
+            "prefer-double"
+        ],
         "linebreak-style": [
             2,
             "unix"
@@ -40,6 +44,13 @@
             1,
             "single"
         ],
+        "react/jsx-no-bind": 2,
+        "react/jsx-pascal-case": 2,
+        "react/prefer-es6-class": 2,
+        "react/prefer-stateless-function": 1,
+        "react/require-render-return": 2,
+        "react/self-closing-comp": 2,
+        "react/wrap-multilines": 2,
         "semi": [
             2,
             "always"
