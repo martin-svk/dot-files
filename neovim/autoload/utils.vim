@@ -115,10 +115,13 @@ endfunction
 " Tab wrapper
 function! g:utils#tabComplete() abort
   let l:col = col('.') - 1
-  if !l:col || getline('.')[l:col - 1] !~# '\k'
-    return "\<TAB>"
+
+  if pumvisible()
+    return "\<C-n>"
   else
-    if pumvisible()
+    if !l:col || getline('.')[l:col - 1] !~# '\k'
+      return "\<TAB>"
+    else
       return "\<C-n>"
     endif
   endif
