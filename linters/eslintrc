@@ -44,19 +44,21 @@
             2,
             "unix"
         ],
+        "no-console": 1,
         "no-unused-vars": [
             2,
             {
                 "args": "all",
                 "argsIgnorePattern": "^_",
-                "vars": "local"
+                "vars": "local",
+                "varsIgnorePattern": "^_"
             }
         ],
         "quotes": [
             2,
             "single"
         ],
-        "react/jsx-handler-names": 2,
+        "react/jsx-handler-names": 1,
         "react/jsx-key": 2,
         "react/jsx-no-duplicate-props": 2,
         "react/jsx-no-undef": 2,
@@ -67,14 +69,14 @@
         "react/no-did-mount-set-state": 2,
         "react/no-did-update-set-state": 2,
         "react/no-direct-mutation-state": 2,
-        "react/no-string-refs": 2,
+        "react/no-string-refs": 1,
         "react/no-unknown-property": 2,
         "react/prefer-es6-class": 2,
         "react/prefer-stateless-function": 2,
         "react/prop-types": 2,
         "react/react-in-jsx-scope": 2,
         "react/self-closing-comp": 2,
-        "react/sort-prop-types": 2,
+        "react/sort-prop-types": 1,
         "react/wrap-multilines": 2,
         "semi": [
             2,
