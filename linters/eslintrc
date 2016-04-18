@@ -5,6 +5,10 @@
         "es6": true,
         "node": true
     },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
     "globals": {
         "module": true,
         "require": true
@@ -40,14 +44,37 @@
             2,
             "unix"
         ],
+        "no-unused-vars": [
+            2,
+            {
+                "args": "all",
+                "argsIgnorePattern": "^_",
+                "vars": "local"
+            }
+        ],
         "quotes": [
-            1,
+            2,
             "single"
         ],
+        "react/jsx-handler-names": 2,
+        "react/jsx-key": 2,
+        "react/jsx-no-duplicate-props": 2,
+        "react/jsx-no-undef": 2,
         "react/jsx-pascal-case": 2,
+        "react/jsx-uses-react": true,
+        "react/jsx-uses-vars": true,
+        "react/no-deprecated": 2,
+        "react/no-did-mount-set-state": 2,
+        "react/no-did-update-set-state": 2,
+        "react/no-direct-mutation-state": 2,
+        "react/no-string-refs": 2,
+        "react/no-unknown-property": 2,
         "react/prefer-es6-class": 2,
-        "react/prefer-stateless-function": 1,
+        "react/prefer-stateless-function": 2,
+        "react/prop-types": 2,
+        "react/react-in-jsx-scope": 2,
         "react/self-closing-comp": 2,
+        "react/sort-prop-types": 2,
         "react/wrap-multilines": 2,
         "semi": [
             2,
