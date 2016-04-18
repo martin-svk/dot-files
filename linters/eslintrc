@@ -33,7 +33,7 @@
         "jsx-a11y/label-uses-for": 2,
         "jsx-a11y/mouse-events-map-to-key-events": 2,
         "jsx-a11y/no-access-key": 2,
-        "jsx-a11y/no-hash-href": 2,
+        "jsx-a11y/no-hash-href": 1,
         "jsx-a11y/onclick-uses-role": 2,
         "jsx-a11y/valid-aria-role": 2,
         "jsx-quotes": [
