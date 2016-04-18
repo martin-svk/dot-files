@@ -539,6 +539,9 @@ nnoremap ,/ /<CR>
 
 " Start reverse search on current word under the cursor
 nnoremap ,? ?<CR>
+
+" Faster sort
+vnoremap ,s :!sort<CR>
 "}}}
 
 " -----------------------------------------------------
