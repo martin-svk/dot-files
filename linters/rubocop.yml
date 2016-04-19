@@ -1,4 +1,7 @@
 # gem install rubocop
+# gem install rubocop-rspec
+require: rubocop-rspec
+
 Documentation:
   Enabled: false
 Metrics/LineLength:
@@ -8,11 +11,26 @@ Style/MultilineOperationIndentation:
 Rails:
   Enabled: true
 AllCops:
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.2
   Include:
-    - '**/Rakefile'
+    - '**/*.gemspec'
+    - '**/*.podspec'
+    - '**/*.jbuilder'
+    - '**/*.rake'
+    - '**/*.opal'
     - '**/config.ru'
+    - '**/Gemfile'
+    - '**/Rakefile'
+    - '**/Capfile'
+    - '**/Guardfile'
+    - '**/Podfile'
+    - '**/Thorfile'
+    - '**/Vagrantfile'
+    - '**/Berksfile'
+    - '**/Cheffile'
+    - '**/Vagabondfile'
   Exclude:
     - 'db/**/*'
     - 'config/**/*'
     - 'script/**/*'
+    - 'vendor/**/*'
