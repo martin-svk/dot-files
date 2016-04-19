@@ -47,7 +47,15 @@ end
 endsnippet
 
 snippet it "it block"
-it 'should ${1}' do
+it '${1}' do
 	$2
 end
+endsnippet
+
+snippet exp "expect to"
+expect(${1:expression}).to $2
+endsnippet
+
+snippet expn "expect to no"
+expect(${1:expression}).to_not $2
 endsnippet
