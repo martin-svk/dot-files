@@ -29,13 +29,14 @@
             2,
             4
         ],
-        "jsx-a11y/img-uses-alt": 2,
-        "jsx-a11y/label-uses-for": 2,
-        "jsx-a11y/mouse-events-map-to-key-events": 2,
+        "jsx-a11y/aria-props": 2,
+        "jsx-a11y/aria-role": 2,
+        "jsx-a11y/href-no-hash": 1,
+        "jsx-a11y/img-has-alt": 2,
+        "jsx-a11y/label-has-for": 2,
+        "jsx-a11y/mouse-events-have-key-events": 2,
         "jsx-a11y/no-access-key": 2,
-        "jsx-a11y/no-hash-href": 1,
-        "jsx-a11y/onclick-uses-role": 2,
-        "jsx-a11y/valid-aria-role": 2,
+        "jsx-a11y/onclick-has-role": 2,
         "jsx-quotes": [
             2,
             "prefer-double"
