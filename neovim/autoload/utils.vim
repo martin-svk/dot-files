@@ -217,7 +217,7 @@ function! g:utils#uniteMappings() abort
 endfunction
 
 " Format function
-" Needs: npm install js-beautify, gem install rbeautify, python
+" Needs: npm install js-beautify, gem install ruby-beautify, python
 function! g:utils#formatFile() abort
   let l:line = line('.')
   let l:col = col('.')
@@ -232,7 +232,7 @@ function! g:utils#formatFile() abort
   elseif &filetype ==? 'json'
     let l:command = 'python -m json.tool'
   elseif &filetype ==? 'ruby'
-    let l:command = 'rbeautify -s -c 2'
+    let l:command = 'ruby-beautify -c 2 -s'
   else
     " Basic vim format fallback
     normal! gg=G
