@@ -60,6 +60,7 @@ alias sspgsql='sudo service postgresql start'
 # Applications
 alias g='git'
 alias v='vim'
+alias d='docker'
 alias msql='mysql -uroot -p'
 
 # Rails
