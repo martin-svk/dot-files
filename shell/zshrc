@@ -97,9 +97,7 @@ alias ws='http-server -c-1 -p 3000 -o'
 # ------------------------------------------
 # SSH servers
 # ------------------------------------------
-alias s-wr='ssh root@martintoma.com'
-alias s-wd='ssh deploy@martintoma.com'
-alias s-wc='ssh root@46.101.97.20'
+alias sshm='ssh root@martintoma.com'
 
 # ------------------------------------------
 # Language specific
