@@ -83,6 +83,7 @@ alias sselastic='sudo service elasticsearch start'
 # ------------------------------------------
 # Applications
 # ------------------------------------------
+alias d='docker'
 alias v='nvim'
 alias g='git'
 alias f='ranger'
@@ -98,6 +99,7 @@ alias ws='http-server -c-1 -p 3000 -o'
 # ------------------------------------------
 alias s-wr='ssh root@martintoma.com'
 alias s-wd='ssh deploy@martintoma.com'
+alias s-wc='ssh root@46.101.97.20'
 
 # ------------------------------------------
 # Language specific
