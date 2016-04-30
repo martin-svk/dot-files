@@ -505,7 +505,7 @@ vnoremap K :m '<-2<CR>gv=gv
 nnoremap ]t :tn<CR>
 nnoremap [t :tp<CR>
 nnoremap ,ts :ts<CR>
-nnoremap ,tg :GenerateTags<CR>
+nnoremap ,tg :GTags<CR>
 
 " QuickFix navigation
 nnoremap ]q :cnext<CR>
@@ -603,7 +603,7 @@ cnoremap qq qall
 " -----------------------------------------------------
 
 " Generate tags definitions
-command! GenerateTags :call utils#generateCtags()
+command! GTags :call utils#generateCtags()
 
 " Open notes
 command! Notes :call utils#openNotes()
@@ -681,7 +681,7 @@ let g:unite_source_menu_menus.utils.command_candidates = [
       \       ['Run XMPFilter', 'Annotate'],
       \       ['Format file', 'Format'],
       \       ['Run file', 'Run'],
-      \       ['Generate Ctags', 'GenerateTags'],
+      \       ['Generate Ctags', 'GTags'],
       \       ['Show notes', 'Notes'],
       \     ]
 
