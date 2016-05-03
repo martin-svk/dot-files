@@ -11,7 +11,7 @@ Style/MultilineOperationIndentation:
 Rails:
   Enabled: true
 AllCops:
-  TargetRubyVersion: 2.2
+  TargetRubyVersion: 2.3
   Include:
     - '**/*.gemspec'
     - '**/*.podspec'
