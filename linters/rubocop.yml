@@ -8,6 +8,8 @@ Metrics/LineLength:
   Max: 120
 Style/MultilineOperationIndentation:
   EnforcedStyle: indented
+Style/FrozenStringLiteralComment:
+  Enabled: false
 Rails:
   Enabled: true
 AllCops:
