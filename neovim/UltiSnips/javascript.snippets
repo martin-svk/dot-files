@@ -36,11 +36,13 @@ endsnippet
 
 snippet switch "switch case statement" b
 switch (${1:variable}) {
-case ${2:value}:
-	$3
-	break;
-default:
-	return;
+	case ${2:value}: {
+		$3
+		break;
+	}
+	default: {
+		return;
+	}
 }
 endsnippet
 

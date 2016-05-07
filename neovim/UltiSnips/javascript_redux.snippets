@@ -5,18 +5,18 @@ snippet mstp "Map state to props (Redux)"
 const mapStateToProps = (state, _ownProps) => {
 	return {
 		${1:prop}: state.prop
-	}
-}
+	};
+};
 endsnippet
 
 snippet mdtp "Map dispatch to props (Redux)"
 const mapDispatchToProps = (dispatch, ownProps) => {
 	return {
 		onEvent: () => {
-			dispatch(${1:action(ownProps.prop)})
+			dispatch(${1:action(ownProps.prop)});
 		}
-	}
-}
+	};
+};
 endsnippet
 
 snippet action "Redux action creator"
@@ -96,4 +96,28 @@ const ${1:personReducer} = (state = defaultState, action) => {
 };
 
 export default $1;
+endsnippet
+
+snippet selector "Redux state selector"
+const ${1:selectorName} = (state) => state.path.to.object
+endsnippet
+
+snippet reselector "Redux computed state re-selector (using reselect)"
+import { createSelector } from 'reselect'
+import { todosSelector } from 'selectors/todosSelector';
+import { visibilitySelector } from 'selectors/visibilitySelector';
+
+export const ${1:computedSelectorName} = createSelector(
+	[ ${2:todosSelector}, ${3:visibilitySelector} ],
+	($2, $3) => {
+		switch ($3) {
+		case 'SHOW_ALL':
+			return $2
+		case 'SHOW_COMPLETED':
+			return $2.filter(t => t.completed)
+		case 'SHOW_ACTIVE':
+			return $2.filter(t => !t.completed)
+		}
+	}
+)
 endsnippet

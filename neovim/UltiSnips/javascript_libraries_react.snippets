@@ -1,7 +1,7 @@
 # ===============================================
 # Components declarations
 # ===============================================
-snippet comp "react component ES6" b
+snippet comp "React component6" b
 import React, { Component, PropTypes } from 'react';
 
 class $1 extends Component {
@@ -23,7 +23,7 @@ $1.contextTypes = {};
 export default $1;
 endsnippet
 
-snippet fcomp "stateless, function component" b
+snippet fcomp "React stateless, function component" b
 import React, { PropTypes } from 'react';
 
 function ${1:Component}(props) {
@@ -37,6 +37,81 @@ $1.defaultProps = {};
 $1.contextTypes = {};
 
 export default $1;
+endsnippet
+
+# ===============================================
+# Containers declarations
+# ===============================================
+
+snippet cont "React (Redux) container component" b
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { action } from 'actions';
+
+class $1 extends Component {
+	constructor(props) {
+		super(props);
+	}
+
+	render() {
+		return (
+			${3:<Data data={this.props.data} />}
+		);
+	}
+}
+
+const mapStateToProps = function mapStateToProps(state) {
+	return {
+		data: state.data,
+	};
+};
+
+const mapDispatchToProps = (dispatch, _ownProps) => {
+	return {
+		onEvent: () => {
+			dispatch(action());
+		}
+	};
+};
+
+$1.propTypes = {};
+$1.defaultProps = {};
+$1.contextTypes = {};
+
+export default connect(mapStateToProps, mapDispatchToProps)($1);
+endsnippet
+
+snippet fcont "React (Redux) stateless, function container" b
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { action } from 'actions';
+
+function ${1:Component}(props) {
+	const { ${2:prop} } = props.$2;
+	return (
+		${3:<Data data={data} />}
+	);
+}
+
+const mapStateToProps = function mapStateToProps(state) {
+	return {
+		data: state.data,
+	};
+};
+
+const mapDispatchToProps = (dispatch, _ownProps) => {
+	return {
+		onEvent: () => {
+			dispatch(action());
+		}
+	};
+};
+
+$1.propTypes = {};
+$1.defaultProps = {};
+$1.contextTypes = {};
+
+export default connect(mapStateToProps, mapDispatchToProps)($1);
 endsnippet
 
 # ===============================================
