@@ -68,8 +68,6 @@ Plug 'tpope/vim-bundler', { 'for': ['ruby', 'eruby', 'haml', 'slim'] }
 
 " JS syntax
 Plug 'jelera/vim-javascript-syntax'
-" JS libs syntax (React, Angular)
-Plug 'othree/javascript-libraries-syntax.vim'
 " JSX syntax (needs vim-javascript for indentation)
 Plug 'mxw/vim-jsx' | Plug 'pangloss/vim-javascript'
 " Typescript syntax
@@ -885,19 +883,13 @@ let g:ctrlsf_regex_pattern=1
 "}}}
 
 " -----------------------------------------------------
-" 4.16 Javascript libraries syntax settings {{{
-" -----------------------------------------------------
-let g:used_javascript_libs = 'chai,flux,react,underscore'
-"}}}
-
-" -----------------------------------------------------
-" 4.17 Plug settings {{{
+" 4.16 Plug settings {{{
 " -----------------------------------------------------
 let g:plug_timeout=20
 "}}}
 
 " -----------------------------------------------------
-" 4.18 Vim-markdown settings {{{
+" 4.17 Vim-markdown settings {{{
 " -----------------------------------------------------
 let g:markdown_fenced_languages=[
       \'bash=sh',
@@ -912,7 +904,7 @@ let g:markdown_fenced_languages=[
 "}}}
 
 " -----------------------------------------------------
-" 4.19 Colorizer settings {{{
+" 4.18 Colorizer settings {{{
 " -----------------------------------------------------
 let g:colorizer_nomap=1
 "}}}
