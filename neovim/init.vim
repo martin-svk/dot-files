@@ -66,10 +66,12 @@ Plug 'tpope/vim-bundler', { 'for': ['ruby', 'eruby', 'haml', 'slim'] }
 " JS (ES6, React) {{{
 " ---------------------------------------------------------------------------------------------------------------------
 
-" JS syntax
+" JS basic support (indent, etc.)
+Plug 'pangloss/vim-javascript'
+" JS syntax (keywords, DOM, etc.)
 Plug 'jelera/vim-javascript-syntax'
-" JSX syntax (needs vim-javascript for indentation)
-Plug 'mxw/vim-jsx' | Plug 'pangloss/vim-javascript'
+" JSX syntax
+Plug 'mxw/vim-jsx'
 " Typescript syntax
 Plug 'leafgarland/typescript-vim'
 " JSON syntax
