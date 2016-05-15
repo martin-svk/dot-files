@@ -96,8 +96,8 @@ Plug 'lilydjwg/colorizer', { 'for': ['css', 'sass', 'scss', 'less', 'html', 'xht
 
 " Elixir syntax
 Plug 'elixir-lang/vim-elixir'
-" Elm syntax
-Plug 'lambdatoast/elm.vim'
+" Elm support
+Plug 'ElmCast/elm-vim'
 " Yaml indentation
 Plug 'martin-svk/vim-yaml'
 " Markdown syntax
@@ -909,6 +909,13 @@ let g:markdown_fenced_languages=[
 " 4.18 Colorizer settings {{{
 " -----------------------------------------------------
 let g:colorizer_nomap=1
+"}}}
+
+" -----------------------------------------------------
+" 4.19 Elm-vim settings {{{
+" -----------------------------------------------------
+let g:elm_format_autosave=0
+let g:elm_setup_keybindings=0
 "}}}
 
 "}}}
