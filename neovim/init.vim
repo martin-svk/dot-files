@@ -860,7 +860,6 @@ let g:qs_highlight_on_keys=['f', 'F', 't', 'T']
 " -----------------------------------------------------
 let g:deoplete#enable_at_startup=1
 let g:deoplete#enable_refresh_always=1
-let g:deoplete#auto_complete_start_length=2
 let g:deoplete#file#enable_buffer_path=1
 
 let g:deoplete#sources={}
