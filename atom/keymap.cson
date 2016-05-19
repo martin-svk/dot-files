@@ -28,6 +28,7 @@
   # Common tasks
   ', w': 'core:save'
   ', q': 'core:close'
+  ', c': 'core:close'
   ', f': 'atom-beautify:beautify-editor'
   'up': 'pane:increase-size'
   'down': 'pane:decrease-size'
