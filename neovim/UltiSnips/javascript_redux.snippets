@@ -10,10 +10,10 @@ const mapStateToProps = (state, _ownProps) => {
 endsnippet
 
 snippet mdtp "Map dispatch to props (Redux)"
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch, _ownProps) => {
 	return {
 		onEvent: () => {
-			dispatch(${1:action(ownProps.prop)});
+			dispatch(${1:action()});
 		}
 	};
 };
@@ -24,6 +24,14 @@ export const ${1:actionName} = () => {
 	return {
 		type: ActionTypes.${2:ACTION_TYPE},
 		payload: $3
+	};
+};
+endsnippet
+
+snippet aaction "Redux thunk async action creator"
+export const ${1:actionName} = () => {
+	return (dispatch, getState) => {
+		$2
 	};
 };
 
