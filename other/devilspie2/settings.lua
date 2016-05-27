@@ -15,7 +15,7 @@ elseif (get_application_name()=="xterm") then
 elseif (get_application_name()=="Android Studio") then
    set_window_workspace(3);
 -- Atom
-elseif (get_application_name()=="Atom") then
+elseif (string.find(get_application_name(), "Atom")) then
    set_window_workspace(3);
    maximize();
 -- SmartGit
