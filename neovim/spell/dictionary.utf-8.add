@@ -168,3 +168,7 @@ nvim
 Rubygems
 XTerm
 param
+transpiler
+memoization
+stylesheets
+subfolder
