@@ -72,12 +72,6 @@ snippet strict "enable strict mode" b
 'use strict';
 endsnippet
 
-snippet /* "block comment" b
-/**
- * ${1:Description of class or function}
- */
-endsnippet
-
 snippet req "require statement" b
 require('$1');
 endsnippet
@@ -92,27 +86,4 @@ endsnippet
 
 snippet dbg "debugger" b
 debugger;
-endsnippet
-
-# ===============================================
-# Comment docs
-# ===============================================
-snippet cdoc "class documentation"
-/**
- * ${1:Class description}
- */
-endsnippet
-
-snippet fdoc "function documentation"
-/**
- * ${1:Function description}
- */
-endsnippet
-
-snippet pdoc "param documentation"
-@param {${1:name}: ${2:type}} ${3:Example or description}
-endsnippet
-
-snippet rdoc "return documentation"
-@return {${1:type}} ${2:Example or description}
 endsnippet

@@ -76,6 +76,8 @@ Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
 " JSON syntax
 Plug 'sheerun/vim-json'
+" JS Documentation comments
+Plug 'heavenshell/vim-jsdoc', { 'on': ['JsDoc'] }
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
@@ -190,6 +192,8 @@ Plug 'kana/vim-textobj-entire'
 Plug 'nelstrom/vim-textobj-rubyblock'
 " Comment text object (vac)
 Plug 'glts/vim-textobj-comment'
+" XML attribute
+Plug 'whatyouhide/vim-textobj-xmlattr'
 " Improved targets line cin) next parens
 Plug 'wellle/targets.vim'
 "}}}
@@ -915,6 +919,14 @@ let g:colorizer_nomap=1
 " -----------------------------------------------------
 let g:elm_format_autosave=0
 let g:elm_setup_keybindings=0
+"}}}
+
+" -----------------------------------------------------
+" 4.20 JsDoc settings {{{
+" -----------------------------------------------------
+let g:jsdoc_allow_input_prompt=1
+let g:jsdoc_input_description=1
+let g:jsdoc_enable_es6=1
 "}}}
 
 "}}}
