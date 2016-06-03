@@ -1,0 +1,41 @@
+{
+    "animation_enabled": false,
+    "bold_folder_labels": true,
+    "caret_style": "wide",
+    "color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
+    "default_line_ending": "unix",
+    "drag_text": false,
+    "draw_indent_guides": false,
+    "enable_tab_scrolling": false,
+    "folder_exclude_patterns": [
+        ".svn",
+        ".git",
+        ".hg",
+        "CVS",
+        "node_modules",
+        ".meteor"
+    ],
+    "font_face": "Droid Sans Mono",
+    "font_options": [
+        "bold"
+    ],
+    "font_size": 9,
+    "highlight_line": true,
+    "highlight_modified_tabs": true,
+    "ignored_packages": [
+        "Vintage"
+    ],
+    "line_padding_bottom": 1,
+    "line_padding_top": 1,
+    "preview_on_click": false,
+    "remember_full_screen": true,
+    "rulers": [
+        120
+    ],
+    "show_encoding": true,
+    "show_line_endings": true,
+    "translate_tabs_to_spaces": true,
+    "tree_animation_enabled": false,
+    "trim_trailing_white_space_on_save": true,
+    "vintageous_use_ctrl_keys": true
+}
