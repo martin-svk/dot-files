@@ -66,6 +66,8 @@ Plug 'tpope/vim-bundler', { 'for': ['ruby', 'eruby', 'haml', 'slim'] }
 " JS (ES6, React) {{{
 " ---------------------------------------------------------------------------------------------------------------------
 
+" Autocomplete (npm install -g tern)
+Plug 'carlitux/deoplete-ternjs'
 " JS basic support (indent, etc.)
 Plug 'pangloss/vim-javascript'
 " JS syntax (keywords, DOM, etc.)
@@ -870,7 +872,7 @@ let g:deoplete#sources={}
 let g:deoplete#sources._    = ['buffer', 'file', 'ultisnips']
 let g:deoplete#sources.ruby = ['buffer', 'member', 'file', 'ultisnips']
 let g:deoplete#sources.vim  = ['buffer', 'member', 'file', 'ultisnips']
-let g:deoplete#sources['javascript.jsx'] = ['buffer', 'member', 'file', 'ultisnips']
+let g:deoplete#sources['javascript.jsx'] = ['buffer', 'member', 'file', 'ultisnips', 'ternjs']
 let g:deoplete#sources.css  = ['buffer', 'member', 'file', 'omni', 'ultisnips']
 let g:deoplete#sources.scss = ['buffer', 'member', 'file', 'omni', 'ultisnips']
 let g:deoplete#sources.html = ['buffer', 'member', 'file', 'omni', 'ultisnips']
@@ -928,6 +930,13 @@ let g:jsdoc_allow_input_prompt=1
 let g:jsdoc_input_description=1
 let g:jsdoc_enable_es6=1
 "}}}
+
+"" -----------------------------------------------------
+"" 4.20 Deoplete-tern settings {{{
+"" -----------------------------------------------------
+let g:tern_request_timeout=1
+let g:tern_show_signature_in_pum=1
+""}}}
 
 "}}}
 
