@@ -1,0 +1,16 @@
+# vim: ft=json
+{
+    "libs": [
+        "browser",
+        "ecma5",
+        "ecma6"
+    ],
+    "plugins": {
+        "es_modules": {},
+        "requirejs": {
+            "baseURL": "./",
+            "paths": {}
+        },
+        "webpack": {}
+    }
+}
