@@ -1,7 +1,7 @@
 " Informative echo line
 function! g:utils#showToggles() abort
-  echom '<F1> NERDTree | <F2> Free | <F3> Paste mode | <F4> Spellcheck | <F5> Reload rc | <F6> Search HL |' .
-        \' <F7> Whitechars | <F8> Vertical Term | <F9> Fire REST Request | <F10> Free  | <F11> How do I |' .
+  echom '<F1> NERDTree | <F2> Free | <F3> Free | <F4> Spellcheck | <F5> Reload rc | <F6> Search HL |' .
+        \' <F7> Whitechars | <F8> Built-in terminal | <F9> Fire REST Request | <F10> Free  | <F11> How do I |' .
         \' <F12> This message'
 endfunction
 
@@ -217,7 +217,7 @@ function! g:utils#uniteMappings() abort
 endfunction
 
 " Format function
-" Needs: npm install js-beautify, gem install ruby-beautify, python
+" Needs: `npm install js-beautify`, `gem install ruby-beautify`, `python`
 function! g:utils#formatFile() abort
   let l:line = line('.')
   let l:col = col('.')
@@ -242,10 +242,12 @@ function! g:utils#formatFile() abort
     execute l:command_prefix . l:command
   endif
 
+  " Return back to where cursor was
   call cursor(l:line, l:col)
 endfunction
 
 " Annotate file function (only ruby support for now)
+" Needs: `gem install seeing_is_believing`
 function! g:utils#annotateFile() abort
   let l:command_prefix = '%!'
 
@@ -289,7 +291,8 @@ function! g:utils#lightLineFilename() abort
         \ ('' !=# l:fname ? l:fname : '[No Name]')
 endfunction
 
-" Howdoi integration (pip install howdoi)
+" Howdoi integration
+" Needs: `pip install howdoi`
 function! g:utils#howDoI() abort
   let l:command_prefix = 'read '
   let l:howdoi = '!howdoi '

@@ -558,9 +558,9 @@ vnoremap ,s :!sort<CR>
 nnoremap <silent> <F1> :call utils#nerdWrapper()<CR>
 " Free
 " nnoremap <silent> <F2>
-" Paste mode toggling
-nnoremap <silent> <F3> :set paste!<CR> :set paste?<CR>
-" Toggle spelling on and off
+" Free
+" nnoremap <silent> <F3>
+" Toggle spelling
 nnoremap <silent> <F4> :set spell!<CR> :set spell?<CR>
 " Source (reload configuration)
 nnoremap <silent> <F5> :source $MYNVIMRC<CR>
@@ -568,15 +568,15 @@ nnoremap <silent> <F5> :source $MYNVIMRC<CR>
 nnoremap <silent> <F6> :set nohlsearch!<CR> :set nohlsearch?<CR>
 " Toggle white characters visibility
 nnoremap <silent> <F7> :set list!<CR> :set list?<CR>
-" New horizontal term buffer
-nnoremap <silent> <F8> :T ls<CR>
+" New term buffer
+nnoremap <silent> <F8> :terminal<CR>
 " Fire REST Request
 nnoremap <silent> <F9> :call VrcQuery()<CR>
 " Free
 " nnoremap <silent> <F10>
-" Howdoi integration (pip install howdoi)
+" Howdoi
 nnoremap <silent> <F11> :call utils#howDoI()<CR>
-" Echo out toggles legend on <F12>
+" Informative echo
 nnoremap <F12> :call utils#showToggles()<CR>
 "}}}
 
