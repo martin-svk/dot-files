@@ -28,7 +28,8 @@
     "gruvbox_tabs_xs": true,
     "highlight_modified_tabs": true,
     "ignored_packages": [
-        "Vintage"
+        "Vintage",
+        "VintageES"
     ],
     "line_padding_bottom": 1,
     "line_padding_top": 1,
