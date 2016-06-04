@@ -58,6 +58,7 @@ Session.vim
 
 # Sublime
 *.sublime-project
+*.sublime-workspace
 
 # Atom
 .tern-project

@@ -1,0 +1,20 @@
+[
+    // Basics
+    { "keys": [",", "c"], "command": "close", "context": [{"key": "setting.command_mode"}] },
+    { "keys": [",", "w"], "command": "save" , "context": [{"key": "setting.command_mode"}] },
+
+    // Vintage overrides
+    { "keys": ["H"], "command": "set_motion", "args": {
+        "motion": "vi_move_to_first_non_white_space_character",
+        "motion_args": {"extend": true },
+        "clip_to_line": true },
+        "context": [{"key": "setting.command_mode"}]
+    },
+    { "keys": ["L"], "command": "set_motion", "args": {
+        "motion": "vi_move_to_hard_eol",
+        "motion_args": {"repeat": 1, "extend": true},
+        "inclusive": true,
+        "clip_to_line": true },
+        "context": [{"key": "setting.command_mode"}]
+    }
+]

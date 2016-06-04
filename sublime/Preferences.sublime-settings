@@ -2,7 +2,7 @@
     "animation_enabled": false,
     "bold_folder_labels": true,
     "caret_style": "wide",
-    "color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
+    "color_scheme": "Packages/gruvbox/gruvbox (Dark) (Hard) NDC.tmTheme",
     "default_line_ending": "unix",
     "drag_text": false,
     "draw_indent_guides": false,
@@ -12,6 +12,7 @@
         ".git",
         ".hg",
         "CVS",
+        "dist",
         "node_modules",
         ".meteor"
     ],
@@ -20,7 +21,11 @@
         "bold"
     ],
     "font_size": 9,
-    "highlight_line": true,
+    "gruvbox_iconset_thick": true,
+    "gruvbox_panel_xs": true,
+    "gruvbox_scrollbar_width_xs": true,
+    "gruvbox_statusbar_xs": true,
+    "gruvbox_tabs_xs": true,
     "highlight_modified_tabs": true,
     "ignored_packages": [
         "Vintage"
@@ -32,10 +37,14 @@
     "rulers": [
         120
     ],
+    "scroll_speed": 0,
     "show_encoding": true,
     "show_line_endings": true,
+    "spacegray_sidebar_font_small": true,
+    "theme": "gruvbox (Dark) (Medium).sublime-theme",
     "translate_tabs_to_spaces": true,
     "tree_animation_enabled": false,
     "trim_trailing_white_space_on_save": true,
-    "vintageous_use_ctrl_keys": true
+    "vintage_start_in_command_mode": true,
+    "word_separators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?_"
 }
