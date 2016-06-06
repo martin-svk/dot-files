@@ -2,30 +2,24 @@
 # Redux helpers
 # ===============================================
 snippet mstp "Map state to props (Redux)"
-const mapStateToProps = (state, _ownProps) => {
-	return {
-		${1:prop}: state.prop
-	};
-};
+const mapStateToProps = (state, _ownProps) => ({
+	${1:prop}: state.prop
+});
 endsnippet
 
 snippet mdtp "Map dispatch to props (Redux)"
-const mapDispatchToProps = (dispatch, _ownProps) => {
-	return {
-		onEvent: () => {
-			dispatch(${1:action()});
-		}
-	};
-};
+const mapDispatchToProps = (dispatch, _ownProps) => ({
+	onEvent() {
+		dispatch(${1:action()});
+	}
+});
 endsnippet
 
 snippet action "Redux action creator"
-export const ${1:actionName} = () => {
-	return {
-		type: ActionTypes.${2:ACTION_TYPE},
-		payload: $3
-	};
-};
+export const ${1:actionName} = () => ({
+	type: ActionTypes.${2:ACTION_TYPE},
+	payload: $3
+});
 endsnippet
 
 snippet aaction "Redux thunk async action creator"
