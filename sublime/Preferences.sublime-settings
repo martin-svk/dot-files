@@ -1,51 +1,55 @@
 {
-    "animation_enabled": false,
-    "bold_folder_labels": true,
-    "caret_style": "wide",
-    "color_scheme": "Packages/gruvbox/gruvbox (Dark) (Hard) NDC.tmTheme",
-    "default_line_ending": "unix",
-    "drag_text": false,
-    "draw_indent_guides": false,
-    "enable_tab_scrolling": false,
-    "folder_exclude_patterns": [
-        ".svn",
-        ".git",
-        ".hg",
-        "CVS",
-        "dist",
-        "node_modules",
-        ".meteor"
-    ],
-    "font_face": "Droid Sans Mono",
-    "font_options": [
-        "bold"
-    ],
-    "font_size": 9,
-    "gruvbox_iconset_thick": true,
-    "gruvbox_panel_xs": true,
-    "gruvbox_scrollbar_width_xs": true,
-    "gruvbox_statusbar_xs": true,
-    "gruvbox_tabs_xs": true,
-    "highlight_modified_tabs": true,
-    "ignored_packages": [
-        "Vintage",
-        "VintageES"
-    ],
-    "line_padding_bottom": 1,
-    "line_padding_top": 1,
-    "preview_on_click": false,
-    "remember_full_screen": true,
-    "rulers": [
-        120
-    ],
-    "scroll_speed": 0,
-    "show_encoding": true,
-    "show_line_endings": true,
-    "spacegray_sidebar_font_small": true,
-    "theme": "gruvbox (Dark) (Medium).sublime-theme",
-    "translate_tabs_to_spaces": true,
-    "tree_animation_enabled": false,
-    "trim_trailing_white_space_on_save": true,
-    "vintage_start_in_command_mode": true,
-    "word_separators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?_"
+	"animation_enabled": false,
+	"bold_folder_labels": true,
+	"caret_style": "wide",
+	"color_scheme": "Packages/gruvbox/gruvbox (Dark) (Soft) NDC.tmTheme",
+	"default_line_ending": "unix",
+	"drag_text": false,
+	"draw_indent_guides": false,
+	"enable_tab_scrolling": false,
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		"dist",
+		"node_modules",
+		".meteor"
+	],
+	"font_face": "Droid Sans Mono",
+	"font_options":
+	[
+		"bold"
+	],
+	"font_size": 9,
+	"gruvbox_iconset_thick": true,
+	"gruvbox_panel_xs": true,
+	"gruvbox_scrollbar_width_xs": true,
+	"gruvbox_statusbar_xs": true,
+	"gruvbox_tabs_xs": true,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"Vintage",
+		"VintageES"
+	],
+	"line_padding_bottom": 1,
+	"line_padding_top": 1,
+	"preview_on_click": false,
+	"remember_full_screen": true,
+	"rulers":
+	[
+		120
+	],
+	"scroll_speed": 0,
+	"show_encoding": true,
+	"show_line_endings": true,
+	"spacegray_sidebar_font_small": true,
+	"theme": "gruvbox (Dark) (Soft).sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"tree_animation_enabled": false,
+	"trim_trailing_white_space_on_save": true,
+	"vintage_start_in_command_mode": true,
+	"word_separators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?_"
 }
