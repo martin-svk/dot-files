@@ -60,9 +60,6 @@ Session.vim
 *.sublime-project
 *.sublime-workspace
 
-# Atom
-.tern-project
-
 # Other
 # ===========================
 
@@ -72,3 +69,5 @@ Session.vim
 tags
 .starscope.db
 default-gems
+.tern-project
+.tern-port
