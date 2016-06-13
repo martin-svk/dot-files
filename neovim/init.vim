@@ -865,7 +865,8 @@ let g:qs_highlight_on_keys=['f', 'F', 't', 'T']
 " 4.14 Deoplete autocomplete settings {{{
 " -----------------------------------------------------
 let g:deoplete#enable_at_startup=1
-let g:deoplete#enable_refresh_always=1
+" TODO: reenable after it stops hiding popup
+" let g:deoplete#enable_refresh_always=1
 let g:deoplete#file#enable_buffer_path=1
 
 let g:deoplete#sources={}
