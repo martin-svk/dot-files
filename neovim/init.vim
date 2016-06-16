@@ -66,8 +66,6 @@ Plug 'tpope/vim-bundler', { 'for': ['ruby', 'eruby', 'haml', 'slim'] }
 " JS (ES6, React) {{{
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Autocomplete (npm install -g tern)
-Plug 'carlitux/deoplete-ternjs'
 " JS basic support (indent, etc.)
 Plug 'pangloss/vim-javascript'
 " JS syntax (keywords, DOM, etc.)
@@ -78,6 +76,10 @@ Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
 " JSON syntax
 Plug 'sheerun/vim-json'
+" Autocomplete (npm install -g tern)
+Plug 'carlitux/deoplete-ternjs'
+" Autocomplete using flow (npm install -g flow-bin)
+Plug 'steelsojka/deoplete-flow'
 " JS Documentation comments
 Plug 'heavenshell/vim-jsdoc', { 'on': ['JsDoc'] }
 "}}}
