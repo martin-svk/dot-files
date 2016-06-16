@@ -1,0 +1,19 @@
+[ignore]
+./node_modules
+
+[include]
+./src/
+
+[libs]
+module.name_mapper='^.*\.css$' -> 'empty/object'
+module.name_mapper='^.*\.scss$' -> 'empty/object'
+module.name_mapper='^.*\.less$' -> 'empty/object'
+module.name_mapper='^.*\.svg$' -> 'empty/object'
+module.name_mapper='^.*\.png$' -> 'empty/object'
+
+module.name_mapper='^actions\/\(.*\)$' -> './src/actions/\1'
+module.name_mapper='^actions$' -> './src/actions'
+module.name_mapper='^constants\/\(.*\)$' -> './src/constants/\1'
+module.name_mapper='^constants$' -> './src/constants'
+
+[options]
