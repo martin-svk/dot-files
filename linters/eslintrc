@@ -1,79 +1,40 @@
 # vim: ft=json
 {
-    "env": {
-        "browser": true,
-        "es6": true,
-        "node": true
-    },
     "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended"
+        "airbnb"
     ],
     "globals": {
         "module": true,
         "require": true
     },
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 6,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react"
-    ],
+    "parser": "babel-eslint",
+    "plugins": [],
     "rules": {
+        "comma-dangle": 0,
         "indent": [
             2,
             4,
-            { "SwitchCase": 1 }
-        ],
-        "jsx-quotes": [
-            2,
-            "prefer-double"
-        ],
-        "linebreak-style": [
-            2,
-            "unix"
-        ],
-        "no-console": 1,
-        "no-unused-vars": [
-            2,
             {
-                "args": "all",
-                "argsIgnorePattern": "^_",
-                "vars": "local",
-                "varsIgnorePattern": "^_"
+                "SwitchCase": 1
             }
         ],
-        "quotes": [
+        "max-len": [
             2,
-            "single"
+            120,
+            2,
+            {
+                "ignoreComments": false,
+                "ignoreUrls": true
+            }
         ],
-        "react/jsx-handler-names": 1,
-        "react/jsx-key": 2,
-        "react/jsx-no-duplicate-props": 2,
-        "react/jsx-no-undef": 2,
-        "react/jsx-pascal-case": 2,
-        "react/jsx-uses-react": 2,
-        "react/jsx-uses-vars": 2,
-        "react/no-deprecated": 2,
-        "react/no-did-mount-set-state": 2,
-        "react/no-did-update-set-state": 2,
-        "react/no-direct-mutation-state": 2,
-        "react/no-string-refs": 1,
-        "react/no-unknown-property": 2,
-        "react/prefer-es6-class": 2,
-        "react/prefer-stateless-function": 2,
-        "react/prop-types": 2,
-        "react/react-in-jsx-scope": 2,
-        "react/self-closing-comp": 2,
-        "react/sort-prop-types": 1,
-        "react/wrap-multilines": 2,
-        "semi": [
+        "new-cap": [
             2,
-            "always"
-        ]
+            {
+                "capIsNew": false,
+                "newIsCap": true
+            }
+        ],
+        "no-class-assign": 0,
+        "import/no-unresolved": 0
     }
 }
