@@ -11,6 +11,7 @@
     "plugins": [],
     "rules": {
         "comma-dangle": 0,
+        "import/no-unresolved": 0,
         "indent": [
             2,
             4,
@@ -35,6 +36,27 @@
             }
         ],
         "no-class-assign": 0,
-        "import/no-unresolved": 0
+        "no-else-return": 0,
+        "no-unused-vars": [
+            2,
+            {
+                "args": "all",
+                "argsIgnorePattern": "^_",
+                "vars": "local",
+                "varsIgnorePattern": "^_"
+            }
+        ],
+        "react/jsx-indent": [
+            2,
+            4
+        ],
+        "react/jsx-indent-props": [
+            2,
+            4
+        ],
+        "space-before-function-paren": [
+            2,
+            "never"
+        ]
     }
 }
