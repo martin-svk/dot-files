@@ -128,7 +128,6 @@ function! g:utils#tabComplete() abort
 endfunction
 
 " Manual Tag complete
-" TODO: improve to also trigger tag complete after closing popup
 function! g:utils#manualTagComplete() abort
   if pumvisible()
     return g:deoplete#mappings#close_popup()
