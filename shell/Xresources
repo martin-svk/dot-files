@@ -32,7 +32,7 @@ xterm*scrollTtyOutput: false
 xterm*selectToClipboard: true
 
 ! Include color scheme
-#include "/home/martin/config/dot-files/shell/colors/monokai.xrdb"
+#include "/home/martin/config/dot-files/shell/colors/spacegray.xrdb"
 
 ! Apply included colors
 xterm*color0:      Ansi_0_Color
