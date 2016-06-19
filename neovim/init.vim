@@ -628,7 +628,7 @@ nnoremap <silent> ,f :Format<CR>
 
 " Annotate file (show values in special # => comments)
 command! Annotate :call utils#annotateFile()
-nnoremap <silent> ,a :Annotate<CR>
+nnoremap <silent> ,A :Annotate<CR>
 
 " Profile
 command! Profile :call utils#profile()
@@ -1106,8 +1106,9 @@ nnoremap <silent> ,g :call utils#searchCurrentWordWithAg()<CR>
 " -----------------------------------------------------
 " 5.12 Fugitive {{{
 " -----------------------------------------------------
+nnoremap <leader>gr :Gread<CR>
+nnoremap <leader>gw :Gwrite<CR>
 nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gc :Gcommit --verbose<CR>
 nnoremap <leader>gc :Gcommit --verbose<CR>
 nnoremap <leader>gd :Gvdiff<CR>
 "}}}
@@ -1122,6 +1123,12 @@ nnoremap ,C :Bonly<CR>
 " 5.14 Gitv {{{
 " -----------------------------------------------------
 nnoremap <leader>gh :Gitv!<CR>
+"}}}
+
+" -----------------------------------------------------
+" 5.15 Tabularize {{
+" -----------------------------------------------------
+vnoremap ,a :Tabularize /
 "}}}
 
 "}}}
