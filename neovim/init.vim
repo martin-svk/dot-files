@@ -212,6 +212,12 @@ Plug 'w0ng/vim-hybrid'
 Plug 'sjl/badwolf'
 " Molokai
 Plug 'tomasr/molokai'
+" Iceberg
+Plug 'cocopon/iceberg.vim'
+" Tender
+Plug 'jacoborus/tender.vim'
+" Dracula
+Plug 'crusoexia/vim-dracula'
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
@@ -831,42 +837,29 @@ let g:neomake_error_sign = {
 "}}}
 
 " -----------------------------------------------------
-" 4.9 Ruby refactoring settings {{{
-" -----------------------------------------------------
-let g:ruby_refactoring_map_keys=0
-"}}}
-
-" -----------------------------------------------------
-" 4.10 Clever F settings {{{
-" -----------------------------------------------------
-let g:clever_f_across_no_line=1
-let g:clever_f_smart_case=1
-let g:clever_f_show_prompt=1
-let g:clever_f_chars_match_any_signs=';'
-"}}}
-
-" -----------------------------------------------------
-" 4.11 Vim Markdown settings {{{
+" 4.9 Vim Markdown settings {{{
 " -----------------------------------------------------
 let g:vim_markdown_no_default_key_mappings=1
 let g:vim_markdown_folding_disabled=1
 "}}}
 
 " -----------------------------------------------------
-" 4.12 Vim REST console settings {{{
+" 4.10 Vim REST console settings {{{
 " -----------------------------------------------------
 let g:vrc_set_default_mapping=0
 let g:vrc_output_buffer_name='__RESPONSE__.rest'
 "}}}
 
 " -----------------------------------------------------
-" 4.13 Quick scope settings {{{
+" 4.11 Quick scope settings {{{
 " -----------------------------------------------------
 let g:qs_highlight_on_keys=['f', 'F', 't', 'T']
+let g:qs_first_occurrence_highlight_color=155
+let g:qs_second_occurrence_highlight_color=81
 "}}}
 
 " -----------------------------------------------------
-" 4.14 Deoplete autocomplete settings {{{
+" 4.12 Deoplete autocomplete settings {{{
 " -----------------------------------------------------
 let g:deoplete#enable_at_startup=1
 let g:deoplete#enable_refresh_always=0
@@ -883,7 +876,7 @@ let g:deoplete#sources.html = ['buffer', 'member', 'file', 'omni', 'ultisnips']
 "}}}
 
 " -----------------------------------------------------
-" 4.15 Ctrl-SF settings {{{
+" 4.13 Ctrl-SF settings {{{
 " -----------------------------------------------------
 let g:ctrlsf_default_root='project'
 let g:ctrlsf_populate_qflist=0
@@ -894,13 +887,13 @@ let g:ctrlsf_regex_pattern=0
 "}}}
 
 " -----------------------------------------------------
-" 4.16 Plug settings {{{
+" 4.14 Plug settings {{{
 " -----------------------------------------------------
 let g:plug_timeout=20
 "}}}
 
 " -----------------------------------------------------
-" 4.17 Vim-markdown settings {{{
+" 4.15 Vim-markdown settings {{{
 " -----------------------------------------------------
 let g:markdown_fenced_languages=[
       \'bash=sh',
@@ -915,20 +908,20 @@ let g:markdown_fenced_languages=[
 "}}}
 
 " -----------------------------------------------------
-" 4.18 Colorizer settings {{{
+" 4.16 Colorizer settings {{{
 " -----------------------------------------------------
 let g:colorizer_nomap=1
 "}}}
 
 " -----------------------------------------------------
-" 4.19 Elm-vim settings {{{
+" 4.17 Elm-vim settings {{{
 " -----------------------------------------------------
 let g:elm_format_autosave=0
 let g:elm_setup_keybindings=0
 "}}}
 
 " -----------------------------------------------------
-" 4.20 JsDoc settings {{{
+" 4.18 JsDoc settings {{{
 " -----------------------------------------------------
 let g:jsdoc_allow_input_prompt=1
 let g:jsdoc_input_description=1
@@ -936,7 +929,7 @@ let g:jsdoc_enable_es6=1
 "}}}
 
 "" -----------------------------------------------------
-"" 4.20 Deoplete-tern settings {{{
+"" 4.19 Deoplete-tern settings {{{
 "" -----------------------------------------------------
 let g:tern_request_timeout=1
 let g:tern_show_signature_in_pum=1
@@ -1142,11 +1135,12 @@ syntax on
 "}}}
 
 " Color scheme based on time {{{
-if strftime("%H") < 15
-  colorscheme badwolf
+if strftime("%H") < 14
+  colorscheme dracula
+elseif strftime("%H") < 19
+  colorscheme tender
 else
-  let g:rehash256=1
-  colorscheme molokai
+  colorscheme iceberg
 endif
 "}}}
 
