@@ -117,6 +117,7 @@ alias topdu='du -a | sort -nr | head -50'
 alias fsize='du -s'
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 alias ?='tldr'
+alias gtags='starscope -e ctags'
 
 # =====================================================================================================================
 # Exports
