@@ -975,8 +975,10 @@ nnoremap <silent> <leader>t :call utils#uniteTags()<CR>
 nnoremap <silent> <leader>l :call utils#uniteLineSearch()<CR>
 " Search in [y]ank history
 nnoremap <silent> <leader>y :call utils#uniteYankHistory()<CR>
-" Search in [r]egisters
-nnoremap <silent> <leader>r :call utils#uniteRegisters()<CR>
+" Search in outlines
+nnoremap <silent> <leader>r :call utils#uniteOutline()<CR>
+" Search in registers
+nnoremap <silent> <leader>" :call utils#uniteRegisters()<CR>
 " Search in opened [w]indow splits
 nnoremap <silent> <leader>w :call utils#uniteWindows()<CR>
 " Search in ultisnips [s]nippets
@@ -1107,21 +1109,27 @@ nnoremap <leader>gd :Gvdiff<CR>
 "}}}
 
 " -----------------------------------------------------
-" 5.13 BufOnly {{{
+" 5.13 BufOnly -> [C]lose all {{{
 " -----------------------------------------------------
 nnoremap ,C :Bonly<CR>
 "}}}
 
 " -----------------------------------------------------
-" 5.14 Gitv {{{
+" 5.14 Gitv -> [g]it [h]istory {{{
 " -----------------------------------------------------
 nnoremap <leader>gh :Gitv!<CR>
 "}}}
 
 " -----------------------------------------------------
-" 5.15 Tabularize {{
+" 5.15 Tabularize -> [a]lign {{
 " -----------------------------------------------------
 vnoremap ,a :Tabularize /
+"}}}
+
+" -----------------------------------------------------
+" 5.16 JsDoc {{
+" -----------------------------------------------------
+nnoremap ,d :JsDoc<CR>
 "}}}
 
 "}}}
