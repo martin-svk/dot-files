@@ -8,6 +8,8 @@
   'i': 'tree-view:open-selected-entry-down'
   'v': 'tree-view:open-selected-entry-right'
   'f1': 'tree-view:toggle-focus'
+  'g g': 'core:move-to-top'
+  'shift-g': 'core:move-to-bottom'
 
 # =======================================================================================
 # Vim mode plus mappings
@@ -21,6 +23,9 @@
     # Defaults overriding
     'H': 'vim-mode-plus:move-to-first-character-of-line'
     'L': 'vim-mode-plus:move-to-last-character-of-line'
+    # [cursor history]
+    'ctrl-i': 'cursor-history:next'
+    'ctrl-o': 'cursor-history:prev'
     # Common tasks
     ', w': 'core:save'
     ', q': 'core:close'
@@ -28,6 +33,15 @@
     ', f': 'atom-beautify:beautify-editor'
     'up': 'pane:increase-size'
     'down': 'pane:decrease-size'
+    '(': 'vim-mode-plus-user:move-to-previous-symbol'
+    ')': 'vim-mode-plus-user:move-to-next-symbol'
+    # surround: ys
+    'S': 'vim-mode-plus:surround-smart-word'
+    'd s': 'vim-mode-plus:delete-surround-any-pair'
+    'c s': 'vim-mode-plus:change-surround-any-pair'
+    'y s': 'vim-mode-plus:surround'
+    'y s w': 'vim-mode-plus:surround-word'
+    'y s m': 'vim-mode-plus:map-surround'
     # F-keys
     'f1': 'tree-view:toggle-focus'
     'f2': 'tree-view:reveal-active-file'
@@ -41,7 +55,7 @@
     'space r': 'find-and-replace:show'
     'space f': 'file-explorer:toggle-home-directory'
     'space e': 'symbols-view:toggle-project-symbols'
-    'space j': 'project-manager:list-projects'
+    'space j': 'project-plus:toggle-project-finder'
     # Buffer management
     '_': 'pane:show-previous-item'
     '+': 'pane:show-next-item'
