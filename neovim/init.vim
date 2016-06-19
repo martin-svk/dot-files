@@ -208,8 +208,6 @@ Plug 'wellle/targets.vim'
 
 " Hybrid
 Plug 'w0ng/vim-hybrid'
-" Jellybeans
-Plug 'nanotech/jellybeans.vim'
 " Badwolf
 Plug 'sjl/badwolf'
 " Molokai
@@ -1138,10 +1136,10 @@ syntax on
 
 " Color scheme based on time {{{
 if strftime("%H") < 15
+  colorscheme badwolf
+else
   let g:rehash256=1
   colorscheme molokai
-else
-  colorscheme jellybeans
 endif
 "}}}
 
