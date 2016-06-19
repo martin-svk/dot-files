@@ -93,7 +93,7 @@ Plug 'othree/html5.vim'
 " SCSS syntax
 Plug 'cakebaker/scss-syntax.vim'
 " Color highlighter
-Plug 'lilydjwg/colorizer', { 'for': ['css', 'sass', 'scss', 'less', 'html', 'xhtml', 'javascript', 'javascript.jsx'] }
+Plug 'lilydjwg/colorizer', { 'for': ['css', 'sass', 'scss', 'less', 'html', 'xdefaults', 'javascript', 'javascript.jsx'] }
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
