@@ -111,7 +111,7 @@ Plug 'tpope/vim-markdown'
 " Git syntax
 Plug 'tpope/vim-git'
 " Tmux syntax
-Plug 'tejr/vim-tmux'
+Plug 'keith/tmux.vim'
 " Dockerfile
 Plug 'honza/dockerfile.vim'
 "}}}
