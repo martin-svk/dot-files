@@ -1243,8 +1243,7 @@ autocmd BufWritePost *.vim Neomake vint
 " 8.1 Todo {{{
 " -----------------------------------------------------
 " 1. Update README file.
-" 2. Redpen integration.
-" 3. Make a list of improvements based on other editors.
+" 2. Make a list of improvements based on other editors.
 "}}}
 
 " -----------------------------------------------------
