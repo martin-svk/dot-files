@@ -126,8 +126,6 @@ Plug 'Shougo/unite.vim'
 Plug 'Shougo/unite-outline'
 " History/yank source
 Plug 'Shougo/neoyank.vim'
-" MRU source
-Plug 'Shougo/neomru.vim'
 " Tag source
 Plug 'tsukkee/unite-tag'
 " Ag wrapper (Unite grep alternative) search and edit
@@ -164,8 +162,6 @@ Plug 'diepm/vim-rest-console', { 'for': 'rest' }
 " Text insertion/manipulation {{{
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Highlight jump characters on f, F, t, T
-Plug 'unblevable/quick-scope'
 " Surround (cs"')
 Plug 'tpope/vim-surround'
 " Easy alignment
@@ -851,15 +847,7 @@ let g:vrc_output_buffer_name='__RESPONSE__.rest'
 "}}}
 
 " -----------------------------------------------------
-" 4.11 Quick scope settings {{{
-" -----------------------------------------------------
-let g:qs_highlight_on_keys=['f', 'F', 't', 'T']
-let g:qs_first_occurrence_highlight_color=155
-let g:qs_second_occurrence_highlight_color=81
-"}}}
-
-" -----------------------------------------------------
-" 4.12 Deoplete autocomplete settings {{{
+" 4.11 Deoplete autocomplete settings {{{
 " -----------------------------------------------------
 let g:deoplete#enable_at_startup=1
 let g:deoplete#enable_refresh_always=0
@@ -876,7 +864,7 @@ let g:deoplete#sources.html = ['buffer', 'member', 'file', 'omni', 'ultisnips']
 "}}}
 
 " -----------------------------------------------------
-" 4.13 Ctrl-SF settings {{{
+" 4.12 Ctrl-SF settings {{{
 " -----------------------------------------------------
 let g:ctrlsf_default_root='project'
 let g:ctrlsf_populate_qflist=0
@@ -887,13 +875,13 @@ let g:ctrlsf_regex_pattern=0
 "}}}
 
 " -----------------------------------------------------
-" 4.14 Plug settings {{{
+" 4.13 Plug settings {{{
 " -----------------------------------------------------
 let g:plug_timeout=20
 "}}}
 
 " -----------------------------------------------------
-" 4.15 Vim-markdown settings {{{
+" 4.14 Vim-markdown settings {{{
 " -----------------------------------------------------
 let g:markdown_fenced_languages=[
       \'bash=sh',
@@ -908,20 +896,20 @@ let g:markdown_fenced_languages=[
 "}}}
 
 " -----------------------------------------------------
-" 4.16 Colorizer settings {{{
+" 4.15 Colorizer settings {{{
 " -----------------------------------------------------
 let g:colorizer_nomap=1
 "}}}
 
 " -----------------------------------------------------
-" 4.17 Elm-vim settings {{{
+" 4.16 Elm-vim settings {{{
 " -----------------------------------------------------
 let g:elm_format_autosave=0
 let g:elm_setup_keybindings=0
 "}}}
 
 " -----------------------------------------------------
-" 4.18 JsDoc settings {{{
+" 4.17 JsDoc settings {{{
 " -----------------------------------------------------
 let g:jsdoc_allow_input_prompt=1
 let g:jsdoc_input_description=1
@@ -929,7 +917,7 @@ let g:jsdoc_enable_es6=1
 "}}}
 
 "" -----------------------------------------------------
-"" 4.19 Deoplete-tern settings {{{
+"" 4.18 Deoplete-tern settings {{{
 "" -----------------------------------------------------
 let g:tern_request_timeout=1
 let g:tern_show_signature_in_pum=1
@@ -1255,6 +1243,8 @@ autocmd BufWritePost *.vim Neomake vint
 " 8.1 Todo {{{
 " -----------------------------------------------------
 " 1. Update README file.
+" 2. Redpen integration.
+" 3. Make a list of improvements based on other editors.
 "}}}
 
 " -----------------------------------------------------
