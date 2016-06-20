@@ -212,8 +212,6 @@ Plug 'tomasr/molokai'
 Plug 'cocopon/iceberg.vim'
 " Tender
 Plug 'jacoborus/tender.vim'
-" Dracula
-Plug 'crusoexia/vim-dracula'
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
@@ -1132,7 +1130,7 @@ syntax on
 
 " Color scheme based on time {{{
 if strftime("%H") < 14
-  colorscheme dracula
+  colorscheme badwolf
 elseif strftime("%H") < 19
   colorscheme tender
 else
