@@ -1130,7 +1130,8 @@ syntax on
 
 " Color scheme based on time {{{
 if strftime("%H") < 14
-  colorscheme badwolf
+  set bg=dark
+  colorscheme hybrid
 elseif strftime("%H") < 19
   colorscheme tender
 else
