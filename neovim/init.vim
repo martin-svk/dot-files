@@ -42,6 +42,8 @@ Plug 'tpope/vim-commentary'
 Plug 'bkad/CamelCaseMotion'
 " Heuristically set indent settings
 Plug 'tpope/vim-sleuth'
+" Rainbow parens
+Plug 'junegunn/rainbow_parentheses.vim'
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
@@ -66,12 +68,12 @@ Plug 'tpope/vim-bundler', { 'for': ['ruby', 'eruby', 'haml', 'slim'] }
 " JS (ES6, React) {{{
 " ---------------------------------------------------------------------------------------------------------------------
 
-" JS basic support (indent, etc.)
+" Moder JS support (indent, syntax, etc)
 Plug 'pangloss/vim-javascript'
-" JS syntax (keywords, DOM, etc.)
-Plug 'jelera/vim-javascript-syntax'
 " JSX syntax
 Plug 'mxw/vim-jsx'
+" JS libraries syntax
+Plug 'othree/javascript-libraries-syntax.vim'
 " Typescript syntax
 Plug 'leafgarland/typescript-vim'
 " JSON syntax
@@ -921,6 +923,26 @@ let g:tern_request_timeout=1
 let g:tern_show_signature_in_pum=1
 ""}}}
 
+"" -----------------------------------------------------
+"" 4.19 vim-javascript settings {{{
+"" -----------------------------------------------------
+let g:javascript_plugin_jsdoc=1
+let g:javascript_plugin_flow=1
+""}}}
+
+"" -----------------------------------------------------
+"" 4.20 Rainbow parens settings {{{
+"" -----------------------------------------------------
+let g:rainbow#max_level=32
+let g:rainbow#pairs=[['(', ')'], ['[', ']'], ['{', '}']]
+"}}}
+
+"" -----------------------------------------------------
+"" 4.21 Javascript libraries settings {{{
+"" -----------------------------------------------------
+let g:used_javascript_libs='react,ramda'
+""}}}
+
 "}}}
 
 " ======================================================================================================================
@@ -1193,6 +1215,13 @@ augroup line_return
         \ if line("'\"") > 0 && line("'\"") <= line("$") |
         \     execute 'normal! g`"zvzz' |
         \ endif
+augroup END
+"}}}
+
+" Active Rainbow parens for specified file types {{{
+augroup rainbow_parentheses
+  autocmd!
+  autocmd FileType javascript,javascript.jsx RainbowParentheses
 augroup END
 "}}}
 
