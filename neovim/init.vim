@@ -431,10 +431,11 @@ vnoremap gj 5j
 vnoremap gk 5k
 
 " When jump to next match also center screen
-nnoremap n nzz
-nnoremap N Nzz
-vnoremap n nzz
-vnoremap N Nzz
+" Note: Use :norm! to make it count as one command. (i.e. for i_CTRL-o)
+nnoremap n :norm! nzz<CR>
+nnoremap N :norm! Nzz<CR>
+vnoremap n :norm! nzz<CR>
+vnoremap N :norm! Nzz<CR>
 
 " Same when moving up and down
 nnoremap <C-u> <C-u>zz
@@ -1022,7 +1023,7 @@ nnoremap <silent> <leader>hm :call utils#uniteMappings()<CR>
 " Disable built-in cx-ck to be able to go backward
 inoremap <C-x><C-k> <NOP>
 let g:UltiSnipsExpandTrigger='<C-j>'
-let g:UltiSnipsListSnippets='<NOP>'
+let g:UltiSnipsListSnippets='<C-s>'
 let g:UltiSnipsJumpForwardTrigger='<C-j>'
 let g:UltiSnipsJumpBackwardTrigger='<C-k>'
 "}}}
