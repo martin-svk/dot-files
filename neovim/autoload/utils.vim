@@ -316,3 +316,20 @@ function! g:utils#retabToFourSpaces() abort
   setlocal tabstop=4 shiftwidth=4 expandtab
   retab
 endfunction
+
+" Nice block heading
+" Source: http://vi.stackexchange.com/a/418
+function! g:utils#blockHeading(width, word) abort
+  let l:char = '='
+  let l:inserted_word = ' ' . a:word . ' '
+  let l:word_width = strlen(l:inserted_word)
+  let l:length_before = (a:width - l:word_width) / 2
+  let l:hashes_before = repeat(l:char, l:length_before)
+  let l:hashes_after = repeat(l:char, a:width - (l:word_width + l:length_before))
+  let l:comment_line = repeat(l:char, a:width)
+  let l:word_line = l:hashes_before . l:inserted_word . l:hashes_after
+
+  :put =l:comment_line
+  :put =l:word_line
+  :put =l:comment_line
+endfunction
