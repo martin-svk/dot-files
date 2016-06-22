@@ -563,6 +563,12 @@ nnoremap ,? ?<CR>
 
 " Faster sort
 vnoremap ,s :!sort<CR>
+
+" Fix spelling error on the go
+inoremap <C-l> <C-g>u<ESC>[s1z=`]a<C-g>u
+
+" Break out of parens and put semicolon
+inoremap ;; <ESC>A;<CR>
 "}}}
 
 " -----------------------------------------------------
@@ -1016,7 +1022,7 @@ nnoremap <silent> <leader>hm :call utils#uniteMappings()<CR>
 " Disable built-in cx-ck to be able to go backward
 inoremap <C-x><C-k> <NOP>
 let g:UltiSnipsExpandTrigger='<C-j>'
-let g:UltiSnipsListSnippets='<C-l>'
+let g:UltiSnipsListSnippets='<NOP>'
 let g:UltiSnipsJumpForwardTrigger='<C-j>'
 let g:UltiSnipsJumpBackwardTrigger='<C-k>'
 "}}}
