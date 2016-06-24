@@ -42,8 +42,6 @@ Plug 'tpope/vim-commentary'
 Plug 'bkad/CamelCaseMotion'
 " Heuristically set indent settings
 Plug 'tpope/vim-sleuth'
-" Rainbow parens
-Plug 'junegunn/rainbow_parentheses.vim'
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
@@ -947,14 +945,7 @@ let g:javascript_plugin_flow=1
 ""}}}
 
 "" -----------------------------------------------------
-"" 4.20 Rainbow parens settings {{{
-"" -----------------------------------------------------
-let g:rainbow#max_level=32
-let g:rainbow#pairs=[['(', ')'], ['[', ']'], ['{', '}']]
-"}}}
-
-"" -----------------------------------------------------
-"" 4.21 Javascript libraries settings {{{
+"" 4.20 Javascript libraries settings {{{
 "" -----------------------------------------------------
 let g:used_javascript_libs='react,ramda'
 ""}}}
@@ -1231,13 +1222,6 @@ augroup line_return
         \ if line("'\"") > 0 && line("'\"") <= line("$") |
         \     execute 'normal! g`"zvzz' |
         \ endif
-augroup END
-"}}}
-
-" Active Rainbow parens for specified file types {{{
-augroup rainbow_parentheses
-  autocmd!
-  autocmd FileType javascript,javascript.jsx RainbowParentheses
 augroup END
 "}}}
 
