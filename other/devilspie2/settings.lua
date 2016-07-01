@@ -27,11 +27,11 @@ elseif (string.find(get_application_name(), "Spotify") or get_application_name()
    set_window_workspace(5);
    set_window_size(1600, 900);
 -- Mail
-elseif (get_application_name()=="Nylas N1") then
+elseif (get_application_name()=="Geary") then
    set_window_workspace(6);
    maximize();
--- HipChat and Slack
-elseif (string.find(get_application_name(), "Slack") or get_application_name()=="HipChat") then
+-- Slack
+elseif string.find(get_application_name(), "Slack") then
    set_window_workspace(7);
    maximize();
 -- Steam
