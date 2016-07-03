@@ -1232,6 +1232,9 @@ if g:utils_autoswitch_kb_layout == 1
 end
 "}}}
 
+" Run checktime in buffers, but avoiding the "Command Line" (q:) window
+autocmd CursorHold * if getcmdwintype() == '' | checktime | endif
+
 " -----------------------------------------------------
 " 7.1 Run linters after save {{{
 " -----------------------------------------------------
