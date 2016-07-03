@@ -1,5 +1,5 @@
 # ===============================================
-# Variables
+# Declarations
 # ===============================================
 snippet fun "function" b
 function $1($2) {
@@ -57,17 +57,6 @@ snippet bt "bind this" w
 bind(this);
 endsnippet
 
-snippet acl "addChangeListener" w
-addChangeListener(this.${1:_onChange});
-endsnippet
-
-snippet rcl "removeChangeListener" w
-removeChangeListener(this.${1:_onChange});
-endsnippet
-
-# ===============================================
-# Miscleanous
-# ===============================================
 snippet strict "enable strict mode" b
 'use strict';
 endsnippet
@@ -77,11 +66,7 @@ require('$1');
 endsnippet
 
 snippet ret "return"
-return($1);
-endsnippet
-
-snippet cp "key value constant pair" b
-${1:KEY}: '$1'
+return $1;
 endsnippet
 
 snippet dbg "debugger" b

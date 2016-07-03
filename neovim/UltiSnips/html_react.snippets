@@ -3,6 +3,8 @@ snippet rhtml "react html skeleton"
 <html>
 	<head>
 		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<meta name="description" content="">
 		<meta name="keywords" content="">
 		<meta name="author" content="">
@@ -10,14 +12,14 @@ snippet rhtml "react html skeleton"
 		<!--[if lt IE 9]>
 			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
+		<link type="text/css" rel="stylesheet" href="${2:assets/app}.css">
 	</head>
 	<body>
 		<!-- React entry point -->
-		<div id="${2:root}"></div>
+		<div id="${3:root}"></div>
 
 		<!-- Scripts -->
-		<script type="text/javascript">__REACT_DEVTOOLS_GLOBAL_HOOK__ = parent.__REACT_DEVTOOLS_GLOBAL_HOOK__</script>
-		<script type="text/javascript" src="${3:dist/app}.js"></script>
+		<script type="text/javascript" src="${4:assets/app}.js"></script>
 	</body>
 </html>
 endsnippet

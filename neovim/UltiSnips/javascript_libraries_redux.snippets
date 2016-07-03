@@ -1,0 +1,203 @@
+# ===============================================
+# Containers declarations
+# ===============================================
+snippet cont "React (Redux) container component" b
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { action } from 'actions';
+
+class $1 extends Component {
+	constructor(props) {
+		super(props);
+	}
+
+	render() {
+		return (
+			${3:<Data data={this.props.data} />}
+		);
+	}
+}
+
+const mapStateToProps = function mapStateToProps(state) {
+	return {
+		data: state.data
+	};
+};
+
+const mapDispatchToProps = (dispatch, _ownProps) => {
+	return {
+		onEvent: () => {
+			dispatch(action());
+		}
+	};
+};
+
+$1.propTypes = {};
+$1.defaultProps = {};
+$1.contextTypes = {};
+
+export default connect(mapStateToProps, mapDispatchToProps)($1);
+endsnippet
+
+snippet fcont "React (Redux) stateless, function container" b
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { action } from 'actions';
+
+function ${1:Component}(props) {
+	const { ${2:prop} } = props.$2;
+	return (
+		${3:<Data data={data} />}
+	);
+}
+
+const mapStateToProps = function mapStateToProps(state) {
+	return {
+		data: state.data
+	};
+};
+
+const mapDispatchToProps = (dispatch, _ownProps) => {
+	return {
+		onEvent: () => {
+			dispatch(action());
+		}
+	};
+};
+
+$1.propTypes = {};
+$1.defaultProps = {};
+$1.contextTypes = {};
+
+export default connect(mapStateToProps, mapDispatchToProps)($1);
+endsnippet
+
+# ===============================================
+# Store
+# ===============================================
+snippet store "Redux store"
+import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
+import rootReducer from 'reducers/rootReducer';
+import config from 'config';
+
+// Middleware setting
+const enhancer = config.development() ? compose(
+	// Development enhancer
+	applyMiddleware(thunk),
+	window.devToolsExtension ? window.devToolsExtension() : f => f
+) : compose(
+	// Production enhancer
+	applyMiddleware(thunk)
+);
+
+// Store configuration
+function configureStore(initialState) {
+	const store = createStore(rootReducer, initialState, enhancer);
+	hotReloadReducers(store);
+	return store;
+}
+
+// Reducer reloading
+function hotReloadReducers(store) {
+	if (module.hot && config.development()) {
+		module.hot.accept('../reducers/rootReducer', () => {
+			const nextReducer = require('../reducers/rootReducer').default;
+			store.replaceReducer(nextReducer);
+		});
+	}
+}
+
+const store = configureStore();
+export default store;
+endsnippet
+
+# ===============================================
+# Action creators/types
+# ===============================================
+snippet ac "Redux action creator"
+export const ${1:actionName} = () => ({
+	type: ActionTypes.${2:ACTION_TYPE},
+	payload: $3
+});
+endsnippet
+
+snippet aac "Redux thunk async action creator"
+export const ${1:actionName} = () => (
+	(dispatch, getState) => {
+		$2
+	}
+);
+endsnippet
+
+snippet at "Action type" b
+${1:KEY}: '$1'
+endsnippet
+
+# ===============================================
+# Reducers
+# ===============================================
+snippet rred "Redux root reducer"
+import { combineReducers } from 'redux';
+import { routerReducer } from 'react-router-redux';
+import dataReducer from './dataReducer';
+
+const rootReducer = combineReducers({
+	data: dataReducer
+});
+
+export default rootReducer;
+endsnippet
+
+snippet red "Redux reducer"
+const defaultState = [{
+	1: {
+		name: 'John',
+		age: 23
+	}
+}];
+
+const ${1:personReducer} = (state = defaultState, action) => {
+	switch (action.type) {
+	case '${2:ACTION_TYPE}':
+		return $3;
+	default:
+		return state;
+	}
+};
+
+export default $1;
+endsnippet
+
+# ===============================================
+# Selectors
+# ===============================================
+snippet sel "Redux state selector"
+const ${1:selectorName} = (state) => state.$0;
+endsnippet
+
+snippet rsel "Redux computed state re-selector (using reselect)"
+export const ${1:computedSelectorName} = createSelector(
+	[ ${2:usedSelector}, ${3:usedSelector2} ],
+	($2, $3) => {
+		$0
+	}
+);
+endsnippet
+
+# ===============================================
+# Misc
+# ===============================================
+snippet mstp "Map state to props (Redux)"
+const mapStateToProps = (state, _ownProps) => ({
+	${1:prop}: state.prop
+});
+endsnippet
+
+snippet mdtp "Map dispatch to props (Redux)"
+const mapDispatchToProps = (dispatch, _ownProps) => ({
+	onEvent() {
+		dispatch(${1:action()});
+	}
+});
+endsnippet

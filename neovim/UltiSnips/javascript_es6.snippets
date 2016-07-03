@@ -17,10 +17,6 @@ snippet ex "export statement" b
 export default $1;
 endsnippet
 
-snippet new "new statement"
-new ${1:Class}()
-endsnippet
-
 # ===============================================
 # Variables
 # ===============================================
@@ -36,16 +32,20 @@ endsnippet
 # Functions
 # ===============================================
 snippet map "builtin map function" w
-map((${1:param}) => {
-	return (
-		$2
-	);
-});
+map((${1:item}) => (
+	$2
+));
+endsnippet
+
+snippet filter "builtin filter function" w
+filter((${1:item}) => (
+	$2
+));
 endsnippet
 
 # ===============================================
-# Miscleanous
+# Misc
 # ===============================================
-snippet r "fat arrow (rocket) sign" w
-=> $0
+snippet fbt "Function bind this"
+this.${1:functionName} = this.$1.bind(this);$0
 endsnippet

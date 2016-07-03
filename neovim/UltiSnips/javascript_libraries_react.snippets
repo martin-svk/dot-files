@@ -1,7 +1,7 @@
 # ===============================================
 # Components declarations
 # ===============================================
-snippet comp "React component6" b
+snippet comp "React component" b
 import React, { Component, PropTypes } from 'react';
 
 class $1 extends Component {
@@ -23,7 +23,7 @@ $1.contextTypes = {};
 export default $1;
 endsnippet
 
-snippet fcomp "React stateless, function component" b
+snippet fcomp "React stateless, functional component" b
 import React, { PropTypes } from 'react';
 
 function ${1:Component}(props) {
@@ -37,81 +37,6 @@ $1.defaultProps = {};
 $1.contextTypes = {};
 
 export default $1;
-endsnippet
-
-# ===============================================
-# Containers declarations
-# ===============================================
-
-snippet cont "React (Redux) container component" b
-import React, { Component, PropTypes } from 'react';
-import { connect } from 'react-redux';
-import { action } from 'actions';
-
-class $1 extends Component {
-	constructor(props) {
-		super(props);
-	}
-
-	render() {
-		return (
-			${3:<Data data={this.props.data} />}
-		);
-	}
-}
-
-const mapStateToProps = function mapStateToProps(state) {
-	return {
-		data: state.data
-	};
-};
-
-const mapDispatchToProps = (dispatch, _ownProps) => {
-	return {
-		onEvent: () => {
-			dispatch(action());
-		}
-	};
-};
-
-$1.propTypes = {};
-$1.defaultProps = {};
-$1.contextTypes = {};
-
-export default connect(mapStateToProps, mapDispatchToProps)($1);
-endsnippet
-
-snippet fcont "React (Redux) stateless, function container" b
-import React, { PropTypes } from 'react';
-import { connect } from 'react-redux';
-import { action } from 'actions';
-
-function ${1:Component}(props) {
-	const { ${2:prop} } = props.$2;
-	return (
-		${3:<Data data={data} />}
-	);
-}
-
-const mapStateToProps = function mapStateToProps(state) {
-	return {
-		data: state.data
-	};
-};
-
-const mapDispatchToProps = (dispatch, _ownProps) => {
-	return {
-		onEvent: () => {
-			dispatch(action());
-		}
-	};
-};
-
-$1.propTypes = {};
-$1.defaultProps = {};
-$1.contextTypes = {};
-
-export default connect(mapStateToProps, mapDispatchToProps)($1);
 endsnippet
 
 # ===============================================
@@ -156,12 +81,6 @@ componentWillMount() {
 }
 endsnippet
 
-snippet cwu "Component will unmount method" b
-componentWillUnmount() {
-	$1
-}
-endsnippet
-
 snippet cdm "Component did mount method" b
 componentDidMount() {
 	$1
@@ -180,9 +99,31 @@ shouldComponentUpdate(newProps, newState) {
 }
 endsnippet
 
+snippet cwup "Component will update method" b
+componentWillUpdate(newProps, newState) {
+	$1
+}
+endsnippet
+
+snippet cdu "Component did update method" b
+componentDidUpdate(prevProps, prevState) {
+	$1
+}
+endsnippet
+
+snippet cwu "Component will unmount method" b
+componentWillUnmount() {
+	$1
+}
+endsnippet
+
 # ===============================================
 # Misc
 # ===============================================
+snippet p "props"
+props.${1:property}
+endsnippet
+
 snippet tp "this.props." w
 this.props.${1:property}
 endsnippet
@@ -197,6 +138,19 @@ this.setState({
 });
 endsnippet
 
-snippet prevd "prevent default on event" w
-preventDefault();
+snippet epd "prevent default on event" w
+e.preventDefault();
+endsnippet
+
+snippet esp "stop propagation on event" w
+e.stopPropagation();
+endsnippet
+
+# ===============================================
+# Classnames library snippets
+# ===============================================
+snippet cx "classnames (cx) definition"
+const ${1:table}Classes = classnames({
+	'${2:class}': ${3:condition}
+});
 endsnippet
