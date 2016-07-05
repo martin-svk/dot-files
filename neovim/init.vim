@@ -70,8 +70,6 @@ Plug 'tpope/vim-bundler', { 'for': ['ruby', 'eruby', 'haml', 'slim'] }
 Plug 'pangloss/vim-javascript'
 " JSX syntax
 Plug 'mxw/vim-jsx'
-" JS libraries syntax
-Plug 'othree/javascript-libraries-syntax.vim'
 " Typescript syntax
 Plug 'leafgarland/typescript-vim'
 " JSON syntax
@@ -942,12 +940,6 @@ let g:tern_show_signature_in_pum=1
 "" -----------------------------------------------------
 let g:javascript_plugin_jsdoc=1
 let g:javascript_plugin_flow=1
-""}}}
-
-"" -----------------------------------------------------
-"" 4.20 Javascript libraries settings {{{
-"" -----------------------------------------------------
-let g:used_javascript_libs='react,ramda'
 ""}}}
 
 "}}}
