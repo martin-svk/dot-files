@@ -1,0 +1,48 @@
+# ===============================================
+# Generator declarations
+# ===============================================
+
+snippet f* "generator function declaration" b
+export function* ${1:name}(${2:args}) {
+	yield ${3:true};
+}
+endsnippet
+
+snippet watcher "watcher generator function declaration" b
+export function* ${1:watch}() {
+	yield fork(${2:worker});
+}
+endsnippet
+
+snippet worker "worker generator function declaration" b
+export function* ${1:fetch}() {
+	yield call(${2:function});
+}
+endsnippet
+
+# ===============================================
+# Effects
+# ===============================================
+
+snippet put "saga put effect" b
+yield put(${1:ActionTypes}.${2:ACTION_TYPE});
+endsnippet
+
+snippet call "saga call effect" b
+const ${1:returnValue} = yield call(${2:function}, ${3:args});
+endsnippet
+
+snippet select "saga select effect" b
+const ${1:returnValue} = yield select(${2:selector});
+endsnippet
+
+snippet fork "saga fork effect" b
+${1:const task = }yield fork(${2:saga});
+endsnippet
+
+# ===============================================
+# Misc
+# ===============================================
+snippet y "yield" b
+yield ${1:effect}(${2:args});
+endsnippet
