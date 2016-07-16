@@ -428,10 +428,10 @@ vnoremap gk 5k
 
 " When jump to next match also center screen
 " Note: Use :norm! to make it count as one command. (i.e. for i_CTRL-o)
-nnoremap n :norm! nzz<CR>
-nnoremap N :norm! Nzz<CR>
-vnoremap n :norm! nzz<CR>
-vnoremap N :norm! Nzz<CR>
+nnoremap <silent> n :norm! nzz<CR>
+nnoremap <silent> N :norm! Nzz<CR>
+vnoremap <silent> n :norm! nzz<CR>
+vnoremap <silent> N :norm! Nzz<CR>
 
 " Same when moving up and down
 nnoremap <C-u> <C-u>zz
@@ -563,9 +563,6 @@ vnoremap ,s :!sort<CR>
 
 " Fix spelling error on the go
 inoremap <C-l> <C-g>u<ESC>[s1z=`]a<C-g>u
-
-" Break out of parens and put semicolon
-inoremap ;; <ESC>A;<CR>
 "}}}
 
 " -----------------------------------------------------
