@@ -13,6 +13,7 @@
         "global-require": 0,
         "newline-per-chained-call": 0,
         "import/no-unresolved": 0,
+        "import/no-extraneous-dependencies": 0,
         "indent": [
             2,
             4,
@@ -47,6 +48,7 @@
                 "varsIgnorePattern": "^_"
             }
         ],
+        "react/jsx-filename-extension": 0,
         "react/jsx-indent": [
             2,
             4
