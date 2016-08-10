@@ -499,6 +499,9 @@ endif
 
 " Stay down after creating fold
 vnoremap zf mzzf`zzz
+
+" Make . work with visually selected lines
+xnoremap . :norm.<CR>
 "}}}
 
 " -----------------------------------------------------
