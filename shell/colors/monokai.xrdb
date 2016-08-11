@@ -21,8 +21,10 @@
 #define   Ansi_9_Color          #f4005f
 #define   Background_Color      #1a1a1a
 #define   Bold_Color            #c4c5b5
-#define   Cursor_Color          #f6f7ec
-#define   Cursor_Text_Color     #c4c5b5
+/* #define   Cursor_Color          #f6f7ec */
+/* #define   Cursor_Text_Color     #c4c5b5 */
+#define   Cursor_Color          #f4005f
+#define   Cursor_Text_Color     #1a1a1a
 #define   Foreground_Color      #c4c5b5
 #define   Selected_Text_Color   #c4c5b5
 #define   Selection_Color       #343434
