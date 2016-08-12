@@ -150,19 +150,21 @@ export default rootReducer;
 endsnippet
 
 snippet red "Redux reducer"
-const defaultState = [{
-	1: {
-		name: 'John',
-		age: 23
-	}
-}];
+import ActionTypes from 'constants/ActionTypes';
 
-const ${1:personReducer} = (state = defaultState, action) => {
+const initialState = {
+	data: [],
+	fetching: false
+};
+
+const ${1:dataReducer} = (state = initialState, action) => {
 	switch (action.type) {
-	case '${2:ACTION_TYPE}':
-		return $3;
-	default:
-		return state;
+		case ActionTypes.${2:ACTION_TYPE}: {
+			return state;
+		}
+		default: {
+			return state;
+		}
 	}
 };
 
