@@ -154,6 +154,8 @@ Plug 'gregsexton/gitv', { 'on': 'Gitv' }
 Plug 'airblade/vim-gitgutter'
 " REST Console
 Plug 'diepm/vim-rest-console', { 'for': 'rest' }
+" Color picker
+Plug 'KabbAmine/vCoolor.vim', { 'on': ['VCoolor', 'VCase'] }
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
@@ -942,6 +944,13 @@ let g:tern_show_signature_in_pum=1
 "" -----------------------------------------------------
 let g:javascript_plugin_jsdoc=1
 let g:javascript_plugin_flow=1
+""}}}
+
+"" -----------------------------------------------------
+"" 4.20 vCoolor settings {{{
+"" -----------------------------------------------------
+let g:vcoolor_disable_mappings=1
+let g:vcoolor_lowercase=1
 ""}}}
 
 "}}}
