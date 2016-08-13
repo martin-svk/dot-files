@@ -98,7 +98,7 @@ alias ws='http-server -c-1 -p 3000 -o'
 # ------------------------------------------
 # SSH servers
 # ------------------------------------------
-alias sshm='ssh root@martintoma.com'
+alias ssh-apibacus='ssh root@46.101.97.20'
 
 # ------------------------------------------
 # Language specific
