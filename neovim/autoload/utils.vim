@@ -317,6 +317,12 @@ function! g:utils#retabToFourSpaces() abort
   retab
 endfunction
 
+" Reset tabs to 2 spaces
+function! g:utils#retabToTwoSpaces() abort
+  setlocal tabstop=2 shiftwidth=2 expandtab
+  retab
+endfunction
+
 " Nice block heading
 " Source: http://vi.stackexchange.com/a/418
 function! g:utils#blockHeading(width, word) abort

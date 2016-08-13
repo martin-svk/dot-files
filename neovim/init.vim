@@ -650,6 +650,7 @@ command! Profile :call utils#profile()
 
 " Retab
 command! Retab :call utils#retabToFourSpaces()
+command! Retab2 :call utils#retabToTwoSpaces()
 "}}}
 
 "}}}
@@ -1247,7 +1248,7 @@ autocmd BufWritePost *.html Neomake tidy
 " gem install haml_lint
 autocmd BufWritePost *.haml Neomake hamllint
 " gem install scsslint
-autocmd BufWritePost *.scss Neomake scsslint
+autocmd BufWritePost *.scss Neomake sasslint
 " gem install mdl
 autocmd BufWritePost *.md Neomake mdl
 " apt-get install shellcheck
