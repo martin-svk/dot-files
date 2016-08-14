@@ -26,7 +26,7 @@ Below are the most interesting parts of my Neovim configuration.
 
 Here you go.
 
-![Neovim + Jellybeans](./data/screenshots/jellybeans.png)
+![Neovim + Tender](./data/screenshots/tender.png)
 
 Want more? Scroll down to the appropriate [section](#screenshots-and-cheatsheets).
 
@@ -363,13 +363,7 @@ hi! link BufTabLineFill Comment
 
 [Iceberg](./data/screenshots/iceberg.png)
 
-[Iceberg + React](./data/screenshots/iceberg_react.png)
-
-[Jellybeans + Unite file search](./data/screenshots/jellybeans_unite_file_search.png)
-
-[Jellybeans + Unite line search](./data/screenshots/jellybeans_unite_line_filter.png)
-
-[Jellybeans + Unite yank history](./data/screenshots/jellybeans_unite_yank_history.png)
+[Hybrid](./data/screenshots/hybrid.png)
 
 [Image cheatsheet](./data/cheatsheet.png)
 
