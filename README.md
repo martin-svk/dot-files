@@ -14,7 +14,7 @@ Below I present the most interesting parts of my config files. **Feel free to be
 * [Tmux](#tmux) ([source](./tmux/tmux.conf))
 * [Git](#git) ([source](./git/gitconfig))
 * [Xterm](#xterm) ([source](./shell/Xresources))
-* [Ruby / Rails utilities (pry, gem, IRB)](#pry-gem-irb)
+* [Ruby utilities (pry, gem, IRB)](#pry-gem-irb)
 * [Other utilities (Ag search, Devilspie2)](#ag-devilspie2)
 
 ## Neovim
@@ -44,7 +44,7 @@ And which plugins I use? Currently I use about **75** plugins. Some of the most 
 * [Lightline](https://github.com/itchyny/lightline.vim) - Lightweight but extensible and configurable status line.
 * [Lexima](https://github.com/cohama/lexima.vim) - Auto-closing (,",' and some language constructs (ruby blocks). Dot repeat supported.
 
-For a complete list, look [here](./neovim/init.vim#L17).
+For a complete list, look [here](./neovim/init.vim#L24).
 
 ### Utility scripts
 
