@@ -238,6 +238,8 @@ Plug 'vim-scripts/BufOnly.vim', { 'on': 'Bonly' }
 Plug 'nelstrom/vim-qargs', { 'on': 'Qargs' }
 " Asks if you wanted to open existing file
 Plug 'EinfachToll/DidYouMean'
+" Codi interactive REPL like editing
+Plug 'metakirby5/codi.vim', { 'on': 'Codi' }
 "}}}
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
