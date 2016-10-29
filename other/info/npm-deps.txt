@@ -1,0 +1,28 @@
+/usr/local/lib
+├── babel-eslint@7.1.0
+├── brunch@2.9.1
+├── create-react-app@0.6.0
+├── elm@0.17.1
+├── elm-oracle@1.1.1
+├── eslint@3.9.0
+├── eslint-config-airbnb@12.0.0
+├── eslint-plugin-import@1.16.0
+├── eslint-plugin-jsx-a11y@2.2.3
+├── eslint-plugin-react@6.4.1
+├── feathers-cli@1.2.7
+├── flow-bin@0.34.0
+├── gulp@3.9.1
+├── htmlhint@0.9.13
+├── http-server@0.9.0
+├── js-beautify@1.6.4
+├── jsctags@5.1.0
+├── jsonlint@1.6.2
+├── n@2.1.4
+├── npm@3.10.9
+├── remark-lint@5.1.0
+├── sass-lint@1.9.1
+├── tern@0.20.0
+├── tldr@1.7.0
+├── yarn@0.16.1
+└── yo@1.8.5
+
