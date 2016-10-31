@@ -24,6 +24,14 @@ ZSH_THEME="martinus"
 # Disable auto title setting
 DISABLE_AUTO_TITLE="true"
 
+# Uncomment the following line to display red dots whilst waiting for completion.
+COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+
 # =====================================================================================================================
 # Plugins declaration
 # =====================================================================================================================
@@ -133,6 +141,9 @@ export MYNVIMRC='~/.config/nvim/init.vim'
 
 # Add my bin folders to PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# SSH
+export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 # Add android sdk to path if it exists
 if [ -d $HOME/lib/android-sdk-linux ]; then
