@@ -66,15 +66,15 @@ ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(history-substring-search-up history-substring-se
 # =====================================================================================================================
 
 # ------------------------------------------
-#  APT-GET
+#  APT
 # ------------------------------------------
-alias install='sudo apt-get install'
-alias update='sudo apt-get update'
-alias upgrade='sudo apt-get upgrade'
-alias up='sudo apt-get update && sudo apt-get upgrade -y'
-alias autoremove='sudo apt-get autoremove'
-alias purge='sudo apt-get purge'
-alias dist-upgrade='sudo apt-get dist-upgrade'
+alias autoremove='sudo apt autoremove'
+alias dist-upgrade='sudo apt full-upgrade'
+alias install='sudo apt install'
+alias remove='sudo apt remove'
+alias update='sudo apt update'
+alias upgrade='sudo apt upgrade'
+alias up='sudo apt update && sudo apt upgrade -y'
 
 # ------------------------------------------
 # Services
