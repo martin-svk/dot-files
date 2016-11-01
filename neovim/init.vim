@@ -229,7 +229,7 @@ Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
 " Iabbrev auto-correction library
 Plug 'chip/vim-fat-finger'
 " Matchit enhances jump motions
-Plug 'edsono/vim-matchit'
+Plug 'tmhedberg/matchit'
 " More . repeat functionality
 Plug 'tpope/vim-repeat'
 " Delete all but current buffer
