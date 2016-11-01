@@ -33,6 +33,9 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Plugins declaration
 # =====================================================================================================================
 
+# zsh-syntax-highlighting -> https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
+# zsh-autosuggestions -> https://github.com/zsh-users/zsh-autosuggestions
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 plugins=(adb bgnotify bower bundler common-aliases docker extract gem gitfast gulp heroku httpie jsontools meteor mix
          npm rbenv redis-cli rsync tmux tmuxinator vagrant zsh-syntax-highlighting zsh-autosuggestions)
