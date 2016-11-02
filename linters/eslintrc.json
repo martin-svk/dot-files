@@ -7,19 +7,20 @@
         "airbnb"
     ],
     "globals": {
+        "fetch": true,
         "module": true,
-        "require": true,
-        "fetch": true
+        "require": true
     },
     "parser": "babel-eslint",
     "plugins": [],
     "rules": {
-        "comma-dangle": 0,
         "class-methods-use-this": 0,
+        "comma-dangle": 0,
         "global-require": 0,
-        "newline-per-chained-call": 0,
-        "import/no-unresolved": 0,
+        "import/extensions": 0,
         "import/no-extraneous-dependencies": 0,
+        "import/no-unresolved": 0,
+        "import/prefer-default-export": 0,
         "indent": [
             2,
             4,
@@ -27,6 +28,7 @@
                 "SwitchCase": 1
             }
         ],
+        "jsx-a11y/no-static-element-interactions": 0,
         "max-len": [
             2,
             120,
@@ -43,6 +45,7 @@
                 "newIsCap": true
             }
         ],
+        "newline-per-chained-call": 0,
         "no-class-assign": 0,
         "no-else-return": 0,
         "no-unused-vars": [
