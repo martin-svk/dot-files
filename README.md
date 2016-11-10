@@ -40,7 +40,6 @@ And which plugins I use? Currently I use about **75** plugins. Some of the most 
 * [Neomake](https://github.com/benekastah/neomake) - Linter integration (Syntastic alternative) with asynchronous support.
 * [Unite](https://github.com/Shougo/unite.vim) - Search and display information from arbitrary sources.
 * [Deoplete](https://github.com/Shougo/deoplete.nvim) - Autocomplete with Neovim asynchronous support.
-* [QuickScope](https://github.com/unblevable/quick-scope) - Highlights jump characters on f, F, t, T.
 * [Lightline](https://github.com/itchyny/lightline.vim) - Lightweight but extensible and configurable status line.
 * [Lexima](https://github.com/cohama/lexima.vim) - Auto-closing (,",' and some language constructs (ruby blocks). Dot repeat supported.
 
