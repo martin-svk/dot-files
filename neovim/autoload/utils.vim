@@ -108,7 +108,7 @@ endfunction
 " Generate ctags and put them into tags directory
 " gem install starscope
 function! g:utils#generateCtags() abort
-  silent execute '!starscope -e ctags'
+  silent execute '!starscope -x node_modules/ -e ctags'
   echom 'Tags generated into tags file!'
 endfunction
 
