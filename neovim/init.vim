@@ -1257,7 +1257,7 @@ autocmd BufWritePost *.ex Neomake elixir
 autocmd BufWritePost *.html Neomake tidy
 " gem install haml_lint
 autocmd BufWritePost *.haml Neomake hamllint
-" gem install scsslint
+" gem install scss-lint
 autocmd BufWritePost *.scss Neomake sasslint
 " gem install mdl
 autocmd BufWritePost *.md Neomake mdl
