@@ -37,8 +37,8 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # zsh-autosuggestions -> https://github.com/zsh-users/zsh-autosuggestions
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(adb bgnotify bower bundler common-aliases docker extract gem gitfast gulp heroku httpie jsontools meteor mix
-         npm rbenv redis-cli rsync tmux tmuxinator vagrant zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(adb bower bundler common-aliases docker extract gem gitfast gulp jsontools
+         npm rbenv redis-cli zsh-syntax-highlighting zsh-autosuggestions)
 
 # =====================================================================================================================
 # Plugins settings
@@ -94,11 +94,8 @@ alias sselastic='sudo service elasticsearch start'
 alias d='docker'
 alias v='nvim'
 alias g='git'
-alias f='ranger'
-alias w='weechat'
 alias ta='tmux attach -t main || tmux new -s main'
 alias td='tmux detach'
-alias vim='vim -X'
 alias msql='mysql -uroot -p'
 # npm install -g http-server
 alias ws='http-server -c-1 -p 3333 -o'
@@ -118,14 +115,9 @@ alias js='node'
 # Other
 # ------------------------------------------
 alias q='exit'
-alias pdf='zathura'
-alias xcopy='xclip -selection clipboard'
-alias xpaste='xclip -o'
-alias capless='xmodmap /home/martin/config/dot-files/other/Xmodmap'
 alias topdu='du -a | sort -nr | head -50'
 alias fsize='du -s'
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
-alias ?='tldr'
 alias gtags='starscope -e ctags'
 
 # =====================================================================================================================
@@ -159,7 +151,10 @@ if [ -d $HOME/lib/elixir/bin ]; then
   export PATH=$HOME/lib/elixir/bin:$PATH
 fi
 
-# Heroku Toolbelt
-if [ -d /usr/local/heroku/bin ]; then
-  export PATH=/usr/local/heroku/bin:$PATH
+if [ -d $HOME/.zsh/zsh-autosuggestions ]; then
+  source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
+if [ -d $HOME/.zsh/zsh-syntax-highlighting ]; then
+  source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
