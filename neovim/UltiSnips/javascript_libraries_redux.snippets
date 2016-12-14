@@ -4,11 +4,10 @@
 snippet cont "React (Redux) container component" b
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { action } from 'actions';
 
 class $1 extends Component {
-	constructor(props) {
-		super(props);
+	constructor() {
+		super();
 	}
 
 	render() {
@@ -18,19 +17,15 @@ class $1 extends Component {
 	}
 }
 
-const mapStateToProps = function mapStateToProps(state) {
-	return {
-		data: state.data
-	};
-};
+const mapStateToProps = state => ({
+	data: state.data
+});
 
-const mapDispatchToProps = (dispatch, _ownProps) => {
-	return {
-		onEvent: () => {
-			dispatch(action());
-		}
-	};
-};
+const mapDispatchToProps = (dispatch, _ownProps) => ({
+	onEvent(param) {
+		return dispatch(requestedEventAction(param));
+	}
+});
 
 $1.propTypes = {};
 $1.defaultProps = {};
@@ -42,7 +37,6 @@ endsnippet
 snippet fcont "React (Redux) stateless, function container" b
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { action } from 'actions';
 
 function ${1:Component}(props) {
 	const { ${2:prop} } = props.$2;
@@ -51,19 +45,15 @@ function ${1:Component}(props) {
 	);
 }
 
-const mapStateToProps = function mapStateToProps(state) {
-	return {
-		data: state.data
-	};
-};
+const mapStateToProps = state => ({
+	data: state.data
+});
 
-const mapDispatchToProps = (dispatch, _ownProps) => {
-	return {
-		onEvent: () => {
-			dispatch(action());
-		}
-	};
-};
+const mapDispatchToProps = (dispatch, _ownProps) => ({
+	onEvent(param) {
+		return dispatch(requestedEventAction(param));
+	}
+});
 
 $1.propTypes = {};
 $1.defaultProps = {};
