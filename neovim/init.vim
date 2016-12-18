@@ -1174,7 +1174,7 @@ syntax on
 
 " Color scheme based on time {{{
 if strftime("%H") < 19
-  colorscheme tender
+  colorscheme badwolf
 else
   colorscheme iceberg
 endif
