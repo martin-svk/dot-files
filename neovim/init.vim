@@ -1188,11 +1188,6 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 highlight TermCursor ctermfg=green guifg=green
 "}}}
 
-" Listchars highlighting {{{
-highlight NonText ctermfg=235 guifg=gray
-highlight SpecialKey ctermfg=235 guifg=gray
-"}}}
-
 " Remove underline in folded lines {{{
 hi! Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE
 "}}}
