@@ -376,10 +376,9 @@ endif
 " -----------------------------------------------------
 " 2.12 True colors settings {{{
 " -----------------------------------------------------
-" if has('termguicolors')
-"   set termguicolors " Turn on true colors support
-" endif
-" Tmux still doesn't support this
+if has('termguicolors')
+  set termguicolors " Turn on true colors support
+endif
 "}}}
 
 " -----------------------------------------------------
