@@ -67,6 +67,7 @@
             2,
             4
         ],
+        "react/jsx-no-target-blank": 0,
         "space-before-function-paren": [
             2,
             "never"
