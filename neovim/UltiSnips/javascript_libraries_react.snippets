@@ -95,8 +95,9 @@ endsnippet
 
 snippet scu "Should Component update" b
 shouldComponentUpdate(newProps, newState) {
-	$1
+	return shallowCompare(this, newProps, newState);$1
 }
+
 endsnippet
 
 snippet cwup "Component will update method" b
