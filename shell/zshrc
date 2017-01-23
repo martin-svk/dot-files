@@ -151,12 +151,18 @@ if [ -d $HOME/lib/elixir/bin ]; then
   export PATH=$HOME/lib/elixir/bin:$PATH
 fi
 
+# YARN package manager bin
+export PATH="$PATH:`yarn global bin`"
+
+# ZHS autosuggestions
 if [ -d $HOME/.zsh/zsh-autosuggestions ]; then
   source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
+# ZHS syntax highlighting
 if [ -d $HOME/.zsh/zsh-syntax-highlighting ]; then
   source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
+# Iterm2 shell integrations
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
