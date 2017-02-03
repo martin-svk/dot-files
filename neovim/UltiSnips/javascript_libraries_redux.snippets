@@ -165,7 +165,7 @@ endsnippet
 # Selectors
 # ===============================================
 snippet sel "Redux state selector"
-const ${1:selectorName} = (state) => state.$0;
+${1:export} const ${2:selectorName} = state => state.$0;
 endsnippet
 
 snippet rsel "Redux computed state re-selector (using reselect)"
