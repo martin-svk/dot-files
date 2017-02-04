@@ -212,6 +212,8 @@ Plug 'tomasr/molokai'
 Plug 'cocopon/iceberg.vim'
 " Tender
 Plug 'jacoborus/tender.vim'
+" Gruvbox
+Plug 'morhetz/gruvbox'
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
@@ -1172,12 +1174,14 @@ nnoremap ,d :JsDoc<CR>
 syntax on
 "}}}
 
-" Color scheme based on time {{{
-if strftime("%H") < 19
-  colorscheme badwolf
-else
-  colorscheme iceberg
-endif
+" Color scheme {{{
+set bg=dark
+let g:gruvbox_italicize_comments=0
+let g:gruvbox_sign_column="bg0"
+let g:gruvbox_undercurl=0
+let g:gruvbox_underline=0
+let g:gruvbox_invert_selection=0
+colorscheme gruvbox
 "}}}
 
 " Highlight VCS conflict markers {{{
