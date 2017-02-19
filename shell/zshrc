@@ -120,6 +120,14 @@ alias fsize='du -s'
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 alias gtags='starscope -e ctags'
 
+function crypt() {
+    openssl des3 -in "$1" -out "$2"
+}
+
+function decrypt() {
+    openssl des3 -d -in "$1" -out "$2"
+}
+
 # =====================================================================================================================
 # Exports
 # =====================================================================================================================
