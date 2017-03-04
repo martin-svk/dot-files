@@ -1,7 +1,7 @@
 " Informative echo line
 function! g:utils#showToggles() abort
   echom '<F1> NERDTree | <F2> Free | <F3> Free | <F4> Spellcheck | <F5> Reload rc | <F6> Search HL |' .
-        \' <F7> Whitechars | <F8> Built-in terminal | <F9> Fire REST Request | <F10> Free  | <F11> How do I |' .
+        \' <F7> Whitechars | <F8> Built-in terminal | <F9> Free | <F10> Free  | <F11> Free |' .
         \' <F12> This message'
 endfunction
 
@@ -52,21 +52,6 @@ function! g:utils#intelligentVerticalResize(direction) abort
   let l:modifier = l:current_window_is_last_window ? l:modifier_1 : l:modifier_2
   let l:command = 'vertical resize ' . l:modifier . l:window_resize_count . '<CR>'
   execute l:command
-endfunction
-
-" Run current file
-function! g:utils#runCurrentFile() abort
-  if &filetype ==? 'ruby'
-    let l:command = 'ruby %'
-  elseif &filetype ==? 'sh'
-    let l:command = 'sh %'
-  else
-    echom "Can't run current file (unsupported filetype: " . &filetype . ')'
-  endif
-
-  if exists('command')
-    execute ':terminal ' . l:command
-  endif
 endfunction
 
 " Run NERDTreeFind or Toggle based on current buffer
@@ -136,21 +121,12 @@ function! g:utils#manualTagComplete() abort
   endif
 endfunction
 
-" Simple notes management
-function! g:utils#openNotes() abort
-  execute ':e ~/dev/notes/vim-notes.md'
-endfunction
-
 " Use omni complete source as default
 function! g:utils#useOmniTabWrapper() abort
   inoremap <buffer> <expr> <TAB> utils#insertTabOmniWrapper()
 endfunction
 
 " Unite commands wrappers
-function! g:utils#uniteSources() abort
-  execute 'Unite -no-split -buffer-name=sources -start-insert source'
-endfunction
-
 function! g:utils#uniteMRUs() abort
   execute 'Unite -no-split -buffer-name=most-recently-used -start-insert neomru/file'
 endfunction
@@ -169,10 +145,6 @@ endfunction
 
 function! g:utils#uniteOutline() abort
   execute 'Unite -no-split -buffer-name=symbols -start-insert outline'
-endfunction
-
-function! g:utils#uniteTags() abort
-  execute 'Unite -no-split -buffer-name=tags -start-insert tag'
 endfunction
 
 function! g:utils#uniteHistory() abort
@@ -197,22 +169,6 @@ endfunction
 
 function! g:utils#uniteSnippets() abort
   execute 'Unite -no-split -buffer-name=snippets -start-insert ultisnips'
-endfunction
-
-function! g:utils#uniteCustomMenu() abort
-  execute 'Unite -no-split -buffer-name=menu -start-insert menu'
-endfunction
-
-function! g:utils#uniteJumps() abort
-  execute 'Unite -no-split -buffer-name=jumps -start-insert jump'
-endfunction
-
-function! g:utils#uniteCommands() abort
-  execute 'Unite -no-split -buffer-name=commands -start-insert command'
-endfunction
-
-function! g:utils#uniteMappings() abort
-  execute 'Unite -no-split -buffer-name=mappings -start-insert mapping'
 endfunction
 
 " Format function
@@ -245,20 +201,6 @@ function! g:utils#formatFile() abort
   call cursor(l:line, l:col)
 endfunction
 
-" Annotate file function (only ruby support for now)
-" Needs: `gem install seeing_is_believing`
-function! g:utils#annotateFile() abort
-  let l:command_prefix = '%!'
-
-  if &filetype ==? 'ruby'
-    let l:command = 'seeing_is_believing -x'
-  endif
-
-  if exists('l:command')
-    execute l:command_prefix . l:command
-  endif
-endfunction
-
 " Mode function for Lightline statusline
 function! g:utils#lightLineMode() abort
   let l:fname = expand('%:t')
@@ -288,21 +230,6 @@ function! g:utils#lightLineFilename() abort
   return l:fname =~? 'NERD_tree' ? 'NERDTree' :
         \ &filetype ==? 'unite' ? g:unite#get_status_string() :
         \ ('' !=# l:fname ? l:fname : '[No Name]')
-endfunction
-
-" Howdoi integration
-" Needs: `pip install howdoi`
-function! g:utils#howDoI() abort
-  let l:command_prefix = 'read '
-  let l:howdoi = '!howdoi '
-
-  call inputsave()
-  let l:query = input('How do I: ')
-  call inputrestore()
-
-  if l:query !=# ''
-    execute l:command_prefix . l:howdoi . l:query
-  endif
 endfunction
 
 " Search current word with CtrlSF

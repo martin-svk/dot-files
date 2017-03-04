@@ -595,8 +595,8 @@ nnoremap <silent> <F8> :terminal<CR>
 nnoremap <silent> <F9> :call VrcQuery()<CR>
 " Free
 " nnoremap <silent> <F10>
-" Howdoi
-nnoremap <silent> <F11> :call utils#howDoI()<CR>
+" Free
+" nnoremap <silent> <F11>
 " Informative echo
 nnoremap <F12> :call utils#showToggles()<CR>
 "}}}
@@ -632,20 +632,9 @@ cnoremap qq qall
 " Generate tags definitions
 command! GTags :call utils#generateCtags()
 
-" Open notes
-command! Notes :call utils#openNotes()
-
-" Run current file
-command! Run :call utils#runCurrentFile()
-nnoremap <silent> ,r :Run<CR>
-
 " Reformat whole or selection from file
 command! Format :call utils#formatFile()
 nnoremap <silent> ,f :Format<CR>
-
-" Annotate file (show values in special # => comments)
-command! Annotate :call utils#annotateFile()
-nnoremap <silent> ,A :Annotate<CR>
 
 " Profile
 command! Profile :call utils#profile()
@@ -697,71 +686,6 @@ let g:unite_source_line_enable_highlight=1
 
 " Dont override status line
 let g:unite_force_overwrite_statusline=0
-
-" Custom unite menus
-let g:unite_source_menu_menus = {}
-
-" Utils menu
-let g:unite_source_menu_menus.utils = {
-      \     'description' : 'Utility commands',
-      \ }
-let g:unite_source_menu_menus.utils.command_candidates = [
-      \       ['Run XMPFilter', 'Annotate'],
-      \       ['Format file', 'Format'],
-      \       ['Run file', 'Run'],
-      \       ['Generate Ctags', 'GTags'],
-      \       ['Show notes', 'Notes'],
-      \     ]
-
-" Git menu
-let g:unite_source_menu_menus.git = {
-      \     'description' : 'Git commands',
-      \ }
-let g:unite_source_menu_menus.git.command_candidates = [
-      \       ['Stage hunk', 'GitGutterStageHunk'],
-      \       ['Unstage hunk', 'GitGutterRevertHunk'],
-      \       ['Stage', 'Gwrite'],
-      \       ['Status', 'Gstatus'],
-      \       ['Diff', 'Gvdiff'],
-      \       ['Commit', 'Gcommit --verbose'],
-      \       ['Revert', 'Gread'],
-      \       ['Log', 'Glog'],
-      \       ['Visual log', 'Gitv'],
-      \       ['Current file visual log', 'Gitv!'],
-      \     ]
-
-" Plug menu
-let g:unite_source_menu_menus.plug = {
-      \     'description' : 'Plugin management commands',
-      \ }
-let g:unite_source_menu_menus.plug.command_candidates = [
-      \       ['Install plugins', 'PlugInstall'],
-      \       ['Update plugins', 'PlugUpdate'],
-      \       ['Clean plugins', 'PlugClean'],
-      \       ['Upgrade vim-plug', 'PlugUpgrade'],
-      \     ]
-
-" My unite menu
-let g:unite_source_menu_menus.unite = {
-      \     'description' : 'My Unite sources',
-      \ }
-let g:unite_source_menu_menus.unite.command_candidates = [
-      \       ['Unite MRUs', 'call utils#uniteMRUs()'],
-      \       ['Unite buffers', 'call utils#uniteBuffers()'],
-      \       ['Unite file browse', 'call utils#uniteFileBrowse()'],
-      \       ['Unite file search', 'call utils#uniteFileRec()'],
-      \       ['Unite history', 'call utils#uniteHistory()'],
-      \       ['Unite line search', 'call utils#uniteLineSearch()'],
-      \       ['Unite menu', 'call utils#uniteCustomMenu()'],
-      \       ['Unite registers', 'call utils#uniteRegisters()'],
-      \       ['Unite snippets', 'call utils#uniteSnippets()'],
-      \       ['Unite sources', 'call utils#uniteSources()'],
-      \       ['Unite file tags (symbols)', 'call utils#uniteOutline()'],
-      \       ['Unite tags', 'call utils#uniteTags()'],
-      \       ['Unite windows', 'call utils#uniteWindows()'],
-      \       ['Unite yank history', 'call utils#uniteYankHistory()'],
-      \       ['Unite jump history', 'call utils#uniteJumps()'],
-      \     ]
 
 " Tag source settings
 let g:unite_source_tag_max_name_length=40
@@ -856,14 +780,7 @@ let g:vim_markdown_folding_disabled=1
 "}}}
 
 " -----------------------------------------------------
-" 4.10 Vim REST console settings {{{
-" -----------------------------------------------------
-let g:vrc_set_default_mapping=0
-let g:vrc_output_buffer_name='__RESPONSE__.rest'
-"}}}
-
-" -----------------------------------------------------
-" 4.11 Deoplete autocomplete settings {{{
+" 4.10 Deoplete autocomplete settings {{{
 " -----------------------------------------------------
 let g:deoplete#enable_at_startup=1
 let g:deoplete#enable_refresh_always=0
@@ -880,7 +797,7 @@ let g:deoplete#sources.html = ['buffer', 'member', 'file', 'omni', 'ultisnips']
 "}}}
 
 " -----------------------------------------------------
-" 4.12 Ctrl-SF settings {{{
+" 4.11 Ctrl-SF settings {{{
 " -----------------------------------------------------
 let g:ctrlsf_default_root='project'
 let g:ctrlsf_populate_qflist=0
@@ -891,13 +808,13 @@ let g:ctrlsf_regex_pattern=0
 "}}}
 
 " -----------------------------------------------------
-" 4.13 Plug settings {{{
+" 4.12 Plug settings {{{
 " -----------------------------------------------------
 let g:plug_timeout=20
 "}}}
 
 " -----------------------------------------------------
-" 4.14 Vim-markdown settings {{{
+" 4.13 Vim-markdown settings {{{
 " -----------------------------------------------------
 let g:markdown_fenced_languages=[
       \'bash=sh',
@@ -912,20 +829,20 @@ let g:markdown_fenced_languages=[
 "}}}
 
 " -----------------------------------------------------
-" 4.15 Colorizer settings {{{
+" 4.14 Colorizer settings {{{
 " -----------------------------------------------------
 let g:colorizer_nomap=1
 "}}}
 
 " -----------------------------------------------------
-" 4.16 Elm-vim settings {{{
+" 4.15 Elm-vim settings {{{
 " -----------------------------------------------------
 let g:elm_format_autosave=0
 let g:elm_setup_keybindings=0
 "}}}
 
 " -----------------------------------------------------
-" 4.17 JsDoc settings {{{
+" 4.16 JsDoc settings {{{
 " -----------------------------------------------------
 let g:jsdoc_allow_input_prompt=1
 let g:jsdoc_input_description=1
@@ -933,21 +850,21 @@ let g:jsdoc_enable_es6=1
 "}}}
 
 "" -----------------------------------------------------
-"" 4.18 Deoplete-tern settings {{{
+"" 4.17 Deoplete-tern settings {{{
 "" -----------------------------------------------------
 let g:tern_request_timeout=1
 let g:tern_show_signature_in_pum=1
 ""}}}
 
 "" -----------------------------------------------------
-"" 4.19 vim-javascript settings {{{
+"" 4.18 vim-javascript settings {{{
 "" -----------------------------------------------------
 let g:javascript_plugin_jsdoc=1
 let g:javascript_plugin_flow=1
 ""}}}
 
 "" -----------------------------------------------------
-"" 4.20 vCoolor settings {{{
+"" 4.19 vCoolor settings {{{
 "" -----------------------------------------------------
 let g:vcoolor_disable_mappings=1
 let g:vcoolor_lowercase=1
@@ -983,12 +900,8 @@ endfunction
 nnoremap <silent> <leader>o :call utils#uniteFileRec()<CR>
 " Browse [f]iles in CWD
 nnoremap <silent> <leader>f :call utils#uniteFileBrowse()<CR>
-" [U]nite sources
-nnoremap <silent> <leader>u :call utils#uniteSources()<CR>
 " Search between open files - [b]uffers
 nnoremap <silent> <leader>b :call utils#uniteBuffers()<CR>
-" Search in current file ou[t]line (tags in current file)
-nnoremap <silent> <leader>t :call utils#uniteTags()<CR>
 " Search in [l]ines on current buffer
 nnoremap <silent> <leader>l :call utils#uniteLineSearch()<CR>
 " Search in [y]ank history
@@ -1001,14 +914,6 @@ nnoremap <silent> <leader>" :call utils#uniteRegisters()<CR>
 nnoremap <silent> <leader>w :call utils#uniteWindows()<CR>
 " Search in ultisnips [s]nippets
 nnoremap <silent> <leader>s :call utils#uniteSnippets()<CR>
-" Search in latest [j]ump positions
-nnoremap <silent> <leader>j :call utils#uniteJumps()<CR>
-" Search in my custom unite [m]enu with my commands
-nnoremap <silent> <leader>m :call utils#uniteCustomMenu()<CR>
-" Seach in help menu for commands
-nnoremap <silent> <leader>hc :call utils#uniteCommands()<CR>
-" Seach in help menu for mappings
-nnoremap <silent> <leader>hm :call utils#uniteMappings()<CR>
 "}}}
 
 " -----------------------------------------------------
@@ -1117,35 +1022,19 @@ nnoremap <silent> ,g :call utils#searchCurrentWordWithAg()<CR>
 "}}}
 
 " -----------------------------------------------------
-" 5.12 Fugitive {{{
-" -----------------------------------------------------
-nnoremap <leader>gr :Gread<CR>
-nnoremap <leader>gw :Gwrite<CR>
-nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gc :Gcommit --verbose<CR>
-nnoremap <leader>gd :Gvdiff<CR>
-"}}}
-
-" -----------------------------------------------------
-" 5.13 BufOnly -> [C]lose all {{{
+" 5.12 BufOnly -> [C]lose all {{{
 " -----------------------------------------------------
 nnoremap ,C :Bonly<CR>
 "}}}
 
 " -----------------------------------------------------
-" 5.14 Gitv -> [g]it [h]istory {{{
-" -----------------------------------------------------
-nnoremap <leader>gh :Gitv!<CR>
-"}}}
-
-" -----------------------------------------------------
-" 5.15 Tabularize -> [a]lign {{
+" 5.13 Tabularize -> [a]lign {{
 " -----------------------------------------------------
 vnoremap ,a :Tabularize /
 "}}}
 
 " -----------------------------------------------------
-" 5.16 JsDoc {{
+" 5.14 JsDoc {{
 " -----------------------------------------------------
 nnoremap ,d :JsDoc<CR>
 "}}}
