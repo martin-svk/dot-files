@@ -201,6 +201,26 @@ function! g:utils#formatFile() abort
   call cursor(l:line, l:col)
 endfunction
 
+" NOTE: npm install -g eslint
+function! g:utils#eslintFixFile() abort
+  let l:line = line('.')
+  let l:col = col('.')
+  let l:command_prefix = '!'
+
+  if &filetype ==? 'javascript.jsx'
+    let l:command = 'eslint --fix %:p'
+  endif
+
+  if exists('l:command')
+    execute l:command_prefix . l:command
+  else
+    echom 'Only .js files are supported.'
+  endif
+
+  " Return back to where cursor was
+  call cursor(l:line, l:col)
+endfunction
+
 " Mode function for Lightline statusline
 function! g:utils#lightLineMode() abort
   let l:fname = expand('%:t')

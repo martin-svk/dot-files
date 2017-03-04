@@ -642,6 +642,9 @@ command! GTags :call utils#generateCtags()
 command! Format :call utils#formatFile()
 nnoremap <silent> ,f :Format<CR>
 
+" Eslint fix current file
+command! ESFix :call utils#eslintFixFile()
+
 " Profile
 command! Profile :call utils#profile()
 
@@ -1178,8 +1181,7 @@ augroup END
 " -----------------------------------------------------
 " 1. Update README file.
 " 2. Improve or replace unite with fzf, shortest matching results should be first.
-" 3. eslit --fix command for current js file
-" 4. steal some useful snippets for js/react/redux from atom/vscode
+" 3. steal some useful snippets for js/react/redux from atom/vscode
 "}}}
 
 " -----------------------------------------------------
