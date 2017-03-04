@@ -15,7 +15,9 @@
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall
+  augroup plug_install
+    autocmd VimEnter * PlugInstall
+  augroup END
 endif
 " }}}
 call plug#begin('~/.config/nvim/plugged')
@@ -240,6 +242,10 @@ call plug#end()
 " 2.0 Basic settings (Neovim defaults: https://neovim.io/doc/user/vim_diff.html#nvim-option-defaults) {{{
 " ======================================================================================================================
 "{{{
+
+set encoding=utf-8                          " The encoding displayed.
+set fileencoding=utf-8                      " The encoding written to file.
+scriptencoding utf-8                        " Set utf-8 as default script encoding
 
 set shell=/bin/zsh                          " Setting shell to zsh
 set number                                  " Line numbers on
@@ -881,7 +887,9 @@ let g:vcoolor_lowercase=1
 " -----------------------------------------------------
 
 " Custom mappings for the unite buffer
-autocmd FileType unite call s:unite_settings()
+augroup unite
+  autocmd FileType unite call s:unite_settings()
+augroup END
 function! s:unite_settings()
   " Enable navigation with control-j and control-k in insert mode
   imap <silent> <buffer> <C-j> <Plug>(unite_select_next_line)
@@ -1006,16 +1014,16 @@ nnoremap <leader>pc :PlugClean<CR>
 " 5.11 Ctrl-SF {{{
 " -----------------------------------------------------
 let g:ctrlsf_mapping = {
-      \ "next"    : "n",
-      \ "prev"    : "N",
-      \ "quit"    : "q",
-      \ "openb"   : "",
-      \ "split"   : "s",
-      \ "tab"     : "",
-      \ "tabb"    : "",
-      \ "popen"   : "",
-      \ "pquit"   : "",
-      \ "loclist" : "",
+      \ 'next'    : 'n',
+      \ 'prev'    : 'N',
+      \ 'quit'    : 'q',
+      \ 'openb'   : '',
+      \ 'split'   : 's',
+      \ 'tab'     : '',
+      \ 'tabb'    : '',
+      \ 'popen'   : '',
+      \ 'pquit'   : '',
+      \ 'loclist' : '',
       \ }
 
 nnoremap <silent> ,g :call utils#searchCurrentWordWithAg()<CR>
@@ -1050,7 +1058,7 @@ syntax on
 "}}}
 
 " Color scheme {{{
-set bg=dark
+set background=dark
 colorscheme hybrid
 "}}}
 
@@ -1081,19 +1089,27 @@ hi! link BufTabLineFill Comment
 "{{{
 
 " Keywordprg settings {{{
-autocmd FileType vim setlocal keywordprg=:help
+augroup vim_man
+  autocmd FileType vim setlocal keywordprg=:help
+augroup END
 "}}}
 
 " Turn spellcheck on for markdown files {{{
-autocmd BufNewFile,BufRead *.md setlocal spell
+augroup auto_spellcheck
+  autocmd BufNewFile,BufRead *.md setlocal spell
+augroup END
 "}}}
 
 " Remove trailing whitespaces automatically before save {{{
-autocmd BufWritePre * call utils#stripTrailingWhitespaces()
+augroup strip_ws
+  autocmd BufWritePre * call utils#stripTrailingWhitespaces()
+augroup END
 "}}}
 
 " Resize splits when the window is resized {{{
-autocmd VimResized * :wincmd =
+augroup resize_improvements
+  autocmd VimResized * :wincmd =
+augroup END
 "}}}
 
 " Make sure Vim returns to the same line when you reopen a file. Thanks, Amit and Steve Losh. {{{
@@ -1108,40 +1124,46 @@ augroup END
 
 " Keyboard layout switching {{{
 if g:utils_autoswitch_kb_layout == 1
-  autocmd InsertEnter * call utils#setSKKBLayout()
-  autocmd InsertLeave * call utils#setUSKBLayout()
+  augroup auto_kb_switch
+    autocmd InsertEnter * call utils#setSKKBLayout()
+    autocmd InsertLeave * call utils#setUSKBLayout()
+  augroup END
 end
 "}}}
 
 " Run checktime in buffers, but avoiding the "Command Line" (q:) window
-autocmd CursorHold * if getcmdwintype() == '' | checktime | endif
+augroup prevent_q_colon
+  autocmd CursorHold * if getcmdwintype() == '' | checktime | endif
+augroup END
 
 " -----------------------------------------------------
 " 7.1 Run linters after save {{{
 " -----------------------------------------------------
 
-" npm install -g eslint
-autocmd BufWritePost *.js Neomake eslint
-" npm install -g jsonlint
-autocmd BufWritePost *.json Neomake jsonlint
-" npm install -g typescript
-autocmd BufWritePost *.ts Neomake tsc
-" gem install rubocop
-autocmd BufWritePost *.rb Neomake rubocop
-" sudo apt-get install elixir
-autocmd BufWritePost *.ex Neomake elixir
-" apt-get install tidy
-autocmd BufWritePost *.html Neomake tidy
-" gem install haml_lint
-autocmd BufWritePost *.haml Neomake hamllint
-" gem install scss-lint
-autocmd BufWritePost *.scss Neomake sasslint
-" gem install mdl
-autocmd BufWritePost *.md Neomake mdl
-" apt-get install shellcheck
-autocmd BufWritePost *.sh Neomake shellcheck
-" pip3 install vim-vint
-autocmd BufWritePost *.vim Neomake vint
+augroup linters
+  " npm install -g eslint
+  autocmd BufWritePost *.js Neomake eslint
+  " npm install -g jsonlint
+  autocmd BufWritePost *.json Neomake jsonlint
+  " npm install -g typescript
+  autocmd BufWritePost *.ts Neomake tsc
+  " gem install rubocop
+  autocmd BufWritePost *.rb Neomake rubocop
+  " sudo apt-get install elixir
+  autocmd BufWritePost *.ex Neomake elixir
+  " apt-get install tidy
+  autocmd BufWritePost *.html Neomake tidy
+  " gem install haml_lint
+  autocmd BufWritePost *.haml Neomake hamllint
+  " gem install scss-lint
+  autocmd BufWritePost *.scss Neomake sasslint
+  " gem install mdl
+  autocmd BufWritePost *.md Neomake mdl
+  " apt-get install shellcheck
+  autocmd BufWritePost *.sh Neomake shellcheck
+  " pip3 install vim-vint
+  autocmd BufWritePost *.vim Neomake vint
+augroup END
 "}}}
 
 "}}}
