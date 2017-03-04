@@ -28,8 +28,6 @@ const mapDispatchToProps = (dispatch, _ownProps) => ({
 });
 
 $1.propTypes = {};
-$1.defaultProps = {};
-$1.contextTypes = {};
 
 export default connect(mapStateToProps, mapDispatchToProps)($1);
 endsnippet
@@ -56,68 +54,25 @@ const mapDispatchToProps = (dispatch, _ownProps) => ({
 });
 
 $1.propTypes = {};
-$1.defaultProps = {};
-$1.contextTypes = {};
 
 export default connect(mapStateToProps, mapDispatchToProps)($1);
 endsnippet
 
 # ===============================================
-# Store
-# ===============================================
-snippet store "Redux store"
-import { createStore, applyMiddleware, compose } from 'redux';
-import thunk from 'redux-thunk';
-import rootReducer from 'reducers/rootReducer';
-import config from 'config';
-
-// Middleware setting
-const enhancer = config.development() ? compose(
-	// Development enhancer
-	applyMiddleware(thunk),
-	window.devToolsExtension ? window.devToolsExtension() : f => f
-) : compose(
-	// Production enhancer
-	applyMiddleware(thunk)
-);
-
-// Store configuration
-function configureStore(initialState) {
-	const store = createStore(rootReducer, initialState, enhancer);
-	hotReloadReducers(store);
-	return store;
-}
-
-// Reducer reloading
-function hotReloadReducers(store) {
-	if (module.hot && config.development()) {
-		module.hot.accept('../reducers/rootReducer', () => {
-			const nextReducer = require('../reducers/rootReducer').default;
-			store.replaceReducer(nextReducer);
-		});
-	}
-}
-
-const store = configureStore();
-export default store;
-endsnippet
-
-# ===============================================
 # Action creators/types
 # ===============================================
-snippet ac "Redux action creator"
-export const ${1:actionName} = () => ({
-	type: ActionTypes.${2:ACTION_TYPE},
-	payload: $3
+snippet acp "Redux action creator (w/payload)"
+export const ${1:actionName} = ($2) => ({
+	type: ActionTypes.${3:ACTION_TYPE},
+	error: false,
+	payload: $2
 });
 endsnippet
 
-snippet aac "Redux thunk async action creator"
-export const ${1:actionName} = () => (
-	(dispatch, getState) => {
-		$2
-	}
-);
+snippet acs "Redux action creator (simple)"
+export const ${1:actionName} = () => ({
+	type: ActionTypes.${3:ACTION_TYPE}
+});
 endsnippet
 
 snippet at "Action type" b
@@ -165,14 +120,14 @@ endsnippet
 # Selectors
 # ===============================================
 snippet sel "Redux state selector"
-${1:export} const ${2:selectorName} = state => state.$0;
+${1:export} const ${2:selectorName} = state => state.$3;
 endsnippet
 
 snippet rsel "Redux computed state re-selector (using reselect)"
 export const ${1:computedSelectorName} = createSelector(
 	[ ${2:usedSelector}, ${3:usedSelector2} ],
 	($2, $3) => {
-		$0
+		$4
 	}
 );
 endsnippet

@@ -2,7 +2,7 @@
 # Generator declarations
 # ===============================================
 
-snippet f* "generator function declaration" b
+snippet gfun "generator function declaration" b
 export function* ${1:name}(${2:args}) {
 	yield ${3:true};
 }
@@ -40,9 +40,9 @@ snippet fork "saga fork effect" b
 ${1:const task = }yield fork(${2:saga});
 endsnippet
 
-# ===============================================
-# Misc
-# ===============================================
-snippet y "yield" b
-yield ${1:effect}(${2:args});
+snippet race "saga race effect" b
+const { result, _timeout } = yield race({
+	result: call($1),
+	_timeout: call(delay, ${2:Defaults.MAX_REQUEST_TIMEOUT})
+});
 endsnippet

@@ -13,6 +13,10 @@ snippet im "import statement" b
 import $1 from '$2';
 endsnippet
 
+snippet imd "import destructor statement" b
+import { $1 } from '$2';
+endsnippet
+
 snippet ex "export statement" b
 export default $1;
 endsnippet
@@ -32,15 +36,11 @@ endsnippet
 # Functions
 # ===============================================
 snippet map "builtin map function" w
-map((${1:item}) => (
-	$2
-));
+map((${1:item}) => $2);
 endsnippet
 
 snippet filter "builtin filter function" w
-filter((${1:item}) => (
-	$2
-));
+filter((${1:item}) => $2);
 endsnippet
 
 # ===============================================
