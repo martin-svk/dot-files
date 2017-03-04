@@ -66,7 +66,7 @@ Plug 'tpope/vim-bundler', { 'for': ['ruby', 'eruby', 'haml', 'slim'] }
 " JS (ES6, React) {{{
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Moder JS support (indent, syntax, etc)
+" Modern JS support (indent, syntax, etc)
 Plug 'pangloss/vim-javascript'
 " JSX syntax
 Plug 'mxw/vim-jsx'
@@ -76,8 +76,6 @@ Plug 'leafgarland/typescript-vim'
 Plug 'sheerun/vim-json'
 " Autocomplete (npm install -g tern)
 Plug 'carlitux/deoplete-ternjs'
-" Autocomplete using flow (npm install -g flow-bin)
-Plug 'steelsojka/deoplete-flow'
 " JS Documentation comments
 Plug 'heavenshell/vim-jsdoc', { 'on': ['JsDoc'] }
 "}}}
@@ -146,14 +144,8 @@ Plug 'ap/vim-buftabline'
 " External tools integration plugins {{{
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Fugitive
-Plug 'tpope/vim-fugitive'
-" Git log viewer (Gitv! for file mode)
-Plug 'gregsexton/gitv', { 'on': 'Gitv' }
 " Git changes showed on line numbers
 Plug 'airblade/vim-gitgutter'
-" REST Console
-Plug 'diepm/vim-rest-console', { 'for': 'rest' }
 " Color picker
 Plug 'KabbAmine/vCoolor.vim', { 'on': ['VCoolor', 'VCase'] }
 "}}}
@@ -188,8 +180,6 @@ Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-line'
 " Entire buffer text object (vae)
 Plug 'kana/vim-textobj-entire'
-" Ruby block text object (vir)
-Plug 'nelstrom/vim-textobj-rubyblock'
 " Comment text object (vac)
 Plug 'glts/vim-textobj-comment'
 " XML attribute
@@ -212,8 +202,6 @@ Plug 'tomasr/molokai'
 Plug 'cocopon/iceberg.vim'
 " Tender
 Plug 'jacoborus/tender.vim'
-" Gruvbox
-Plug 'morhetz/gruvbox'
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
@@ -240,8 +228,6 @@ Plug 'vim-scripts/BufOnly.vim', { 'on': 'Bonly' }
 Plug 'nelstrom/vim-qargs', { 'on': 'Qargs' }
 " Asks if you wanted to open existing file
 Plug 'EinfachToll/DidYouMean'
-" Codi interactive REPL like editing
-Plug 'metakirby5/codi.vim', { 'on': 'Codi' }
 "}}}
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
