@@ -1176,12 +1176,7 @@ syntax on
 
 " Color scheme {{{
 set bg=dark
-let g:gruvbox_italicize_comments=0
-let g:gruvbox_sign_column="bg0"
-let g:gruvbox_undercurl=0
-let g:gruvbox_underline=0
-let g:gruvbox_invert_selection=0
-colorscheme gruvbox
+colorscheme hybrid
 "}}}
 
 " Highlight VCS conflict markers {{{
