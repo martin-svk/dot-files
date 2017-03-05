@@ -115,23 +115,6 @@ Plug 'honza/dockerfile.vim'
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
-" Unite fuzzy searcher {{{
-" ---------------------------------------------------------------------------------------------------------------------
-
-Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
-" Unite files, buffers, etc. sources
-Plug 'Shougo/unite.vim'
-" Outline source
-Plug 'Shougo/unite-outline'
-" History/yank source
-Plug 'Shougo/neoyank.vim'
-" Tag source
-Plug 'tsukkee/unite-tag'
-" Ag wrapper (Unite grep alternative) search and edit
-Plug 'dyng/ctrlsf.vim', { 'on': ['CtrlSF', 'CtrlSFToggle'] }
-"}}}
-
-" ---------------------------------------------------------------------------------------------------------------------
 " Interface improving {{{
 " ---------------------------------------------------------------------------------------------------------------------
 
@@ -147,6 +130,10 @@ Plug 'ap/vim-buftabline'
 " External tools integration plugins {{{
 " ---------------------------------------------------------------------------------------------------------------------
 
+" Fuzzy searching/replacing/etc
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+" Ag wrapper search and edit
+Plug 'dyng/ctrlsf.vim', { 'on': ['CtrlSF', 'CtrlSFToggle'] }
 " Git swiss-army knife
 Plug 'tpope/vim-fugitive'
 " Git changes showed on line numbers
@@ -670,38 +657,9 @@ let g:utils_autoswitch_kb_layout=0
 "}}}
 
 " -----------------------------------------------------
-" 4.2 Unite {{{
+" 4.2 FZF {{{
 " -----------------------------------------------------
-
-" Matcher settings
-call unite#filters#matcher_default#use(['matcher_fuzzy', 'matcher_hide_current_file'])
-call unite#filters#sorter_default#use(['sorter_rank'])
-
-" Use ag if available
-if executable('ag')
-  let g:unite_source_grep_command='ag'
-  let g:unite_source_grep_default_opts='--nocolor --line-numbers --nogroup -S -C0'
-  let g:unite_source_grep_recursive_opt=''
-
-  " Set rec source command
-  let g:unite_source_rec_async_command = ['ag', '--follow', '--nocolor', '--nogroup', '--hidden', '-g', '']
-endif
-
-" Custom profile
-call unite#custom#profile('default', 'context', {
-      \   'prompt': '» ',
-      \   'winheight': 15,
-      \ })
-
-" Add syntax highlighting
-let g:unite_source_line_enable_highlight=1
-
-" Dont override status line
-let g:unite_force_overwrite_statusline=0
-
-" Tag source settings
-let g:unite_source_tag_max_name_length=40
-let g:unite_source_tag_max_fname_length=50
+" TODO: ...
 "}}}
 
 " -----------------------------------------------------
@@ -890,45 +848,27 @@ let g:vcoolor_lowercase=1
 " ======================================================================================================================
 "{{{
 " -----------------------------------------------------
-" 5.1 Unite and extensions {{{
+" 5.1 FZF {{{
 " -----------------------------------------------------
 
-" Custom mappings for the unite buffer
-augroup unite
-  autocmd FileType unite call s:unite_settings()
-augroup END
-function! s:unite_settings()
-  " Enable navigation with control-j and control-k in insert mode
-  imap <silent> <buffer> <C-j> <Plug>(unite_select_next_line)
-  imap <silent> <buffer> <C-k> <Plug>(unite_select_previous_line)
-  " Runs 'splits' action by <C-s> and <C-v>
-  imap <silent> <buffer> <expr> <C-s> unite#do_action('split')
-  imap <silent> <buffer> <expr> <C-v> unite#do_action('vsplit')
-  " Exit with escape
-  nmap <silent> <buffer> <ESC> <Plug>(unite_exit)
-  " Mark candidates
-  vmap <silent> <buffer> m <Plug>(unite_toggle_mark_selected_candidates)
-  nmap <silent> <buffer> m <Plug>(unite_toggle_mark_current_candidate)
-endfunction
-
-" Search files recursively ([o]pen file)
-nnoremap <silent> <leader>o :call utils#uniteFileRec()<CR>
-" Browse [f]iles in CWD
-nnoremap <silent> <leader>f :call utils#uniteFileBrowse()<CR>
-" Search between open files - [b]uffers
-nnoremap <silent> <leader>b :call utils#uniteBuffers()<CR>
-" Search in [l]ines on current buffer
-nnoremap <silent> <leader>l :call utils#uniteLineSearch()<CR>
-" Search in [y]ank history
-nnoremap <silent> <leader>y :call utils#uniteYankHistory()<CR>
-" Search in outlines
-nnoremap <silent> <leader>r :call utils#uniteOutline()<CR>
-" Search in registers
-nnoremap <silent> <leader>" :call utils#uniteRegisters()<CR>
-" Search in opened [w]indow splits
-nnoremap <silent> <leader>w :call utils#uniteWindows()<CR>
-" Search in ultisnips [s]nippets
-nnoremap <silent> <leader>s :call utils#uniteSnippets()<CR>
+" " Search files recursively ([o]pen file)
+" nnoremap <silent> <leader>o :call utils#uniteFileRec()<CR>
+" " Browse [f]iles in CWD
+" nnoremap <silent> <leader>f :call utils#uniteFileBrowse()<CR>
+" " Search between open files - [b]uffers
+" nnoremap <silent> <leader>b :call utils#uniteBuffers()<CR>
+" " Search in [l]ines on current buffer
+" nnoremap <silent> <leader>l :call utils#uniteLineSearch()<CR>
+" " Search in [y]ank history
+" nnoremap <silent> <leader>y :call utils#uniteYankHistory()<CR>
+" " Search in outlines
+" nnoremap <silent> <leader>r :call utils#uniteOutline()<CR>
+" " Search in registers
+" nnoremap <silent> <leader>" :call utils#uniteRegisters()<CR>
+" " Search in opened [w]indow splits
+" nnoremap <silent> <leader>w :call utils#uniteWindows()<CR>
+" " Search in ultisnips [s]nippets
+" nnoremap <silent> <leader>s :call utils#uniteSnippets()<CR>
 "}}}
 
 " -----------------------------------------------------

@@ -126,51 +126,6 @@ function! g:utils#useOmniTabWrapper() abort
   inoremap <buffer> <expr> <TAB> utils#insertTabOmniWrapper()
 endfunction
 
-" Unite commands wrappers
-function! g:utils#uniteMRUs() abort
-  execute 'Unite -no-split -buffer-name=most-recently-used -start-insert neomru/file'
-endfunction
-
-function! g:utils#uniteFileBrowse() abort
-  execute 'Unite -no-split -buffer-name=project-files -start-insert file'
-endfunction
-
-function! g:utils#uniteFileRec() abort
-  execute 'Unite -no-split -buffer-name=file-recursive-search -start-insert file_rec/neovim'
-endfunction
-
-function! g:utils#uniteBuffers() abort
-  execute 'Unite -no-split -buffer-name=buffers -start-insert buffer'
-endfunction
-
-function! g:utils#uniteOutline() abort
-  execute 'Unite -no-split -buffer-name=symbols -start-insert outline'
-endfunction
-
-function! g:utils#uniteHistory() abort
-  execute 'Unite -no-split -buffer-name=edit-history change'
-endfunction
-
-function! g:utils#uniteLineSearch() abort
-  execute 'Unite -no-split -buffer-name=line-search -start-insert line'
-endfunction
-
-function! g:utils#uniteYankHistory() abort
-  execute 'Unite -no-split -buffer-name=yank-history history/yank'
-endfunction
-
-function! g:utils#uniteRegisters() abort
-  execute 'Unite -no-split -buffer-name=registers register'
-endfunction
-
-function! g:utils#uniteWindows() abort
-  execute 'Unite -no-split -buffer-name=splits window'
-endfunction
-
-function! g:utils#uniteSnippets() abort
-  execute 'Unite -no-split -buffer-name=snippets -start-insert ultisnips'
-endfunction
-
 " Format function
 " Needs: `npm install js-beautify`, `gem install ruby-beautify`, `python`
 function! g:utils#formatFile() abort
@@ -225,7 +180,6 @@ endfunction
 function! g:utils#lightLineMode() abort
   let l:fname = expand('%:t')
   return l:fname =~? 'NERD_tree' ? 'NT' :
-        \ &filetype ==? 'unite' ? 'Unite' :
         \ winwidth(0) > 70 ? g:lightline#mode() : ''
 endfunction
 
@@ -248,7 +202,6 @@ endfunction
 function! g:utils#lightLineFilename() abort
   let l:fname = expand('%:t')
   return l:fname =~? 'NERD_tree' ? 'NERDTree' :
-        \ &filetype ==? 'unite' ? g:unite#get_status_string() :
         \ ('' !=# l:fname ? l:fname : '[No Name]')
 endfunction
 
