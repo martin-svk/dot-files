@@ -652,6 +652,7 @@ let g:utils_autoswitch_kb_layout=0
 " 4.2 FZF {{{
 " -----------------------------------------------------
 let $FZF_DEFAULT_OPTS='--reverse'
+let $FZF_DEFAULT_COMMAND='ag --skip-vcs-ignores -g ""'
 let g:fzf_layout = { 'window': 'enew' }
 "}}}
 
