@@ -487,12 +487,6 @@ silent! unmap ]%
 xnoremap <  <gv
 xnoremap >  >gv
 
-" Terminal mode mappings
-if has('nvim')
-  tnoremap <ESC> <C-\><C-n>
-  tnoremap ,<ESC> <ESC>
-endif
-
 " Stay down after creating fold
 vnoremap zf mzzf`zzz
 
@@ -657,7 +651,8 @@ let g:utils_autoswitch_kb_layout=0
 " -----------------------------------------------------
 " 4.2 FZF {{{
 " -----------------------------------------------------
-" TODO: ...
+let $FZF_DEFAULT_OPTS='--reverse'
+let g:fzf_layout = { 'window': 'enew' }
 "}}}
 
 " -----------------------------------------------------
@@ -855,22 +850,30 @@ let g:yankring_window_height=15
 " 5.1 FZF {{{
 " -----------------------------------------------------
 
-" " Search files recursively ([o]pen file)
-" nnoremap <silent> <leader>o :call utils#uniteFileRec()<CR>
-" " Browse [f]iles in CWD
-" nnoremap <silent> <leader>f :call utils#uniteFileBrowse()<CR>
-" " Search between open files - [b]uffers
-" nnoremap <silent> <leader>b :call utils#uniteBuffers()<CR>
-" " Search in [l]ines on current buffer
-" nnoremap <silent> <leader>l :call utils#uniteLineSearch()<CR>
-" " Search in outlines
-" nnoremap <silent> <leader>r :call utils#uniteOutline()<CR>
-" " Search in registers
-" nnoremap <silent> <leader>" :call utils#uniteRegisters()<CR>
-" " Search in opened [w]indow splits
-" nnoremap <silent> <leader>w :call utils#uniteWindows()<CR>
-" " Search in ultisnips [s]nippets
-" nnoremap <silent> <leader>s :call utils#uniteSnippets()<CR>
+" Search files recursively ([o]pen file)
+nnoremap <silent> <leader>o :Files<CR>
+" Search git status (edited) [f]iles
+nnoremap <silent> <leader>f :GFiles?<CR>
+" Search in local buffer [c]ommits
+nnoremap <silent> <leader>c :BCommits<CR>
+" Search in all the project [C]ommits
+nnoremap <silent> <leader>C :Commits<CR>
+" Search between open files - [b]uffers
+nnoremap <silent> <leader>b :Buffers<CR>
+" Search in [l]ines on current buffer
+nnoremap <silent> <leader>l :BLines<CR>
+" Search in all the opened buffers [L]ines
+nnoremap <silent> <leader>L :Lines<CR>
+" Search in ultisnips [s]nippets
+nnoremap <silent> <leader>s :Snippets<CR>
+" Search in [m]arks
+nnoremap <silent> <leader>m :Marks<CR>
+" Search in edited files [h]istory
+nnoremap <silent> <leader>h :History<CR>
+" Search in search [/] history
+nnoremap <silent> <leader>/ :History/<CR>
+" Search in ag search
+nnoremap <silent> <leader>a :Ag
 "}}}
 
 " -----------------------------------------------------
@@ -946,8 +949,8 @@ inoremap <expr><BS> deoplete#mappings#smart_close_popup()."\<C-h>"
 " -----------------------------------------------------
 " 5.9 CtrlSF {{{
 " -----------------------------------------------------
-nnoremap <leader>gg :CtrlSF<Space>
-nnoremap <leader>gG :CtrlSFToggle<Space>
+nnoremap <leader>g :CtrlSF<Space>
+nnoremap <leader>G :CtrlSFToggle<Space>
 "}}}
 
 " -----------------------------------------------------
