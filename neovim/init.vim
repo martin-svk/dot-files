@@ -146,6 +146,8 @@ Plug 'KabbAmine/vCoolor.vim', { 'on': ['VCoolor', 'VCase'] }
 " Text insertion/manipulation {{{
 " ---------------------------------------------------------------------------------------------------------------------
 
+" Yank history
+Plug 'vim-scripts/YankRing.vim'
 " Surround (cs"')
 Plug 'tpope/vim-surround'
 " Easy alignment
@@ -841,6 +843,12 @@ let g:vcoolor_disable_mappings=1
 let g:vcoolor_lowercase=1
 ""}}}
 
+"" -----------------------------------------------------
+"" 4.20 YankRing settings {{{
+"" ------------------------------------------------------
+let g:yankring_window_height=15
+""}}}
+
 "}}}
 
 " ======================================================================================================================
@@ -859,8 +867,6 @@ let g:vcoolor_lowercase=1
 " nnoremap <silent> <leader>b :call utils#uniteBuffers()<CR>
 " " Search in [l]ines on current buffer
 " nnoremap <silent> <leader>l :call utils#uniteLineSearch()<CR>
-" " Search in [y]ank history
-" nnoremap <silent> <leader>y :call utils#uniteYankHistory()<CR>
 " " Search in outlines
 " nnoremap <silent> <leader>r :call utils#uniteOutline()<CR>
 " " Search in registers
@@ -992,6 +998,12 @@ vnoremap ,a :Tabularize /
 " 5.14 JsDoc {{
 " -----------------------------------------------------
 nnoremap ,d :JsDoc<CR>
+"}}}
+
+" -----------------------------------------------------
+" 5.15 YankRing {{
+" -----------------------------------------------------
+nnoremap <silent> <leader>y :YRShow<CR>
 "}}}
 
 "}}}
