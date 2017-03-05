@@ -118,6 +118,7 @@ Plug 'honza/dockerfile.vim'
 " Unite fuzzy searcher {{{
 " ---------------------------------------------------------------------------------------------------------------------
 
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 " Unite files, buffers, etc. sources
 Plug 'Shougo/unite.vim'
 " Outline source
@@ -146,6 +147,8 @@ Plug 'ap/vim-buftabline'
 " External tools integration plugins {{{
 " ---------------------------------------------------------------------------------------------------------------------
 
+" Git swiss-army knife
+Plug 'tpope/vim-fugitive'
 " Git changes showed on line numbers
 Plug 'airblade/vim-gitgutter'
 " Color picker
