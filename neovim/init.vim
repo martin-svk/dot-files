@@ -146,8 +146,6 @@ Plug 'KabbAmine/vCoolor.vim', { 'on': ['VCoolor', 'VCase'] }
 " Text insertion/manipulation {{{
 " ---------------------------------------------------------------------------------------------------------------------
 
-" Yank history
-Plug 'vim-scripts/YankRing.vim'
 " Surround (cs"')
 Plug 'tpope/vim-surround'
 " Easy alignment
@@ -218,6 +216,8 @@ Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-repeat'
 " Delete all but current buffer
 Plug 'vim-scripts/BufOnly.vim', { 'on': 'Bonly' }
+" Did you mean file open
+Plug 'EinfachToll/DidYouMean'
 "}}}
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
