@@ -156,6 +156,8 @@ Plug 'ferranpm/vim-isolate', { 'on':  ['Isolate', 'UnIsolate'] }
 Plug 'zef/vim-cycle'
 " Titlecase motion (gt)
 Plug 'christoomey/vim-titlecase'
+" Show content of registers when pasting
+Plug 'junegunn/vim-peekaboo'
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
