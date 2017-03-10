@@ -174,3 +174,8 @@ fi
 
 # Iterm2 shell integrations
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# Git extras
+if [ -d $HOME/vendor/git-extras ]; then
+  source $HOME/vendor/git-extras/etc/git-extras-completion.zsh
+fi
