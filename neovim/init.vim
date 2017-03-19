@@ -1020,7 +1020,7 @@ syntax on
 
 " Color scheme {{{
 set background=dark
-colorscheme hybrid
+colorscheme tender
 "}}}
 
 " Highlight VCS conflict markers {{{
