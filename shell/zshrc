@@ -103,7 +103,7 @@ alias ws='http-server -c-1 -p 3333 -o'
 # ------------------------------------------
 # SSH servers
 # ------------------------------------------
-alias ssh-apibacus='ssh root@46.101.97.20'
+alias ssh-apibacus='ssh martin@51.254.101.75'
 
 # ------------------------------------------
 # Language specific
