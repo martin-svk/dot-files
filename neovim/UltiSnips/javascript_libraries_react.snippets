@@ -2,7 +2,7 @@
 # Components declarations
 # ===============================================
 snippet comp "React component" b
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 
 class $1 extends Component {
 	constructor() {
@@ -22,7 +22,7 @@ export default $1;
 endsnippet
 
 snippet fcomp "React stateless, functional component" b
-import React, { PropTypes } from 'react';
+import React from 'react';
 
 function ${1:Component}(props) {
 	return (
@@ -38,6 +38,10 @@ endsnippet
 # ===============================================
 # Prop types and default props, context
 # ===============================================
+snippet imp "import prop-types" b
+import { ${1:func} } from 'prop-types';
+endsnippet
+
 snippet propt "prop types definition" w
 propTypes = {
 	${1:prop}: ${2:value}
@@ -57,7 +61,7 @@ contextTypes = {
 endsnippet
 
 snippet prop "one prop type definition" w
-PropTypes.${1:object}${2:.isRequired}
+${1:number}${2:.isRequired}
 endsnippet
 
 # ===============================================
