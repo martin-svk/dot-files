@@ -68,6 +68,7 @@
             4
         ],
         "react/jsx-no-target-blank": 0,
+        "react/no-typos": 0,
         "react/require-default-props": 0,
         "space-before-function-paren": [
             2,
