@@ -256,7 +256,7 @@ set nojoinspaces                            " No extra space when joining a line
 set scrolloff=5                             " Scroll when closing to top or bottom of the screen
 set updatetime=1000                         " Update time used to create swap file or other things
 set suffixesadd+=.js,.rb                    " Add js and ruby files to suffixes
-set synmaxcol=220                           " Don't try to syntax highlight minified files
+set synmaxcol=2000                          " Don't try to syntax highlight minified files
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
