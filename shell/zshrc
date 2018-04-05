@@ -104,6 +104,7 @@ alias ws='http-server -c-1 -p 3333 -o'
 # SSH servers
 # ------------------------------------------
 alias ssh-apibacus='ssh martin@51.254.101.75'
+alias ssh-mngls-prod-api='ssh -i ~/dev/keys/mangools.pem ec2-user@54.162.99.33'
 
 # ------------------------------------------
 # Language specific
@@ -179,3 +180,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 if [ -d $HOME/vendor/git-extras ]; then
   source $HOME/vendor/git-extras/etc/git-extras-completion.zsh
 fi
+
+# Add node8 to path
+export PATH="/usr/local/opt/node@8/bin:$PATH"
