@@ -104,7 +104,7 @@ alias ws='http-server -c-1 -p 3333 -o'
 # SSH servers
 # ------------------------------------------
 alias ssh-apibacus='ssh martin@51.254.101.75'
-alias ssh-mngls-prod-api='ssh -i ~/dev/keys/mangools.pem ec2-user@54.162.99.33'
+alias ssh-mngls-prod-api='ssh -i ~/dev/keys/mangools.pem ec2-user@34.204.2.95'
 alias ssh-mgnls-mangools='ssh -i ~/dev/keys/itrinity.pem ec2-user@mangools.com'
 
 # ------------------------------------------
