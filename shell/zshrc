@@ -106,6 +106,13 @@ alias ws='http-server -c-1 -p 3333 -o'
 alias ssh-apibacus='ssh martin@51.254.101.75'
 alias ssh-mngls-prod-api='ssh -i ~/dev/keys/mangools.pem ec2-user@34.204.2.95'
 alias ssh-mgnls-mangools='ssh -i ~/dev/keys/itrinity.pem ec2-user@mangools.com'
+alias ssh-mgnls-rockingpage='ssh -i ~/dev/keys/itrinity.pem ec2-user@rockingpage.com'
+alias ssh-mngls-worker='ssh -i ~/dev/keys/itrinity.pem ec2-user@worker0.mangools.com'
+alias ssh-mngls-rs0='ssh -i ~/dev/keys/itrinity.pem ec2-user@rs0.mangools.com'
+alias ssh-mngls-rs1='ssh -i ~/dev/keys/itrinity.pem ec2-user@rs1.mangools.com'
+alias ssh-mngls-rs2='ssh -i ~/dev/keys/itrinity.pem ec2-user@rs2.mangools.com'
+alias ssh-mngls-byebyebot='ssh -i ~/dev/keys/itrinity.pem ec2-user@byebyebot.com'
+alias ssh-mgnls-dev-api-'ssh ec2-user@sandbox.api.mangools.com'
 
 # ------------------------------------------
 # Language specific
