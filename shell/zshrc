@@ -116,7 +116,7 @@ alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date
 alias gtags='starscope -e ctags'
 
 # Loading private aliases
-source ./private/aliases
+source $HOME/dotfiles/private/aliases
 
 function crypt() {
     openssl des3 -in "$1" -out "$2"
