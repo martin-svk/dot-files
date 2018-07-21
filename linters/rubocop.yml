@@ -1,12 +1,12 @@
 # gem install rubocop
 # gem install rubocop-rspec
-require: rubocop-rspec
+# require: rubocop-rspec
 
 Documentation:
   Enabled: false
 Metrics/LineLength:
   Max: 120
-Style/MultilineOperationIndentation:
+Layout/MultilineOperationIndentation:
   EnforcedStyle: indented
 Style/FrozenStringLiteralComment:
   Enabled: false
