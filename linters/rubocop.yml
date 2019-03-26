@@ -7,6 +7,7 @@ Documentation:
 Metrics/LineLength:
   Max: 120
 Layout/MultilineOperationIndentation:
+# Style/MultilineOperationIndentation:
   EnforcedStyle: indented
 Style/FrozenStringLiteralComment:
   Enabled: false
