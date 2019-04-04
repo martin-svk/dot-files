@@ -37,8 +37,8 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # zsh-autosuggestions -> https://github.com/zsh-users/zsh-autosuggestions
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(adb bower bundler common-aliases docker extract gem gitfast gulp jsontools
-         npm rbenv redis-cli zsh-syntax-highlighting zsh-autosuggestions)
+# zsh-syntax-highlighting zsh-autosuggestions is installed via homebrew
+plugins=(adb bower bundler common-aliases docker extract gem gitfast gulp jsontools npm rbenv redis-cli)
 
 # =====================================================================================================================
 # Plugins settings
