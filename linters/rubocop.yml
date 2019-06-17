@@ -1,4 +1,5 @@
 # gem install rubocop
+# gem install rubocop-rails
 # gem install rubocop-rspec
 # require: rubocop-rspec
 
