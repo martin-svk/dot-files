@@ -92,6 +92,8 @@ Plug 'othree/html5.vim'
 Plug 'cakebaker/scss-syntax.vim'
 " Color highlighter
 Plug 'lilydjwg/colorizer', { 'for': ['css', 'sass', 'scss', 'less', 'html', 'xdefaults', 'javascript', 'javascript.jsx'] }
+" Handlebars
+Plug 'mustache/vim-mustache-handlebars'
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
