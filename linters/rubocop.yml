@@ -1,15 +1,13 @@
 # gem install rubocop
 # gem install rubocop-rails
 # gem install rubocop-rspec
-# require: rubocop-rspec
 
-Documentation:
-  Enabled: false
-Metrics/LineLength:
-  Max: 120
+require: rubocop-rails
+
 Layout/MultilineOperationIndentation:
-# Style/MultilineOperationIndentation:
   EnforcedStyle: indented
+Layout/LineLength:
+  Max: 120
 Style/FrozenStringLiteralComment:
   Enabled: false
 Rails:
@@ -17,6 +15,7 @@ Rails:
 AllCops:
   TargetRubyVersion: 2.3
   Include:
+    - '**/*.rb'
     - '**/*.gemspec'
     - '**/*.podspec'
     - '**/*.jbuilder'
