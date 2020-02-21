@@ -114,7 +114,6 @@ alias q='exit'
 alias topdu='du -a | sort -nr | head -50'
 alias fsize='du -s'
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
-alias gtags='starscope -e ctags'
 
 # Loading private aliases
 source $HOME/dotfiles/private/aliases
@@ -138,25 +137,28 @@ export TERM=xterm-256color
 export EDITOR='nvim'
 export MYNVIMRC='~/.config/nvim/init.vim'
 
-# Add my bin folders to PATH
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # SSH
 export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 # Add android sdk to path if it exists
-if [ -d $HOME/lib/android-sdk-linux ]; then
-  export PATH=$HOME/lib/android-sdk-linux/tools:$PATH
-  export ANDROID_HOME='~/lib/android-sdk-linux'
-  if [ -d $HOME/lib/android-sdk-linux/platform-tools ]; then
-    export PATH=$HOME/lib/android-sdk-linux/platform-tools:$PATH
-  fi
-fi
+# if [ -d $HOME/lib/android-sdk-linux ]; then
+#   export PATH=$HOME/lib/android-sdk-linux/tools:$PATH
+#   export ANDROID_HOME='~/lib/android-sdk-linux'
+#   if [ -d $HOME/lib/android-sdk-linux/platform-tools ]; then
+#     export PATH=$HOME/lib/android-sdk-linux/platform-tools:$PATH
+#   fi
+# fi
 
 # Add elixir bin into PATH if exists
 if [ -d $HOME/lib/elixir/bin ]; then
   export PATH=$HOME/lib/elixir/bin:$PATH
 fi
+
+# Add my bin folders to PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Add brew used folder to PATH
+export PATH="/usr/local/sbin:$PATH"
 
 # YARN package manager bin
 export PATH="$PATH:`yarn global bin`"
@@ -178,6 +180,3 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 if [ -d $HOME/vendor/git-extras ]; then
   source $HOME/vendor/git-extras/etc/git-extras-completion.zsh
 fi
-
-# Add node8 to path
-export PATH="/usr/local/opt/node@8/bin:$PATH"
