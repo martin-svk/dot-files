@@ -73,11 +73,13 @@ Plug 'pangloss/vim-javascript'
 " JSX syntax
 Plug 'mxw/vim-jsx'
 " Typescript syntax
-Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
 " JSON syntax
 Plug 'sheerun/vim-json'
 " Autocomplete (npm install -g tern)
 Plug 'carlitux/deoplete-ternjs'
+" Typescript Autocomplete
+Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
 " JS Documentation comments
 Plug 'heavenshell/vim-jsdoc', { 'on': ['JsDoc'] }
 "}}}
