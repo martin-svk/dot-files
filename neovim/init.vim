@@ -71,15 +71,13 @@ Plug 'tpope/vim-bundler', { 'for': ['ruby', 'eruby', 'haml', 'slim'] }
 " Modern JS support (indent, syntax, etc)
 Plug 'pangloss/vim-javascript'
 " JSX syntax
-Plug 'mxw/vim-jsx'
+Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx'] }
 " Typescript syntax
-Plug 'HerringtonDarkholme/yats.vim'
+Plug 'HerringtonDarkholme/yats.vim', { 'for': ['typescript', 'typescriptreact'] }
 " JSON syntax
 Plug 'sheerun/vim-json'
-" Autocomplete (npm install -g tern)
-Plug 'carlitux/deoplete-ternjs'
 " Typescript Autocomplete
-Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
+Plug 'mhartington/nvim-typescript', { 'do': './install.sh', 'for': ['typescript', 'typescriptreact'] }
 " JS Documentation comments
 Plug 'heavenshell/vim-jsdoc', { 'on': ['JsDoc'] }
 "}}}
@@ -760,7 +758,7 @@ let g:deoplete#sources={}
 let g:deoplete#sources._    = ['around', 'buffer', 'file', 'ultisnips']
 let g:deoplete#sources.ruby = ['around', 'buffer', 'member', 'file', 'ultisnips']
 let g:deoplete#sources.vim  = ['around', 'buffer', 'member', 'file', 'ultisnips']
-let g:deoplete#sources['javascript.jsx'] = ['around', 'buffer', 'file', 'ultisnips', 'ternjs']
+let g:deoplete#sources['javascript.jsx'] = ['around', 'buffer', 'file', 'ultisnips']
 let g:deoplete#sources.css  = ['around', 'buffer', 'member', 'file', 'omni', 'ultisnips']
 let g:deoplete#sources.scss = ['around', 'buffer', 'member', 'file', 'omni', 'ultisnips']
 let g:deoplete#sources.html = ['around', 'buffer', 'member', 'file', 'omni', 'ultisnips']
@@ -820,28 +818,21 @@ let g:jsdoc_enable_es6=1
 "}}}
 
 "" -----------------------------------------------------
-"" 4.17 Deoplete-tern settings {{{
-"" -----------------------------------------------------
-let g:tern_request_timeout=1
-let g:tern_show_signature_in_pum=1
-""}}}
-
-"" -----------------------------------------------------
-"" 4.18 vim-javascript settings {{{
+"" 4.17 vim-javascript settings {{{
 "" -----------------------------------------------------
 let g:javascript_plugin_jsdoc=1
 let g:javascript_plugin_flow=1
 ""}}}
 
 "" -----------------------------------------------------
-"" 4.19 vCoolor settings {{{
+"" 4.18 vCoolor settings {{{
 "" -----------------------------------------------------
 let g:vcoolor_disable_mappings=1
 let g:vcoolor_lowercase=1
 ""}}}
 
 "" -----------------------------------------------------
-"" 4.20 YankRing settings {{{
+"" 4.19 YankRing settings {{{
 "" ------------------------------------------------------
 let g:yankring_window_height=15
 ""}}}
