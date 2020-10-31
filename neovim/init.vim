@@ -73,11 +73,9 @@ Plug 'pangloss/vim-javascript'
 " JSX syntax
 Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx'] }
 " Typescript syntax
-Plug 'HerringtonDarkholme/yats.vim', { 'for': ['typescript', 'typescriptreact'] }
+Plug 'HerringtonDarkholme/yats.vim'
 " JSON syntax
 Plug 'sheerun/vim-json'
-" Typescript Autocomplete
-Plug 'mhartington/nvim-typescript', { 'do': './install.sh', 'for': ['typescript', 'typescriptreact'] }
 " JS Documentation comments
 Plug 'heavenshell/vim-jsdoc', { 'on': ['JsDoc'] }
 "}}}
@@ -749,10 +747,10 @@ let g:vim_markdown_folding_disabled=1
 " -----------------------------------------------------
 " 4.10 Deoplete autocomplete settings {{{
 " -----------------------------------------------------
-let g:deoplete#enable_at_startup=1
-let g:deoplete#enable_refresh_always=0
-let g:deoplete#enable_smart_case=1
-let g:deoplete#file#enable_buffer_path=1
+" let g:deoplete#enable_at_startup=1
+" let g:deoplete#enable_refresh_always=0
+" let g:deoplete#enable_smart_case=1
+" let g:deoplete#file#enable_buffer_path=1
 
 let g:deoplete#sources={}
 let g:deoplete#sources._    = ['around', 'buffer', 'file', 'ultisnips']
