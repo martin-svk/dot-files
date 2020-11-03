@@ -3,8 +3,6 @@
 Hey everybody. I am Martin, a software developer with an obsession for workflow improvement.
 Below I present the most interesting parts of my config files. **Feel free to be inspired**.
 
-**Caution**: This repository is changing often as my workflow is changing (and hopefully improving).
-
 | [Credits](#credits) | [License](#license) |
 
 ## What's included
