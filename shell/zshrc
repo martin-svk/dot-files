@@ -29,6 +29,9 @@ DISABLE_AUTO_TITLE="true"
 # much, much faster.
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
+# Disable permission checks
+ZSH_DISABLE_COMPFIX="true"
+
 # =====================================================================================================================
 # Plugins declaration
 # =====================================================================================================================
@@ -106,6 +109,13 @@ alias ws='http-server -c-1 -p 3333 -o'
 alias rb='ruby'
 alias js='node'
 alias composer="php /usr/local/bin/composer.phar"
+
+# ------------------------------------------
+# Apple M1
+# ------------------------------------------
+alias intel='arch -x86_64'
+alias brew='arch -x86_64 brew'
+alias rbenv='arch -x86_64 rbenv'
 
 # ------------------------------------------
 # Other
