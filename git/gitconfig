@@ -1,10 +1,10 @@
 [user]
-    name = Martin Toma
-    email = martin@itrinity.com
+	name = Martin Toma
+	email = martin@itrinity.com
 [credential]
     helper = cache --timeout=3600
 [core]
-    excludesfile = ~/.gitignore
+	excludesfile = /Users/martin/.gitignore
 [push]
     default = simple
 [color]
@@ -50,8 +50,10 @@
 [difftool "nvimdiff"]
     cmd = diff_wrapper "$LOCAL" "$REMOTE"
 [difftool "sourcetree"]
-    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-    path =
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
 [mergetool "sourcetree"]
-    cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-    trustExitCode = true
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/martin/.stCommitMsg
