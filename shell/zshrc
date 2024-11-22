@@ -41,7 +41,7 @@ ZSH_DISABLE_COMPFIX="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # zsh-syntax-highlighting zsh-autosuggestions is installed via homebrew
-plugins=(adb bower bundler common-aliases docker extract gem gitfast gulp jsontools npm rbenv redis-cli)
+plugins=(common-aliases docker extract gitfast jsontools npm rbenv redis-cli)
 
 # =====================================================================================================================
 # Plugins settings
@@ -53,19 +53,19 @@ plugins=(adb bower bundler common-aliases docker extract gem gitfast gulp jsonto
 
 # Oh my zsh
 source $ZSH/oh-my-zsh.sh
-source $ZSH/plugins/history-substring-search/history-substring-search.zsh
+# source $ZSH/plugins/history-substring-search/history-substring-search.zsh
 
 # =====================================================================================================================
 # Plugin bindings
 # =====================================================================================================================
 
 # History substring search plugin binding
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
+# bindkey '^[[A' history-substring-search-up
+# bindkey '^[[B' history-substring-search-down
 
 # Autosuggestions + Substring search config
-ZSH_AUTOSUGGEST_CLEAR_WIDGETS=("${(@)ZSH_AUTOSUGGEST_CLEAR_WIDGETS:#(up|down)-line-or-history}")
-ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(history-substring-search-up history-substring-search-down)
+# ZSH_AUTOSUGGEST_CLEAR_WIDGETS=("${(@)ZSH_AUTOSUGGEST_CLEAR_WIDGETS:#(up|down)-line-or-history}")
+# ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(history-substring-search-up history-substring-search-down)
 
 # =====================================================================================================================
 # My additional aliases
@@ -101,21 +101,21 @@ alias ta='tmux attach -t main || tmux new -s main'
 alias td='tmux detach'
 alias msql='mysql -uroot -p'
 # npm install -g http-server
-alias ws='http-server -c-1 -p 3333 -o'
+# alias ws='http-server -c-1 -p 3333 -o'
 
 # ------------------------------------------
 # Language specific
 # ------------------------------------------
 alias rb='ruby'
 alias js='node'
-alias composer="php /usr/local/bin/composer.phar"
+# alias composer="php /usr/local/bin/composer.phar"
 
 # ------------------------------------------
 # Apple M1
 # ------------------------------------------
-alias intel='arch -x86_64'
-alias brew='arch -x86_64 brew'
-alias rbenv='arch -x86_64 rbenv'
+# alias intel='arch -x86_64'
+# alias brew='arch -x86_64 brew'
+# alias rbenv='arch -x86_64 rbenv'
 
 # ------------------------------------------
 # Other
@@ -160,9 +160,9 @@ export SSH_KEY_PATH="~/.ssh/dsa_id"
 # fi
 
 # Add elixir bin into PATH if exists
-if [ -d $HOME/lib/elixir/bin ]; then
-  export PATH=$HOME/lib/elixir/bin:$PATH
-fi
+# if [ -d $HOME/lib/elixir/bin ]; then
+#   export PATH=$HOME/lib/elixir/bin:$PATH
+# fi
 
 # Add my bin folders to PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -173,15 +173,18 @@ export PATH="/usr/local/sbin:$PATH"
 # YARN package manager bin
 export PATH="$PATH:`yarn global bin`"
 
+# node 20
+export PATH="/usr/local/opt/node@20/bin:$PATH"
+
 # ZHS autosuggestions
-if [ -d $HOME/.zsh/zsh-autosuggestions ]; then
-  source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-fi
+# if [ -d $HOME/.zsh/zsh-autosuggestions ]; then
+#   source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# fi
 
 # ZHS syntax highlighting
-if [ -d $HOME/.zsh/zsh-syntax-highlighting ]; then
-  source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fi
+# if [ -d $HOME/.zsh/zsh-syntax-highlighting ]; then
+#   source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# fi
 
 # Iterm2 shell integrations
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
