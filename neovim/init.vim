@@ -295,10 +295,10 @@ set nohlsearch                              " Don't highlight after search
 " ---------------------------------------------------------------------------------------------------------------------
 " 2.5 Persistent undo settings {{{
 " ---------------------------------------------------------------------------------------------------------------------
-if has('persistent_undo')
-  set undofile
-  set undodir=~/.config/nvim/tmp/undo//
-endif
+" if has('persistent_undo')
+"   set undofile
+"   set undodir=~/.config/nvim/tmp/undo//
+" endif
 "}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
@@ -1094,30 +1094,30 @@ augroup END
 " 7.1 Run linters after save {{{
 " -----------------------------------------------------
 
-augroup linters
-  " npm install -g eslint
-  autocmd BufWritePost *.js Neomake eslint
-  " npm install -g jsonlint
-  autocmd BufWritePost *.json Neomake jsonlint
-  " npm install -g typescript
-  autocmd BufWritePost *.ts Neomake tsc
-  " gem install rubocop
-  autocmd BufWritePost *.rb Neomake rubocop
-  " sudo apt-get install elixir
-  autocmd BufWritePost *.ex Neomake elixir
-  " apt-get install tidy
-  autocmd BufWritePost *.html Neomake tidy
-  " gem install haml_lint
-  autocmd BufWritePost *.haml Neomake hamllint
-  " gem install scss-lint
-  autocmd BufWritePost *.scss Neomake sasslint
-  " gem install mdl
-  autocmd BufWritePost *.md Neomake mdl
-  " apt-get install shellcheck
-  autocmd BufWritePost *.sh Neomake shellcheck
-  " pip3 install vim-vint
-  autocmd BufWritePost *.vim Neomake vint
-augroup END
+" augroup linters
+"   " npm install -g eslint
+"   autocmd BufWritePost *.js Neomake eslint
+"   " npm install -g jsonlint
+"   autocmd BufWritePost *.json Neomake jsonlint
+"   " npm install -g typescript
+"   autocmd BufWritePost *.ts Neomake tsc
+"   " gem install rubocop
+"   autocmd BufWritePost *.rb Neomake rubocop
+"   " sudo apt-get install elixir
+"   autocmd BufWritePost *.ex Neomake elixir
+"   " apt-get install tidy
+"   autocmd BufWritePost *.html Neomake tidy
+"   " gem install haml_lint
+"   autocmd BufWritePost *.haml Neomake hamllint
+"   " gem install scss-lint
+"   autocmd BufWritePost *.scss Neomake sasslint
+"   " gem install mdl
+"   autocmd BufWritePost *.md Neomake mdl
+"   " apt-get install shellcheck
+"   autocmd BufWritePost *.sh Neomake shellcheck
+"   " pip3 install vim-vint
+"   autocmd BufWritePost *.vim Neomake vint
+" augroup END
 "}}}
 
 "}}}
